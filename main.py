@@ -4,5 +4,6 @@ from views.views import *
 application = webapp2.WSGIApplication([
     ('/clients',Clients),
     ('/home',Home),
-    ('/addClient',AddClient)
+    ('/addClient',AddClient),
+    ('/clientData',ClientData)
 ], debug=True)

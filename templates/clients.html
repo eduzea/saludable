@@ -2,11 +2,14 @@
 {% autoescape true %}
 <html>
 	<head>
+		<title>Base de Datos de Clientes</title>
+		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
+		<link rel="stylesheet" href="../static/css/grid.css" />
+		<script type="text/javascript" src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true"></script>
+		<script type="text/javascript" src="../static/js/my/grid.js" ></script>
 	</head>
 	<body>
-		{% for client in clients %}
-		<b>{{ client.nombre }}-{{ client.direccion }}</b>
-		{% endfor %}
+		<div id="gridNode" style="width: 400px; height: 300px;"></div>
 	</body>
 </html>
 {% endautoescape %}

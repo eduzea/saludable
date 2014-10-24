@@ -1,4 +1,5 @@
 import urllib
+import json
 import webapp2
 import jinja2
 from google.appengine.api import users
@@ -16,17 +17,22 @@ def create_client(params):
 
 class Clients(webapp2.RequestHandler):
     def get(self):
-        clients_query = Client.query(
-            ancestor=clientbook_key(DEFAULT_CLIENTBOOK_NAME))
-        clients = clients_query.fetch(10)
-
-        template_values = {
-            'clients': clients
-        }
-        
-
         template = JINJA_ENVIRONMENT.get_template('clients.html')
-        self.response.write(template.render(template_values))
+        self.response.write(template.render())
+
+class ClientData(webapp2.RequestHandler):
+    def get(self):
+        clients_query = Client.query(ancestor=clientbook_key(DEFAULT_CLIENTBOOK_NAME))
+        clients = clients_query.fetch()
+        response=[]
+        count = 1
+        for client in clients:
+            dicc = client.to_dict()
+            dicc['id'] = count
+            count += 1
+            response.append(dicc)
+        self.response.write(json.dumps(response))
+        
 
 class Home(webapp2.RequestHandler):
     def get(self):
