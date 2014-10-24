@@ -10,22 +10,20 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-def create_client(nombre, ciudad, direccion, telefono,nit,diasPago):
-        client = Client(parent = clientbook_key(DEFAULT_CLIENTBOOK_NAME),name=nombre,city=ciudad,address=direccion)
-        client.phone = telefono
-        client.NIT = nit
-        client.days2pay = diasPago
-        client.put()
+def create_client(params):
+        key = ''.join(params['nombre'].split())
+        Client.get_or_insert(key,parent=clientbook_key(DEFAULT_CLIENTBOOK_NAME), **params)
 
 class Clients(webapp2.RequestHandler):
     def get(self):
         clients_query = Client.query(
-            ancestor=guestbook_key(DEFAULT_CLIENTBOOK_NAME))
+            ancestor=clientbook_key(DEFAULT_CLIENTBOOK_NAME))
         clients = clients_query.fetch(10)
 
         template_values = {
             'clients': clients
         }
+        
 
         template = JINJA_ENVIRONMENT.get_template('clients.html')
         self.response.write(template.render(template_values))
@@ -33,7 +31,7 @@ class Clients(webapp2.RequestHandler):
 class Home(webapp2.RequestHandler):
     def get(self):
         clients_query = Client.query(
-            ancestor=guestbook_key(DEFAULT_CLIENTBOOK_NAME))
+            ancestor=clientbook_key(DEFAULT_CLIENTBOOK_NAME))
         clients = clients_query.fetch(10)
 
         template_values = {
@@ -49,9 +47,9 @@ class AddClient(webapp2.RequestHandler):
         direccion = self.request.POST.get('direccion')
         telefono = self.request.POST.get('telefono')
         nit = self.request.POST.get('nit')
-        diasPago = self.request.POST.get('diasPago')
+        diasPago = int(self.request.POST.get('diasPago'))
         try:
-            create_client(nombre, ciudad, direccion, telefono, nit, diasPago)
+            create_client({'nombre':nombre, 'ciudad':ciudad, 'direccion':direccion, 'telefono':telefono, 'nit':nit, 'diasPago':diasPago})
         except Exception as ex:
             self.response.out.write(ex.message)
             return

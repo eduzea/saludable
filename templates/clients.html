@@ -2,11 +2,10 @@
 {% autoescape true %}
 <html>
 	<head>
-		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
 	</head>
 	<body>
 		{% for client in clients %}
-		<b>{{ client.name }}-{{ client.address }}</b>
+		<b>{{ client.nombre }}-{{ client.direccion }}</b>
 		{% endfor %}
 	</body>
 </html>
