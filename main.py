@@ -2,6 +2,7 @@ import webapp2
 from views.views import *
 
 application = webapp2.WSGIApplication([
-    ('/', MainPage),
-    ('/sign', Guestbook),
+    ('/clients',Clients),
+    ('/home',Home),
+    ('/addClient',AddClient)
 ], debug=True)

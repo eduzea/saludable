@@ -16,3 +16,20 @@ class Greeting(ndb.Model):
     content = ndb.StringProperty(indexed=False)
     date = ndb.DateTimeProperty(auto_now_add=True)
 
+############################################################################
+
+DEFAULT_CLIENTBOOK_NAME = 'default_clientbook'
+
+def clientbook_key(clientbook_name=DEFAULT_CLIENTBOOK_NAME):
+    """Constructs a Datastore key for a Clientbook entity with clientbook_name."""
+    return ndb.Key('Guestbook', clientbook_name)
+
+class Client(ndb.Model):
+    """Models an individual Client."""
+    name = ndb.StringProperty(indexed=True)
+    address = ndb.StringProperty(indexed=True)
+    phone = ndb.IntegerProperty
+    city = ndb.StringProperty(indexed=True)
+    NIT = ndb.IntegerProperty
+    days2pay = ndb.IntegerProperty
+    

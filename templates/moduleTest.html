@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<h1>MODULE TEST</h1>
+		<script type="text/javascript">
+			var dojoConfig = {
+				async : true,
+				baseUrl: "/static/js/",
+				packages : [{
+					name : "my",
+					location : "my",
+					main:"misc"
+				}]
+			};
+		</script>
+		<script src="../js/lib/dojo/dojo.js"></script>
+		<script>
+			require(["my"], function(util) {
+				util.send2server("WORKED!")
+			});
+		</script>
+	</body>
+</html>

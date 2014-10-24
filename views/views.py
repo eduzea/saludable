@@ -1,7 +1,6 @@
 import urllib
 import webapp2
 import jinja2
-import os
 from google.appengine.api import users
 
 from models.models import * 
@@ -11,48 +10,49 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
-class Guestbook(webapp2.RequestHandler):
-    def post(self):
-        # We set the same parent key on the 'Greeting' to ensure each Greeting
-        # is in the same entity group. Queries across the single entity group
-        # will be consistent. However, the write rate to a single entity group
-        # should be limited to ~1/second.
-        guestbook_name = self.request.get('guestbook_name',
-                                          DEFAULT_GUESTBOOK_NAME)
-        greeting = Greeting(parent=guestbook_key(guestbook_name))
+def create_client(nombre, ciudad, direccion, telefono,nit,diasPago):
+        client = Client(parent = clientbook_key(DEFAULT_CLIENTBOOK_NAME),name=nombre,city=ciudad,address=direccion)
+        client.phone = telefono
+        client.NIT = nit
+        client.days2pay = diasPago
+        client.put()
 
-        if users.get_current_user():
-            greeting.author = users.get_current_user()
-
-        greeting.content = self.request.get('content')
-        greeting.put()
-
-        query_params = {'guestbook_name': guestbook_name}
-        self.redirect('/?' + urllib.urlencode(query_params))
-
-
-class MainPage(webapp2.RequestHandler):
-
+class Clients(webapp2.RequestHandler):
     def get(self):
-        guestbook_name = self.request.get('guestbook_name',
-                                          DEFAULT_GUESTBOOK_NAME)
-        greetings_query = Greeting.query(
-            ancestor=guestbook_key(guestbook_name)).order(-Greeting.date)
-        greetings = greetings_query.fetch(10)
-
-        if users.get_current_user():
-            url = users.create_logout_url(self.request.uri)
-            url_linktext = 'Logout'
-        else:
-            url = users.create_login_url(self.request.uri)
-            url_linktext = 'Login'
+        clients_query = Client.query(
+            ancestor=guestbook_key(DEFAULT_CLIENTBOOK_NAME))
+        clients = clients_query.fetch(10)
 
         template_values = {
-            'greetings': greetings,
-            'guestbook_name': urllib.quote_plus(guestbook_name),
-            'url': url,
-            'url_linktext': url_linktext,
+            'clients': clients
         }
 
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('clients.html')
         self.response.write(template.render(template_values))
+
+class Home(webapp2.RequestHandler):
+    def get(self):
+        clients_query = Client.query(
+            ancestor=guestbook_key(DEFAULT_CLIENTBOOK_NAME))
+        clients = clients_query.fetch(10)
+
+        template_values = {
+            'clients': clients
+        }
+        template = JINJA_ENVIRONMENT.get_template('home.html')
+        self.response.write(template.render(template_values))
+        
+class AddClient(webapp2.RequestHandler):        
+    def post(self):
+        nombre = self.request.POST.get('nombre')
+        ciudad = self.request.POST.get('ciudad')
+        direccion = self.request.POST.get('direccion')
+        telefono = self.request.POST.get('telefono')
+        nit = self.request.POST.get('nit')
+        diasPago = self.request.POST.get('diasPago')
+        try:
+            create_client(nombre, ciudad, direccion, telefono, nit, diasPago)
+        except Exception as ex:
+            self.response.out.write(ex.message)
+            return
+        self.response.out.write("Cliente creado exitosamente")
