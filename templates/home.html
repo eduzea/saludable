@@ -6,33 +6,28 @@
 		<script type="text/javascript">
 			var dojoConfig = {
 				async : true,
-				parseOnLoad: true,
-				baseUrl: "/static/js/",
-				packages : [
-				{ name : "my", location : "my", main:"misc"},
-				{ name: "dojo", location: "lib/dojo" },
-		        { name: "dijit", location: "lib/dijit" },
-		        { name: "dojox", location: "lib/dojox" }
-				]
+				parseOnLoad : true,
+				packages : [{
+					name : "my",
+					location : "../../my",
+					main : "misc"
+				}]
 			};
 		</script>
 		<script src="../static/js/lib/dojo/dojo.js"></script>
 		<script>
-			require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 
-			"dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox","my"]);
+			require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojox/layout/ContentPane", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "my"]);
 		</script>
 		<link rel="stylesheet" href="../static/css/home.css" media="screen">
 		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
-		<title>Learning Dojo</title>
+		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
 		<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
 			<div class="centerPanel" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center', tabPosition: 'bottom'">
-				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Group 1'">
+				<div data-dojo-type="dojox/layout/ContentPane" title="CLIENTES EXISTENTES" data-dojo-props="href: '/clients', executeScripts: true"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'AGREGAR CLIENTES NUEVOS'">
 					<div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm" encType="multipart/form-data" action="" method="">
-						<script type="dojo/on" data-dojo-event="reset">
-							return confirm('OK para limpiar el formulario.');
-						</script>
 						<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 							<tr>
 								<td><label for="name">Nombre:</label></td>
@@ -75,41 +70,36 @@
 							Agregar Cliente
 						</button>
 						<script>
-							require(['dojo/ready','dojo/dom','dijit/registry', 'dojo/on','my'], function(ready,dom,registry,on,my) {
-								ready(function(){
-										var myBut = dom.byId('agregar_btn');
-										on(myBut, "click", function(e) {
-											if (registry.byId("myForm").validate()) {
-												my.send2server(myForm.getValues());
-											} else {
-												alert('Formulario incompleto. Favor corregir.');
-												return false;
-											}
-											return true;
-										});}
-									);
+							require(['dojo/ready', 'dojo/dom', 'dijit/registry', 'dojo/on', 'my'], function(ready, dom, registry, on, my) {
+								ready(function() {
+									var myBut = dom.byId('agregar_btn');
+									on(myBut, "click", function(e) {
+										if (registry.byId("myForm").validate()) {
+											my.send2server(myForm.getValues());											
+										} else {
+											alert('Formulario incompleto. Favor corregir.');
+											return false;
+										}
+										return true;
+									});
 								});
+							});
 						</script>
-						<button data-dojo-type="dijit/form/Button" type="reset">
+						<button id='reset' data-dojo-type="dijit/form/Button" type="reset">
 							Borrar todo
-						</button>
+						</button><br/><br/>
+						<div id="server_response" style="color: red"></div>
+					</div>
 					</div>
 
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Group Two'">
-					<h4>Group 2 Content</h4>
+				<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+					Header content (top)
 				</div>
-				<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Long Tab Label for this One'">
-					<h4>Group 3 Content</h4>
+				<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">
+					Sidebar content (left)
 				</div>
 			</div>
-			<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
-				Header content (top)
-			</div>
-			<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">
-				Sidebar content (left)
-			</div>
-		</div>
 	</body>
 </html>
 {% endautoescape %}

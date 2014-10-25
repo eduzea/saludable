@@ -11,6 +11,12 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class TestClient(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('ContentPaneTest.html')
+        self.response.write(template.render())
+
+
 def create_client(params):
         key = ''.join(params['nombre'].split())
         Client.get_or_insert(key,parent=clientbook_key(DEFAULT_CLIENTBOOK_NAME), **params)
@@ -60,3 +66,15 @@ class AddClient(webapp2.RequestHandler):
             self.response.out.write(ex.message)
             return
         self.response.out.write("Cliente creado exitosamente")
+        
+class DeleteClient(webapp2.RequestHandler):        
+    def post(self):
+        key = self.request.POST.get('key')
+        try:
+            client = Client.get_by_id(key,clientbook_key(DEFAULT_CLIENTBOOK_NAME))
+            client.key.delete()
+        except Exception as ex:
+            self.response.out.write(ex.message)
+            return
+        self.response.out.write("Cliente eliminado exitosamente")        
+        
