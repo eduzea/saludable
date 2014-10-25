@@ -2,8 +2,8 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 	parser.instantiate([dom.byId('agregar_btn2')]);
 	var myBut = registry.byId('agregar_btn2');
 	on(myBut, "click", function(e) {
-		if (registry.byId("myForm2").validate()) {
-			var formdata = registry.byId("myForm2").getValues();
+		if (registry.byId("myForm").validate()) {
+			var formdata = registry.byId("myForm").getValues();
 			request.post("/saveClient", {
 				data : formdata
 			}).then(function(response) {
@@ -21,10 +21,10 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 					grid.store.add(formdata);
 					response = 'Se actualizo cliente: ' + formdata['nombre'];
 				}
-				dom.byId('server_response2').innerHTML = response;
+				dom.byId('server_response').innerHTML = response;
 				setTimeout(function() {
-					dom.byId('reset2').click();
-					dom.byId('server_response2').innerHTML = '';
+					dom.byId('reset').click();
+					dom.byId('server_response').innerHTML = '';
 				}, 1000);
 			});
 		} else {
