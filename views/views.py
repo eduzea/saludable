@@ -56,7 +56,7 @@ def create_client(params):
             Client.get_or_insert(key,parent=clientbook_key(DEFAULT_CLIENTBOOK_NAME), **params)
             return "Created"
 
-class AddClient(webapp2.RequestHandler):        
+class SaveClient(webapp2.RequestHandler):        
     def post(self):
         nombre = self.request.POST.get('nombre')
         ciudad = self.request.POST.get('ciudad')
@@ -83,3 +83,7 @@ class DeleteClient(webapp2.RequestHandler):
             return
         self.response.out.write("Se elimino exitosamente el cliente: " + client.nombre)        
         
+class AddClient(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('addClient.html')
+        self.response.write(template.render())
