@@ -3,6 +3,7 @@ import json
 import webapp2
 import jinja2
 from google.appengine.api import users
+from google.appengine.ext.ndb import metadata
 
 from models.models import * 
 
@@ -46,7 +47,7 @@ class Home(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
         
 def create_client(params):
-        key = ''.join(params['nombre'].split())
+        key = ''.join((params['nombre'] + params['negocio']).split())
         client = Client.get_by_id(key,clientbook_key(DEFAULT_CLIENTBOOK_NAME))
         if client:
             client.populate(**params)
@@ -59,6 +60,7 @@ def create_client(params):
 class SaveClient(webapp2.RequestHandler):        
     def post(self):
         nombre = self.request.POST.get('nombre')
+        negocio = self.request.POST.get('negocio')
         ciudad = self.request.POST.get('ciudad')
         direccion = self.request.POST.get('direccion')
         telefono = self.request.POST.get('telefono')
@@ -66,7 +68,7 @@ class SaveClient(webapp2.RequestHandler):
         diasPago = int(self.request.POST.get('diasPago'))
         response =''
         try:
-            response = create_client({'nombre':nombre, 'ciudad':ciudad, 'direccion':direccion, 'telefono':telefono, 'nit':nit, 'diasPago':diasPago})
+            response = create_client({'nombre':nombre, 'negocio':negocio, 'ciudad':ciudad, 'direccion':direccion, 'telefono':telefono, 'nit':nit, 'diasPago':diasPago})
         except Exception as ex:
             self.response.out.write(ex.message)
             return
@@ -87,3 +89,13 @@ class AddClient(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('addClient.html')
         self.response.write(template.render())
+        
+        
+class AddEntity(webapp2.RequestHandler):
+    def get(self):
+        entity_class = self.request.get('entityClass');
+        props = list(globals()[entity_class]._properties)
+        template_values = {'handler': '/save' + entity_class, 'props':props}
+        template = JINJA_ENVIRONMENT.get_template('addEntity.html')
+        self.response.write(template.render(template_values))
+        

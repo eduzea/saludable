@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% autoescape true %}
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="../static/css/home.css" media="screen">
+		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
+		<script src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+		<script type="text/javascript" src="../static/js/my/addEntity.js"></script>
+		<script>
+			require(["dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox"]);
+		</script>
+		<title>Salud-Able Foods</title>
+	</head>	
+	<body class="claro">
+		<div class='handler' id='{{ handler }}'></div>
+		<div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm" encType="multipart/form-data" action="" method="">
+			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
+				{% for prop in props %}
+				<tr>
+					<td><label for="name">{{ prop }}:</label></td>
+					<td>
+						<input type="text" id="{{ prop }}" name="{{ prop }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+			<button data-dojo-type="dijit/form/Button" id="agregar_btn" type="button">
+				Agregar Cliente
+			</button>
+			<button id='reset' data-dojo-type="dijit/form/Button" type="reset">
+				Borrar todo
+			</button>
+			<br/>
+			<br/>
+			<div id="server_response" style="color: red"></div>
+		</div>
+	</body>
+</html>
+{% endautoescape %}

@@ -7,6 +7,7 @@ function(Store, Grid, Cache, request, Button, CellWidget) {
 		});
 		var columns = [
 			{ field : 'nombre', name : 'Nombre'},
+			{ field : 'negocio', name : 'Negocio'},
 			{ field : 'ciudad', name : 'Ciudad'},
 			{ field : 'direccion', name : 'Direccion'},
 			{ field : 'telefono', name : 'Telefono'},
@@ -21,7 +22,7 @@ function(Store, Grid, Cache, request, Button, CellWidget) {
 		                    var selectedRowId = cellWidget.cell.row.id;
 		                    // get the data
 		                    var rowData = grid.row(selectedRowId, true).rawData();
-		                    var key = rowData.nombre.replace(/\s+/g, '');
+		                    var key = (rowData.nombre + rowData.negocio).replace(/\s+/g, '');
 		                    request.post("deleteClient", {data: {'key':key}}).then(function(text){
         						console.log("The server returned: ", text);
         						grid.store.remove(selectedRowId);
