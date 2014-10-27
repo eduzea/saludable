@@ -5,8 +5,7 @@ application = webapp2.WSGIApplication([
     ('/home', Home),
     ('/addEntity',AddEntity),
     ('/saveEntity', SaveEntity),
-    ('/clients',Clients),
-    ('/clientData', ClientData),
-    ('/deleteClient', DeleteClient),
-    ('/test',TestClient)
+    ('/showEntities',ShowEntities),
+    ('/entityData', EntityData),
+    ('/deleteEntity', DeleteEntity),
 ], debug=True)

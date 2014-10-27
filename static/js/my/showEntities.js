@@ -1,19 +1,15 @@
+//# sourceURL=../static/js/my/showEntities.js
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
-		"gridx/modules/CellWidget"], 
-function(Store, Grid, Cache, request, Button, CellWidget) {
-	request('/clientData').then(function(data) {
+		"gridx/modules/CellWidget",'dojo/query'], 
+function(Store, Grid, Cache, request, Button, CellWidget,query) {
+	var entity_class = query(".entity_class");
+	entity_class = entity_class[0].id;
+	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
-			'data' : JSON.parse(data)
+			'data' : response.records
 		});
-		var columns = [
-			{ field : 'nombre', name : 'Nombre'},
-			{ field : 'negocio', name : 'Negocio'},
-			{ field : 'ciudad', name : 'Ciudad'},
-			{ field : 'direccion', name : 'Direccion'},
-			{ field : 'telefono', name : 'Telefono'},
-			{ field : 'nit', name : 'NIT'},
-			{ field : 'diasPago', name : 'Dias para pago'},
-			{ field : 'Borrar', name : '', widgetsInCell: true,
+		var columns = response.columns;
+		var lastColumn = { field : 'Borrar', name : '', widgetsInCell: true,
 				onCellWidgetCreated: function(cellWidget, column){
 	   				var btn = new Button({
 						label : "Borrar",
@@ -22,8 +18,10 @@ function(Store, Grid, Cache, request, Button, CellWidget) {
 		                    var selectedRowId = cellWidget.cell.row.id;
 		                    // get the data
 		                    var rowData = grid.row(selectedRowId, true).rawData();
-		                    var key = (rowData.nombre + rowData.negocio).replace(/\s+/g, '');
-		                    request.post("deleteClient", {data: {'key':key}}).then(function(text){
+		                    request.post("deleteEntity", 
+		                    	{
+		                    		data: {'key':rowData.id, 'entity_class':entity_class}
+		                    	}).then(function(text){
         						console.log("The server returned: ", text);
         						grid.store.remove(selectedRowId);
         						grid.model.clearCache();
@@ -34,8 +32,8 @@ function(Store, Grid, Cache, request, Button, CellWidget) {
 					});
 					btn.placeAt(cellWidget.domNode);
 				},
-			}
-		];
+		};
+		columns.push(lastColumn);
 		var grid = new Grid({
 			cacheClass : Cache,
 			store : store,

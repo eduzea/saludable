@@ -12,22 +12,25 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, butto
 			var entity_class = query(".entity_class");
 			formdata.entity_class = entity_class[0].id;
 			request.post('/saveEntity', {
-				data : formdata
+				data : formdata,
+				handleAs: 'json'
 			}).then(function(response) {
+				// response = JSON.parse(response);
 				var grid = registry.byId("gridNode");
-				var key = (formdata.nombre + formdata.negocio).replace(/\s+/g, '');
-				if (response == 'Created') {
+				var key = response.key;
+				var response_user='';
+				if (response.message == 'Created') {
 					formdata['id'] = key;
 					grid.store.add(formdata);
-					response = 'Se creo nuevo cliente: ' + formdata['nombre'] + ' ' + formdata['negocio'];
+					response_user = 'Se creo nuevo ' + formdata.entity_class + ': ' + response.key;
 				} else {
 					var row = grid.store.get(key);
 					grid.store.remove(key);
 					formdata['id'] = key;
 					grid.store.add(formdata);
-					response = 'Se actualizo cliente: ' + formdata['nombre'] + ' ' +  formdata['negocio'];
+					response_user = 'Se actualizo ' + formdata.entity_class + ': ' + response.key;
 				}
-				dom.byId('server_response').innerHTML = response;
+				dom.byId('server_response').innerHTML = response_user;
 				setTimeout(function() {
 					dom.byId('reset').click();
 					dom.byId('server_response').innerHTML = '';
