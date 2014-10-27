@@ -1,5 +1,3 @@
 TO DO
 
-1 Impement UI configuration for proper labels from database fields
-2 Generalize "clients" to "entities?entityClass=Clients"
-3 Add Frutas y Porciones
+1 Add Frutas y Porciones

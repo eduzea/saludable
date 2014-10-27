@@ -17,9 +17,9 @@
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for prop in props %}
 				<tr>
-					<td><label for="name">{{ prop }}:</label></td>
+					<td><label for="name">{{ prop[1] }}:</label></td>
 					<td>
-						<input type="text" id="{{ prop }}" name="{{ prop }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
+						<input type="text" id="{{ prop[0] }}" name="{{ prop[0] }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
 					</td>
 				</tr>
 				{% endfor %}

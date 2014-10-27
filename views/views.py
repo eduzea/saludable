@@ -99,7 +99,7 @@ class SaveEntity(webapp2.RequestHandler):
 class AddEntity(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        props = list(globals()[entity_class]._properties)
+        props = uiConfig[entity_class]
         template_values = {'entity_class': entity_class, 'props':props}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
