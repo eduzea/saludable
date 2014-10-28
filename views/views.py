@@ -17,7 +17,9 @@ uiConfig = {'Client':[('nombre','Nombre'),
                        ('telefono','Telefono'),
                        ('nit','NIT'),
                        ('diasPago','Dias para pago')
-                       ]}
+                       ],
+            'Fruta':[('nombre','Nombre')]
+            }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader('.\\templates'),
@@ -42,7 +44,7 @@ def getColumns(entity_class):
 class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        entity_query = classModels[entity_class].query(ancestor=clientbook_key(DEFAULT_CLIENTBOOK_NAME))
+        entity_query = classModels[entity_class].query()#ancestor=ndb.Key(entity_class, entity_class))
         entities = entity_query.fetch()
         records=[]
         for entity in entities:
@@ -74,13 +76,13 @@ def check_types(entity_class, values):
 def create_entity(entity_class, values):
     values = check_types(entity_class,values) #All we get from post are strings, so we need to cast as appropriate
     key = getKey(entity_class, values)
-    entity = classModels[entity_class].get_by_id(key, clientbook_key(DEFAULT_CLIENTBOOK_NAME))
+    entity = classModels[entity_class].get_by_id(key, ndb.Key(entity_class, entity_class))
     if entity:
         entity.populate(**values)
         entity.put()
         return {'message':"Updated",'key':key}
     else:
-        classModels[entity_class].get_or_insert(key, parent=clientbook_key(DEFAULT_CLIENTBOOK_NAME), **values)
+        classModels[entity_class].get_or_insert(key, parent=ndb.Key(entity_class, entity_class), **values)
         return {'message':"Created",'key':key}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -88,6 +90,8 @@ class SaveEntity(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         entity_class = values.pop("entity_class")
+        for key,value in values.iteritems():
+            values[key.replace(entity_class,'')] = values.pop(key)
         response = {};
         try:
             response = create_entity(entity_class,values)
@@ -109,7 +113,7 @@ class DeleteEntity(webapp2.RequestHandler):
         key = self.request.POST.get('key')
         entity_class = self.request.POST.get('entity_class')
         try:
-            client = classModels[entity_class].get_by_id(key,clientbook_key(DEFAULT_CLIENTBOOK_NAME))
+            client = classModels[entity_class].get_by_id(key,ndb.Key(entity_class, entity_class))
             client.key.delete()
         except Exception as ex:
             self.response.out.write(ex.message)

@@ -2,8 +2,7 @@
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
 		"gridx/modules/CellWidget",'dojo/query'], 
 function(Store, Grid, Cache, request, Button, CellWidget,query) {
-	var entity_class = query(".entity_class");
-	entity_class = entity_class[0].id;
+	entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
 			'data' : response.records
@@ -41,7 +40,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,query) {
 			modules: [
 				"gridx/modules/CellWidget"
 			]
-		}, 'gridNode');
+		}, 'gridNode'+ entity_class);
 
 		grid.startup();
 	}, function(error) {

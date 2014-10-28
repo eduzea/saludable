@@ -3,22 +3,25 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 		 'dojo/parser','dojo/query','dojo/json',
 		 "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox",'dojo/domReady!'],//Modules required to avoid race condition when parsing 
 function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, button, valid) {
-	parser.instantiate([dom.byId('agregar_btn')]);
-	var myBut = registry.byId('agregar_btn');
+	entity_class = saludable.entity_class;
+	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);
+	var myBut = registry.byId('agregar_btn' + entity_class);
 	on(myBut, "click", function(e) {
-		parser.instantiate([dom.byId('myForm')]); 
-		if (registry.byId("myForm").validate()) {
-			var formdata = registry.byId("myForm").getValues();
-			var entity_class = query(".entity_class");
-			formdata.entity_class = entity_class[0].id;
+		parser.instantiate([dom.byId('addEntityForm'+ entity_class)]); 
+		if (registry.byId('addEntityForm'+ entity_class).validate()) {
+			var formdata = registry.byId('addEntityForm'+ entity_class).getValues();
+			formdata.entity_class = entity_class;
 			request.post('/saveEntity', {
 				data : formdata,
 				handleAs: 'json'
 			}).then(function(response) {
-				// response = JSON.parse(response);
-				var grid = registry.byId("gridNode");
+				var grid = registry.byId("gridNode"+ entity_class);
 				var key = response.key;
 				var response_user='';
+				for(key in formdata){
+					formdata[key.replace(entity_class,'')]=formdata[key];
+					delete formdata[key];
+				}
 				if (response.message == 'Created') {
 					formdata['id'] = key;
 					grid.store.add(formdata);
@@ -30,10 +33,10 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, butto
 					grid.store.add(formdata);
 					response_user = 'Se actualizo ' + formdata.entity_class + ': ' + response.key;
 				}
-				dom.byId('server_response').innerHTML = response_user;
+				dom.byId('server_response'+ entity_class).innerHTML = response_user;
 				setTimeout(function() {
-					dom.byId('reset').click();
-					dom.byId('server_response').innerHTML = '';
+					dom.byId('reset'+ entity_class).click();
+					dom.byId('server_response'+ entity_class).innerHTML = '';
 				}, 1000);
 			});
 		} else {

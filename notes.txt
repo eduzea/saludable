@@ -1,3 +1,5 @@
 TO DO
 
+1 Solve problem of uniquely finding the entity_ide tag in the dom
+2 Solve issue of repeated ids in showEmities page
 1 Add Frutas y Porciones

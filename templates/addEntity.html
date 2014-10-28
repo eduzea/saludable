@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="../static/css/home.css" media="screen">
 		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
 		<script src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+		<script>saludable.entity_class = '{{ entity_class }}';</script>
 		<script type="text/javascript" src="../static/js/my/addEntity.js"></script>
 		<script>
 			require(["dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox"]);
@@ -12,27 +13,27 @@
 		<title>Salud-Able Foods</title>
 	</head>	
 	<body class="claro">
-		<div class='entity_class' id='{{ entity_class }}'></div>
-		<div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm" encType="multipart/form-data" action="" method="">
+		<!-- <div class='entity_class' id='{{ entity_class }}'></div> -->
+		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for prop in props %}
 				<tr>
 					<td><label for="name">{{ prop[1] }}:</label></td>
 					<td>
-						<input type="text" id="{{ prop[0] }}" name="{{ prop[0] }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
+						<input type="text" id="{{ prop[0] }}{{ entity_class }}" name="{{ prop[0] }}{{ entity_class }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
 					</td>
 				</tr>
 				{% endfor %}
 			</table>
-			<button data-dojo-type="dijit/form/Button" id="agregar_btn" type="button">
-				Agregar Cliente
+			<button data-dojo-type="dijit/form/Button" id="agregar_btn{{ entity_class }}" type="button">
+				Agregar {{ entity_class }}
 			</button>
-			<button id='reset' data-dojo-type="dijit/form/Button" type="reset">
+			<button id='reset{{ entity_class }}' data-dojo-type="dijit/form/Button" type="reset">
 				Borrar todo
 			</button>
 			<br/>
 			<br/>
-			<div id="server_response" style="color: red"></div>
+			<div id="server_response{{ entity_class }}" style="color: red"></div>
 		</div>
 	</body>
 </html>
