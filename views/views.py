@@ -8,8 +8,8 @@ from google.appengine.ext.ndb import metadata
 from models.models import * 
 from google.appengine.ext.ndb.model import IntegerProperty
 
-classModels = {'Client':Client, 'Fruta':Fruta}
-keyDefs = {'Client':['nombre','negocio'], 'Fruta':['nombre']}
+classModels = {'Client':Client, 'Fruta':Fruta, 'Porcion':Porcion}
+keyDefs = {'Client':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades']}
 uiConfig = {'Client':[('nombre','Nombre'),
                        ('negocio','Negocio'),
                        ('ciudad','Ciudad'),
@@ -18,7 +18,8 @@ uiConfig = {'Client':[('nombre','Nombre'),
                        ('nit','NIT'),
                        ('diasPago','Dias para pago')
                        ],
-            'Fruta':[('nombre','Nombre')]
+            'Fruta':[('nombre','Nombre')],
+            'Porcion':[('valor','Porcion'),('unidades','Unidades')]
             }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -62,7 +63,7 @@ class Home(webapp2.RequestHandler):
 def getKey(entity_class,entity):
     key = ''
     for keypart in keyDefs[entity_class]:
-        key = key + entity[keypart]
+        key = key + str(entity[keypart])
     return ''.join(key.split())
         
 def check_types(entity_class, values):

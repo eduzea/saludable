@@ -5,9 +5,10 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, button, valid) {
 	entity_class = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);
-	var myBut = registry.byId('agregar_btn' + entity_class);
-	on(myBut, "click", function(e) {
-		parser.instantiate([dom.byId('addEntityForm'+ entity_class)]); 
+	var buttons={};
+	buttons[entity_class] =  registry.byId('agregar_btn' + entity_class);
+	on(buttons[entity_class], "click", function(e) {
+		entity_class = saludable.entity_class; 
 		if (registry.byId('addEntityForm'+ entity_class).validate()) {
 			var formdata = registry.byId('addEntityForm'+ entity_class).getValues();
 			formdata.entity_class = entity_class;
@@ -25,19 +26,19 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, butto
 				if (response.message == 'Created') {
 					formdata['id'] = key;
 					grid.store.add(formdata);
-					response_user = 'Se creo nuevo ' + formdata.entity_class + ': ' + response.key;
+					response_user = 'Se creo nuevo ' + entity_class + ': ' + response.key;
 				} else {
 					var row = grid.store.get(key);
 					grid.store.remove(key);
 					formdata['id'] = key;
 					grid.store.add(formdata);
-					response_user = 'Se actualizo ' + formdata.entity_class + ': ' + response.key;
+					response_user = 'Se actualizo ' + entity_class + ': ' + response.key;
 				}
 				dom.byId('server_response'+ entity_class).innerHTML = response_user;
 				setTimeout(function() {
 					dom.byId('reset'+ entity_class).click();
 					dom.byId('server_response'+ entity_class).innerHTML = '';
-				}, 1000);
+				}, 3000);
 			});
 		} else {
 			alert('Formulario incompleto. Favor corregir.');
