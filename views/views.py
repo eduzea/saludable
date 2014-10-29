@@ -6,7 +6,7 @@ from google.appengine.api import users
 from google.appengine.ext.ndb import metadata
 
 from models.models import * 
-from google.appengine.ext.ndb.model import IntegerProperty
+from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty
 from jinja2._markupsafe import Markup
 
 classModels = {'Client':Client, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio}
@@ -47,15 +47,17 @@ def getColumns(entity_class):
         columns.append({ 'field' : column['id'], 'name' : column['ui']})
     return columns
 
-
 class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        entity_query = classModels[entity_class].query()#ancestor=ndb.Key(entity_class, entity_class))
+        entity_query = classModels[entity_class].query()
         entities = entity_query.fetch()
         records=[]
         for entity in entities:
             dicc = entity.to_dict()
+            for prop_key, prop_value in dicc.iteritems():
+                if type(prop_value) == ndb.Key:
+                    dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
             dicc['id'] = entity.key.id()
             records.append(dicc)
         response = {'columns':getColumns(entity_class), 'records':records}
@@ -69,7 +71,10 @@ class Home(webapp2.RequestHandler):
 def getKey(entity_class,dicc):
     key = ''
     for keypart in keyDefs[entity_class]:
-        key = key + str(dicc[keypart])
+        if type(dicc[keypart]) == ndb.Key:
+            key += dicc[keypart].get().to_dict()['rotulo']
+        else:
+            key += str(dicc[keypart])
     return ''.join(key.split())
         
 def check_types(entity_class, values):
@@ -77,19 +82,22 @@ def check_types(entity_class, values):
     for key, value in props.iteritems():
         if type(value) is IntegerProperty:
             values[key] = int(values[key])
+        if type(value) is KeyProperty:
+            key_obj = ndb.Key(value._kind,values[key])
+            values[key]=key_obj
     return values
             
 
 def create_entity(entity_class, values):
-    values = check_types(entity_class,values) #All we get from post are strings, so we need to cast as appropriate
+    values = check_types(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
     key = getKey(entity_class, values)
-    entity = classModels[entity_class].get_by_id(key, ndb.Key(entity_class, entity_class))
+    entity = classModels[entity_class].get_by_id(key)
     if entity:
         entity.populate(**values)
         entity.put()
         return {'message':"Updated",'key':key}
     else:
-        classModels[entity_class].get_or_insert(key, parent=ndb.Key(entity_class, entity_class), **values)
+        classModels[entity_class].get_or_insert(key,**values)
         return {'message':"Created",'key':key}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -110,7 +118,7 @@ class SaveEntity(webapp2.RequestHandler):
 def tagForField(entity_class, prop):
     tag = ''
     if type(prop['type']) == ndb.KeyProperty:
-        tag = "<select id='" + prop['id'] + entity_class +"' data-dojo-type='dijit/form/Select'>"
+        tag = "<select name='" + prop['id'] + entity_class +"' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
             dicc = option.to_dict()
@@ -142,9 +150,15 @@ class DeleteEntity(webapp2.RequestHandler):
         key = self.request.POST.get('key')
         entity_class = self.request.POST.get('entity_class')
         try:
-            entity = classModels[entity_class].get_by_id(key,ndb.Key(entity_class, entity_class))
+            entity = classModels[entity_class].get_by_id(key)
             entity.key.delete()
         except Exception as ex:
             self.response.out.write(ex.message)
             return
         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
+
+class Test(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('test.html')
+        self.response.write(template.render())
+    

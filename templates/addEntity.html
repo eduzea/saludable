@@ -8,12 +8,11 @@
 		<script>saludable.entity_class = '{{ entity_class }}';</script>
 		<script type="text/javascript" src="../static/js/my/addEntity.js"></script>
 		<script>
-			require(["dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox"]);
+			require(["dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox",'dijit/form/Select']);
 		</script>
 		<title>Salud-Able Foods</title>
 	</head>	
 	<body class="claro">
-		<!-- <div class='entity_class' id='{{ entity_class }}'></div> -->
 		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for field in fields %}

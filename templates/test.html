@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+	<head>
+
+		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
+
+		<script src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+
+		<script>
+			require(["dojo/parser", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/DateTextBox"]);
+		</script>
+	</head>
+	<body class="claro">
+		<div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm"	encType="multipart/form-data" action="" method="">
+				<select name="select1" data-dojo-type="dijit/form/Select">
+					<option value="TN">Tennessee</option>
+					<option value="VA" selected="selected">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="FL">Florida</option>
+					<option value="CA">California</option>
+				</select>
+			<button data-dojo-type="dijit/form/Button" type="button" onClick="console.log(myForm.getValues())">
+				Get Values from form!
+			</button>
+		</div>
+	</body>
+</html>

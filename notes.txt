@@ -1,5 +1,3 @@
 TO DO
 
-1 Solve problem of uniquely finding the entity_ide tag in the dom
-2 Solve issue of repeated ids in showEmities page
-1 Add Frutas y Porciones
+1. Put logic so that you cannot delete an entity if it is a foreing key in another entity.
