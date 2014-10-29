@@ -7,26 +7,32 @@ from google.appengine.ext.ndb import metadata
 
 from models.models import * 
 from google.appengine.ext.ndb.model import IntegerProperty
+from jinja2._markupsafe import Markup
 
-classModels = {'Client':Client, 'Fruta':Fruta, 'Porcion':Porcion}
-keyDefs = {'Client':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades']}
-uiConfig = {'Client':[('nombre','Nombre'),
-                       ('negocio','Negocio'),
-                       ('ciudad','Ciudad'),
-                       ('direccion','Direccion'),
-                       ('telefono','Telefono'),
-                       ('nit','NIT'),
-                       ('diasPago','Dias para pago')
+classModels = {'Client':Client, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio}
+keyDefs = {'Client':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades'], 'Precio':['fruta','porcion','cliente']}
+uiConfig = {'Client':[{'id':'nombre','ui':'Nombre'},
+                       {'id':'negocio','ui':'Negocio'},
+                       {'id':'ciudad','ui':'Ciudad'},
+                       {'id':'direccion','ui':'Direccion'},
+                       {'id':'telefono','ui':'Telefono'},
+                       {'id':'nit','ui':'NIT'},
+                       {'id':'diasPago','ui':'Dias para pago'}
                        ],
-            'Fruta':[('nombre','Nombre')],
-            'Porcion':[('valor','Porcion'),('unidades','Unidades')]
+            'Fruta':[{'id':'nombre','ui':'Nombre'}],
+            'Porcion':[{'id':'valor','ui':'Porcion'},
+                       {'id':'unidades','ui':'Unidades'}],
+            'Precio':[{'id':'fruta','ui':'Fruta'},
+                      {'id':'porcion','ui':'Porcion'},
+                      {'id':'cliente','ui':'Cliente'},
+                      {'id':'precio','ui':'Precio'}
+                      ]
             }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader('.\\templates'),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
-
 
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
@@ -38,7 +44,7 @@ class ShowEntities(webapp2.RequestHandler):
 def getColumns(entity_class):
     columns=[]
     for column in uiConfig[entity_class]:
-        columns.append({ 'field' : column[0], 'name' : column[1]})
+        columns.append({ 'field' : column['id'], 'name' : column['ui']})
     return columns
 
 
@@ -60,10 +66,10 @@ class Home(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render())
 
-def getKey(entity_class,entity):
+def getKey(entity_class,dicc):
     key = ''
     for keypart in keyDefs[entity_class]:
-        key = key + str(entity[keypart])
+        key = key + str(dicc[keypart])
     return ''.join(key.split())
         
 def check_types(entity_class, values):
@@ -101,11 +107,33 @@ class SaveEntity(webapp2.RequestHandler):
             return 
         self.response.out.write(json.dumps(response))
 
+def tagForField(entity_class, prop):
+    tag = ''
+    if type(prop['type']) == ndb.KeyProperty:
+        tag = "<select id='" + prop['id'] + entity_class +"' data-dojo-type='dijit/form/Select'>"
+        options = classModels[prop['type']._kind].query().fetch()
+        for option in options:
+            dicc = option.to_dict()
+            option_value = str(getKey(prop['type']._kind, dicc))
+            tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
+        tag += "</select>" 
+    else:
+        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] +  entity_class +'" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>'
+    return Markup(tag)
+
+JINJA_ENVIRONMENT.globals['tagForField']=tagForField
+
+def fieldsInfo(entity_class):
+    props = classModels[entity_class]._properties
+    fields = uiConfig[entity_class]
+    for field in fields:
+        field['type']=props[field['id']]
+    return fields
+
 class AddEntity(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        props = uiConfig[entity_class]
-        template_values = {'entity_class': entity_class, 'props':props}
+        template_values = {'entity_class': entity_class, 'fields': fieldsInfo(entity_class)}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
 
@@ -114,9 +142,9 @@ class DeleteEntity(webapp2.RequestHandler):
         key = self.request.POST.get('key')
         entity_class = self.request.POST.get('entity_class')
         try:
-            client = classModels[entity_class].get_by_id(key,ndb.Key(entity_class, entity_class))
-            client.key.delete()
+            entity = classModels[entity_class].get_by_id(key,ndb.Key(entity_class, entity_class))
+            entity.key.delete()
         except Exception as ex:
             self.response.out.write(ex.message)
             return
-        self.response.out.write("Se elimino exitosamente el cliente: " + client.nombre)        
+        self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        

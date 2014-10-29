@@ -19,9 +19,9 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, butto
 				var grid = registry.byId("gridNode"+ entity_class);
 				var key = response.key;
 				var response_user='';
-				for(key in formdata){
-					formdata[key.replace(entity_class,'')]=formdata[key];
-					delete formdata[key];
+				for(prop in formdata){
+					formdata[prop.replace(entity_class,'')]=formdata[prop];
+					delete formdata[prop];
 				}
 				if (response.message == 'Created') {
 					formdata['id'] = key;

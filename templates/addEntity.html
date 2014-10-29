@@ -1,5 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-{% autoescape true %}
+{% autoescape false %}
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="../static/css/home.css" media="screen">
@@ -16,11 +16,11 @@
 		<!-- <div class='entity_class' id='{{ entity_class }}'></div> -->
 		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
-				{% for prop in props %}
+				{% for field in fields %}
 				<tr>
-					<td><label for="name">{{ prop[1] }}:</label></td>
+					<td><label for="name">{{ field.ui }}:</label></td>
 					<td>
-						<input type="text" id="{{ prop[0] }}{{ entity_class }}" name="{{ prop[0] }}{{ entity_class }}" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>
+						{{ tagForField(entity_class, field)}}						
 					</td>
 				</tr>
 				{% endfor %}
