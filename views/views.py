@@ -1,4 +1,4 @@
-import urllib
+import datetime
 import json
 import webapp2
 import jinja2
@@ -11,21 +11,21 @@ from jinja2._markupsafe import Markup
 
 classModels = {'Client':Client, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio}
 keyDefs = {'Client':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades'], 'Precio':['fruta','porcion','cliente']}
-uiConfig = {'Client':[{'id':'nombre','ui':'Nombre'},
-                       {'id':'negocio','ui':'Negocio'},
-                       {'id':'ciudad','ui':'Ciudad'},
-                       {'id':'direccion','ui':'Direccion'},
-                       {'id':'telefono','ui':'Telefono'},
-                       {'id':'nit','ui':'NIT'},
-                       {'id':'diasPago','ui':'Dias para pago'}
+uiConfig = {'Client':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox'}
                        ],
-            'Fruta':[{'id':'nombre','ui':'Nombre'}],
-            'Porcion':[{'id':'valor','ui':'Porcion'},
-                       {'id':'unidades','ui':'Unidades'}],
+            'Fruta':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
+            'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
+                       {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
             'Precio':[{'id':'fruta','ui':'Fruta'},
                       {'id':'porcion','ui':'Porcion'},
                       {'id':'cliente','ui':'Cliente'},
-                      {'id':'precio','ui':'Precio'}
+                      {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
                       ]
             }
 
@@ -44,7 +44,7 @@ class ShowEntities(webapp2.RequestHandler):
 def getColumns(entity_class):
     columns=[]
     for column in uiConfig[entity_class]:
-        columns.append({ 'field' : column['id'], 'name' : column['ui']})
+        columns.append({ 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center"})
     return columns
 
 class EntityData(webapp2.RequestHandler):
@@ -57,7 +57,10 @@ class EntityData(webapp2.RequestHandler):
             dicc = entity.to_dict()
             for prop_key, prop_value in dicc.iteritems():
                 if type(prop_value) == ndb.Key:
-                    dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
+                    try:
+                        dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
+                    except Exception as e:
+                        dicc[prop_key] = "Ya no hay: " + str(prop_value) + ' Considera borrar este registro o recrear ' + str(prop_value)
             dicc['id'] = entity.key.id()
             records.append(dicc)
         response = {'columns':getColumns(entity_class), 'records':records}
@@ -126,7 +129,9 @@ def tagForField(entity_class, prop):
             tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
         tag += "</select>" 
     else:
-        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] +  entity_class +'" required="true" data-dojo-type="dijit/form/ValidationTextBox"/>'
+        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag +='" required="' + prop['required'] 
+        tag += '" data-dojo-type="' + prop['valid'] +'"/>'
     return Markup(tag)
 
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
@@ -157,8 +162,53 @@ class DeleteEntity(webapp2.RequestHandler):
             return
         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
 
+class GetPrice(webapp2.RequestHandler):
+    def post(self):
+        post_data = self.request.POST
+        values = post_data.mixed()
+        precioQuery = Precio.query(Precio.fruta == Fruta.get_by_id(values['fruta']).key,
+                                   Precio.cliente == Client.get_by_id(values["client"]).key,
+                                   Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
+        precio = ''
+        try:
+            precio = precioQuery.fetch()[0].precio
+        except IndexError as e:
+            self.response.out.write(e.message)
+        self.response.out.write(precio)
+
+
+class CrearFactura(webapp2.RequestHandler):
+    def get(self):
+        prop_client = Factura._properties['cliente']
+        prop_fruta = Venta._properties['fruta']
+        prop_porcion = Venta._properties['porcion']
+        prop_cantidad = Venta._properties['cantidad']
+        props = {'Client':{'ui': 'Cliente', 'id': 'client','required':'true','type':prop_client},
+                 'Fruta':{'ui': 'Fruta', 'id': 'fruta','required':'true','type':prop_fruta},
+                 'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+                 'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox','type':prop_cantidad}
+                }
+        template_values = {'props': props}
+        template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
+        self.response.write(template.render(template_values))
+
+
 class Test(webapp2.RequestHandler):
     def get(self):
+        ventas = []
+        for i in range(10):
+            venta = Venta(fruta=Fruta.get_by_id('Mango').key,
+                           porcion=Porcion.get_by_id('150g').key,
+                           cantidad = i*5)
+            ventas.append(venta)
+        cliente = Client.get_by_id('HarrySAHarrySasson')
+        factura = Factura(cliente = cliente.key, fecha = datetime.date.today(),ventas=ventas)
+        factura.put()
+        
+        newFactura = Factura.query().fetch()[0]
+         
+        newFactura.key.delete()     
+        
         template = JINJA_ENVIRONMENT.get_template('test.html')
         self.response.write(template.render())
     

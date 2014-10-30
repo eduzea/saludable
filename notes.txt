@@ -1,3 +1,15 @@
 TO DO
 
-1. Put logic so that you cannot delete an entity if it is a foreing key in another entity.
+10/29. Develop showPrecios - need to generalize showEntities for properties that are not text or integers,
+   but an object (the rotulo should be displayed) --DONE
+   
+10/29. 
+- Add logic to prevent deletion of entities that serve as foreing keys in other entities. (Relational integrity) - Not worth it
+  Have given appropiate error messages. --DONE
+- Add formating to number fields. --DONE
+- Add proper client-side validation to input fields. --DONE
+- Develop Factura class and corresponding UIs. --DONE
+- Merge crearFactura view with home
+- Add computed column for total venta
+- Add sum of all ventas in a Factura
+

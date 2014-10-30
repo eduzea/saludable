@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% autoescape true %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="../static/css/home.css" media="screen">
+		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
+		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
+		<link rel="stylesheet" href="../static/css/grid.css" />
+		<script src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true,parseOnLoad : true" ></script>
+		<script type="text/javascript" src="../static/js/my/crearFactura.js"></script>
+		<script>
+			require(["dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojox/layout/ContentPane", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/DateTextBox"]);
+		</script>
+		<title>Salud-Able Foods</title>
+	</head>
+	<body class="claro">
+		<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline'">
+			<div id='homeTabContainer' class="centerPanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">
+				<div data-dojo-type="dijit/form/Form" id="ventaForm" data-dojo-id="venta_form" encType="multipart/form-data">
+					<table>
+						<tr>
+							<td><label>{{ props['Client'].ui }}:</label></td>
+							<td> {{tagForField('crearFactura',props['Client'])}} </td>
+							<td><label>Fecha</label></td>
+							<td><input type="text" name="fecha" id="fecha" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" required="true" /></td>
+						</tr>
+					</table>
+					<table>	
+						<tr>
+							<td><label>Fruta: </label></td>
+							<td>{{tagForField('crearFactura',props['Fruta'])}}</td>
+							<td><label>Porcion: </label></td>
+							<td>{{tagForField('crearFactura',props['Porcion'])}}</td>
+							<td><label>Cantidad: </label></td>
+							<td>{{tagForField('crearFactura',props['Cantidad'])}}</td>
+							<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
+						</tr>
+					</table>
+				</div>
+				<div id="gridFactura" style="width: 100%; height: 300px;"></div>
+			</div>
+			<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+				Header content (top)
+			</div>
+			<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">
+				Sidebar content (left)
+			</div>
+		</div>
+	</body>
+</html>
+{% endautoescape %}

@@ -26,3 +26,14 @@ class Precio(ndb.Model):
     porcion = ndb.KeyProperty(kind=Porcion)
     cliente = ndb.KeyProperty(kind=Client)
     precio = ndb.IntegerProperty()
+    
+class Venta(ndb.Model):
+    fruta = ndb.KeyProperty(kind=Fruta)
+    porcion = ndb.KeyProperty(kind=Porcion)
+    cantidad = ndb.IntegerProperty()
+
+class Factura(ndb.Model):
+    cliente = ndb.KeyProperty(kind=Client)
+    fecha = ndb.DateProperty()
+    ventas = ndb.StructuredProperty(Venta,repeated=True)
+    
