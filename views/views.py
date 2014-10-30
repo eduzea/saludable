@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import json
 import webapp2
 import jinja2
@@ -121,7 +121,7 @@ class SaveEntity(webapp2.RequestHandler):
 def tagForField(entity_class, prop):
     tag = ''
     if type(prop['type']) == ndb.KeyProperty:
-        tag = "<select name='" + prop['id'] + entity_class +"' data-dojo-type='dijit/form/Select'>"
+        tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
             dicc = option.to_dict()
@@ -192,6 +192,25 @@ class CrearFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
 
+class GuardarFactura(webapp2.RequestHandler):        
+    def post(self):
+        post_data = self.request.body
+        values = json.loads(post_data)
+        ventas =[]
+        for venta in values['ventas']:
+            ventas.append(Venta(fruta=Fruta.get_by_id(venta['fruta']).key,
+                           porcion=Porcion.get_by_id(venta['porcion']).key,
+                           cantidad = venta['cantidad'],
+                           venta = venta['valorTotal']))
+        cliente = Client.get_by_id(values['client'])
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        
+        try:
+            factura = Factura(cliente = cliente.key, fecha = fecha, ventas=ventas)
+            factura.put()
+            self.response.out.write("Success")
+        except Exception as e:
+            self.response.out.write(e.message)
 
 class Test(webapp2.RequestHandler):
     def get(self):

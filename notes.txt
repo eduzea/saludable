@@ -9,7 +9,7 @@ TO DO
 - Add formating to number fields. --DONE
 - Add proper client-side validation to input fields. --DONE
 - Develop Factura class and corresponding UIs. --DONE
+- Add Save Factura button --DONE!
 - Merge crearFactura view with home
-- Add computed column for total venta
-- Add sum of all ventas in a Factura
+
 

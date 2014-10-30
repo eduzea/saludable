@@ -10,5 +10,6 @@ application = webapp2.WSGIApplication([
     ('/entityData', EntityData),
     ('/deleteEntity', DeleteEntity),
     ('/crearFactura', CrearFactura),
-    ('/getPrice', GetPrice)
+    ('/getPrice', GetPrice),
+    ('/guardarFactura', GuardarFactura)
 ], debug=True)

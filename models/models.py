@@ -31,6 +31,7 @@ class Venta(ndb.Model):
     fruta = ndb.KeyProperty(kind=Fruta)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
+    venta = ndb.IntegerProperty()
 
 class Factura(ndb.Model):
     cliente = ndb.KeyProperty(kind=Client)
