@@ -20,8 +20,8 @@
 				<div data-dojo-type="dijit/form/Form" id="ventaForm" data-dojo-id="venta_form" encType="multipart/form-data">
 					<table>
 						<tr>
-							<td><label>{{ props['Client'].ui }}:</label></td>
-							<td> {{tagForField('crearFactura',props['Client'])}} </td>
+							<td><label>{{ props['Cliente'].ui }}:</label></td>
+							<td> {{tagForField('crearFactura',props['Cliente'])}} </td>
 							<td><label>Fecha</label></td>
 							<td><input type="text" name="fechacrearFactura" id="fechacrearFactura" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
 						</tr>
@@ -49,8 +49,8 @@
 					</tr>
 				</table>
 			</div>
-			<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
-				Header content (top)
+			<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" style: "overflow: scroll">
+				HEADER CONTENT
 			</div>
 			<div id="leftCol" class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'left', splitter: true">
 				Sidebar content (left)

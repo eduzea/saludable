@@ -1,6 +1,6 @@
 from google.appengine.ext import ndb
 
-class Client(ndb.Model):
+class Cliente(ndb.Model):
     """Models an individual Client."""
     nombre = ndb.StringProperty(indexed=True)
     negocio = ndb.StringProperty(indexed=True)
@@ -24,17 +24,23 @@ class Porcion(ndb.Model):
 class Precio(ndb.Model):
     fruta = ndb.KeyProperty(kind=Fruta)
     porcion = ndb.KeyProperty(kind=Porcion)
-    cliente = ndb.KeyProperty(kind=Client)
+    cliente = ndb.KeyProperty(kind=Cliente)
     precio = ndb.IntegerProperty()
     
 class Venta(ndb.Model):
     fruta = ndb.KeyProperty(kind=Fruta)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
+    precio = ndb.IntegerProperty()
     venta = ndb.IntegerProperty()
 
+class NumeroFactura(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
+    
 class Factura(ndb.Model):
-    cliente = ndb.KeyProperty(kind=Client)
+    numero = ndb.IntegerProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
+    total = ndb.IntegerProperty()
     
