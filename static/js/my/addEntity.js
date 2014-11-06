@@ -38,7 +38,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,form, butto
 				}
 				dom.byId('server_response'+ entity_class).innerHTML = response_user;
 				setTimeout(function() {
-					dom.byId('reset'+ entity_class).click();
+					//dom.byId('reset'+ entity_class).click();
 					dom.byId('server_response'+ entity_class).innerHTML = '';
 				}, 3000);
 			});

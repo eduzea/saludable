@@ -11,6 +11,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
 		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###'});
+		return sumTotal;
 	};
 	
 	getFormData = function(){
@@ -30,16 +31,18 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
 	on(registry.byId('guardarFacturaBtn'),'click',
 		function(e){
-			var cliente = registry.byId('clientcrearFactura').value;		
+			var cliente = registry.byId('clientecrearFactura').value;		
 			var fecha = registry.byId('fechacrearFactura').toString();
 			var gridData = getGridData();//delete gridData.forEach;delete gridData.map;delete gridData.filter;
-			var factura_data = {'client':cliente,'fecha':fecha,'ventas':gridData};
+			var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'total':grid.total};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data)
 				}).then(function(response) {
 					var message='';
-					if(response == 'Success'){
+					resp = response.split(':');
+					if(resp[0] == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
+						window.open('/mostrarFactura?facturaId='+resp[1]);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}
@@ -50,6 +53,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 						grid.model.clearCache();
         				grid.body.refresh();
 						dom.byId('mensajecrearFactura').innerHTML = '';
+						dom.byId('total').innerHTML = '';
 					}, 3000);
 				});
 		});
@@ -64,23 +68,23 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		var formdata = getFormData();
 		request.post("getPrice",
 		{
-			data: {'fruta':formdata['fruta'], 'client':formdata['client'], 'porcion': formdata['porcion']}
+			data: {'fruta':formdata['fruta'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
 		}).then(function(precio){
 			if (precio == 'list index out of range'){
 				alert("No hay precio definido para esta combinacion producto x cliente! Definelo primero.");
 				return;	
 			}
 			var grid = registry.byId('gridFactura');
-			var id = formdata['fruta'] + formdata['client'] + formdata['porcion'];
+			var id = formdata['fruta'] + formdata['cliente'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
 				grid.store.remove(id);	
 			}
 			var total = formdata.cantidad * parseInt(precio);
-			grid.store.add({'id':id,'fruta':formdata.fruta, 'client':formdata.client, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
+			grid.store.add({'id':id,'fruta':formdata.fruta, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
 							'precio': parseInt(precio), 'valorTotal':total});
-			updateTotal();
-			registry.byId('ventaForm').reset();
+			grid.total=updateTotal();
+			//registry.byId('ventaForm').reset();
 		});
 
 		
