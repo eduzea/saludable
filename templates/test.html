@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html >
-	<head>
-
-		<link rel="stylesheet" href="../static/js/lib/dijit/themes/claro/claro.css" media="screen">
-
-		<script src="../static/js/lib/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
-
-		<script>
-			require(["dojo/parser", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/DateTextBox"]);
+<head>
+	<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/tundra/tundra.css"> 
+	<link rel="stylesheet" href="../static/css/home.css" media="screen">
+	<script>
+			dojoConfig = {
+			async: 1,
+			parseOnLoad: 1,
+			dojoBlankHtmlUrl: '/blank.html',
+			packages: [
+			{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/js/lib/gridx'}
+			]};
 		</script>
-	</head>
-	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="myForm" data-dojo-id="myForm"	encType="multipart/form-data" action="" method="">
-				<select name="select1" data-dojo-type="dijit/form/Select">
-					<option value="TN">Tennessee</option>
-					<option value="VA" selected="selected">Virginia</option>
-					<option value="WA">Washington</option>
-					<option value="FL">Florida</option>
-					<option value="CA">California</option>
-				</select>
-			<button data-dojo-type="dijit/form/Button" type="button" onClick="console.log(myForm.getValues())">
-				Get Values from form!
-			</button>
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
+	<script>
+		require(["dojo/parser", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dojox/layout/ContentPane']);
+	</script>
+	<script>
+			saludable = {
+			'entity_class' : '{{ entity_class }}'
+			};
+	</script>
+</head>
+	<body class="tundra">
+		<div id='homeTabContainer' data-dojo-type="dijit/layout/TabContainer" data-dojo-props="tabPosition: 'bottom'">
+			<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_show' title="CLIENTES" data-dojo-props="href: '/showEntities?entityClass=Cliente', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Fruta_show' title="PULPAS" data-dojo-props="href: '/showEntities?entityClass=Fruta', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_show' title="PORCIONES" data-dojo-props="href: '/showEntities?entityClass=Porcion', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Precio_show' title="PRECIOS" data-dojo-props="href: '/showEntities?entityClass=Precio', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_add' title="AGREGAR CLIENTES" data-dojo-props="href: '/addEntity?entityClass=Cliente', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Fruta_add' title="AGREGAR PULPAS" data-dojo-props="href: '/addEntity?entityClass=Fruta', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_add' title="AGREGAR PORCIONES" data-dojo-props="href: '/addEntity?entityClass=Porcion', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Precio_add' title="AGREGAR PRECIOS" data-dojo-props="href: '/addEntity?entityClass=Precio', executeScripts: true"></div>
 		</div>
 	</body>
 </html>

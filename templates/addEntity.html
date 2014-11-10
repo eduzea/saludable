@@ -13,7 +13,8 @@
 		<title>Salud-Able Foods</title>
 	</head>	
 	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="">
+		<center>
+		<div class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for field in fields %}
 				<tr>
@@ -33,7 +34,8 @@
 			<br/>
 			<br/>
 			<div id="server_response{{ entity_class }}" style="color: red"></div>
-		</div>
+		</div>			
+		</center>
 	</body>
 </html>
 {% endautoescape %}

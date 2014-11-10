@@ -4,19 +4,8 @@ html, body {
     overflow: hidden;
     padding: 0;
 }
+
  
-#appLayout {
+#homeTabContainer {
     height: 100%;
-}
-#leftCol {
-    width: 14em;
-}
- 
-.claro .demoLayout .edgePanel {
-    background-color: #d0e9fc;
-}
- 
-#viewsChart {
-    width: 550px;
-    height: 550px;
 }
