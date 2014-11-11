@@ -12,8 +12,8 @@ application = webapp2.WSGIApplication([
     ('/crearFactura', CrearFactura),
     ('/getPrice', GetPrice),
     ('/guardarFactura', GuardarFactura),
-    ('/mostrarFactura', MostrarFactura)
-#     ('/importarClientes', ImportClientes),
-#     ('/importarFrutas', ImportFrutas),
-#     ('/importarPorciones', ImportPorciones)
+    ('/mostrarFactura', MostrarFactura),
+    ('/importarClientes', ImportClientes),
+    ('/importarFrutas', ImportFrutas),
+    ('/importarPorciones', ImportPorciones)
 ], debug=True)
