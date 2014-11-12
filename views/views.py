@@ -11,6 +11,48 @@ from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty
 from jinja2._markupsafe import Markup
 
+#########################################
+CLIENT_DATA = [
+['RESTAURANTE EL ARABE','','CLL 69 A # 6-41','BOGOTA','2484899','900419473-5','0','ARABE'],
+['JARDIN ABACO','','CLL 110 # 8-47','BOGOTA','6197512','830123705-3','0','ABACO'],
+['AVESCO S.A.','MERCADO 93','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30','AVESCO'],
+['C&P CORREA','ZOE','CLL 108 # 8 A-22','BOGOTA','','9006800563-6','8','CYP'],
+['CARMEL CLUB CAMPESTRE','','AUTO NORTE 153-81','BOGOTA','6497272 EXT. 123','','30','CARMEL'],
+['CAROLINA ZULUAGA ','','','BOGOTA','','','0','PARTICULARES'],
+['CASA FUEGO','','CLL 118 # 5-41','BOGOTA','6376954','','0','CASAFUEGO'],
+['CHATOS','','AV CLL 82 # 9-11','BOGOTA','3220732','900016780-1','0','CHATOS'],
+['CORPORACION CLUB EL NOGAL','','','BOGOTA','3267700 ext 3221','','30','NOGAL'],
+['HARRYSA S.A.S','HARRY SASSON','CRA 9 #75-70','BOGOTA','3 45 03 04','830144557-1','30','HARRY'],
+['HARRYSA S.A.S','HARRYS BAR','CLL 70 #5-57 - Zona G','BOGOTA','3 45 03 04','830144557-1','30','HARRY'],
+['INVERSIONES GARDEL','EL DIA QUE ME QUIERAS','CLL 69 # 4-26','BOGOTA','5404585','900268742-2','30','GARDEL'],
+['INVERSIIONES LEHAL S.A.','CLUB COLOMBIA','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','30','LEHAL'],
+['JARDIN HANS ANDERSEN','','CRA 13 A # 127-10','BOGOTA','627 0928','8000628134-3','0','HANS'],
+['JUAN EL PANADERO SAS','','CLL 81 # 7-93','BOGOTA','6748954','900450289-6','8','JUANELPANADERO'],
+['JUAN SOTO','','','BOGOTA','','','0','PARTICULARES'],
+['LEIDY MARTINEZ','','','BOGOTA','','','0','PARTICULARES'],
+['LUIS CABALLERO','','CRA 28 A # 68-74','BOGOTA','','','0','PARTICULARES'],
+['MARIA EZPERANZA BAZURTO ','','','','','','0','PARTICULARES'],
+['AVESCO S.A.','MERCADO USAQUEN','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30','AVESCO'],
+['PAESA S.A  ','SALTO DEL ANGEL','Cra 13 # 93A - 45','BOGOTA','6545454','800241012-4','45','PAESA'],
+['PAESA S.A  ','COTIDIANO ROSALES','CRA 5 #71 -45 - ROSALES','BOGOTA','6545454','800241012-4','45','PAESA'],
+['PAESA S.A  ','COTIDIANO ANDINO','CC ANDINO LOCAL 402','BOGOTA','6545454','800241012-4','45','PAESA'],
+['PAN TOLIMA','','CLL 57 # 16 A-27','BOGOTA','','','0','PANTOLIMA'],
+['PATRICIA BERMUDEZ','','','BOGOTA','','','0','PARTICULARES'],
+['POLKA DOT/NATALIA BOHORQUEZ','','CLL 86 A  # 13 A 23','BOGOTA','6165479','52718104-1','0','POLKA'],
+['SARODY','','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','0','SARODY'],
+['TREINTA Y DOS SEPTIMA SAS /CENTRICO','','CR 7 # 32-16 PISO 41','BOGOTA','3509100','900485850-1','0','CENTRICO']
+]
+
+PRODUCTO_DATA = ['ARAZA','CURUBA','DURAZNO','DURAZNO FRUTA','FEIJOA','FRESA','FRUTOS ROJOS','GUANABANA','GUANABANA FRUTA',
+                 'GUAYABA','LULO','LULO TAJADO','MANGO','MANGO BICHE','MARACUYA','MARACUYA PEPA','MELON','MORA','NISPERO',
+                 'PATILLA','PIÑA','SMOTHIE GMB','SMOTHIE LMF','TAMARINDO','TOMATE DE ARBOL','UCHUVA','UVA']
+
+
+
+PORCION_DATA = [50, 70, 100, 110, 120, 125, 130, 140, 150, 160, 170, 180, 200, 700, 750, 1000]
+#########################################
+
+
 NUMERO_DE_FACTURA_INICIAL = 2775
 
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios}
@@ -172,9 +214,8 @@ class GetPrice(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST
         values = post_data.mixed()
-        grupo = Cliente.get_by_id(values["cliente"]).grupoDePrecios
         precioQuery = Precio.query(Precio.producto == Producto.get_by_id(values['producto']).key,
-                                   Precio.grupo == GrupoDePrecios.get_by_id(grupo).key,
+                                   Precio.grupo == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
         try:
@@ -256,37 +297,39 @@ class MostrarFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')
         self.response.write(template.render({'data':data, 'ventas':ventas}))
     
-# class ImportClientes(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for row in CLIENT_DATA:
-#             clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
-#                            'nit':row[5], 'diasPago':int(row[6])}
-#             key = getKey("Cliente", clientevals)
-#             cliente = Cliente.get_or_insert(key,**clientevals)
-#             cliente.put()
-#             message += "Registro importado: " + cliente.rotulo + "\n"
-#         self.response.out.write(message)
-#  
-# class ImportFrutas(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for fruit in FRUTA_DATA:
-#             key = getKey('Fruta', {'nombre':fruit})
-#             fruta = Fruta.get_or_insert(key,nombre=unicode(fruit,'utf-8'))
-#             fruta.put()
-#             message += "Registro importado: " + fruta.rotulo + " --- "
-#         self.response.out.write(message)
-#  
-# class ImportPorciones(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for por in PORCION_DATA:
-#             key = getKey("Porcion", {'unidades':'g', 'valor':por})
-#             porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
-#             porcion.put()
-#             message += "Registro importado: " + porcion.rotulo + " --- "
-#         self.response.out.write(message)
+class ImportClientes(webapp2.RequestHandler):
+    def get(self):
+        message = ''
+        for row in CLIENT_DATA:
+            clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
+                           'nit':row[5], 'diasPago':int(row[6])}
+            grupo = GrupoDePrecios.get_or_insert(row[7],nombre=row[7])
+            clientevals['grupoDePrecios']=grupo.key
+            key = getKey("Cliente", clientevals)
+            cliente = Cliente.get_or_insert(key,**clientevals)
+            cliente.put()
+            message += "Registro importado: " + cliente.rotulo + "\n"
+        self.response.out.write(message)
+  
+class ImportProductos(webapp2.RequestHandler):
+    def get(self):
+        message = ''
+        for producto in PRODUCTO_DATA:
+            key = getKey('Producto', {'nombre':producto})
+            producto = Producto.get_or_insert(key,nombre=unicode(producto,'utf-8'))
+            producto.put()
+            message += "Registro importado: " + producto.rotulo + " --- "
+        self.response.out.write(message)
+  
+class ImportPorciones(webapp2.RequestHandler):
+    def get(self):
+        message = ''
+        for por in PORCION_DATA:
+            key = getKey("Porcion", {'unidades':'g', 'valor':por})
+            porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
+            porcion.put()
+            message += "Registro importado: " + porcion.rotulo + " --- "
+        self.response.out.write(message)
 
 class Test(webapp2.RequestHandler):
     def get(self):        
