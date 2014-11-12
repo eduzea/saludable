@@ -16,7 +16,7 @@ class Cliente(ndb.Model):
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     
-class Fruta(ndb.Model):
+class Producto(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
@@ -26,13 +26,13 @@ class Porcion(ndb.Model):
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
 
 class Precio(ndb.Model):
-    fruta = ndb.KeyProperty(kind=Fruta)
+    producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     grupo = ndb.KeyProperty(kind=GrupoDePrecios)
     precio = ndb.IntegerProperty()
     
 class Venta(ndb.Model):
-    fruta = ndb.KeyProperty(kind=Fruta)
+    producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
