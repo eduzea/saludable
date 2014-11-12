@@ -21,19 +21,21 @@
 		</script>
 		<script src="../static/js/my/home.js" ></script>
 		<script>
-			require(["dojo/parser", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojox/layout/ContentPane", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox"]);
+			require(["dojo/parser", "dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojox/layout/ContentPane", 
+			"dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/NumberTextBox","dijit/form/Select"]);
 		</script>
 		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
-		<div id='homeTabContainer' class="centerPanel" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="tabPosition: 'bottom'">
+		<div id='homeTabContainer' class="centerPanel" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'false', tabPosition: 'bottom'">
 			<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_show' title="CLIENTES" data-dojo-props="href: '/showEntities?entityClass=Cliente', executeScripts: true"></div>
 			<div data-dojo-type="dojox/layout/ContentPane" id='Fruta_show' title="PULPAS" data-dojo-props="href: '/showEntities?entityClass=Fruta', executeScripts: true"></div>
 			<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_show' title="PORCIONES" data-dojo-props="href: '/showEntities?entityClass=Porcion', executeScripts: true"></div>
 			<div data-dojo-type="dojox/layout/ContentPane" id='Precio_show' title="PRECIOS" data-dojo-props="href: '/showEntities?entityClass=Precio', executeScripts: true"></div>
-			<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_add' title="AGREGAR CLIENTES" data-dojo-props="href: '/addEntity?entityClass=Cliente', executeScripts: true"></div>
-			<div data-dojo-type="dojox/layout/ContentPane" id='Fruta_add' title="AGREGAR PULPAS" data-dojo-props="href: '/addEntity?entityClass=Fruta', executeScripts: true"></div>
-			<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_add' title="AGREGAR PORCIONES" data-dojo-props="href: '/addEntity?entityClass=Porcion', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_add' title="AGREGAR CLIENTE" data-dojo-props="href: '/addEntity?entityClass=Cliente', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Fruta_add' title="AGREGAR PULPA" data-dojo-props="href: '/addEntity?entityClass=Fruta', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_add' title="AGREGAR PORCION" data-dojo-props="href: '/addEntity?entityClass=Porcion', executeScripts: true"></div>
+			<div data-dojo-type="dojox/layout/ContentPane" id='GrupoDePrecios_add' title="AGREGAR GRUPO DE PRECIOS" data-dojo-props="href: '/addEntity?entityClass=GrupoDePrecios', executeScripts: true"></div>
 			<div data-dojo-type="dojox/layout/ContentPane" id='Precio_add' title="AGREGAR PRECIOS" data-dojo-props="href: '/addEntity?entityClass=Precio', executeScripts: true"></div>
 		</div>
 	</body>

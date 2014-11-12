@@ -1,5 +1,9 @@
 from google.appengine.ext import ndb
 
+class GrupoDePrecios(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
 class Cliente(ndb.Model):
     """Models an individual Client."""
     nombre = ndb.StringProperty(indexed=True)
@@ -10,6 +14,7 @@ class Cliente(ndb.Model):
     ciudad = ndb.StringProperty(indexed=True)
     diasPago = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
+    grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     
 class Fruta(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
@@ -19,12 +24,11 @@ class Porcion(ndb.Model):
     valor = ndb.IntegerProperty()
     unidades = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
-    
 
 class Precio(ndb.Model):
     fruta = ndb.KeyProperty(kind=Fruta)
     porcion = ndb.KeyProperty(kind=Porcion)
-    cliente = ndb.KeyProperty(kind=Cliente)
+    grupo = ndb.KeyProperty(kind=GrupoDePrecios)
     precio = ndb.IntegerProperty()
     
 class Venta(ndb.Model):

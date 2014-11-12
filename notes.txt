@@ -10,6 +10,12 @@ TO DO
 - Add proper client-side validation to input fields. --DONE
 - Develop Factura class and corresponding UIs. --DONE
 - Add Save Factura button --DONE!
+
+11/11
+- Add pricegroup concept
+- Add empleados entity
+- Add edit entity functionality
+- Add view facturas screen
 - Merge crearFactura view with home
 
 
@@ -42,7 +48,7 @@ CLIENT_DATA = [
 ['TREINTA Y DOS SEPTIMA SAS /CENTRICO','','CR 7 # 32-16 PISO 41','BOGOTA','3509100','900485850-1','0']
 ]
 
-FRUTA_DATA = ['araza','cocona','copoazu','curuba','mango biche','feijoa','frambuesa','fresa','frutos rojos',
+FRUTA_DATA = ['araza','cocona','copoazu','curuba','durazno','mango biche','feijoa','frambuesa','fresa','frutos rojos',
               'guanabana','guayaba','guayaba agria','mango','maracuya','mora','nispero','papaya','piña','tamarindo',
               'tomate de arbol','uchuva','uva','zapote']
 

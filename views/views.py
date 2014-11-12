@@ -11,62 +11,26 @@ from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty
 from jinja2._markupsafe import Markup
 
-
-################################
-CLIENT_DATA = [
-['RESTAURANTE EL ARABE','','CLL 69 A # 6-41','BOGOTA','2484899','900419473-5','0'],
-['JARDIN ABACO','','CLL 110 # 8-47','BOGOTA','6197512','830123705-3','0'],
-['AVESCO S.A.','MERCADO 93','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30'],
-['C&P CORREA','ZOE','CLL 108 # 8 A-22','BOGOTA','','9006800563-6','8'],
-['CARMEL CLUB CAMPESTRE','','AUTO NORTE 153-81','BOGOTA','6497272 EXT. 123','','30'],
-['CAROLINA ZULUAGA ','','','BOGOTA','','','0'],
-['CASA FUEGO','','CLL 118 # 5-41','BOGOTA','6376954','','0'],
-['CHATOS','','AV CLL 82 # 9-11','BOGOTA','3220732','900016780-1','0'],
-['CORPORACION CLUB EL NOGAL','','','BOGOTA','3267700 ext 3221','','30'],
-['HARRYSA S.A.S','HARRY SASSON','CRA 9 #75-70','BOGOTA','3 45 03 04','830144557-1','30'],
-['INVERSIONES GARDEL','EL DIA QUE ME QUIERAS','CLL 69 # 4-26','BOGOTA','5404585','900268742-2','30'],
-['INVERSIIONES LEHAL S.A.','CLUB COLOMBIA','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','30'],
-['JARDIN HANS ANDERSEN','','CRA 13 A # 127-10','BOGOTA','627 0928','8000628134-3','0'],
-['JUAN EL PANADERO SAS','','CLL 81 # 7-93','BOGOTA','6748954','900450289-6','8'],
-['JUAN SOTO','','','BOGOTA','','','0'],
-['LEIDY MARTINEZ','','','BOGOTA','','','0'],
-['LUIS CABALLERO','','CRA 28 A # 68-74','BOGOTA','','','0'],
-['MARIA EZPERANZA BAZURTO ','','','','','','0'],
-['AVESCO S.A.','MERCADO USAQUEN','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30'],
-['PAESA S.A  ','SALTO DEL ANGEL','Cra 13 # 93A - 45','BOGOTA','6545454','800241012-4','45'],
-['PAN TOLIMA','','CLL 57 # 16 A-27','BOGOTA','','','0'],
-['PATRICIA BERMUDEZ','','','BOGOTA','','','0'],
-['POLKA DOT/NATALIA BOHORQUEZ','','CLL 86 A  # 13 A 23','BOGOTA','6165479','52718104-1','0'],
-['SARODY','','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','0'],
-['TREINTA Y DOS SEPTIMA SAS /CENTRICO','','CR 7 # 32-16 PISO 41','BOGOTA','3509100','900485850-1','0']
-]
-
-FRUTA_DATA = ['araza','cocona','copoazu','curuba','mango biche','feijoa','frambuesa','fresa','frutos rojos',
-              'guanabana','guayaba','guayaba agria','mango','maracuya','mora','nispero','papaya','piña','tamarindo',
-              'tomate de arbol','uchuva','uva','zapote']
-
-PORCION_DATA = [50, 70, 100, 110, 120, 125, 130, 140, 150, 160, 170, 180, 200, 700, 750, 1000]
-
-##################################
-
 NUMERO_DE_FACTURA_INICIAL = 2775
 
-classModels = {'Cliente':Cliente, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio}
-keyDefs = {'Cliente':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades'], 'Precio':['fruta','porcion','cliente']}
+classModels = {'Cliente':Cliente, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios}
+keyDefs = {'Cliente':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],'Precio':['fruta','porcion','grupo']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox'}
+                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
+                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}
                        ],
             'Fruta':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
+            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox'}],
             'Precio':[{'id':'fruta','ui':'Fruta'},
                       {'id':'porcion','ui':'Porcion'},
-                      {'id':'cliente','ui':'Cliente'},
+                      {'id':'grupo','ui':'Grupo de Precios'},
                       {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
                       ]
             }
@@ -119,7 +83,7 @@ def getKey(entity_class,dicc):
         if type(dicc[keypart]) == ndb.Key:
             key += dicc[keypart].get().to_dict()['rotulo']
         else:
-            key += dicc[keypart]
+            key += unicode(dicc[keypart])
     return ''.join(key.split())
         
 def check_types(entity_class, values):
@@ -155,9 +119,10 @@ class SaveEntity(webapp2.RequestHandler):
         response = {};
         try:
             response = create_entity(entity_class,values)
+            self.response.out.write(json.dumps(response))
         except Exception as ex:
             return self.response.out.write(ex.message)
-        self.response.out.write(json.dumps(response))
+        
 
 def tagForField(entity_class, prop):
     tag = ''
@@ -207,8 +172,9 @@ class GetPrice(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST
         values = post_data.mixed()
+        grupo = Cliente.get_by_id(values["cliente"]).grupoDePrecios
         precioQuery = Precio.query(Precio.fruta == Fruta.get_by_id(values['fruta']).key,
-                                   Precio.cliente == Cliente.get_by_id(values["cliente"]).key,
+                                   Precio.grupo == GrupoDePrecios.get_by_id(grupo).key,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
         try:
@@ -243,8 +209,6 @@ def getConsecutivo():
         first.put()
         return NUMERO_DE_FACTURA_INICIAL
          
-
-
 class GuardarFactura(webapp2.RequestHandler):        
     def post(self):
         post_data = self.request.body
@@ -292,37 +256,37 @@ class MostrarFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')
         self.response.write(template.render({'data':data, 'ventas':ventas}))
     
-class ImportClientes(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for row in CLIENT_DATA:
-            clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
-                           'nit':row[5], 'diasPago':int(row[6])}
-            key = getKey("Cliente", clientevals)
-            cliente = Cliente.get_or_insert(key,**clientevals)
-            cliente.put()
-            message += "Registro importado: " + cliente.rotulo + "\n"
-        self.response.out.write(message)
- 
-class ImportFrutas(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for fruit in FRUTA_DATA:
-            key = getKey('Fruta', {'nombre':fruit})
-            fruta = Fruta.get_or_insert(key,nombre=unicode(fruit,'utf-8'))
-            fruta.put()
-            message += "Registro importado: " + fruta.rotulo + " --- "
-        self.response.out.write(message)
- 
-class ImportPorciones(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for por in PORCION_DATA:
-            key = getKey("Porcion", {'unidades':'g', 'valor':por})
-            porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
-            porcion.put()
-            message += "Registro importado: " + porcion.rotulo + " --- "
-        self.response.out.write(message)
+# class ImportClientes(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for row in CLIENT_DATA:
+#             clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
+#                            'nit':row[5], 'diasPago':int(row[6])}
+#             key = getKey("Cliente", clientevals)
+#             cliente = Cliente.get_or_insert(key,**clientevals)
+#             cliente.put()
+#             message += "Registro importado: " + cliente.rotulo + "\n"
+#         self.response.out.write(message)
+#  
+# class ImportFrutas(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for fruit in FRUTA_DATA:
+#             key = getKey('Fruta', {'nombre':fruit})
+#             fruta = Fruta.get_or_insert(key,nombre=unicode(fruit,'utf-8'))
+#             fruta.put()
+#             message += "Registro importado: " + fruta.rotulo + " --- "
+#         self.response.out.write(message)
+#  
+# class ImportPorciones(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for por in PORCION_DATA:
+#             key = getKey("Porcion", {'unidades':'g', 'valor':por})
+#             porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
+#             porcion.put()
+#             message += "Registro importado: " + porcion.rotulo + " --- "
+#         self.response.out.write(message)
 
 class Test(webapp2.RequestHandler):
     def get(self):        
