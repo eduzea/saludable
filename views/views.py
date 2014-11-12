@@ -13,8 +13,8 @@ from jinja2._markupsafe import Markup
 
 NUMERO_DE_FACTURA_INICIAL = 2775
 
-classModels = {'Cliente':Cliente, 'Fruta':Fruta, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios}
-keyDefs = {'Cliente':['nombre','negocio'], 'Fruta':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],'Precio':['fruta','porcion','grupo']}
+classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios}
+keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],'Precio':['producto','porcion','grupo']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
@@ -24,11 +24,11 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
                        {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}
                        ],
-            'Fruta':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
+            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
             'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox'}],
-            'Precio':[{'id':'fruta','ui':'Fruta'},
+            'Precio':[{'id':'producto','ui':'Producto'},
                       {'id':'porcion','ui':'Porcion'},
                       {'id':'grupo','ui':'Grupo de Precios'},
                       {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
@@ -173,7 +173,7 @@ class GetPrice(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         grupo = Cliente.get_by_id(values["cliente"]).grupoDePrecios
-        precioQuery = Precio.query(Precio.fruta == Fruta.get_by_id(values['fruta']).key,
+        precioQuery = Precio.query(Precio.producto == Producto.get_by_id(values['producto']).key,
                                    Precio.grupo == GrupoDePrecios.get_by_id(grupo).key,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
@@ -186,11 +186,11 @@ class GetPrice(webapp2.RequestHandler):
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
         prop_cliente = Factura._properties['cliente']
-        prop_fruta = Venta._properties['fruta']
+        prop_producto = Venta._properties['producto']
         prop_porcion = Venta._properties['porcion']
         prop_cantidad = Venta._properties['cantidad']
         props = {'Cliente':{'ui': 'Cliente', 'id': 'cliente','required':'true','type':prop_cliente},
-                 'Fruta':{'ui': 'Fruta', 'id': 'fruta','required':'true','type':prop_fruta},
+                 'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
                  'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
                  'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox','type':prop_cantidad}
                 }
@@ -215,7 +215,7 @@ class GuardarFactura(webapp2.RequestHandler):
         values = json.loads(post_data)
         ventas =[]
         for venta in values['ventas']:
-            ventas.append(Venta(fruta=Fruta.get_by_id(venta['fruta']).key,
+            ventas.append(Venta(producto=Producto.get_by_id(venta['producto']).key,
                            porcion=Porcion.get_by_id(venta['porcion']).key,
                            cantidad = venta['cantidad'],
                            precio = venta['precio'],
@@ -250,7 +250,7 @@ class MostrarFactura(webapp2.RequestHandler):
                 }
         ventas = []
         for venta in factura.ventas:
-            ventas.append({'fruta': unicode(venta.fruta.id(),'utf-8'), 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
+            ventas.append({'producto': unicode(venta.producto.id(),'utf-8'), 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
                            'precio': '{:,}'.format(venta.precio), 'valorTotal':'{:,}'.format(venta.venta)})
                 
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')

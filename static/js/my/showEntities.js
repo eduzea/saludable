@@ -2,7 +2,7 @@
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
 		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser'], 
 function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser) {
-	entity_class = saludable.entity_class;
+	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
 			'data' : response.records

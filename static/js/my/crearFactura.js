@@ -68,20 +68,20 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		var formdata = getFormData();
 		request.post("getPrice",
 		{
-			data: {'fruta':formdata['fruta'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
+			data: {'producto':formdata['producto'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
 		}).then(function(precio){
 			if (precio == 'list index out of range'){
 				alert("No hay precio definido para esta combinacion producto x cliente! Definelo primero.");
 				return;	
 			}
 			var grid = registry.byId('gridFactura');
-			var id = formdata['fruta'] + formdata['cliente'] + formdata['porcion'];
+			var id = formdata['producto'] + formdata['cliente'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
 				grid.store.remove(id);	
 			}
 			var total = formdata.cantidad * parseInt(precio);
-			grid.store.add({'id':id,'fruta':formdata.fruta, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
+			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
 							'precio': parseInt(precio), 'valorTotal':total});
 			grid.total=updateTotal();
 			//registry.byId('ventaForm').reset();
@@ -91,7 +91,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	});
 	var store = new Store();
 	var columns = [
-		{field : 'fruta', name : 'Fruta', style: "text-align: center"},
+		{field : 'producto', name : 'Producto', style: "text-align: center"},
 		{field : 'porcion', name : 'Porcion', style: "text-align: center"},
 		{field : 'cantidad', name : 'Cantidad', style: "text-align: center"},
 		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", 
