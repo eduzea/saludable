@@ -258,39 +258,39 @@ class MostrarFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')
         self.response.write(template.render({'data':data, 'ventas':ventas}))
     
-class ImportClientes(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for row in CLIENT_DATA:
-            clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
-                           'nit':row[5], 'diasPago':int(row[6])}
-            grupo = GrupoDePrecios.get_or_insert(row[7],nombre=row[7])
-            clientevals['grupoDePrecios']=grupo.key
-            key = getKey("Cliente", clientevals)
-            cliente = Cliente.get_or_insert(key,**clientevals)
-            cliente.put()
-            message += "Registro importado: " + cliente.rotulo + "\n"
-        self.response.out.write(message)
-  
-class ImportProductos(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for producto in PRODUCTO_DATA:
-            key = getKey('Producto', {'nombre':producto})
-            producto = Producto.get_or_insert(key,nombre=unicode(producto,'utf-8'))
-            producto.put()
-            message += "Registro importado: " + producto.rotulo + " --- "
-        self.response.out.write(message)
-  
-class ImportPorciones(webapp2.RequestHandler):
-    def get(self):
-        message = ''
-        for por in PORCION_DATA:
-            key = getKey("Porcion", {'unidades':'g', 'valor':por})
-            porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
-            porcion.put()
-            message += "Registro importado: " + porcion.rotulo + " --- "
-        self.response.out.write(message)
+# class ImportClientes(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for row in CLIENT_DATA:
+#             clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
+#                            'nit':row[5], 'diasPago':int(row[6])}
+#             grupo = GrupoDePrecios.get_or_insert(row[7],nombre=row[7])
+#             clientevals['grupoDePrecios']=grupo.key
+#             key = getKey("Cliente", clientevals)
+#             cliente = Cliente.get_or_insert(key,**clientevals)
+#             cliente.put()
+#             message += "Registro importado: " + cliente.rotulo + "\n"
+#         self.response.out.write(message)
+#   
+# class ImportProductos(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for producto in PRODUCTO_DATA:
+#             key = getKey('Producto', {'nombre':producto})
+#             producto = Producto.get_or_insert(key,nombre=unicode(producto,'utf-8'))
+#             producto.put()
+#             message += "Registro importado: " + producto.rotulo + " --- "
+#         self.response.out.write(message)
+#   
+# class ImportPorciones(webapp2.RequestHandler):
+#     def get(self):
+#         message = ''
+#         for por in PORCION_DATA:
+#             key = getKey("Porcion", {'unidades':'g', 'valor':por})
+#             porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
+#             porcion.put()
+#             message += "Registro importado: " + porcion.rotulo + " --- "
+#         self.response.out.write(message)
 
 class Test(webapp2.RequestHandler):
     def get(self):        
