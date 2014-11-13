@@ -12,11 +12,13 @@ TO DO
 - Add Save Factura button --DONE!
 
 11/11
-- Add pricegroup concept
+- Add pricegroup concept --DONE
+- Add edit entity functionality --DONE
 - Add empleados entity
-- Add edit entity functionality
 - Add view facturas screen
 - Merge crearFactura view with home
+
+Right now: Importing data to cloud instance.
 
 
 ------------------

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from datetime import datetime
+from datetime import datetime, date, time
+import os
 import json
 import cgi
 import webapp2
@@ -8,54 +9,12 @@ from google.appengine.api import users
 from google.appengine.ext.ndb import metadata
 
 from models.models import * 
-from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty
+from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty
 from jinja2._markupsafe import Markup
-
-#########################################
-CLIENT_DATA = [
-['RESTAURANTE EL ARABE','','CLL 69 A # 6-41','BOGOTA','2484899','900419473-5','0','ARABE'],
-['JARDIN ABACO','','CLL 110 # 8-47','BOGOTA','6197512','830123705-3','0','ABACO'],
-['AVESCO S.A.','MERCADO 93','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30','AVESCO'],
-['C&P CORREA','ZOE','CLL 108 # 8 A-22','BOGOTA','','9006800563-6','8','CYP'],
-['CARMEL CLUB CAMPESTRE','','AUTO NORTE 153-81','BOGOTA','6497272 EXT. 123','','30','CARMEL'],
-['CAROLINA ZULUAGA ','','','BOGOTA','','','0','PARTICULARES'],
-['CASA FUEGO','','CLL 118 # 5-41','BOGOTA','6376954','','0','CASAFUEGO'],
-['CHATOS','','AV CLL 82 # 9-11','BOGOTA','3220732','900016780-1','0','CHATOS'],
-['CORPORACION CLUB EL NOGAL','','','BOGOTA','3267700 ext 3221','','30','NOGAL'],
-['HARRYSA S.A.S','HARRY SASSON','CRA 9 #75-70','BOGOTA','3 45 03 04','830144557-1','30','HARRY'],
-['HARRYSA S.A.S','HARRYS BAR','CLL 70 #5-57 - Zona G','BOGOTA','3 45 03 04','830144557-1','30','HARRY'],
-['INVERSIONES GARDEL','EL DIA QUE ME QUIERAS','CLL 69 # 4-26','BOGOTA','5404585','900268742-2','30','GARDEL'],
-['INVERSIIONES LEHAL S.A.','CLUB COLOMBIA','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','30','LEHAL'],
-['JARDIN HANS ANDERSEN','','CRA 13 A # 127-10','BOGOTA','627 0928','8000628134-3','0','HANS'],
-['JUAN EL PANADERO SAS','','CLL 81 # 7-93','BOGOTA','6748954','900450289-6','8','JUANELPANADERO'],
-['JUAN SOTO','','','BOGOTA','','','0','PARTICULARES'],
-['LEIDY MARTINEZ','','','BOGOTA','','','0','PARTICULARES'],
-['LUIS CABALLERO','','CRA 28 A # 68-74','BOGOTA','','','0','PARTICULARES'],
-['MARIA EZPERANZA BAZURTO ','','','','','','0','PARTICULARES'],
-['AVESCO S.A.','MERCADO USAQUEN','CLL 93 A# 12-73','BOGOTA','2362500','860025461-0','30','AVESCO'],
-['PAESA S.A  ','SALTO DEL ANGEL','Cra 13 # 93A - 45','BOGOTA','6545454','800241012-4','45','PAESA'],
-['PAESA S.A  ','COTIDIANO ROSALES','CRA 5 #71 -45 - ROSALES','BOGOTA','6545454','800241012-4','45','PAESA'],
-['PAESA S.A  ','COTIDIANO ANDINO','CC ANDINO LOCAL 402','BOGOTA','6545454','800241012-4','45','PAESA'],
-['PAN TOLIMA','','CLL 57 # 16 A-27','BOGOTA','','','0','PANTOLIMA'],
-['PATRICIA BERMUDEZ','','','BOGOTA','','','0','PARTICULARES'],
-['POLKA DOT/NATALIA BOHORQUEZ','','CLL 86 A  # 13 A 23','BOGOTA','6165479','52718104-1','0','POLKA'],
-['SARODY','','AV CL 82 # 9-11','BOGOTA','3220732','900016780-1','0','SARODY'],
-['TREINTA Y DOS SEPTIMA SAS /CENTRICO','','CR 7 # 32-16 PISO 41','BOGOTA','3509100','900485850-1','0','CENTRICO']
-]
-
-PRODUCTO_DATA = ['ARAZA','CURUBA','DURAZNO','DURAZNO FRUTA','FEIJOA','FRESA','FRUTOS ROJOS','GUANABANA','GUANABANA FRUTA',
-                 'GUAYABA','LULO','LULO TAJADO','MANGO','MANGO BICHE','MARACUYA','MARACUYA PEPA','MELON','MORA','NISPERO',
-                 'PATILLA','PIÑA','SMOTHIE GMB','SMOTHIE LMF','TAMARINDO','TOMATE DE ARBOL','UCHUVA','UVA']
-
-
-
-PORCION_DATA = [50, 70, 100, 110, 120, 125, 130, 140, 150, 160, 170, 180, 200, 700, 750, 1000]
-#########################################
-
 
 NUMERO_DE_FACTURA_INICIAL = 2775
 
-classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios}
+classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 'Factura':Factura}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],'Precio':['producto','porcion','grupo']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
@@ -131,6 +90,8 @@ def getKey(entity_class,dicc):
 def check_types(entity_class, values):
     props = classModels[entity_class]._properties
     for key, value in props.iteritems():
+        if type(value) is ComputedProperty:
+            values.pop(key, None)
         if type(value) is IntegerProperty:
             values[key] = int(values[key])
         if type(value) is KeyProperty:
@@ -335,4 +296,35 @@ class Test(webapp2.RequestHandler):
     def get(self):        
         template = JINJA_ENVIRONMENT.get_template('test.html')
         self.response.write(template.render())
-    
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ndb.key.Key):
+            return o.id()
+        if isinstance(o, ndb.Model):
+            return o.to_dict()
+        elif isinstance(o, (datetime, date, time)):
+            return str(o)  # Or whatever other date format you're OK with...
+        else:
+            print "Hold on!"
+
+class ImportScript(webapp2.RequestHandler):
+    def get(self):
+        entity_class = self.request.get('entityClass')
+        json_data=open('data/' + entity_class +'.json')
+        data = json.load(json_data)
+        data = json.loads(data)
+        json_data.close()
+        for record in data:
+            create_entity(entity_class, record)
+        self.response.write('Registros Importados!')
+
+
+class ExportScript(webapp2.RequestHandler):
+    def get(self):
+        entity_class = self.request.get('entityClass')
+        data = classModels[entity_class].query().fetch()
+        self.response.write(JSONEncoder().encode(JSONEncoder().encode(data)))
+        
+        
+        
