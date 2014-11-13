@@ -28,6 +28,23 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		return store.query();
 	};
 	
+	actualizarFacturas = function(response, data){
+		var grid = registry.byId("gridNodeFactura");
+		var key = response.facturaId;
+		if (response.action == 'Created') {
+			data['id'] = key;
+			grid ? grid.store.add(data) : '' ;
+			response_user = 'Se creo Factura: ' + data.numero;
+		} else {
+			if(grid){
+				var row = grid.store.get(key);
+				grid.store.remove(key);
+				data['id'] = key;
+				grid.store.add(data);					
+			}
+		}
+	};
+	
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
 	on(registry.byId('guardarFacturaBtn'),'click',
 		function(e){
@@ -37,13 +54,14 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var gridData = getGridData();//delete gridData.forEach;delete gridData.map;delete gridData.filter;
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total};
 			request.post('/guardarFactura', {
-					data : json.stringify(factura_data)
+					data : json.stringify(factura_data),
+					handleAs:'json'
 				}).then(function(response) {
 					var message='';
-					resp = response.split(':');
-					if(resp[0] == 'Success'){
+					if(response.action == 'Created'){
 						message = 'Se grabo exitosamente este pedido!';
-						window.open('/mostrarFactura?facturaId='+resp[1]);
+						actualizarFacturas(response, factura_data);
+						window.open('/mostrarFactura?facturaId='+response.facturaId);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}

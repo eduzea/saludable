@@ -54,7 +54,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var tabContainer = registry.byId('homeTabContainer');
+	                    var tabContainer = registry.byId('addTabContainer');
 	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
 	                    if (nodelist.length == 0){
 	                    	var contentPane= registry.byId(entity_class + '_add');
@@ -63,10 +63,12 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 								parser.instantiate(nodelist);
     							fillForm(nodelist, rowData);	
 							});
-							tabContainer.selectChild(entity_class + '_add');	
+							tabContainer.selectChild(entity_class + '_add');
+							registry.byId('homeTabContainer').selectChild('addTabContainer');	
 	                    }else{
                     		tabContainer.selectChild(entity_class + '_add');
                     		fillForm(nodelist, rowData);
+                    		registry.byId('homeTabContainer').selectChild('addTabContainer');
 	                    }
 	                }
 				});

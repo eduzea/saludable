@@ -33,7 +33,13 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
                       ],
             'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}]
+                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
+            'Factura':[{'id':'id', 'ui':'Numero'},
+                       {'id':'cliente', 'ui':'Cliente'},
+                       {'id':'empleado', 'ui':'Empleado'},
+                       {'id':'fecha', 'ui':'Fecha'},
+                       {'id':'total', 'ui':'Valor'}
+                       ]
             }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -60,14 +66,18 @@ class EntityData(webapp2.RequestHandler):
         entity_query = classModels[entity_class].query()
         entities = entity_query.fetch()
         records=[]
+        props = classModels[entity_class]._properties
         for entity in entities:
             dicc = entity.to_dict()
+            dicc = {key: dicc[key] for key in dicc if type(props[key]) != ndb.StructuredProperty }
             for prop_key, prop_value in dicc.iteritems():
                 if type(prop_value) == ndb.Key:
                     try:
                         dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
                     except Exception as e:
                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+                if type(prop_value) == date:
+                    dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
             dicc['id'] = entity.key.id()
             records.append(dicc)
         response = {'columns':getColumns(entity_class), 'records':records}
@@ -230,9 +240,9 @@ class GuardarFactura(webapp2.RequestHandler):
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
         numero = getConsecutivo()
         try:
-            factura = Factura(numero=numero, cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            factura = Factura(id=str(numero), numero=numero, cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
             factura.put()
-            self.response.out.write("Success:" + unicode(factura.key.id()))     
+            self.response.out.write(json.dumps({'action':'Created','facturaId': factura.key.id()}))     
         except Exception as e:
             self.response.out.write(e.message)
 
@@ -240,7 +250,7 @@ class GuardarFactura(webapp2.RequestHandler):
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
         facturaKey = self.request.get('facturaId')
-        factura = Factura.get_by_id(long(facturaKey))
+        factura = Factura.get_by_id(facturaKey)
         cliente = factura.cliente.get()
         empleado = factura.empleado.get()
         data = {'numero' : factura.numero,
