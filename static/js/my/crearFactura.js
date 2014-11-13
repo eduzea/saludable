@@ -31,10 +31,11 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
 	on(registry.byId('guardarFacturaBtn'),'click',
 		function(e){
-			var cliente = registry.byId('clientecrearFactura').value;		
+			var cliente = registry.byId('clientecrearFactura').value;
+			var empleado = registry.byId('empleadocrearFactura').value;		
 			var fecha = registry.byId('fechacrearFactura').toString();
 			var gridData = getGridData();//delete gridData.forEach;delete gridData.map;delete gridData.filter;
-			var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'total':grid.total};
+			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data)
 				}).then(function(response) {

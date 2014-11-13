@@ -1,5 +1,10 @@
 from google.appengine.ext import ndb
 
+class Empleado(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    apellido = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
+
 class GrupoDePrecios(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
@@ -44,6 +49,7 @@ class NumeroFactura(ndb.Model):
 class Factura(ndb.Model):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
+    empleado = ndb.KeyProperty(kind=Empleado)
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()

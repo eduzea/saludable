@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, date, time
-import os
 import json
-import cgi
 import webapp2
 import jinja2
-from google.appengine.api import users
-from google.appengine.ext.ndb import metadata
 
 from models.models import * 
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty
@@ -14,8 +10,10 @@ from jinja2._markupsafe import Markup
 
 NUMERO_DE_FACTURA_INICIAL = 2775
 
-classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 'Factura':Factura}
-keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],'Precio':['producto','porcion','grupo']}
+classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
+               'Factura':Factura, 'Empleado':Empleado}
+keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
+           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
@@ -33,7 +31,9 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       {'id':'porcion','ui':'Porcion'},
                       {'id':'grupo','ui':'Grupo de Precios'},
                       {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
-                      ]
+                      ],
+            'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
+                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}]
             }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -82,7 +82,8 @@ def getKey(entity_class,dicc):
     key = u''
     for keypart in keyDefs[entity_class]:
         if type(dicc[keypart]) == ndb.Key:
-            key += dicc[keypart].get().to_dict()['rotulo']
+            entity = dicc[keypart].get() 
+            key += entity.to_dict()['rotulo']
         else:
             key += unicode(dicc[keypart])
     return ''.join(key.split())
@@ -188,10 +189,12 @@ class GetPrice(webapp2.RequestHandler):
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
         prop_cliente = Factura._properties['cliente']
+        prop_empleado = Factura._properties['empleado']
         prop_producto = Venta._properties['producto']
         prop_porcion = Venta._properties['porcion']
         prop_cantidad = Venta._properties['cantidad']
         props = {'Cliente':{'ui': 'Cliente', 'id': 'cliente','required':'true','type':prop_cliente},
+                 'Empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
                  'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
                  'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
                  'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox','type':prop_cantidad}
@@ -223,10 +226,11 @@ class GuardarFactura(webapp2.RequestHandler):
                            precio = venta['precio'],
                            venta = venta['valorTotal']))
         cliente = Cliente.get_by_id(values['cliente'])
+        empleado = Empleado.get_by_id(values['empleado'])
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
         numero = getConsecutivo()
         try:
-            factura = Factura(numero=numero, cliente = cliente.key, fecha = fecha, ventas=ventas, total=values['total'])
+            factura = Factura(numero=numero, cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
             factura.put()
             self.response.out.write("Success:" + unicode(factura.key.id()))     
         except Exception as e:
@@ -238,6 +242,7 @@ class MostrarFactura(webapp2.RequestHandler):
         facturaKey = self.request.get('facturaId')
         factura = Factura.get_by_id(long(facturaKey))
         cliente = factura.cliente.get()
+        empleado = factura.empleado.get()
         data = {'numero' : factura.numero,
                 'cliente': unicode(cliente.rotulo),
                 'direccion': unicode(cliente.direccion),
@@ -246,7 +251,7 @@ class MostrarFactura(webapp2.RequestHandler):
                 'noFactura':1456,
                 'fecha': factura.fecha.strftime('%Y-%m-%d'),
                 'telefono':cliente.telefono,
-                'empleado': 'Ofelia',
+                'empleado': empleado.rotulo,
                 'numVentas':len(factura.ventas),
                 'total': '{:,}'.format(factura.total)
                 }

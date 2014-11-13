@@ -27,6 +27,9 @@
 			<div data-dojo-type="dijit/form/Form" id="ventaForm" data-dojo-id="venta_form" encType="multipart/form-data">
 				<table>
 					<tr>
+						<td><label>{{ props['Empleado'].ui }}:</label></td>
+						<td> {{tagForField('crearFactura',props['Empleado'])}} </td>
+					</tr>					<tr>
 						<td><label>{{ props['Cliente'].ui }}:</label></td>
 						<td> {{tagForField('crearFactura',props['Cliente'])}} </td>
 						<td><label>Fecha</label></td>
