@@ -3,7 +3,7 @@
 require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
 "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number"], 
 function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number) {
-	
+	var entity_class = saludable.entity_class;
 	updateTotal = function(){
 		var data = getGridData();
 		var sumTotal=0;
@@ -15,9 +15,9 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	};
 	
 	getFormData = function(){
-		var formdata = registry.byId('ventaForm').get('value');
+		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
-			formdata[prop.replace('crearFactura', '')] = formdata[prop];
+			formdata[prop.replace('Factura', '')] = formdata[prop];
 			delete formdata[prop];
 		}
 		return formdata;
@@ -48,9 +48,9 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
 	on(registry.byId('guardarFacturaBtn'),'click',
 		function(e){
-			var cliente = registry.byId('clientecrearFactura').value;
-			var empleado = registry.byId('empleadocrearFactura').value;		
-			var fecha = registry.byId('fechacrearFactura').toString();
+			var cliente = registry.byId('clienteFactura').value;
+			var empleado = registry.byId('empleadoFactura').value;		
+			var fecha = registry.byId('fechaFactura').toString();
 			var gridData = getGridData();//delete gridData.forEach;delete gridData.map;delete gridData.filter;
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total};
 			request.post('/guardarFactura', {
@@ -60,18 +60,19 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 					var message='';
 					if(response.action == 'Created'){
 						message = 'Se grabo exitosamente este pedido!';
+						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
 						actualizarFacturas(response, factura_data);
 						window.open('/mostrarFactura?facturaId='+response.facturaId);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}
-					dom.byId('mensajecrearFactura').innerHTML = message;
+					dom.byId('mensajeFactura').innerHTML = message;
 					setTimeout(function() {
 						var grid =registry.byId('gridFactura');
 						grid.store.data=[];
 						grid.model.clearCache();
         				grid.body.refresh();
-						dom.byId('mensajecrearFactura').innerHTML = '';
+						dom.byId('mensajeFactura').innerHTML = '';
 						dom.byId('total').innerHTML = '';
 					}, 3000);
 				});
@@ -79,7 +80,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	
 	parser.instantiate([dom.byId('agregarPedidoBtn')]);
 	on(registry.byId('agregarPedidoBtn'),'click',function(e){
-		var form = registry.byId('ventaForm');
+		var form = registry.byId('addEntityForm' + entity_class);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
 			return;
@@ -94,7 +95,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 				return;	
 			}
 			var grid = registry.byId('gridFactura');
-			var id = formdata['producto'] + formdata['cliente'] + formdata['porcion'];
+			var id = formdata['producto'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
 				grid.store.remove(id);	
@@ -103,7 +104,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
 							'precio': parseInt(precio), 'valorTotal':total});
 			grid.total=updateTotal();
-			//registry.byId('ventaForm').reset();
+			//registry.byId('addEntityForm' + entity_class).reset();
 		});
 
 		

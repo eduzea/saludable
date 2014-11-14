@@ -33,42 +33,59 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			},
 		};
 		
-		var fillForm = function(nodelist, rowData){
+		var getValueFromLabel = function(dijit, label){
+			if (!dijit.options){
+				return label;
+			} 
+			var options = dijit.getOptions();
+			var lookup = {};
+			for (var i = 0, len = options.length; i < len; i++) {
+    			lookup[options[i].label] = options[i].value;
+			}
+			return lookup[label];
+		};
+		
+		var fillForm = function(nodelist, rowData, entity_class){
 			nodelist.forEach(function(node, index, array){
 	   			var dijit = registry.byNode(node);
 	   			if (dijit){
-		        	var id= dijit.id.replace(entity_class,''); 
-		        	if(id in rowData){
-		        		registry.byNode(node).attr('value', rowData[id]);
-		        	}	   				
+	   				if (dijit.id.indexOf("grid") > -1 ){
+	   					request('/getVentas?facturaKey=' + rowData['id'], {handleAs:'json'}).then(function(response) {
+	   						dijit.model.clearCache();
+							dijit.model.store.setData(response);
+							dijit.body.refresh();
+	   					});
+	   				}else{
+			        	var id= dijit.id.replace(entity_class,''); 
+			        	if(id in rowData){
+			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]));
+			        	}	   				
+	   				}			
 	   			} 
             });
 		};
-		
+				
 		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true,
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Editar",
 					onClick : function() {
+						registry.byId('addTabContainer').selectChild(entity_class + '_add');
+						registry.byId('homeTabContainer').selectChild('addTabContainer');
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var tabContainer = registry.byId('addTabContainer');
 	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
 	                    if (nodelist.length == 0){
 	                    	var contentPane= registry.byId(entity_class + '_add');
 							contentPane.set("onDownloadEnd", function(){
 								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
 								parser.instantiate(nodelist);
-    							fillForm(nodelist, rowData);	
+    							fillForm(nodelist, rowData, entity_class);	
 							});
-							tabContainer.selectChild(entity_class + '_add');
-							registry.byId('homeTabContainer').selectChild('addTabContainer');	
 	                    }else{
-                    		tabContainer.selectChild(entity_class + '_add');
-                    		fillForm(nodelist, rowData);
-                    		registry.byId('homeTabContainer').selectChild('addTabContainer');
+                    		fillForm(nodelist, rowData, entity_class);
 	                    }
 	                }
 				});

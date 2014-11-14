@@ -18,8 +18,8 @@ class Cliente(ndb.Model):
     telefono = ndb.StringProperty(indexed=True)
     ciudad = ndb.StringProperty(indexed=True)
     diasPago = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     
 class Producto(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)

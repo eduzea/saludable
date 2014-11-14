@@ -13,7 +13,7 @@ NUMERO_DE_FACTURA_INICIAL = 2775
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
                'Factura':Factura, 'Empleado':Empleado}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
-           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre']}
+           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
@@ -195,6 +195,26 @@ class GetPrice(webapp2.RequestHandler):
         except IndexError as e:
             self.response.out.write(e.message)
         self.response.out.write(precio)
+        
+class GetVentas(webapp2.RequestHandler):
+    def get(self):
+        facturaKey = self.request.get('facturaKey')
+        facturaQuery = Factura.query(Factura.numero == int(facturaKey))
+        factura = facturaQuery.fetch()[0]
+        records=[]
+        for venta in factura.ventas:
+            dicc = venta.to_dict()
+            for prop_key, prop_value in dicc.iteritems():
+                if type(prop_value) == ndb.Key:
+                    try:
+                        dicc[prop_key] = dicc[prop_key].get().to_dict()['rotulo']
+                    except Exception as e:
+                        dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+                if type(prop_value) == date:
+                    dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+            dicc['id'] = dicc['producto'] + dicc['porcion'];
+            records.append(dicc)
+        self.response.out.write(json.dumps(records))
 
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
@@ -339,7 +359,7 @@ class ExportScript(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
         data = classModels[entity_class].query().fetch()
-        self.response.write(JSONEncoder().encode(JSONEncoder().encode(data)))
+        self.response.write(JSONEncoder().encode(data))
         
         
         

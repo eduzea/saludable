@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
 		<link rel="stylesheet" href="../static/css/grid.css" />
+		<script>saludable.entity_class = 'Factura';</script>
 		<script>dojoConfig = {async: 1,parseOnLoad:1,dojoBlankHtmlUrl: '/blank.html',packages: [{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/js/lib/gridx'}]};</script>
 		<script type="text/javascript" src="../static/js/my/crearFactura.js"></script>
 		<script>
@@ -13,38 +14,38 @@
 		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="ventaForm" data-dojo-id="venta_form" encType="multipart/form-data">
+		<div data-dojo-type="dijit/form/Form" id="addEntityFormFactura" data-dojo-id="addEntityFormFactura" encType="multipart/form-data">
 			<table>
 				<tr>
 					<td><label>{{ props['Empleado'].ui }}:</label></td>
-					<td> {{tagForField('crearFactura',props['Empleado'])}} </td>
+					<td> {{tagForField('Factura',props['Empleado'])}} </td>
 				</tr>					<tr>
 					<td><label>{{ props['Cliente'].ui }}:</label></td>
-					<td> {{tagForField('crearFactura',props['Cliente'])}} </td>
+					<td> {{tagForField('Factura',props['Cliente'])}} </td>
 					<td><label>Fecha</label></td>
-					<td><input type="text" name="fechacrearFactura" id="fechacrearFactura" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
+					<td><input type="text" name="fechacFactura" id="fechaFactura" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
 				</tr>
 			</table>
 			<table>	
 				<tr>
 					<td><label>Producto: </label></td>
-					<td>{{tagForField('crearFactura',props['Producto'])}}</td>
+					<td>{{tagForField('Factura',props['Producto'])}}</td>
 					<td><label>Porcion: </label></td>
-					<td>{{tagForField('crearFactura',props['Porcion'])}}</td>
+					<td>{{tagForField('Factura',props['Porcion'])}}</td>
 					<td><label>Cantidad: </label></td>
-					<td>{{tagForField('crearFactura',props['Cantidad'])}}</td>
+					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 				</tr>
 			</table>
+			<div id="gridFactura" style="width: 100%; height: 300px;"></div>	
 		</div>
-		<div id="gridFactura" style="width: 100%; height: 300px;"></div>
 		<table>
 			<tr>
 				<td>
 					<button id='guardarFacturaBtn' data-dojo-type="dijit/form/Button">Guardar Pedido</button></td>
 				</td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td>
-				<td><div id='mensajecrearFactura' style="color: red"></div></td>
+				<td><div id='mensajeFactura' style="color: red"></div></td>
 			</tr>
 		</table>
 	</body>
