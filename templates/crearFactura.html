@@ -17,11 +17,11 @@
 		<div data-dojo-type="dijit/form/Form" id="addEntityFormFactura" data-dojo-id="addEntityFormFactura" encType="multipart/form-data">
 			<table>
 				<tr>
-					<td><label>{{ props['Empleado'].ui }}:</label></td>
-					<td> {{tagForField('Factura',props['Empleado'])}} </td>
+					<td><label>Empleado :</label></td>
+					<td><div id='empleadoFactura'></div> </td>
 				</tr>					<tr>
-					<td><label>{{ props['Cliente'].ui }}:</label></td>
-					<td> {{tagForField('Factura',props['Cliente'])}} </td>
+					<td><label>Cliente: </label></td>
+					<td><div id='clienteFactura'></div></td>
 					<td><label>Fecha</label></td>
 					<td><input type="text" name="fechacFactura" id="fechaFactura" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
 				</tr>
@@ -29,11 +29,11 @@
 			<table>	
 				<tr>
 					<td><label>Producto: </label></td>
-					<td>{{tagForField('Factura',props['Producto'])}}</td>
+					<td><div id='productoFactura'></div></td>
 					<td><label>Porcion: </label></td>
-					<td>{{tagForField('Factura',props['Porcion'])}}</td>
+					<td><div id='porcionFactura'></div></td>
 					<td><label>Cantidad: </label></td>
-					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
+					<td><input type='text' id='cantidadFactura'></div></td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 				</tr>
 			</table>

@@ -1,9 +1,88 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
 require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
-"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number"], 
-function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number) {
-	var entity_class = saludable.entity_class;
+"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select'], 
+function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select) {
+	var entity_class = saludable.entity_class;	
+	resetProducto = function(cliente){	
+			request.post('/getProducto', {
+					data : {'cliente':cliente},
+					handleAs:'json'
+				}).then(function(response) {
+					var items = [];
+					response.forEach(function(producto){
+						items.push({ "value": producto, "name": producto });
+					});
+					var productoStore = new Store({
+			        	idProperty: "value",
+			            data: items
+			        });
+					var productoSelect = registry.byId('productoFactura');
+					productoSelect.setStore(productoStore);
+					productoSelect.reset();
+			});
+		};	
+	
+	resetPorcion = function(producto){
+			cliente = registry.byId('clienteFactura').value;	
+			request.post('/getPorcion', {
+					data : {'cliente':cliente, 'producto': producto},
+					handleAs:'json'
+				}).then(function(response) {
+					var items = [];
+					response.forEach(function(producto){
+						items.push({ "value": producto, "name": producto });
+					});
+					var porcionStore = new Store({
+			        	idProperty: "value",
+			            data: items
+			        });
+					var porcionSelect = registry.byId('porcionFactura');
+					porcionSelect.setStore(porcionStore);
+					porcionSelect.reset();
+			});
+		};
+	
+	//Create selects
+	request.post('/getClientes',{handleAs:'json'}).then(function(clientes){
+		var items = [];
+		clientes.forEach(function(cliente){
+			items.push({ "value": cliente, "name": cliente });
+		});
+		var clienteStore = new Store({
+            idProperty: "value",
+            data: items
+        });
+    var clienteSelect = new Select({
+        name: "clienteFactura",
+        style: "width: 200px;",
+        store: clienteStore,
+        labelAttr: "name",
+        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
+        onChange: resetProducto
+  		}, "clienteFactura");
+    	clienteSelect.startup();
+    	resetProducto();
+    });
+    	
+    var productoSelect = new Select({
+        name: "productoFactura",
+        style: "width: 200px;",
+        store: new Store(),
+        labelAttr: "name",
+        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
+        onChange: resetPorcion
+	}, "productoFactura");
+	productoSelect.startup();
+	
+    var porcionSelect = new Select({
+        name: "porcionFactura",
+        style: "width: 200px;",
+        labelAttr: "name",
+        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
+	}, "porcionFactura");
+	porcionSelect.startup();
+		
 	updateTotal = function(){
 		var data = getGridData();
 		var sumTotal=0;
@@ -51,7 +130,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var cliente = registry.byId('clienteFactura').value;
 			var empleado = registry.byId('empleadoFactura').value;		
 			var fecha = registry.byId('fechaFactura').toString();
-			var gridData = getGridData();//delete gridData.forEach;delete gridData.map;delete gridData.filter;
+			var gridData = getGridData();
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
@@ -102,7 +181,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			}
 			var total = formdata.cantidad * parseInt(precio);
 			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
-							'precio': parseInt(precio), 'valorTotal':total});
+							'precio': parseInt(precio), 'venta':total});
 			grid.total=updateTotal();
 			//registry.byId('addEntityForm' + entity_class).reset();
 		});
@@ -116,12 +195,12 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		{field : 'cantidad', name : 'Cantidad', style: "text-align: center"},
 		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.precio,{pattern:'0,000'});
+					return number.format(data.precio,{pattern:'###,###'});
 				}
 		},
-		{field : 'valorTotal', name : 'Valor Total', style: "text-align: center", 
+		{field : 'venta', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.valorTotal,{pattern:'###,###'});
+					return number.format(data.venta,{pattern:'###,###'});
 				}
 		},
 		{ 	field : 'Borrar', 

@@ -137,7 +137,6 @@ class SaveEntity(webapp2.RequestHandler):
         except Exception as ex:
             return self.response.out.write(ex.message)
         
-
 def tagForField(entity_class, prop):
     tag = ''
     if type(prop['type']) == ndb.KeyProperty:
@@ -181,6 +180,38 @@ class DeleteEntity(webapp2.RequestHandler):
             self.response.out.write(ex.message)
             return
         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
+
+class GetClientes(webapp2.RequestHandler):
+    def post(self):
+        clientes = Cliente.query().fetch()
+        clientes = [cliente.key.id() for cliente in clientes]
+        self.response.out.write(json.dumps(clientes))
+
+
+class GetProducto(webapp2.RequestHandler):
+    def post(self):
+        post_data = self.request.POST.mixed()
+        if post_data:
+            cliente = Cliente.get_by_id(post_data['cliente'])
+        else:
+            cliente = Cliente.query().get(); 
+        grupo = cliente.grupoDePrecios
+        precios = Precio.query(Precio.grupo == grupo,  projection = [Precio.producto], distinct=True).fetch()
+        productos = [precio.producto.id() for precio in precios]
+        self.response.out.write(json.dumps(productos))
+        
+class GetPorcion(webapp2.RequestHandler):
+    def post(self):
+        post_data = self.request.POST.mixed()
+        cliente = Cliente.get_by_id(post_data['cliente'])
+        producto= Producto.get_by_id(post_data['producto']) 
+        grupo = cliente.grupoDePrecios
+        precios = Precio.query(Precio.grupo == grupo,
+                               Precio.producto == producto.key,
+                               projection = [Precio.porcion], distinct=True).fetch()
+        porciones = [precio.porcion.id() for precio in precios]
+        self.response.out.write(json.dumps(porciones))        
+
 
 class GetPrice(webapp2.RequestHandler):
     def post(self):
@@ -254,7 +285,7 @@ class GuardarFactura(webapp2.RequestHandler):
                            porcion=Porcion.get_by_id(venta['porcion']).key,
                            cantidad = venta['cantidad'],
                            precio = venta['precio'],
-                           venta = venta['valorTotal']))
+                           venta = venta['venta']))
         cliente = Cliente.get_by_id(values['cliente'])
         empleado = Empleado.get_by_id(values['empleado'])
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
@@ -348,7 +379,7 @@ class ImportScript(webapp2.RequestHandler):
         entity_class = self.request.get('entityClass')
         json_data=open('data/' + entity_class +'.json')
         data = json.load(json_data)
-        data = json.loads(data)
+#         data = json.loads(data)
         json_data.close()
         for record in data:
             create_entity(entity_class, record)

@@ -54,6 +54,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   						dijit.model.clearCache();
 							dijit.model.store.setData(response);
 							dijit.body.refresh();
+							updateTotal();//this function is defined in crearFactura - abstraction leak, try to fix!
 	   					});
 	   				}else{
 			        	var id= dijit.id.replace(entity_class,''); 
@@ -98,6 +99,9 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			cacheClass : Cache,
 			store : store,
 			structure : columns,
+			columnWidthAutoResize: true,
+			width: '100%',
+			heigth: '100%',
 			modules: [
 				"gridx/modules/CellWidget"
 			]
