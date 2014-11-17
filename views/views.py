@@ -56,8 +56,12 @@ class ShowEntities(webapp2.RequestHandler):
 
 def getColumns(entity_class):
     columns=[]
+    props = classModels[entity_class]._properties
     for column in uiConfig[entity_class]:
-        columns.append({ 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center"})
+        colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center"}
+        if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
+            colProps['type']='Integer'
+        columns.append(colProps);
     return columns
 
 class EntityData(webapp2.RequestHandler):

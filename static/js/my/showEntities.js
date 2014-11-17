@@ -1,13 +1,20 @@
 //# sourceURL=../static/js/my/showEntities.js
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
-		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html) {
+		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities',"dojo/number"], 
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
 			'data' : response.records
 		});
 		var columns = response.columns;
+		columns.forEach(function(column){
+			if (column.type == 'Integer'){
+				column.formatter=function(data){
+					return number.format(data[this.field],{pattern:'###,###'});
+				};
+			}
+		});
 		var borrarColumn = { field : 'Borrar', name : '', widgetsInCell: true,
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
