@@ -18,10 +18,12 @@
 			<table>
 				<tr>
 					<td><label>Empleado :</label></td>
-					<td><div id='empleadoFactura'></div> </td>
-				</tr>					<tr>
+					<td> {{tagForField('Factura',props['Empleado'])}} </td>
+					<td>No. Factura: </td><td><div id='numeroFactura'></div></td>
+				</tr>					
+				<tr>
 					<td><label>Cliente: </label></td>
-					<td><div id='clienteFactura'></div></td>
+					<td>{{tagForField('Factura',props['Cliente'])}}</td>
 					<td><label>Fecha</label></td>
 					<td><input type="text" name="fechacFactura" id="fechaFactura" value="2014-10-29" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
 				</tr>
@@ -33,7 +35,7 @@
 					<td><label>Porcion: </label></td>
 					<td><div id='porcionFactura'></div></td>
 					<td><label>Cantidad: </label></td>
-					<td><input type='text' id='cantidadFactura'></div></td>
+					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 				</tr>
 			</table>

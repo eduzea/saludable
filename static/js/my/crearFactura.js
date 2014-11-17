@@ -20,6 +20,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 					var productoSelect = registry.byId('productoFactura');
 					productoSelect.setStore(productoStore);
 					productoSelect.reset();
+					resetPorcion(productoSelect.value);
 			});
 		};	
 	
@@ -43,27 +44,10 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			});
 		};
 	
-	//Create selects
-	request.post('/getClientes',{handleAs:'json'}).then(function(clientes){
-		var items = [];
-		clientes.forEach(function(cliente){
-			items.push({ "value": cliente, "name": cliente });
-		});
-		var clienteStore = new Store({
-            idProperty: "value",
-            data: items
-        });
-    var clienteSelect = new Select({
-        name: "clienteFactura",
-        style: "width: 200px;",
-        store: clienteStore,
-        labelAttr: "name",
-        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
-        onChange: resetProducto
-  		}, "clienteFactura");
-    	clienteSelect.startup();
-    	resetProducto();
-    });
+    parser.instantiate([dom.byId('clienteFactura')]);
+    var clienteSelect = registry.byId('clienteFactura');
+    clienteSelect.onChange = resetProducto;
+    resetProducto();
     	
     var productoSelect = new Select({
         name: "productoFactura",
@@ -110,18 +94,15 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	actualizarFacturas = function(response, data){
 		var grid = registry.byId("gridNodeFactura");
 		var key = response.facturaId;
-		if (response.action == 'Created') {
-			data['id'] = key;
-			grid ? grid.store.add(data) : '' ;
-			response_user = 'Se creo Factura: ' + data.numero;
-		} else {
-			if(grid){
-				var row = grid.store.get(key);
+		data['id'] = key;
+		if (grid){
+			var row = grid.store.get(key);
+			if (row){
 				grid.store.remove(key);
-				data['id'] = key;
-				grid.store.add(data);					
 			}
+			grid.store.add(data);
 		}
+		response_user = 'Se creo Factura: ' + data.numero;
 	};
 	
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
@@ -130,14 +111,15 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var cliente = registry.byId('clienteFactura').value;
 			var empleado = registry.byId('empleadoFactura').value;		
 			var fecha = registry.byId('fechaFactura').toString();
+			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total};
+			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total, 'numero':numero};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'
 				}).then(function(response) {
 					var message='';
-					if(response.action == 'Created'){
+					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
 						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
 						actualizarFacturas(response, factura_data);
@@ -153,6 +135,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
         				grid.body.refresh();
 						dom.byId('mensajeFactura').innerHTML = '';
 						dom.byId('total').innerHTML = '';
+						dom.byId('numeroFactura').innerHTML = '';
 					}, 3000);
 				});
 		});

@@ -184,9 +184,14 @@ class DeleteEntity(webapp2.RequestHandler):
 class GetClientes(webapp2.RequestHandler):
     def post(self):
         clientes = Cliente.query().fetch()
-        clientes = [cliente.key.id() for cliente in clientes]
+        clientes = [{'value':cliente.key.id(), 'name': cliente.rotulo } for cliente in clientes]
         self.response.out.write(json.dumps(clientes))
-
+        
+class GetEmpleados(webapp2.RequestHandler):
+    def post(self):
+        empleados = Empleado.query().fetch()
+        empleados = [{'value':empleado.key.id(), 'name': empleado.rotulo } for empleado in empleados]
+        self.response.out.write(json.dumps(empleados))
 
 class GetProducto(webapp2.RequestHandler):
     def post(self):
@@ -289,11 +294,15 @@ class GuardarFactura(webapp2.RequestHandler):
         cliente = Cliente.get_by_id(values['cliente'])
         empleado = Empleado.get_by_id(values['empleado'])
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
-        numero = getConsecutivo()
+        numero = ''
+        if values['numero']:
+            numero = values['numero']
+        else:
+            numero = getConsecutivo()
         try:
-            factura = Factura(id=str(numero), numero=numero, cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
             factura.put()
-            self.response.out.write(json.dumps({'action':'Created','facturaId': factura.key.id()}))     
+            self.response.out.write(json.dumps({'result':'Success','facturaId': factura.key.id()}))     
         except Exception as e:
             self.response.out.write(e.message)
 

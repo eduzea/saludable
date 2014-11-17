@@ -1,7 +1,7 @@
 //# sourceURL=../static/js/my/showEntities.js
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
-		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser) {
+		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities'], 
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
@@ -40,7 +40,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			var options = dijit.getOptions();
 			var lookup = {};
 			for (var i = 0, len = options.length; i < len; i++) {
-    			lookup[options[i].label] = options[i].value;
+    			lookup[html.decode(options[i].label)] = options[i].value;
 			}
 			return lookup[label];
 		};
@@ -54,7 +54,8 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   						dijit.model.clearCache();
 							dijit.model.store.setData(response);
 							dijit.body.refresh();
-							updateTotal();//this function is defined in crearFactura - abstraction leak, try to fix!
+							dijit.total = updateTotal();//this function is defined in crearFactura - abstraction leak, try to fix!
+							dom.byId('numeroFactura').innerHTML = rowData.numero;
 	   					});
 	   				}else{
 			        	var id= dijit.id.replace(entity_class,''); 
