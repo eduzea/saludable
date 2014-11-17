@@ -1,4 +1,9 @@
-#gridNode {
-    height: 100% px;
+.gridx {
+    height: 100%;
+    width: 100%;
+}
+
+.factura-grid{
+	height: 420px;
     width: 100%;
 }

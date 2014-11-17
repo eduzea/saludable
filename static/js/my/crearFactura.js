@@ -1,8 +1,8 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
 require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
-"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select'], 
-function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select) {
+"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class'], 
+function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass) {
 	var entity_class = saludable.entity_class;	
 	resetProducto = function(cliente){	
 			request.post('/getProducto', {
@@ -113,7 +113,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var fecha = registry.byId('fechaFactura').toString();
 			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':grid.total, 'numero':numero};
+			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 'numero':numero};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'
@@ -216,4 +216,5 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		modules : ["gridx/modules/CellWidget"]
 	}, 'gridFactura');
 	grid.startup();
+	domClass.add(dom.byId('gridFactura'),'factura-grid');
 }); 

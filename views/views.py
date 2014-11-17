@@ -14,26 +14,26 @@ classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Preci
                'Factura':Factura, 'Empleado':Empleado}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
            'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido']}
-uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
-                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}
+uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
+                       {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                       {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                       {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                       {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                       {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
                        ],
-            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
-            'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox'},
-                       {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
-            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox'}],
+            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
+            'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                       {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
+            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox','width':'10em'}],
             'Precio':[{'id':'producto','ui':'Producto'},
                       {'id':'porcion','ui':'Porcion'},
                       {'id':'grupo','ui':'Grupo de Precios'},
-                      {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox'}
+                      {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}
                       ],
-            'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox'},
-                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox'}],
+            'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
             'Factura':[{'id':'id', 'ui':'Numero'},
                        {'id':'cliente', 'ui':'Cliente'},
                        {'id':'empleado', 'ui':'Empleado'},
@@ -150,7 +150,7 @@ def tagForField(entity_class, prop):
     else:
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
-        tag += '" data-dojo-type="' + prop['valid'] +'"/>'
+        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"/>'
     return Markup(tag)
 
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
@@ -263,7 +263,8 @@ class CrearFactura(webapp2.RequestHandler):
                  'Empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
                  'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
                  'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
-                 'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox','type':prop_cantidad}
+                 'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
+                             'width':'5em', 'type':prop_cantidad}
                 }
         template_values = {'props': props}
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
@@ -286,7 +287,8 @@ class GuardarFactura(webapp2.RequestHandler):
         values = json.loads(post_data)
         ventas =[]
         for venta in values['ventas']:
-            ventas.append(Venta(producto=Producto.get_by_id(venta['producto']).key,
+            producto = venta['producto'].replace(' ','')
+            ventas.append(Venta(producto=Producto.get_by_id(producto).key,
                            porcion=Porcion.get_by_id(venta['porcion']).key,
                            cantidad = venta['cantidad'],
                            precio = venta['precio'],
