@@ -171,6 +171,18 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 
 		
 	});
+	
+	parser.instantiate([dom.byId('nuevaFacturaBtn')]);
+	on(registry.byId('nuevaFacturaBtn'),'click',function(e){
+		registry.byId('addEntityForm' + entity_class).reset();
+		var grid = registry.byId('gridFactura');
+		grid.model.clearCache();
+		grid.model.store.setData({});
+		grid.body.refresh();		
+		grid.total=updateTotal();
+		dom.byId('numeroFactura').innerHTML='';
+	});
+	
 	var store = new Store();
 	var columns = [
 		{field : 'producto', name : 'Producto', style: "text-align: center"},
