@@ -1,9 +1,23 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
 require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
-"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class', 'dojo/ready'], 
-function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready) {
+"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class', 'dojo/ready', 'dojo/topic'], 
+function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;	
+	
+	resetCliente = function(cliente){	
+		request.post('/getClientes', {handleAs:'json'}).then(function(response){
+			var items = [];
+			response.forEach(function(cliente){
+				items.push({ "value": cliente.value, "label": cliente.name });
+			});
+			var clienteSelect = registry.byId('clienteFactura');
+			clienteSelect.options = items;
+			clienteSelect.reset();
+		});
+	};
+	
+	
 	resetProducto = function(cliente){	
 			request.post('/getProducto', {
 					data : {'cliente':cliente},
@@ -45,6 +59,19 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			});
 		};
 	
+	//Listeners
+	var clienteListener = topic.subscribe("Cliente", function(e){
+		resetCliente();
+  	});
+  	
+  	var precioListener = topic.subscribe("Precio", function(e){
+		resetProducto(registry.byId('clienteFactura').value);
+  	});
+  	
+  	var porcionListener = topic.subscribe("Porcion", function(e){
+		resetProducto(registry.byId('productoFactura').value);
+  	});
+	
     parser.instantiate([dom.byId('clienteFactura')]);
     var clienteSelect = registry.byId('clienteFactura');
     clienteSelect.onChange = resetProducto; 
@@ -67,7 +94,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
 	}, "porcionFactura");
 	porcionSelect.startup();
-		
+  	
 	updateTotal = function(){
 		var data = getGridData();
 		var sumTotal=0;
