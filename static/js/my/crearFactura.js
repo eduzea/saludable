@@ -1,8 +1,8 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
 require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
-"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class'], 
-function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass) {
+"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class', 'dojo/ready'], 
+function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready) {
 	var entity_class = saludable.entity_class;	
 	resetProducto = function(cliente){	
 			request.post('/getProducto', {
@@ -25,6 +25,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		};	
 	
 	resetPorcion = function(producto){
+			if (producto == 'No hay precios definidos') return;
 			cliente = registry.byId('clienteFactura').value;	
 			request.post('/getPorcion', {
 					data : {'cliente':cliente, 'producto': producto},
@@ -46,8 +47,8 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	
     parser.instantiate([dom.byId('clienteFactura')]);
     var clienteSelect = registry.byId('clienteFactura');
-    clienteSelect.onChange = resetProducto;
-    resetProducto();
+    clienteSelect.onChange = resetProducto; 
+    resetProducto(clienteSelect.value);
     	
     var productoSelect = new Select({
         name: "productoFactura",

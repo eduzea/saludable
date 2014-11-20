@@ -200,13 +200,12 @@ class GetEmpleados(webapp2.RequestHandler):
 class GetProducto(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST.mixed()
-        if post_data:
-            cliente = Cliente.get_by_id(post_data['cliente'])
-        else:
-            cliente = Cliente.query().get(); 
+        cliente = Cliente.get_by_id(post_data['cliente'])
         grupo = cliente.grupoDePrecios
         precios = Precio.query(Precio.grupo == grupo,  projection = [Precio.producto], distinct=True).fetch()
         productos = [precio.producto.id() for precio in precios]
+        if not productos:
+            productos.append('No hay precios definidos')
         self.response.out.write(json.dumps(productos))
         
 class GetPorcion(webapp2.RequestHandler):
