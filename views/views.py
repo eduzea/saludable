@@ -11,7 +11,7 @@ from jinja2._markupsafe import Markup
 NUMERO_DE_FACTURA_INICIAL = 2775
 
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
-               'Factura':Factura, 'Empleado':Empleado}
+               'Factura':Factura, 'Empleado':Empleado, 'NumeroFactura':NumeroFactura}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
            'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -273,6 +273,14 @@ class CrearFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
 
+class SetNumeroFactura(webapp2.RequestHandler):
+    def get(self):
+        newNumero = self.request.get('numero')
+        numero = NumeroFactura.query().get()
+        numero.consecutivo = int(newNumero)
+        numero.put()
+        self.response.write('Se definio el numero de factura actual como: ' + newNumero )
+
 def getConsecutivo():
     numero = NumeroFactura.query().fetch()
     if numero:
@@ -304,12 +312,10 @@ class GuardarFactura(webapp2.RequestHandler):
             numero = values['numero']
         else:
             numero = getConsecutivo()
-        try:
-            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
-            factura.put()
-            self.response.out.write(json.dumps({'result':'Success','facturaId': factura.key.id()}))     
-        except Exception as e:
-            self.response.out.write(e.message)
+        factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+        factura.put()
+        self.response.out.write(json.dumps({'result':'Success','facturaId': factura.key.id()}))     
+        
 
         
 class MostrarFactura(webapp2.RequestHandler):

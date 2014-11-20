@@ -1,7 +1,8 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
-require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 'dijit/form/Button', 
-"gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select','dojo/dom-class', 'dojo/ready', 'dojo/topic'], 
+require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
+		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
+		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort'], 
 function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;	
 	
@@ -62,14 +63,6 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	//Listeners
 	var clienteListener = topic.subscribe("Cliente", function(e){
 		resetCliente();
-  	});
-  	
-  	var precioListener = topic.subscribe("Precio", function(e){
-		resetProducto(registry.byId('clienteFactura').value);
-  	});
-  	
-  	var porcionListener = topic.subscribe("Porcion", function(e){
-		resetProducto(registry.byId('productoFactura').value);
   	});
 	
     parser.instantiate([dom.byId('clienteFactura')]);
@@ -253,7 +246,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		cacheClass : Cache,
 		store : store,
 		structure : columns,
-		modules : ["gridx/modules/CellWidget"]
+		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
 	}, 'gridFactura');
 	grid.startup();
 	domClass.add(dom.byId('gridFactura'),'factura-grid');
