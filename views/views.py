@@ -5,13 +5,13 @@ import webapp2
 import jinja2
 
 from models.models import * 
-from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty
+from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
 
 NUMERO_DE_FACTURA_INICIAL = 2775
 
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
-               'Factura':Factura, 'Empleado':Empleado, 'NumeroFactura':NumeroFactura}
+               'Factura':Factura, 'Empleado':Empleado, 'NumeroFactura':NumeroFactura, 'Venta':Venta}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
            'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido'], 'Factura':['numero']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -109,6 +109,8 @@ def check_types(entity_class, values):
             values.pop(key, None)
         if type(value) is IntegerProperty:
             values[key] = int(values[key])
+        if type(value) is FloatProperty:
+            values[key] = float(values[key])
         if type(value) is KeyProperty:
             key_obj = ndb.Key(value._kind,values[key].replace(' ',''))
             values[key]=key_obj
@@ -116,7 +118,6 @@ def check_types(entity_class, values):
             values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
     return values
             
-
 def create_entity(entity_class, values):
     values = check_types(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
     key = getKey(entity_class, values)
@@ -414,6 +415,40 @@ class ExportScript(webapp2.RequestHandler):
         data = classModels[entity_class].query().fetch()
         self.response.write(JSONEncoder().encode(data))
         
+def createVenta(row):
+    values = {'producto':row[1], 'porcion':row[2], 'cantidad':row[3], 'precio':row[4], 'venta':row[5]}
+    values = check_types('Venta', values)
+    venta = Venta(producto = values['producto'],
+                  porcion = values['porcion'],
+                  cantidad = values['cantidad'],
+                  precio = values['precio'],
+                  venta = values['venta']
+                  )
+    return venta
+
+
+class ImportVentas(webapp2.RequestHandler):
+    def get(self):
+        import unicodecsv as csv
+        with open('data/Ventas.csv', 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',')
+            facturaId = ''
+            ventas = []
+            for row in reader:
+                if facturaId and facturaId != row[0]:
+                    print row[0]
+                    factura = Factura.get_by_id(facturaId)
+                    if factura:
+                        factura.ventas = ventas
+                        factura.put()
+                    else:
+                        print 'No existe factura ' + facturaId
+                    ventas = []
+                facturaId = row[0]
+                
+                ventas.append(createVenta(row))
+        self.response.write('Ventas importadas con exito!')
+
 
 class ImportCSV(webapp2.RequestHandler):
     def get(self):
