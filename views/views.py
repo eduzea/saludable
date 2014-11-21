@@ -13,7 +13,7 @@ NUMERO_DE_FACTURA_INICIAL = 2775
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
                'Factura':Factura, 'Empleado':Empleado, 'NumeroFactura':NumeroFactura}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
-           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido']}
+           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido'], 'Factura':['numero']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -34,9 +34,9 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       ],
             'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                         {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
-            'Factura':[{'id':'id', 'ui':'Numero'},
-                       {'id':'cliente', 'ui':'Cliente'},
+            'Factura':[{'id':'numero', 'ui':'Numero'},
                        {'id':'empleado', 'ui':'Empleado'},
+                       {'id':'cliente', 'ui':'Cliente'},
                        {'id':'fecha', 'ui':'Fecha'},
                        {'id':'total', 'ui':'Valor'}
                        ]
@@ -110,8 +110,10 @@ def check_types(entity_class, values):
         if type(value) is IntegerProperty:
             values[key] = int(values[key])
         if type(value) is KeyProperty:
-            key_obj = ndb.Key(value._kind,values[key])
+            key_obj = ndb.Key(value._kind,values[key].replace(' ',''))
             values[key]=key_obj
+        if type(value) == ndb.DateProperty:
+            values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
     return values
             
 
@@ -399,7 +401,7 @@ class ImportScript(webapp2.RequestHandler):
         entity_class = self.request.get('entityClass')
         json_data=open('data/' + entity_class +'.json')
         data = json.load(json_data)
-#         data = json.loads(data)
+        data = json.loads(data)
         json_data.close()
         for record in data:
             create_entity(entity_class, record)
@@ -412,5 +414,17 @@ class ExportScript(webapp2.RequestHandler):
         data = classModels[entity_class].query().fetch()
         self.response.write(JSONEncoder().encode(data))
         
+
+class ImportCSV(webapp2.RequestHandler):
+    def get(self):
+        import csv
+        entity_class = self.request.get('entityClass')
+        with open('data/' + entity_class + '.csv', 'r') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            props = [prop['id'] for prop in uiConfig[entity_class]]
+            for row in reader:
+                values = {props[i] : row[i] for i in range(len(props))}
+                create_entity(entity_class,values)
+        self.response.write('CSV importada con exito!')
         
-        
+  

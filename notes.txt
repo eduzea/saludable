@@ -20,7 +20,7 @@ TO DO
 
 Right now: Importing data to cloud instance.
 
-
+['empleado', 'total', 'fecha', 'cliente', 'numero', 'ventas']
 ------------------
 CLIENT_DATA = [
 ['RESTAURANTE EL ARABE','','CLL 69 A # 6-41','BOGOTA','2484899','900419473-5','0','ARABE'],
