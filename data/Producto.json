@@ -1,1 +1,87 @@
-"[{\"rotulo\": \"ARAZA\", \"nombre\": \"ARAZA\"}, {\"rotulo\": \"CURUBA\", \"nombre\": \"CURUBA\"}, {\"rotulo\": \"DURAZNO\", \"nombre\": \"DURAZNO\"}, {\"rotulo\": \"DURAZNO FRUTA\", \"nombre\": \"DURAZNO FRUTA\"}, {\"rotulo\": \"FEIJOA\", \"nombre\": \"FEIJOA\"}, {\"rotulo\": \"FRESA\", \"nombre\": \"FRESA\"}, {\"rotulo\": \"FRUTOS ROJOS\", \"nombre\": \"FRUTOS ROJOS\"}, {\"rotulo\": \"GUANABANA\", \"nombre\": \"GUANABANA\"}, {\"rotulo\": \"GUANABANA FRUTA\", \"nombre\": \"GUANABANA FRUTA\"}, {\"rotulo\": \"GUAYABA\", \"nombre\": \"GUAYABA\"}, {\"rotulo\": \"LULO\", \"nombre\": \"LULO\"}, {\"rotulo\": \"LULO TAJADO\", \"nombre\": \"LULO TAJADO\"}, {\"rotulo\": \"MANGO\", \"nombre\": \"MANGO\"}, {\"rotulo\": \"MANGO BICHE\", \"nombre\": \"MANGO BICHE\"}, {\"rotulo\": \"MARACUYA\", \"nombre\": \"MARACUYA\"}, {\"rotulo\": \"MARACUYA PEPA\", \"nombre\": \"MARACUYA PEPA\"}, {\"rotulo\": \"MELON\", \"nombre\": \"MELON\"}, {\"rotulo\": \"MORA\", \"nombre\": \"MORA\"}, {\"rotulo\": \"NISPERO\", \"nombre\": \"NISPERO\"}, {\"rotulo\": \"PATILLA\", \"nombre\": \"PATILLA\"}, {\"rotulo\": \"PI\\u00d1A\", \"nombre\": \"PI\\u00d1A\"}, {\"rotulo\": \"SMOTHIE GMB\", \"nombre\": \"SMOTHIE GMB\"}, {\"rotulo\": \"SMOTHIE LMF\", \"nombre\": \"SMOTHIE LMF\"}, {\"rotulo\": \"TAMARINDO\", \"nombre\": \"TAMARINDO\"}, {\"rotulo\": \"TOMATE DE ARBOL\", \"nombre\": \"TOMATE DE ARBOL\"}, {\"rotulo\": \"UCHUVA\", \"nombre\": \"UCHUVA\"}, {\"rotulo\": \"UVA\", \"nombre\": \"UVA\"}]"
+[
+	{
+		"nombre": "ARAZA",
+		"rotulo": "ARAZA"
+	}, {
+		"nombre": "CURUBA",
+		"rotulo": "CURUBA"
+	}, {
+		"nombre": "DURAZNO",
+		"rotulo": "DURAZNO"
+	}, {
+		"nombre": "DURAZNO FRUTA",
+		"rotulo": "DURAZNO FRUTA"
+	}, {
+		"nombre": "FEIJOA",
+		"rotulo": "FEIJOA"
+	}, {
+		"nombre": "FRESA",
+		"rotulo": "FRESA"
+	}, {
+		"nombre": "FRUTOS ROJOS",
+		"rotulo": "FRUTOS ROJOS"
+	}, {
+		"nombre": "GUANABANA",
+		"rotulo": "GUANABANA"
+	}, {
+		"nombre": "GUANABANA FRUTA",
+		"rotulo": "GUANABANA FRUTA"
+	}, {
+		"nombre": "GUAYABA",
+		"rotulo": "GUAYABA"
+	}, {
+		"nombre": "GULUPA",
+		"rotulo": "GULUPA"
+	}, {
+		"nombre": "LULO",
+		"rotulo": "LULO"
+	}, {
+		"nombre": "LULO TAJADO",
+		"rotulo": "LULO TAJADO"
+	}, {
+		"nombre": "MANGO",
+		"rotulo": "MANGO"
+	}, {
+		"nombre": "MANGO BICHE",
+		"rotulo": "MANGO BICHE"
+	}, {
+		"nombre": "MARACUYA",
+		"rotulo": "MARACUYA"
+	}, {
+		"nombre": "MARACUYA PEPA",
+		"rotulo": "MARACUYA PEPA"
+	}, {
+		"nombre": "MELON",
+		"rotulo": "MELON"
+	}, {
+		"nombre": "MORA",
+		"rotulo": "MORA"
+	}, {
+		"nombre": "NISPERO",
+		"rotulo": "NISPERO"
+	}, {
+		"nombre": "PATILLA",
+		"rotulo": "PATILLA"
+	}, {
+		"nombre": "PI\u00d1A",
+		"rotulo": "PI\u00d1A"
+	}, {
+		"nombre": "SMOTHIE GMB",
+		"rotulo": "SMOTHIE GMB"
+	}, {
+		"nombre": "SMOTHIE LMF",
+		"rotulo": "SMOTHIE LMF"
+	}, {
+		"nombre": "TAMARINDO",
+		"rotulo": "TAMARINDO"
+	}, {
+		"nombre": "TOMATE DE ARBOL",
+		"rotulo": "TOMATE DE ARBOL"
+	}, {
+		"nombre": "UCHUVA",
+		"rotulo": "UCHUVA"
+	}, {
+		"nombre": "UVA",
+		"rotulo": "UVA"
+	}
+]

@@ -1,1 +1,63 @@
-"[{\"rotulo\": \"ABACO\", \"nombre\": \"ABACO\"}, {\"rotulo\": \"ARABE\", \"nombre\": \"ARABE\"}, {\"rotulo\": \"AVESCO\", \"nombre\": \"AVESCO\"}, {\"rotulo\": \"CARMEL\", \"nombre\": \"CARMEL\"}, {\"rotulo\": \"CASAFUEGO\", \"nombre\": \"CASAFUEGO\"}, {\"rotulo\": \"CENTRICO\", \"nombre\": \"CENTRICO\"}, {\"rotulo\": \"CHATOS\", \"nombre\": \"CHATOS\"}, {\"rotulo\": \"CYP\", \"nombre\": \"CYP\"}, {\"rotulo\": \"GARDEL\", \"nombre\": \"GARDEL\"}, {\"rotulo\": \"HANS\", \"nombre\": \"HANS\"}, {\"rotulo\": \"HARRY\", \"nombre\": \"HARRY\"}, {\"rotulo\": \"JUANELPANADERO\", \"nombre\": \"JUANELPANADERO\"}, {\"rotulo\": \"LEHAL\", \"nombre\": \"LEHAL\"}, {\"rotulo\": \"NOGAL\", \"nombre\": \"NOGAL\"}, {\"rotulo\": \"PAESA\", \"nombre\": \"PAESA\"}, {\"rotulo\": \"PANTOLIMA\", \"nombre\": \"PANTOLIMA\"}, {\"rotulo\": \"PARTICULARES\", \"nombre\": \"PARTICULARES\"}, {\"rotulo\": \"POLKA\", \"nombre\": \"POLKA\"}, {\"rotulo\": \"SARODY\", \"nombre\": \"SARODY\"}]"
+[
+	{
+		"nombre": "ABACO",
+		"rotulo": "ABACO"
+	}, {
+		"nombre": "ARABE",
+		"rotulo": "ARABE"
+	}, {
+		"nombre": "AVESCO",
+		"rotulo": "AVESCO"
+	}, {
+		"nombre": "CARMEL",
+		"rotulo": "CARMEL"
+	}, {
+		"nombre": "CASAFUEGO",
+		"rotulo": "CASAFUEGO"
+	}, {
+		"nombre": "CENTRICO",
+		"rotulo": "CENTRICO"
+	}, {
+		"nombre": "CHATOS",
+		"rotulo": "CHATOS"
+	}, {
+		"nombre": "CYP",
+		"rotulo": "CYP"
+	}, {
+		"nombre": "GARDEL",
+		"rotulo": "GARDEL"
+	}, {
+		"nombre": "HANS",
+		"rotulo": "HANS"
+	}, {
+		"nombre": "HARRY",
+		"rotulo": "HARRY"
+	}, {
+		"nombre": "JUANELPANADERO",
+		"rotulo": "JUANELPANADERO"
+	}, {
+		"nombre": "LEHAL",
+		"rotulo": "LEHAL"
+	}, {
+		"nombre": "NOGAL",
+		"rotulo": "NOGAL"
+	}, {
+		"nombre": "PAESA",
+		"rotulo": "PAESA"
+	}, {
+		"nombre": "PANTOLIMA",
+		"rotulo": "PANTOLIMA"
+	}, {
+		"nombre": "PARTICULARES",
+		"rotulo": "PARTICULARES"
+	}, {
+		"nombre": "POLKA",
+		"rotulo": "POLKA"
+	}, {
+		"nombre": "SARODY",
+		"rotulo": "SARODY"
+	}, {
+		"nombre": "TREPANDO",
+		"rotulo": "TREPANDO"
+	}
+]

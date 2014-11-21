@@ -402,7 +402,7 @@ class ImportScript(webapp2.RequestHandler):
         entity_class = self.request.get('entityClass')
         json_data=open('data/' + entity_class +'.json')
         data = json.load(json_data)
-        data = json.loads(data)
+#         data = json.loads(data)
         json_data.close()
         for record in data:
             create_entity(entity_class, record)
