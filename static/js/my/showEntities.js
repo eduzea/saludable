@@ -2,7 +2,7 @@
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
 		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities',"dojo/number",
 		'gridx/modules/SingleSort',"gridx/modules/Pagination","gridx/modules/pagination/PaginationBar",'gridx/modules/Filter',
-		'gridx/modules/Filter/FilterBar'], 
+		'gridx/modules/filter/FilterBar'], 
 function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
@@ -114,7 +114,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			heigth: '100%',
 			modules: [
 				"gridx/modules/CellWidget",'gridx/modules/SingleSort',"gridx/modules/Pagination","gridx/modules/pagination/PaginationBar",
-				'gridx/modules/Filter','gridx/modules/Filter/FilterBar'
+				'gridx/modules/Filter','gridx/modules/filter/FilterBar'
 			]
 		}, 'gridNode'+ entity_class);
 
