@@ -197,14 +197,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
  {% for venta in ventas %}
  <tr height=20 style='height:15.0pt'>
   <td height=20 style='height:15.0pt'></td>
-  <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{venta.producto}}-{{venta.porcion}}</td>
+  <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{adjustText(venta.producto +'-' + venta.porcion)}}</td>
   <td class=xl78 style="text-align: center;"><span style='mso-spacerun:yes'>               </span>{{venta.cantidad}} </td>
   <td class=xl77><span style='mso-spacerun:yes'> </span>$<span
   style='mso-spacerun:yes'>             </span>{{venta.precio}} </td>
   <td class=xl76><span style='mso-spacerun:yes'> </span>$<span
   style='mso-spacerun:yes'>                  </span>{{venta.valorTotal}} </td>
   <td></td>
-  <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{venta.producto}}-{{venta.porcion}}</td>
+  <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{adjustText(venta.producto +'-' + venta.porcion)}}</td>
   <td class=xl78 style='text-align: center;'><span style='mso-spacerun:yes;' >               </span>{{venta.cantidad}}</td>
   <td class=xl77><span style='mso-spacerun:yes'> </span>$<span
   style='mso-spacerun:yes'>             </span>{{venta.precio}} </td>
@@ -218,14 +218,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <td colspan=2 class=xl125 style='border-right:1.0pt solid black'>&nbsp;</td>
   <td class=xl107></td>
   <td class=xl74>&nbsp;</td>
-  <td class=xl73><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                           </span>- </td>
+  <td class=xl73><span style='mso-spacerun:yes'> </span><span
+  style='mso-spacerun:yes'>                           </span></td>
   <td></td>
   <td colspan=2 class=xl129 style='border-right:1.0pt solid black'>&nbsp;</td>
   <td class=xl107></td>
   <td class=xl74>&nbsp;</td>
-  <td class=xl73><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                           </span>- </td>
+  <td class=xl73><span style='mso-spacerun:yes'> </span><span
+  style='mso-spacerun:yes'>                           </span></td>
  </tr>
  {% endfor %}
  <tr height=19 style='mso-height-source:userset;height:14.25pt'>

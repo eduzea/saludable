@@ -1,75 +1,79 @@
 [
 	{
-		"valor": 0,
-		"rotulo": "0 NA",
-		"unidades": " NA"
-	}, {
+		"unidades": "g",
 		"valor": 1000,
-		"rotulo": "1000g",
-		"unidades": "g"
+		"rotulo": "1000g"
 	}, {
+		"unidades": "g",
 		"valor": 100,
-		"rotulo": "100g",
-		"unidades": "g"
+		"rotulo": "100g"
 	}, {
+		"unidades": "g",
 		"valor": 110,
-		"rotulo": "110g",
-		"unidades": "g"
+		"rotulo": "110g"
 	}, {
+		"unidades": "g",
 		"valor": 120,
-		"rotulo": "120g",
-		"unidades": "g"
+		"rotulo": "120g"
 	}, {
+		"unidades": "g",
 		"valor": 125,
-		"rotulo": "125g",
-		"unidades": "g"
+		"rotulo": "125g"
 	}, {
+		"unidades": "g",
 		"valor": 130,
-		"rotulo": "130g",
-		"unidades": "g"
+		"rotulo": "130g"
 	}, {
+		"unidades": "g",
 		"valor": 140,
-		"rotulo": "140g",
-		"unidades": "g"
+		"rotulo": "140g"
 	}, {
+		"unidades": "g",
 		"valor": 150,
-		"rotulo": "150g",
-		"unidades": "g"
+		"rotulo": "150g"
 	}, {
+		"unidades": "g",
 		"valor": 160,
-		"rotulo": "160g",
-		"unidades": "g"
+		"rotulo": "160g"
 	}, {
+		"unidades": "g",
 		"valor": 170,
-		"rotulo": "170g",
-		"unidades": "g"
+		"rotulo": "170g"
 	}, {
+		"unidades": "g",
 		"valor": 180,
-		"rotulo": "180g",
-		"unidades": "g"
+		"rotulo": "180g"
 	}, {
+		"unidades": "g",
 		"valor": 190,
-		"rotulo": "190g",
-		"unidades": "g"
+		"rotulo": "190g"
 	}, {
+		"unidades": "g",
 		"valor": 200,
-		"rotulo": "200g",
-		"unidades": "g"
+		"rotulo": "200g"
 	}, {
+		"unidades": "g",
+		"valor": 250,
+		"rotulo": "250g"
+	}, {
+		"unidades": "g",
+		"valor": 500,
+		"rotulo": "500g"
+	}, {
+		"unidades": "g",
 		"valor": 50,
-		"rotulo": "50g",
-		"unidades": "g"
+		"rotulo": "50g"
 	}, {
+		"unidades": "g",
 		"valor": 700,
-		"rotulo": "700g",
-		"unidades": "g"
+		"rotulo": "700g"
 	}, {
+		"unidades": "g",
 		"valor": 70,
-		"rotulo": "70g",
-		"unidades": "g"
+		"rotulo": "70g"
 	}, {
+		"unidades": "g",
 		"valor": 750,
-		"rotulo": "750g",
-		"unidades": "g"
+		"rotulo": "750g"
 	}
 ]

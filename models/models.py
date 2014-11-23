@@ -39,7 +39,7 @@ class Precio(ndb.Model):
 class Venta(ndb.Model):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
-    cantidad = ndb.FloatProperty()
+    cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     venta = ndb.IntegerProperty()
 

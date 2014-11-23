@@ -3,7 +3,7 @@ from datetime import datetime, date, time
 import json
 import webapp2
 import jinja2
-
+from google.appengine.api import memcache
 from models.models import * 
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
@@ -23,7 +23,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
                        {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
                        ],
-            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
+            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
             'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox','width':'10em'}],
@@ -97,10 +97,10 @@ def getKey(entity_class,dicc):
     for keypart in keyDefs[entity_class]:
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get() 
-            key += entity.to_dict()['rotulo']
+            key += ' ' + entity.to_dict()['rotulo']
         else:
-            key += unicode(dicc[keypart])
-    return ''.join(key.split())
+            key += ' ' + unicode(dicc[keypart])
+    return '.'.join(key.split())
         
 def check_types(entity_class, values):
     props = classModels[entity_class]._properties
@@ -112,10 +112,12 @@ def check_types(entity_class, values):
         if type(value) is FloatProperty:
             values[key] = float(values[key])
         if type(value) is KeyProperty:
-            key_obj = ndb.Key(value._kind,values[key].replace(' ',''))
+            key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
             values[key]=key_obj
         if type(value) == ndb.DateProperty:
             values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+        if type(value) == ndb.StructuredProperty:
+            values[key]=[]
     return values
             
 def create_entity(entity_class, values):
@@ -160,7 +162,21 @@ def tagForField(entity_class, prop):
         tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"/>'
     return Markup(tag)
 
+def adjustText(text):
+    html=''
+    if len(text)>24:
+        pieces = text.split()
+        while len(html) + len(pieces[0]) < 25:
+            html += ' ' + pieces.pop(0)
+        html = html.strip()
+        html += '<br>' + " ".join(pieces)
+        return Markup(html)
+    else:
+        return text
+        
+
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
+JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 
 def fieldsInfo(entity_class):
     props = classModels[entity_class]._properties
@@ -301,7 +317,7 @@ class GuardarFactura(webapp2.RequestHandler):
         values = json.loads(post_data)
         ventas =[]
         for venta in values['ventas']:
-            producto = venta['producto'].replace(' ','')
+            producto = venta['producto'].replace(' ','.')
             ventas.append(Venta(producto=Producto.get_by_id(producto).key,
                            porcion=Porcion.get_by_id(venta['porcion']).key,
                            cantidad = venta['cantidad'],
@@ -341,7 +357,7 @@ class MostrarFactura(webapp2.RequestHandler):
                 }
         ventas = []
         for venta in factura.ventas:
-            ventas.append({'producto': unicode(venta.producto.id(),'utf-8'), 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
+            ventas.append({'producto': venta.producto.get().rotulo, 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
                            'precio': '{:,}'.format(venta.precio), 'valorTotal':'{:,}'.format(venta.venta)})
                 
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')
