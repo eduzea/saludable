@@ -3,7 +3,7 @@ from datetime import datetime, date, time
 import json
 import webapp2
 import jinja2
-from google.appengine.api import memcache
+from google.appengine.api import users
 from models.models import * 
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
@@ -47,6 +47,25 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
+def isAdminUser():
+    user = users.get_current_user()
+    if user:
+        if 'salud-able.com' in user.email():
+            return True
+        else:
+            return False 
+    else:
+        return False
+
+class LogIn(webapp2.RequestHandler):
+    def get(self):
+        self.redirect(users.create_login_url('/home'))
+
+class LogOut(webapp2.RequestHandler):
+    def get(self):
+        self.redirect(users.create_logout_url('/home'))
+
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
@@ -89,8 +108,10 @@ class EntityData(webapp2.RequestHandler):
 
 class Home(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        template_values = {'user': user}
         template = JINJA_ENVIRONMENT.get_template('home.html')
-        self.response.write(template.render())
+        self.response.write(template.render(template_values))
 
 def getKey(entity_class,dicc):
     key = u''
@@ -177,6 +198,7 @@ def adjustText(text):
 
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
+JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
 
 def fieldsInfo(entity_class):
     props = classModels[entity_class]._properties

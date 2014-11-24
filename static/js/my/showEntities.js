@@ -17,7 +17,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 				};
 			}
 		});
-		var borrarColumn = { field : 'Borrar', name : '', widgetsInCell: true,
+		var borrarColumn = { field : 'Borrar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Borrar",
@@ -76,7 +76,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
             });
 		};
 				
-		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true,
+		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Editar",
@@ -109,7 +109,6 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			cacheClass : Cache,
 			store : store,
 			structure : columns,
-			columnWidthAutoResize: true,
 			width: '100%',
 			heigth: '100%',
 			modules: [

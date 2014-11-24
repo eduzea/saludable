@@ -27,16 +27,24 @@
 		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
+		{% if user %}
+		<table><tr><td>{{user.email()}}</td><td><a href='/logout'>Log out</a></td></tr></table>
+		{% else %} 
+		<a href="/login">Administrar</a>
+		{% endif %}
 		<div id='homeTabContainer' class="centerPanel" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'false', tabPosition: 'bottom'">
 			<div id='addTabContainer' title="AGREGAR DATOS" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'false', tabPosition: 'top'">
 				<div data-dojo-type="dojox/layout/ContentPane" id='Factura_add' title="CREAR FACTURA" data-dojo-props="href: '/crearFactura', executeScripts: true"></div>	
+				{% if isAdminUser() %}
 				<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_add' title="AGREGAR CLIENTE" data-dojo-props="href: '/addEntity?entityClass=Cliente', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Producto_add' title="AGREGAR PRODUCTO" data-dojo-props="href: '/addEntity?entityClass=Producto', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Porcion_add' title="AGREGAR PORCION" data-dojo-props="href: '/addEntity?entityClass=Porcion', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='GrupoDePrecios_add' title="AGREGAR GRUPO DE PRECIOS" data-dojo-props="href: '/addEntity?entityClass=GrupoDePrecios', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Precio_add' title="AGREGAR PRECIOS" data-dojo-props="href: '/addEntity?entityClass=Precio', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Empleado_add' title="AGREGAR EMPLEADO" data-dojo-props="href: '/addEntity?entityClass=Empleado', executeScripts: true"></div>
+				{% endif %}
 			</div>
+			{% if isAdminUser() %}
 			<div id='showTabContainer' title="MOSTRAR DATOS EXISTENTES" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'false', tabPosition: 'top'">	
 				<div data-dojo-type="dojox/layout/ContentPane" id='Cliente_show' title="CLIENTES" data-dojo-props="href: '/showEntities?entityClass=Cliente', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Producto_show' title="PRODUCTOS" data-dojo-props="href: '/showEntities?entityClass=Producto', executeScripts: true"></div>
@@ -44,7 +52,8 @@
 				<div data-dojo-type="dojox/layout/ContentPane" id='Precio_show' title="PRECIOS" data-dojo-props="href: '/showEntities?entityClass=Precio', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Empleado_show' title="EMPLEADOS" data-dojo-props="href: '/showEntities?entityClass=Empleado', executeScripts: true"></div>
 				<div data-dojo-type="dojox/layout/ContentPane" id='Factura_show' title="FACTURAS" data-dojo-props="href: '/showEntities?entityClass=Factura', executeScripts: true"></div>
-			</div>			
+			</div>
+			{% endif %}			
 		</div>
 	</body>
 </html>
