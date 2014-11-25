@@ -133,8 +133,10 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var empleado = registry.byId('empleadoFactura').value;		
 			var fecha = registry.byId('fechaFactura').toString();
 			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
+			var remision = registry.byId('remision').value == 'on' ? true : false;
 			var gridData = getGridData();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 'numero':numero};
+			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 
+			'numero':numero, 'remision':remision};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'

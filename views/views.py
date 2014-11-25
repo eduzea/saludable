@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, date, time
+import random
 import json
 import webapp2
 import jinja2
@@ -352,8 +353,11 @@ class GuardarFactura(webapp2.RequestHandler):
         if values['numero']:
             numero = values['numero']
         else:
-            numero = getConsecutivo()
-        factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            if not values['remision']:
+                numero = getConsecutivo()
+            else:
+                numero = random.randint(10000, 11000)
+        factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'], remision=values['remision'])
         factura.put()
         self.response.out.write(json.dumps({'result':'Success','facturaId': factura.key.id()}))     
         
@@ -365,7 +369,8 @@ class MostrarFactura(webapp2.RequestHandler):
         factura = Factura.get_by_id(facturaKey)
         cliente = factura.cliente.get()
         empleado = factura.empleado.get()
-        data = {'numero' : factura.numero,
+        data = {'remision': factura.remision,
+                'numero' : factura.numero,
                 'cliente': unicode(cliente.rotulo),
                 'direccion': unicode(cliente.direccion),
                 'ciudad': unicode(cliente.ciudad),
