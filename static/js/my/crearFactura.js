@@ -112,10 +112,12 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		return store.query();
 	};
 	
-	actualizarFacturas = function(response, data){
-		var grid = registry.byId("gridNodeFactura");
+	actualizarFacturas = function(response, data, remision){
+		var id = remision ? 'gridNodeRemision' : 'gridNodeFactura';
+		var grid = registry.byId(id);
 		var key = response.facturaId;
 		data['id'] = key;
+		data['numero']=key;
 		if (grid){
 			var row = grid.store.get(key);
 			if (row){
@@ -123,7 +125,10 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			}
 			grid.store.add(data);
 		}
-		response_user = 'Se creo Factura: ' + data.numero;
+	};
+	
+	toggle = function(e){
+		e.value = !e.value;
 	};
 	
 	parser.instantiate([dom.byId('guardarFacturaBtn')]);
@@ -133,7 +138,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			var empleado = registry.byId('empleadoFactura').value;		
 			var fecha = registry.byId('fechaFactura').toString();
 			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
-			var remision = registry.byId('remision').value == 'on' ? true : false;
+			var remision = registry.byId('remisionFactura').value;
 			var gridData = getGridData();
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 
 			'numero':numero, 'remision':remision};
@@ -145,16 +150,17 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
 						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
-						actualizarFacturas(response, factura_data);
-						window.open('/mostrarFactura?facturaId='+response.facturaId);
+						actualizarFacturas(response, factura_data, remision);
+						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + (remision ? 'Remision':'Factura');
+						window.open(url);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}
 					dom.byId('mensajeFactura').innerHTML = message;
 					setTimeout(function() {
 						var grid =registry.byId('gridFactura');
-						grid.store.data=[];
 						grid.model.clearCache();
+						grid.model.store.setData([]);
         				grid.body.refresh();
 						dom.byId('mensajeFactura').innerHTML = '';
 						dom.byId('total').innerHTML = '';
@@ -189,7 +195,6 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
 							'precio': parseInt(precio), 'venta':total});
 			grid.total=updateTotal();
-			//registry.byId('addEntityForm' + entity_class).reset();
 		});
 
 		
@@ -198,13 +203,27 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	parser.instantiate([dom.byId('nuevaFacturaBtn')]);
 	on(registry.byId('nuevaFacturaBtn'),'click',function(e){
 		registry.byId('addEntityForm' + entity_class).reset();
+		registry.byId('remisionFactura').set('readOnly',false);
 		var grid = registry.byId('gridFactura');
 		grid.model.clearCache();
-		grid.model.store.setData({});
+		grid.model.store.setData([]);
 		grid.body.refresh();		
 		grid.total=updateTotal();
 		dom.byId('numeroFactura').innerHTML='';
 	});
+	
+	if (dom.byId('anularBtn')){
+		parser.instantiate([dom.byId('anularBtn')]);
+		on(registry.byId('anularBtn'),'click',function(e){
+			var remision = registry.byId('remisionFactura').checked;
+			var tipo = remision ? 'Remision' : 'Factura';
+			var numero = dom.byId('numeroFactura').innerHTML;
+			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
+				registry.byId('anuladaFactura').set('value','on');
+			});
+		});		
+	}
+
 	
 	var store = new Store();
 	var columns = [

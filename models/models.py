@@ -46,6 +46,18 @@ class Venta(ndb.Model):
 class NumeroFactura(ndb.Model):
     consecutivo = ndb.IntegerProperty()
     
+class NumeroRemision(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
+
+class Remision(ndb.Model):
+    numero = ndb.IntegerProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
+    empleado = ndb.KeyProperty(kind=Empleado)
+    fecha = ndb.DateProperty()
+    ventas = ndb.StructuredProperty(Venta,repeated=True)
+    total = ndb.IntegerProperty()
+    anulada = ndb.BooleanProperty(default=False)
+    
 class Factura(ndb.Model):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -53,5 +65,6 @@ class Factura(ndb.Model):
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()
-    remision = ndb.BooleanProperty(default=False)
+    remisiones = ndb.StructuredProperty(Remision)
+    anulada = ndb.BooleanProperty(default=False)
     

@@ -56,18 +56,25 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 		
 		var fillForm = function(nodelist, rowData, entity_class){
 			nodelist.forEach(function(node, index, array){
-	   			var dijit = registry.byNode(node);
+	   			var dijit = registry.byId(node.id);
 	   			if (dijit){
 	   				if (dijit.id.indexOf("grid") > -1 ){
-	   					request('/getVentas?facturaKey=' + rowData['id'], {handleAs:'json'}).then(function(response) {
+	   					request('/getVentas?facturaKey=' + rowData['id'] + '&tipo=' + entity_class, {handleAs:'json'}).then(function(response) {
 	   						dijit.model.clearCache();
 							dijit.model.store.setData(response);
 							dijit.body.refresh();
 							dijit.total = updateTotal();//this function is defined in crearFactura - abstraction leak, try to fix!
 							dom.byId('numeroFactura').innerHTML = rowData.numero;
+							if (entity_class == "Remision"){
+								registry.byId('remisionFactura').set('value',true);
+							}
+							else{
+								registry.byId('remisionFactura').set('value',false);
+							}
+							registry.byId('remisionFactura').set('readOnly',true);
 	   					});
 	   				}else{
-			        	var id= dijit.id.replace(entity_class,''); 
+			        	var id= dijit.id.replace(getEditEntityClass(entity_class),''); 
 			        	if(id in rowData){
 			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]));
 			        	}	   				
@@ -75,23 +82,27 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   			} 
             });
 		};
-				
+		
+		getEditEntityClass = function(orig){//Kludge!!!
+			return (orig == 'Remision') ? 'Factura' : orig;
+		};
+		
 		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Editar",
 					onClick : function() {
-						registry.byId('addTabContainer').selectChild(entity_class + '_add');
+						registry.byId('addTabContainer').selectChild(getEditEntityClass(entity_class) + '_add');
 						registry.byId('homeTabContainer').selectChild('addTabContainer');
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
+	                    var nodelist= query('[id*='+ getEditEntityClass(entity_class) +']', 'addEntityForm'+ getEditEntityClass(entity_class) );
 	                    if (nodelist.length == 0){
-	                    	var contentPane= registry.byId(entity_class + '_add');
+	                    	var contentPane= registry.byId(getEditEntityClass(entity_class) + '_add');
 							contentPane.set("onDownloadEnd", function(){
-								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
+								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ getEditEntityClass(entity_class) );
 								parser.instantiate(nodelist);
     							fillForm(nodelist, rowData, entity_class);	
 							});

@@ -5,16 +5,16 @@ import json
 import webapp2
 import jinja2
 from google.appengine.api import users
-from models.models import * 
+from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
 
 NUMERO_DE_FACTURA_INICIAL = 2775
 
 classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
-               'Factura':Factura, 'Empleado':Empleado, 'NumeroFactura':NumeroFactura, 'Venta':Venta}
+               'Factura':Factura, 'Remision':Remision ,'Empleado':Empleado, 'NumeroFactura':NumeroFactura, 'Venta':Venta}
 keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
-           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido'], 'Factura':['numero']}
+           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido'], 'Factura':['numero'], 'Remision':['numero']}
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -40,7 +40,12 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'cliente', 'ui':'Cliente'},
                        {'id':'fecha', 'ui':'Fecha'},
                        {'id':'total', 'ui':'Valor'}
-                       ]
+                       ],
+            'Remision':[{'id':'numero', 'ui':'Numero'},
+                       {'id':'empleado', 'ui':'Empleado'},
+                       {'id':'cliente', 'ui':'Cliente'},
+                       {'id':'fecha', 'ui':'Fecha'},
+                       {'id':'total', 'ui':'Valor'}]
             }
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -280,10 +285,15 @@ class GetPrice(webapp2.RequestHandler):
 class GetVentas(webapp2.RequestHandler):
     def get(self):
         facturaKey = self.request.get('facturaKey')
-        facturaQuery = Factura.query(Factura.numero == int(facturaKey))
-        factura = facturaQuery.fetch()[0]
+        tipo = self.request.get('tipo')
+        if tipo == 'Factura':
+            query = Factura.query(Factura.numero == int(facturaKey))
+            entity = query.fetch()[0]
+        else:
+            query = Remision.query(Remision.numero == int(facturaKey))
+            entity = query.fetch()[0]
         records=[]
-        for venta in factura.ventas:
+        for venta in entity.ventas:
             dicc = venta.to_dict()
             for prop_key, prop_value in dicc.iteritems():
                 if type(prop_value) == ndb.Key:
@@ -315,24 +325,38 @@ class CrearFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
 
-class SetNumeroFactura(webapp2.RequestHandler):
+class SetNumber(webapp2.RequestHandler):
     def get(self):
+        tipo = self.request.get('tipo')
         newNumero = self.request.get('numero')
-        numero = NumeroFactura.query().get()
-        numero.consecutivo = int(newNumero)
-        numero.put()
-        self.response.write('Se definio el numero de factura actual como: ' + newNumero )
+        msg ='Se definio el numero de ' + tipo +' actual como: ' + newNumero
+        if tipo =='Factura':
+            numero = NumeroFactura.query().get()
+            if numero:
+                numero.consecutivo = int(newNumero)
+                numero.put()
+            else:
+                NumeroFactura(consecutivo=newNumero).put()
+        elif tipo == 'Remision':
+            numero = NumeroRemision.query().get()
+            if numero:
+                numero.consecutivo = int(newNumero)
+                numero.put()
+            else:
+                NumeroRemision(consecutivo=int(newNumero)).put()
+        else:
+            msg = 'Parametro "tipo" debe ser "Factura" o "Remision"'
+        self.response.write(msg)
 
-def getConsecutivo():
-    numero = NumeroFactura.query().fetch()
+def getConsecutivo(esRemision):
+    if esRemision:
+        numero = NumeroRemision.query().fetch()
+    else:
+        numero = NumeroFactura.query().fetch()
     if numero:
         numero[0].consecutivo = numero[0].consecutivo + 1
         numero[0].put()
         return numero[0].consecutivo
-    else:
-        first = NumeroFactura(consecutivo=NUMERO_DE_FACTURA_INICIAL)
-        first.put()
-        return NUMERO_DE_FACTURA_INICIAL
          
 class GuardarFactura(webapp2.RequestHandler):        
     def post(self):
@@ -353,42 +377,63 @@ class GuardarFactura(webapp2.RequestHandler):
         if values['numero']:
             numero = values['numero']
         else:
-            if not values['remision']:
-                numero = getConsecutivo()
-            else:
-                numero = random.randint(10000, 11000)
-        factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'], remision=values['remision'])
-        factura.put()
-        self.response.out.write(json.dumps({'result':'Success','facturaId': factura.key.id()}))     
+            numero = getConsecutivo(values['remision'])
+        
+        if values['remision']:
+            remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            remision.put()
+            entity = remision
+        else:
+            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            factura.put()
+            entity = factura
+        self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
         
 
         
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
-        facturaKey = self.request.get('facturaId')
-        factura = Factura.get_by_id(facturaKey)
-        cliente = factura.cliente.get()
-        empleado = factura.empleado.get()
-        data = {'remision': factura.remision,
-                'numero' : factura.numero,
+        key = self.request.get('facturaId')
+        tipo = self.request.get('tipo')
+        if tipo == 'Factura':
+            entity = Factura.get_by_id(key)
+        else:
+            entity = Remision.get_by_id(key)
+        
+        cliente = entity.cliente.get()
+        empleado = entity.empleado.get()
+        data = {'numero' : entity.numero,
                 'cliente': unicode(cliente.rotulo),
                 'direccion': unicode(cliente.direccion),
                 'ciudad': unicode(cliente.ciudad),
                 'nit':cliente.nit, 
                 'noFactura':1456,
-                'fecha': factura.fecha.strftime('%Y-%m-%d'),
+                'fecha': entity.fecha.strftime('%Y-%m-%d'),
                 'telefono':cliente.telefono,
                 'empleado': empleado.rotulo,
-                'numVentas':len(factura.ventas),
-                'total': '{:,}'.format(factura.total)
+                'numVentas':len(entity.ventas),
+                'total': '{:,}'.format(entity.total),
+                'remision': True if tipo == 'Remision' else False
                 }
         ventas = []
-        for venta in factura.ventas:
+        for venta in entity.ventas:
             ventas.append({'producto': venta.producto.get().rotulo, 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
                            'precio': '{:,}'.format(venta.precio), 'valorTotal':'{:,}'.format(venta.venta)})
                 
         template = JINJA_ENVIRONMENT.get_template('Factura.htm')
         self.response.write(template.render({'data':data, 'ventas':ventas}))
+
+class AnularFactura(webapp2.RequestHandler):
+    def get(self):
+        key = self.request.get('id')
+        tipo = self.request.get('tipo')
+        if tipo == 'Factura':
+            entity = Factura.get_by_id(key)
+        else:
+            entity = Remision.get_by_id(key)
+        entity.anulada = True
+        entity.put()
+        self.response.write('Se anulo ' + tipo + ' :' + key)
     
 # class ImportClientes(webapp2.RequestHandler):
 #     def get(self):

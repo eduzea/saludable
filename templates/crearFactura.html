@@ -15,30 +15,47 @@
 	</head>
 	<body class="claro">
 		<div data-dojo-type="dijit/form/Form" id="addEntityFormFactura" data-dojo-id="addEntityFormFactura" encType="multipart/form-data">
-			<table>
+			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label>Empleado :</label></td>
-					<td> {{tagForField('Factura',props['Empleado'])}} </td>
-					<td>No. Factura: </td><td><div id='numeroFactura'></div></td>
-					<td>
-						<input id="remision" name="remision" data-dojo-type="dijit/form/CheckBox"/> <label for="remision">Remision</label>
+					<td><label for='empleadoFactura'>Empleado :</label></td>
+					<td><div style="width:300px">
+							{{tagForField('Factura',props['Empleado'])}}
+						</div>
 					</td>
+					<td><label for='fechaFactura'>Fecha: </label></td>
+					<td><input type="text" name="fechacFactura" id="fechaFactura" value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
+					<td><div style="width:100px"></td>
+					<td><label for='numeroFactura'>No. Factura:</label> </td>
+					<td><div id='numeroFactura'></div></td>
 				</tr>					
 				<tr>
-					<td><label>Cliente: </label></td>
-					<td>{{tagForField('Factura',props['Cliente'])}}</td>
-					<td><label>Fecha</label></td>
-					<td><input type="text" name="fechacFactura" id="fechaFactura" value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" /></td>
-				</tr>
-			</table>
-			<table>	
-				<tr>
-					<td><label>Producto: </label></td>
-					<td><div id='productoFactura'></div></td>
-					<td><label>Porcion: </label></td>
+					<td><label for='clienteFactura'>Cliente: </label></td>
+					<td><div style="width:410px">
+							{{tagForField('Factura',props['Cliente'])}}
+						</div>
+					</td>
+					<td><label for='porcionFactura'>Porcion: </label></td>
 					<td><div id='porcionFactura'></div></td>
-					<td><label>Cantidad: </label></td>
+					<td></td>
+					<td>
+						<span style="border-style: solid;border-width: 1px; padding: 3px;border-color: #b5bcc7">
+							<input id="remisionFactura" name="remisionFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='value:false' onchange="this.value = !this.value"/> <label for="remision">Remision</label>
+							&nbsp;
+							<input id="anuladaFactura" name="anuladaFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='readOnly:true'/> <label for="anulada">Anulada</label>
+						</span>
+					</td>
+					<td>
+						{% if isAdminUser() %}
+						<button id='anularBtn' data-dojo-type="dijit/form/Button">Anular</button>
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<td><label for="productoFactura">Producto: </label></td>
+					<td><div id='productoFactura'></div></td>
+					<td><label for='cantidadFactura'>Cantidad:</label></td>
 					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
+					<td></td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 					<td><button id='nuevaFacturaBtn' data-dojo-type="dijit/form/Button">Nueva Factura</button></td>
 				</tr>
