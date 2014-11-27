@@ -126,7 +126,7 @@ def getKey(entity_class,dicc):
             if entity:
                 key += ' ' + entity.to_dict()['rotulo']
             else:
-                print "Entity not founf by key:" + keypart 
+                print "Entity not found by key:" + keypart 
         else:
             key += ' ' + unicode(dicc[keypart])
     return '.'.join(key.split())
@@ -159,7 +159,6 @@ def create_entity(entity_class, values):
         return {'message':"Updated",'key':key}
     else:
         classModels[entity_class].get_or_insert(key,**values)
-        print key
         return {'message':"Created",'key':key}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -196,7 +195,7 @@ def adjustText(text):
     html=''
     if len(text)>24:
         pieces = text.split()
-        while len(html) + len(pieces[0]) < 25:
+        while len(html) + len(pieces[0]) < 24:
             html += ' ' + pieces.pop(0)
         html = html.strip()
         html += '<br>' + " ".join(pieces)
@@ -339,7 +338,7 @@ class SetNumber(webapp2.RequestHandler):
                 numero.consecutivo = int(newNumero)
                 numero.put()
             else:
-                NumeroFactura(consecutivo=newNumero).put()
+                NumeroFactura(consecutivo=int(newNumero)).put()
         elif tipo == 'Remision':
             numero = NumeroRemision.query().get()
             if numero:
@@ -367,6 +366,7 @@ class GuardarFactura(webapp2.RequestHandler):
         values = json.loads(post_data)
         ventas =[]
         for venta in values['ventas']:
+            print venta
             producto = venta['producto'].replace(' ','.')
             ventas.append(Venta(producto=Producto.get_by_id(producto).key,
                            porcion=Porcion.get_by_id(venta['porcion']).key,
@@ -410,7 +410,6 @@ class MostrarFactura(webapp2.RequestHandler):
                 'direccion': unicode(cliente.direccion),
                 'ciudad': unicode(cliente.ciudad),
                 'nit':cliente.nit, 
-                'noFactura':1456,
                 'fecha': entity.fecha.strftime('%Y-%m-%d'),
                 'telefono':cliente.telefono,
                 'empleado': empleado.rotulo,
