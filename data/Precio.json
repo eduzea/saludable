@@ -2,622 +2,622 @@
 	{
 		"producto": "ARAZA",
 		"grupo": "AVESCO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "ARAZA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "ARAZA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "ARAZA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 680
 	}, {
 		"producto": "ARAZA",
 		"grupo": "HARRY",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "CURUBA",
 		"grupo": "CYP",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "CURUBA",
 		"grupo": "HARRY",
-		"porcion": "125g",
+		"porcion": "125.g",
 		"precio": 800
 	}, {
 		"producto": "CURUBA",
 		"grupo": "LEHAL",
-		"porcion": "140g",
+		"porcion": "140.g",
 		"precio": 840
 	}, {
 		"producto": "DURAZNO",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "DURAZNO",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "DURAZNO",
 		"grupo": "HARRY",
-		"porcion": "125g",
+		"porcion": "125.g",
 		"precio": 1100
 	}, {
 		"producto": "DURAZNO",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1585
 	}, {
 		"producto": "DURAZNO.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "170g",
+		"porcion": "170.g",
 		"precio": 1420
 	}, {
 		"producto": "DURAZNO.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "180g",
+		"porcion": "180.g",
 		"precio": 1500
 	}, {
 		"producto": "DURAZNO.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "190g",
+		"porcion": "190.g",
 		"precio": 1750
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 680
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "HARRY",
-		"porcion": "120g",
+		"porcion": "120.g",
 		"precio": 800
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "LEHAL",
-		"porcion": "140g",
+		"porcion": "140.g",
 		"precio": 700
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "PAESA",
-		"porcion": "170g",
+		"porcion": "170.g",
 		"precio": 1200
 	}, {
 		"producto": "FEIJOA",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "FRESA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "FRESA",
 		"grupo": "CENTRICO",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 750
 	}, {
 		"producto": "FRESA",
 		"grupo": "LEHAL",
-		"porcion": "170g",
+		"porcion": "170.g",
 		"precio": 765
 	}, {
 		"producto": "FRESA",
 		"grupo": "HARRY",
-		"porcion": "190g",
+		"porcion": "190.g",
 		"precio": 1050
 	}, {
 		"producto": "FRESA",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 1000
 	}, {
 		"producto": "FRESA",
 		"grupo": "CYP",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4300
 	}, {
 		"producto": "FRUTOS.ROJOS",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRUTOS.ROJOS",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRUTOS.ROJOS",
 		"grupo": "PAESA",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 8500
 	}, {
 		"producto": "FRUTOS.ROJOS",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "FRUTOS.ROJOS",
 		"grupo": "LEHAL",
-		"porcion": "160g",
+		"porcion": "160.g",
 		"precio": 800
 	}, {
 		"producto": "GUANABANA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 750
 	}, {
 		"producto": "GUANABANA",
 		"grupo": "CENTRICO",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "GUANABANA",
 		"grupo": "LEHAL",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 936
 	}, {
 		"producto": "GUANABANA.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 1170
 	}, {
 		"producto": "GUANABANA.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1350
 	}, {
 		"producto": "GUANABANA.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "160g",
+		"porcion": "160.g",
 		"precio": 1440
 	}, {
 		"producto": "GUANABANA.FRUTA",
 		"grupo": "PAESA",
-		"porcion": "180g",
+		"porcion": "180.g",
 		"precio": 1620
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 550
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "HARRY",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "LEHAL",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 598
 	}, {
 		"producto": "GUAYABA",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4000
 	}, {
 		"producto": "LULO",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "LULO",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "LULO",
 		"grupo": "HARRY",
-		"porcion": "120g",
+		"porcion": "120.g",
 		"precio": 800
 	}, {
 		"producto": "LULO",
 		"grupo": "CENTRICO",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 750
 	}, {
 		"producto": "LULO",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1020
 	}, {
 		"producto": "LULO",
 		"grupo": "CYP",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "LULO",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "LULO.TAJADO",
 		"grupo": "PAESA",
-		"porcion": "140g",
+		"porcion": "140.g",
 		"precio": 630
 	}, {
 		"producto": "MANGO",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MANGO",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 680
 	}, {
 		"producto": "MANGO",
 		"grupo": "HARRY",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 800
 	}, {
 		"producto": "MANGO",
 		"grupo": "LEHAL",
-		"porcion": "120g",
+		"porcion": "120.g",
 		"precio": 936
 	}, {
 		"producto": "MANGO",
 		"grupo": "CENTRICO",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "MANGO",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1040
 	}, {
 		"producto": "MANGO",
 		"grupo": "PAESA",
-		"porcion": "170g",
+		"porcion": "170.g",
 		"precio": 1175
 	}, {
 		"producto": "MANGO",
 		"grupo": "CYP",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "MANGO",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "MANGO.BICHE",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO.BICHE",
 		"grupo": "PAESA",
-		"porcion": "50g",
+		"porcion": "50.g",
 		"precio": 400
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "LEHAL",
-		"porcion": "110g",
+		"porcion": "110.g",
 		"precio": 935
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1320
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "PAESA",
-		"porcion": "50g",
+		"porcion": "50.g",
 		"precio": 440
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "CYP",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 5500
 	}, {
 		"producto": "MARACUYA",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "MARACUYA.PEPA",
 		"grupo": "PAESA",
-		"porcion": "140g",
+		"porcion": "140.g",
 		"precio": 1700
 	}, {
 		"producto": "MARACUYA.PEPA",
 		"grupo": "PAESA",
-		"porcion": "50g",
+		"porcion": "50.g",
 		"precio": 620
 	}, {
 		"producto": "MELON",
 		"grupo": "LEHAL",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 1040
 	}, {
 		"producto": "MELON",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 980
 	}, {
 		"producto": "MORA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "MORA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "MORA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "MORA",
 		"grupo": "HARRY",
-		"porcion": "110g",
+		"porcion": "110.g",
 		"precio": 800
 	}, {
 		"producto": "MORA",
 		"grupo": "PAESA",
-		"porcion": "125g",
+		"porcion": "125.g",
 		"precio": 950
 	}, {
 		"producto": "MORA",
 		"grupo": "LEHAL",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 676
 	}, {
 		"producto": "MORA",
 		"grupo": "PAESA",
-		"porcion": "50g",
+		"porcion": "50.g",
 		"precio": 380
 	}, {
 		"producto": "MORA",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "NISPERO",
 		"grupo": "LEHAL",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 1170
 	}, {
 		"producto": "PATILLA",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 700
 	}, {
 		"producto": "PATILLA",
 		"grupo": "PAESA",
-		"porcion": "180g",
+		"porcion": "180.g",
 		"precio": 810
 	}, {
 		"producto": "PATILLA",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 900
 	}, {
 		"producto": "PATILLA",
 		"grupo": "PAESA",
-		"porcion": "70g",
+		"porcion": "70.g",
 		"precio": 350
 	}, {
 		"producto": "PIÑA",
 		"grupo": "CYP",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "PIÑA",
 		"grupo": "HARRY",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "PIÑA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "PIÑA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "PIÑA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 600
 	}, {
 		"producto": "PIÑA",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 990
 	}, {
 		"producto": "SMOTHIE.GMB",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 1200
 	}, {
 		"producto": "SMOTHIE.LMF",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 1350
 	}, {
 		"producto": "TAMARINDO",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "TAMARINDO",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "TAMARINDO",
 		"grupo": "LEHAL",
-		"porcion": "110g",
+		"porcion": "110.g",
 		"precio": 528
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 800
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupo": "CYP",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4300
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupo": "HARRY",
-		"porcion": "750g",
+		"porcion": "750.g",
 		"precio": 4950
 	}, {
 		"producto": "UCHUVA",
 		"grupo": "LEHAL",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 748
 	}, {
 		"producto": "UVA",
 		"grupo": "JUAN EL PANADERO",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
 		"grupo": "OTROS",
-		"porcion": "1000g",
+		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
 		"grupo": "CYP",
-		"porcion": "100g",
+		"porcion": "100.g",
 		"precio": 680
 	}, {
 		"producto": "UVA",
 		"grupo": "CENTRICO",
-		"porcion": "130g",
+		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "UVA",
 		"grupo": "PAESA",
-		"porcion": "150g",
+		"porcion": "150.g",
 		"precio": 1170
 	}, {
 		"producto": "UVA",
 		"grupo": "HARRY",
-		"porcion": "180g",
+		"porcion": "180.g",
 		"precio": 1200
 	}, {
 		"producto": "UVA",
 		"grupo": "LEHAL",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 960
 	}, {
 		"producto": "UVA",
 		"grupo": "PAESA",
-		"porcion": "200g",
+		"porcion": "200.g",
 		"precio": 1550
 	}
 ]

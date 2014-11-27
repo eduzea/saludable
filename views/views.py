@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime, date, time
-import random
 import json
 import webapp2
 import jinja2
@@ -123,8 +122,11 @@ def getKey(entity_class,dicc):
     key = u''
     for keypart in keyDefs[entity_class]:
         if type(dicc[keypart]) == ndb.Key:
-            entity = dicc[keypart].get() 
-            key += ' ' + entity.to_dict()['rotulo']
+            entity = dicc[keypart].get()
+            if entity:
+                key += ' ' + entity.to_dict()['rotulo']
+            else:
+                print "Entity not founf by key:" + keypart 
         else:
             key += ' ' + unicode(dicc[keypart])
     return '.'.join(key.split())
@@ -157,6 +159,7 @@ def create_entity(entity_class, values):
         return {'message':"Updated",'key':key}
     else:
         classModels[entity_class].get_or_insert(key,**values)
+        print key
         return {'message':"Created",'key':key}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -514,8 +517,25 @@ def createVenta(row):
                   )
     return venta
 
-
 class ImportVentas(webapp2.RequestHandler):
+    def get(self):
+        json_data=open('data/Factura.json')
+        data = json.load(json_data)
+        json_data.close()
+        for record in data:
+            ventas=[]
+            ventasObj = record['ventas']
+            for venta in ventasObj:
+                venta = check_types('Venta',venta)             
+                ventas.append(Venta(**venta))
+            factura = Factura.get_by_id(unicode(record['numero']))
+            factura.ventas = ventas
+            factura.put()
+            print record['numero']
+        
+        self.response.write('Ventas importadas con exito!')
+
+class ImportVentasCSV(webapp2.RequestHandler):
     def get(self):
         import unicodecsv as csv
         with open('data/Ventas.csv', 'r') as csvfile:

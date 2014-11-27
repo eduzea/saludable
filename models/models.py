@@ -65,6 +65,5 @@ class Factura(ndb.Model):
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()
-    remisiones = ndb.StructuredProperty(Remision)
     anulada = ndb.BooleanProperty(default=False)
     

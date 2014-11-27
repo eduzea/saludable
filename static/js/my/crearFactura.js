@@ -68,11 +68,12 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
     parser.instantiate([dom.byId('clienteFactura')]);
     var clienteSelect = registry.byId('clienteFactura');
     clienteSelect.onChange = resetProducto; 
+    clienteSelect.set('style','font-size:70%')
     resetProducto(clienteSelect.value);
     	
     var productoSelect = new Select({
         name: "productoFactura",
-        style: "width: 200px;",
+        style: "width: 200px;font-size:70%",
         store: new Store(),
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
@@ -82,7 +83,7 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 	
     var porcionSelect = new Select({
         name: "porcionFactura",
-        style: "width: 200px;",
+        style: "font-size:70%",
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
 	}, "porcionFactura");
