@@ -1,9 +1,9 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
-require(['dojo/dom','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
+require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
 		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort'], 
-function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
+function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;	
 	
 	resetCliente = function(cliente){	
@@ -213,17 +213,18 @@ function(dom,registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
 		dom.byId('numeroFactura').innerHTML='';
 	});
 	
-	if (dom.byId('anularBtn')){
-		parser.instantiate([dom.byId('anularBtn')]);
-		on(registry.byId('anularBtn'),'click',function(e){
-			var remision = registry.byId('remisionFactura').checked;
-			var tipo = remision ? 'Remision' : 'Factura';
-			var numero = dom.byId('numeroFactura').innerHTML;
-			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
-				registry.byId('anuladaFactura').set('value','on');
-			});
-		});		
-	}
+//	if (dom.byId('anularBtn')){
+//		parser.instantiate([dom.byId('anularBtn')]);
+//		on(registry.byId('anularBtn'),'click',function(e){
+//			var remision = registry.byId('remisionFactura').checked;
+//			var tipo = remision ? 'Remision' : 'Factura';
+//			var numero = dom.byId('numeroFactura').innerHTML;
+//			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
+//				dom.byId('anuladaFactura').innerHTML="ANULADA!";
+//				domAttr.set('anuladaFactura', 'style', 'visibility:visible;color:red');
+//			});
+//		});		
+//	}
 
 	
 	var store = new Store();

@@ -300,7 +300,7 @@ class GetVentas(webapp2.RequestHandler):
             for prop_key, prop_value in dicc.iteritems():
                 if type(prop_value) == ndb.Key:
                     try:
-                        dicc[prop_key] = dicc[prop_key].get().to_dict()['rotulo']
+                        dicc[prop_key] = dicc[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
                     except Exception as e:
                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
                 if type(prop_value) == date:
@@ -528,9 +528,12 @@ class ImportVentas(webapp2.RequestHandler):
                 venta = check_types('Venta',venta)             
                 ventas.append(Venta(**venta))
             factura = Factura.get_by_id(unicode(record['numero']))
-            factura.ventas = ventas
-            factura.put()
-            print record['numero']
+            if factura:
+                factura.ventas = ventas
+                factura.put()
+                print record['numero']
+            else:
+                print "No se encontro factura: " + str(record['numero']) 
         
         self.response.write('Ventas importadas con exito!')
 

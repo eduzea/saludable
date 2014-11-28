@@ -25,9 +25,14 @@
 					<td><label for='fechaFactura'>Fecha: </label></td>
 					<td><input type="text" name="fechacFactura" id="fechaFactura" value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
-							required="true" style="width:100px;font-size:70%" /></td>
-					<td><button id='nuevaFacturaBtn' data-dojo-type="dijit/form/Button">Nueva Factura</button></td>
-					<td><label for='numeroFactura'>No. Factura:</label> </td>
+							required="true" style="width:100px;font-size:70%" />
+					</td>
+					<td>
+						<span style="border-style: solid;border-width: 1px; padding: 3px;border-color: #b5bcc7">
+							<input id="remisionFactura" name="remisionFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='value:false' onchange="this.value = !this.value"/> <label for="remision">Remision</label>
+						</span>
+					</td>
+					<td><label for='numeroFactura'>No.: </label> </td>
 					<td><div id='numeroFactura'></div></td>
 				</tr>					
 				<tr>
@@ -38,18 +43,6 @@
 					</td>
 					<td><label for='porcionFactura'>Porcion: </label></td>
 					<td><div id='porcionFactura'></div></td>
-					<td>
-						{% if isAdminUser() %}
-						<button id='anularBtn' data-dojo-type="dijit/form/Button">Anular</button>
-						{% endif %}
-					</td>
-					<td>
-						<span style="border-style: solid;border-width: 1px; padding: 3px;border-color: #b5bcc7">
-							<input id="remisionFactura" name="remisionFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='value:false' onchange="this.value = !this.value"/> <label for="remision">Remision</label>
-							&nbsp;
-							<input id="anuladaFactura" name="anuladaFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='readOnly:true'/> <label for="anulada">Anulada</label>
-						</span>
-					</td>
 				</tr>
 				<tr>
 					<td><label for="productoFactura">Producto: </label></td>
@@ -57,7 +50,7 @@
 					<td><label for='cantidadFactura'>Cantidad:</label></td>
 					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
-					
+					<td><button id='nuevaFacturaBtn' data-dojo-type="dijit/form/Button">Nueva Factura</button></td>
 				</tr>
 			</table>
 			<div id="gridFactura"></div>	
