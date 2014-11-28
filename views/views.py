@@ -398,6 +398,7 @@ class MostrarFactura(webapp2.RequestHandler):
     def get(self):
         key = self.request.get('facturaId')
         tipo = self.request.get('tipo')
+        facturaPorPagina = self.request.get('pagina')
         if tipo == 'Factura':
             entity = Factura.get_by_id(key)
         else:
@@ -422,7 +423,10 @@ class MostrarFactura(webapp2.RequestHandler):
             ventas.append({'producto': venta.producto.get().rotulo, 'porcion':venta.porcion.id(), 'cantidad':venta.cantidad, 
                            'precio': '{:,}'.format(venta.precio), 'valorTotal':'{:,}'.format(venta.venta)})
                 
-        template = JINJA_ENVIRONMENT.get_template('Factura.htm')
+        if facturaPorPagina == 'true':
+            template = JINJA_ENVIRONMENT.get_template('Factura1p.htm')
+        else:
+            template = JINJA_ENVIRONMENT.get_template('Factura.htm')
         self.response.write(template.render({'data':data, 'ventas':ventas}))
 
 class AnularFactura(webapp2.RequestHandler):

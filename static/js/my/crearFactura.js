@@ -152,7 +152,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 						message = 'Se grabo exitosamente este pedido!';
 						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
 						actualizarFacturas(response, factura_data, remision);
-						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + (remision ? 'Remision':'Factura');
+						var pagina = registry.byId('facturasPorPagina').checked;
+						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + (remision ? 'Remision':'Factura')+ '&pagina='+ pagina.toString();
 						window.open(url);
 					}else{
 						message = 'No se pudo guardar este pedido!';
