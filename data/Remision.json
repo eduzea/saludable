@@ -1,0 +1,979 @@
+[ {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-08-28",
+	"numero" : 407,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 269850,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 50000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 50
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 64800,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO",
+		"venta" : 82250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 70
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 3800,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 10
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 18000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-09-19",
+	"numero" : 416,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 341750,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 36000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 30
+	}, {
+		"producto" : "FRESA",
+		"venta" : 100000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 100
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 32400,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 82250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 70
+	}, {
+		"producto" : "UVA",
+		"venta" : 31000,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 7600,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO.BICHE",
+		"venta" : 8000,
+		"porcion" : "50.g",
+		"precio" : 400,
+		"cantidad" : 20
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 10500,
+		"porcion" : "70.g",
+		"precio" : 350,
+		"cantidad" : 30
+	}, {
+		"producto" : "FRUTOS.ROJOS",
+		"venta" : 34000,
+		"porcion" : "1000.g",
+		"precio" : 8500,
+		"cantidad" : 4
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-07",
+	"numero" : 421,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 109100,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 64800,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO",
+		"venta" : 23500,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 20800,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-01",
+	"numero" : 422,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 630900,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 36000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 30
+	}, {
+		"producto" : "FRESA",
+		"venta" : 120000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 120
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 97200,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 60
+	}, {
+		"producto" : "MANGO",
+		"venta" : 117500,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 100
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 67500,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 50
+	}, {
+		"producto" : "UVA",
+		"venta" : 77500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 50
+	}, {
+		"producto" : "MORA",
+		"venta" : 7600,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 20
+	}, {
+		"producto" : "MELON",
+		"venta" : 19600,
+		"porcion" : "200.g",
+		"precio" : 980,
+		"cantidad" : 20
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 54000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 60
+	}, {
+		"producto" : "MARACUYA",
+		"venta" : 34000,
+		"porcion" : "140.g",
+		"precio" : 1700,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-11",
+	"numero" : 424,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 190600,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FRESA",
+		"venta" : 40000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 40
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 64800,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO",
+		"venta" : 47000,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 40
+	}, {
+		"producto" : "UVA",
+		"venta" : 31000,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 3800,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 10
+	}, {
+		"producto" : "MANGO.BICHE",
+		"venta" : 4000,
+		"porcion" : "50.g",
+		"precio" : 400,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-15",
+	"numero" : 425,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 108100,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 48000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 40
+	}, {
+		"producto" : "PI\u00d1A",
+		"venta" : 19800,
+		"porcion" : "150.g",
+		"precio" : 990,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 9500,
+		"porcion" : "125.g",
+		"precio" : 950,
+		"cantidad" : 10
+	}, {
+		"producto" : "LULO",
+		"venta" : 20400,
+		"porcion" : "150.g",
+		"precio" : 1020,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 10400,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-18",
+	"numero" : 452,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 154550,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 12000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 10
+	}, {
+		"producto" : "FRESA",
+		"venta" : 50000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 50
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 32400,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 11750,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 10
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 7600,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 20
+	}, {
+		"producto" : "MELON",
+		"venta" : 9800,
+		"porcion" : "200.g",
+		"precio" : 980,
+		"cantidad" : 10
+	}, {
+		"producto" : "MANGO.BICHE",
+		"venta" : 4000,
+		"porcion" : "50.g",
+		"precio" : 400,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-16",
+	"numero" : 456,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 152450,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 20000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 20
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 32400,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 11750,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 10
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 3800,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 10
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 18000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-18",
+	"numero" : 457,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 235950,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FRESA",
+		"venta" : 70000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 70
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 64800,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO",
+		"venta" : 35250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 30
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 3800,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 10
+	}, {
+		"producto" : "MELON",
+		"venta" : 19600,
+		"porcion" : "200.g",
+		"precio" : 980,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-21",
+	"numero" : 459,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 57750,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "MANGO",
+		"venta" : 35250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 30
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 9000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 10
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 13500,
+		"porcion" : "150.g",
+		"precio" : 1350,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-30",
+	"numero" : 462,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 34000,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "MARACUYA",
+		"venta" : 34000,
+		"porcion" : "140.g",
+		"precio" : 1700,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-01",
+	"numero" : 463,
+	"cliente" : "PAESA.SA.COTIDIANO.ANDINO",
+	"total" : 521450,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 120000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 120
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 113400,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 70
+	}, {
+		"producto" : "MANGO",
+		"venta" : 82250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 70
+	}, {
+		"producto" : "MELON",
+		"venta" : 9800,
+		"porcion" : "200.g",
+		"precio" : 980,
+		"cantidad" : 10
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "UVA",
+		"venta" : 62000,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO.BICHE",
+		"venta" : 4000,
+		"porcion" : "50.g",
+		"precio" : 400,
+		"cantidad" : 10
+	}, {
+		"producto" : "MARACUYA",
+		"venta" : 34000,
+		"porcion" : "140.g",
+		"precio" : 1700,
+		"cantidad" : 20
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 45000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 50
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-05",
+	"numero" : 464,
+	"cliente" : "PAESA.SA.COTIDIANO.ROSALES",
+	"total" : 77200,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 27000,
+		"porcion" : "150.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "LULO",
+		"venta" : 20400,
+		"porcion" : "150.g",
+		"precio" : 1020,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 10400,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 9500,
+		"porcion" : "125.g",
+		"precio" : 950,
+		"cantidad" : 10
+	}, {
+		"producto" : "PI\u00d1A",
+		"venta" : 9900,
+		"porcion" : "150.g",
+		"precio" : 990,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-10-28",
+	"numero" : 466,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 261550,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FRESA",
+		"venta" : 40000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 40
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 97200,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 60
+	}, {
+		"producto" : "MANGO",
+		"venta" : 35250,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 30
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 13500,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 10
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 7600,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 20
+	}, {
+		"producto" : "MARACUYA",
+		"venta" : 13200,
+		"porcion" : "150.g",
+		"precio" : 1320,
+		"cantidad" : 10
+	}, {
+		"producto" : "PI\u00d1A",
+		"venta" : 9900,
+		"porcion" : "150.g",
+		"precio" : 990,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 19000,
+		"porcion" : "125.g",
+		"precio" : 950,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 10400,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-06",
+	"numero" : 472,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 46300,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 27000,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 20
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 3800,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-08",
+	"numero" : 478,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 285900,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 36000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 30
+	}, {
+		"producto" : "FRESA",
+		"venta" : 50000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 50
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 48600,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 30
+	}, {
+		"producto" : "MANGO",
+		"venta" : 70500,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 60
+	}, {
+		"producto" : "UVA",
+		"venta" : 31000,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 20
+	}, {
+		"producto" : "MELON",
+		"venta" : 9800,
+		"porcion" : "200.g",
+		"precio" : 980,
+		"cantidad" : 10
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 36000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 40
+	}, {
+		"producto" : "MANGO.BICHE",
+		"venta" : 4000,
+		"porcion" : "50.g",
+		"precio" : 400,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-11",
+	"numero" : 480,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 33100,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "MARACUYA",
+		"venta" : 13200,
+		"porcion" : "150.g",
+		"precio" : 1320,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 9500,
+		"porcion" : "125.g",
+		"precio" : 950,
+		"cantidad" : 10
+	}, {
+		"producto" : "MANGO",
+		"venta" : 10400,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-19",
+	"numero" : 486,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 312150,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 12000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 10
+	}, {
+		"producto" : "FRESA",
+		"venta" : 40000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 40
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 48600,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 30
+	}, {
+		"producto" : "MANGO",
+		"venta" : 58750,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 50
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 13500,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 10
+	}, {
+		"producto" : "UVA",
+		"venta" : 31000,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 20
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 9000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 10
+	}, {
+		"producto" : "MORA",
+		"venta" : 7600,
+		"porcion" : "50.g",
+		"precio" : 380,
+		"cantidad" : 20
+	}, {
+		"producto" : "PI\u00d1A",
+		"venta" : 19800,
+		"porcion" : "150.g",
+		"precio" : 990,
+		"cantidad" : 20
+	}, {
+		"producto" : "FEIJOA",
+		"venta" : 21200,
+		"porcion" : "150.g",
+		"precio" : 1060,
+		"cantidad" : 20
+	}, {
+		"producto" : "MORA",
+		"venta" : 9500,
+		"porcion" : "125.g",
+		"precio" : 950,
+		"cantidad" : 10
+	}, {
+		"producto" : "LULO",
+		"venta" : 20400,
+		"porcion" : "150.g",
+		"precio" : 1020,
+		"cantidad" : 20
+	}, {
+		"producto" : "MANGO",
+		"venta" : 20800,
+		"porcion" : "150.g",
+		"precio" : 1040,
+		"cantidad" : 20
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-22",
+	"numero" : 488,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 165100,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 40000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 40
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 48600,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 30
+	}, {
+		"producto" : "MANGO",
+		"venta" : 23500,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 20
+	}, {
+		"producto" : "SMOTHIE.LMF",
+		"venta" : 13500,
+		"porcion" : "200.g",
+		"precio" : 1350,
+		"cantidad" : 10
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-25",
+	"numero" : 490,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 101900,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 30000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 30
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 32400,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 20
+	}, {
+		"producto" : "UVA",
+		"venta" : 15500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 10
+	} ]
+}, {
+	"empleado" : "Eduardo.Zea",
+	"fecha" : "2014-11-27",
+	"numero" : 491,
+	"cliente" : "PAESA.SA.SALTO.DEL.ANGEL",
+	"total" : 263850,
+	"anulada" : false,
+	"ventas" : [ {
+		"producto" : "FEIJOA",
+		"venta" : 24000,
+		"porcion" : "170.g",
+		"precio" : 1200,
+		"cantidad" : 20
+	}, {
+		"producto" : "FRESA",
+		"venta" : 50000,
+		"porcion" : "200.g",
+		"precio" : 1000,
+		"cantidad" : 50
+	}, {
+		"producto" : "GUANABANA.FRUTA",
+		"venta" : 48600,
+		"porcion" : "180.g",
+		"precio" : 1620,
+		"cantidad" : 30
+	}, {
+		"producto" : "MANGO",
+		"venta" : 58750,
+		"porcion" : "170.g",
+		"precio" : 1175,
+		"cantidad" : 50
+	}, {
+		"producto" : "UVA",
+		"venta" : 46500,
+		"porcion" : "200.g",
+		"precio" : 1550,
+		"cantidad" : 30
+	}, {
+		"producto" : "PATILLA",
+		"venta" : 36000,
+		"porcion" : "200.g",
+		"precio" : 900,
+		"cantidad" : 40
+	} ]
+} ]

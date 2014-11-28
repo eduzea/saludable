@@ -520,25 +520,28 @@ def createVenta(row):
                   )
     return venta
 
-class ImportVentas(webapp2.RequestHandler):
+class ImportFacturas(webapp2.RequestHandler):
     def get(self):
-        json_data=open('data/Factura.json')
+        tipo = self.request.get('tipo')
+        if tipo == 'Factura':
+            json_data=open('data/Factura.json')
+        else:
+            json_data=open('data/Remision.json')
         data = json.load(json_data)
         json_data.close()
+            
         for record in data:
+            entity = classModels[tipo].get_by_id(unicode(record['numero']))
+            if not entity:
+                entity = create_entity(tipo, record)
             ventas=[]
             ventasObj = record['ventas']
             for venta in ventasObj:
                 venta = check_types('Venta',venta)             
                 ventas.append(Venta(**venta))
-            factura = Factura.get_by_id(unicode(record['numero']))
-            if factura:
-                factura.ventas = ventas
-                factura.put()
-                print record['numero']
-            else:
-                print "No se encontro factura: " + str(record['numero']) 
-        
+            entity.ventas = ventas
+            entity.put()
+            print record['numero']
         self.response.write('Ventas importadas con exito!')
 
 class ImportVentasCSV(webapp2.RequestHandler):

@@ -27,6 +27,6 @@ application = webapp2.WSGIApplication([
     ('/getEmpleados', GetEmpleados),
     ('/setNumero', SetNumber),
     ('/importCSV', ImportCSV),
-    ('/importVentas',ImportVentas),
+    ('/importFacturas',ImportFacturas),
     ('/anularFactura', AnularFactura)
 ], debug=True)
