@@ -156,10 +156,10 @@ def create_entity(entity_class, values):
     if entity:
         entity.populate(**values)
         entity.put()
-        return {'message':"Updated",'key':key}
+        return {'message':"Updated",'key':key, 'entity':entity}
     else:
         classModels[entity_class].get_or_insert(key,**values)
-        return {'message':"Created",'key':key}
+        return {'message':"Created",'key':key, 'entity':entity}
 
 class SaveEntity(webapp2.RequestHandler):        
     def post(self):
@@ -440,40 +440,6 @@ class AnularFactura(webapp2.RequestHandler):
         entity.anulada = True
         entity.put()
         self.response.write('Se anulo ' + tipo + ' :' + key)
-    
-# class ImportClientes(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for row in CLIENT_DATA:
-#             clientevals = {'nombre' : row[0], 'negocio':row[1], 'direccion': row[2],'ciudad':row[3],'telefono':row[4],
-#                            'nit':row[5], 'diasPago':int(row[6])}
-#             grupo = GrupoDePrecios.get_or_insert(row[7],nombre=row[7])
-#             clientevals['grupoDePrecios']=grupo.key
-#             key = getKey("Cliente", clientevals)
-#             cliente = Cliente.get_or_insert(key,**clientevals)
-#             cliente.put()
-#             message += "Registro importado: " + cliente.rotulo + "\n"
-#         self.response.out.write(message)
-#   
-# class ImportProductos(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for producto in PRODUCTO_DATA:
-#             key = getKey('Producto', {'nombre':producto})
-#             producto = Producto.get_or_insert(key,nombre=unicode(producto,'utf-8'))
-#             producto.put()
-#             message += "Registro importado: " + producto.rotulo + " --- "
-#         self.response.out.write(message)
-#   
-# class ImportPorciones(webapp2.RequestHandler):
-#     def get(self):
-#         message = ''
-#         for por in PORCION_DATA:
-#             key = getKey("Porcion", {'unidades':'g', 'valor':por})
-#             porcion = Porcion.get_or_insert(key,unidades='g', valor=por)
-#             porcion.put()
-#             message += "Registro importado: " + porcion.rotulo + " --- "
-#         self.response.out.write(message)
 
 class Test(webapp2.RequestHandler):
     def get(self):        
@@ -533,7 +499,7 @@ class ImportFacturas(webapp2.RequestHandler):
         for record in data:
             entity = classModels[tipo].get_by_id(unicode(record['numero']))
             if not entity:
-                entity = create_entity(tipo, record)
+                entity = create_entity(tipo, record)['entity']
             ventas=[]
             ventasObj = record['ventas']
             for venta in ventasObj:

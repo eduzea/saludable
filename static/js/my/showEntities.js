@@ -1,9 +1,10 @@
 //# sourceURL=../static/js/my/showEntities.js
 require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
-		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities',"dojo/number",
+		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities',"dojo/number","dojo/on",
+		'gridx/support/exporter/toCSV',
 		'gridx/modules/SingleSort',"gridx/modules/Pagination","gridx/modules/pagination/PaginationBar",'gridx/modules/Filter',
-		'gridx/modules/filter/FilterBar'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number) {
+		'gridx/modules/filter/FilterBar','gridx/support/exporter/exporter'], 
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number,on,toCSV) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
@@ -86,6 +87,21 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 		getEditEntityClass = function(orig){//Kludge!!!
 			return (orig == 'Remision') ? 'Factura' : orig;
 		};
+		
+		exportarDatos = function(){
+			var grid = registry.byId('gridNode'+ entity_class);
+			toCSV(grid).then(function(csv){
+				var win = window.open('','DATOS EXPORTADOS');
+				csv = csv.replace(/\r\n/g,'<br/>');
+				win.document.write(csv);
+				win.document.title = entity_class;
+			});
+		};
+		
+		
+		parser.instantiate([dom.byId('exportarDatos'+entity_class)]);
+		var exportarBtn = registry.byId('exportarDatos'+entity_class);
+		on(exportarBtn,'click',exportarDatos);
 		
 		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
