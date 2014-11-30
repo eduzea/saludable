@@ -92,7 +92,9 @@ class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
         entity_query = classModels[entity_class].query()
+        print 'entity_query.fetch(): ' + entity_class
         entities = entity_query.fetch()
+        print 'entity_query.fetch(): ' + entity_class + ' done!'
         records=[]
         props = classModels[entity_class]._properties
         for entity in entities:
@@ -308,6 +310,28 @@ class GetVentas(webapp2.RequestHandler):
             dicc['id'] = dicc['producto'] + dicc['porcion'];
             records.append(dicc)
         self.response.out.write(json.dumps(records))
+
+class GetProductSales(webapp2.RequestHandler):
+    def get(self):
+        records = []
+        print 'Factura.query().fetch()'
+        facturas = Factura.query().fetch()
+        print 'Factura.query().fetch() done!'
+        for factura in facturas:
+            if factura.anulada: continue
+            for venta in factura.ventas:
+                venta = venta.to_dict()
+                if venta['porcion'].get():
+                    venta['peso']=venta['porcion'].get().valor
+                else:
+                    print 'hold on!'
+                venta['factura']=factura.numero
+                venta['cliente']=factura.cliente.id()
+                venta['fecha']=factura.fecha
+                records.append(venta)
+        response = {'records':records}
+        self.response.out.write(JSONEncoder().encode(response))
+           
 
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
@@ -547,6 +571,7 @@ class ImportCSV(webapp2.RequestHandler):
         
 class Pivot(webapp2.RequestHandler):
     def get(self): 
+        template_values = {'entity_class': self.request.get('entityClass')}
         template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
-        self.response.write(template.render())
+        self.response.write(template.render(template_values))
         

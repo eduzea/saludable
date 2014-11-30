@@ -29,7 +29,7 @@
   numberFormat = function(opts) {
     var defaults;
     defaults = {
-      digitsAfterDecimal: 2,
+      digitsAfterDecimal: 0,
       scaler: 1,
       thousandsSep: ",",
       decimalSep: ".",

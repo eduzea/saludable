@@ -7,14 +7,14 @@
   tpl = $.pivotUtilities.aggregatorTemplates;
 
   frFmt = nf({
-    thousandsSep: " ",
-    decimalSep: ","
+    thousandsSep: ",",
+    decimalSep: "."
   });
 
   frFmtInt = nf({
     digitsAfterDecimal: 0,
-    thousandsSep: " ",
-    decimalSep: ","
+    thousandsSep: ",",
+    decimalSep: "."
   });
 
   frFmtPct = nf({

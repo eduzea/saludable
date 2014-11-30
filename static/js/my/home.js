@@ -1,13 +1,22 @@
-require(['dojo/dom','dojo/parser',"dijit/registry",  "dojo/on", "dojo/ready", "dojo/domReady!"], 
+require(['dojo/dom',
+		 'dojo/parser',
+		 "dijit/registry",
+		 "dojo/on",
+		 "dojo/ready",
+		 "dojo/domReady!"], 
 function (dom,parser,registry, on, ready) {
-    ready(function () { //wait till dom is parsed into dijits
-        parser.instantiate([dom.byId('addTabContainer'),dom.byId('showTabContainer') ]);
-        var panelAdd = registry.byId('addTabContainer');   //get dijit from its source dom element
-        on(panelAdd, "Click", function (event) {   //for some reason onClick event doesn't work 
+    ready(function () {
+        parser.instantiate([dom.byId('addTabContainer'),dom.byId('showTabContainer'), dom.byId('pivotTabContainer') ]);
+        var panelAdd = registry.byId('addTabContainer');  
+        on(panelAdd, "Click", function (event) {
             saludable.entity_class = panelAdd.selectedChildWidget.id.split('_')[0]; 
         });
-        var panelShow = registry.byId('showTabContainer');   //get dijit from its source dom element
-        on(panelShow, "Click", function (event) {   //for some reason onClick event doesn't work 
+        var panelShow = registry.byId('showTabContainer'); 
+        on(panelShow, "Click", function (event) {
+            saludable.entity_class = panelShow.selectedChildWidget.id.split('_')[0]; 
+        });
+        var panelShow = registry.byId('pivotTabContainer');
+        on(panelShow, "Click", function (event) {
             saludable.entity_class = panelShow.selectedChildWidget.id.split('_')[0]; 
         });
     });

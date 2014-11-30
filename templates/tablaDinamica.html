@@ -7,12 +7,13 @@
         <script type="text/javascript" src="../static/js/lib/jquery/jquery-ui-1.9.2.custom.min.js"></script>
         <script type="text/javascript" src="../static/js/lib/pivot/pivot.js"></script>
         <script type="text/javascript" src="../static/js/lib/pivot/pivot.es.js"></script>
+        <script>saludable.entity_class = '{{ entity_class }}';</script>
         <script type="text/javascript" src="../static/js/my/tablaDinamica.js"></script>
     </head>
     <style>
         * {font-family: Verdana;}
     </style>
     <body>
-        <div id="output" style="margin: 10px;"></div>
+        <div id="{{ entity_class }}_output" style="margin: 10px;"></div>
     </body>
 </html>
