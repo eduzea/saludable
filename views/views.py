@@ -545,4 +545,8 @@ class ImportCSV(webapp2.RequestHandler):
                 create_entity(entity_class,values)
         self.response.write('CSV importada con exito!')
         
-  
+class Pivot(webapp2.RequestHandler):
+    def get(self): 
+        template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
+        self.response.write(template.render())
+        
