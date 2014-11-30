@@ -44,6 +44,11 @@
 					</td>
 					<td><label for='porcionFactura'>Porcion: </label></td>
 					<td><div id='porcionFactura'></div></td>
+					<td></td>
+					<td>
+						<input type="text" name="anuladaFactura" data-dojo-type="dijit/form/TextBox"
+    					data-dojo-props="readOnly:true" id="anuladaFactura" style="width:100px;border:none"/>
+					</td>
 				</tr>
 				<tr>
 					<td><label for="productoFactura">Producto: </label></td>
@@ -52,6 +57,8 @@
 					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
 					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 					<td><button id='nuevaFacturaBtn' data-dojo-type="dijit/form/Button">Nueva Factura</button></td>
+					<td></td>
+					<td><button id='anularFacturaBtn' data-dojo-type="dijit/form/Button">Anular Factura</button></td>
 				</tr>
 			</table>
 			<div id="gridFactura"></div>	

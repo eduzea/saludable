@@ -214,18 +214,24 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		dom.byId('numeroFactura').innerHTML='';
 	});
 	
-//	if (dom.byId('anularBtn')){
-//		parser.instantiate([dom.byId('anularBtn')]);
-//		on(registry.byId('anularBtn'),'click',function(e){
-//			var remision = registry.byId('remisionFactura').checked;
-//			var tipo = remision ? 'Remision' : 'Factura';
-//			var numero = dom.byId('numeroFactura').innerHTML;
-//			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
-//				dom.byId('anuladaFactura').innerHTML="ANULADA!";
-//				domAttr.set('anuladaFactura', 'style', 'visibility:visible;color:red');
-//			});
-//		});		
-//	}
+	if (dom.byId('anularFacturaBtn')){
+		parser.instantiate([dom.byId('anularFacturaBtn')]);
+		on(registry.byId('anularFacturaBtn'),'click',function(e){
+			var remision = registry.byId('remisionFactura').checked;
+			var tipo = remision ? 'Remision' : 'Factura';
+			var numero = dom.byId('numeroFactura').innerHTML;
+			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
+				registry.byId('anuladaFactura').set('value','ANULADA');
+				domAttr.set('anuladaFactura', 'style', 'visibility:visible;color:red');
+			});
+		});		
+	}
+	parser.instantiate([dom.byId('anuladaFactura')]);
+	var anuladaText= registry.byId('anuladaFactura');
+	anuladaText.onChange = function(anulada){
+		this.set('value',anulada ? 'ANULADA' : '');
+		domAttr.set('anuladaFactura', 'style', 'width:100px;border:none;color:red');
+		};
 
 	
 	var store = new Store();

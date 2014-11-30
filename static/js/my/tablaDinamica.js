@@ -7,7 +7,7 @@ require(['dojo/request'], function(request) {
 				rows : ["cliente",'fecha','numero'],
 				vals : ["total"],
 				exclusions: {'anulada':['true']},
-				hiddenAttributes:['id','empleado','anulada'],
+				hiddenAttributes:['id','empleado'],
 				aggregatorName:'Suma'
 			},false,'es');
 		});

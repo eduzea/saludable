@@ -1,10 +1,25 @@
 //# sourceURL=../static/js/my/showEntities.js
-require(['dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request','dijit/form/Button',
-		"gridx/modules/CellWidget",'dijit/registry','dojo/query', 'dojo/parser','dojo/dom','dojox/html/entities',"dojo/number","dojo/on",
-		'gridx/support/exporter/toCSV',
-		'gridx/modules/SingleSort',"gridx/modules/Pagination","gridx/modules/pagination/PaginationBar",'gridx/modules/Filter',
-		'gridx/modules/filter/FilterBar','gridx/support/exporter/exporter'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number,on,toCSV) {
+require(['dojo/store/Memory',
+		 'gridx/Grid',
+		 'gridx/core/model/cache/Sync',
+		 'dojo/request','dijit/form/Button',
+		 'gridx/modules/CellWidget',
+		 'dijit/registry',
+		 'dojo/query',
+		 'dojo/parser',
+		 'dojo/dom',
+		 'dojox/html/entities',
+		 "dojo/number",
+		 "dojo/on",
+		 'gridx/support/exporter/toCSV',
+		 'dojo/aspect',
+		 'gridx/modules/SingleSort',
+		 "gridx/modules/Pagination",
+		 "gridx/modules/pagination/PaginationBar",
+		 'gridx/modules/Filter',
+		 'gridx/modules/filter/FilterBar',
+		 'gridx/support/exporter/exporter'], 
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number,on,toCSV,aspect) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
@@ -143,6 +158,17 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 				'gridx/modules/Filter','gridx/modules/filter/FilterBar'
 			]
 		}, 'gridNode'+ entity_class);
+		
+		
+		aspect.after(grid.body, 'onAfterRow', function(row) {
+			key = row.id;
+			if ('anulada' in row.grid.store.get(key)) {
+				if (row.grid.store.get(key).anulada == true) {
+					row.node().style.color = 'gray';
+				}
+			}
+		}, true);
+
 
 		grid.startup();
 	}, function(error) {
