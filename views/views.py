@@ -322,9 +322,10 @@ class GetProductSales(webapp2.RequestHandler):
             for venta in factura.ventas:
                 venta = venta.to_dict()
                 if venta['porcion'].get():
-                    venta['peso']=venta['porcion'].get().valor
-                else:
-                    print 'hold on!'
+                    venta['peso']=venta['porcion'].get().valor * venta['cantidad']
+                else: 
+                    print venta
+                    continue
                 venta['factura']=factura.numero
                 venta['cliente']=factura.cliente.id()
                 venta['fecha']=factura.fecha
