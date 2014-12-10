@@ -7,45 +7,7 @@ from google.appengine.api import users
 from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
-
-NUMERO_DE_FACTURA_INICIAL = 2775
-
-classModels = {'Cliente':Cliente, 'Producto':Producto, 'Porcion':Porcion, 'Precio':Precio, 'GrupoDePrecios':GrupoDePrecios, 
-               'Factura':Factura, 'Remision':Remision ,'Empleado':Empleado, 'NumeroFactura':NumeroFactura, 'Venta':Venta}
-keyDefs = {'Cliente':['nombre','negocio'], 'Producto':['nombre'], 'Porcion':['valor','unidades'], 'GrupoDePrecios':['nombre'],
-           'Precio':['producto','porcion','grupo'], 'Empleado':['nombre','apellido'], 'Factura':['numero'], 'Remision':['numero']}
-uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
-                       {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                       {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                       {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                       {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                       {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                       {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
-                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
-                       ],
-            'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}],
-            'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
-                       {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
-            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','valid':'dijit/form/ValidationTextBox','width':'10em'}],
-            'Precio':[{'id':'producto','ui':'Producto'},
-                      {'id':'porcion','ui':'Porcion'},
-                      {'id':'grupo','ui':'Grupo de Precios'},
-                      {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}
-                      ],
-            'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
-            'Factura':[{'id':'numero', 'ui':'Numero'},
-                       {'id':'empleado', 'ui':'Empleado'},
-                       {'id':'cliente', 'ui':'Cliente'},
-                       {'id':'fecha', 'ui':'Fecha'},
-                       {'id':'total', 'ui':'Valor'}
-                       ],
-            'Remision':[{'id':'numero', 'ui':'Numero'},
-                       {'id':'empleado', 'ui':'Empleado'},
-                       {'id':'cliente', 'ui':'Cliente'},
-                       {'id':'fecha', 'ui':'Fecha'},
-                       {'id':'total', 'ui':'Valor'}]
-            }
+from config import *
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
@@ -92,9 +54,7 @@ class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
         entity_query = classModels[entity_class].query()
-        print 'entity_query.fetch(): ' + entity_class
         entities = entity_query.fetch()
-        print 'entity_query.fetch(): ' + entity_class + ' done!'
         records=[]
         props = classModels[entity_class]._properties
         for entity in entities:
@@ -160,7 +120,9 @@ def create_entity(entity_class, values):
         entity.put()
         return {'message':"Updated",'key':key, 'entity':entity}
     else:
-        classModels[entity_class].get_or_insert(key,**values)
+        values['id']=key
+        entity = classModels[entity_class](**values)
+        entity.put()
         return {'message':"Created",'key':key, 'entity':entity}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -173,7 +135,7 @@ class SaveEntity(webapp2.RequestHandler):
         response = {};
         try:
             response = create_entity(entity_class,values)
-            self.response.out.write(json.dumps(response))
+            self.response.out.write(JSONEncoder().encode(response))
         except Exception as ex:
             return self.response.out.write(ex.message)
         

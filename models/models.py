@@ -66,4 +66,40 @@ class Factura(ndb.Model):
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()
     anulada = ndb.BooleanProperty(default=False)
+
+class TipoEgreso(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Egreso(ndb.Model):
+    tipo = ndb.KeyProperty(kind=TipoEgreso)
+    numero = ndb.IntegerProperty()
+    empleado = ndb.KeyProperty(kind=Empleado)
+    valor = ndb.IntegerProperty()
+    detalle = ndb.TextProperty()
+
+class Insumo(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    
+class PorcionInsumo(ndb.Model):
+    valor = ndb.IntegerProperty()
+    unidades = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
+
+class Compra(ndb.Model):
+    insumo = ndb.KeyProperty(kind=Insumo)
+    porcionInsumo = ndb.KeyProperty(kind=PorcionInsumo)
+    cantidad = ndb.IntegerProperty()
+    precio = ndb.IntegerProperty()
+    valorTotal = ndb.IntegerProperty()
+    
+class Proveedor(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    nit = ndb.StringProperty(indexed=True)
+    direccion = ndb.StringProperty(indexed=True)
+    telefono = ndb.StringProperty(indexed=True)
+    ciudad = ndb.StringProperty(indexed=True)
+    diasPago = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
