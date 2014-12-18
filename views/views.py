@@ -33,12 +33,26 @@ class LogOut(webapp2.RequestHandler):
     def get(self):
         self.redirect(users.create_logout_url('/home'))
 
+class GetWidget(webapp2.RequestHandler):
+    def get(self):
+        entityClass = self.request.get('entityClass')
+        temp_name = self.request.get('template')
+        template_values = {'entity_class': entityClass}
+        template_name = ''
+        if (temp_name):
+            template_name = templateNames[temp_name]
+        else:
+            template_name = 'widget.html'
+        template = JINJA_ENVIRONMENT.get_template(template_name)
+        self.response.write(template.render(template_values))
+
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
         template_values = {'entity_class': entity_class}
         template = JINJA_ENVIRONMENT.get_template('showEntities.html')
         self.response.write(template.render(template_values))
+
 
 def getColumns(entity_class):
     columns=[]
@@ -166,11 +180,17 @@ def adjustText(text):
         return Markup(html)
     else:
         return text
-        
+
+def createTemplateString(entity):
+    if entity in createTemplateStings:
+        return createTemplateStings[entity]
+    else:
+        return '/addEntity?entityClass=' + entity        
 
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
+JINJA_ENVIRONMENT.globals['createTemplateString']=createTemplateString
 
 def fieldsInfo(entity_class):
     props = classModels[entity_class]._properties
@@ -276,9 +296,7 @@ class GetVentas(webapp2.RequestHandler):
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
         records = []
-        print 'Factura.query().fetch()'
         facturas = Factura.query().fetch()
-        print 'Factura.query().fetch() done!'
         for factura in facturas:
             if factura.anulada: continue
             for venta in factura.ventas:
@@ -353,7 +371,6 @@ class GuardarFactura(webapp2.RequestHandler):
         values = json.loads(post_data)
         ventas =[]
         for venta in values['ventas']:
-            print venta
             producto = venta['producto'].replace(' ','.')
             ventas.append(Venta(producto=Producto.get_by_id(producto).key,
                            porcion=Porcion.get_by_id(venta['porcion']).key,
@@ -506,7 +523,6 @@ class ImportVentasCSV(webapp2.RequestHandler):
             ventas = []
             for row in reader:
                 if facturaId and facturaId != row[0]:
-                    print row[0]
                     factura = Factura.get_by_id(facturaId)
                     if factura:
                         factura.ventas = ventas
@@ -535,6 +551,11 @@ class ImportCSV(webapp2.RequestHandler):
 class Pivot(webapp2.RequestHandler):
     def get(self): 
         template_values = {'entity_class': self.request.get('entityClass')}
-        template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
+        template = JINJA_ENVIRONMENT.get_template('pivot.html')
         self.response.write(template.render(template_values))
         
+class TablaDinamica(webapp2.RequestHandler):
+    def get(self): 
+        template_values = {'entity_class': self.request.get('entityClass')}
+        template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
+        self.response.write(template.render(template_values))

@@ -8,6 +8,7 @@ require(['dojo/store/Memory',
 		 'dojo/query',
 		 'dojo/parser',
 		 'dojo/dom',
+		 "dojo/dom-construct",
 		 'dojox/html/entities',
 		 "dojo/number",
 		 "dojo/on",
@@ -19,7 +20,7 @@ require(['dojo/store/Memory',
 		 'gridx/modules/Filter',
 		 'gridx/modules/filter/FilterBar',
 		 'gridx/support/exporter/exporter'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,html,number,on,toCSV,aspect) {
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
@@ -123,8 +124,8 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
    				var btn = new Button({
 					label : "Editar",
 					onClick : function() {
-						registry.byId('addTabContainer').selectChild(getEditEntityClass(entity_class) + '_add');
-						registry.byId('homeTabContainer').selectChild('addTabContainer');
+						var widget = saludable.widgetCache['widget' + entity_class].getChildren()[0];
+						widget.selectChild(widget.getChildren()[1]);
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data

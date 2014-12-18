@@ -1,6 +1,8 @@
 from models.models import *
 NUMERO_DE_FACTURA_INICIAL = 2775
 
+widgetTemplate = {'add':'addEntity.html', 'show':'showEntities.html'}
+
 classModels = {'Cliente':Cliente, 
                'Producto':Producto,
                'Porcion':Porcion, 
@@ -74,3 +76,6 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                              {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
                        ]
             }
+createTemplateStings = {'Factura':'/crearFactura'}
+templateNames = {'pivot':'pivot.html'}
+

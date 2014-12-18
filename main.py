@@ -30,5 +30,7 @@ application = webapp2.WSGIApplication([
     ('/importFacturas',ImportFacturas),
     ('/anularFactura', AnularFactura),
     ('/pivot',Pivot),
-    ('/getProductSales',GetProductSales)
+    ('/tablaDinamica',TablaDinamica),
+    ('/getProductSales',GetProductSales),
+    ('/getWidget',GetWidget)
 ], debug=True)

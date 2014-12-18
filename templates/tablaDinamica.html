@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<head>
         <title>Tabla Dinamica</title>
         <link rel="stylesheet" type="text/css" href="../static/js/lib/pivot/pivot.css">
         <script type="text/javascript" src="../static/js/lib/jquery/jquery-1.8.3.min.js"></script>
@@ -9,11 +7,8 @@
         <script type="text/javascript" src="../static/js/lib/pivot/pivot.es.js"></script>
         <script>saludable.entity_class = '{{ entity_class }}';</script>
         <script type="text/javascript" src="../static/js/my/tablaDinamica.js"></script>
-    </head>
-    <style>
-        * {font-family: Verdana;}
-    </style>
-    <body>
-        <div id="{{ entity_class }}_output" style="margin: 10px;"></div>
-    </body>
-</html>
+</head>
+<style>
+    .pivot {font-family: Verdana;}
+</style>
+<div class = 'pivot' id="{{ entity_class }}_output" style="margin: 10px;"></div>

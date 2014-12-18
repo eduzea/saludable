@@ -1,44 +1,47 @@
 require(['dojo/dom',
+		 "dojo/dom-construct",
 		'dojo/parser',
 		"dijit/registry",
-		"dojo/on", 
-		"dijit/tree/ObjectStoreModel", 
+		"dojo/on",
+		'dijit/layout/ContentPane', 
+		"dijit/tree/ObjectStoreModel",
 		"dijit/Tree", 
 		"dojo/store/Memory", 
 		"dojo/ready",
 		'dojo/request', 
 		"dojo/domReady!"], 
-function(dom, parser, registry, on, Model, Tree, Memory, ready,request) {
+function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memory, ready,request) {
 	ready(function() {
-			var myStore = new Memory({
-		data : [{
-			id : 'root',
-			name : 'root'
-		}, {
-			id : 'Ingresos',
-			name : 'Ingresos',
-			parent:'root'
-		}, {
-			id : 'Egresos',
-			name : 'Egresos',
-			parent:'root'
-		}, {
-			id : 'addDataIngresos',
-			name : 'Agregar Datos',
-			parent : 'Ingresos'
-		}, {
-			id : 'showDataIngresos',
-			name : 'Mostrar Datos Existentes',
-			parent : 'Ingresos'
-		}, {
-			id : 'addDataEgresos',
-			name : 'Agregar Datos',
-			parent : 'Egresos'
-		}, {
-			id : 'showDataEgresos',
-			name : 'Mostrar Datos Existentes',
-			parent : 'Egresos'
-		}],
+		
+		var makeStore = function(nodes,parent){
+			var data = [];
+			nodes.forEach(function(node){
+				data.push(
+					{
+						id: node,
+						name: node,
+						parent: parent,
+						clickable: true
+				});
+			});
+			return data;
+		};
+		
+		var ingresoNodes = makeStore(['Cliente','Producto','GrupoDePrecios','Precio','Factura'],'Ingresos');
+		var egresoNodes = makeStore(['TipoEgreso','Egreso','Insumo','PorcionInsumo','Proveedor'],'Egresos');
+		var data = [{id : 'root', name : 'root'},
+					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
+					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false}];
+		data.push.apply(data,ingresoNodes);
+		data.push.apply(data,egresoNodes);
+		data.push.apply(data,[
+			{id: 'Analisis', name: 'Analisis', parent: 'root'},
+			{id: 'Clientes', name: 'Clientes', parent: 'Analisis', clickable: true, template: 'pivot'},
+			{id: 'Productos', name: 'Productos', parent: 'Analisis', clickable: true, template: 'pivot'}
+		]);
+		
+		var myStore = new Memory({
+		data : data,
 		getChildren : function(object) {
 			return this.query({
 				parent : object.id
@@ -53,39 +56,49 @@ function(dom, parser, registry, on, Model, Tree, Memory, ready,request) {
 			id : 'root'
 		}
 	});
-
+	
 	// Create the Tree.
 	var tree = new Tree({
 		model : myModel,
-		showRoot : false
+		showRoot : false,
+		getIconClass: function(item){
+    		return "dijitFolderClosed";
+		}
 	});
-	tree.placeAt(dom.byId('tree'));
-	tree.startup();
-	
-	tree.onClick = function(item, node, evt){
-		var info = item.id.split('Data');
-		var params = 'accion=' + info[0] + '&tipo='+info[1];
-		request('/getWidget?'+params).then(); 
+	tree.model.mayHaveChildren = function (item){
+		return item.leaf;
 	};
 
-	//ready(function() {
-	//	var setEntityClass = function(event) {
-	//		saludable.entity_class = this.selectedChildWidget.id.split('_')[0];
-	//	};
-
-	//	parser.instantiate([dom.byId('addTabContainer'), dom.byId('showTabContainer'), dom.byId('pivotTabContainer')]);
-
-	//	var panelIngresosAdd = registry.byId('addIngresosTabContainer');
-	//	var panelEgresosAdd = registry.byId('addEgresosTabContainer');
-	//	var panelIngresoShow = registry.byId('showIngresosTabContainer');
-	//	var panelEgresoShow = registry.byId('showEgresosTabContainer');
-
-	//	on(panelIngresosAdd, "Click", setEntityClass);
-	//	on(panelEgresosAdd, "Click", setEntityClass);
-	//	on(panelIngresoShow, "Click", setEntityClass);
-	//	on(panelEgresoShow, "Click", setEntityClass);
-	//});
-		
+	tree.placeAt(dom.byId('tree'));
+	tree.startup();
+	registry.byId('layout').resize();
+	
+	
+	tree.onOpen = function(item,node){
+		registry.byId('layout').resize();
+	};
+	
+	saludable.widgetCache = {};
+	
+	tree.onClick = function(item, node, evt){
+		if (!item.clickable) return;
+		var entityClass = item.id;
+		if (saludable.widgetCache.hasOwnProperty('widget'+entityClass)){ 
+			var widget = saludable.widgetCache['widget'+entityClass];
+			domConstruct.empty("centerPane");
+			registry.byId('centerPane').addChild(widget);
+		}else{
+			request('/getWidget?entityClass=' + entityClass + '&template=' + item.template).then(
+				function(response){
+					var contentPane = new ContentPane({content:response});
+					saludable.widgetCache['widget'+entityClass]=contentPane;
+					domConstruct.empty("centerPane");
+					registry.byId('centerPane').addChild(contentPane);
+					registry.byId('layout').resize();
+				}
+			);	
+		}
+	};		
 	});
 
 }); 

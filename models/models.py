@@ -67,6 +67,8 @@ class Factura(ndb.Model):
     total = ndb.IntegerProperty()
     anulada = ndb.BooleanProperty(default=False)
 
+########## EGRESOS #######
+
 class TipoEgreso(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
