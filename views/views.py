@@ -39,7 +39,7 @@ class GetWidget(webapp2.RequestHandler):
         temp_name = self.request.get('template')
         template_values = {'entity_class': entityClass}
         template_name = ''
-        if (temp_name):
+        if temp_name in templateNames:
             template_name = templateNames[temp_name]
         else:
             template_name = 'widget.html'

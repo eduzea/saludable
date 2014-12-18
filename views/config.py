@@ -16,7 +16,8 @@ classModels = {'Cliente':Cliente,
                'Proveedor':Proveedor, 
                'Insumo':Insumo, 
                'PorcionInsumo':PorcionInsumo, 
-               'Egreso':Egreso}
+               'Egreso':Egreso,
+               'TipoEgreso':TipoEgreso}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -27,7 +28,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Remision':['numero'],
            'Proveedor':['nombre'],
            'Insumo':['nombre'],
-           'PorcionInsumo':['valor','unidades']}
+           'PorcionInsumo':['valor','unidades'],
+           'TipoEgreso':['nombre']}
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -74,7 +76,17 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
             'PorcionInsumo':[
                              {'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
                              {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
-                       ]
+                       ],
+            'TipoEgreso':[
+                          {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}
+                          ],
+            'Egreso':[
+                      {'id':'numero','ui':'Numero','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                      {'id':'tipo','ui':'Tipo','width':'10em'},
+                      {'id':'empleado','ui':'Empleado','width':'10em'},
+                      {'id':'valor','ui':'Valor','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                      {'id':'detalle','ui':'Detalle','required':'true','valid':'','width':'10em'}
+                      ]
             }
 createTemplateStings = {'Factura':'/crearFactura'}
 templateNames = {'pivot':'pivot.html'}
