@@ -4,10 +4,28 @@ require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/M
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
 		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort'], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
-	var entity_class = saludable.entity_class;	
+	var entity_class = saludable.entity_class;
 	
-	resetProveedor = function(proveedor){	
-		request.post('/getProveedores', {handleAs:'json'}).then(function(response){
+
+	resetBienoservicio = function(tipo){	
+			request('/getBienesoServicios?tipo=' + tipo, 
+					{handleAs:'json'}).then(
+				function(response) {
+					var items = [];
+					response.forEach(function(bienoservicio){
+						items.push({ "value": bienoservicio.value, "label": bienoservicio.name });
+					});
+					var bienoservicioSelect = registry.byId('bienoservicioEgreso');
+					bienoservicioSelect.options = [];
+					bienoservicioSelect.addOption(items);
+					bienoservicioSelect.reset();
+					resetProveedor(bienoservicioSelect.value);
+			});
+		};	
+
+	resetProveedor = function(bienoservicio){	
+		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
+		function(response){
 			var items = [];
 			response.forEach(function(proveedor){
 				items.push({ "value": proveedor.value, "label": proveedor.name });
@@ -17,32 +35,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			proveedorSelect.reset();
 		});
 	};
+
 	
-	
-	resetBienServicio = function(proveedor){	
-			request.post('/getBienServicio', {
-					data : {'proveedor':proveedor},
-					handleAs:'json'
-				}).then(function(response) {
-					var items = [];
-					response.forEach(function(bienservicio){
-						items.push({ "value": bienservicio, "name": bienservicio });
-					});
-					var bienservicioStore = new Store({
-			        	idProperty: "value",
-			            data: items
-			        });
-					var bienservicioSelect = registry.byId('productoFactura');
-					bienservicioSelect.setStore(bienservicioStore);
-					bienservicioSelect.reset();
-					resetPorcion(bienservicioSelect.value);
-			});
-		};	
-	
-	resetPorcion = function(bienservicio){
+	resetPorcion = function(bienoservicio){
 			proveedor = registry.byId('proveedorEgreso').value;	
 			request.post('/getPorcion', {
-					data : {'proveedor':proveedor, 'bienoservicio': bienservicio},
+					data : {'proveedor':proveedor, 'bienoservicio': bienoservicio},
 					handleAs:'json'
 				}).then(function(response) {
 					var items = [];
@@ -53,26 +51,27 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			        	idProperty: "value",
 			            data: items
 			        });
-					var porcionSelect = registry.byId('porcionFactura');
+					var porcionSelect = registry.byId('porcionEgreso');
 					porcionSelect.setStore(porcionStore);
 					porcionSelect.reset();
 			});
 		};
 	
+
+	parser.instantiate([dom.byId('tipoEgreso')]);
+    var tipoSelect = registry.byId('tipoEgreso');
+	tipoSelect.onChange = resetBienoservicio; 
+    resetBienoservicio(tipoSelect.value);
+
+	parser.instantiate([dom.byId('bienoservicioEgreso')]);
+    var bienoservicioSelect = registry.byId('bienoservicioEgreso');    
+	bienoservicioSelect.onChange = resetProveedor; 
+    resetProveedor(bienoservicioSelect.value);
+
     parser.instantiate([dom.byId('proveedorEgreso')]);
     var proveedorSelect = registry.byId('proveedorEgreso');
-    proveedorSelect.onChange = resetBienServicio; 
-    resetBienServicio(proveedorSelect.value);
-    	
-    var bienservicioSelect = new Select({
-        name: "bienservicioEgreso",
-        store: new Store(),
-        labelAttr: "name",
-        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
-        onChange: resetPorcion
-	}, "bienservicioEgreso");
-	bienservicioSelect.startup();
-	
+    proveedorSelect.onChange = ''; //write logic for when proveedor changes.
+
     var porcionSelect = new Select({
         name: "porcionEgreso",
         labelAttr: "name",
@@ -93,7 +92,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	getFormData = function(){
 		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
-			formdata[prop.replace('Factura', '')] = formdata[prop];
+			formdata[prop.replace('Egreso', '')] = formdata[prop];
 			delete formdata[prop];
 		}
 		return formdata;
@@ -122,47 +121,43 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		e.value = !e.value;
 	};
 	
-	parser.instantiate([dom.byId('guardarFacturaBtn')]);
-	on(registry.byId('guardarFacturaBtn'),'click',
+	parser.instantiate([dom.byId('guardarEgresoBtn')]);
+	on(registry.byId('guardarEgresoBtn'),'click',
 		function(e){
-			var cliente = registry.byId('clienteFactura').value;
-			var empleado = registry.byId('empleadoFactura').value;		
-			var fecha = registry.byId('fechaFactura').toString();
-			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
-			var remision = registry.byId('remisionFactura').value;
+			var proveedor = registry.byId('proveedorEgreso').value;
+			var empleado = registry.byId('empleadoEgreso').value;		
+			var fecha = registry.byId('fechaEgreso').toString();
+			var numero = dom.byId('numeroEgreso').innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 
-			'numero':numero, 'remision':remision};
-			request.post('/guardarFactura', {
-					data : json.stringify(factura_data),
+			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'compras':gridData, 'total':updateTotal(), 
+			'numero':numero};
+			request.post('/guardarEgreso', {
+					data : json.stringify(egreso_data),
 					handleAs:'json'
 				}).then(function(response) {
 					var message='';
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
-						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
-						actualizarFacturas(response, factura_data, remision);
-						var pagina = registry.byId('facturasPorPagina').checked;
-						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + (remision ? 'Remision':'Factura')+ '&pagina='+ pagina.toString();
-						window.open(url);
+						egreso_data['proveedor']=registry.byId('proveedorEgreso').attr('displayedValue');
+						actualizarEgresos(response, egreso_data);
 					}else{
-						message = 'No se pudo guardar este pedido!';
+						message = 'No se pudo guardar este Egreso!';
 					}
-					dom.byId('mensajeFactura').innerHTML = message;
+					dom.byId('mensajeEgreso').innerHTML = message;
 					setTimeout(function() {
-						var grid =registry.byId('gridFactura');
+						var grid =registry.byId('gridEgreso');
 						grid.model.clearCache();
 						grid.model.store.setData([]);
         				grid.body.refresh();
-						dom.byId('mensajeFactura').innerHTML = '';
+						dom.byId('mensajeEgreso').innerHTML = '';
 						dom.byId('total').innerHTML = '';
-						dom.byId('numeroFactura').innerHTML = '';
+						dom.byId('numeroEgreso').innerHTML = '';
 					}, 3000);
 				});
 		});
 	
-	parser.instantiate([dom.byId('agregarPedidoBtn')]);
-	on(registry.byId('agregarPedidoBtn'),'click',function(e){
+	parser.instantiate([dom.byId('agregarCompraBtn')]);
+	on(registry.byId('agregarCompraBtn'),'click',function(e){
 		var form = registry.byId('addEntityForm' + entity_class);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
@@ -171,56 +166,53 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		var formdata = getFormData();
 		request.post("getPrice",
 		{
-			data: {'producto':formdata['producto'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
+			data: {'bienoservicio':formdata['bienoservicio'], 'proveedor':formdata['proveedor'], 'porcion': formdata['porcion']}
 		}).then(function(precio){
 			if (precio == 'list index out of range'){
-				alert("No hay precio definido para esta combinacion producto x cliente! Definelo primero.");
+				alert("No hay precio definido para esta combinacion bien o servcio x proveedor! Definelo primero.");
 				return;	
 			}
-			var grid = registry.byId('gridFactura');
+			var grid = registry.byId('gridEgreso');
 			var id = formdata['producto'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
 				grid.store.remove(id);	
 			}
 			var total = formdata.cantidad * parseInt(precio);
-			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
-							'precio': parseInt(precio), 'venta':total});
+			grid.store.add({'id':id,'bienoservicio':formdata.bienoservicio, 'proveedor':formdata.proveedor, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
+							'precio': parseInt(precio), 'compra':total});
 			grid.total=updateTotal();
 		});
 
 		
 	});
 	
-	parser.instantiate([dom.byId('nuevaFacturaBtn')]);
-	on(registry.byId('nuevaFacturaBtn'),'click',function(e){
+	parser.instantiate([dom.byId('nuevoEgresoBtn')]);
+	on(registry.byId('nuevoEgresoBtn'),'click',function(e){
 		registry.byId('addEntityForm' + entity_class).reset();
-		registry.byId('remisionFactura').set('readOnly',false);
-		var grid = registry.byId('gridFactura');
+		var grid = registry.byId('gridEgreso');
 		grid.model.clearCache();
 		grid.model.store.setData([]);
 		grid.body.refresh();		
 		grid.total=updateTotal();
-		dom.byId('numeroFactura').innerHTML='';
+		dom.byId('numeroEgreso').innerHTML='';
 	});
 	
-	if (dom.byId('anularFacturaBtn')){
-		parser.instantiate([dom.byId('anularFacturaBtn')]);
-		on(registry.byId('anularFacturaBtn'),'click',function(e){
-			var remision = registry.byId('remisionFactura').checked;
-			var tipo = remision ? 'Remision' : 'Factura';
-			var numero = dom.byId('numeroFactura').innerHTML;
-			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
-				registry.byId('anuladaFactura').set('value','ANULADA');
-				domAttr.set('anuladaFactura', 'style', 'visibility:visible;color:red');
+	if (dom.byId('anularEgresoBtn')){
+		parser.instantiate([dom.byId('anularEgresoBtn')]);
+		on(registry.byId('anularEgresoBtn'),'click',function(e){
+			var numero = dom.byId('numeroEgreso').innerHTML;
+			request('/anularEgreso?id=' + numero).then(function(){
+				registry.byId('anuladaEgreso').set('value','ANULADA');
+				domAttr.set('anuladaEgreso', 'style', 'visibility:visible;color:red');
 			});
 		});		
 	}
-	parser.instantiate([dom.byId('anuladaFactura')]);
-	var anuladaText= registry.byId('anuladaFactura');
+	parser.instantiate([dom.byId('anuladaEgreso')]);
+	var anuladaText= registry.byId('anuladaEgreso');
 	anuladaText.onChange = function(anulada){
 		this.set('value',anulada ? 'ANULADA' : '');
-		domAttr.set('anuladaFactura', 'style', 'width:100px;border:none;color:red');
+		domAttr.set('anuladaEgreso', 'style', 'width:100px;border:none;color:red');
 		};
 
 	
@@ -267,7 +259,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		store : store,
 		structure : columns,
 		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
-	}, 'gridFactura');
+	}, 'gridEgreso');
 	grid.startup();
-	domClass.add(dom.byId('gridFactura'),'factura-grid');
+	domClass.add(dom.byId('gridEgreso'),'egreso-grid');
 }); 

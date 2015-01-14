@@ -1,8 +1,8 @@
 //# sourceURL=../static/js/my/addEntity.js
 require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style', 'dojo/on', 
-		 'dojo/parser','dojo/query','dojo/json','dojo/topic',
+		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json',
 		 'dojo/domReady!'],//Modules required to avoid race condition when parsing 
-function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic) {
+function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json) {
 	var entity_class = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);
 	var buttons={};
@@ -12,6 +12,16 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic) {
 		if (registry.byId('addEntityForm'+ entity_class).validate()) {
 			var formdata = registry.byId('addEntityForm'+ entity_class).get('value');
 			formdata.entity_class = entity_class;
+			proplistdata = {};
+			var propNodes = query('.listpropTextarea'); 
+			if(propNodes){
+				propNodes.forEach(function(node){
+					var propname = node.id.split('_')[1];
+					var textarea = registry.byId(node.id);
+					proplistdata[propname]=textarea.value; 	
+				});
+				formdata.proplistdata = json.stringify(proplistdata);
+			}
 			request.post('/saveEntity', {
 				data : formdata,
 				handleAs: 'json'
@@ -33,7 +43,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic) {
 						var row = grid.store.get(key);
 						grid.store.remove(key);
 						formdata['id'] = key;
-						grid.store.add(formdata);					
+						grid.store.add(formdata);
 					}
 					response_user = 'Se actualizo ' + entity_class + ': ' + response.key;
 				}
@@ -48,6 +58,18 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic) {
 			return false;
 		}
 		return true;
+	});
+	var listpropBtns = query(".listprop");
+	parser.instantiate(listpropBtns);
+	listpropBtns.forEach(function(buttonNode){
+		button = registry.byId(buttonNode.id);
+		var propname = button.id.split('_')[1];
+		on(button,"click",function(e){
+			bienoservicio = registry.byId('select_' + propname + entity_class).value;
+			var textarea = registry.byId(propname + entity_class);
+			var text = textarea.value + bienoservicio +'; ';
+			textarea.set('value',text);
+		});
 	});
 });
 

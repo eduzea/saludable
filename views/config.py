@@ -14,8 +14,8 @@ classModels = {'Cliente':Cliente,
                'NumeroFactura':NumeroFactura, 
                'Venta':Venta,
                'Proveedor':Proveedor, 
-               'Insumo':Insumo, 
-               'PorcionInsumo':PorcionInsumo, 
+               'Bienoservicio':Bienoservicio, 
+               'PorcionCompra':PorcionCompra, 
                'Egreso':Egreso,
                'TipoEgreso':TipoEgreso}
 keyDefs = {'Cliente':['nombre','negocio'],
@@ -27,8 +27,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Factura':['numero'], 
            'Remision':['numero'],
            'Proveedor':['nombre'],
-           'Insumo':['nombre'],
-           'PorcionInsumo':['valor','unidades'],
+           'Bienoservicio':['nombre'],
+           'PorcionCompra':['valor','unidades'],
            'TipoEgreso':['nombre']}
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -68,12 +68,14 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                          {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                          {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                          {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                         {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'}
+                         {'id':'diasPago','ui':'Dias para pago', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                         {'id':'bienesoservicios','ui':'Bienes o Servicios'}
                          ],
-            'Insumo':[
-                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}
+            'Bienoservicio':[
+                             {'id':'tipo', 'ui':'Tipo de Egreso'},
+                             {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}
                       ],
-            'PorcionInsumo':[
+            'PorcionCompra':[
                              {'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
                              {'id':'unidades','ui':'Unidades', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
                        ],
@@ -88,6 +90,6 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       {'id':'detalle','ui':'Detalle','required':'true','valid':'','width':'10em'}
                       ]
             }
-createTemplateStings = {'Factura':'/crearFactura'}
+createTemplateStings = {'Factura':'/crearFactura', 'Egreso':'/crearEgreso'}
 templateNames = {'pivot':'pivot.html'}
 

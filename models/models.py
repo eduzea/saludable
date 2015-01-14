@@ -73,29 +73,6 @@ class TipoEgreso(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Egreso(ndb.Model):
-    tipo = ndb.KeyProperty(kind=TipoEgreso)
-    numero = ndb.IntegerProperty()
-    empleado = ndb.KeyProperty(kind=Empleado)
-    valor = ndb.IntegerProperty()
-    detalle = ndb.TextProperty()
-
-class Insumo(ndb.Model):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    
-class PorcionInsumo(ndb.Model):
-    valor = ndb.IntegerProperty()
-    unidades = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
-
-class Compra(ndb.Model):
-    insumo = ndb.KeyProperty(kind=Insumo)
-    porcionInsumo = ndb.KeyProperty(kind=PorcionInsumo)
-    cantidad = ndb.IntegerProperty()
-    precio = ndb.IntegerProperty()
-    valorTotal = ndb.IntegerProperty()
-    
 class Proveedor(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
@@ -104,4 +81,34 @@ class Proveedor(ndb.Model):
     ciudad = ndb.StringProperty(indexed=True)
     diasPago = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True) 
+
+class Bienoservicio(ndb.Model):
+    tipo = ndb.KeyProperty(kind=TipoEgreso)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    proveedores = ndb.KeyProperty(Proveedor,repeated=True)
+
+class Egreso(ndb.Model):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    empleado = ndb.KeyProperty(kind=Empleado)
+    tipo = ndb.KeyProperty(kind=TipoEgreso)
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    valor = ndb.IntegerProperty()
+    detalle = ndb.TextProperty()
+
+    
+class PorcionCompra(ndb.Model):
+    valor = ndb.IntegerProperty()
+    unidades = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
+
+class Compra(ndb.Model):
+    bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
+    porcion = ndb.KeyProperty(kind=PorcionCompra)
+    cantidad = ndb.IntegerProperty()
+    precio = ndb.IntegerProperty()
+    valorTotal = ndb.IntegerProperty()
+    
     

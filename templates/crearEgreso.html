@@ -19,7 +19,7 @@
 				<tr>
 					<td><label for='empleadoFactura'>Empleado :</label></td>
 					<td><div style="width:300px">
-							{{tagForField('Factura',props['Empleado'])}}
+							{{tagForField('Factura',props['empleado'])}}
 						</div>
 					</td>
 					<td><label for='fechaFactura'>Fecha: </label></td>
@@ -50,12 +50,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="insumoEgreso">Bienes o Servcios: </label></td>
-					<td><div id='insumoEgreso'></div></td>
+					<td><label for="bienoservicioEgreso">Bienes o Servcios: </label></td>
+					<td><div style="width:300px">
+						{{tagForField('Egreso',props['bienoservicio'])}}
+					</div></td>
 					<td><label for='cantidadEgreso'>Cantidad:</label></td>
-					<td>{{tagForField('Egreso',props['Cantidad'])}}</td>
+					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar</button></td>
-					<td><button id='nuevaEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
+					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
 					<td></td>
 					<td><button id='anularEgresoBtn' data-dojo-type="dijit/form/Button">Anular Egreso</button></td>
 				</tr>

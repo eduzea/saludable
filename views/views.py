@@ -9,6 +9,7 @@ from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, Compute
 from jinja2._markupsafe import Markup
 from config import *
 
+
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
     extensions=['jinja2.ext.autoescape'],
@@ -82,6 +83,11 @@ class EntityData(webapp2.RequestHandler):
                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
                 if type(prop_value) == date:
                     dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+                if type(prop_value) == list:
+                    value = ''
+                    for item in prop_value:
+                        value += item.get().to_dict()['rotulo'] + ';'
+                    dicc[prop_key] = value
             dicc['id'] = entity.key.id()
             records.append(dicc)
         response = {'columns':getColumns(entity_class), 'records':records}
@@ -117,12 +123,23 @@ def check_types(entity_class, values):
         if type(value) is FloatProperty:
             values[key] = float(values[key])
         if type(value) is KeyProperty:
-            key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
-            values[key]=key_obj
+            if value._repeated == True:
+                items = []
+                proplistdata = json.loads(values['proplistdata'])
+                parts =  proplistdata[key].strip().strip(';').split(';')
+                for item in parts:
+                    key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
+                    items.append(key_obj)
+                values[key]= items
+            else:   
+                key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
+                values[key]=key_obj
         if type(value) == ndb.DateProperty:
             values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
         if type(value) == ndb.StructuredProperty:
             values[key]=[]
+    if 'proplistdata' in values:
+        values.pop("proplistdata")
     return values
             
 def create_entity(entity_class, values):
@@ -152,17 +169,20 @@ class SaveEntity(webapp2.RequestHandler):
             self.response.out.write(JSONEncoder().encode(response))
         except Exception as ex:
             return self.response.out.write(ex.message)
-        
+
 def tagForField(entity_class, prop):
     tag = ''
     if type(prop['type']) == ndb.KeyProperty:
-        tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
+        tag = "<select name='select_" + prop['id'] + entity_class + "' id='select_" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
             dicc = option.to_dict()
             option_value = getKey(prop['type']._kind, dicc)
             tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
-        tag += "</select>" 
+        tag += "</select>"
+        if prop['type']._repeated == True:
+            tag += '<button class = "listprop" id="listpropBtn' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
+            tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
     else:
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
@@ -313,6 +333,26 @@ class GetProductSales(webapp2.RequestHandler):
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
            
+
+class CrearEgreso(webapp2.RequestHandler):
+    def get(self):
+        prop_tipo = Egreso._properties['tipo']
+        prop_proveedor = Egreso._properties['proveedor']
+        prop_empleado = Egreso._properties['empleado']
+        prop_bienoservicio = Compra._properties['bienoservicio']
+        prop_porcion = Compra._properties['porcion']
+        prop_cantidad = Compra._properties['cantidad']
+        props = {'proveedor':{'ui': 'Proveedor', 'id': 'proveedor','required':'true','type':prop_proveedor},
+                 'empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
+                 'bienoservicio':{'ui': 'Bien o Servicio', 'id': 'bienoservicio','required':'true','type':prop_bienoservicio},
+                 'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+                 'cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
+                             'width':'5em', 'type':prop_cantidad},
+                 'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo}
+                }
+        template_values = {'props': props}
+        template = JINJA_ENVIRONMENT.get_template('crearEgreso.html')
+        self.response.write(template.render(template_values))
 
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
@@ -559,3 +599,28 @@ class TablaDinamica(webapp2.RequestHandler):
         template_values = {'entity_class': self.request.get('entityClass')}
         template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
         self.response.write(template.render(template_values))
+        
+class GetBienesoServicios(webapp2.RequestHandler):
+    def get(self):
+        tipo = TipoEgreso.get_by_id(self.request.get('tipo'))
+        bienesoservicios = Bienoservicio.query(Bienoservicio.tipo == tipo.key).fetch()
+        response = [{'value':bienoservicio.key.id(), 'name': bienoservicio.rotulo } for bienoservicio in bienesoservicios]
+        self.response.out.write(json.dumps(response))
+
+        
+class GetProveedores(webapp2.RequestHandler):
+    def get(self):
+        bienoservicio = Bienoservicio.get_by_id(self.request.get('bienoservicio'))
+        proveedores = bienoservicio.proveedores
+        response = [{'value':proveedor.key.id(), 'name': proveedor.rotulo } for proveedor in proveedores]
+        self.response.out.write(json.dumps(response))
+
+class Addbienoservicio(webapp2.RequestHandler):
+    def get(self):
+        entity_class = self.request.get('entityClass')
+        property = self.request.get('property')
+        id= self.request.get('id')
+        classModels[entity_class]
+        
+        
+        

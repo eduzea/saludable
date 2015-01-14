@@ -11,6 +11,7 @@ application = webapp2.WSGIApplication([
     ('/showEntities',ShowEntities),
     ('/entityData', EntityData),
     ('/deleteEntity', DeleteEntity),
+    ('/crearEgreso', CrearEgreso),
     ('/crearFactura', CrearFactura),
     ('/getPrice', GetPrice),
     ('/guardarFactura', GuardarFactura),
@@ -29,5 +30,8 @@ application = webapp2.WSGIApplication([
     ('/pivot',Pivot),
     ('/tablaDinamica',TablaDinamica),
     ('/getProductSales',GetProductSales),
-    ('/getWidget',GetWidget)
+    ('/getWidget',GetWidget),
+    ('/getBienesoServicios',GetBienesoServicios),
+    ('/getProveedores',GetProveedores),
+    ('/addBienoservicio',Addbienoservicio)
 ], debug=True)
