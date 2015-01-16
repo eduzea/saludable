@@ -16,7 +16,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 			var propNodes = query('.listpropTextarea'); 
 			if(propNodes){
 				propNodes.forEach(function(node){
-					var propname = node.id.split('_')[1];
+					var propname = node.id.replace(entity_class,'');
 					var textarea = registry.byId(node.id);
 					proplistdata[propname]=textarea.value; 	
 				});
@@ -34,16 +34,16 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 					delete formdata[prop];
 				}
 				if (response.message == 'Created') {
-					formdata['id'] = key;
-					grid ? grid.store.add(formdata) : '' ;
+					response.entity['id'] = key;
+					grid ? grid.store.add(response.entity) : '' ;
 					response_user = 'Se creo nuevo ' + entity_class + ': ' + response.key;
 				    topic.publish(entity_class, { key: key });
 				} else {
 					if(grid){
 						var row = grid.store.get(key);
 						grid.store.remove(key);
-						formdata['id'] = key;
-						grid.store.add(formdata);
+						response.entity['id'] = key;
+						grid.store.add(response.entity);
 					}
 					response_user = 'Se actualizo ' + entity_class + ': ' + response.key;
 				}
@@ -64,12 +64,21 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 	listpropBtns.forEach(function(buttonNode){
 		button = registry.byId(buttonNode.id);
 		var propname = button.id.split('_')[1];
-		on(button,"click",function(e){
+		if (button.id.search('Agregar') != -1){
+			on(button,"click",function(e){
+				bienoservicio = registry.byId('select_' + propname + entity_class).value;
+				var textarea = registry.byId(propname + entity_class);
+				var text = textarea.value + bienoservicio +'; ';
+				textarea.set('value',text);
+			});	
+		}else{
+			on(button,"click",function(e){
 			bienoservicio = registry.byId('select_' + propname + entity_class).value;
 			var textarea = registry.byId(propname + entity_class);
-			var text = textarea.value + bienoservicio +'; ';
+			var text = textarea.value.replace(bienoservicio+';','').trim();
 			textarea.set('value',text);
 		});
+		}
 	});
 });
 

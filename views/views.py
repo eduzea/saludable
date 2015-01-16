@@ -140,6 +140,10 @@ def check_types(entity_class, values):
             values[key]=[]
     if 'proplistdata' in values:
         values.pop("proplistdata")
+    keys = values.keys()
+    for item in keys:
+        if item not in props:
+            values.pop(item)
     return values
             
 def create_entity(entity_class, values):
@@ -164,11 +168,8 @@ class SaveEntity(webapp2.RequestHandler):
         for key,value in values.iteritems():
             values[key.replace(entity_class,'')] = values.pop(key)
         response = {};
-        try:
-            response = create_entity(entity_class,values)
-            self.response.out.write(JSONEncoder().encode(response))
-        except Exception as ex:
-            return self.response.out.write(ex.message)
+        response = create_entity(entity_class,values)
+        self.response.out.write(JSONEncoder().encode(response))
 
 def tagForField(entity_class, prop):
     tag = ''
@@ -181,7 +182,8 @@ def tagForField(entity_class, prop):
             tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
         tag += "</select>"
         if prop['type']._repeated == True:
-            tag += '<button class = "listprop" id="listpropBtn' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
+            tag += '<button class = "listprop" id="listpropBtnAgregar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
+            tag += '<button class = "listprop" id="listpropBtnQuitar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
             tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
     else:
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
