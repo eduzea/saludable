@@ -141,9 +141,7 @@ def check_types(entity_class, values):
     if 'proplistdata' in values:
         values.pop("proplistdata")
     keys = values.keys()
-    for item in keys:
-        if item not in props:
-            values.pop(item)
+    
     return values
             
 def create_entity(entity_class, values):
