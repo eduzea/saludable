@@ -1,0 +1,9 @@
+[
+	{
+		"nombre": "Costo Fijo",
+		"rotulo": "Costo Fijo"
+	}, {
+		"nombre": "Costo Variable",
+		"rotulo": "Costo Variable"
+	}
+]

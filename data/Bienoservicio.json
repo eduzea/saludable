@@ -1,0 +1,95 @@
+[
+	{
+		"tipo": "Costo.Fijo",
+		"rotulo": "Arriendo",
+		"nombre": "Arriendo"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Impuestos Distritales",
+		"nombre": "Impuestos Distritales"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Impuestos Nacionales",
+		"nombre": "Impuestos Nacionales"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Bolsas Plasticas",
+		"nombre": "Materia Prima-Bolsas Plasticas"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Fruta",
+		"nombre": "Materia Prima-Fruta"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Hielo Seco",
+		"nombre": "Materia Prima-Hielo Seco"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Implementos de Aseo",
+		"nombre": "Materia Prima-Implementos de Aseo"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Quimicos",
+		"nombre": "Materia Prima-Quimicos"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Materia Prima-Varios",
+		"nombre": "Materia Prima-Varios"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Nomina-Turnos",
+		"nombre": "Nomina-Turnos"
+	}, {
+		"tipo": "Costo.Fijo",
+		"rotulo": "Nomina - Administrativa",
+		"nombre": "Nomina - Administrativa"
+	}, {
+		"tipo": "Costo.Fijo",
+		"rotulo": "Nomina - Operativa",
+		"nombre": "Nomina - Operativa"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Prestamo Empresa a Socio",
+		"nombre": "Prestamo Empresa a Socio"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios-Fumigacion",
+		"nombre": "Servicios-Fumigacion"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios-Varios",
+		"nombre": "Servicios-Varios"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios Financieros",
+		"nombre": "Servicios Financieros"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios Publicos-Agua",
+		"nombre": "Servicios Publicos-Agua"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios Publicos-Energia",
+		"nombre": "Servicios Publicos-Energia"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios Publicos-Gas",
+		"nombre": "Servicios Publicos-Gas"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Servicios Publicos-Telecomunicaciones",
+		"nombre": "Servicios Publicos-Telecomunicaciones"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Taxis y Pasajes de Bus",
+		"nombre": "Taxis y Pasajes de Bus"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Transporte del Producto-Intermunicipal",
+		"nombre": "Transporte del Producto-Intermunicipal"
+	}, {
+		"tipo": "Costo.Variable",
+		"rotulo": "Transporte del Producto-Local",
+		"nombre": "Transporte del Producto-Local"
+	}
+]

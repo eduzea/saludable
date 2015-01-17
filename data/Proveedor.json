@@ -1,0 +1,255 @@
+[
+	{
+		"telefono": "3447000",
+		"bienesoservicios": ["Servicios.Publicos-Agua"],
+		"nombre": "ACUEDUCTO DE BOGOTA",
+		"rotulo": "ACUEDUCTO DE BOGOTA",
+		"nit": "NA",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "Av. Calle 24 No. 37-15"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Servicios-Fumigacion"],
+		"nombre": "ARRAZAR FUMIGACIONES",
+		"rotulo": "ARRAZAR FUMIGACIONES",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"nombre": "Aldemar Castro",
+		"rotulo": "Aldemar Castro",
+		"nit": "000",
+		"diasPago": 15,
+		"ciudad": "Bogota",
+		"direccion": "Cr 28 con 68"
+	}, {
+		"telefono": "3077060",
+		"bienesoservicios": ["Servicios.Financieros"],
+		"nombre": "BANCO CAJA SOCIAL",
+		"rotulo": "BANCO CAJA SOCIAL",
+		"nit": "NA",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "Centro Nari\u00f1o"
+	}, {
+		"telefono": "7115115",
+		"bienesoservicios": ["Servicios.Publicos-Energia"],
+		"nombre": "CODENSA",
+		"rotulo": "CODENSA",
+		"nit": "NA",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "Bogota"
+	}, {
+		"telefono": "xxx",
+		"bienesoservicios": ["Impuestos.Nacionales"],
+		"nombre": "DIAN",
+		"rotulo": "DIAN",
+		"nit": "xxx",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xxx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"nombre": "DISTRIQUIMICOS",
+		"rotulo": "DISTRIQUIMICOS",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Impuestos.Distritales"],
+		"nombre": "Distrito Capital",
+		"rotulo": "Distrito Capital",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"nombre": "EL SURTIDO II",
+		"rotulo": "EL SURTIDO II",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"nombre": "ENVAPACK",
+		"rotulo": "ENVAPACK",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
+		"nombre": "ETB",
+		"rotulo": "ETB",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Arriendo"],
+		"nombre": "Elizabeth Perez",
+		"rotulo": "Elizabeth Perez",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "Cr 28 A # 68"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Servicios.Publicos-Gas"],
+		"nombre": "GAS NATURAL",
+		"rotulo": "GAS NATURAL",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": [],
+		"nombre": "INVERSIONES BERODI",
+		"rotulo": "INVERSIONES BERODI",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Nomina.-.Administrativa"],
+		"nombre": "Johanna Alonso",
+		"rotulo": "Johanna Alonso",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"nombre": "LUZ MARINA GARZON",
+		"rotulo": "LUZ MARINA GARZON",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"nombre": "Lilia Sierra",
+		"rotulo": "Lilia Sierra",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Transporte.del.Producto-Local"],
+		"nombre": "Oscar Gil",
+		"rotulo": "Oscar Gil",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"nombre": "PAPELERIA PRISMA",
+		"rotulo": "PAPELERIA PRISMA",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"nombre": "PLASTICOS Y POLIETILENO",
+		"rotulo": "PLASTICOS Y POLIETILENO",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"nombre": "QUIMICOS GAC LTDA",
+		"rotulo": "QUIMICOS GAC LTDA",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"nombre": "QUIMIENVASES",
+		"rotulo": "QUIMIENVASES",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Servicios-Varios"],
+		"nombre": "SERVIENTREGA",
+		"rotulo": "SERVIENTREGA",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
+		"nombre": "SUR ENVIOS",
+		"rotulo": "SUR ENVIOS",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"nombre": "SURTIFRUVER",
+		"rotulo": "SURTIFRUVER",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Nomina.-.Operativa"],
+		"nombre": "Servicol",
+		"rotulo": "Servicol",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": [],
+		"nombre": "TISSAN",
+		"rotulo": "TISSAN",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}, {
+		"telefono": "000",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"nombre": "VALENPLAST",
+		"rotulo": "VALENPLAST",
+		"nit": "000",
+		"diasPago": 0,
+		"ciudad": "Bogota",
+		"direccion": "xx"
+	}
+]
