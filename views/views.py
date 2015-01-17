@@ -174,7 +174,7 @@ class SaveEntity(webapp2.RequestHandler):
 def tagForField(entity_class, prop):
     tag = ''
     if type(prop['type']) == ndb.KeyProperty:
-        tag = "<select name='select_" + prop['id'] + entity_class + "' id='select_" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
+        tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
             dicc = option.to_dict()
@@ -184,7 +184,7 @@ def tagForField(entity_class, prop):
         if prop['type']._repeated == True:
             tag += '<button class = "listprop" id="listpropBtnAgregar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
             tag += '<button class = "listprop" id="listpropBtnQuitar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
-            tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
+            tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="text' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
     else:
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
@@ -342,14 +342,18 @@ class CrearEgreso(webapp2.RequestHandler):
         prop_proveedor = Egreso._properties['proveedor']
         prop_empleado = Egreso._properties['empleado']
         prop_bienoservicio = Compra._properties['bienoservicio']
-        prop_porcion = Compra._properties['porcion']
+        prop_detalle = Compra._properties['detalle']
         prop_cantidad = Compra._properties['cantidad']
+        prop_precio = Compra._properties['precio']
         props = {'proveedor':{'ui': 'Proveedor', 'id': 'proveedor','required':'true','type':prop_proveedor},
                  'empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
                  'bienoservicio':{'ui': 'Bien o Servicio', 'id': 'bienoservicio','required':'true','type':prop_bienoservicio},
-                 'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+                 'detalle':{'ui': 'Detalle', 'id': 'detalle','required':'true', 'valid':'dijit/form/ValidationTextBox',
+                            'width':'10em','type':prop_detalle},
                  'cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
                              'width':'5em', 'type':prop_cantidad},
+                 'precio':{'ui':'Precio Unitario','id':'precio','required':'true', 'valid':'dijit/form/NumberTextBox',
+                           'width':'5em', 'type':prop_precio},
                  'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo}
                 }
         template_values = {'props': props}
@@ -511,6 +515,7 @@ class ImportScript(webapp2.RequestHandler):
 #         data = json.loads(data)
         json_data.close()
         for record in data:
+            print record
             create_entity(entity_class, record)
         self.response.write('Registros Importados!')
 
@@ -613,7 +618,8 @@ class GetBienesoServicios(webapp2.RequestHandler):
 class GetProveedores(webapp2.RequestHandler):
     def get(self):
         bienoservicio = Bienoservicio.get_by_id(self.request.get('bienoservicio'))
-        proveedores = bienoservicio.proveedores
+        todos = Proveedor.query()
+        proveedores = todos.filter(Proveedor.bienesoservicios.IN([bienoservicio.key])).fetch()
         response = [{'value':proveedor.key.id(), 'name': proveedor.rotulo } for proveedor in proveedores]
         self.response.out.write(json.dumps(response))
 
@@ -623,6 +629,44 @@ class Addbienoservicio(webapp2.RequestHandler):
         property = self.request.get('property')
         id= self.request.get('id')
         classModels[entity_class]
+
+
+def getConsecutivoEgreso():
+    numero = NumeroEgreso.query().fetch()
+    if numero:
+        numero[0].consecutivo = numero[0].consecutivo + 1
+        numero[0].put()
+        return numero[0].consecutivo
+    else:
+        NumeroEgreso(consecutivo=1).put()
+        return 1
         
         
+class GuardarEgreso(webapp2.RequestHandler):        
+    def post(self):
+        post_data = self.request.body
+        values = json.loads(post_data)
+        compras =[]
+        for compra in values['compras']:
+            bienoservicio = compra['bienoservicio'].replace(' ','.')
+            compras.append(Compra(bienoservicio=Bienoservicio.get_by_id(bienoservicio).key,
+                           detalle = compra['detalle'],
+                           cantidad = compra['cantidad'],
+                           precio = compra['precio'],
+                           valorTotal = compra['compra']))
+        proveedor = Proveedor.get_by_id(values['proveedor'])
+        empleado = Empleado.get_by_id(values['empleado'])
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        tipo = TipoEgreso.get_by_id(values['tipo'])
+        numero = ''
+        if values['numero']:
+            numero = values['numero']
+        else:
+            numero = getConsecutivoEgreso()
+
+        detalle = compras[0].bienoservicio.id() + '-' + compras[0].detalle if len(compras)==1 else compras[0].bienoservicio.id() + '-' + compras[0].detalle + ', etc.' 
+        egreso = Egreso(id=str(numero), numero=int(numero), detalle = detalle, tipo = tipo.key, proveedor = proveedor.key, empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'])
+        egreso.put()
+        entity = egreso
+        self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
         

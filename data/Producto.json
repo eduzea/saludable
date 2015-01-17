@@ -1,117 +1,144 @@
 [
 	{
-		"rotulo": "ARAZA",
-		"nombre": "ARAZA"
+		"nombre": "ARAZA",
+		"rotulo": "ARAZA"
 	}, {
-		"rotulo": "CONF. DE CEBOLLA AL VINO",
-		"nombre": "CONF. DE CEBOLLA AL VINO"
+		"nombre": "CONF. DE CEBOLLA AL VINO",
+		"rotulo": "CONF. DE CEBOLLA AL VINO"
 	}, {
-		"rotulo": "CURUBA",
-		"nombre": "CURUBA"
+		"nombre": "CONF PIMENTON",
+		"rotulo": "CONF PIMENTON"
 	}, {
-		"rotulo": "DURAZNO",
-		"nombre": "DURAZNO"
+		"nombre": "CURUBA",
+		"rotulo": "CURUBA"
 	}, {
-		"rotulo": "DURAZNO FRUTA",
-		"nombre": "DURAZNO FRUTA"
+		"nombre": "DURAZNO",
+		"rotulo": "DURAZNO"
 	}, {
-		"rotulo": "ENCURTIDO DE ALCACHOFAS",
-		"nombre": "ENCURTIDO DE ALCACHOFAS"
+		"nombre": "DURAZNO FRUTA",
+		"rotulo": "DURAZNO FRUTA"
 	}, {
-		"rotulo": "ENCURTIDO DE BERENJENA CON PIMENTON",
-		"nombre": "ENCURTIDO DE BERENJENA CON PIMENTON"
+		"nombre": "Desechables",
+		"rotulo": "Desechables"
 	}, {
-		"rotulo": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA",
-		"nombre": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA"
+		"nombre": "ENCURTIDO DE ALCACHOFAS",
+		"rotulo": "ENCURTIDO DE ALCACHOFAS"
 	}, {
-		"rotulo": "ENCURTIDO DE PIMENTON CONFITADO",
-		"nombre": "ENCURTIDO DE PIMENTON CONFITADO"
+		"nombre": "ENCURTIDO DE BERENJENA CON PIMENTON",
+		"rotulo": "ENCURTIDO DE BERENJENA CON PIMENTON"
 	}, {
-		"rotulo": "ENCURTIDO DE ZUQUINIS CON ESPECIAS",
-		"nombre": "ENCURTIDO DE ZUQUINIS CON ESPECIAS"
+		"nombre": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA",
+		"rotulo": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA"
 	}, {
-		"rotulo": "FEIJOA",
-		"nombre": "FEIJOA"
+		"nombre": "ENCURTIDO DE PIMENTON CONFITADO",
+		"rotulo": "ENCURTIDO DE PIMENTON CONFITADO"
 	}, {
-		"rotulo": "FRESA",
-		"nombre": "FRESA"
+		"nombre": "ENCURTIDO DE ZUQUINIS CON ESPECIAS",
+		"rotulo": "ENCURTIDO DE ZUQUINIS CON ESPECIAS"
 	}, {
-		"rotulo": "FRUTOS ROJOS",
-		"nombre": "FRUTOS ROJOS"
+		"nombre": "Elementos desechables ",
+		"rotulo": "Elementos desechables "
 	}, {
-		"rotulo": "GUANABANA",
-		"nombre": "GUANABANA"
+		"nombre": "FALAFES",
+		"rotulo": "FALAFES"
 	}, {
-		"rotulo": "GUANABANA FRUTA",
-		"nombre": "GUANABANA FRUTA"
+		"nombre": "FEIJOA",
+		"rotulo": "FEIJOA"
 	}, {
-		"rotulo": "GUAYABA",
-		"nombre": "GUAYABA"
+		"nombre": "FRESA",
+		"rotulo": "FRESA"
 	}, {
-		"rotulo": "GULUPA",
-		"nombre": "GULUPA"
+		"nombre": "FRUTOS ROJOS",
+		"rotulo": "FRUTOS ROJOS"
 	}, {
-		"rotulo": "LULO",
-		"nombre": "LULO"
+		"nombre": "GUANABANA",
+		"rotulo": "GUANABANA"
 	}, {
-		"rotulo": "LULO TAJADO",
-		"nombre": "LULO TAJADO"
+		"nombre": "GUANABANA FRUTA",
+		"rotulo": "GUANABANA FRUTA"
 	}, {
-		"rotulo": "MANGO",
-		"nombre": "MANGO"
+		"nombre": "GUAYABA",
+		"rotulo": "GUAYABA"
 	}, {
-		"rotulo": "MANGO BICHE",
-		"nombre": "MANGO BICHE"
+		"nombre": "GULUPA",
+		"rotulo": "GULUPA"
 	}, {
-		"rotulo": "MARACUYA",
-		"nombre": "MARACUYA"
+		"nombre": "LULO",
+		"rotulo": "LULO"
 	}, {
-		"rotulo": "MARACUYA PEPA",
-		"nombre": "MARACUYA PEPA"
+		"nombre": "LULO TAJADO",
+		"rotulo": "LULO TAJADO"
 	}, {
-		"rotulo": "MELON",
-		"nombre": "MELON"
+		"nombre": "MANGO",
+		"rotulo": "MANGO"
 	}, {
-		"rotulo": "MERMELADA DE NARANJA CON ANIS",
-		"nombre": "MERMELADA DE NARANJA CON ANIS"
+		"nombre": "MANGO BICHE",
+		"rotulo": "MANGO BICHE"
 	}, {
-		"rotulo": "MERMELADA DE NARANJA CON JENGIBRE",
-		"nombre": "MERMELADA DE NARANJA CON JENGIBRE"
+		"nombre": "MARACUYA",
+		"rotulo": "MARACUYA"
 	}, {
-		"rotulo": "MERMELADA DE UVA",
-		"nombre": "MERMELADA DE UVA"
+		"nombre": "MARACUYA PEPA",
+		"rotulo": "MARACUYA PEPA"
 	}, {
-		"rotulo": "MORA",
-		"nombre": "MORA"
+		"nombre": "MELON",
+		"rotulo": "MELON"
 	}, {
-		"rotulo": "NISPERO",
-		"nombre": "NISPERO"
+		"nombre": "MERMELADA DE NARANJA CON ANIS",
+		"rotulo": "MERMELADA DE NARANJA CON ANIS"
 	}, {
-		"rotulo": "PATILLA",
-		"nombre": "PATILLA"
+		"nombre": "MERMELADA DE NARANJA CON JENGIBRE",
+		"rotulo": "MERMELADA DE NARANJA CON JENGIBRE"
 	}, {
-		"rotulo": "PI\u00d1A",
-		"nombre": "PI\u00d1A"
+		"nombre": "MERMELADA DE UVA",
+		"rotulo": "MERMELADA DE UVA"
 	}, {
-		"rotulo": "SANDIA",
-		"nombre": "SANDIA"
+		"nombre": "MORA",
+		"rotulo": "MORA"
 	}, {
-		"rotulo": "SMOTHIE GMB",
-		"nombre": "SMOTHIE GMB"
+		"nombre": "Menu adultos",
+		"rotulo": "Menu adultos"
 	}, {
-		"rotulo": "SMOTHIE LMF",
-		"nombre": "SMOTHIE LMF"
+		"nombre": "Mermelada Frutos rojos",
+		"rotulo": "Mermelada Frutos rojos"
 	}, {
-		"rotulo": "TAMARINDO",
-		"nombre": "TAMARINDO"
+		"nombre": "NISPERO",
+		"rotulo": "NISPERO"
 	}, {
-		"rotulo": "TOMATE DE ARBOL",
-		"nombre": "TOMATE DE ARBOL"
+		"nombre": "PATILLA",
+		"rotulo": "PATILLA"
 	}, {
-		"rotulo": "UCHUVA",
-		"nombre": "UCHUVA"
+		"nombre": "PI\u00d1A",
+		"rotulo": "PI\u00d1A"
 	}, {
-		"rotulo": "UVA",
-		"nombre": "UVA"
+		"nombre": "Refrigerio navide\u00f1o adultos",
+		"rotulo": "Refrigerio navide\u00f1o adultos"
+	}, {
+		"nombre": "SANDIA",
+		"rotulo": "SANDIA"
+	}, {
+		"nombre": "SMOTHIE GMB",
+		"rotulo": "SMOTHIE GMB"
+	}, {
+		"nombre": "SMOTHIE LMF",
+		"rotulo": "SMOTHIE LMF"
+	}, {
+		"nombre": "SURTIDAS",
+		"rotulo": "SURTIDAS"
+	}, {
+		"nombre": "SURTIDOS",
+		"rotulo": "SURTIDOS"
+	}, {
+		"nombre": "TAMARINDO",
+		"rotulo": "TAMARINDO"
+	}, {
+		"nombre": "TOMATE DE ARBOL",
+		"rotulo": "TOMATE DE ARBOL"
+	}, {
+		"nombre": "UCHUVA",
+		"rotulo": "UCHUVA"
+	}, {
+		"nombre": "UVA",
+		"rotulo": "UVA"
 	}
 ]

@@ -45,6 +45,9 @@ class Venta(ndb.Model):
 
 class NumeroFactura(ndb.Model):
     consecutivo = ndb.IntegerProperty()
+
+class NumeroEgreso(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
     
 class NumeroRemision(ndb.Model):
     consecutivo = ndb.IntegerProperty()
@@ -87,18 +90,7 @@ class Bienoservicio(ndb.Model):
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    proveedores = ndb.KeyProperty(Proveedor,repeated=True)
 
-class Egreso(ndb.Model):
-    numero = ndb.IntegerProperty()
-    fecha = ndb.DateProperty()
-    empleado = ndb.KeyProperty(kind=Empleado)
-    tipo = ndb.KeyProperty(kind=TipoEgreso)
-    proveedor = ndb.KeyProperty(kind=Proveedor)
-    valor = ndb.IntegerProperty()
-    detalle = ndb.TextProperty()
-
-    
 class PorcionCompra(ndb.Model):
     valor = ndb.IntegerProperty()
     unidades = ndb.StringProperty(indexed=True)
@@ -106,9 +98,22 @@ class PorcionCompra(ndb.Model):
 
 class Compra(ndb.Model):
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
-    porcion = ndb.KeyProperty(kind=PorcionCompra)
+    detalle = ndb.StringProperty()
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     valorTotal = ndb.IntegerProperty()
+
+class Egreso(ndb.Model):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    empleado = ndb.KeyProperty(kind=Empleado)
+    tipo = ndb.KeyProperty(kind=TipoEgreso)
+    compras = ndb.StructuredProperty(Compra,repeated=True)
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    total = ndb.IntegerProperty()
+    detalle = ndb.TextProperty()
+
+    
+
     
     

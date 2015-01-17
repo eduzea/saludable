@@ -17,13 +17,13 @@
 		<div data-dojo-type="dijit/form/Form" id="addEntityFormEgreso" data-dojo-id="addEntityFormEgreso" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleadoFactura'>Empleado :</label></td>
+					<td><label for='empleadoEgreso'>Empleado:</label></td>
 					<td><div style="width:300px">
-							{{tagForField('Factura',props['empleado'])}}
+							{{tagForField('Egreso',props['empleado'])}}
 						</div>
 					</td>
-					<td><label for='fechaFactura'>Fecha: </label></td>
-					<td><input type="text" name="fechacFactura" id="fechaFactura" value="now" 
+					<td><label for='fechaEgreso'>Fecha: </label></td>
+					<td><input type="text" name="fechacEgreso" id="fechaEgreso" value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
 							required="true" style="width:100px;font-size:70%" />
 					</td>
@@ -41,8 +41,9 @@
 							{{tagForField('Egreso',props['proveedor'])}}
 						</div>
 					</td>
-					<td><label for='porcionEgreso'>Porcion: </label></td>
-					<td><div id='porcionEgreso'></div></td>
+					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
+					<td></td>
+					<td><button id='anularEgresoBtn' data-dojo-type="dijit/form/Button">Anular Egreso</button></td>
 					<td></td>
 					<td>
 						<input type="text" name="anuladaEgreso" data-dojo-type="dijit/form/TextBox"
@@ -54,12 +55,17 @@
 					<td><div style="width:300px">
 						{{tagForField('Egreso',props['bienoservicio'])}}
 					</div></td>
+					<td><label for="bienoservicioEgreso">Detalle: </label></td>
+					<td>
+						{{tagForField('Egreso',props['detalle'])}}
+					</td>
+				</tr>
+				<tr>
 					<td><label for='cantidadEgreso'>Cantidad:</label></td>
 					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
-					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar</button></td>
-					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
-					<td></td>
-					<td><button id='anularEgresoBtn' data-dojo-type="dijit/form/Button">Anular Egreso</button></td>
+					<td><label for='cantidadEgreso'>Precio Unitario:</label></td>
+					<td>{{tagForField('Egreso',props['precio'])}}</td>
+					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>
 			</table>
 			<div id="gridEgreso"></div>	
@@ -70,7 +76,7 @@
 					<button id='guardarEgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
 				</td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td>
-				<td><div id='mensajeFactura' style="color: red"></div></td>
+				<td><div id='mensajeEgreso' style="color: red"></div></td>
 			</tr>
 		</table>
 	</body>

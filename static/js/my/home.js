@@ -83,6 +83,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 	tree.onClick = function(item, node, evt){
 		if (!item.clickable) return;
 		var entityClass = item.id;
+		saludable.entity_class = entityClass;
 		if (saludable.widgetCache.hasOwnProperty('widget'+entityClass)){ 
 			var widget = saludable.widgetCache['widget'+entityClass];
 			domConstruct.empty("centerPane");

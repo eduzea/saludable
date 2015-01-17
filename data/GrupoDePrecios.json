@@ -1,16 +1,19 @@
 [
 	{
-		"nombre": "OTROS",
-		"rotulo": "OTROS"
-	},{
 		"nombre": "ABACO",
 		"rotulo": "ABACO"
+	}, {
+		"nombre": "ADELA",
+		"rotulo": "ADELA"
 	}, {
 		"nombre": "ARABE",
 		"rotulo": "ARABE"
 	}, {
 		"nombre": "AVESCO",
 		"rotulo": "AVESCO"
+	}, {
+		"nombre": "Adriana Delgadillo",
+		"rotulo": "Adriana Delgadillo"
 	}, {
 		"nombre": "CARMEL",
 		"rotulo": "CARMEL"
@@ -36,14 +39,23 @@
 		"nombre": "HARRY",
 		"rotulo": "HARRY"
 	}, {
+		"nombre": "Hamburgueserias",
+		"rotulo": "Hamburgueserias"
+	}, {
 		"nombre": "JUAN EL PANADERO",
 		"rotulo": "JUAN EL PANADERO"
 	}, {
 		"nombre": "LEHAL",
 		"rotulo": "LEHAL"
 	}, {
+		"nombre": "Mermelada Frutos rojos",
+		"rotulo": "Mermelada Frutos rojos"
+	}, {
 		"nombre": "NOGAL",
 		"rotulo": "NOGAL"
+	}, {
+		"nombre": "OTROS",
+		"rotulo": "OTROS"
 	}, {
 		"nombre": "PAESA",
 		"rotulo": "PAESA"
@@ -57,8 +69,14 @@
 		"nombre": "POLKA",
 		"rotulo": "POLKA"
 	}, {
+		"nombre": "SARODI",
+		"rotulo": "SARODI"
+	}, {
 		"nombre": "SARODY",
 		"rotulo": "SARODY"
+	}, {
+		"nombre": "SURA",
+		"rotulo": "SURA"
 	}, {
 		"nombre": "TREPANDO",
 		"rotulo": "TREPANDO"

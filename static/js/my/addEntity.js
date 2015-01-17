@@ -16,7 +16,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 			var propNodes = query('.listpropTextarea'); 
 			if(propNodes){
 				propNodes.forEach(function(node){
-					var propname = node.id.replace(entity_class,'');
+					var propname = node.id.replace(entity_class,'').replace('text','');
 					var textarea = registry.byId(node.id);
 					proplistdata[propname]=textarea.value; 	
 				});
@@ -29,10 +29,6 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 				var grid = registry.byId("gridNode"+ entity_class);
 				var key = response.key;
 				var response_user='';
-				for(prop in formdata){
-					formdata[prop.replace(entity_class,'')]=formdata[prop];
-					delete formdata[prop];
-				}
 				if (response.message == 'Created') {
 					response.entity['id'] = key;
 					grid ? grid.store.add(response.entity) : '' ;
@@ -66,15 +62,15 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 		var propname = button.id.split('_')[1];
 		if (button.id.search('Agregar') != -1){
 			on(button,"click",function(e){
-				bienoservicio = registry.byId('select_' + propname + entity_class).value;
-				var textarea = registry.byId(propname + entity_class);
+				bienoservicio = registry.byId(propname + entity_class).value;
+				var textarea = registry.byId('text' + propname + entity_class);
 				var text = textarea.value + bienoservicio +'; ';
 				textarea.set('value',text);
 			});	
 		}else{
 			on(button,"click",function(e){
-			bienoservicio = registry.byId('select_' + propname + entity_class).value;
-			var textarea = registry.byId(propname + entity_class);
+			bienoservicio = registry.byId(propname + entity_class).value;
+			var textarea = registry.byId('text' + propname + entity_class);
 			var text = textarea.value.replace(bienoservicio+';','').trim();
 			textarea.set('value',text);
 		});

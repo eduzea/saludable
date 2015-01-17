@@ -2,7 +2,7 @@
 
 require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort'], 
+		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort','dojo/domReady!'], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;
 	
@@ -31,7 +31,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 				items.push({ "value": proveedor.value, "label": proveedor.name });
 			});
 			var proveedorSelect = registry.byId('proveedorEgreso');
-			proveedorSelect.options = items;
+			proveedorSelect.options = [];
+			proveedorSelect.addOption(items);
 			proveedorSelect.reset();
 		});
 	};
@@ -124,13 +125,14 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	parser.instantiate([dom.byId('guardarEgresoBtn')]);
 	on(registry.byId('guardarEgresoBtn'),'click',
 		function(e){
+			var tipo = registry.byId('tipoEgreso').value;
 			var proveedor = registry.byId('proveedorEgreso').value;
 			var empleado = registry.byId('empleadoEgreso').value;		
 			var fecha = registry.byId('fechaEgreso').toString();
 			var numero = dom.byId('numeroEgreso').innerHTML.replace('No.','');
 			var gridData = getGridData();
 			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'compras':gridData, 'total':updateTotal(), 
-			'numero':numero};
+			'numero':numero, 'tipo':tipo};
 			request.post('/guardarEgreso', {
 					data : json.stringify(egreso_data),
 					handleAs:'json'
@@ -164,25 +166,16 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			return;
 		}
 		var formdata = getFormData();
-		request.post("getPrice",
-		{
-			data: {'bienoservicio':formdata['bienoservicio'], 'proveedor':formdata['proveedor'], 'porcion': formdata['porcion']}
-		}).then(function(precio){
-			if (precio == 'list index out of range'){
-				alert("No hay precio definido para esta combinacion bien o servcio x proveedor! Definelo primero.");
-				return;	
-			}
-			var grid = registry.byId('gridEgreso');
-			var id = formdata['producto'] + formdata['porcion'];
-			var row = grid.store.get(id);
-			if (row){
-				grid.store.remove(id);	
-			}
-			var total = formdata.cantidad * parseInt(precio);
-			grid.store.add({'id':id,'bienoservicio':formdata.bienoservicio, 'proveedor':formdata.proveedor, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
-							'precio': parseInt(precio), 'compra':total});
-			grid.total=updateTotal();
-		});
+		var grid = registry.byId('gridEgreso');
+		var id = formdata['bienoservicio'] + formdata['detalle'].replace(/ /g,'');
+		var row = grid.store.get(id);
+		if (row){
+			grid.store.remove(id);	
+		}
+		var total = formdata.cantidad * formdata.precio;
+		grid.store.add({'id':id,'bienoservicio':formdata.bienoservicio, 'proveedor':formdata.proveedor, 'detalle': formdata.detalle,'cantidad':formdata.cantidad, 
+						'precio': formdata.precio, 'compra':total});
+		grid.total=updateTotal();
 
 		
 	});
@@ -218,17 +211,17 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	var store = new Store();
 	var columns = [
-		{field : 'producto', name : 'Producto', style: "text-align: center"},
-		{field : 'porcion', name : 'Porcion', style: "text-align: center"},
+		{field : 'bienoservicio', name : 'Bien o Servicio', style: "text-align: center"},
+		{field : 'detalle', name : 'Detalle', style: "text-align: center"},
 		{field : 'cantidad', name : 'Cantidad', style: "text-align: center"},
 		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", 
 				formatter: function(data){
 					return number.format(data.precio,{pattern:'###,###'});
 				}
 		},
-		{field : 'venta', name : 'Valor Total', style: "text-align: center", 
+		{field : 'compra', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.venta,{pattern:'###,###'});
+					return number.format(data.compra,{pattern:'###,###'});
 				}
 		},
 		{ 	field : 'Borrar', 

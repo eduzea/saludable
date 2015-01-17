@@ -85,9 +85,9 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
             'Egreso':[
                       {'id':'numero','ui':'Numero','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
                       {'id':'tipo','ui':'Tipo','width':'10em'},
-                      {'id':'empleado','ui':'Empleado','width':'10em'},
-                      {'id':'valor','ui':'Valor','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
-                      {'id':'detalle','ui':'Detalle','required':'true','valid':'','width':'10em'}
+                      {'id':'detalle','ui':'Bien o Servicio','required':'true','valid':'','width':'10em'},
+                      {'id':'total','ui':'Valor','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                      {'id':'empleado','ui':'Empleado','width':'10em'}                      
                       ]
             }
 createTemplateStings = {'Factura':'/crearFactura', 'Egreso':'/crearEgreso'}
