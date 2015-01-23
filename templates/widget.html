@@ -1,6 +1,6 @@
 <div id='widget{{entity_class}}' title="{{entity_class}}" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'true', isLayoutContainer:'true',useMenu:'false', tabPosition: 'bottom'">
-	<div data-dojo-type="dojox/layout/ContentPane" id='{{entity_class}}_show' title="Mostrar {{entity_class}}s" style="overflow: hidden !important;" 
-		data-dojo-props="href: '/showEntities?entityClass={{entity_class}}', executeScripts: true" ></div>
 	<div data-dojo-type="dojox/layout/ContentPane" id='{{entity_class}}_add' title="Crear {{entity_class}}" style="overflow: hidden !important;" 
 		data-dojo-props="href: '{{createTemplateString(entity_class)}}', executeScripts: true" ></div>
+	<div data-dojo-type="dojox/layout/ContentPane" id='{{entity_class}}_show' title="Mostrar {{entity_class}}s" style="overflow: hidden !important;" 
+		data-dojo-props="href: '/showEntities?entityClass={{entity_class}}', executeScripts: true" ></div>
 </div>

@@ -7,7 +7,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	var entity_class = saludable.entity_class;
 	
 
-	resetBienoservicio = function(tipo){	
+	var resetBienoservicio = function(tipo){	
 			request('/getBienesoServicios?tipo=' + tipo, 
 					{handleAs:'json'}).then(
 				function(response) {
@@ -19,11 +19,10 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					bienoservicioSelect.options = [];
 					bienoservicioSelect.addOption(items);
 					bienoservicioSelect.reset();
-					resetProveedor(bienoservicioSelect.value);
 			});
 		};	
 
-	resetProveedor = function(bienoservicio){	
+	var resetProveedor = function(bienoservicio){	
 		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
 		function(response){
 			var items = [];
@@ -37,28 +36,6 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		});
 	};
 
-	
-	resetPorcion = function(bienoservicio){
-			proveedor = registry.byId('proveedorEgreso').value;	
-			request.post('/getPorcion', {
-					data : {'proveedor':proveedor, 'bienoservicio': bienoservicio},
-					handleAs:'json'
-				}).then(function(response) {
-					var items = [];
-					response.forEach(function(porcion){
-						items.push({ "value": porcion, "name": porcion });
-					});
-					var porcionStore = new Store({
-			        	idProperty: "value",
-			            data: items
-			        });
-					var porcionSelect = registry.byId('porcionEgreso');
-					porcionSelect.setStore(porcionStore);
-					porcionSelect.reset();
-			});
-		};
-	
-
 	parser.instantiate([dom.byId('tipoEgreso')]);
     var tipoSelect = registry.byId('tipoEgreso');
 	tipoSelect.onChange = resetBienoservicio; 
@@ -68,19 +45,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
     var bienoservicioSelect = registry.byId('bienoservicioEgreso');    
 	bienoservicioSelect.onChange = resetProveedor; 
     resetProveedor(bienoservicioSelect.value);
-
-    parser.instantiate([dom.byId('proveedorEgreso')]);
-    var proveedorSelect = registry.byId('proveedorEgreso');
-    proveedorSelect.onChange = ''; //write logic for when proveedor changes.
-
-    var porcionSelect = new Select({
-        name: "porcionEgreso",
-        labelAttr: "name",
-        maxHeight: -1, // tells _HasDropDown to fit menu within viewport
-	}, "porcionEgreso");
-	porcionSelect.startup();
   	
-	updateTotal = function(){
+	var updateTotal = function(){
 		var data = getGridData();
 		var sumTotal=0;
 		data.forEach(function(entry){
@@ -90,7 +56,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		return sumTotal;
 	};
 	
-	getFormData = function(){
+	var getEgresoFormData = function(entity_class){
 		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
 			formdata[prop.replace('Egreso', '')] = formdata[prop];
@@ -99,12 +65,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		return formdata;
 	};
 	
-	getGridData = function(){
+	var getGridData = function(){
 		var store = registry.byId('gridEgreso').store;
 		return store.query();
 	};
 	
-	actualizarEgresos = function(response, data){
+	var actualizarEgresos = function(response, data){
 		var grid = registry.byId('gridNodeEgreso');
 		var key = response.egresoId;
 		data['id'] = key;
@@ -118,7 +84,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		}
 	};
 	
-	toggle = function(e){
+	var toggle = function(e){
 		e.value = !e.value;
 	};
 	
@@ -141,6 +107,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
 						egreso_data['proveedor']=registry.byId('proveedorEgreso').attr('displayedValue');
+						egreso_data['detalle']= gridData[0].bienoservicio;
 						actualizarEgresos(response, egreso_data);
 					}else{
 						message = 'No se pudo guardar este Egreso!';
@@ -165,7 +132,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			alert("'Cantidad' no puede estar vacio!");
 			return;
 		}
-		var formdata = getFormData();
+		var formdata = getEgresoFormData(entity_class);
 		var grid = registry.byId('gridEgreso');
 		var id = formdata['bienoservicio'] + formdata['detalle'].replace(/ /g,'');
 		var row = grid.store.get(id);
@@ -254,5 +221,6 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
 	}, 'gridEgreso');
 	grid.startup();
+	grid.updateTotal = updateTotal;
 	domClass.add(dom.byId('gridEgreso'),'egreso-grid');
 }); 

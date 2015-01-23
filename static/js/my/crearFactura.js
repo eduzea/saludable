@@ -6,7 +6,7 @@ require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/M
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;	
 	
-	resetCliente = function(cliente){	
+	var resetCliente = function(cliente){	
 		request.post('/getClientes', {handleAs:'json'}).then(function(response){
 			var items = [];
 			response.forEach(function(cliente){
@@ -19,7 +19,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	};
 	
 	
-	resetProducto = function(cliente){	
+	var resetProducto = function(cliente){	
 			request.post('/getProducto', {
 					data : {'cliente':cliente},
 					handleAs:'json'
@@ -39,7 +39,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			});
 		};	
 	
-	resetPorcion = function(producto){
+	var resetPorcion = function(producto){
 			if (producto == 'No hay precios definidos') return;
 			cliente = registry.byId('clienteFactura').value;	
 			request.post('/getPorcion', {
@@ -89,7 +89,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	}, "porcionFactura");
 	porcionSelect.startup();
   	
-	updateTotal = function(){
+	var updateTotal = function(){
 		var data = getGridData();
 		var sumTotal=0;
 		data.forEach(function(entry){
@@ -99,7 +99,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		return sumTotal;
 	};
 	
-	getFormData = function(){
+	var getFormData = function(entity_class){
 		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
 			formdata[prop.replace('Factura', '')] = formdata[prop];
@@ -108,12 +108,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		return formdata;
 	};
 	
-	getGridData = function(){
+	var getGridData = function(){
 		var store = registry.byId('gridFactura').store;
 		return store.query();
 	};
 	
-	actualizarFacturas = function(response, data, remision){
+	var actualizarFacturas = function(response, data, remision){
 		var id = remision ? 'gridNodeRemision' : 'gridNodeFactura';
 		var grid = registry.byId(id);
 		var key = response.facturaId;
@@ -128,7 +128,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		}
 	};
 	
-	toggle = function(e){
+	var toggle = function(e){
 		e.value = !e.value;
 	};
 	
@@ -178,7 +178,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			alert("'Cantidad' no puede estar vacio!");
 			return;
 		}
-		var formdata = getFormData();
+		var formdata = getFormData(entity_class);
 		request.post("getPrice",
 		{
 			data: {'producto':formdata['producto'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
@@ -279,5 +279,6 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
 	}, 'gridFactura');
 	grid.startup();
+	grid.updateTotal = updateTotal;
 	domClass.add(dom.byId('gridFactura'),'factura-grid');
 }); 

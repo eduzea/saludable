@@ -72,24 +72,36 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			return lookup[label];
 		};
 		
+		//This is UGLY!
+		var urlForDetails = {'Factura':'/getVentas?facturaKey=', 'Remision':'/getVentas?facturaKey=', 
+							'Egreso':'/getCompras?egresoKey='};
+		var numeroDomId = {'Factura':'numeroFactura', 'Remision':'numeroFactura', 'Egreso':'numeroEgreso'};
 		var fillForm = function(nodelist, rowData, entity_class){
 			nodelist.forEach(function(node, index, array){
 	   			var dijit = registry.byId(node.id);
 	   			if (dijit){
 	   				if (dijit.id.indexOf("grid") > -1 ){
-	   					request('/getVentas?facturaKey=' + rowData['id'] + '&tipo=' + entity_class, {handleAs:'json'}).then(function(response) {
+	   					request(urlForDetails[entity_class] + rowData['id'] + '&tipo=' + entity_class, {handleAs:'json'}).then(function(response)
+	   					 {
 	   						dijit.model.clearCache();
-							dijit.model.store.setData(response);
+							//dijit.model.store.setData(response);
+							//
+							response.forEach(function(item){
+								dijit.store.add(item);								
+							});
+							//
 							dijit.body.refresh();
-							dijit.total = updateTotal();//this function is defined in crearFactura - abstraction leak, try to fix!
-							dom.byId('numeroFactura').innerHTML = rowData.numero;
-							if (entity_class == "Remision"){
-								registry.byId('remisionFactura').set('value',true);
+							dijit.total = dijit.updateTotal();
+							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
+							if (entity_class != 'Egreso'){
+								if (entity_class == "Remision"){
+									registry.byId('remisionFactura').set('value',true);
+								}
+								else{
+									registry.byId('remisionFactura').set('value',false);
+								}
+								registry.byId('remisionFactura').set('readOnly',true);
 							}
-							else{
-								registry.byId('remisionFactura').set('value',false);
-							}
-							registry.byId('remisionFactura').set('readOnly',true);
 	   					});
 	   				}else{
 			        	var id= dijit.id.replace(getEditEntityClass(entity_class),''); 
@@ -126,7 +138,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 					label : "Editar",
 					onClick : function() {
 						var widget = saludable.widgetCache['widget' + entity_class].getChildren()[0];
-						widget.selectChild(widget.getChildren()[1]);
+						widget.selectChild(widget.getChildren()[0]);
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data

@@ -2,37 +2,46 @@ import webapp2
 from views.views import *
 
 application = webapp2.WSGIApplication([
+    #User Management                                  
     ('/test', Test),
     ('/login',LogIn),
     ('/logout',LogOut),
+    # Single Page App
     ('/home', Home),
+    ('/getWidget',GetWidget),
+    # CRUD GENERAL
     ('/addEntity',AddEntity),
     ('/saveEntity', SaveEntity),
     ('/showEntities',ShowEntities),
     ('/entityData', EntityData),
     ('/deleteEntity', DeleteEntity),
-    ('/crearEgreso', CrearEgreso),
-    ('/crearFactura', CrearFactura),
     ('/getPrice', GetPrice),
-    ('/guardarFactura', GuardarFactura),
-    ('/guardarEgreso', GuardarEgreso),
-    ('/exportScript', ExportScript),
-    ('/importScript', ImportScript),
-    ('/mostrarFactura', MostrarFactura),
     ('/getVentas', GetVentas),
     ('/getProducto', GetProducto),
     ('/getPorcion', GetPorcion),
     ('/getClientes', GetClientes),
     ('/getEmpleados', GetEmpleados),
-    ('/setNumero', SetNumber),
-    ('/importCSV', ImportCSV),
-    ('/importFacturas',ImportFacturas),
+    #Ingresos
+    ('/crearFactura', CrearFactura),
+    ('/guardarFactura', GuardarFactura),
+    ('/mostrarFactura', MostrarFactura),
     ('/anularFactura', AnularFactura),
-    ('/pivot',Pivot),
-    ('/tablaDinamica',TablaDinamica),
-    ('/getProductSales',GetProductSales),
-    ('/getWidget',GetWidget),
+    ('/importFacturas',ImportFacturas),    
+    # Egresos
+    ('/crearEgreso', CrearEgreso),
+    ('/guardarEgreso', GuardarEgreso),
     ('/getBienesoServicios',GetBienesoServicios),
     ('/getProveedores',GetProveedores),
-    ('/addBienoservicio',Addbienoservicio)
+    ('/addBienoservicio',Addbienoservicio),
+    ('/getCompras',GetCompras),
+    # Data Management
+    ('/exportScript', ExportScript),
+    ('/importScript', ImportScript),
+    ('/setNumero', SetNumber),
+    ('/importCSV', ImportCSV),
+    # Analisis
+    ('/pivot',Pivot),
+    ('/tablaDinamica',TablaDinamica),
+     ('/getProductSales',GetProductSales)
+
 ], debug=True)

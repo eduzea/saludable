@@ -27,8 +27,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 			return data;
 		};
 		
-		var ingresoNodes = makeStore(['Cliente','Producto','GrupoDePrecios','Precio','Factura'],'Ingresos');
-		var egresoNodes = makeStore(['TipoEgreso','Egreso','Bienoservicio','PorcionInsumo','Proveedor'],'Egresos');
+		var ingresoNodes = makeStore(['Factura','Cliente','Producto','GrupoDePrecios','Precio'],'Ingresos');
+		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false}];

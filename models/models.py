@@ -101,7 +101,7 @@ class Compra(ndb.Model):
     detalle = ndb.StringProperty()
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
-    valorTotal = ndb.IntegerProperty()
+    compra = ndb.IntegerProperty()
 
 class Egreso(ndb.Model):
     numero = ndb.IntegerProperty()

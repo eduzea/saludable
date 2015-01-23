@@ -59,7 +59,7 @@ def getColumns(entity_class):
     columns=[]
     props = classModels[entity_class]._properties
     for column in uiConfig[entity_class]:
-        colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center"}
+        colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['width']}
         if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
             colProps['type']='Integer'
         columns.append(colProps);
@@ -125,12 +125,18 @@ def check_types(entity_class, values):
         if type(value) is KeyProperty:
             if value._repeated == True:
                 items = []
-                proplistdata = json.loads(values['proplistdata'])
-                parts =  proplistdata[key].strip().strip(';').split(';')
-                for item in parts:
-                    key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
-                    items.append(key_obj)
-                values[key]= items
+                if 'proplistdata' in values:
+                    proplistdata = json.loads(values['proplistdata'])
+                    parts =  proplistdata[key].strip().strip(';').split(';')
+                    for item in parts:
+                        key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
+                        items.append(key_obj)
+                    values[key]= items
+                else:
+                    for item in values[key]:
+                        key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
+                        items.append(key_obj)
+                    values[key] = items
             else:   
                 key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
                 values[key]=key_obj
@@ -314,7 +320,7 @@ class GetVentas(webapp2.RequestHandler):
             dicc['id'] = dicc['producto'] + dicc['porcion'];
             records.append(dicc)
         self.response.out.write(json.dumps(records))
-
+        
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
         records = []
@@ -334,6 +340,17 @@ class GetProductSales(webapp2.RequestHandler):
                 records.append(venta)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
+
+class GetCompras(webapp2.RequestHandler):
+    def get(self):
+        egresoKey = self.request.get('egresoKey')
+        query = Egreso.query(Egreso.numero == int(egresoKey))
+        egreso = query.fetch()[0]
+        records = []
+        for compra in egreso.compras:
+            compra = compra.to_dict()
+            records.append(compra)
+        self.response.out.write(JSONEncoder().encode(records))
            
 
 class CrearEgreso(webapp2.RequestHandler):
@@ -653,7 +670,7 @@ class GuardarEgreso(webapp2.RequestHandler):
                            detalle = compra['detalle'],
                            cantidad = compra['cantidad'],
                            precio = compra['precio'],
-                           valorTotal = compra['compra']))
+                           compra = compra['compra']))
         proveedor = Proveedor.get_by_id(values['proveedor'])
         empleado = Empleado.get_by_id(values['empleado'])
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
@@ -664,9 +681,9 @@ class GuardarEgreso(webapp2.RequestHandler):
         else:
             numero = getConsecutivoEgreso()
 
-        detalle = compras[0].bienoservicio.id() + '-' + compras[0].detalle if len(compras)==1 else compras[0].bienoservicio.id() + '-' + compras[0].detalle + ', etc.' 
+        detalle = compras[0].bienoservicio.id() if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' 
         egreso = Egreso(id=str(numero), numero=int(numero), detalle = detalle, tipo = tipo.key, proveedor = proveedor.key, empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'])
         egreso.put()
         entity = egreso
-        self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
+        self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))     
         
