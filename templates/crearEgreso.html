@@ -18,41 +18,45 @@
 			<table style="table-layout: fixed;"> 
 				<tr>
 					<td><label for='empleadoEgreso'>Empleado:</label></td>
-					<td><div style="width:300px">
+					<td><div style="margin:10px">
 							{{tagForField('Egreso',props['empleado'])}}
 						</div>
 					</td>
 					<td><label for='fechaEgreso'>Fecha: </label></td>
 					<td><input type="text" name="fechacEgreso" id="fechaEgreso" value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
-							required="true" style="width:100px;font-size:70%" />
+							required="true" style="width:100px"/>
+					</td>
+					<td><label for='sucursalEgreso'>Sucursal: </label></td>
+					<td><div style="margin:10px">
+						{{tagForField('Egreso',props['sucursal'])}}
+						</div>
 					</td>
 					<td><label for='numeroEgreso'>No. Egreso: </label> </td>
 					<td><div id='numeroEgreso'></div></td>
+					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
 				</tr>					
 				<tr>
 					<td><label for='tipoEgreso'>Tipo: </label></td>
-					<td><div style="width:300px">
+					<td><div>
 							{{tagForField('Egreso',props['tipo'])}}
 						</div>
 					</td>
 					<td><label for='proveedorEgreso'>Proveedor: </label></td>
-					<td><div style="width:300px">
+					<td><div>
 							{{tagForField('Egreso',props['proveedor'])}}
 						</div>
 					</td>
-					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
 					<td></td>
-					<td><button id='anularEgresoBtn' data-dojo-type="dijit/form/Button">Anular Egreso</button></td>
+					<td></td>
+					<td></td>
 					<td></td>
 					<td>
-						<input type="text" name="anuladaEgreso" data-dojo-type="dijit/form/TextBox"
-    					data-dojo-props="readOnly:true" id="anuladaEgreso" style="width:100px;border:none"/>
 					</td>
 				</tr>
 				<tr>
 					<td><label for="bienoservicioEgreso">Bienes o Servcios: </label></td>
-					<td><div style="width:300px">
+					<td><div>
 						{{tagForField('Egreso',props['bienoservicio'])}}
 					</div></td>
 					<td><label for="bienoservicioEgreso">Detalle: </label></td>
@@ -65,10 +69,15 @@
 					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
 					<td><label for='cantidadEgreso'>Precio Unitario:</label></td>
 					<td>{{tagForField('Egreso',props['precio'])}}</td>
+					<td></td>
+					<td></td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>
 			</table>
-			<div id="gridEgreso"></div>	
+			<div id="gridEgreso"></div>
+			<br/>
+			<label for="comentarioEgreso">Comentario: </label>
+			{{tagForField('Egreso',props['comentario'])}}
 		</div>
 		<table>
 			<tr>
@@ -76,8 +85,8 @@
 					<button id='guardarEgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
 				</td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td>
-				<td><div id='mensajeEgreso' style="color: red"></div></td>
 			</tr>
+			<tr><td><div id='mensajeEgreso' style="color: red"></div></td></tr>
 		</table>
 	</body>
 </html>

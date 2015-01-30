@@ -69,7 +69,12 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			for (var i = 0, len = options.length; i < len; i++) {
     			lookup[html.decode(options[i].label)] = options[i].value;
 			}
-			return lookup[label];
+			if (label in lookup){
+				return lookup[label];	
+			}else{
+				dijit.addOption({disabled:false,label:label.replace('.',' '),selected:true,value:label});
+			}
+			return label;
 		};
 		
 		//This is UGLY!
@@ -84,12 +89,10 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   					request(urlForDetails[entity_class] + rowData['id'] + '&tipo=' + entity_class, {handleAs:'json'}).then(function(response)
 	   					 {
 	   						dijit.model.clearCache();
-							//dijit.model.store.setData(response);
-							//
+							dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
 							response.forEach(function(item){
 								dijit.store.add(item);								
 							});
-							//
 							dijit.body.refresh();
 							dijit.total = dijit.updateTotal();
 							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
@@ -106,7 +109,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   				}else{
 			        	var id= dijit.id.replace(getEditEntityClass(entity_class),''); 
 			        	if(id in rowData){
-			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]));
+			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
 			        	}	   				
 	   				}			
 	   			} 

@@ -17,13 +17,15 @@ classModels = {'Cliente':Cliente,
                'Bienoservicio':Bienoservicio, 
                'PorcionCompra':PorcionCompra, 
                'Egreso':Egreso,
-               'TipoEgreso':TipoEgreso}
+               'TipoEgreso':TipoEgreso,
+               'Sucursal':Sucursal}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
            'GrupoDePrecios':['nombre'],
            'Precio':['producto','porcion','grupo'], 
-           'Empleado':['nombre','apellido'], 
+           'Empleado':['nombre','apellido'],
+           'Sucursal':['nombre'], 
            'Factura':['numero'], 
            'Remision':['numero'],
            'Proveedor':['nombre'],
@@ -51,6 +53,10 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       ],
             'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                         {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
+            'Sucursal':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                        {'id':'direccion', 'ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                        {'id':'telefono', 'ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
+                        ],
             'Factura':[{'id':'numero', 'ui':'Numero','width':'4em'},
                        {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
                        {'id':'fecha', 'ui':'Fecha', 'width':'8em'},
@@ -85,11 +91,12 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
             'Egreso':[
                       {'id':'numero','ui':'Numero','required':'true', 'valid':'dijit/form/NumberTextBox','width':'4em'},
                       {'id':'fecha', 'ui':'Fecha','width':'5em'},
+                      {'id':'sucursal', 'ui':'Ciudad','width':'5em'},
                       {'id':'proveedor','ui':'Proveedor','width':'10em'},
                       {'id':'tipo','ui':'Tipo','width':'5em'},
-                      {'id':'detalle','ui':'Bien o Servicio','required':'true','valid':'','width':'10em'},
+                      {'id':'resumen','ui':'Bien o Servicio','required':'true','valid':'','width':'10em'},
                       {'id':'total','ui':'Valor','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
-                      {'id':'empleado','ui':'Empleado','width':'10em'},
+                      {'id':'empleado','ui':'Empleado','width':'10em'}
                       ]
             }
 createTemplateStings = {'Factura':'/crearFactura', 'Egreso':'/crearEgreso'}

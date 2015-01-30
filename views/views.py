@@ -360,18 +360,23 @@ class CrearEgreso(webapp2.RequestHandler):
         prop_empleado = Egreso._properties['empleado']
         prop_bienoservicio = Compra._properties['bienoservicio']
         prop_detalle = Compra._properties['detalle']
+        prop_comentario = Egreso._properties['comentario']
         prop_cantidad = Compra._properties['cantidad']
         prop_precio = Compra._properties['precio']
+        prop_sucursal = Egreso._properties['sucursal']
         props = {'proveedor':{'ui': 'Proveedor', 'id': 'proveedor','required':'true','type':prop_proveedor},
                  'empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
                  'bienoservicio':{'ui': 'Bien o Servicio', 'id': 'bienoservicio','required':'true','type':prop_bienoservicio},
                  'detalle':{'ui': 'Detalle', 'id': 'detalle','required':'true', 'valid':'dijit/form/ValidationTextBox',
                             'width':'10em','type':prop_detalle},
+                 'comentario':{'ui': 'Comentario', 'id': 'comentario','required':'false', 'valid':'dijit/form/ValidationTextBox',
+                            'width':'50em','type':prop_comentario},
                  'cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
                              'width':'5em', 'type':prop_cantidad},
                  'precio':{'ui':'Precio Unitario','id':'precio','required':'true', 'valid':'dijit/form/NumberTextBox',
                            'width':'5em', 'type':prop_precio},
-                 'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo}
+                 'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo},
+                 'sucursal':{'ui':'Ciudad', 'id':'sucursal','required':'true','type':prop_sucursal}
                 }
         template_values = {'props': props}
         template = JINJA_ENVIRONMENT.get_template('crearEgreso.html')
@@ -675,14 +680,17 @@ class GuardarEgreso(webapp2.RequestHandler):
         empleado = Empleado.get_by_id(values['empleado'])
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
         tipo = TipoEgreso.get_by_id(values['tipo'])
+        sucursal = Sucursal.get_by_id(values['sucursal'])
         numero = ''
         if values['numero']:
             numero = values['numero']
         else:
             numero = getConsecutivoEgreso()
 
-        detalle = compras[0].bienoservicio.id() if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' 
-        egreso = Egreso(id=str(numero), numero=int(numero), detalle = detalle, tipo = tipo.key, proveedor = proveedor.key, empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'])
+        resumen = compras[0].bienoservicio.id() if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' 
+        egreso = Egreso(id=str(numero), numero=int(numero), resumen = resumen, tipo = tipo.key, proveedor = proveedor.key, 
+                        empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'], sucursal = sucursal.key,
+                        comentario = values['comentario'])
         egreso.put()
         entity = egreso
         self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))     

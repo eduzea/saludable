@@ -103,15 +103,25 @@ class Compra(ndb.Model):
     precio = ndb.IntegerProperty()
     compra = ndb.IntegerProperty()
 
+class Sucursal(ndb.Model):
+    nombre = ndb.StringProperty()
+    direccion = ndb.StringProperty()
+    telefono = ndb.IntegerProperty()
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+
 class Egreso(ndb.Model):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
+    sucursal = ndb.KeyProperty(kind=Sucursal)
     empleado = ndb.KeyProperty(kind=Empleado)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     compras = ndb.StructuredProperty(Compra,repeated=True)
     proveedor = ndb.KeyProperty(kind=Proveedor)
     total = ndb.IntegerProperty()
-    detalle = ndb.TextProperty()
+    resumen = ndb.TextProperty()
+    comentario = ndb.TextProperty()
+    
+    
 
     
 

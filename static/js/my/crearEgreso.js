@@ -35,6 +35,24 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			proveedorSelect.reset();
 		});
 	};
+	
+	var resetGrid = function (){
+		var grid = registry.byId('gridEgreso');
+		grid.model.clearCache();
+		grid.model.store.setData([]);
+		grid.body.refresh();		
+		grid.total=updateTotal();		
+	};
+	
+	var resetEgreso = function(){
+		dom.byId('mensajeEgreso').innerHTML = '';
+		dom.byId('total').innerHTML = '';
+		dom.byId('numeroEgreso').innerHTML = '';
+		registry.byId('detalleEgreso').set('value','');
+		registry.byId('cantidadEgreso').set('value','');
+		registry.byId('precioEgreso').set('value','');
+		resetGrid();
+	};
 
 	parser.instantiate([dom.byId('tipoEgreso')]);
     var tipoSelect = registry.byId('tipoEgreso');
@@ -45,6 +63,10 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
     var bienoservicioSelect = registry.byId('bienoservicioEgreso');    
 	bienoservicioSelect.onChange = resetProveedor; 
     resetProveedor(bienoservicioSelect.value);
+    
+    parser.instantiate([dom.byId('proveedorEgreso')]);
+    var proveedorSelect = registry.byId('proveedorEgreso');    
+	proveedorSelect.onChange = resetEgreso; 
   	
 	var updateTotal = function(){
 		var data = getGridData();
@@ -97,8 +119,10 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			var fecha = registry.byId('fechaEgreso').toString();
 			var numero = dom.byId('numeroEgreso').innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'compras':gridData, 'total':updateTotal(), 
-			'numero':numero, 'tipo':tipo};
+			var comentario = registry.byId('comentarioEgreso').value;
+			var sucursal = registry.byId('sucursalEgreso').value;
+			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'sucursal':sucursal,'compras':gridData, 'total':updateTotal(), 
+			'numero':numero, 'tipo':tipo, 'comentario': comentario};
 			request.post('/guardarEgreso', {
 					data : json.stringify(egreso_data),
 					handleAs:'json'
@@ -107,20 +131,14 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
 						egreso_data['proveedor']=registry.byId('proveedorEgreso').attr('displayedValue');
-						egreso_data['detalle']= gridData[0].bienoservicio;
+						egreso_data['resumen']= gridData[0].bienoservicio;
 						actualizarEgresos(response, egreso_data);
 					}else{
 						message = 'No se pudo guardar este Egreso!';
 					}
 					dom.byId('mensajeEgreso').innerHTML = message;
 					setTimeout(function() {
-						var grid =registry.byId('gridEgreso');
-						grid.model.clearCache();
-						grid.model.store.setData([]);
-        				grid.body.refresh();
-						dom.byId('mensajeEgreso').innerHTML = '';
-						dom.byId('total').innerHTML = '';
-						dom.byId('numeroEgreso').innerHTML = '';
+						resetEgreso();
 					}, 3000);
 				});
 		});
@@ -147,34 +165,14 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		
 	});
 	
+	
 	parser.instantiate([dom.byId('nuevoEgresoBtn')]);
 	on(registry.byId('nuevoEgresoBtn'),'click',function(e){
 		registry.byId('addEntityForm' + entity_class).reset();
-		var grid = registry.byId('gridEgreso');
-		grid.model.clearCache();
-		grid.model.store.setData([]);
-		grid.body.refresh();		
-		grid.total=updateTotal();
+		resetGrid();
 		dom.byId('numeroEgreso').innerHTML='';
 	});
 	
-	if (dom.byId('anularEgresoBtn')){
-		parser.instantiate([dom.byId('anularEgresoBtn')]);
-		on(registry.byId('anularEgresoBtn'),'click',function(e){
-			var numero = dom.byId('numeroEgreso').innerHTML;
-			request('/anularEgreso?id=' + numero).then(function(){
-				registry.byId('anuladaEgreso').set('value','ANULADA');
-				domAttr.set('anuladaEgreso', 'style', 'visibility:visible;color:red');
-			});
-		});		
-	}
-	parser.instantiate([dom.byId('anuladaEgreso')]);
-	var anuladaText= registry.byId('anuladaEgreso');
-	anuladaText.onChange = function(anulada){
-		this.set('value',anulada ? 'ANULADA' : '');
-		domAttr.set('anuladaEgreso', 'style', 'width:100px;border:none;color:red');
-		};
-
 	
 	var store = new Store();
 	var columns = [

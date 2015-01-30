@@ -13,7 +13,7 @@ require(['dojo/dom',
 function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memory, ready,request) {
 	ready(function() {
 		
-		var makeStore = function(nodes,parent){
+		var makeStore = function(nodes,parent,template){
 			var data = [];
 			nodes.forEach(function(node){
 				data.push(
@@ -21,7 +21,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 						id: node,
 						name: node,
 						parent: parent,
-						clickable: true
+						clickable: true,
+						template:template
 				});
 			});
 			return data;
@@ -29,16 +30,17 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		
 		var ingresoNodes = makeStore(['Factura','Cliente','Producto','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
+		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');
+		var analisisNodes = makeStore(['Clientes','Productos'],'Analisis','pivot');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
-					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false}];
+					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
+					{id : 'Analisis', name : 'Analisis', parent:'root', clickable:false},
+					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
-		data.push.apply(data,[
-			{id: 'Analisis', name: 'Analisis', parent: 'root'},
-			{id: 'Clientes', name: 'Clientes', parent: 'Analisis', clickable: true, template: 'pivot'},
-			{id: 'Productos', name: 'Productos', parent: 'Analisis', clickable: true, template: 'pivot'}
-		]);
+		data.push.apply(data,adminNodes);
+		data.push.apply(data,analisisNodes);
 		
 		var myStore = new Memory({
 		data : data,

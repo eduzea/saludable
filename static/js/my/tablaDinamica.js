@@ -17,10 +17,21 @@ function(request) {
 				aggregatorName:'Suma'
 			}
 	};
+	
+	var meses = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
+    
+	var ammendRecord = function (record){
+		var fecha = new Date(record.fecha);
+		var mes = meses[fecha.getMonth()];
+		record.mes = mes;
+		return record;
+	};
 	request(url, {handleAs:'json'}).then(function(response) {
 		var records = response.records;
+		var ammendedRecords = records.map(ammendRecord);
 		$(function() {
-			$("#" + tipo + "_output").pivotUI(records, config[tipo],false,'es');
+			$("#" + tipo + "_output").pivotUI(ammendedRecords, config[tipo],false,'es');
 		});
 	});
 }); 
