@@ -1,0 +1,13 @@
+[
+	{
+		"nombre": "Bogota",
+		"telefono": 2255936,
+		"rotulo": "Bogota",
+		"direccion": "Cr 28A # 68-74"
+	}, {
+		"nombre": "Cali",
+		"telefono": 3858019,
+		"rotulo": "Cali",
+		"direccion": "Calle 9B # 27-13"
+	}
+]
