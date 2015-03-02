@@ -26,13 +26,9 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
 		function(response){
 			var items = [];
-			if (response.length == 0){
-				items.push({ "value": 'No.reportado', "label": 'No reportado' });
-			}else{
-				response.forEach(function(proveedor){
-					items.push({ "value": proveedor.value, "label": proveedor.name });
-				});			
-			}
+			response.forEach(function(proveedor){
+				items.push({ "value": proveedor.value, "label": proveedor.name });
+			});
 			var proveedorSelect = registry.byId('proveedorEgreso');
 			proveedorSelect.options = [];
 			proveedorSelect.addOption(items);
