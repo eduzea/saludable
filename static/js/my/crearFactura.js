@@ -2,7 +2,7 @@
 
 require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort'], 
+		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort', 'dijit/form/CheckBox'], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
 	var entity_class = saludable.entity_class;	
 	
@@ -68,7 +68,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
     parser.instantiate([dom.byId('clienteFactura')]);
     var clienteSelect = registry.byId('clienteFactura');
     clienteSelect.onChange = resetProducto; 
-    clienteSelect.set('style','font-size:70%')
+    clienteSelect.set('style','font-size:70%');
     resetProducto(clienteSelect.value);
     	
     var productoSelect = new Select({
@@ -95,10 +95,20 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###'});
-		return sumTotal;
+		var grid = registry.byId('gridFactura');
+		var conIva = registry.byId('ivaFactura').checked;
+		var iva = conIva ? 0.16 : 0;
+		grid.subtotal = sumTotal;
+		grid.iva = sumTotal * iva;
+		grid.total = sumTotal* (1 + iva);
+		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###'});
+		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###'});
+		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
 	};
 	
+	parser.instantiate([dom.byId('ivaFactura')]);
+    on(registry.byId('ivaFactura'), 'change', updateTotal);
+		
 	var getFormData = function(entity_class){
 		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
@@ -141,7 +151,9 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
 			var remision = registry.byId('remisionFactura').value;
 			var gridData = getGridData();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'total':updateTotal(), 
+			var grid = registry.byId('gridFactura');
+			updateTotal();
+			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'iva':grid.iva,'total':grid.total,  
 			'numero':numero, 'remision':remision};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
@@ -166,6 +178,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
         				grid.body.refresh();
 						dom.byId('mensajeFactura').innerHTML = '';
 						dom.byId('total').innerHTML = '';
+						dom.byId('subtotal').innerHTML = '';
+						dom.byId('iva').innerHTML = '';
 						dom.byId('numeroFactura').innerHTML = '';
 					}, 3000);
 				});
@@ -196,7 +210,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			var total = formdata.cantidad * parseInt(precio);
 			grid.store.add({'id':id,'producto':formdata.producto, 'cliente':formdata.cliente, 'porcion': formdata.porcion,'cantidad':formdata.cantidad, 
 							'precio': parseInt(precio), 'venta':total});
-			grid.total=updateTotal();
+			updateTotal(); 
 		});
 
 		
@@ -210,7 +224,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		grid.model.clearCache();
 		grid.model.store.setData([]);
 		grid.body.refresh();		
-		grid.total=updateTotal();
+		updateTotal();
 		dom.byId('numeroFactura').innerHTML='';
 	});
 	

@@ -44,10 +44,12 @@
 					</td>
 					<td><label for='porcionFactura'>Porcion: </label></td>
 					<td><div id='porcionFactura'></div></td>
-					<td></td>
 					<td>
 						<input type="text" name="anuladaFactura" data-dojo-type="dijit/form/TextBox"
-    					data-dojo-props="readOnly:true" id="anuladaFactura" style="width:100px;border:none"/>
+    					data-dojo-props="readOnly:true" id="anuladaFactura" style="visibility: hidden;width:100px;border:none"/>
+					</td>
+					<td>
+						<input id="ivaFactura" name="ivaFactura" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
 					</td>
 				</tr>
 				<tr>
@@ -68,7 +70,9 @@
 				<td>
 					<button id='guardarFacturaBtn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
 				</td>
-				<td><label>TOTAL: $ </label><label id="total">0</label></td>
+				<td><label>SUBTOTAL: $ </label><label id="subtotal">0</label></td><td>
+				<td><label>IVA: $ </label><label id="iva">0</label></td></td><td>
+				<td><label>TOTAL: $ </label><label id="total">0</label></td></td><td>
 				<td><div id='mensajeFactura' style="color: red"></div></td>
 			</tr>
 		</table>

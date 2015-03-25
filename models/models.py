@@ -59,6 +59,9 @@ class Remision(ndb.Model):
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()
+    subtotal = ndb.IntegerProperty()
+    iva = ndb.BooleanProperty(default=False)
+    montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
     
 class Factura(ndb.Model):
@@ -67,7 +70,10 @@ class Factura(ndb.Model):
     empleado = ndb.KeyProperty(kind=Empleado)
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
-    total = ndb.IntegerProperty()
+    total = ndb.IntegerProperty()    
+    subtotal = ndb.IntegerProperty()
+    iva = ndb.BooleanProperty(default=False)
+    montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
 
 ########## EGRESOS #######

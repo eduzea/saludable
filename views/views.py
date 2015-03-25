@@ -424,14 +424,15 @@ class SetNumber(webapp2.RequestHandler):
         self.response.write(msg)
 
 def getConsecutivo(esRemision):
-    if esRemision:
-        numero = NumeroRemision.query().fetch()
-    else:
-        numero = NumeroFactura.query().fetch()
+    tipo = {True : NumeroRemision, False : NumeroFactura }
+    numero = tipo[esRemision].query().fetch()
     if numero:
         numero[0].consecutivo = numero[0].consecutivo + 1
         numero[0].put()
         return numero[0].consecutivo
+    else:
+        tipo[esRemision](consecutivo=int(0)).put()
+        return 0;
          
 class GuardarFactura(webapp2.RequestHandler):        
     def post(self):
@@ -455,11 +456,16 @@ class GuardarFactura(webapp2.RequestHandler):
             numero = getConsecutivo(values['remision'])
         
         if values['remision']:
-            remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+                                 fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
+                                 montoIva=values['iva'], iva = True if values['iva'] else False)
             remision.put()
             entity = remision
         else:
-            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key, fecha = fecha, ventas=ventas, total=values['total'])
+            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, 
+                              empleado = empleado.key, fecha = fecha, ventas=ventas, total=int(values['total']),
+                              subtotal=values['subtotal'], 
+                               montoIva=values['iva'], iva = True if values['iva'] else False)
             factura.put()
             entity = factura
         self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
@@ -487,7 +493,9 @@ class MostrarFactura(webapp2.RequestHandler):
                 'telefono':cliente.telefono,
                 'empleado': empleado.rotulo,
                 'numVentas':len(entity.ventas),
-                'total': '{:,}'.format(entity.total),
+                'total': '{:,.0f}'.format(entity.total),
+                'iva': '{:,.0f}'.format(entity.montoIva),
+                'subtotal': '{:,.0f}'.format(entity.subtotal),
                 'remision': True if tipo == 'Remision' else False
                 }
         ventas = []
