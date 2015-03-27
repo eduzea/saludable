@@ -3,6 +3,13 @@ NUMERO_DE_FACTURA_INICIAL = 2775
 
 widgetTemplate = {'add':'addEntity.html', 'show':'showEntities.html'}
 
+
+singletons = {'NumeroFactura':NumeroFactura,
+              'NumeroRemision':NumeroRemision,
+              'NumeroEgreso':NumeroEgreso,              
+              'NumeroDeuda':NumeroDeuda
+              }
+
 classModels = {'Cliente':Cliente, 
                'Producto':Producto,
                'Porcion':Porcion, 
@@ -18,7 +25,10 @@ classModels = {'Cliente':Cliente,
                'PorcionCompra':PorcionCompra, 
                'Egreso':Egreso,
                'TipoEgreso':TipoEgreso,
-               'Sucursal':Sucursal}
+               'TipoAcreedor':TipoAcreedor,
+               'Sucursal':Sucursal,
+               'Acreedor':Acreedor,
+               'Deuda':Deuda}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -31,7 +41,10 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Proveedor':['nombre'],
            'Bienoservicio':['nombre'],
            'PorcionCompra':['valor','unidades'],
-           'TipoEgreso':['nombre']}
+           'TipoEgreso':['nombre'],
+           'TipoAcreedor':['nombre'],
+           'Acreedor':['nombre'],
+           'Deuda':['numero']}
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -97,7 +110,28 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       {'id':'resumen','ui':'Bien o Servicio','required':'true','valid':'','width':'10em'},
                       {'id':'total','ui':'Valor','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
                       {'id':'empleado','ui':'Empleado','width':'10em'}
-                      ]
+                      ],
+            'TipoAcreedor':[
+                          {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
+                          ],
+            'Acreedor':[
+                        {'id':'tipo','ui':'Tipo','width':'10em'},
+                        {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
+                        {'id':'nit','ui':'NIT', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'6em'},
+                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'5em'},
+                        {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'8em'},
+                        {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'5em'}
+                        ],
+            'Deuda':[
+                     {'id':'numero','ui':'Numero','required':'true', 'valid':'dijit/form/NumberTextBox','width':'3em'},
+                     {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                     {'id':'empleado','ui':'Empleado','width':'10em','required':'true','valid':'dijit/form/ValidationTextBox'},
+                     {'id':'acreedor','ui':'Acreedor','width':'10em'},
+                     {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5.5em'},
+                     {'id':'interes','ui':'Interes (Efectivo Anual)','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em','default':0},
+                     {'id':'vencimiento', 'ui':'Vencimiento','width':'5em','required':'true','valid':''},
+                     {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'}
+                     ]
             }
 createTemplateStings = {'Factura':'/crearFactura', 'Egreso':'/crearEgreso'}
 templateNames = {'pivot':'pivot.html'}

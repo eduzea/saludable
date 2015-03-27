@@ -3,6 +3,9 @@ from datetime import datetime, date, time
 import json
 import webapp2
 import jinja2
+import sys
+sys.path.insert(0, 'libs/python-dateutil-1.5')
+from dateutil import parser
 from google.appengine.api import users
 from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
@@ -141,7 +144,15 @@ def check_types(entity_class, values):
                 key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
                 values[key]=key_obj
         if type(value) == ndb.DateProperty:
-            values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+            try:
+                values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+            except:
+                start = values[key].find( '(' )
+                end = values[key].find( ')' )
+                if start != -1 and end != -1:
+                    result = values[key][start:end+1]
+                    fecha = values[key].replace(result,'')
+                values[key] = parser.parse(fecha)
         if type(value) == ndb.StructuredProperty:
             values[key]=[]
     if 'proplistdata' in values:
@@ -175,11 +186,18 @@ class SaveEntity(webapp2.RequestHandler):
             values[key.replace(entity_class,'')] = values.pop(key)
         response = {};
         response = create_entity(entity_class,values)
+        if 'Numero' + entity_class in singletons:
+            numero = singletons['Numero'+entity_class].query().get()
+            numero.consecutivo = numero.consecutivo + 1
+            numero.put()
         self.response.out.write(JSONEncoder().encode(response))
 
-def tagForField(entity_class, prop):
+def tagForField(entity_class, prop, auto):
     tag = ''
-    if type(prop['type']) == ndb.KeyProperty:
+    if auto and prop['id'] in auto:
+        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag +='" value="'+ str(auto[prop['id']]) +'" data-dojo-type="' + prop['valid'] + '" style="width: ' + prop['width'] + '" readonly/>'
+    elif type(prop['type']) == ndb.KeyProperty:
         tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
@@ -191,10 +209,18 @@ def tagForField(entity_class, prop):
             tag += '<button class = "listprop" id="listpropBtnAgregar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
             tag += '<button class = "listprop" id="listpropBtnQuitar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
             tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="text' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
+    elif type(prop['type']) == ndb.DateProperty:
+        tag = '<input type="text" name="' + prop['id'] + entity_class + '" id="' + prop['id'] + entity_class + '" value="now" data-dojo-type="dijit/form/DateTextBox"' 
+        'constraints="{datePattern:\'y-M-d\', strict:true}" required="true" style="width:100px;font-size:70%" />'
+    elif type(prop['type']) == ndb.TextProperty:
+        tag = '<textarea id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag +='" required="' + prop['required'] 
+        tag += '" data-dojo-type="' + prop['valid'] +'" rows="3" cols="30" style="width:auto;"/></textarea>'
     else:
+        value = str(prop['default']) if 'default' in prop else ''
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
-        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"/>'
+        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + value + '"/>'
     return Markup(tag)
 
 def adjustText(text):
@@ -227,10 +253,21 @@ def fieldsInfo(entity_class):
         field['type']=props[field['id']]
     return fields
 
+def autoNum(entity_class):
+    if 'Numero' + entity_class in singletons:
+        num = singletons['Numero' + entity_class].query().get()
+        if num:
+            return {'numero': num.consecutivo + 1}
+        else:
+            singletons['Numero' + entity_class](consecutivo=1).put()
+            return  {'numero': 1}
+    else:
+        return None          
+
 class AddEntity(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        template_values = {'entity_class': entity_class, 'fields': fieldsInfo(entity_class)}
+        template_values = {'entity_class': entity_class, 'fields': fieldsInfo(entity_class), 'auto':autoNum(entity_class)}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
 

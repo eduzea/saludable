@@ -52,6 +52,9 @@ class NumeroEgreso(ndb.Model):
 class NumeroRemision(ndb.Model):
     consecutivo = ndb.IntegerProperty()
 
+class NumeroDeuda(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
+
 class Remision(ndb.Model):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -125,6 +128,30 @@ class Egreso(ndb.Model):
     proveedor = ndb.KeyProperty(kind=Proveedor)
     total = ndb.IntegerProperty()
     resumen = ndb.TextProperty()
+    comentario = ndb.TextProperty()
+    
+class TipoAcreedor(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Acreedor(ndb.Model):
+    tipo = ndb.KeyProperty(kind=TipoAcreedor)
+    nombre = ndb.StringProperty(indexed=True)
+    nit = ndb.StringProperty(indexed=True)
+    direccion = ndb.StringProperty(indexed=True)
+    telefono = ndb.StringProperty(indexed=True)
+    ciudad = ndb.StringProperty(indexed=True)
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+    
+
+class Deuda(ndb.Model):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    empleado = ndb.KeyProperty(kind=Empleado)
+    acreedor = ndb.KeyProperty(kind=Acreedor)
+    monto = ndb.IntegerProperty()
+    interes = ndb.FloatProperty(default=0)
+    vencimiento = ndb.DateProperty()
     comentario = ndb.TextProperty()
     
     

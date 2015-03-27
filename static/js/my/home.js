@@ -30,15 +30,18 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		
 		var ingresoNodes = makeStore(['Factura','Cliente','Producto','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
+		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');
 		var analisisNodes = makeStore(['Clientes','Productos'],'Analisis','pivot');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
+					{id : 'Deudas', name : 'Deudas', parent:'root', clickable:false},
 					{id : 'Analisis', name : 'Analisis', parent:'root', clickable:false},
 					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
+		data.push.apply(data,deudaNodes);
 		data.push.apply(data,adminNodes);
 		data.push.apply(data,analisisNodes);
 		
