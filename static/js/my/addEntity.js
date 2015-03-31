@@ -45,14 +45,14 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 				}
 				dom.byId('server_response'+ entity_class).innerHTML = response_user;
 				setTimeout(function() {
-					dom.byId('reset'+ entity_class).click();
+					//dom.byId('reset'+ entity_class).click();
 					dom.byId('server_response'+ entity_class).innerHTML = '';
+					numero = dom.byId('numero'+entity_class);
+					if (numero){
+						value = numero.value;
+						numero.set('value',value + 1);	
+					}
 				}, 3000);
-				numero = registry.byId('numero'+entity_class);
-				if (numero){
-					value = numero.value;
-					numero.set('value',value + 1);	
-				}
 			});
 		} else {
 			alert('Formulario incompleto. Favor corregir.');

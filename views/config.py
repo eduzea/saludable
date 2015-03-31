@@ -76,11 +76,11 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'total', 'ui':'Valor', 'width':'8em'},
                        {'id':'empleado', 'ui':'Empleado', 'width':'8em'}
                        ],
-            'Remision':[{'id':'numero', 'ui':'Numero'},
-                       {'id':'empleado', 'ui':'Empleado'},
-                       {'id':'cliente', 'ui':'Cliente'},
-                       {'id':'fecha', 'ui':'Fecha'},
-                       {'id':'total', 'ui':'Valor'}],
+            'Remision':[{'id':'numero', 'ui':'Numero','width':'4em'},
+                       {'id':'empleado', 'ui':'Empleado','width':'8em'},
+                       {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
+                       {'id':'fecha', 'ui':'Fecha','width':'8em'},
+                       {'id':'total', 'ui':'Valor','width':'8em'}],
             'Proveedor':[
                          {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                          {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'5em'},
@@ -133,6 +133,6 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                      {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'}
                      ]
             }
-createTemplateStings = {'Factura':'/crearFactura', 'Egreso':'/crearEgreso'}
+createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
 templateNames = {'pivot':'pivot.html'}
 

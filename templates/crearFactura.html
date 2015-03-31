@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
 		<link rel="stylesheet" href="../static/css/grid.css" />
-		<script>saludable.entity_class = 'Factura';</script>
+		<script>saludable.entity_class = '{{entityClass}}';</script>
 		<script>dojoConfig = {async: 1,parseOnLoad:1,dojoBlankHtmlUrl: '/blank.html',packages: [{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/js/lib/gridx'}]};</script>
 		<script type="text/javascript" src="../static/js/my/crearFactura.js"></script>
 		<script>
@@ -14,66 +14,62 @@
 		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="addEntityFormFactura" data-dojo-id="addEntityFormFactura" encType="multipart/form-data">
+		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{entityClass}}" data-dojo-id="addEntityForm{{entityClass}}" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleadoFactura'>Empleado :</label></td>
+					<td><label for='empleado{{entityClass}}'>Empleado :</label></td>
 					<td><div style="width:300px">
-							{{tagForField('Factura',props['Empleado'])}}
+							{{tagForField(entityClass,props['Empleado'])}}
 						</div>
 					</td>
-					<td><label for='fechaFactura'>Fecha: </label></td>
-					<td><input type="text" name="fechacFactura" id="fechaFactura" value="now" 
+					<td><label for='fecha{{entityClass}}'>Fecha: </label></td>
+					<td><input type="text" name='fecha{{entityClass}}' id='fecha{{entityClass}}' value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
 							required="true" style="width:100px;font-size:70%" />
 					</td>
-					<td>
-						<span style="border-style: solid;border-width: 1px; padding: 3px;border-color: #b5bcc7">
-							<input id="remisionFactura" name="remisionFactura" data-dojo-type="dijit/form/CheckBox" data-dojo-props='value:false' onchange="this.value = !this.value"/> <label for="remision">Remision</label>
-						</span>
-					</td>
-					<td><label for='numeroFactura'>No. Factura/Remision: </label> </td>
-					<td><div id='numeroFactura'></div></td>
-					<td>&nbsp;&nbsp;<input id="facturasPorPagina" name="facturasPorPagina" data-dojo-type="dijit/form/CheckBox"/> <label for="remision">1 factura por pagina</label></td>
+					<td></td>
+					<td><label for='numero{{entityClass}}'>No.: </label> </td>
+					<td><div id='numero{{entityClass}}'></div></td>
+					<td>&nbsp;&nbsp;<input id="{{entityClass}}PorPagina" name="{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
 				</tr>					
 				<tr>
-					<td><label for='clienteFactura'>Cliente: </label></td>
+					<td><label for='cliente{{entityClass}}'>Cliente: </label></td>
 					<td><div style="width:300px">
-							{{tagForField('Factura',props['Cliente'])}}
+							{{tagForField(entityClass,props['Cliente'])}}
 						</div>
 					</td>
-					<td><label for='porcionFactura'>Porcion: </label></td>
-					<td><div id='porcionFactura'></div></td>
+					<td><label for='porcion{{entityClass}}'>Porcion: </label></td>
+					<td><div id='porcion{{entityClass}}'></div></td>
 					<td>
-						<input type="text" name="anuladaFactura" data-dojo-type="dijit/form/TextBox"
-    					data-dojo-props="readOnly:true" id="anuladaFactura" style="visibility: hidden;width:100px;border:none"/>
+						<input type="text" name="anulada{{entityClass}}" data-dojo-type="dijit/form/TextBox"
+    					data-dojo-props="readOnly:true" id="anulada{{entityClass}}" style="visibility: hidden;width:100px;border:none"/>
 					</td>
 					<td>
-						<input id="ivaFactura" name="ivaFactura" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
+						<input id="iva{{entityClass}}" name="iva{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
 					</td>
 				</tr>
 				<tr>
-					<td><label for="productoFactura">Producto: </label></td>
-					<td><div id='productoFactura'></div></td>
-					<td><label for='cantidadFactura'>Cantidad:</label></td>
-					<td>{{tagForField('Factura',props['Cantidad'])}}</td>
-					<td><button id='agregarPedidoBtn' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
-					<td><button id='nuevaFacturaBtn' data-dojo-type="dijit/form/Button">Nueva Factura</button></td>
+					<td><label for="producto{{entityClass}}">Producto: </label></td>
+					<td><div id='producto{{entityClass}}'></div></td>
+					<td><label for='cantidad{{entityClass}}'>Cantidad:</label></td>
+					<td>{{tagForField(entityClass,props['Cantidad'])}}</td>
+					<td><button id='agregarPedidoBtn{{entityClass}}' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
+					<td><button id='nueva{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Nueva {{entityClass}}</button></td>
 					<td></td>
-					<td><button id='anularFacturaBtn' data-dojo-type="dijit/form/Button">Anular Factura</button></td>
+					<td><button id='anular{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Anular {{entityClass}}</button></td>
 				</tr>
 			</table>
-			<div id="gridFactura"></div>	
+			<div id="grid{{entityClass}}"></div>	
 		</div>
 		<table>
 			<tr>
 				<td>
-					<button id='guardarFacturaBtn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
+					<button id='guardar{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
 				</td>
 				<td><label>SUBTOTAL: $ </label><label id="subtotal">0</label></td><td>
 				<td><label>IVA: $ </label><label id="iva">0</label></td></td><td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td></td><td>
-				<td><div id='mensajeFactura' style="color: red"></div></td>
+				<td><div id='mensaje{{entityClass}}' style="color: red"></div></td>
 			</tr>
 		</table>
 	</body>

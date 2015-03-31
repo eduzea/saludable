@@ -182,21 +182,24 @@ class SaveEntity(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         entity_class = values.pop("entity_class")
-        for key,value in values.iteritems():
-            values[key.replace(entity_class,'')] = values.pop(key)
-        response = {};
-        response = create_entity(entity_class,values)
+        # This handles auto-number field if the entity has it
         if 'Numero' + entity_class in singletons:
             numero = singletons['Numero'+entity_class].query().get()
             numero.consecutivo = numero.consecutivo + 1
             numero.put()
+            values['numero'] = numero.consecutivo
+
+        for key,value in values.iteritems():
+            values[key.replace(entity_class,'')] = values.pop(key)
+        response = {};
+        response = create_entity(entity_class,values)
         self.response.out.write(JSONEncoder().encode(response))
 
-def tagForField(entity_class, prop, auto):
+def tagForField(entity_class, prop, auto=None):
     tag = ''
     if auto and prop['id'] in auto:
-        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
-        tag +='" value="'+ str(auto[prop['id']]) +'" data-dojo-type="' + prop['valid'] + '" style="width: ' + prop['width'] + '" readonly/>'
+        tag = '<div id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag +='"/>' + str(auto[prop['id']]) + '</div>'
     elif type(prop['type']) == ndb.KeyProperty:
         tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
@@ -236,8 +239,8 @@ def adjustText(text):
         return text
 
 def createTemplateString(entity):
-    if entity in createTemplateStings:
-        return createTemplateStings[entity]
+    if entity in createTemplateStrings:
+        return createTemplateStrings[entity]
     else:
         return '/addEntity?entityClass=' + entity        
 
@@ -421,6 +424,7 @@ class CrearEgreso(webapp2.RequestHandler):
 
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
+        entityClass = self.request.get('entityClass')
         prop_cliente = Factura._properties['cliente']
         prop_empleado = Factura._properties['empleado']
         prop_producto = Venta._properties['producto']
@@ -433,7 +437,7 @@ class CrearFactura(webapp2.RequestHandler):
                  'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
                              'width':'5em', 'type':prop_cantidad}
                 }
-        template_values = {'props': props}
+        template_values = {'props': props, 'entityClass':entityClass}
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
 
@@ -460,9 +464,9 @@ class SetNumber(webapp2.RequestHandler):
             msg = 'Parametro "tipo" debe ser "Factura" o "Remision"'
         self.response.write(msg)
 
-def getConsecutivo(esRemision):
-    tipo = {True : NumeroRemision, False : NumeroFactura }
-    numero = tipo[esRemision].query().fetch()
+def getConsecutivo(entity_class):
+    tipo = {'Remision' : NumeroRemision, 'Factura' : NumeroFactura }
+    numero = tipo[entity_class].query().fetch()
     if numero:
         numero[0].consecutivo = numero[0].consecutivo + 1
         numero[0].put()
@@ -490,9 +494,9 @@ class GuardarFactura(webapp2.RequestHandler):
         if values['numero']:
             numero = values['numero']
         else:
-            numero = getConsecutivo(values['remision'])
+            numero = getConsecutivo(values['entity_class'])
         
-        if values['remision']:
+        if values['entity_class'] == 'Remision':
             remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
                                  fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
                                  montoIva=values['iva'], iva = True if values['iva'] else False)

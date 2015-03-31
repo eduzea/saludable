@@ -12,7 +12,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			response.forEach(function(cliente){
 				items.push({ "value": cliente.value, "label": cliente.name });
 			});
-			var clienteSelect = registry.byId('clienteFactura');
+			var clienteSelect = registry.byId('cliente'+entity_class);
 			clienteSelect.options = items;
 			clienteSelect.reset();
 		});
@@ -32,7 +32,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			        	idProperty: "value",
 			            data: items
 			        });
-					var productoSelect = registry.byId('productoFactura');
+					var productoSelect = registry.byId('producto'+entity_class);
 					productoSelect.setStore(productoStore);
 					productoSelect.reset();
 					resetPorcion(productoSelect.value);
@@ -41,7 +41,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	var resetPorcion = function(producto){
 			if (producto == 'No hay precios definidos') return;
-			cliente = registry.byId('clienteFactura').value;	
+			cliente = registry.byId('cliente'+entity_class).value;	
 			request.post('/getPorcion', {
 					data : {'cliente':cliente, 'producto': producto},
 					handleAs:'json'
@@ -54,7 +54,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			        	idProperty: "value",
 			            data: items
 			        });
-					var porcionSelect = registry.byId('porcionFactura');
+					var porcionSelect = registry.byId('porcion'+entity_class);
 					porcionSelect.setStore(porcionStore);
 					porcionSelect.reset();
 			});
@@ -65,28 +65,28 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		resetCliente();
   	});
 	
-    parser.instantiate([dom.byId('clienteFactura')]);
-    var clienteSelect = registry.byId('clienteFactura');
+    parser.instantiate([dom.byId('cliente'+entity_class)]);
+    var clienteSelect = registry.byId('cliente'+entity_class);
     clienteSelect.onChange = resetProducto; 
     clienteSelect.set('style','font-size:70%');
     resetProducto(clienteSelect.value);
     	
     var productoSelect = new Select({
-        name: "productoFactura",
+        name: "producto"+entity_class,
         style: "width: 200px;font-size:70%",
         store: new Store(),
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
         onChange: resetPorcion
-	}, "productoFactura");
+	}, "producto"+entity_class);
 	productoSelect.startup();
 	
     var porcionSelect = new Select({
-        name: "porcionFactura",
+        name: "porcion"+entity_class,
         style: "font-size:70%",
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
-	}, "porcionFactura");
+	}, "porcion"+entity_class);
 	porcionSelect.startup();
   	
 	var updateTotal = function(){
@@ -95,8 +95,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		var grid = registry.byId('gridFactura');
-		var conIva = registry.byId('ivaFactura').checked;
+		var grid = registry.byId('grid'+entity_class);
+		var conIva = registry.byId('iva'+entity_class).checked;
 		var iva = conIva ? 0.16 : 0;
 		grid.subtotal = sumTotal;
 		grid.iva = sumTotal * iva;
@@ -106,25 +106,25 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
 	};
 	
-	parser.instantiate([dom.byId('ivaFactura')]);
-    on(registry.byId('ivaFactura'), 'change', updateTotal);
+	parser.instantiate([dom.byId('iva'+entity_class)]);
+    on(registry.byId('iva'+entity_class), 'change', updateTotal);
 		
 	var getFormData = function(entity_class){
 		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
 		for (prop in formdata) {
-			formdata[prop.replace('Factura', '')] = formdata[prop];
+			formdata[prop.replace(entity_class, '')] = formdata[prop];
 			delete formdata[prop];
 		}
 		return formdata;
 	};
 	
 	var getGridData = function(){
-		var store = registry.byId('gridFactura').store;
+		var store = registry.byId('grid'+entity_class).store;
 		return store.query();
 	};
 	
-	var actualizarFacturas = function(response, data, remision){
-		var id = remision ? 'gridNodeRemision' : 'gridNodeFactura';
+	var actualizarFacturas = function(response, data, entity_class){
+		var id = 'gridNode'+entity_class;
 		var grid = registry.byId(id);
 		var key = response.facturaId;
 		data['id'] = key;
@@ -142,19 +142,18 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		e.value = !e.value;
 	};
 	
-	parser.instantiate([dom.byId('guardarFacturaBtn')]);
-	on(registry.byId('guardarFacturaBtn'),'click',
+	parser.instantiate([dom.byId('guardar'+entity_class+'Btn')]);
+	on(registry.byId('guardar'+entity_class+'Btn'),'click',
 		function(e){
-			var cliente = registry.byId('clienteFactura').value;
-			var empleado = registry.byId('empleadoFactura').value;		
-			var fecha = registry.byId('fechaFactura').toString();
-			var numero = dom.byId('numeroFactura').innerHTML.replace('No.','');
-			var remision = registry.byId('remisionFactura').value;
+			var cliente = registry.byId('cliente'+entity_class).value;
+			var empleado = registry.byId('empleado'+entity_class).value;		
+			var fecha = registry.byId('fecha'+entity_class).toString();
+			var numero = dom.byId('numero'+entity_class).innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var grid = registry.byId('gridFactura');
+			var grid = registry.byId('grid'+entity_class);
 			updateTotal();
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'iva':grid.iva,'total':grid.total,  
-			'numero':numero, 'remision':remision};
+			'numero':numero, 'entity_class':entity_class};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'
@@ -162,31 +161,31 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					var message='';
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
-						factura_data['cliente']=registry.byId('clienteFactura').attr('displayedValue');
-						actualizarFacturas(response, factura_data, remision);
-						var pagina = registry.byId('facturasPorPagina').checked;
-						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + (remision ? 'Remision':'Factura')+ '&pagina='+ pagina.toString();
+						factura_data['cliente']=registry.byId('cliente'+entity_class).attr('displayedValue');
+						actualizarFacturas(response, factura_data, entity_class);
+						var pagina = registry.byId(entity_class+'PorPagina').checked;
+						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + entity_class+ '&pagina='+ pagina.toString();
 						window.open(url);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}
-					dom.byId('mensajeFactura').innerHTML = message;
+					dom.byId('mensaje'+entity_class).innerHTML = message;
 					setTimeout(function() {
-						var grid =registry.byId('gridFactura');
+						var grid =registry.byId('grid'+entity_class);
 						grid.model.clearCache();
 						grid.model.store.setData([]);
         				grid.body.refresh();
-						dom.byId('mensajeFactura').innerHTML = '';
+						dom.byId('mensaje'+entity_class).innerHTML = '';
 						dom.byId('total').innerHTML = '';
 						dom.byId('subtotal').innerHTML = '';
 						dom.byId('iva').innerHTML = '';
-						dom.byId('numeroFactura').innerHTML = '';
+						dom.byId('numero'+entity_class).innerHTML = '';
 					}, 3000);
 				});
 		});
 	
-	parser.instantiate([dom.byId('agregarPedidoBtn')]);
-	on(registry.byId('agregarPedidoBtn'),'click',function(e){
+	parser.instantiate([dom.byId('agregarPedidoBtn'+entity_class)]);
+	on(registry.byId('agregarPedidoBtn'+entity_class),'click',function(e){
 		var form = registry.byId('addEntityForm' + entity_class);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
@@ -201,7 +200,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 				alert("No hay precio definido para esta combinacion producto x cliente! Definelo primero.");
 				return;	
 			}
-			var grid = registry.byId('gridFactura');
+			var grid = registry.byId('grid'+entity_class);
 			var id = formdata['producto'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
@@ -216,35 +215,32 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		
 	});
 	
-	parser.instantiate([dom.byId('nuevaFacturaBtn')]);
-	on(registry.byId('nuevaFacturaBtn'),'click',function(e){
+	parser.instantiate([dom.byId('nueva'+entity_class+'Btn')]);
+	on(registry.byId('nueva'+entity_class+'Btn'),'click',function(e){
 		registry.byId('addEntityForm' + entity_class).reset();
-		registry.byId('remisionFactura').set('readOnly',false);
-		var grid = registry.byId('gridFactura');
+		var grid = registry.byId('grid'+entity_class);
 		grid.model.clearCache();
 		grid.model.store.setData([]);
 		grid.body.refresh();		
 		updateTotal();
-		dom.byId('numeroFactura').innerHTML='';
+		dom.byId('numero'+entity_class).innerHTML='';
 	});
 	
-	if (dom.byId('anularFacturaBtn')){
-		parser.instantiate([dom.byId('anularFacturaBtn')]);
-		on(registry.byId('anularFacturaBtn'),'click',function(e){
-			var remision = registry.byId('remisionFactura').checked;
-			var tipo = remision ? 'Remision' : 'Factura';
-			var numero = dom.byId('numeroFactura').innerHTML;
-			request('/anularFactura?tipo=' + tipo + '&id=' + numero).then(function(){
-				registry.byId('anuladaFactura').set('value','ANULADA');
-				domAttr.set('anuladaFactura', 'style', 'visibility:visible;color:red');
+	if (dom.byId('anular'+entity_class+'Btn')){
+		parser.instantiate([dom.byId('anular'+entity_class+'Btn')]);
+		on(registry.byId('anular'+entity_class+'Btn'),'click',function(e){
+			var numero = dom.byId('numero'+entity_class).innerHTML;
+			request('/anularFactura?tipo=' + entity_class + '&id=' + numero).then(function(){
+				registry.byId('anulada'+entity_class).set('value','ANULADA');
+				domAttr.set('anulada'+entity_class, 'style', 'visibility:visible;color:red');
 			});
 		});		
 	}
-	parser.instantiate([dom.byId('anuladaFactura')]);
-	var anuladaText= registry.byId('anuladaFactura');
+	parser.instantiate([dom.byId('anulada'+entity_class)]);
+	var anuladaText= registry.byId('anulada'+entity_class);
 	anuladaText.onChange = function(anulada){
 		this.set('value',anulada ? 'ANULADA' : '');
-		domAttr.set('anuladaFactura', 'style', 'width:100px;border:none;color:red');
+		domAttr.set('anulada'+entity_class, 'style', 'width:100px;border:none;color:red');
 		};
 
 	
@@ -291,8 +287,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		store : store,
 		structure : columns,
 		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
-	}, 'gridFactura');
+	}, 'grid'+entity_class);
 	grid.startup();
 	grid.updateTotal = updateTotal;
-	domClass.add(dom.byId('gridFactura'),'factura-grid');
+	domClass.add(dom.byId('grid'+entity_class),'factura-grid');
 }); 

@@ -80,7 +80,8 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 		//This is UGLY!
 		var urlForDetails = {'Factura':'/getVentas?facturaKey=', 'Remision':'/getVentas?facturaKey=', 
 							'Egreso':'/getCompras?egresoKey='};
-		var numeroDomId = {'Factura':'numeroFactura', 'Remision':'numeroFactura', 'Egreso':'numeroEgreso'};
+							
+		var numeroDomId = {'Factura':'numeroFactura', 'Remision':'numeroRemision', 'Egreso':'numeroEgreso'};
 		var fillForm = function(nodelist, rowData, entity_class){
 			nodelist.forEach(function(node, index, array){
 	   			var dijit = registry.byId(node.id);
@@ -96,18 +97,9 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 							dijit.body.refresh();
 							dijit.total = dijit.updateTotal();
 							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
-							if (entity_class != 'Egreso'){
-								if (entity_class == "Remision"){
-									registry.byId('remisionFactura').set('value',true);
-								}
-								else{
-									registry.byId('remisionFactura').set('value',false);
-								}
-								registry.byId('remisionFactura').set('readOnly',true);
-							}
 	   					});
 	   				}else{
-			        	var id= dijit.id.replace(getEditEntityClass(entity_class),''); 
+			        	var id= dijit.id.replace(entity_class,''); 
 			        	if(id in rowData){
 			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
 			        	}	   				
@@ -115,11 +107,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	   			} 
             });
 		};
-		
-		getEditEntityClass = function(orig){//Kludge!!!
-			return (orig == 'Remision') ? 'Factura' : orig;
-		};
-		
+				
 		exportarDatos = function(){
 			var grid = registry.byId('gridNode'+ entity_class);
 			toCSV(grid).then(function(csv){
@@ -146,11 +134,11 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var nodelist= query('[id*='+ getEditEntityClass(entity_class) +']', 'addEntityForm'+ getEditEntityClass(entity_class) );
+	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class);
 	                    if (nodelist.length == 0){
-	                    	var contentPane= registry.byId(getEditEntityClass(entity_class) + '_add');
+	                    	var contentPane= registry.byId(entity_class + '_add');
 							contentPane.set("onDownloadEnd", function(){
-								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ getEditEntityClass(entity_class) );
+								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
 								parser.instantiate(nodelist);
     							fillForm(nodelist, rowData, entity_class);	
 							});
