@@ -49,8 +49,8 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 					dom.byId('server_response'+ entity_class).innerHTML = '';
 					numero = dom.byId('numero'+entity_class);
 					if (numero){
-						value = numero.value;
-						numero.set('value',value + 1);	
+						value = parseInt(numero.innerHTML);
+						numero.innerHTML = value + 1;	
 					}
 				}, 3000);
 			});

@@ -536,7 +536,8 @@ class MostrarFactura(webapp2.RequestHandler):
                 'numVentas':len(entity.ventas),
                 'total': '{:,.0f}'.format(entity.total),
                 'iva': '{:,.0f}'.format(entity.montoIva),
-                'subtotal': '{:,.0f}'.format(entity.subtotal),
+                'subtotal': '{:,.0f}'.format(entity.subtotal if entity.montoIva != 0 else 0),
+                'exento':'{:,.0f}'.format(entity.subtotal if entity.montoIva==0 else 0),
                 'remision': True if tipo == 'Remision' else False
                 }
         ventas = []
