@@ -184,13 +184,7 @@ class SaveEntity(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         entity_class = values.pop("entity_class")
-        # This handles auto-number field if the entity has it
-        if 'Numero' + entity_class in singletons:
-            numero = singletons['Numero'+entity_class].query().get()
-            numero.consecutivo = numero.consecutivo + 1
-            numero.put()
-            values['numero'] = numero.consecutivo
-
+        
         for key,value in values.iteritems():
             values[key.replace(entity_class,'')] = values.pop(key)
         response = {};
@@ -200,8 +194,10 @@ class SaveEntity(webapp2.RequestHandler):
 def tagForField(entity_class, prop, auto=None):
     tag = ''
     if auto and prop['id'] in auto:
-        tag = '<div id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
-        tag +='"/>' + str(auto[prop['id']]) + '</div>'
+        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag +='" required="' + prop['required'] 
+        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + str(auto[prop['id']]) + '" readonly'
+        tag += '/>'
     elif type(prop['type']) == ndb.KeyProperty:
         tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()

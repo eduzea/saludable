@@ -105,7 +105,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
 			        	}	   				
 	   				}			
-	   			} 
+	   			}
             });
 		};
 				
