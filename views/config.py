@@ -123,14 +123,15 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                         {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'5em'}
                         ],
             'Deuda':[
-                     {'id':'numero','ui':'Numero','required':'true', 'valid':'dijit/form/NumberTextBox','width':'3em'},
+                     {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
                      {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
-                     {'id':'empleado','ui':'Empleado','width':'10em','required':'true','valid':'dijit/form/ValidationTextBox'},
-                     {'id':'acreedor','ui':'Acreedor','width':'10em'},
+                     {'id':'empleado','ui':'Empleado','width':'8em','required':'true','valid':'dijit/form/ValidationTextBox'},
+                     {'id':'acreedor','ui':'Acreedor','width':'8em'},
                      {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5.5em'},
-                     {'id':'interes','ui':'Interes (Efectivo Anual)','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em','default':0},
-                     {'id':'vencimiento', 'ui':'Vencimiento','width':'5em','required':'true','valid':''},
-                     {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'}
+                     {'id':'interes','ui':'Interes(EA)','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em','default':'0'},
+                     {'id':'vencimiento', 'ui':'Vencimiento','width':'5.5em','required':'true','valid':''},
+                     {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
+                     {'id':'pagada', 'ui':'% Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'3em','default':'0'},
                      ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}

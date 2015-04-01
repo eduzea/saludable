@@ -1,7 +1,7 @@
 //# sourceURL=../static/js/my/addEntity.js
 require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style', 'dojo/on', 
 		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json',
-		 'dojo/domReady!'],//Modules required to avoid race condition when parsing 
+		 'dojo/domReady!'],
 function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json) {
 	var entity_class = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);

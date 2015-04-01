@@ -125,6 +125,8 @@ def check_types(entity_class, values):
             values[key] = int(values[key])
         if type(value) is FloatProperty:
             values[key] = float(values[key])
+        if type(value) is ndb.BooleanProperty:#checkbox value should be 'si'o 'no'
+            values[key] = True if values[key] == 'si' else False
         if type(value) is KeyProperty:
             if value._repeated == True:
                 items = []
@@ -219,11 +221,16 @@ def tagForField(entity_class, prop, auto=None):
         tag = '<textarea id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
         tag += '" data-dojo-type="' + prop['valid'] +'" rows="3" cols="30" style="width:auto;"/></textarea>'
+    elif type(prop['type']) == ndb.BooleanProperty:
+        tag = '<input id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class +'" data-dojo-type="dijit.form.CheckBox" value="si"'
+        tag += 'onChange="this.checked ? document.getElementById(\''+ prop['id'] +  entity_class +'hidden\').disabled = true : document.getElementById(\''+ prop['id'] +  entity_class +'hidden\').disabled = false "/>'
+        tag += '<input id="' + prop['id'] +  entity_class +'hidden" name="'+ prop['id'] + entity_class +'hidden" type="hidden" value="no" data-dojo-type="dijit.form.TextBox"/>'
     else:
         value = str(prop['default']) if 'default' in prop else ''
         tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
         tag +='" required="' + prop['required'] 
-        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + value + '"/>'
+        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + value + '" '
+        tag += '/>'
     return Markup(tag)
 
 def adjustText(text):
