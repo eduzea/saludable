@@ -61,8 +61,18 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		};
 	
 	//Listeners
-	var clienteListener = topic.subscribe("Cliente", function(e){
+	var listeners = {};
+	listeners[entity_class+"CLIENTE"] = topic.subscribe("CLIENTE", function(e){
+		console.log(entity_class+"CLIENTE");
 		resetCliente();
+  	});
+  	
+  	listeners[entity_class+"PORCION"] = topic.subscribe("PORCION", function(e){
+		resetPorcion();
+  	});
+  	
+  	listeners[entity_class+"PRODUCTO"] = topic.subscribe("PRODUCTO", function(e){
+		resetProducto();
   	});
 	
     parser.instantiate([dom.byId('cliente'+entity_class)]);
