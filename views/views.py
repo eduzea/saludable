@@ -318,7 +318,7 @@ class GetPorcion(webapp2.RequestHandler):
         cliente = Cliente.get_by_id(post_data['cliente'])
         producto= Producto.get_by_id(post_data['producto']) 
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupo == grupo,
+        precios = Precio.query(Precio.grupoDePrecios == grupo,
                                Precio.producto == producto.key,
                                projection = [Precio.porcion], distinct=True).fetch()
         porciones = [precio.porcion.id() for precio in precios]

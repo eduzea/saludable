@@ -12,11 +12,11 @@ indexes:
 
 - kind: Precio
   properties:
-  - name: grupo
+  - name: grupoDePrecios
   - name: producto
 
 - kind: Precio
   properties:
-  - name: grupo
+  - name: grupoDePrecios
   - name: producto
   - name: porcion

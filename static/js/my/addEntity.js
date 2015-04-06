@@ -9,12 +9,15 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 	buttons[entity_class] =  registry.byId('agregar_btn' + entity_class);
 	//Register select buttons to listen to topics
 	var selects = query("[data-dojo-type='dijit/form/Select']");
+	parser.instantiate(selects);
 	selects.forEach(function(element){
-		var topicStr = element.id.replace(entity_class,'').toUpperCase();
-		topic.subscribe(topicStr, function(data){
-    		var selectDijit = registry.byId(element.id);
+		var selectDijit = registry.byId(element.id);
+		selectDijit.listenerfunc = function(data){
     		selectDijit.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
-  		});
+    	};
+		var topicStr = element.id.substring(0,element.id.lastIndexOf(entity_class)).toUpperCase();
+		console.log(selectDijit.id + ' SUBSCRIBING TO TOPIC:' + topicStr);
+		topic.subscribe(topicStr, selectDijit.listenerfunc);
 	});
 
 	on(buttons[entity_class], "click", function(e) {
@@ -42,6 +45,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 				if (response.message == 'Created') {
 					grid ? grid.store.add(response.entity) : '' ;
 					response_user = 'Se creo nuevo ' + entity_class + ': ' + response.key;
+					console.log('PUBLISHING TOPIC:' + entity_class.toUpperCase());
 				    topic.publish(entity_class.toUpperCase(), {'label':response.entity.rotulo,'value':response.key});
 				} else {
 					if(grid){
