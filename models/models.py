@@ -154,10 +154,3 @@ class Deuda(ndb.Model):
     vencimiento = ndb.DateProperty()
     comentario = ndb.TextProperty()
     pagada = ndb.FloatProperty()
-    
-    
-
-    
-
-    
-    

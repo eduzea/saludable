@@ -306,7 +306,7 @@ class GetProducto(webapp2.RequestHandler):
         post_data = self.request.POST.mixed()
         cliente = Cliente.get_by_id(post_data['cliente'])
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupo == grupo,  projection = [Precio.producto], distinct=True).fetch()
+        precios = Precio.query(Precio.grupoDePrecios == grupo,  projection = [Precio.producto], distinct=True).fetch()
         productos = [precio.producto.id() for precio in precios]
         if not productos:
             productos.append('No hay precios definidos')
@@ -330,7 +330,7 @@ class GetPrice(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         precioQuery = Precio.query(Precio.producto == Producto.get_by_id(values['producto']).key,
-                                   Precio.grupo == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
+                                   Precio.grupoDePrecios == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
         try:
