@@ -18,6 +18,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+#String replace from the right, specifying # of replacements to make.
+def rreplace(s, old, new, occurrence):
+    li = s.rsplit(old, occurrence)
+    return new.join(li)
+
 
 def isAdminUser():
     user = users.get_current_user()
@@ -186,8 +191,7 @@ class SaveEntity(webapp2.RequestHandler):
         entity_class = values.pop("entity_class")
         
         for key,value in values.iteritems():
-            values[key.replace(entity_class,'')] = values.pop(key)
-        response = {};
+            values[rreplace(key, entity_class,'',1)] = values.pop(key)
         response = create_entity(entity_class,values)
         self.response.out.write(JSONEncoder().encode(response))
 

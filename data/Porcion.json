@@ -1,79 +1,95 @@
 [
 	{
-		"unidades": "g",
-		"valor": 1000,
-		"rotulo": "1000g"
+		"unidades": "1",
+		"rotulo": "11",
+		"valor": 1
+	}, {
+		"unidades": "Und",
+		"rotulo": "1Und",
+		"valor": 1
+	}, {
+		"unidades": "Unidad",
+		"rotulo": "1Unidad",
+		"valor": 1
 	}, {
 		"unidades": "g",
-		"valor": 100,
-		"rotulo": "100g"
+		"rotulo": "100g",
+		"valor": 100
 	}, {
 		"unidades": "g",
-		"valor": 110,
-		"rotulo": "110g"
+		"rotulo": "1000g",
+		"valor": 1000
 	}, {
 		"unidades": "g",
-		"valor": 120,
-		"rotulo": "120g"
+		"rotulo": "110g",
+		"valor": 110
 	}, {
 		"unidades": "g",
-		"valor": 125,
-		"rotulo": "125g"
+		"rotulo": "120g",
+		"valor": 120
 	}, {
 		"unidades": "g",
-		"valor": 130,
-		"rotulo": "130g"
+		"rotulo": "125g",
+		"valor": 125
 	}, {
 		"unidades": "g",
-		"valor": 140,
-		"rotulo": "140g"
+		"rotulo": "130g",
+		"valor": 130
 	}, {
 		"unidades": "g",
-		"valor": 150,
-		"rotulo": "150g"
+		"rotulo": "140g",
+		"valor": 140
 	}, {
 		"unidades": "g",
-		"valor": 160,
-		"rotulo": "160g"
+		"rotulo": "150g",
+		"valor": 150
 	}, {
 		"unidades": "g",
-		"valor": 170,
-		"rotulo": "170g"
+		"rotulo": "160g",
+		"valor": 160
 	}, {
 		"unidades": "g",
-		"valor": 180,
-		"rotulo": "180g"
+		"rotulo": "170g",
+		"valor": 170
 	}, {
 		"unidades": "g",
-		"valor": 190,
-		"rotulo": "190g"
+		"rotulo": "180g",
+		"valor": 180
 	}, {
 		"unidades": "g",
-		"valor": 200,
-		"rotulo": "200g"
+		"rotulo": "190g",
+		"valor": 190
 	}, {
 		"unidades": "g",
-		"valor": 250,
-		"rotulo": "250g"
+		"rotulo": "200g",
+		"valor": 200
+	}, {
+		"unidades": "1",
+		"rotulo": "2501",
+		"valor": 250
 	}, {
 		"unidades": "g",
-		"valor": 500,
-		"rotulo": "500g"
+		"rotulo": "250g",
+		"valor": 250
 	}, {
 		"unidades": "g",
-		"valor": 50,
-		"rotulo": "50g"
+		"rotulo": "50g",
+		"valor": 50
 	}, {
 		"unidades": "g",
-		"valor": 700,
-		"rotulo": "700g"
+		"rotulo": "500g",
+		"valor": 500
 	}, {
 		"unidades": "g",
-		"valor": 70,
-		"rotulo": "70g"
+		"rotulo": "70g",
+		"valor": 70
 	}, {
 		"unidades": "g",
-		"valor": 750,
-		"rotulo": "750g"
+		"rotulo": "700g",
+		"valor": 700
+	}, {
+		"unidades": "g",
+		"rotulo": "750g",
+		"valor": 750
 	}
 ]

@@ -30,6 +30,9 @@
 		"nombre": "CYP",
 		"rotulo": "CYP"
 	}, {
+		"nombre": "Ester",
+		"rotulo": "Ester"
+	}, {
 		"nombre": "GARDEL",
 		"rotulo": "GARDEL"
 	}, {
@@ -42,11 +45,20 @@
 		"nombre": "Hamburgueserias",
 		"rotulo": "Hamburgueserias"
 	}, {
+		"nombre": "Independiente Cali",
+		"rotulo": "Independiente Cali"
+	}, {
 		"nombre": "JUAN EL PANADERO",
 		"rotulo": "JUAN EL PANADERO"
 	}, {
+		"nombre": "Juan Soto",
+		"rotulo": "Juan Soto"
+	}, {
 		"nombre": "LEHAL",
 		"rotulo": "LEHAL"
+	}, {
+		"nombre": "Mango Biche",
+		"rotulo": "Mango Biche"
 	}, {
 		"nombre": "Mermelada Frutos rojos",
 		"rotulo": "Mermelada Frutos rojos"
@@ -68,6 +80,15 @@
 	}, {
 		"nombre": "POLKA",
 		"rotulo": "POLKA"
+	}, {
+		"nombre": "PRUEBA",
+		"rotulo": "PRUEBA"
+	}, {
+		"nombre": "Particulr",
+		"rotulo": "Particulr"
+	}, {
+		"nombre": "SALERNO",
+		"rotulo": "SALERNO"
 	}, {
 		"nombre": "SARODI",
 		"rotulo": "SARODI"

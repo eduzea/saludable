@@ -1,343 +1,503 @@
 [
 	{
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
-		"diasPago": 0,
 		"rotulo": "ADELA ",
-		"nit": " ",
 		"nombre": "ADELA",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 30,
+		"negocio": "ARP",
+		"direccion": "Avda. El Dorado 68B-85 P. 10",
+		"grupoDePrecios": "SURA",
+		"ciudad": "Bogot\u00e0",
+		"rotulo": "ARP SURA/SEGUROS DE RIESGOS PROFESIONALES SURAMERICANA ARP",
+		"nombre": "ARP SURA/SEGUROS DE RIESGOS PROFESIONALES SURAMERICANA",
+		"telefono": "4055900",
+		"nit": "800256161-9"
+	}, {
+		"diasPago": 30,
 		"negocio": "MERCADO 93",
 		"direccion": "CLL 93 A# 12-73",
 		"grupoDePrecios": "AVESCO",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "AVESCO SA MERCADO 93",
-		"nit": "860025461-0",
 		"nombre": "AVESCO SA",
-		"telefono": "2362500"
+		"telefono": "2362500",
+		"nit": "860025461-0"
 	}, {
+		"diasPago": 30,
 		"negocio": "MERCADO USAQUEN",
-		"direccion": "CLL 93 A# 12-73",
+		"direccion": "Cra. 6 # 119-18",
 		"grupoDePrecios": "AVESCO",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "AVESCO SA MERCADO USAQUEN",
-		"nit": "860025461-0",
 		"nombre": "AVESCO SA",
-		"telefono": "2362500"
+		"telefono": "2134192",
+		"nit": "860025461-0"
 	}, {
+		"diasPago": 0,
+		"negocio": "Personal",
+		"direccion": "Calle 108 No. 17a -50",
+		"grupoDePrecios": "Adriana.Delgadillo",
+		"ciudad": "Bogota",
+		"rotulo": "Adriana Delgadillo Personal",
+		"nombre": "Adriana Delgadillo",
+		"telefono": "2222222",
+		"nit": "52751779"
+	}, {
+		"diasPago": 1,
+		"negocio": "Independiente",
+		"direccion": "Cra 98 # 4C-246, Apt 201 , Torre 3",
+		"grupoDePrecios": "Independiente.Cali",
+		"ciudad": "Cali",
+		"rotulo": "Alejandro Caicedo Independiente",
+		"nombre": "Alejandro Caicedo",
+		"telefono": "310 494 8757",
+		"nit": "1111111"
+	}, {
+		"diasPago": 8,
 		"negocio": "ZOE",
 		"direccion": "CLL 108 # 8 A-22",
 		"grupoDePrecios": "CYP",
 		"ciudad": "BOGOTA",
-		"diasPago": 8,
 		"rotulo": "C&P CORREA ZOE",
-		"nit": "9006800563-6",
 		"nombre": "C&P CORREA",
-		"telefono": ""
+		"telefono": "",
+		"nit": "9006800563-6"
 	}, {
+		"diasPago": 30,
+		"negocio": "RESTAURANTE",
+		"direccion": "CLL 14 NTE. #9 N 18",
+		"grupoDePrecios": "SALERNO",
+		"ciudad": "CALI",
+		"rotulo": "CARAMBOLO CAFE RESTAURANTE RESTAURANTE",
+		"nombre": "CARAMBOLO CAFE RESTAURANTE",
+		"telefono": "6675656",
+		"nit": "1111111111"
+	}, {
+		"diasPago": 30,
 		"negocio": "",
 		"direccion": "AUTO NORTE 153-81",
 		"grupoDePrecios": "CARMEL",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "CARMEL CLUB CAMPESTRE ",
-		"nit": "",
 		"nombre": "CARMEL CLUB CAMPESTRE",
-		"telefono": "6497272 EXT. 123"
+		"telefono": "6497272 EXT. 123",
+		"nit": ""
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "CAROLINA ZULUAGA ",
-		"nit": "",
 		"nombre": "CAROLINA ZULUAGA ",
-		"telefono": ""
+		"telefono": "",
+		"nit": ""
 	}, {
-		"negocio": "",
-		"direccion": "CLL 118 # 5-41",
-		"grupoDePrecios": "CASAFUEGO",
-		"ciudad": "BOGOTA",
 		"diasPago": 0,
+		"negocio": " ",
+		"direccion": "CLL 118 # 5-41",
+		"grupoDePrecios": "OTROS",
+		"ciudad": "BOGOTA",
 		"rotulo": "CASA FUEGO ",
-		"nit": "",
 		"nombre": "CASA FUEGO",
-		"telefono": "6376954"
+		"telefono": "6376954",
+		"nit": " "
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "AV CLL 82 # 9-11",
 		"grupoDePrecios": "CHATOS",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "CHATOS ",
-		"nit": "900016780-1",
 		"nombre": "CHATOS",
-		"telefono": "3220732"
+		"telefono": "3220732",
+		"nit": "900016780-1"
 	}, {
+		"diasPago": 30,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "NOGAL",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "CORPORACION CLUB EL NOGAL ",
-		"nit": "",
 		"nombre": "CORPORACION CLUB EL NOGAL",
-		"telefono": "3267700 ext 3221"
+		"telefono": "3267700 ext 3221",
+		"nit": ""
 	}, {
+		"diasPago": 30,
+		"negocio": "PIZZERIA SALERNO",
+		"direccion": "Calle 5 No. 66-125 El limonar",
+		"grupoDePrecios": "SALERNO",
+		"ciudad": "Cali",
+		"rotulo": "DANARO LTDA PIZZERIA SALERNO",
+		"nombre": "DANARO LTDA",
+		"telefono": "8938989",
+		"nit": "890304587-6"
+	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
-		"diasPago": 0,
 		"rotulo": "DANIELA ",
-		"nit": " ",
 		"nombre": "DANIELA",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
-		"diasPago": 0,
 		"rotulo": "ELA GRONDONA ",
-		"nit": " ",
 		"nombre": "ELA GRONDONA",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Cali",
-		"diasPago": 0,
 		"rotulo": "GUSTAVO CALDAS ",
-		"nit": " ",
 		"nombre": "GUSTAVO CALDAS",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 30,
+		"negocio": "ALIMENTOS",
+		"direccion": "AV CALLE NOVENA NORTE # 9 -31 ",
+		"grupoDePrecios": "Hamburgueserias",
+		"ciudad": "CALI",
+		"rotulo": "HAMBURGUESERIAS S.A.S. ALIMENTOS",
+		"nombre": "HAMBURGUESERIAS S.A.S.",
+		"telefono": "2313787",
+		"nit": " 830.144.056-1"
+	}, {
+		"diasPago": 30,
+		"negocio": "CARTAGENA",
+		"direccion": "Parque Fern\u00e1ndez Madrid 7-12 Zona Amurallada",
+		"grupoDePrecios": "HARRY",
+		"ciudad": "CARTAGENA",
+		"rotulo": "HARRY SAS CARTAGENA",
+		"nombre": "HARRY SAS",
+		"telefono": "6647958",
+		"nit": "900735451-8"
+	}, {
+		"diasPago": 30,
 		"negocio": "HARRY SASSON",
 		"direccion": "CRA 9 #75-70",
 		"grupoDePrecios": "HARRY",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "HARRY SAS HARRY SASSON",
-		"nit": "830144557-1",
 		"nombre": "HARRY SAS",
-		"telefono": "3 45 03 04"
+		"telefono": "3 45 03 04",
+		"nit": "830144557-1"
 	}, {
+		"diasPago": 30,
 		"negocio": "HARRYS BAR",
 		"direccion": "CLL 70 #5-57 - Zona G",
 		"grupoDePrecios": "HARRY",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "HARRY SAS HARRYS BAR",
-		"nit": "830144557-1",
 		"nombre": "HARRY SAS",
-		"telefono": "3 45 03 04"
+		"telefono": "3 45 03 04",
+		"nit": "830144557-1"
 	}, {
+		"diasPago": 30,
 		"negocio": "EL DIA QUE ME QUIERAS",
 		"direccion": "CLL 69 # 4-26",
 		"grupoDePrecios": "GARDEL",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "INVERSIONES GARDEL EL DIA QUE ME QUIERAS",
-		"nit": "900268742-2",
 		"nombre": "INVERSIONES GARDEL",
-		"telefono": "5404585"
+		"telefono": "5404585",
+		"nit": "900268742-2"
 	}, {
+		"diasPago": 30,
 		"negocio": "CLUB COLOMBIA",
 		"direccion": "AV CL 82 # 9-11",
 		"grupoDePrecios": "LEHAL",
 		"ciudad": "BOGOTA",
-		"diasPago": 30,
 		"rotulo": "INVERSIONES LEHAL SA CLUB COLOMBIA",
-		"nit": "900016780-1",
 		"nombre": "INVERSIONES LEHAL SA",
-		"telefono": "3220732"
+		"telefono": "3220732",
+		"nit": "900016780-1"
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "CLL 110 # 8-47",
 		"grupoDePrecios": "ABACO",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "JARDIN ABACO ",
-		"nit": "830123705-3",
 		"nombre": "JARDIN ABACO",
-		"telefono": "6197512"
+		"telefono": "6197512",
+		"nit": "830123705-3"
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "CRA 13 A # 127-10",
 		"grupoDePrecios": "HANS",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "JARDIN HANS ANDERSEN ",
-		"nit": "8000628134-3",
 		"nombre": "JARDIN HANS ANDERSEN",
-		"telefono": "627 0928"
+		"telefono": "627 0928",
+		"nit": "8000628134-3"
 	}, {
-		"negocio": "",
-		"direccion": "CLL 81 # 7-93",
-		"grupoDePrecios": "JUANELPANADERO",
-		"ciudad": "BOGOTA",
 		"diasPago": 8,
-		"rotulo": "JUAN EL PANADERO SAS ",
-		"nit": "900450289-6",
+		"negocio": "BROT CALLE 81",
+		"direccion": "Calle 81 # 7 - 93",
+		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"ciudad": "BOGOTA",
+		"rotulo": "JUAN EL PANADERO SAS BROT CALLE 81",
 		"nombre": "JUAN EL PANADERO SAS",
-		"telefono": "6748954"
+		"telefono": "6748954",
+		"nit": "900450289-6"
 	}, {
+		"diasPago": 8,
+		"negocio": "BROT CALLE 97",
+		"direccion": "Calle 97 # 11A -52",
+		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"ciudad": "BOGOTA",
+		"rotulo": "JUAN EL PANADERO SAS BROT CALLE 97",
+		"nombre": "JUAN EL PANADERO SAS",
+		"telefono": "6748954",
+		"nit": "900450289-6"
+	}, {
+		"diasPago": 8,
+		"negocio": "PARQUE CHICO",
+		"direccion": "CRA 7# 93A - 05",
+		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"ciudad": "BOGOTA",
+		"rotulo": "JUAN EL PANADERO SAS PARQUE CHICO",
+		"nombre": "JUAN EL PANADERO SAS",
+		"telefono": "6748954",
+		"nit": "900450289-6"
+	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "JUAN SOTO ",
-		"nit": "",
 		"nombre": "JUAN SOTO",
-		"telefono": ""
+		"telefono": "",
+		"nit": ""
 	}, {
+		"diasPago": 0,
+		"negocio": "Personal ",
+		"direccion": "Calle 71 No. 1 -18 edif portal de la quebrada apto 801",
+		"grupoDePrecios": "Juan.Soto",
+		"ciudad": "Bogot\u00e0",
+		"rotulo": "JUAN SOTO Personal ",
+		"nombre": "JUAN SOTO",
+		"telefono": "3102117621",
+		"nit": "6666666"
+	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "LEIDY MARTINEZ ",
-		"nit": "",
 		"nombre": "LEIDY MARTINEZ",
-		"telefono": ""
+		"telefono": "",
+		"nit": ""
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "CRA 28 A # 68-74",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "LUIS CABALLERO ",
-		"nit": "",
 		"nombre": "LUIS CABALLERO",
-		"telefono": ""
+		"telefono": "",
+		"nit": ""
 	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
-		"diasPago": 0,
 		"rotulo": "MARIA BAITIZO ",
-		"nit": " ",
 		"nombre": "MARIA BAITIZO",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "",
-		"diasPago": 0,
 		"rotulo": "MARIA ESPERANZA BAZURTO ",
-		"nit": "",
 		"nombre": "MARIA ESPERANZA BAZURTO ",
-		"telefono": ""
+		"telefono": "",
+		"nit": ""
 	}, {
+		"diasPago": 1,
+		"negocio": "SMOTHIES",
+		"direccion": "CR 16 #127-81 Torre 4 ap 603",
+		"grupoDePrecios": "Ester",
+		"ciudad": "CALI",
+		"rotulo": "MARIA ESTER MARUN SMOTHIES",
+		"nombre": "MARIA ESTER MARUN",
+		"telefono": "3108091065",
+		"nit": "41.713.003"
+	}, {
+		"diasPago": 30,
+		"negocio": "RESTAURANTE",
+		"direccion": "Cra. 105 # 14 \u2013 05 2do piso",
+		"grupoDePrecios": "SALERNO",
+		"ciudad": "CALI",
+		"rotulo": "MISTER WINGS RESTAURANTE",
+		"nombre": "MISTER WINGS",
+		"telefono": "330 3045",
+		"nit": "1"
+	}, {
+		"diasPago": 30,
+		"negocio": "RESTAURANTE",
+		"direccion": "Parque Fern\u00e1ndez Madrid 7-12 Zona Amurallada",
+		"grupoDePrecios": "HARRY",
+		"ciudad": "CARTAGENA",
+		"rotulo": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS RESTAURANTE",
+		"nombre": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS",
+		"telefono": "6647958",
+		"nit": "900735451-8"
+	}, {
+		"diasPago": 30,
+		"negocio": "PARTICULAR",
+		"direccion": "CALLE 6A 88-51",
+		"grupoDePrecios": "SARODI",
+		"ciudad": "BOGOTA",
+		"rotulo": "OSCAR GIL PARTICULAR",
+		"nombre": "OSCAR GIL",
+		"telefono": "3178831691",
+		"nit": "79581740"
+	}, {
+		"diasPago": 45,
 		"negocio": "COTIDIANO ANDINO",
 		"direccion": "CC ANDINO LOCAL 402",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "BOGOTA",
-		"diasPago": 45,
 		"rotulo": "PAESA SA COTIDIANO ANDINO",
-		"nit": "800241012-4",
 		"nombre": "PAESA SA ",
-		"telefono": "6545454"
+		"telefono": "6545454",
+		"nit": "800241012-4"
 	}, {
+		"diasPago": 45,
 		"negocio": "COTIDIANO ROSALES",
 		"direccion": "CRA 5 #71 -45 - ROSALES",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "BOGOTA",
-		"diasPago": 45,
 		"rotulo": "PAESA SA COTIDIANO ROSALES",
-		"nit": "800241012-4",
 		"nombre": "PAESA SA ",
-		"telefono": "6545454"
+		"telefono": "6545454",
+		"nit": "800241012-4"
 	}, {
+		"diasPago": 45,
 		"negocio": "SALTO DEL ANGEL",
 		"direccion": "Cra 13 # 93A - 45",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "BOGOTA",
-		"diasPago": 45,
 		"rotulo": "PAESA SA SALTO DEL ANGEL",
-		"nit": "800241012-4",
 		"nombre": "PAESA SA ",
-		"telefono": "6545454"
+		"telefono": "6545454",
+		"nit": "800241012-4"
 	}, {
-		"negocio": "",
-		"direccion": "CLL 57 # 16 A-27",
-		"grupoDePrecios": "PANTOLIMA",
-		"ciudad": "BOGOTA",
 		"diasPago": 0,
+		"negocio": " ",
+		"direccion": "CLL 57 # 16 A-27",
+		"grupoDePrecios": "PAN.TOLIMA",
+		"ciudad": "BOGOTA",
 		"rotulo": "PAN TOLIMA ",
-		"nit": "",
 		"nombre": "PAN TOLIMA",
-		"telefono": ""
+		"telefono": " ",
+		"nit": " "
 	}, {
+		"diasPago": 1,
+		"negocio": "independiente",
+		"direccion": "Cali",
+		"grupoDePrecios": "ABACO",
+		"ciudad": "Cali",
+		"rotulo": "PARTICULAR independiente",
+		"nombre": "PARTICULAR",
+		"telefono": "11111111",
+		"nit": "22222222"
+	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
-		"diasPago": 0,
 		"rotulo": "PATRICIA BERMUDEZ ",
-		"nit": " ",
 		"nombre": "PATRICIA BERMUDEZ",
-		"telefono": " "
+		"telefono": " ",
+		"nit": " "
 	}, {
-		"negocio": "",
+		"diasPago": 1,
+		"negocio": "RESTAURANTE",
+		"direccion": "UNI JAVERIANA",
+		"grupoDePrecios": "SALERNO",
+		"ciudad": "CALI",
+		"rotulo": "PEKRS GROUP RESTAURANTE",
+		"nombre": "PEKRS GROUP",
+		"telefono": "3216230806",
+		"nit": "9008305569"
+	}, {
+		"diasPago": 0,
+		"negocio": " ",
 		"direccion": "CLL 86 A # 13 A 23",
 		"grupoDePrecios": "POLKA",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "POLKA DOT/NATALIA BOHORQUEZ ",
-		"nit": "52718104-1",
 		"nombre": "POLKA DOT/NATALIA BOHORQUEZ",
-		"telefono": "6165479"
+		"telefono": "6165479",
+		"nit": "52718104-1"
 	}, {
-		"negocio": "",
-		"direccion": "CLL 69 A # 6-41",
-		"grupoDePrecios": "ARABE",
-		"ciudad": "BOGOTA",
 		"diasPago": 0,
+		"negocio": " ",
+		"direccion": "CLL 69 A # 6-41",
+		"grupoDePrecios": "OTROS",
+		"ciudad": "BOGOTA",
 		"rotulo": "RESTAURANTE EL ARABE ",
-		"nit": "900419473-5",
 		"nombre": "RESTAURANTE EL ARABE",
-		"telefono": "2484899"
+		"telefono": "2484899",
+		"nit": "900419473-5"
 	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": "AV CL 82 # 9-11",
 		"grupoDePrecios": "SARODI",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "SARODI ",
-		"nit": "900016780-1",
 		"nombre": "SARODI",
-		"telefono": "3220732"
+		"telefono": "3220732",
+		"nit": "900016780-1"
 	}, {
+		"diasPago": 0,
 		"negocio": "CENTRICO",
 		"direccion": "CR 7 # 32-16 PISO 41",
 		"grupoDePrecios": "CENTRICO",
 		"ciudad": "BOGOTA",
-		"diasPago": 0,
 		"rotulo": "TREINTA Y DOS SEPTIMA SAS CENTRICO",
-		"nit": "900485850-1",
 		"nombre": "TREINTA Y DOS SEPTIMA SAS",
-		"telefono": "3509100"
+		"telefono": "3509100",
+		"nit": "900485850-1"
 	}, {
+		"diasPago": 0,
 		"negocio": "CLOWNS",
 		"direccion": "AVE COLOMBIA #5-105 ESQ.",
 		"grupoDePrecios": "TREPANDO",
 		"ciudad": "CALI",
-		"diasPago": 0,
 		"rotulo": "TREPANDO SAS CLOWNS",
-		"nit": "900272780-8",
 		"nombre": "TREPANDO SAS",
-		"telefono": "28930687"
+		"telefono": "28930687",
+		"nit": "900272780-8"
 	}
 ]

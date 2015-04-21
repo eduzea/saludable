@@ -12,14 +12,14 @@
 		"nombre": "CURUBA",
 		"rotulo": "CURUBA"
 	}, {
+		"nombre": "DESECHABLES",
+		"rotulo": "DESECHABLES"
+	}, {
 		"nombre": "DURAZNO",
 		"rotulo": "DURAZNO"
 	}, {
 		"nombre": "DURAZNO FRUTA",
 		"rotulo": "DURAZNO FRUTA"
-	}, {
-		"nombre": "Desechables",
-		"rotulo": "Desechables"
 	}, {
 		"nombre": "ENCURTIDO DE ALCACHOFAS",
 		"rotulo": "ENCURTIDO DE ALCACHOFAS"
@@ -48,8 +48,14 @@
 		"nombre": "FRESA",
 		"rotulo": "FRESA"
 	}, {
+		"nombre": "FRUTOS AMARILLOS X 150",
+		"rotulo": "FRUTOS AMARILLOS X 150"
+	}, {
 		"nombre": "FRUTOS ROJOS",
 		"rotulo": "FRUTOS ROJOS"
+	}, {
+		"nombre": "FRUTOS ROJOS X 150",
+		"rotulo": "FRUTOS ROJOS X 150"
 	}, {
 		"nombre": "GUANABANA",
 		"rotulo": "GUANABANA"
@@ -63,6 +69,9 @@
 		"nombre": "GULUPA",
 		"rotulo": "GULUPA"
 	}, {
+		"nombre": "LULADA",
+		"rotulo": "LULADA"
+	}, {
 		"nombre": "LULO",
 		"rotulo": "LULO"
 	}, {
@@ -74,6 +83,9 @@
 	}, {
 		"nombre": "MANGO BICHE",
 		"rotulo": "MANGO BICHE"
+	}, {
+		"nombre": "MANZANA",
+		"rotulo": "MANZANA"
 	}, {
 		"nombre": "MARACUYA",
 		"rotulo": "MARACUYA"
@@ -96,6 +108,12 @@
 		"nombre": "MORA",
 		"rotulo": "MORA"
 	}, {
+		"nombre": "Mango Biche",
+		"rotulo": "Mango Biche"
+	}, {
+		"nombre": "Maracuya pepa",
+		"rotulo": "Maracuya pepa"
+	}, {
 		"nombre": "Menu adultos",
 		"rotulo": "Menu adultos"
 	}, {
@@ -105,8 +123,14 @@
 		"nombre": "NISPERO",
 		"rotulo": "NISPERO"
 	}, {
+		"nombre": "PAPAYA",
+		"rotulo": "PAPAYA"
+	}, {
 		"nombre": "PATILLA",
 		"rotulo": "PATILLA"
+	}, {
+		"nombre": "PERA",
+		"rotulo": "PERA"
 	}, {
 		"nombre": "PI\u00d1A",
 		"rotulo": "PI\u00d1A"
@@ -140,5 +164,14 @@
 	}, {
 		"nombre": "UVA",
 		"rotulo": "UVA"
+	}, {
+		"nombre": "fresa",
+		"rotulo": "fresa"
+	}, {
+		"nombre": "juan soto",
+		"rotulo": "juan soto"
+	}, {
+		"nombre": "lulo",
+		"rotulo": "lulo"
 	}
 ]

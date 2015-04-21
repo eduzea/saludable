@@ -15,6 +15,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			var clienteSelect = registry.byId('cliente'+entity_class);
 			clienteSelect.options = items;
 			clienteSelect.reset();
+			console.log('RESET CLIENTE!');
 		});
 	};
 	
