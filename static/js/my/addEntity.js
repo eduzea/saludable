@@ -1,8 +1,8 @@
 //# sourceURL=../static/js/my/addEntity.js
 require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style', 'dojo/on', 
-		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json',
+		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory',
 		 'dojo/domReady!'],
-function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json) {
+function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json, Memory) {
 	var entity_class = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);
 	var buttons={};
@@ -14,6 +14,10 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json)
 		var selectDijit = registry.byId(element.id);
 		selectDijit.listenerfunc = function(data){
     		selectDijit.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
+    		var store = new Memory({data: selectDijit.options});
+    		var sorted = store.query({},{sort: [{ attribute: "label"}]});
+    		selectDijit.options = sorted;
+    		selectDijit.set("value",sorted[0].value);
     	};
 		var topicStr = element.id.substring(0,element.id.lastIndexOf(entity_class)).toUpperCase();
 		console.log(selectDijit.id + ' SUBSCRIBING TO TOPIC:' + topicStr);
