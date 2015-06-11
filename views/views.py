@@ -161,7 +161,12 @@ def check_types(entity_class, values):
                     fecha = values[key].replace(result,'')
                 values[key] = parser.parse(fecha)
         if type(value) == ndb.StructuredProperty:
-            values[key]=[]
+            objList = []
+            list = values[key]
+            for listItem in list:
+                obj = check_types(value._modelclass._class_name(),listItem)             
+                objList.append(value._modelclass(**obj))
+            values[key]=objList
     if 'proplistdata' in values:
         values.pop("proplistdata")
     keys = values.keys()
