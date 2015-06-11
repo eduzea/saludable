@@ -182,6 +182,7 @@ def create_entity(entity_class, values):
         values['id']=key
         entity = classModels[entity_class](**values)
         entity.put()
+        autoIncrease(entity_class)
         return {'message':"Created",'key':key, 'entity':entity}
 
 class SaveEntity(webapp2.RequestHandler):        
@@ -262,6 +263,12 @@ def fieldsInfo(entity_class):
     for field in fields:
         field['type']=props[field['id']]
     return fields
+
+def autoIncrease(entity_class):
+    if 'Numero' + entity_class in singletons:
+        num = singletons['Numero' + entity_class].query().get()
+        num.consecutivo = num.consecutivo + 1
+        num.put() 
 
 def autoNum(entity_class):
     if 'Numero' + entity_class in singletons:
