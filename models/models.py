@@ -74,7 +74,7 @@ class Factura(ndb.Model):
     fecha = ndb.DateProperty()
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()    
-    subtotal = ndb.IntegerProperty()
+    subtotal = ndb.IntegerProperty(default=0.0)
     iva = ndb.BooleanProperty(default=False)
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
@@ -85,6 +85,13 @@ class TipoEgreso(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
+def objListToString(objList):
+    text =''
+    for obj in objList:
+        text += obj.get().nombre + ';'
+    return text
+    
+
 class Proveedor(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
@@ -93,7 +100,8 @@ class Proveedor(ndb.Model):
     ciudad = ndb.StringProperty(indexed=True)
     diasPago = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True) 
+    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
+    textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
 
 class Bienoservicio(ndb.Model):
     tipo = ndb.KeyProperty(kind=TipoEgreso)

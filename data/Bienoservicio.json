@@ -1,95 +1,155 @@
 [
 	{
-		"tipo": "Costo.Fijo",
+		"nombre": "Alimentacion Empleado",
+		"rotulo": "Alimentacion Empleado",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Arriendo",
 		"rotulo": "Arriendo",
-		"nombre": "Arriendo"
+		"tipo": "Costo.Fijo"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Combustible",
+		"rotulo": "Combustible",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Cursos para el personal",
+		"rotulo": "Cursos para el personal",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Dotacion",
+		"rotulo": "Dotacion",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Dotacion empleados",
+		"rotulo": "Dotacion empleados",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Equipos",
+		"rotulo": "Equipos",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Impuestos Distritales",
 		"rotulo": "Impuestos Distritales",
-		"nombre": "Impuestos Distritales"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Impuestos Nacionales",
 		"rotulo": "Impuestos Nacionales",
-		"nombre": "Impuestos Nacionales"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Mano de Obra",
+		"rotulo": "Mano de Obra",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Mantenimiento y arreglos locativos",
+		"rotulo": "Mantenimiento y arreglos locativos",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Materia Prima-Bolsas Plasticas",
 		"rotulo": "Materia Prima-Bolsas Plasticas",
-		"nombre": "Materia Prima-Bolsas Plasticas"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materia Prima-Fruta",
 		"rotulo": "Materia Prima-Fruta",
-		"nombre": "Materia Prima-Fruta"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materia Prima-Hielo Seco",
 		"rotulo": "Materia Prima-Hielo Seco",
-		"nombre": "Materia Prima-Hielo Seco"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materia Prima-Implementos de Aseo",
 		"rotulo": "Materia Prima-Implementos de Aseo",
-		"nombre": "Materia Prima-Implementos de Aseo"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materia Prima-Quimicos",
 		"rotulo": "Materia Prima-Quimicos",
-		"nombre": "Materia Prima-Quimicos"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materia Prima-Varios",
 		"rotulo": "Materia Prima-Varios",
-		"nombre": "Materia Prima-Varios"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Materiales de Construccion",
+		"rotulo": "Materiales de Construccion",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Medicinas Botiquin",
+		"rotulo": "Medicinas Botiquin",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Nomina-Turnos",
 		"rotulo": "Nomina-Turnos",
-		"nombre": "Nomina-Turnos"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Fijo",
+		"nombre": "Nomina - Administrativa",
 		"rotulo": "Nomina - Administrativa",
-		"nombre": "Nomina - Administrativa"
+		"tipo": "Costo.Fijo"
 	}, {
-		"tipo": "Costo.Fijo",
+		"nombre": "Nomina - Operativa",
 		"rotulo": "Nomina - Operativa",
-		"nombre": "Nomina - Operativa"
+		"tipo": "Costo.Fijo"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Pago de deuda",
+		"rotulo": "Pago de deuda",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Papeleria",
+		"rotulo": "Papeleria",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Plasticos",
+		"rotulo": "Plasticos",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Prestamo Empresa a Socio",
 		"rotulo": "Prestamo Empresa a Socio",
-		"nombre": "Prestamo Empresa a Socio"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Pruebas laboratorio",
+		"rotulo": "Pruebas laboratorio",
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Servicios-Fumigacion",
 		"rotulo": "Servicios-Fumigacion",
-		"nombre": "Servicios-Fumigacion"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios-Varios",
 		"rotulo": "Servicios-Varios",
-		"nombre": "Servicios-Varios"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios Financieros",
 		"rotulo": "Servicios Financieros",
-		"nombre": "Servicios Financieros"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios Publicos-Agua",
 		"rotulo": "Servicios Publicos-Agua",
-		"nombre": "Servicios Publicos-Agua"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios Publicos-Energia",
 		"rotulo": "Servicios Publicos-Energia",
-		"nombre": "Servicios Publicos-Energia"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios Publicos-Gas",
 		"rotulo": "Servicios Publicos-Gas",
-		"nombre": "Servicios Publicos-Gas"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Servicios Publicos-Telecomunicaciones",
 		"rotulo": "Servicios Publicos-Telecomunicaciones",
-		"nombre": "Servicios Publicos-Telecomunicaciones"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Taxis y Pasajes de Bus",
 		"rotulo": "Taxis y Pasajes de Bus",
-		"nombre": "Taxis y Pasajes de Bus"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Transporte del Producto-Intermunicipal",
 		"rotulo": "Transporte del Producto-Intermunicipal",
-		"nombre": "Transporte del Producto-Intermunicipal"
+		"tipo": "Costo.Variable"
 	}, {
-		"tipo": "Costo.Variable",
+		"nombre": "Transporte del Producto-Local",
 		"rotulo": "Transporte del Producto-Local",
-		"nombre": "Transporte del Producto-Local"
+		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Utensilios",
+		"rotulo": "Utensilios",
+		"tipo": "Costo.Variable"
 	}
 ]

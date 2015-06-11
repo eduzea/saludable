@@ -162,8 +162,8 @@ def check_types(entity_class, values):
                 values[key] = parser.parse(fecha)
         if type(value) == ndb.StructuredProperty:
             objList = []
-            list = values[key]
-            for listItem in list:
+            listVals = values[key]
+            for listItem in listVals:
                 obj = check_types(value._modelclass._class_name(),listItem)             
                 objList.append(value._modelclass(**obj))
             values[key]=objList
