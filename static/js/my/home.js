@@ -28,7 +28,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 			return data;
 		};
 		
-		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','GrupoDePrecios','Precio'],'Ingresos');
+		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');

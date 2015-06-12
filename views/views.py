@@ -768,12 +768,10 @@ class FixPrecios(webapp2.RequestHandler):
     def get(self):
         precios = Precio.query().fetch()
         for precio in precios:
-            print precio
-#             if precio.grupoDePrecios:
-#                 precio.grupo = precio.grupoDePrecios
+            if precio.grupoDePrecios:
+                precio.grupo = precio.grupoDePrecios
             if 'grupoDePrecios' in precio._properties:
                 del precio._properties['grupoDePrecios']
-            print precio
             precio.put()
 
             

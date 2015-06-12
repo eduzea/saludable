@@ -43,6 +43,6 @@ application = webapp2.WSGIApplication([
     ('/pivot',Pivot),
     ('/tablaDinamica',TablaDinamica),
     ('/getProductSales',GetProductSales) ,
-    ('/fixPrecios',FixPrecios) ,
+    ('/fixPrecios',FixPrecios)
     
 ], debug=True)
