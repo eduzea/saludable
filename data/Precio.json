@@ -1,1568 +1,1748 @@
 [
 	{
 		"producto": "ARAZA",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Aldemar",
+		"porcion": "1000.g",
+		"precio": 7600
+	}, {
+		"producto": "ARAZA",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "ARAZA",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 11500
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "ARAZA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "130.g",
 		"precio": 8200
 	}, {
 		"producto": "CONF.PIMENTON",
-		"grupoDePrecios": "Adriana.Delgadillo",
+		"grupo": "Adriana.Delgadillo",
 		"porcion": "200.g",
 		"precio": 10000
 	}, {
 		"producto": "CONF.PIMENTON",
-		"grupoDePrecios": "Adriana.Delgadillo",
+		"grupo": "Adriana.Delgadillo",
 		"porcion": "250.g",
 		"precio": 10000
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "HANS",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "CURUBA",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6500
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 700
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "120.g",
 		"precio": 850
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "125.g",
 		"precio": 850
 	}, {
 		"producto": "CURUBA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "140.g",
 		"precio": 840
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "HANS",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 7000
+	}, {
+		"producto": "DURAZNO",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 11000
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 790
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "125.g",
 		"precio": 1200
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1650
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "170.g",
 		"precio": 1470
 	}, {
 		"producto": "DURAZNO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "180.g",
 		"precio": 1650
 	}, {
 		"producto": "DURAZNO.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "170.g",
 		"precio": 1470
 	}, {
 		"producto": "DURAZNO.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "180.g",
 		"precio": 1500
 	}, {
 		"producto": "DURAZNO.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "190.g",
 		"precio": 1750
 	}, {
 		"producto": "Elementos.desechables",
-		"grupoDePrecios": "SURA",
+		"grupo": "SURA",
 		"porcion": "1.Unidad",
 		"precio": 320000
 	}, {
 		"producto": "FALAFES",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 280
 	}, {
 		"producto": "FALAFES",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1.Und",
 		"precio": 355
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "Ester",
-		"porcion": "1000.g",
-		"precio": 7000
-	}, {
-		"producto": "FEIJOA",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "JUAN.EL.PANADERO",
+		"porcion": "1000.g",
+		"precio": 7000
+	}, {
+		"producto": "FEIJOA",
+		"grupo": "OTROS",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "FEIJOA",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 9000
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "120.g",
 		"precio": 850
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "140.g",
 		"precio": 700
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1100
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "170.g",
 		"precio": 1260
 	}, {
 		"producto": "FEIJOA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 5500
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 5800
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "HANS",
+		"grupo": "Ester",
+		"porcion": "1000.g",
+		"precio": 6000
+	}, {
+		"producto": "FRESA",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 8500
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 7400
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 760
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "SALERNO",
+		"porcion": "120.g",
+		"precio": 750
+	}, {
+		"producto": "FRESA",
+		"grupo": "CENTRICO",
 		"porcion": "130.g",
 		"precio": 750
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "170.g",
 		"precio": 765
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "190.g",
 		"precio": 1150
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 1050
 	}, {
 		"producto": "FRESA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "750.g",
 		"precio": 4520
 	}, {
+		"producto": "FRUTOS.AMARILLOS",
+		"grupo": "SALERNO",
+		"porcion": "150.g",
+		"precio": 1250
+	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 7600
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 7200
+	}, {
+		"producto": "FRUTOS.ROJOS",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 12000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 12500
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "1000.g",
 		"precio": 8500
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "POLKA",
+		"grupo": "POLKA",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 760
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 9000
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "160.g",
 		"precio": 800
 	}, {
+		"producto": "FRUTOS.ROJOS.X.150",
+		"grupo": "SALERNO",
+		"porcion": "150.g",
+		"precio": 1200
+	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 7900
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 7800
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "HANS",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "HARRY",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Hamburgueserias",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "GUANABANA",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 10500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7800
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 790
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "100.g",
 		"precio": 750
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "100.g",
 		"precio": 9500
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "130.g",
 		"precio": 936
 	}, {
 		"producto": "GUANABANA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "150.g",
 		"precio": 1500
 	}, {
 		"producto": "GUANABANA.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 7600
+	}, {
+		"producto": "GUANABANA.FRUTA",
+		"grupo": "PAESA",
 		"porcion": "130.g",
 		"precio": 1220
 	}, {
 		"producto": "GUANABANA.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1400
 	}, {
 		"producto": "GUANABANA.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "160.g",
 		"precio": 1500
 	}, {
 		"producto": "GUANABANA.FRUTA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "180.g",
 		"precio": 1690
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "HANS",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 5000
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "HANS",
+		"porcion": "1000.g",
+		"precio": 5000
+	}, {
+		"producto": "GUAYABA",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 5500
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 5000
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 580
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "100.g",
 		"precio": 700
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "130.g",
 		"precio": 598
 	}, {
 		"producto": "GUAYABA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 4300
 	}, {
 		"producto": "GULUPA",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "GULUPA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "GULUPA",
-		"grupoDePrecios": "HANS",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 7200
 	}, {
+		"producto": "LULADA",
+		"grupo": "SALERNO",
+		"porcion": "150.g",
+		"precio": 1150
+	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 6700
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "Ester",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "HANS",
+		"grupo": "Ester",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "LULO",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6850
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "POLKA",
+		"grupo": "POLKA",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6400
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 700
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "100.g",
 		"precio": 660
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 8000
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "120.g",
 		"precio": 850
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "SALERNO",
+		"porcion": "120.g",
+		"precio": 850
+	}, {
+		"producto": "LULO",
+		"grupo": "CENTRICO",
 		"porcion": "130.g",
 		"precio": 900
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1100
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "SALERNO",
+		"porcion": "150.g",
+		"precio": 1050
+	}, {
+		"producto": "LULO",
+		"grupo": "COLEGIOS",
+		"porcion": "1.Und",
+		"precio": 30000
+	}, {
+		"producto": "LULO",
+		"grupo": "CENTRICO",
 		"porcion": "750.g",
 		"precio": 5250
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "LULO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "LULO.TAJADO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "140.g",
 		"precio": 900
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "ADELA",
+		"grupo": "ADELA",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "Ester",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "HANS",
+		"grupo": "Ester",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "MANGO",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 8500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "ADELA",
+		"grupo": "ADELA",
 		"porcion": "100.g",
 		"precio": 6800
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "100.g",
 		"precio": 850
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "SALERNO",
+		"porcion": "100.g",
+		"precio": 680
+	}, {
+		"producto": "MANGO",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 8000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "120.g",
 		"precio": 1750
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "120.g",
 		"precio": 936
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "SALERNO",
+		"porcion": "120.g",
+		"precio": 820
+	}, {
+		"producto": "MANGO",
+		"grupo": "CENTRICO",
 		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1100
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "170.g",
 		"precio": 1220
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "COLEGIOS",
+		"porcion": "1.Und",
+		"precio": 30000
+	}, {
+		"producto": "MANGO",
+		"grupo": "SALERNO",
+		"porcion": "60.g",
+		"precio": 450
+	}, {
+		"producto": "MANGO",
+		"grupo": "AVESCO",
 		"porcion": "750.g",
 		"precio": 6000
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "750.g",
 		"precio": 5600
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "MANGO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 5500
 	}, {
 		"producto": "MANGO.BICHE",
-		"grupoDePrecios": "OTROS",
-		"porcion": "1000.g",
-		"precio": 7500
-	}, {
-		"producto": "MANGO.BICHE",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MANGO.BICHE",
-		"grupoDePrecios": "ARABE",
+		"grupo": "OTROS",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "MANGO.BICHE",
+		"grupo": "SALERNO",
+		"porcion": "1000.g",
+		"precio": 7000
+	}, {
+		"producto": "MANGO.BICHE",
+		"grupo": "ARABE",
 		"porcion": "200.g",
 		"precio": 15000
 	}, {
 		"producto": "MANGO.BICHE",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "50.g",
 		"precio": 420
 	}, {
 		"producto": "MANZANA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 8400
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 8500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CARMEL",
+		"porcion": "1000.g",
+		"precio": 8000
+	}, {
+		"producto": "MARACUYA",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "MARACUYA",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 10500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "POLKA",
+		"grupo": "POLKA",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 7800
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "100.g",
 		"precio": 1200
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 800
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 9000
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "110.g",
 		"precio": 935
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "120.g",
 		"precio": 1320
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "CENTRICO",
+		"porcion": "130.g",
+		"precio": 1300
+	}, {
+		"producto": "MARACUYA",
+		"grupo": "PAESA",
 		"porcion": "140.g",
 		"precio": 1770
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1380
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "50.g",
 		"precio": 460
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "750.g",
 		"precio": 6200
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "750.g",
 		"precio": 6200
 	}, {
 		"producto": "MARACUYA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 6000
 	}, {
 		"producto": "MARACUYA.PEPA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "SALERNO",
+		"porcion": "1000.g",
+		"precio": 9500
+	}, {
+		"producto": "MARACUYA.PEPA",
+		"grupo": "PAESA",
 		"porcion": "140.g",
 		"precio": 1770
 	}, {
 		"producto": "MARACUYA.PEPA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1770
 	}, {
 		"producto": "MARACUYA.PEPA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "50.g",
 		"precio": 650
 	}, {
 		"producto": "MELON",
-		"grupoDePrecios": "Ester",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "MELON",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "200.g",
 		"precio": 1040
 	}, {
 		"producto": "MELON",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 1020
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "CHATOS",
+		"grupo": "CHATOS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "HANS",
+		"grupo": "Ester",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "MORA",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "Hamburgueserias",
+		"grupo": "Hamburgueserias",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9000
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "POLKA",
+		"grupo": "POLKA",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6500
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 700
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 8000
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "110.g",
 		"precio": 850
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "125.g",
 		"precio": 990
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "130.g",
 		"precio": 676
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "50.g",
 		"precio": 390
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "MORA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "Menu.adultos",
-		"grupoDePrecios": "SURA",
+		"grupo": "SURA",
 		"porcion": "1.Unidad",
 		"precio": 22000
 	}, {
 		"producto": "Mermelada.Frutos.rojos",
-		"grupoDePrecios": "Adriana.Delgadillo",
+		"grupo": "Adriana.Delgadillo",
 		"porcion": "250.g",
 		"precio": 9000
 	}, {
 		"producto": "Mermelada.Frutos.rojos",
-		"grupoDePrecios": "Mermelada.Frutos.rojos",
+		"grupo": "Mermelada.Frutos.rojos",
 		"porcion": "250.g",
 		"precio": 9000
 	}, {
 		"producto": "NISPERO",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "130.g",
 		"precio": 1170
 	}, {
 		"producto": "PAPAYA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "PAPAYA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1.1",
 		"precio": 7500
 	}, {
 		"producto": "PATILLA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 730
 	}, {
 		"producto": "PATILLA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "180.g",
 		"precio": 840
 	}, {
 		"producto": "PATILLA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 950
 	}, {
 		"producto": "PATILLA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "70.g",
 		"precio": 370
 	}, {
 		"producto": "PERA",
-		"grupoDePrecios": "Ester",
+		"grupo": "Ester",
 		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "ABACO",
+		"grupo": "ABACO",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "Ester",
-		"porcion": "1000.g",
-		"precio": 6200
-	}, {
-		"producto": "PI\u00d1A",
-		"grupoDePrecios": "HANS",
-		"porcion": "1000.g",
-		"precio": 6200
-	}, {
-		"producto": "PI\u00d1A",
-		"grupoDePrecios": "HARRY",
+		"grupo": "Criterion",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Ester",
+		"porcion": "1000.g",
+		"precio": 6200
+	}, {
+		"producto": "PI\u00d1A",
+		"grupo": "HANS",
+		"porcion": "1000.g",
+		"precio": 6200
+	}, {
+		"producto": "PI\u00d1A",
+		"grupo": "HARRY",
+		"porcion": "1000.g",
+		"precio": 6600
+	}, {
+		"producto": "PI\u00d1A",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6600
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6100
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6200
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 630
 	}, {
 		"producto": "PI\u00d1A",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1000
 	}, {
+		"producto": "PI\u00d1A",
+		"grupo": "SALERNO",
+		"porcion": "150.g",
+		"precio": 900
+	}, {
 		"producto": "SMOTHIE.GMB",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 1250
 	}, {
 		"producto": "SMOTHIE.LMF",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 1400
 	}, {
 		"producto": "SURTIDOS",
-		"grupoDePrecios": "HANS",
+		"grupo": "HANS",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "SURTIDOS",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 8200
 	}, {
 		"producto": "SURTIDOS",
-		"grupoDePrecios": "HANS",
+		"grupo": "HANS",
 		"porcion": "100.g",
 		"precio": 8400
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "AVESCO",
+		"grupo": "ABACO",
+		"porcion": "1000.g",
+		"precio": 12500
+	}, {
+		"producto": "TAMARINDO",
+		"grupo": "AVESCO",
 		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "CYP",
+		"grupo": "Aldemar",
+		"porcion": "1000.g",
+		"precio": 12500
+	}, {
+		"producto": "TAMARINDO",
+		"grupo": "CYP",
 		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 11000
+	}, {
+		"producto": "TAMARINDO",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 14000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 8000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 10000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "SALERNO",
-		"porcion": "1000.g",
-		"precio": 8500
-	}, {
-		"producto": "TAMARINDO",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "110.g",
 		"precio": 528
 	}, {
 		"producto": "TAMARINDO",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "120.g",
 		"precio": 1400
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 6500
+	}, {
+		"producto": "TOMATE.DE.ARBOL",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "1000.g",
 		"precio": 5000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6000
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 840
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "750.g",
 		"precio": 4550
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "750.g",
 		"precio": 5200
 	}, {
 		"producto": "UCHUVA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "130.g",
 		"precio": 748
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "CARMEL",
+		"grupo": "CARMEL",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 6800
+	}, {
+		"producto": "UVA",
+		"grupo": "Independiente.Cali",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "JUAN.EL.PANADERO",
+		"grupo": "JUAN.EL.PANADERO",
 		"porcion": "1000.g",
 		"precio": 7100
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "Juan.Soto",
+		"grupo": "Juan.Soto",
 		"porcion": "1000.g",
 		"precio": 9500
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "OTROS",
+		"grupo": "OTROS",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "POLKA",
+		"grupo": "POLKA",
 		"porcion": "1000.g",
 		"precio": 7000
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "SALERNO",
+		"grupo": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "SARODI",
+		"grupo": "SARODI",
 		"porcion": "1000.g",
 		"precio": 6800
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "TREPANDO",
+		"grupo": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 6400
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "CYP",
+		"grupo": "CYP",
 		"porcion": "100.g",
 		"precio": 720
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "Independiente.Cali",
+		"grupo": "Independiente.Cali",
 		"porcion": "1.1",
 		"precio": 9500
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "PARTICULARES",
+		"grupo": "PARTICULARES",
 		"porcion": "1.1",
 		"precio": 8000
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "130.g",
 		"precio": 1000
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "150.g",
 		"precio": 1220
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "HARRY",
+		"grupo": "HARRY",
 		"porcion": "180.g",
 		"precio": 1300
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "LEHAL",
+		"grupo": "LEHAL",
 		"porcion": "200.g",
 		"precio": 960
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "PAESA",
+		"grupo": "PAESA",
 		"porcion": "200.g",
 		"precio": 1620
 	}, {
 		"producto": "UVA",
-		"grupoDePrecios": "CENTRICO",
+		"grupo": "CENTRICO",
 		"porcion": "750.g",
 		"precio": 5400
+	}, {
+		"producto": "ZAPOTE",
+		"grupo": "Criterion",
+		"porcion": "1000.g",
+		"precio": 12500
 	}
 ]

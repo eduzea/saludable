@@ -33,7 +33,8 @@ class Porcion(ndb.Model):
 class Precio(ndb.Model):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
-    grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
+#     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
+    grupo = ndb.KeyProperty(kind=GrupoDePrecios)
     precio = ndb.IntegerProperty()
     
 class Venta(ndb.Model):

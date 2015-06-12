@@ -322,7 +322,7 @@ class GetProducto(webapp2.RequestHandler):
         post_data = self.request.POST.mixed()
         cliente = Cliente.get_by_id(post_data['cliente'])
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupoDePrecios == grupo,  projection = [Precio.producto], distinct=True).fetch()
+        precios = Precio.query(Precio.grupo == grupo,  projection = [Precio.producto], distinct=True).fetch()
         productos = [precio.producto.id() for precio in precios]
         if not productos:
             productos.append('No hay precios definidos')
@@ -334,7 +334,7 @@ class GetPorcion(webapp2.RequestHandler):
         cliente = Cliente.get_by_id(post_data['cliente'])
         producto= Producto.get_by_id(post_data['producto']) 
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupoDePrecios == grupo,
+        precios = Precio.query(Precio.grupo == grupo,
                                Precio.producto == producto.key,
                                projection = [Precio.porcion], distinct=True).fetch()
         porciones = [precio.porcion.id() for precio in precios]
@@ -346,7 +346,7 @@ class GetPrice(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         precioQuery = Precio.query(Precio.producto == Producto.get_by_id(values['producto']).key,
-                                   Precio.grupoDePrecios == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
+                                   Precio.grupo == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
         try:
@@ -762,5 +762,21 @@ class GuardarEgreso(webapp2.RequestHandler):
                         comentario = values['comentario'])
         egreso.put()
         entity = egreso
-        self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))     
+        self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
+        
+class FixPrecios(webapp2.RequestHandler):
+    def get(self):
+        precios = Precio.query().fetch()
+        for precio in precios:
+            print precio
+#             if precio.grupoDePrecios:
+#                 precio.grupo = precio.grupoDePrecios
+            if 'grupoDePrecios' in precio._properties:
+                del precio._properties['grupoDePrecios']
+            print precio
+            precio.put()
+
+            
+            
+                 
         

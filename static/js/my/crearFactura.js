@@ -2,8 +2,8 @@
 
 require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort', 'dijit/form/CheckBox'], 
-function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
+		'dojo/dom-class', 'dojo/ready', 'dojo/topic','dojo/store/Memory','gridx/modules/SingleSort', 'dijit/form/CheckBox'], 
+function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic,Memory) {
 	var entity_class = saludable.entity_class;	
 	
 	var resetCliente = function(cliente){	
@@ -60,22 +60,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					porcionSelect.reset();
 			});
 		};
-	
-	//Listeners
-	var listeners = {};
-	listeners[entity_class+"CLIENTE"] = topic.subscribe("CLIENTE", function(e){
-		console.log(entity_class+"CLIENTE");
-		resetCliente();
-  	});
-  	
-  	listeners[entity_class+"PORCION"] = topic.subscribe("PORCION", function(e){
-		resetPorcion();
-  	});
-  	
-  	listeners[entity_class+"PRODUCTO"] = topic.subscribe("PRODUCTO", function(e){
-		resetProducto();
-  	});
-	
+		
     parser.instantiate([dom.byId('cliente'+entity_class)]);
     var clienteSelect = registry.byId('cliente'+entity_class);
     clienteSelect.onChange = resetProducto; 
@@ -99,6 +84,19 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
 	}, "porcion"+entity_class);
 	porcionSelect.startup();
+	
+	var selects = [registry.byId('cliente'+entity_class), registry.byId('producto'+entity_class), registry.byId('porcion'+entity_class)];
+	selects.forEach(function(select){
+		select.listenerfunc = function(data){
+    		select.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
+    		var store = new Memory({data: select.options});
+    		var sorted = store.query({},{sort: [{ attribute: "label"}]});
+    		select.options = sorted;
+    		select.set("value",sorted[0].value);
+   		};
+   		topic.subscribe(select.id.replace(entity_class,'').toUpperCase(), select.listenerfunc);
+	});
+
   	
 	var updateTotal = function(){
 		var data = getGridData();
