@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitionfal//EN" "http://www.w3.org/TR/html4/loose.dtd">
 {% autoescape true %}
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -14,35 +14,35 @@
 		<title>Egreso</title>
 	</head>
 	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="addEntityFormEgreso" data-dojo-id="addEntityFormEgreso" encType="multipart/form-data">
+		<div data-dojo-type="dijit/form/Form" id="addEntityForm_Egreso" data-dojo-id="addEntityForm_Egreso" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleadoEgreso'>Empleado:</label></td>
+					<td><label for='empleado_Egreso'>Empleado:</label></td>
 					<td><div style="margin:10px">
 							{{tagForField('Egreso',props['empleado'])}}
 						</div>
 					</td>
-					<td><label for='fechaEgreso'>Fecha: </label></td>
-					<td><input type="text" name="fechacEgreso" id="fechaEgreso" value="now" 
+					<td><label for='fecha_Egreso'>Fecha: </label></td>
+					<td><input type="text" name="fechac_Egreso" id="fecha_Egreso" value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
 							required="true" style="width:100px"/>
 					</td>
-					<td><label for='sucursalEgreso'>Sucursal: </label></td>
+					<td><label for='sucursal_Egreso'>Sucursal: </label></td>
 					<td><div style="margin:10px">
 						{{tagForField('Egreso',props['sucursal'])}}
 						</div>
 					</td>
-					<td><label for='numeroEgreso'>No. Egreso: </label> </td>
-					<td><div id='numeroEgreso'></div></td>
-					<td><button id='nuevoEgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
+					<td><label for='numero_Egreso'>No. Egreso: </label> </td>
+					<td><div id='numero_Egreso'></div></td>
+					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
 				</tr>					
 				<tr>
-					<td><label for='tipoEgreso'>Tipo: </label></td>
+					<td><label for='tipo_Egreso'>Tipo: </label></td>
 					<td><div>
 							{{tagForField('Egreso',props['tipo'])}}
 						</div>
 					</td>
-					<td><label for='proveedorEgreso'>Proveedor: </label></td>
+					<td><label for='proveedor_Egreso'>Proveedor: </label></td>
 					<td><div>
 							{{tagForField('Egreso',props['proveedor'])}}
 						</div>
@@ -55,38 +55,38 @@
 					</td>
 				</tr>
 				<tr>
-					<td><label for="bienoservicioEgreso">Bienes o Servcios: </label></td>
+					<td><label for="bienoservicio_Egreso">Bienes o Servcios: </label></td>
 					<td><div>
 						{{tagForField('Egreso',props['bienoservicio'])}}
 					</div></td>
-					<td><label for="bienoservicioEgreso">Detalle: </label></td>
+					<td><label for="bienoservicio_Egreso">Detalle: </label></td>
 					<td>
 						{{tagForField('Egreso',props['detalle'])}}
 					</td>
 				</tr>
 				<tr>
-					<td><label for='cantidadEgreso'>Cantidad:</label></td>
+					<td><label for='cantidad_Egreso'>Cantidad:</label></td>
 					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
-					<td><label for='cantidadEgreso'>Precio Unitario:</label></td>
+					<td><label for='cantidad_Egreso'>Precio Unitario:</label></td>
 					<td>{{tagForField('Egreso',props['precio'])}}</td>
 					<td></td>
 					<td></td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>
 			</table>
-			<div id="gridEgreso"></div>
+			<div id="grid_Egreso"></div>
 			<br/>
-			<label for="comentarioEgreso">Comentario: </label>
+			<label for="comentario_Egreso">Comentario: </label>
 			{{tagForField('Egreso',props['comentario'])}}
 		</div>
 		<table>
 			<tr>
 				<td>
-					<button id='guardarEgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
+					<button id='guardar_EgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
 				</td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td>
 			</tr>
-			<tr><td><div id='mensajeEgreso' style="color: red"></div></td></tr>
+			<tr><td><div id='mensaje_Egreso' style="color: red"></div></td></tr>
 		</table>
 	</body>
 </html>

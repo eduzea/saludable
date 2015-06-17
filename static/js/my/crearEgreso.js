@@ -2,8 +2,9 @@
 
 require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
 		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','gridx/modules/SingleSort','dojo/domReady!'], 
-function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic) {
+		'dojo/dom-class', 'dojo/ready', 'dojo/topic','dojo/store/Memory','gridx/modules/SingleSort','dojo/domReady!'], 
+function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
+	query, on,json,number,Select,domClass, ready,topic, Memory) {
 	var entity_class = saludable.entity_class;
 	
 
@@ -15,7 +16,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					response.forEach(function(bienoservicio){
 						items.push({ "value": bienoservicio.value, "label": bienoservicio.name });
 					});
-					var bienoservicioSelect = registry.byId('bienoservicioEgreso');
+					var bienoservicioSelect = registry.byId('bienoservicio_Egreso');
 					bienoservicioSelect.options = [];
 					bienoservicioSelect.addOption(items);
 					bienoservicioSelect.reset();
@@ -33,7 +34,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					items.push({ "value": proveedor.value, "label": proveedor.name });
 				});			
 			}
-			var proveedorSelect = registry.byId('proveedorEgreso');
+			var proveedorSelect = registry.byId('proveedor_Egreso');
 			proveedorSelect.options = [];
 			proveedorSelect.addOption(items);
 			proveedorSelect.reset();
@@ -41,7 +42,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	};
 	
 	var resetGrid = function (){
-		var grid = registry.byId('gridEgreso');
+		var grid = registry.byId('grid_Egreso');
 		grid.model.clearCache();
 		grid.model.store.setData([]);
 		grid.body.refresh();		
@@ -49,28 +50,40 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	};
 	
 	var resetEgreso = function(){
-		dom.byId('mensajeEgreso').innerHTML = '';
+		dom.byId('mensaje_Egreso').innerHTML = '';
 		dom.byId('total').innerHTML = '';
-		dom.byId('numeroEgreso').innerHTML = '';
-		registry.byId('detalleEgreso').set('value','');
-		registry.byId('cantidadEgreso').set('value','');
-		registry.byId('precioEgreso').set('value','');
+		dom.byId('numero_Egreso').innerHTML = '';
+		registry.byId('detalle_Egreso').set('value','');
+		registry.byId('cantidad_Egreso').set('value','');
+		registry.byId('precio_Egreso').set('value','');
 		resetGrid();
 	};
 
-	parser.instantiate([dom.byId('tipoEgreso')]);
-    var tipoSelect = registry.byId('tipoEgreso');
+	parser.instantiate([dom.byId('tipo_Egreso')]);
+    var tipoSelect = registry.byId('tipo_Egreso');
 	tipoSelect.onChange = resetBienoservicio; 
     resetBienoservicio(tipoSelect.value);
 
-	parser.instantiate([dom.byId('bienoservicioEgreso')]);
-    var bienoservicioSelect = registry.byId('bienoservicioEgreso');    
+	parser.instantiate([dom.byId('bienoservicio_Egreso')]);
+    var bienoservicioSelect = registry.byId('bienoservicio_Egreso');    
 	bienoservicioSelect.onChange = resetProveedor; 
     resetProveedor(bienoservicioSelect.value);
     
-    parser.instantiate([dom.byId('proveedorEgreso')]);
-    var proveedorSelect = registry.byId('proveedorEgreso');    
-	proveedorSelect.onChange = resetEgreso; 
+    parser.instantiate([dom.byId('proveedor_Egreso')]);
+    var proveedorSelect = registry.byId('proveedor_Egreso');    
+	proveedorSelect.onChange = resetEgreso;
+	
+	var selects = [tipoSelect, bienoservicioSelect, proveedorSelect];
+	selects.forEach(function(select){
+		select.listenerfunc = function(data){
+    		select.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
+    		var store = new Memory({data: select.options});
+    		var sorted = store.query({},{sort: [{ attribute: "label"}]});
+    		select.options = sorted;
+    		select.set("value",sorted[0].value);
+   		};
+   		topic.subscribe(select.id.replace('_' + entity_class,'').toUpperCase(), select.listenerfunc);
+	});
   	
 	var updateTotal = function(){
 		var data = getGridData();
@@ -83,21 +96,21 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	};
 	
 	var getEgresoFormData = function(entity_class){
-		var formdata = registry.byId('addEntityForm' + entity_class).get('value');
+		var formdata = registry.byId('addEntityForm' +  '_' + entity_class).get('value');
 		for (prop in formdata) {
-			formdata[prop.replace('Egreso', '')] = formdata[prop];
+			formdata[prop.replace('_Egreso', '')] = formdata[prop];
 			delete formdata[prop];
 		}
 		return formdata;
 	};
 	
 	var getGridData = function(){
-		var store = registry.byId('gridEgreso').store;
+		var store = registry.byId('grid_Egreso').store;
 		return store.query();
 	};
 	
 	var actualizarEgresos = function(response, data){
-		var grid = registry.byId('gridNodeEgreso');
+		var grid = registry.byId('gridNode_Egreso');
 		var key = response.egresoId;
 		data['id'] = key;
 		data['numero']=key;
@@ -114,17 +127,17 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		e.value = !e.value;
 	};
 	
-	parser.instantiate([dom.byId('guardarEgresoBtn')]);
-	on(registry.byId('guardarEgresoBtn'),'click',
+	parser.instantiate([dom.byId('guardar_EgresoBtn')]);
+	on(registry.byId('guardar_EgresoBtn'),'click',
 		function(e){
-			var tipo = registry.byId('tipoEgreso').value;
-			var proveedor = registry.byId('proveedorEgreso').value;
-			var empleado = registry.byId('empleadoEgreso').value;		
-			var fecha = registry.byId('fechaEgreso').toString();
-			var numero = dom.byId('numeroEgreso').innerHTML.replace('No.','');
+			var tipo = registry.byId('tipo_Egreso').value;
+			var proveedor = registry.byId('proveedor_Egreso').value;
+			var empleado = registry.byId('empleado_Egreso').value;		
+			var fecha = registry.byId('fecha_Egreso').toString();
+			var numero = dom.byId('numero_Egreso').innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var comentario = registry.byId('comentarioEgreso').value;
-			var sucursal = registry.byId('sucursalEgreso').value;
+			var comentario = registry.byId('comentario_Egreso').value;
+			var sucursal = registry.byId('sucursal_Egreso').value;
 			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'sucursal':sucursal,'compras':gridData, 'total':updateTotal(), 
 			'numero':numero, 'tipo':tipo, 'comentario': comentario};
 			request.post('/guardarEgreso', {
@@ -134,13 +147,13 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					var message='';
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
-						egreso_data['proveedor']=registry.byId('proveedorEgreso').attr('displayedValue');
+						egreso_data['proveedor']=registry.byId('proveedor_Egreso').attr('displayedValue');
 						egreso_data['resumen']= gridData[0].bienoservicio;
 						actualizarEgresos(response, egreso_data);
 					}else{
 						message = 'No se pudo guardar este Egreso!';
 					}
-					dom.byId('mensajeEgreso').innerHTML = message;
+					dom.byId('mensaje_Egreso').innerHTML = message;
 					setTimeout(function() {
 						resetEgreso();
 					}, 3000);
@@ -149,13 +162,13 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	parser.instantiate([dom.byId('agregarCompraBtn')]);
 	on(registry.byId('agregarCompraBtn'),'click',function(e){
-		var form = registry.byId('addEntityForm' + entity_class);
+		var form = registry.byId('addEntityForm' +  '_' + entity_class);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
 			return;
 		}
 		var formdata = getEgresoFormData(entity_class);
-		var grid = registry.byId('gridEgreso');
+		var grid = registry.byId('grid_Egreso');
 		var id = formdata['bienoservicio'] + formdata['detalle'].replace(/ /g,'');
 		var row = grid.store.get(id);
 		if (row){
@@ -170,11 +183,11 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	});
 	
 	
-	parser.instantiate([dom.byId('nuevoEgresoBtn')]);
-	on(registry.byId('nuevoEgresoBtn'),'click',function(e){
-		registry.byId('addEntityForm' + entity_class).reset();
+	parser.instantiate([dom.byId('nuevo_EgresoBtn')]);
+	on(registry.byId('nuevo_EgresoBtn'),'click',function(e){
+		registry.byId('addEntityForm' +  '_' + entity_class).reset();
 		resetGrid();
-		dom.byId('numeroEgreso').innerHTML='';
+		dom.byId('numero_Egreso').innerHTML='';
 	});
 	
 	
@@ -221,8 +234,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		store : store,
 		structure : columns,
 		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
-	}, 'gridEgreso');
+	}, 'grid_Egreso');
 	grid.startup();
 	grid.updateTotal = updateTotal;
-	domClass.add(dom.byId('gridEgreso'),'egreso-grid');
+	domClass.add(dom.byId('grid_Egreso'),'egreso-grid');
 }); 

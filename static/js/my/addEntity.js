@@ -4,36 +4,40 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 		 'dojo/domReady!'],
 function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json, Memory) {
 	var entity_class = saludable.entity_class;
-	parser.instantiate([dom.byId('agregar_btn' + entity_class)]);
+	parser.instantiate([dom.byId('agregar_btn' + '_' + entity_class)]);
 	var buttons={};
-	buttons[entity_class] =  registry.byId('agregar_btn' + entity_class);
+	buttons[entity_class] =  registry.byId('agregar_btn' + '_' + entity_class);
 	//Register select buttons to listen to topics
 	var selects = query("[data-dojo-type='dijit/form/Select']");
 	parser.instantiate(selects);
 	selects.forEach(function(element){
 		var selectDijit = registry.byId(element.id);
 		selectDijit.listenerfunc = function(data){
-    		selectDijit.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
-    		var store = new Memory({data: selectDijit.options});
-    		var sorted = store.query({},{sort: [{ attribute: "label"}]});
-    		selectDijit.options = sorted;
-    		selectDijit.set("value",sorted[0].value);
+			if (data.action == 'ADD'){
+				selectDijit.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
+    			var store = new Memory({data: selectDijit.options});
+    			var sorted = store.query({},{sort: [{ attribute: "label"}]});
+    			selectDijit.options = sorted;
+    			selectDijit.set("value",sorted[0].value);	
+			}else if (data.action == 'DELETE'){
+				selectDijit.removeOption(data.value);	
+			}
     	};
-		var topicStr = element.id.substring(0,element.id.lastIndexOf(entity_class)).toUpperCase();
+		var topicStr = element.id.substring(0,element.id.lastIndexOf( '_' + entity_class)).toUpperCase();
 		console.log(selectDijit.id + ' SUBSCRIBING TO TOPIC:' + topicStr);
 		topic.subscribe(topicStr, selectDijit.listenerfunc);
 	});
 
 	on(buttons[entity_class], "click", function(e) {
 		var entity_class = saludable.entity_class; 
-		if (registry.byId('addEntityForm'+ entity_class).validate()) {
-			var formdata = registry.byId('addEntityForm'+ entity_class).get('value');
+		if (registry.byId('addEntityForm'+ '_' + entity_class).validate()) {
+			var formdata = registry.byId('addEntityForm'+  '_' + entity_class).get('value');
 			formdata.entity_class = entity_class;
 			proplistdata = {};
 			var propNodes = query('.listpropTextarea'); 
 			if(propNodes){
 				propNodes.forEach(function(node){
-					var propname = node.id.replace(entity_class,'').replace('text','');
+					var propname = node.id.replace('_' + entity_class,'').replace('text','');
 					var textarea = registry.byId(node.id);
 					proplistdata[propname]=textarea.value; 	
 				});
@@ -43,14 +47,13 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 				data : formdata,
 				handleAs: 'json'
 			}).then(function(response) {
-				var grid = registry.byId("gridNode"+ entity_class);
+				var grid = registry.byId("gridNode"+  '_' + entity_class);
 				var key = response.key;
 				var response_user='';
 				if (response.message == 'Created') {
 					grid ? grid.store.add(response.entity) : '' ;
 					response_user = 'Se creo nuevo ' + entity_class + ': ' + response.key;
-					console.log('PUBLISHING TOPIC:' + entity_class.toUpperCase());
-				    topic.publish(entity_class.toUpperCase(), {'label':response.entity.rotulo,'value':response.key});
+				    topic.publish(entity_class.toUpperCase(), {'action':'ADD','label':response.entity.rotulo,'value':response.key});
 				} else {
 					if(grid){
 						var row = grid.store.get(key);
@@ -60,11 +63,11 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 					}
 					response_user = 'Se actualizo ' + entity_class + ': ' + response.key;
 				}
-				dom.byId('server_response'+ entity_class).innerHTML = response_user;
+				dom.byId('server_response'+ '_' + entity_class).innerHTML = response_user;
 				setTimeout(function() {
-					numero = registry.byId('numero'+entity_class);
-					dom.byId('reset'+ entity_class).click();
-					dom.byId('server_response'+ entity_class).innerHTML = '';
+					numero = registry.byId('numero'+ '_' + entity_class);
+					dom.byId('reset'+ '_'+ entity_class).click();
+					dom.byId('server_response'+  '_' + entity_class).innerHTML = '';
 					if (numero){
 						value = numero.value;
 						numero.set('value', value + 1);	
@@ -84,15 +87,15 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 		var propname = button.id.split('_')[1];
 		if (button.id.search('Agregar') != -1){
 			on(button,"click",function(e){
-				bienoservicio = registry.byId(propname + entity_class).value;
-				var textarea = registry.byId('text' + propname + entity_class);
+				bienoservicio = registry.byId(propname +  '_' + entity_class).value;
+				var textarea = registry.byId('text' + propname + '_' + entity_class);
 				var text = textarea.value + bienoservicio +'; ';
 				textarea.set('value',text);
 			});	
 		}else{
 			on(button,"click",function(e){
-			bienoservicio = registry.byId(propname + entity_class).value;
-			var textarea = registry.byId('text' + propname + entity_class);
+			bienoservicio = registry.byId(propname + '_' + entity_class).value;
+			var textarea = registry.byId('text' + propname +  '_' + entity_class);
 			var text = textarea.value.replace(bienoservicio+';','').trim();
 			textarea.set('value',text);
 		});

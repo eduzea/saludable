@@ -14,61 +14,61 @@
 		<title>Salud-Able Foods</title>
 	</head>
 	<body class="claro">
-		<div data-dojo-type="dijit/form/Form" id="addEntityForm{{entityClass}}" data-dojo-id="addEntityForm{{entityClass}}" encType="multipart/form-data">
+		<div data-dojo-type="dijit/form/Form" id="addEntityForm_{{entityClass}}" data-dojo-id="addEntityForm_{{entityClass}}" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleado{{entityClass}}'>Empleado :</label></td>
+					<td><label for='empleado_{{entityClass}}'>Empleado :</label></td>
 					<td><div style="width:300px">
 							{{tagForField(entityClass,props['Empleado'])}}
 						</div>
 					</td>
-					<td><label for='fecha{{entityClass}}'>Fecha: </label></td>
-					<td><input type="text" name='fecha{{entityClass}}' id='fecha{{entityClass}}' value="now" 
+					<td><label for='fecha_{{entityClass}}'>Fecha: </label></td>
+					<td><input type="text" name='fecha_{{entityClass}}' id='fecha_{{entityClass}}' value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
 							required="true" style="width:100px;font-size:70%" />
 					</td>
-					<td><label for='numero{{entityClass}}'>&nbsp;&nbsp;No.: </label> </td>
-					<td><div id='numero{{entityClass}}'></div></td>
-					<td>&nbsp;&nbsp;<input id="{{entityClass}}PorPagina" name="{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
+					<td><label for='numero_{{entityClass}}'>&nbsp;&nbsp;No.: </label> </td>
+					<td><div id='numero_{{entityClass}}'></div></td>
+					<td>&nbsp;&nbsp;<input id="_{{entityClass}}PorPagina" name="_{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
 				</tr>					
 				<tr>
-					<td><label for='cliente{{entityClass}}'>Cliente: </label></td>
+					<td><label for='cliente_{{entityClass}}'>Cliente: </label></td>
 					<td><div style="width:300px">
 							{{tagForField(entityClass,props['Cliente'])}}
 						</div>
 					</td>
-					<td><label for='porcion{{entityClass}}'>Porcion: </label></td>
-					<td><div id='porcion{{entityClass}}'></div></td>
+					<td><label for='porcion_{{entityClass}}'>Porcion: </label></td>
+					<td><div id='porcion_{{entityClass}}'></div></td>
 					<td>
-						<input type="text" name="anulada{{entityClass}}" data-dojo-type="dijit/form/TextBox"
-    					data-dojo-props="readOnly:true" id="anulada{{entityClass}}" style="visibility: hidden;width:100px;border:none"/>
+						<input type="text" name="anulada_{{entityClass}}" data-dojo-type="dijit/form/TextBox"
+    					data-dojo-props="readOnly:true" id="anulada_{{entityClass}}" style="visibility: hidden;width:100px;border:none"/>
 					</td>
 					<td>
-						<input id="iva{{entityClass}}" name="iva{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
+						<input id="iva_{{entityClass}}" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
 					</td>
 				</tr>
 				<tr>
-					<td><label for="producto{{entityClass}}">Producto: </label></td>
-					<td><div id='producto{{entityClass}}'></div></td>
-					<td><label for='cantidad{{entityClass}}'>Cantidad:</label></td>
+					<td><label for="producto_{{entityClass}}">Producto: </label></td>
+					<td><div id='producto_{{entityClass}}'></div></td>
+					<td><label for='cantidad_{{entityClass}}'>Cantidad:</label></td>
 					<td>{{tagForField(entityClass,props['Cantidad'])}}</td>
-					<td><button id='agregarPedidoBtn{{entityClass}}' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
-					<td><button id='nueva{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Nueva {{entityClass}}</button></td>
+					<td><button id='agregarPedidoBtn_{{entityClass}}' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
+					<td><button id='nueva_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Nueva {{entityClass}}</button></td>
 					<td></td>
-					<td><button id='anular{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Anular {{entityClass}}</button></td>
+					<td><button id='anular_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Anular {{entityClass}}</button></td>
 				</tr>
 			</table>
-			<div id="grid{{entityClass}}"></div>	
+			<div id="grid_{{entityClass}}"></div>	
 		</div>
 		<table>
 			<tr>
 				<td>
-					<button id='guardar{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
+					<button id='guardar_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
 				</td>
 				<td><label>SUBTOTAL: $ </label><label id="subtotal">0</label></td><td>
 				<td><label>IVA: $ </label><label id="iva">0</label></td></td><td>
 				<td><label>TOTAL: $ </label><label id="total">0</label></td></td><td>
-				<td><div id='mensaje{{entityClass}}' style="color: red"></div></td>
+				<td><div id='mensaje_{{entityClass}}' style="color: red"></div></td>
 			</tr>
 		</table>
 	</body>

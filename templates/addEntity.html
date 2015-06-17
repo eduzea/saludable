@@ -11,7 +11,7 @@
 	</head>	
 	<body class="claro">
 		<center>
-		<div class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm{{ entity_class }}" data-dojo-id="addEntityForm{{ entity_class }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
+		<div class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm_{{ entity_class }}" data-dojo-id="addEntityForm_{{ entity_class }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for field in fields %}
 				<tr>
@@ -22,15 +22,15 @@
 				</tr>
 				{% endfor %}
 			</table>
-			<button data-dojo-type="dijit/form/Button" id="agregar_btn{{ entity_class }}" type="button">
+			<button data-dojo-type="dijit/form/Button" id="agregar_btn_{{ entity_class }}" type="button">
 				Agregar {{ entity_class }}
 			</button>
-			<button id='reset{{ entity_class }}' data-dojo-type="dijit/form/Button" type="reset">
+			<button id='reset_{{ entity_class }}' data-dojo-type="dijit/form/Button" type="reset">
 				Borrar todo
 			</button>
 			<br/>
 			<br/>
-			<div id="server_response{{ entity_class }}" style="color: red"></div>
+			<div id="server_response_{{ entity_class }}" style="color: red"></div>
 		</div>			
 		</center>
 	</body>

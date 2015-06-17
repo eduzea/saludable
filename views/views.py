@@ -197,19 +197,19 @@ class SaveEntity(webapp2.RequestHandler):
         entity_class = values.pop("entity_class")
         
         for key,value in values.iteritems():
-            values[rreplace(key, entity_class,'',1)] = values.pop(key)
+            values[rreplace(key, '_' + entity_class,'',1)] = values.pop(key)
         response = create_entity(entity_class,values)
         self.response.out.write(JSONEncoder().encode(response))
 
 def tagForField(entity_class, prop, auto=None):
     tag = ''
     if auto and prop['id'] in auto:
-        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag = '<input type="text" id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' +entity_class 
         tag +='" required="' + prop['required'] 
         tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + str(auto[prop['id']]) + '" readonly'
         tag += '/>'
     elif type(prop['type']) == ndb.KeyProperty:
-        tag = "<select name='" + prop['id'] + entity_class + "' id='" + prop['id'] + entity_class + "' data-dojo-type='dijit/form/Select'>"
+        tag = "<select name='" + prop['id'] + '_' + entity_class + "' id='" + prop['id'] + '_' + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
             dicc = option.to_dict()
@@ -217,23 +217,23 @@ def tagForField(entity_class, prop, auto=None):
             tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
         tag += "</select>"
         if prop['type']._repeated == True:
-            tag += '<button class = "listprop" id="listpropBtnAgregar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
-            tag += '<button class = "listprop" id="listpropBtnQuitar' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
-            tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="text' + prop['id'] + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
+            tag += '<button class = "listprop" id="listpropBtnAgregar' + '_' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
+            tag += '<button class = "listprop" id="listpropBtnQuitar' + '_' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
+            tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="text' + prop['id'] + '_' + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
     elif type(prop['type']) == ndb.DateProperty:
-        tag = '<input type="text" name="' + prop['id'] + entity_class + '" id="' + prop['id'] + entity_class + '" value="now" data-dojo-type="dijit/form/DateTextBox"' 
+        tag = '<input type="text" name="' + prop['id'] + '_' + entity_class + '" id="' + prop['id'] + '_' + entity_class + '" value="now" data-dojo-type="dijit/form/DateTextBox"' 
         'constraints="{datePattern:\'y-M-d\', strict:true}" required="true" style="width:100px;font-size:70%" />'
     elif type(prop['type']) == ndb.TextProperty:
-        tag = '<textarea id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag = '<textarea id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' + entity_class 
         tag +='" required="' + prop['required'] 
         tag += '" data-dojo-type="' + prop['valid'] +'" rows="3" cols="30" style="width:auto;"/></textarea>'
     elif type(prop['type']) == ndb.BooleanProperty:
-        tag = '<input id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class +'" data-dojo-type="dijit.form.CheckBox" value="si"'
-        tag += 'onChange="this.checked ? document.getElementById(\''+ prop['id'] +  entity_class +'hidden\').disabled = true : document.getElementById(\''+ prop['id'] +  entity_class +'hidden\').disabled = false "/>'
-        tag += '<input id="' + prop['id'] +  entity_class +'hidden" name="'+ prop['id'] + entity_class +'hidden" type="hidden" value="no" data-dojo-type="dijit.form.TextBox"/>'
+        tag = '<input id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' + entity_class +'" data-dojo-type="dijit.form.CheckBox" value="si"'
+        tag += 'onChange="this.checked ? document.getElementById(\''+ prop['id'] +  '_' + entity_class +'hidden\').disabled = true : document.getElementById(\''+ prop['id'] +  '_' + entity_class +'hidden\').disabled = false "/>'
+        tag += '<input id="' + prop['id'] +  '_' + entity_class +'hidden" name="'+ prop['id'] + '_' + entity_class +'hidden" type="hidden" value="no" data-dojo-type="dijit.form.TextBox"/>'
     else:
         value = str(prop['default']) if 'default' in prop else ''
-        tag = '<input type="text" id="' + prop['id'] +  entity_class +'" name="'+ prop['id'] + entity_class 
+        tag = '<input type="text" id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' + entity_class 
         tag +='" required="' + prop['required'] 
         tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + value + '" '
         tag += '/>'
@@ -322,7 +322,7 @@ class GetProducto(webapp2.RequestHandler):
         post_data = self.request.POST.mixed()
         cliente = Cliente.get_by_id(post_data['cliente'])
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupo == grupo,  projection = [Precio.producto], distinct=True).fetch()
+        precios = Precio.query(Precio.grupoDePrecios == grupo,  projection = [Precio.producto], distinct=True).fetch()
         productos = [precio.producto.id() for precio in precios]
         if not productos:
             productos.append('No hay precios definidos')
@@ -334,7 +334,7 @@ class GetPorcion(webapp2.RequestHandler):
         cliente = Cliente.get_by_id(post_data['cliente'])
         producto= Producto.get_by_id(post_data['producto']) 
         grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupo == grupo,
+        precios = Precio.query(Precio.grupoDePrecios == grupo,
                                Precio.producto == producto.key,
                                projection = [Precio.porcion], distinct=True).fetch()
         porciones = [precio.porcion.id() for precio in precios]
@@ -346,7 +346,7 @@ class GetPrice(webapp2.RequestHandler):
         post_data = self.request.POST
         values = post_data.mixed()
         precioQuery = Precio.query(Precio.producto == Producto.get_by_id(values['producto']).key,
-                                   Precio.grupo == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
+                                   Precio.grupoDePrecios == Cliente.get_by_id(values["cliente"]).grupoDePrecios,
                                    Precio.porcion == Porcion.get_by_id(values["porcion"]).key)
         precio = ''
         try:
@@ -491,7 +491,7 @@ def getConsecutivo(entity_class):
         numero[0].put()
         return numero[0].consecutivo
     else:
-        tipo[esRemision](consecutivo=int(0)).put()
+        tipo[entity_class](consecutivo=int(0)).put()
         return 0;
          
 class GuardarFactura(webapp2.RequestHandler):        

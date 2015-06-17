@@ -14,6 +14,7 @@ require(['dojo/store/Memory',
 		 "dojo/on",
 		 'gridx/support/exporter/toCSV',
 		 'dojo/aspect',
+		 'dojo/topic',
 		 'gridx/modules/SingleSort',
 		 "gridx/modules/Pagination",
 		 "gridx/modules/pagination/PaginationBar",
@@ -22,7 +23,7 @@ require(['dojo/store/Memory',
 		 'gridx/support/exporter/exporter',
 		 'dijit/form/SimpleTextarea',
 		 'dijit/form/CheckBox'], 
-function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect) {
+function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect,topic) {
 	var entity_class = saludable.entity_class;
 	request('/entityData?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
 		var store = new Store({
@@ -53,7 +54,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
     						grid.store.remove(selectedRowId);
     						grid.model.clearCache();
     						grid.body.refresh();
-    						
+    						topic.publish(entity_class.toUpperCase(), {'action':'DELETE','value':rowData.id});    						
 						});
 					}
 				});
@@ -100,7 +101,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
 	   					});
 	   				}else{
-			        	var id= dijit.id.replace(entity_class,''); 
+			        	var id= dijit.id.replace('_' + entity_class,''); 
 			        	if(id in rowData){
 			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
 			        	}	   				
@@ -135,11 +136,11 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class);
+	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ '_' + entity_class);
 	                    if (nodelist.length == 0){
 	                    	var contentPane= registry.byId(entity_class + '_add');
 							contentPane.set("onDownloadEnd", function(){
-								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ entity_class );
+								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ '_' + entity_class );
 								parser.instantiate(nodelist);
     							fillForm(nodelist, rowData, entity_class);	
 							});
