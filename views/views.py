@@ -73,10 +73,25 @@ def getColumns(entity_class):
         columns.append(colProps);
     return columns
 
+def buildQuery(entityClass,params):
+    conditions = []
+    for key,value in params.iteritems():
+        if key == "entityClass": continue
+        if 'fecha' in key:
+            if 'Desde' in key:
+                condition = entityClass._properties['fecha'] >= datetime.strptime(value, "%Y-%m-%d").date()
+            elif 'Hasta' in key:
+                condition = entityClass._properties['fecha'] <= datetime.strptime(value, "%Y-%m-%d").date()
+        else:
+            condition = entityClass._properties[key]==value
+        conditions.append(condition)
+    return entityClass.query(*conditions)
+
+
 class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        entity_query = classModels[entity_class].query()
+        entity_query = buildQuery(classModels[entity_class], self.request.params)
         entities = entity_query.fetch()
         records=[]
         props = classModels[entity_class]._properties
@@ -383,7 +398,8 @@ class GetVentas(webapp2.RequestHandler):
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
         records = []
-        facturas = Factura.query().fetch()
+        entity_query = buildQuery(classModels['Factura'], self.request.params)
+        facturas = entity_query.fetch()
         for factura in facturas:
             if factura.anulada: continue
             for venta in factura.ventas:

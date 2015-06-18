@@ -1,37 +1,28 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
-require(['dojo/request'], 
-function(request) {
+require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on'], 
+function(request,registry,parser,dom,on) {
 	var tipo = saludable.entity_class;
-	var url = (tipo == 'clientes') ? '/entityData?entityClass=Factura' : '/getProductSales';
 	var config = {
-		'clientes': {
-				rows : ["cliente",'fecha','numero'],
-				vals : ["total"],
+		'Clientes': {
+				rows : ["cliente",'producto'],
+				vals : ["venta"],
 				exclusions: {'anulada':['true']},
 				hiddenAttributes:['id','empleado'],
 				aggregatorName:'Suma'
-		},
-		'productos': {
-				rows : ["producto",'porcion'],
-				vals : ["venta"],
-				aggregatorName:'Suma'
-			}
+		}
 	};
 	
-	var meses = [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ];
-    
-	var ammendRecord = function (record){
-		var fecha = new Date(record.fecha);
-		var mes = meses[fecha.getMonth()];
-		record.mes = mes;
-		return record;
-	};
-	request(url, {handleAs:'json'}).then(function(response) {
-		var records = response.records;
-		var ammendedRecords = records.map(ammendRecord);
-		$(function() {
-			$("#" + tipo + "_output").pivotUI(ammendedRecords, config[tipo],false,'es');
-		});
+	
+	parser.instantiate([dom.byId('GenerarInformeBtn')]);
+	on(registry.byId('GenerarInformeBtn'),'click', function(e){
+		var desde = registry.byId('fecha_pivot_1').value.toISOString().split('T')[0];
+		var hasta =  registry.byId('fecha_pivot_2').value.toISOString().split('T')[0];
+		var url = '/getProductSales?fechaDesde=' + desde +'&fechaHasta=' + hasta;
+		request(url, {handleAs:'json'}).then(function(response) {
+			var records = response.records;
+			$(function() {
+				$("#" + tipo + "_output").pivotUI(records, config[tipo],false,'es');
+			});
+		});		
 	});
 }); 

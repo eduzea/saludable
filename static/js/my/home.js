@@ -1,3 +1,4 @@
+//# sourceURL=../static/js/my/home.js
 require(['dojo/dom',
 		 "dojo/dom-construct",
 		'dojo/parser',
@@ -32,17 +33,20 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');
-		var analisisNodes = makeStore(['Clientes','Productos'],'Analisis','pivot');
+		//var informeNodes = makeStore(['Ingresos','Egresos', 'Deudas','P&G'],'Informes','informes');
+		var analisisNodes = makeStore(['Clientes'],'Analisis','pivot');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
 					{id : 'Deudas', name : 'Deudas', parent:'root', clickable:false},
+					//{id : 'Informes', name : 'Informes', parent:'root', clickable:false},
 					{id : 'Analisis', name : 'Analisis', parent:'root', clickable:false},
 					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
 		data.push.apply(data,deudaNodes);
 		data.push.apply(data,adminNodes);
+		//data.push.apply(data,informeNodes);
 		data.push.apply(data,analisisNodes);
 		
 		var myStore = new Memory({

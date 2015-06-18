@@ -11,4 +11,20 @@
 <style>
     .pivot {font-family: Verdana;}
 </style>
+<table>
+	<tr>
+		<td>
+			<label for='fecha_pivot_1'>Desde: </label>
+			<input type="text" name='fecha_pivot_1' id='fecha_pivot_1' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;font-size:70%" />
+		</td>
+		<td>
+			<label for='fecha_pivot_2'>Hasta: </label>
+			<input type="text" name='fecha_pivot_2' id='fecha_pivot_2' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;font-size:70%" />
+		</td>
+		<td>
+			<button id='GenerarInformeBtn' data-dojo-type="dijit/form/Button">Generar Informe</button>
+		</td>
+	</tr>
+</table>
+
 <div class = 'pivot' id="{{ entity_class }}_output" style="margin: 10px;"></div>
