@@ -1,6 +1,6 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
-require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on'], 
-function(request,registry,parser,dom,on) {
+require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query'], 
+function(request,registry,parser,dom,on,query) {
 	var tipo = saludable.entity_class;
 	var config = {
 		'Clientes': {
@@ -25,4 +25,28 @@ function(request,registry,parser,dom,on) {
 			});
 		});		
 	});
+
+	parser.instantiate([dom.byId('copiarTabla')]);
+	on(registry.byId('copiarTabla'),'click', function () {
+		el = query(".pvtTable")[0];
+        var body = document.body, range, sel;
+        if (document.createRange && window.getSelection) {
+            range = document.createRange();
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            try {
+                range.selectNodeContents(el);
+                sel.addRange(range);
+            } catch (e) {
+                range.selectNode(el);
+                sel.addRange(range);
+            }
+        } else if (body.createTextRange) {
+            range = body.createTextRange();
+            range.moveToElementText(el);
+            range.select();
+        }
+        alert('Usa Ctr + C para copiar el informe. Despues pegalo en Excel.');
+    });
+	
 }); 
