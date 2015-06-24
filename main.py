@@ -14,6 +14,7 @@ application = webapp2.WSGIApplication([
     ('/saveEntity', SaveEntity),
     ('/showEntities',ShowEntities),
     ('/entityData', EntityData),
+    ('/getColumns', GetColumns),
     ('/deleteEntity', DeleteEntity),
     ('/getPrice', GetPrice),
     ('/getVentas', GetVentas),

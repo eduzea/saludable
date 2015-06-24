@@ -7,6 +7,7 @@ import sys
 sys.path.insert(0, 'libs/python-dateutil-1.5')
 from dateutil import parser
 from google.appengine.api import users
+from google.appengine.datastore.datastore_query import Cursor
 from models.models import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
@@ -73,10 +74,20 @@ def getColumns(entity_class):
         columns.append(colProps);
     return columns
 
+class GetColumns(webapp2.RequestHandler):
+    def get(self):
+        entity_class = self.request.get('entityClass')
+        self.response.write(json.dumps(getColumns(entity_class)))
+        
+
+
 def buildQuery(entityClass,params):
     conditions = []
     for key,value in params.iteritems():
         if key == "entityClass": continue
+        if key == "sortBy": continue
+        if key == "count": continue
+        if key == 'cursor': continue
         if 'fecha' in key:
             if 'Desde' in key:
                 condition = entityClass._properties['fecha'] >= datetime.strptime(value, "%Y-%m-%d").date()
@@ -85,14 +96,25 @@ def buildQuery(entityClass,params):
         else:
             condition = entityClass._properties[key]==value
         conditions.append(condition)
-    return entityClass.query(*conditions)
-
+    if 'sortBy' in params.keys():
+        descending = True if params['sortBy'][0]=='-' else False
+        sortField = params['sortBy'][1:]
+        if descending:
+            return entityClass.query(*conditions).order(-entityClass._properties[sortField])
+        else:
+            return entityClass.query(*conditions).order(entityClass._properties[sortField])
+    else:
+        return  entityClass.query(*conditions)
 
 class EntityData(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
+        entity_class = self.request.get('entityClass');
+        rango = self.request.headers['Range'].replace('items=','')
+        count = int(self.request.get('count'));
         entity_query = buildQuery(classModels[entity_class], self.request.params)
-        entities = entity_query.fetch()
+        total = entity_query.count()
+        curs = Cursor(urlsafe=self.request.get('cursor'))
+        entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)
         records=[]
         props = classModels[entity_class]._properties
         for entity in entities:
@@ -113,7 +135,8 @@ class EntityData(webapp2.RequestHandler):
                     dicc[prop_key] = value
             dicc['id'] = entity.key.id()
             records.append(dicc)
-        response = {'columns':getColumns(entity_class), 'records':records}
+        response = {'records':records, 'cursor': next_curs.urlsafe()}
+        self.response.headers.add("Content-Range" , "items " + rango + "/" + str(total));
         self.response.write(json.dumps(response))        
 
 class Home(webapp2.RequestHandler):
