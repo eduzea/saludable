@@ -84,7 +84,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 	parser.instantiate(listpropBtns);
 	listpropBtns.forEach(function(buttonNode){
 		button = registry.byId(buttonNode.id);
-		var propname = button.id.split('_')[1];
+		var propname = button.id.split('_')[2];
 		if (button.id.search('Agregar') != -1){
 			on(button,"click",function(e){
 				bienoservicio = registry.byId(propname +  '_' + entity_class).value;
