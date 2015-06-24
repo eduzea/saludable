@@ -83,7 +83,7 @@ function(Store, Grid, Cache, request, Button, CellWidget,registry, query, parser
 		var urlForDetails = {'Factura':'/getVentas?facturaKey=', 'Remision':'/getVentas?facturaKey=', 
 							'Egreso':'/getCompras?egresoKey='};
 							
-		var numeroDomId = {'Factura':'numeroFactura', 'Remision':'numeroRemision', 'Egreso':'numeroEgreso'};
+		var numeroDomId = {'Factura':'numero_Factura', 'Remision':'numero_Remision', 'Egreso':'numero_Egreso'};
 		var fillForm = function(nodelist, rowData, entity_class){
 			nodelist.forEach(function(node, index, array){
 	   			var dijit = registry.byId(node.id);
