@@ -112,7 +112,7 @@ class EntityData(webapp2.RequestHandler):
         rango = self.request.headers['Range'].replace('items=','')
         count = int(self.request.get('count'));
         entity_query = buildQuery(classModels[entity_class], self.request.params)
-        total = entity_query.count()
+#         total = entity_query.count()
         curs = Cursor(urlsafe=self.request.get('cursor'))
         entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)
         records=[]
@@ -124,7 +124,7 @@ class EntityData(webapp2.RequestHandler):
                 if type(prop_value) == ndb.Key:
                     try:
                         dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
-                    except Exception as e:
+                    except Exception:
                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
                 if type(prop_value) == date:
                     dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
@@ -135,8 +135,8 @@ class EntityData(webapp2.RequestHandler):
                     dicc[prop_key] = value
             dicc['id'] = entity.key.id()
             records.append(dicc)
-        response = {'records':records, 'cursor': next_curs.urlsafe()}
-        self.response.headers.add("Content-Range" , "items " + rango + "/" + str(total));
+        response = {'records':records, 'cursor': next_curs.urlsafe() if next_curs else '', 'more':more}
+#         self.response.headers.add("Content-Range" , "items " + rango + "/" + str(total));
         self.response.write(json.dumps(response))        
 
 class Home(webapp2.RequestHandler):

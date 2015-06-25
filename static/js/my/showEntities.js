@@ -120,8 +120,8 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		 	cacheClass: Cache,
 		 	store: new Store(),
           	structure: columns,
-          	paginationInitialPageSize: 5,
-		  	pageSize: 5,
+          	paginationInitialPageSize: 100,
+		  	pageSize: 100,
 	        barTop: [
 	               //"gridx/support/Summary",
 	               //"gridx/support/DropDownPager",
@@ -156,33 +156,34 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		grid.startup();
 		
 		dom.byId('masBtn_'+entity_class).onclick = function(){
-			getNextPage(cursor,count);
+			if(more){
+				getNextPage(nextCursor,grid.pageSize);	
+			}else{
+				this.innerHTML='';
+			}
 		};
 
   		//FUNCTION TO GET DATA ONE PAGE AT A TIME
   		var getNextPage = function(cursor, count){
 			jsonRest.query( {'entityClass':entity_class,'count':count,'cursor':cursor},
-							{start: 0, count: count, sort: [{ attribute: "numero", descending: true }]}
+							{start: 0, count: count,
+								 //sort: [{ attribute: "numero", descending: true }]
+								 }
     		).then(function(response){
+    			var currentData = grid.model.store.data;
+    			currentData.push.apply(currentData,response.records);
 	    		grid.model.clearCache();
-				grid.model.store.setData(response.records);
+				grid.model.store.setData(currentData);
 				grid.body.refresh();
-	  			cursorMap[0] = response.cursor;
+	  			nextCursor = response.cursor;
+	  			more = response.more;
   			});
   		};
 
 		//GET INIT DATA
-		var cursorMap = {0:''};
-		getNextPage(cursorMap[0],10);  		  		
-  		
-  		//PAGINATE
-  		/*
-  		on(grid.pagination.onSwitchPage,function(){
-  			var page = grid.pagination.currentPage();
-  			getNextPage(cursorMap[page],10);
-  		});
-  		*/
-		
+		var nextCursor = '';
+		var more = true;
+		getNextPage(nextCursor,grid.pageSize);  		  				
 		  
   	}, function(error) {
 		console.log("An errror occurred " + error);
