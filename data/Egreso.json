@@ -12797,6 +12797,100 @@
 		"total": 30000,
 		"fecha": "2015-05-29"
 	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 48000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Mango por kilos ",
+				"cantidad": 24
+			}, {
+				"compra": 100000,
+				"precio": 2500,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Feijoa por kilo ",
+				"cantidad": 40
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 676,
+		"total": 148000,
+		"fecha": "2015-05-14"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 18000,
+				"precio": 900,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Patilla por kilo",
+				"cantidad": 20
+			}, {
+				"compra": 14000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Melon por kilo",
+				"cantidad": 7
+			}, {
+				"compra": 60000,
+				"precio": 1875,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 32
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 677,
+		"total": 92000,
+		"fecha": "2015-05-16"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 220000,
+				"precio": 2200,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Lulo por kilo",
+				"cantidad": 100
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 678,
+		"total": 220000,
+		"fecha": "2015-05-19"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 64000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 32
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 679,
+		"total": 64000,
+		"fecha": "2015-05-22"
+	}, {
 		"proveedor": "PAPELERIA.PRISMA",
 		"tipo": "Costo.Variable",
 		"empleado": "Johanna.Alonso",
@@ -12815,6 +12909,280 @@
 		"numero": 68,
 		"total": 8700,
 		"fecha": "2015-01-05"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 64000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 32
+			}, {
+				"compra": 17996,
+				"precio": 818,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Patilla por kilo",
+				"cantidad": 22
+			}, {
+				"compra": 14989,
+				"precio": 1153,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Melon por kilo",
+				"cantidad": 13
+			}, {
+				"compra": 15,
+				"precio": 15,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Ajuste",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 680,
+		"total": 97000,
+		"fecha": "2015-05-23"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 80000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 40
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 681,
+		"total": 80000,
+		"fecha": "2015-05-25"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 17997,
+				"precio": 2571,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 7
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 682,
+		"total": 17997,
+		"fecha": "2015-05-26"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 27000,
+				"precio": 2700,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Guanabana",
+				"cantidad": 10
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 683,
+		"total": 27000,
+		"fecha": "2015-04-20"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta",
+		"compras": [
+			{
+				"compra": 70000,
+				"precio": 1400,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Mango por kilo",
+				"cantidad": 50
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 684,
+		"total": 70000,
+		"fecha": "2015-05-29"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 112000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 56
+			}, {
+				"compra": 69984,
+				"precio": 2592,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Guanabana por kilo",
+				"cantidad": 27
+			}, {
+				"compra": 16,
+				"precio": 16,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Ajuste",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 685,
+		"total": 182000,
+		"fecha": "2015-05-30"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 39984,
+				"precio": 1176,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Gulupa por kilo",
+				"cantidad": 34
+			}, {
+				"compra": 44999,
+				"precio": 2647,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Guanabana por kilo",
+				"cantidad": 17
+			}, {
+				"compra": 17,
+				"precio": 17,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Ajuste",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 686,
+		"total": 85000,
+		"fecha": "2015-06-03"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 160000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 80
+			}, {
+				"compra": 180000,
+				"precio": 2400,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Lulo por kilo",
+				"cantidad": 75
+			}, {
+				"compra": 39984,
+				"precio": 2352,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Guanabana por kilo",
+				"cantidad": 17
+			}, {
+				"compra": 16,
+				"precio": 16,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Ajuste",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 687,
+		"total": 380000,
+		"fecha": "2015-06-04"
+	}, {
+		"proveedor": "Aldemar.Castro",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Materia.Prima-Fruta, etc.",
+		"compras": [
+			{
+				"compra": 150000,
+				"precio": 2500,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Durazno por kilo",
+				"cantidad": 60
+			}, {
+				"compra": 96000,
+				"precio": 2000,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Fresa por kilo",
+				"cantidad": 48
+			}, {
+				"compra": 49992,
+				"precio": 2083,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Zapote por kilo",
+				"cantidad": 24
+			}, {
+				"compra": 20000,
+				"precio": 2500,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Guanabana por kilo",
+				"cantidad": 8
+			}, {
+				"compra": 8,
+				"precio": 8,
+				"bienoservicio": "Materia.Prima-Fruta",
+				"detalle": "Ajuste",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 688,
+		"total": 316000,
+		"fecha": "2015-05-27"
+	}, {
+		"proveedor": "GAS.NATURAL",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Servicios.Publicos-Gas",
+		"compras": [
+			{
+				"compra": 69120,
+				"precio": 69120,
+				"bienoservicio": "Servicios.Publicos-Gas",
+				"detalle": "Pago de factura",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 689,
+		"total": 69120,
+		"fecha": "2015-05-19"
 	}, {
 		"proveedor": "VALENPLAST",
 		"tipo": "Costo.Variable",
@@ -12841,6 +13209,196 @@
 		"total": 6500,
 		"fecha": "2015-01-05"
 	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina.Administrativa",
+		"compras": [
+			{
+				"compra": 300000,
+				"precio": 300000,
+				"bienoservicio": "Nomina.Administrativa",
+				"detalle": "Pago quincena Johanna Alonso",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 690,
+		"total": 300000,
+		"fecha": "2015-05-15"
+	}, {
+		"proveedor": "Martha.Guerrero",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Mano.de.Obra",
+		"compras": [
+			{
+				"compra": 333401,
+				"precio": 333401,
+				"bienoservicio": "Mano.de.Obra",
+				"detalle": "Pago nomina 1ra quincena de mayo",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 691,
+		"total": 333401,
+		"fecha": "2015-05-15"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Mano.de.Obra",
+		"compras": [
+			{
+				"compra": 333401,
+				"precio": 333401,
+				"bienoservicio": "Mano.de.Obra",
+				"detalle": "Pago Natalia Aljure 1ra quincena de mayo",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 692,
+		"total": 333401,
+		"fecha": "2015-05-15"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 223700,
+				"precio": 223700,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Pagos Tapsi",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 693,
+		"total": 223700,
+		"fecha": "2015-05-30"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 223700,
+				"precio": 223700,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Pagos Tapsi",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 694,
+		"total": 223700,
+		"fecha": "2015-05-30"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 16600,
+				"precio": 16600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido a ZOE y JUAN 81",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3264 Y 3265",
+		"numero": 695,
+		"total": 16600,
+		"fecha": "2015-05-30"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 25000,
+				"precio": 25000,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido SALTO DEL ANGEL Y HARRY 75",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3267 y Rem 558, Recoger el mango devuelto",
+		"numero": 696,
+		"total": 25000,
+		"fecha": "2015-05-30"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 8500,
+				"precio": 8500,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega pedido CRITTERION ",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3271",
+		"numero": 697,
+		"total": 8500,
+		"fecha": "2015-06-01"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 19200,
+				"precio": 19200,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido SALTO DEL ANGEL Y MERCADO 93",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3277 y REM 560-559",
+		"numero": 698,
+		"total": 19200,
+		"fecha": "2015-06-01"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 21600,
+				"precio": 21600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido a JARDIN HANS, CRITTERION Y JUAN 97",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3274, 3272 Y 3273",
+		"numero": 699,
+		"total": 21600,
+		"fecha": "2015-06-02"
+	}, {
 		"proveedor": "QUIMICOS.GAC.LTDA",
 		"tipo": "Costo.Variable",
 		"empleado": "Johanna.Alonso",
@@ -12859,6 +13417,196 @@
 		"numero": 70,
 		"total": 8500,
 		"fecha": "2015-01-07"
+	}, {
+		"proveedor": "QUIMICOS.GAC.LTDA",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Materia.Prima-Quimicos",
+		"compras": [
+			{
+				"compra": 16500,
+				"precio": 16500,
+				"bienoservicio": "Materia.Prima-Quimicos",
+				"detalle": "Compra kilo acido ascorbico",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 82928",
+		"numero": 700,
+		"total": 16500,
+		"fecha": "2015-06-02"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Alimentacion.Empleado",
+		"compras": [
+			{
+				"compra": 2400,
+				"precio": 2400,
+				"bienoservicio": "Alimentacion.Empleado",
+				"detalle": "Compra de cafe la bastilla 1/2 libra",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Lauripam",
+		"numero": 701,
+		"total": 2400,
+		"fecha": "2015-06-22"
+	}, {
+		"proveedor": "RIGOBERTO.REYES",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Mantenimiento.y.arreglos.locativos",
+		"compras": [
+			{
+				"compra": 5000,
+				"precio": 5000,
+				"bienoservicio": "Mantenimiento.y.arreglos.locativos",
+				"detalle": "Arreglo selladora",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Shadday Javier",
+		"numero": 702,
+		"total": 5000,
+		"fecha": "2015-06-04"
+	}, {
+		"proveedor": "OFELIA.GARCIA",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina-Turnos",
+		"compras": [
+			{
+				"compra": 42000,
+				"precio": 42000,
+				"bienoservicio": "Nomina-Turnos",
+				"detalle": "Pago de turno del dia 27 de mayo de 2015",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 703,
+		"total": 42000,
+		"fecha": "2015-06-05"
+	}, {
+		"proveedor": "Lilia.Sierra",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina-Turnos",
+		"compras": [
+			{
+				"compra": 120000,
+				"precio": 30000,
+				"bienoservicio": "Nomina-Turnos",
+				"detalle": "Pago de turnos de 27 de mayo, 2, 4 y 5 de junio de 2015",
+				"cantidad": 4
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 704,
+		"total": 120000,
+		"fecha": "2015-06-05"
+	}, {
+		"proveedor": "LUZ.MARINA.GARZON",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina-Turnos",
+		"compras": [
+			{
+				"compra": 138750,
+				"precio": 138750,
+				"bienoservicio": "Nomina-Turnos",
+				"detalle": "Pago de 3 tunos y 8 horas",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 705,
+		"total": 138750,
+		"fecha": "2015-06-04"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido CRITTERION, JUAN 97 Y SALTO DEL ANGEL",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "fACT 3288, 3287 Y rem 562",
+		"numero": 706,
+		"total": 1600,
+		"fecha": "2015-06-05"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 18200,
+				"precio": 18200,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos HARRY CARTAGENA",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fat 3290",
+		"numero": 707,
+		"total": 18200,
+		"fecha": "2015-06-05"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos HARRY 75 Y RESTAURANTE ARABE",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fat 3293 y 3294",
+		"numero": 708,
+		"total": 1600,
+		"fecha": "2015-06-06"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos SALTO DEL ANGEL y JUAN 81",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Rem, 563 y Fact 3292",
+		"numero": 709,
+		"total": 1600,
+		"fecha": "2015-06-06"
 	}, {
 		"proveedor": "No.reportado",
 		"tipo": "Costo.Variable",
@@ -12882,6 +13630,196 @@
 		"proveedor": "No.reportado",
 		"tipo": "Costo.Variable",
 		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido CRITTERION ",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3295",
+		"numero": 710,
+		"total": 1600,
+		"fecha": "2015-06-09"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos JUAN 97, ZOE Y HARRY 69",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3296, 3297 Y 3298",
+		"numero": 711,
+		"total": 1600,
+		"fecha": "2015-06-10"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Alimentacion.Empleado",
+		"compras": [
+			{
+				"compra": 1500,
+				"precio": 1500,
+				"bienoservicio": "Alimentacion.Empleado",
+				"detalle": "Compra 1 lb de azucar en LAURIPAN",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 712,
+		"total": 1500,
+		"fecha": "2015-06-10"
+	}, {
+		"proveedor": "VALENPLAST",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Materia.Prima-Bolsas.Plasticas",
+		"compras": [
+			{
+				"compra": 94000,
+				"precio": 94000,
+				"bienoservicio": "Materia.Prima-Bolsas.Plasticas",
+				"detalle": "Compra de bolsa",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 125",
+		"numero": 713,
+		"total": 94000,
+		"fecha": "2015-06-11"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Alimentacion.Empleado",
+		"compras": [
+			{
+				"compra": 1000,
+				"precio": 1000,
+				"bienoservicio": "Alimentacion.Empleado",
+				"detalle": "PANADERIA LAURIPAN, UNA CAJA DE FOSFOROS",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 714,
+		"total": 1000,
+		"fecha": "2015-06-11"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos JUAN 97, HARRY 69 Y SALTO DEL ANGEL",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3305-3307 y REM 566",
+		"numero": 715,
+		"total": 1600,
+		"fecha": "2015-06-11"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedido CENTROKO",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3306",
+		"numero": 716,
+		"total": 1600,
+		"fecha": "2015-06-11"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos HARRY 75, CRITTERION Y SALTO DEL ANGEL",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3311, 3310, 3312 Y REM 567",
+		"numero": 717,
+		"total": 1600,
+		"fecha": "2015-06-11"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos MERCADO USAQUEN, JUAN 97, HARRY 75, ABACO Y SALTO DEL ANGEL",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3320, 3319, 3318, 3317 Y REM 568",
+		"numero": 718,
+		"total": 1600,
+		"fecha": "2015-06-17"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Alimentacion.Empleado",
+		"compras": [
+			{
+				"compra": 5000,
+				"precio": 5000,
+				"bienoservicio": "Alimentacion.Empleado",
+				"detalle": "Compra 1 kilo de azucar y media lb de cafe",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 719,
+		"total": 5000,
+		"fecha": "2015-06-17"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
 		"resumen": "Materia.Prima-Varios",
 		"compras": [
 			{
@@ -12897,6 +13835,139 @@
 		"numero": 72,
 		"total": 4300,
 		"fecha": "2015-01-07"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Taxis.y.Pasajes.de.Bus",
+		"compras": [
+			{
+				"compra": 1600,
+				"precio": 1600,
+				"bienoservicio": "Taxis.y.Pasajes.de.Bus",
+				"detalle": "Entrega de pedidos a SALTO DEL ANGEL, ZOE",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "Fact 3325 y REM 570",
+		"numero": 720,
+		"total": 1600,
+		"fecha": "2015-06-19"
+	}, {
+		"proveedor": "Lilia.Sierra",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina-Turnos",
+		"compras": [
+			{
+				"compra": 210000,
+				"precio": 30000,
+				"bienoservicio": "Nomina-Turnos",
+				"detalle": "pAGO DE 7 TURNOS DE LOS DIAS 6, 10, 11, 12, 13, 17 Y 18",
+				"cantidad": 7
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 721,
+		"total": 210000,
+		"fecha": "2015-06-19"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Johanna.Alonso",
+		"resumen": "Nomina.Administrativa",
+		"compras": [
+			{
+				"compra": 600000,
+				"precio": 600000,
+				"bienoservicio": "Nomina.Administrativa",
+				"detalle": "Pago JOhanna Alonso",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Bogota",
+		"comentario": "",
+		"numero": 722,
+		"total": 600000,
+		"fecha": "2015-06-16"
+	}, {
+		"proveedor": "GRAFICAS.LOS.CEREZOS",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Papeleria",
+		"compras": [
+			{
+				"compra": 144800,
+				"precio": 144800,
+				"bienoservicio": "Papeleria",
+				"detalle": "rgistro de cta camara de comercio cali",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Cali",
+		"comentario": "",
+		"numero": 723,
+		"total": 144800,
+		"fecha": "2015-05-28"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Papeleria",
+		"compras": [
+			{
+				"compra": 88950,
+				"precio": 88950,
+				"bienoservicio": "Papeleria",
+				"detalle": "impueso de rgistro cMARA",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Cali",
+		"comentario": "",
+		"numero": 724,
+		"total": 88950,
+		"fecha": "2015-05-28"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Papeleria",
+		"compras": [
+			{
+				"compra": 34000,
+				"precio": 34000,
+				"bienoservicio": "Papeleria",
+				"detalle": "NOMBRAMIENTOS Y GEGISTRO EN CAMAR",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Cali",
+		"comentario": "",
+		"numero": 725,
+		"total": 34000,
+		"fecha": "2015-05-28"
+	}, {
+		"proveedor": "No.reportado",
+		"tipo": "Costo.Variable",
+		"empleado": "Adela.Rodriguez",
+		"resumen": "Papeleria",
+		"compras": [
+			{
+				"compra": 88950,
+				"precio": 88950,
+				"bienoservicio": "Papeleria",
+				"detalle": "IMPUESTO REGISTRO NOMBRAMIENOS EN CAMARA",
+				"cantidad": 1
+			}
+		],
+		"sucursal": "Cali",
+		"comentario": "",
+		"numero": 726,
+		"total": 88950,
+		"fecha": "2015-05-28"
 	}, {
 		"proveedor": "No.reportado",
 		"tipo": "Costo.Variable",

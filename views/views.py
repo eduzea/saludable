@@ -81,7 +81,8 @@ class GetColumns(webapp2.RequestHandler):
         
 
 
-def buildQuery(entityClass,params):
+def buildQuery(entity_class,params):
+    entityClass = classModels[entity_class]
     conditions = []
     for key,value in params.iteritems():
         if key == "entityClass": continue
@@ -98,7 +99,7 @@ def buildQuery(entityClass,params):
         conditions.append(condition)
     if 'sortBy' in params.keys():
         descending = True if params['sortBy'][0]=='-' else False
-        sortField = params['sortBy'][1:]
+        sortField = keyDefs[entity_class][0]
         if descending:
             return entityClass.query(*conditions).order(-entityClass._properties[sortField])
         else:
@@ -111,7 +112,7 @@ class EntityData(webapp2.RequestHandler):
         entity_class = self.request.get('entityClass');
         rango = self.request.headers['Range'].replace('items=','')
         count = int(self.request.get('count'));
-        entity_query = buildQuery(classModels[entity_class], self.request.params)
+        entity_query = buildQuery(entity_class, self.request.params)
 #         total = entity_query.count()
         curs = Cursor(urlsafe=self.request.get('cursor'))
         entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)

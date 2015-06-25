@@ -16,6 +16,7 @@ require(['dojo/store/Memory',
 		 'gridx/support/exporter/toCSV',
 		 'dojo/aspect',
 		 'dojo/topic',
+		 "dojox/widget/Standby",
 		 //Gridx modules
 		 "gridx/modules/Bar",
 		 'gridx/support/Summary',
@@ -32,7 +33,7 @@ require(['dojo/store/Memory',
 		 //End gridx modules
 		 'dijit/form/SimpleTextarea',
 		 'dijit/form/CheckBox'], 
-function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect,topic) {
+function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect,topic,Standby) {
 	
 	//BEGIN CONFIG - this is UGLY! Consider shifting to server config...
 	var urlForDetails = {'Factura':'/getVentas?facturaKey=', 'Remision':'/getVentas?facturaKey=', 
@@ -111,6 +112,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		columns.push(borrarColumn);
 		columns.push(editarColumn);
 		
+		//Grid properties
 		var getServerPagerHtml = function(){
 			return '<span id="masBtn_' + entity_class + '" class="gridxPagerStepperBtn gridxPagerPage"  tabindex="-1">mas...</span>';
 		};
@@ -143,8 +145,10 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		    ]
          };
 		
-		var grid = new Grid(gridProps, 'gridNode'+ entity_class);
+		//Create the grid
+		var grid = new Grid(gridProps, 'gridNode_'+ entity_class);
 		
+		//To color anulada rows
 		aspect.after(grid.body, 'onAfterRow', function(row) {
 			key = row.id;
 			if ('anulada' in row.grid.store.get(key)) {
@@ -155,6 +159,12 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		}, true);
 		grid.startup();
 		
+		//Modal to show its loading
+		var standby = new Standby({target: 'gridNode_'+ entity_class});
+		document.body.appendChild(standby.domNode);
+		standby.startup();
+		
+		//Event to trigger server fetch
 		dom.byId('masBtn_'+entity_class).onclick = function(){
 			if(more){
 				getNextPage(nextCursor,grid.pageSize);	
@@ -165,9 +175,10 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 
   		//FUNCTION TO GET DATA ONE PAGE AT A TIME
   		var getNextPage = function(cursor, count){
+  			standby.show();
 			jsonRest.query( {'entityClass':entity_class,'count':count,'cursor':cursor},
 							{start: 0, count: count,
-								 //sort: [{ attribute: "numero", descending: true }]
+								 sort: [{ attribute: '', descending: true }]//sort field will be determined in the server...
 								 }
     		).then(function(response){
     			var currentData = grid.model.store.data;
@@ -177,6 +188,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 				grid.body.refresh();
 	  			nextCursor = response.cursor;
 	  			more = response.more;
+	  			standby.hide();
   			});
   		};
 
@@ -189,8 +201,8 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		console.log("An errror occurred " + error);
 	});
 	
-	parser.instantiate([dom.byId('exportarDatos'+entity_class)]);
-	var exportarBtn = registry.byId('exportarDatos'+entity_class);
+	parser.instantiate([dom.byId('exportarDatos_'+entity_class)]);
+	var exportarBtn = registry.byId('exportarDatos_'+entity_class);
 	on(exportarBtn,'click',exportarDatos);
 	
 	//HELPER FUNCTIONS
@@ -207,7 +219,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		if (label in lookup){
 			return lookup[label];	
 		}else{
-			dijit.addOption({disabled:false,label:label.replace('.',' '),selected:true,value:label});
+			dijit.addOption({label:label.replace('.',' '),selected:true, value:label.replace(' ','.')});
 		}
 	return label;
 	};
@@ -232,6 +244,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		        	var id= dijit.id.replace('_' + entity_class,''); 
 		        	if(id in rowData){
 		        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
+		        		dijit.set("displayedValue", rowData[id]);
 		        	}	   				
    				}			
    			}
@@ -239,7 +252,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	};
 				
 	var exportarDatos = function(){
-		var grid = registry.byId('gridNode'+ entity_class);
+		var grid = registry.byId('gridNode_'+ entity_class);
 		toCSV(grid).then(function(csv){
 			var win = window.open('','DATOS EXPORTADOS');
 			csv = csv.replace(/\r\n/g,'<br/>');
