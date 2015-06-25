@@ -1,8 +1,29 @@
 //# sourceURL=../static/js/my/crearFactura.js
 
-require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
-		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','dojo/store/Memory','gridx/modules/SingleSort', 'dijit/form/CheckBox'], 
+require(['dojo/dom',
+		'dojo/dom-attr',
+		'dijit/registry',
+		'dojo/parser',
+		'dojo/store/Memory',
+		'gridx/Grid',
+		'gridx/core/model/cache/Sync',
+		'dojo/request', 
+		'dijit/form/Button',
+		"gridx/modules/CellWidget",
+		'dojo/query',
+		"dojo/on",
+		"dojo/json",
+		"dojo/number",
+		'dijit/form/Select',
+		'dojo/dom-class',
+		'dojo/ready',
+		'dojo/topic',
+		'dojo/store/Memory',
+		'gridx/modules/SingleSort',
+		'dijit/form/CheckBox',
+		'gridx/modules/edit',
+		'dijit/form/NumberTextBox'
+		], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic,Memory) {
 	var entity_class = saludable.entity_class;	
 	
@@ -258,10 +279,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		{field : 'producto', name : 'Producto', style: "text-align: center"},
 		{field : 'porcion', name : 'Porcion', style: "text-align: center"},
 		{field : 'cantidad', name : 'Cantidad', style: "text-align: center"},
-		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", 
+		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", editable: true,
+				editor: "dijit.form.NumberTextBox", 
 				formatter: function(data){
 					return number.format(data.precio,{pattern:'###,###'});
 				}
+				
 		},
 		{field : 'venta', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
@@ -295,9 +318,20 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		cacheClass : Cache,
 		store : store,
 		structure : columns,
-		modules : ["gridx/modules/CellWidget",'gridx/modules/SingleSort']
+		modules : [	"gridx/modules/CellWidget",
+					'gridx/modules/SingleSort',
+					'gridx/modules/edit'
+					]
 	}, 'grid'+ '_' + entity_class);
 	grid.startup();
+	grid.edit.connect(grid.edit, "onApply", function(cell) {
+		var origData = grid.store.get(cell.row.id);
+			var venta = origData['cantidad'] * origData['precio'];
+			origData['venta'] = venta;
+			grid.row(cell.row.id).setRawData(origData);  
+			updateTotal();
+		}
+	);
 	grid.updateTotal = updateTotal;
 	domClass.add(dom.byId('grid'+ '_' + entity_class),'factura-grid');
 }); 
