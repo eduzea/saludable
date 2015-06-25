@@ -422,7 +422,7 @@ class GetVentas(webapp2.RequestHandler):
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
         records = []
-        entity_query = buildQuery(classModels['Factura'], self.request.params)
+        entity_query = buildQuery('Factura', self.request.params)
         facturas = entity_query.fetch()
         for factura in facturas:
             if factura.anulada: continue
