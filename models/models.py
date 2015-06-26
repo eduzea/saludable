@@ -75,7 +75,7 @@ class Factura(ndb.Model):
     ventas = ndb.StructuredProperty(Venta,repeated=True)
     total = ndb.IntegerProperty()    
     subtotal = ndb.IntegerProperty(default=0.0)
-    iva = ndb.BooleanProperty(default=False)
+    iva = ndb.ComputedProperty(lambda self: True if self.montoIva else False)
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
 

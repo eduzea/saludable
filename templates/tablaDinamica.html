@@ -15,19 +15,18 @@
 	<tr>
 		<td>
 			<label for='fecha_pivot_1'>Desde: </label>
-			<input type="text" name='fecha_pivot_1' id='fecha_pivot_1' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
+			<input type="text" name='fecha_pivot_1_{{ entity_class }}' id='fecha_pivot_1_{{ entity_class }}' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
 		</td>
 		<td>
 			<label for='fecha_pivot_2'>Hasta: </label>
-			<input type="text" name='fecha_pivot_2' id='fecha_pivot_2' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
+			<input type="text" name='fecha_pivot_2_{{ entity_class }}' id='fecha_pivot_2_{{ entity_class }}' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
 		</td>
 		<td>
-			<button id='GenerarInformeBtn' data-dojo-type="dijit/form/Button">Generar Informe</button>
+			<button id='GenerarInformeBtn_{{entity_class}}' data-dojo-type="dijit/form/Button">Generar Informe</button>
 		</td>
 		<td>
-			<button id='copiarTabla' data-dojo-type="dijit/form/Button">Copiar al Portapapeles</button>
+			<button id='copiarTabla_{{entity_class}}' data-dojo-type="dijit/form/Button">Copiar al Portapapeles</button>
 		</td>
 	</tr>
 </table>
-
-<div class = 'pivot' id="{{ entity_class }}_output" style="margin: 10px;"></div>
+<div class = 'pivot' id="output_{{ entity_class }}" style="margin: 10px;"></div>

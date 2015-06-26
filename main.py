@@ -45,5 +45,4 @@ application = webapp2.WSGIApplication([
     ('/tablaDinamica',TablaDinamica),
     ('/getProductSales',GetProductSales) ,
     ('/fixPrecios',FixPrecios)
-    
 ], debug=True)

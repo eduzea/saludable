@@ -21,7 +21,7 @@ require(['dojo/dom',
 		'dojo/store/Memory',
 		'gridx/modules/SingleSort',
 		'dijit/form/CheckBox',
-		'gridx/modules/edit',
+		'gridx/modules/Edit',
 		'dijit/form/NumberTextBox'
 		], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic,Memory) {
@@ -320,7 +320,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		structure : columns,
 		modules : [	"gridx/modules/CellWidget",
 					'gridx/modules/SingleSort',
-					'gridx/modules/edit'
+					'gridx/modules/Edit'
 					]
 	}, 'grid'+ '_' + entity_class);
 	grid.startup();

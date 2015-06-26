@@ -107,37 +107,50 @@ def buildQuery(entity_class,params):
     else:
         return  entityClass.query(*conditions)
 
+def prepareRecords(entity_class, entities):
+    records=[]
+    props = classModels[entity_class]._properties
+    for entity in entities:
+        dicc = entity.to_dict()
+        dicc = {key: dicc[key] for key in dicc if type(props[key]) != ndb.StructuredProperty }
+        for prop_key, prop_value in dicc.iteritems():
+            if type(prop_value) == ndb.Key:
+                try:
+                    dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
+                except Exception:
+                    dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+            if type(prop_value) == date:
+                dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+            if type(prop_value) == list:
+                value = ''
+                for item in prop_value:
+                    value += item.get().to_dict()['rotulo'] + ';'
+                dicc[prop_key] = value
+        dicc['id'] = entity.key.id()
+        records.append(dicc)
+    return records
+
+
+def getEntitiesByPage(entity_class, entity_query, count, self):
+    curs = Cursor(urlsafe=self.request.get('cursor'))
+    entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)
+    records = prepareRecords(entity_class, entities)
+    return {'records':records, 'cursor': next_curs.urlsafe() if next_curs else '', 'more':more}
+
+def getEntities(entity_class, self, entity_query):
+    entities = entity_query.fetch()
+    records = prepareRecords(entity_class, entities)
+    return {'records':records, 'count':len(records)}
+
 class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass');
-        rango = self.request.headers['Range'].replace('items=','')
-        count = int(self.request.get('count'));
         entity_query = buildQuery(entity_class, self.request.params)
-#         total = entity_query.count()
-        curs = Cursor(urlsafe=self.request.get('cursor'))
-        entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)
-        records=[]
-        props = classModels[entity_class]._properties
-        for entity in entities:
-            dicc = entity.to_dict()
-            dicc = {key: dicc[key] for key in dicc if type(props[key]) != ndb.StructuredProperty }
-            for prop_key, prop_value in dicc.iteritems():
-                if type(prop_value) == ndb.Key:
-                    try:
-                        dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
-                    except Exception:
-                        dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
-                if type(prop_value) == date:
-                    dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
-                if type(prop_value) == list:
-                    value = ''
-                    for item in prop_value:
-                        value += item.get().to_dict()['rotulo'] + ';'
-                    dicc[prop_key] = value
-            dicc['id'] = entity.key.id()
-            records.append(dicc)
-        response = {'records':records, 'cursor': next_curs.urlsafe() if next_curs else '', 'more':more}
-#         self.response.headers.add("Content-Range" , "items " + rango + "/" + str(total));
+        count = self.request.get('count');
+        if count:
+            response = getEntitiesByPage(entity_class, entity_query, int(count), self)
+        else:
+            response = getEntities(entity_class, self, entity_query)    
         self.response.write(json.dumps(response))        
 
 class Home(webapp2.RequestHandler):
@@ -558,14 +571,14 @@ class GuardarFactura(webapp2.RequestHandler):
         if values['entity_class'] == 'Remision':
             remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
                                  fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
-                                 montoIva=values['iva'], iva = True if values['iva'] else False)
+                                 montoIva=values['iva'])
             remision.put()
             entity = remision
         else:
             factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, 
                               empleado = empleado.key, fecha = fecha, ventas=ventas, total=int(values['total']),
                               subtotal=values['subtotal'], 
-                               montoIva=values['iva'], iva = True if values['iva'] else False)
+                               montoIva=values['iva'])
             factura.put()
             entity = factura
         self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
@@ -814,7 +827,7 @@ class FixPrecios(webapp2.RequestHandler):
                 del precio._properties['grupoDePrecios']
             precio.put()
 
-            
+        
             
                  
         

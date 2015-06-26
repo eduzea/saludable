@@ -1,33 +1,41 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
 require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query'], 
 function(request,registry,parser,dom,on,query) {
-	var tipo = saludable.entity_class;
+	var entity_class = saludable.entity_class;
+	var pivotUrl = {'Clientes': '/getProductSales?' ,
+					'IVA': '/entityData?entityClass=Factura'
+				}; 
+	var url = pivotUrl[entity_class];
 	var config = {
 		'Clientes': {
 				rows : ["cliente",'producto'],
 				vals : ["venta"],
-				exclusions: {'anulada':['true']},
-				hiddenAttributes:['id','empleado'],
 				aggregatorName:'Suma'
-		}
+		},
+		'IVA': {
+				rows : ["cliente",'numero','fecha'],
+				vals : ["montoIva"],
+				exclusions: {'anulada':['true'],'iva':['false'] },
+				hiddenAttributes:['id','empleado','anulada'],
+				aggregatorName:'Suma'
+			}
 	};
 	
-	
-	parser.instantiate([dom.byId('GenerarInformeBtn')]);
-	on(registry.byId('GenerarInformeBtn'),'click', function(e){
-		var desde = registry.byId('fecha_pivot_1').value.toISOString().split('T')[0];
-		var hasta =  registry.byId('fecha_pivot_2').value.toISOString().split('T')[0];
-		var url = '/getProductSales?fechaDesde=' + desde +'&fechaHasta=' + hasta;
+	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
+	on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){
+		var desde = registry.byId('fecha_pivot_1_' + entity_class).value.toISOString().split('T')[0];
+		var hasta =  registry.byId('fecha_pivot_2_' + entity_class).value.toISOString().split('T')[0];
+		url += '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
 		request(url, {handleAs:'json'}).then(function(response) {
 			var records = response.records;
 			$(function() {
-				$("#" + tipo + "_output").pivotUI(records, config[tipo],false,'es');
+				$("#" + "output_" + entity_class).pivotUI(records, config[entity_class],false,'es');
 			});
 		});		
 	});
 
-	parser.instantiate([dom.byId('copiarTabla')]);
-	on(registry.byId('copiarTabla'),'click', function () {
+	parser.instantiate([dom.byId('copiarTabla_' + entity_class)]);
+	on(registry.byId('copiarTabla_'+entity_class),'click', function () {
 		el = query(".pvtTable")[0];
         var body = document.body, range, sel;
         if (document.createRange && window.getSelection) {
