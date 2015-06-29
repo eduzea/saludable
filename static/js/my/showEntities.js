@@ -244,7 +244,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		        	var id= dijit.id.replace('_' + entity_class,''); 
 		        	if(id in rowData){
 		        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
-		        		dijit.set("displayedValue", rowData[id]);
+		        		dijit.set("displayedValue", rowData[id],false);
 		        	}	   				
    				}			
    			}

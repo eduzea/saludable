@@ -60,18 +60,18 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	};
 
 	parser.instantiate([dom.byId('tipo_Egreso')]);
-    var tipoSelect = registry.byId('tipo_Egreso');
-	tipoSelect.onChange = resetBienoservicio; 
+    var tipoSelect = registry.byId('tipo_Egreso'); 
     resetBienoservicio(tipoSelect.value);
+    tipoSelect.onChange = resetBienoservicio;
 
 	parser.instantiate([dom.byId('bienoservicio_Egreso')]);
     var bienoservicioSelect = registry.byId('bienoservicio_Egreso');    
-	bienoservicioSelect.onChange = resetProveedor; 
     resetProveedor(bienoservicioSelect.value);
-    
+	bienoservicioSelect.onChange = resetProveedor; 
+
     parser.instantiate([dom.byId('proveedor_Egreso')]);
     var proveedorSelect = registry.byId('proveedor_Egreso');    
-	proveedorSelect.onChange = resetEgreso;
+	//proveedorSelect.onChange = resetEgreso;
 	
 	var selects = [tipoSelect, bienoservicioSelect, proveedorSelect];
 	selects.forEach(function(select){

@@ -1,6 +1,6 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
-require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query'], 
-function(request,registry,parser,dom,on,query) {
+require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojox/widget/Standby"], 
+function(request,registry,parser,dom,on,query,Standby) {
 	var entity_class = saludable.entity_class;
 	var pivotUrl = {'Clientes': '/getProductSales?' ,
 					'IVA': '/entityData?entityClass=Factura'
@@ -22,15 +22,21 @@ function(request,registry,parser,dom,on,query) {
 	};
 	
 	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
+	//Modal to show its loading
+	var standby = new Standby({target: "output_" + entity_class});
+	document.body.appendChild(standby.domNode);
+	standby.startup();
 	on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){
 		var desde = registry.byId('fecha_pivot_1_' + entity_class).value.toISOString().split('T')[0];
 		var hasta =  registry.byId('fecha_pivot_2_' + entity_class).value.toISOString().split('T')[0];
-		url += '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
-		request(url, {handleAs:'json'}).then(function(response) {
+		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
+		standby.show(); 
+		request(url + appendUrl, {handleAs:'json'}).then(function(response) {
 			var records = response.records;
 			$(function() {
 				$("#" + "output_" + entity_class).pivotUI(records, config[entity_class],false,'es');
 			});
+			standby.hide();
 		});		
 	});
 
