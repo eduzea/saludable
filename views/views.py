@@ -46,16 +46,16 @@ class ValidateUser(webapp2.RequestHandler):
         if empleado:
             self.redirect(users.create_login_url('/home'))
         else:
-            tag = '<h1>No hay un usuario registrado con ese login!</h1><br>'
-            tag += '<h2>Pide al administrador que cree tu usuario</h2><br>'
-            tag += '<a href="/login">Log in</a>'
+            tag = '<h1>No hay un usuario registrado con ese login en Salud-Able!</h1><br>'
+            tag += '<h2>Pide al administrador eduzea@gmail.com que cree tu usuario.</h2><br>'
+            tag += '<a href="/logout">Log out</a>'
             self.response.write(tag)
             
 
 
 class LogOut(webapp2.RequestHandler):
     def get(self):
-        self.redirect(users.create_logout_url('/home'))
+        self.redirect(users.create_logout_url('/login'))
 
 class GetWidget(webapp2.RequestHandler):
     def get(self):
@@ -170,10 +170,17 @@ class EntityData(webapp2.RequestHandler):
 class Home(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
-        template_values = {'user': user}
-        template = JINJA_ENVIRONMENT.get_template('home.html')
-        self.response.write(template.render(template_values))
-
+        if user:
+            empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
+            if empleado:
+                template_values = {'user': user}
+                template = JINJA_ENVIRONMENT.get_template('home.html')
+                self.response.write(template.render(template_values))
+            else:
+                self.redirect(users.create_login_url('/login'))
+        else:
+            self.redirect(users.create_login_url('/login'))
+              
 def getKey(entity_class,dicc):
     key = u''
     for keypart in keyDefs[entity_class]:
