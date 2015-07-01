@@ -17,9 +17,11 @@
 		<div data-dojo-type="dijit/form/Form" id="addEntityForm_{{entityClass}}" data-dojo-id="addEntityForm_{{entityClass}}" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleado_{{entityClass}}'>Empleado :</label></td>
-					<td><div style="width:300px">
-							{{tagForField(entityClass,props['Empleado'])}}
+					<td><label for='empleado_{{entityClass}}'>Empleado:</label></td>
+					<td><div>
+	 						<select name='empleado_{{entityClass}}' id='empleado_{{entityClass}}' data-dojo-type='dijit/form/Select'>"
+								<option value='{{props["Empleado"]["value"]}}'>{{props["Empleado"]["label"]}}</option>
+	        				</select>
 						</div>
 					</td>
 					<td><label for='fecha_{{entityClass}}'>Fecha: </label></td>

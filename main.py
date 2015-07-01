@@ -6,6 +6,7 @@ application = webapp2.WSGIApplication([
     ('/test', Test),
     ('/login',LogIn),
     ('/logout',LogOut),
+    ('/validateUser', ValidateUser),
     # Single Page App
     ('/home', Home),
     ('/getWidget',GetWidget),

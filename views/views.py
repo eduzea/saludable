@@ -37,7 +37,21 @@ def isAdminUser():
 
 class LogIn(webapp2.RequestHandler):
     def get(self):
-        self.redirect(users.create_login_url('/home'))
+        print 'Testing!'
+        self.redirect(users.create_login_url('/validateUser'))
+
+class ValidateUser(webapp2.RequestHandler):
+    def get(self):
+        empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
+        if empleado:
+            self.redirect(users.create_login_url('/home'))
+        else:
+            tag = '<h1>No hay un usuario registrado con ese login!</h1><br>'
+            tag += '<h2>Pide al administrador que cree tu usuario</h2><br>'
+            tag += '<a href="/login">Log in</a>'
+            self.response.write(tag)
+            
+
 
 class LogOut(webapp2.RequestHandler):
     def get(self):
@@ -287,7 +301,8 @@ def tagForField(entity_class, prop, auto=None):
         value = str(prop['default']) if 'default' in prop else ''
         tag = '<input type="text" id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' + entity_class 
         tag +='" required="' + prop['required'] 
-        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + value + '" '
+        dojoprops = ' data-dojo-props="' + prop['dojoprops'] + '"' if 'dojoprops' in prop else ''
+        tag += '" data-dojo-type="' + prop['valid'] + '" style="width: ' + prop['width'] + ';"' + ' value="' + value + '"' + dojoprops
         tag += '/>'
     return Markup(tag)
 
@@ -469,15 +484,19 @@ class CrearEgreso(webapp2.RequestHandler):
     def get(self):
         prop_tipo = Egreso._properties['tipo']
         prop_proveedor = Egreso._properties['proveedor']
-        prop_empleado = Egreso._properties['empleado']
+#         prop_empleado = Egreso._properties['empleado']
         prop_bienoservicio = Compra._properties['bienoservicio']
         prop_detalle = Compra._properties['detalle']
         prop_comentario = Egreso._properties['comentario']
         prop_cantidad = Compra._properties['cantidad']
         prop_precio = Compra._properties['precio']
         prop_sucursal = Egreso._properties['sucursal']
+        empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
+        empleadoName = empleado.rotulo
+        empleadoValue = empleado.key.id()
         props = {'proveedor':{'ui': 'Proveedor', 'id': 'proveedor','required':'true','type':prop_proveedor},
-                 'empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
+#                  'empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
+                 'empleado': {'value':empleadoValue,'label':empleadoName},
                  'bienoservicio':{'ui': 'Bien o Servicio', 'id': 'bienoservicio','required':'true','type':prop_bienoservicio},
                  'detalle':{'ui': 'Detalle', 'id': 'detalle','required':'true', 'valid':'dijit/form/ValidationTextBox',
                             'width':'10em','type':prop_detalle},
@@ -490,7 +509,7 @@ class CrearEgreso(webapp2.RequestHandler):
                  'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo},
                  'sucursal':{'ui':'Ciudad', 'id':'sucursal','required':'true','type':prop_sucursal}
                 }
-        template_values = {'props': props}
+        template_values = {'props': props, 'entityClass':'Egreso'}
         template = JINJA_ENVIRONMENT.get_template('crearEgreso.html')
         self.response.write(template.render(template_values))
 
@@ -498,20 +517,25 @@ class CrearFactura(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
         prop_cliente = Factura._properties['cliente']
-        prop_empleado = Factura._properties['empleado']
+#         prop_empleado = Factura._properties['empleado']
         prop_producto = Venta._properties['producto']
         prop_porcion = Venta._properties['porcion']
         prop_cantidad = Venta._properties['cantidad']
+        empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
+        empleadoName = empleado.rotulo
+        empleadoValue = empleado.key.id()
         props = {'Cliente':{'ui': 'Cliente', 'id': 'cliente','required':'true','type':prop_cliente},
-                 'Empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
-                 'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
-                 'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
-                 'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
-                             'width':'5em', 'type':prop_cantidad}
-                }
+#                  'Empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
+             'Empleado': {'value':empleadoValue,'label':empleadoName},
+             'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
+             'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+             'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
+                         'width':'5em', 'type':prop_cantidad}
+            }
         template_values = {'props': props, 'entityClass':entityClass}
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
+        
 
 class SetNumber(webapp2.RequestHandler):
     def get(self):

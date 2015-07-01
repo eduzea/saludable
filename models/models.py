@@ -4,6 +4,7 @@ class Empleado(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     apellido = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
+    email = ndb.StringProperty(indexed=True)
 
 class GrupoDePrecios(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)

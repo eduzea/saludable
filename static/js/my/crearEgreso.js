@@ -146,7 +146,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 				}).then(function(response) {
 					var message='';
 					if(response.result == 'Success'){
-						message = 'Se grabo exitosamente este pedido!';
+						message = 'Se grabo exitosamente este pedido!: ' + response.egresoId;
 						egreso_data['proveedor']=registry.byId('proveedor_Egreso').attr('displayedValue');
 						egreso_data['resumen']= gridData[0].bienoservicio;
 						actualizarEgresos(response, egreso_data);

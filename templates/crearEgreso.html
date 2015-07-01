@@ -19,7 +19,9 @@
 				<tr>
 					<td><label for='empleado_Egreso'>Empleado:</label></td>
 					<td><div style="margin:10px">
-							{{tagForField('Egreso',props['empleado'])}}
+							<select name='empleado_{{entityClass}}' id='empleado_{{entityClass}}' data-dojo-type='dijit/form/Select'>"
+								<option value='{{props["empleado"]["value"]}}'>{{props["empleado"]["label"]}}</option>
+	        				</select>
 						</div>
 					</td>
 					<td><label for='fecha_Egreso'>Fecha: </label></td>

@@ -67,7 +67,9 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                       {'id':'precio','ui':'Precio','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}
                       ],
             'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}],
+                        {'id':'apellido', 'ui':'Apellido', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                        {'id':'email', 'ui':'Email', 'required':'true', 'valid':'dijit/form/ValidationTextBox','dojoprops':'validator:dojox.validate.isEmailAddress','width':'10em'}
+                        ],
             'Sucursal':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                         {'id':'direccion', 'ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                         {'id':'telefono', 'ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'}
@@ -76,7 +78,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
                        {'id':'fecha', 'ui':'Fecha', 'width':'8em'},
                        {'id':'total', 'ui':'Valor', 'width':'8em'},
-                       {'id':'empleado', 'ui':'Empleado', 'width':'8em'}
+                       {'id':'empleado', 'ui':'Empleado', 'width':'10em'}
                        ],
             'Remision':[{'id':'numero', 'ui':'Numero','width':'4em'},
                        {'id':'empleado', 'ui':'Empleado','width':'8em'},
