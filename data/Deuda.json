@@ -1,0 +1,213 @@
+[
+	{
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 593689,
+		"interes": 0.0,
+		"fecha": "2015-03-27",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-07-31",
+		"numero": 1,
+		"comentario": "Costos de transporte urbano de 1 de Febrero a 27 de Marzo",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 1252652,
+		"interes": 0.0,
+		"fecha": "2015-05-19",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-30",
+		"numero": 10,
+		"comentario": "Factura EMCALI Planta Marzo-Abril ",
+		"pagada": 67.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 200000,
+		"interes": 0.0,
+		"fecha": "2015-05-19",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-30",
+		"numero": 11,
+		"comentario": "Completar nomina Q1 Mayo Cali",
+		"pagada": 93.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 319300,
+		"interes": 0.0,
+		"fecha": "2015-05-20",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-30",
+		"numero": 12,
+		"comentario": "Transporte Urbano Abril. Tappsi.",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 250000,
+		"interes": 0.0,
+		"fecha": "2015-05-26",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-26",
+		"numero": 13,
+		"comentario": "Prestamo para fruta. Pagado desde la cuenta ppal.",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 350000,
+		"interes": 0.0,
+		"fecha": "2015-05-30",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-30",
+		"numero": 14,
+		"comentario": "Prestamo para pagar a Rosalba por Abril",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 500000,
+		"interes": 0.0,
+		"fecha": "2015-06-13",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-30",
+		"numero": 15,
+		"comentario": "Pretamo para pagar CODENSA Bogota",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 250000,
+		"interes": 0.0,
+		"fecha": "2015-06-05",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-05",
+		"numero": 16,
+		"comentario": "Envio a Bogota, bolsas plasticas",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 90300,
+		"interes": 0.0,
+		"fecha": "2015-06-10",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-10",
+		"numero": 17,
+		"comentario": "Pago de Gas Natural planta Bogota mes Mayo 2015",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 200000,
+		"interes": 0.0,
+		"fecha": "2015-06-10",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-10",
+		"numero": 18,
+		"comentario": "Anticipo laboratorios, bolsas",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 400000,
+		"interes": 0.0,
+		"fecha": "2015-06-16",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-16",
+		"numero": 19,
+		"comentario": "Completar Q1 Junio, Cali.",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 3000000,
+		"interes": 0.0,
+		"fecha": "2015-03-05",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-29",
+		"numero": 2,
+		"comentario": "Pago de factura acumulada CODENSA Bogota.",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 270000,
+		"interes": 0.0,
+		"fecha": "2015-06-16",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-19",
+		"numero": 20,
+		"comentario": "Env\u00edo a Bogota",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 260000,
+		"interes": 0.0,
+		"fecha": "2015-06-18",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-19",
+		"numero": 21,
+		"comentario": "Anticipo arreglos locativos Cali - techo",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 971017,
+		"interes": 0.0,
+		"fecha": "2015-06-24",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-24",
+		"numero": 22,
+		"comentario": "Pago seguridad social empleados Mayo 2015",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 1000000,
+		"interes": 0.0,
+		"fecha": "2015-06-30",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-06-30",
+		"numero": 23,
+		"comentario": "Primera cuota maquina selladora",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 1000000,
+		"interes": 0.0,
+		"fecha": "2015-02-02",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-03-31",
+		"numero": 3,
+		"comentario": "Pago de arriendo, completar nomina.",
+		"pagada": 100.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 3000000,
+		"interes": 0.0,
+		"fecha": "2015-03-27",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-12-31",
+		"numero": 4,
+		"comentario": "Pago de deuda con proveedor - cheque Aldemar.",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 250000,
+		"interes": 0.0,
+		"fecha": "2015-04-01",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-04-15",
+		"numero": 6,
+		"comentario": "Pago a Hugo por adecuaciones planta Cali",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 500000,
+		"interes": 0.0,
+		"fecha": "2015-05-01",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-15",
+		"numero": 8,
+		"comentario": "Pago nomina Cali",
+		"pagada": 0.0
+	}, {
+		"acreedor": "Familia.Zea.Aljure",
+		"monto": 700000,
+		"interes": 0.0,
+		"fecha": "2015-04-15",
+		"empleado": "Eduardo.Zea",
+		"vencimiento": "2015-05-01",
+		"numero": 9,
+		"comentario": "Pago nomina Cali",
+		"pagada": 0.0
+	}
+]

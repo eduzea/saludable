@@ -135,9 +135,10 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                      {'id':'interes','ui':'Interes(EA)','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em','default':'0'},
                      {'id':'vencimiento', 'ui':'Vencimiento','width':'5.5em','required':'true','valid':''},
                      {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
-                     {'id':'pagada', 'ui':'% Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'3em','default':'0'},
+                     {'id':'montoPagado', 'ui':'Monto Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'5.5em','default':'0'},
+#                      {'id':'pagada', 'ui':'% Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'3em','default':'0'},
                      ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateNames = {'pivot':'pivot.html'}
+templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html'}
 

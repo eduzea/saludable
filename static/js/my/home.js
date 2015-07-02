@@ -33,13 +33,14 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');
-		var informeNodes = makeStore(['Clientes','IVA'],'Informes','pivot');
+		var informeNodes = makeStore(['Clientes','IVA'],'Informes','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
 					{id : 'Deudas', name : 'Deudas', parent:'root', clickable:false},
 					{id : 'Informes', name : 'Informes', parent:'root', clickable:false},
-					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
+					{id : 'Admin', name : 'Admin', parent:'root', clickable:false},
+					{id : 'Numeros', name : 'Numeros', parent:'root', template:'numeros', clickable:true, 'leaf':true}];
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
 		data.push.apply(data,deudaNodes);
@@ -67,9 +68,12 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 	var tree = new Tree({
 		model : myModel,
 		showRoot : false,
-		getIconClass: function(item){
-    		return "dijitFolderClosed";
-		}
+		//getIconClass: function(item){
+    	//	return "dijitFolderClosed";
+		//},
+		getIconClass: function(/*dojo.store.Item*/ item, /*Boolean*/ opened){
+			return (!item || this.model.mayHaveChildren(item)) ? (opened ? "dijitFolderOpened" : "dijitFolderClosed") : "dijitFolderClosed";
+		},
 	});
 	tree.model.mayHaveChildren = function (item){
 		return item.leaf;

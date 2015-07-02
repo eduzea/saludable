@@ -1,0 +1,67 @@
+<head>
+	<script type="text/javascript" src="../static/js/my/numeros.js"></script>
+</head>
+<center>
+<div data-dojo-type="dojox/layout/ContentPane" id='numeros' title="Numeros">  
+	<table style="border: 1px solid #9f9f9f;" cellspacing="10">
+		<tr>
+			<td><label>Proximo Numero de Factura:</label></td>
+			<td>
+				<div>{{tagForField('NumeroFactura',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('Factura'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numFacturaBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Remision:</label></td>
+			<td>
+				<div>{{tagForField('NumeroRemision',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('Remision'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numRemisionBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Egreso:</label></td>
+			<td>
+				<div>{{tagForField('NumeroEgreso',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('Egreso'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numEgresoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Deuda:</label></td>
+			<td>
+				<div>{{tagForField('NumeroDeuda',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('Deuda'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numDeudaBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<div id='numeroMsg' style="color: red"></div>
+</div>
+</center>

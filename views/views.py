@@ -61,14 +61,30 @@ class GetWidget(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
         temp_name = self.request.get('template')
-        template_values = {'entity_class': entityClass}
         template_name = ''
-        if temp_name in templateNames:
-            template_name = templateNames[temp_name]
+        template_values = {}
+        if temp_name in templateUrls:
+            template_name = 'dojoxWidgetLoader.html'
+            template_values['template'] = templateUrls[temp_name]
         else:
-            template_name = 'widget.html'
+            template_name = 'widget.html'#carga los views genericos de creacion y listado
+        template_values['entity_class']=entityClass
         template = JINJA_ENVIRONMENT.get_template(template_name)
         self.response.write(template.render(template_values))
+
+
+# class GetWidget(webapp2.RequestHandler):
+#     def get(self):
+#         entityClass = self.request.get('entityClass')
+#         temp_name = self.request.get('template')
+#         template_values = {'entity_class': entityClass}
+#         template_name = ''
+#         if temp_name in templateNames:
+#             template_name = templateNames[temp_name]
+#         else:
+#             template_name = 'widget.html'#carga los views genericos de creacion y listado
+#         template = JINJA_ENVIRONMENT.get_template(template_name)
+#         self.response.write(template.render(template_values))
 
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
@@ -274,12 +290,15 @@ class SaveEntity(webapp2.RequestHandler):
         response = create_entity(entity_class,values)
         self.response.out.write(JSONEncoder().encode(response))
 
-def tagForField(entity_class, prop, auto=None):
+def tagForField(entity_class, prop=None, auto=None):
     tag = ''
+    if not prop:
+        prop = fieldsInfo(entity_class)
     if auto and prop['id'] in auto:
+        readonly = '' if 'editable' in prop else 'readonly' 
         tag = '<input type="text" id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' +entity_class 
         tag +='" required="' + prop['required'] 
-        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + str(auto[prop['id']]) + '" readonly'
+        tag += '" data-dojo-type="' + prop['valid'] +'" style="width: ' + prop['width'] + ';"' + ' value="' + str(auto[prop['id']]) + '"' + readonly
         tag += '/>'
     elif type(prop['type']) == ndb.KeyProperty:
         tag = "<select name='" + prop['id'] + '_' + entity_class + "' id='" + prop['id'] + '_' + entity_class + "' data-dojo-type='dijit/form/Select'>"
@@ -294,8 +313,7 @@ def tagForField(entity_class, prop, auto=None):
             tag += '<button class = "listprop" id="listpropBtnQuitar' + '_' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Quitar</button>'
             tag += '<br/><textarea readOnly="True" class = "listpropTextarea" id="text' + prop['id'] + '_' + entity_class + '" data-dojo-type="dijit/form/SimpleTextarea" rows="3" cols="30" style="width:auto;"></textarea>'
     elif type(prop['type']) == ndb.DateProperty:
-        tag = '<input type="text" name="' + prop['id'] + '_' + entity_class + '" id="' + prop['id'] + '_' + entity_class + '" value="now" data-dojo-type="dijit/form/DateTextBox"' 
-        'constraints="{datePattern:\'y-M-d\', strict:true}" required="true" style="width:100px;font-size:70%" />'
+        tag = '<input type="text" name="' + prop['id'] + '_' + entity_class + '" id="' + prop['id'] + '_' + entity_class + '" value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:\'yyyy-MM-dd\', strict:true}" required="true"/>'
     elif type(prop['type']) == ndb.TextProperty:
         tag = '<textarea id="' + prop['id'] +  '_' + entity_class +'" name="'+ prop['id'] + '_' + entity_class 
         tag +='" required="' + prop['required'] 
@@ -330,11 +348,6 @@ def createTemplateString(entity):
         return createTemplateStrings[entity]
     else:
         return '/addEntity?entityClass=' + entity        
-
-JINJA_ENVIRONMENT.globals['tagForField']=tagForField
-JINJA_ENVIRONMENT.globals['adjustText']=adjustText
-JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
-JINJA_ENVIRONMENT.globals['createTemplateString']=createTemplateString
 
 def fieldsInfo(entity_class):
     props = classModels[entity_class]._properties
@@ -543,28 +556,21 @@ class CrearFactura(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('crearFactura.html')
         self.response.write(template.render(template_values))
         
-
 class SetNumber(webapp2.RequestHandler):
     def get(self):
         tipo = self.request.get('tipo')
         newNumero = self.request.get('numero')
         msg ='Se definio el numero de ' + tipo +' actual como: ' + newNumero
-        if tipo =='Factura':
-            numero = NumeroFactura.query().get()
+        if 'Numero' + tipo in singletons:
+            model = singletons['Numero' + tipo]
+            numero = model.query().get()
             if numero:
                 numero.consecutivo = int(newNumero)
                 numero.put()
             else:
-                NumeroFactura(consecutivo=int(newNumero)).put()
-        elif tipo == 'Remision':
-            numero = NumeroRemision.query().get()
-            if numero:
-                numero.consecutivo = int(newNumero)
-                numero.put()
-            else:
-                NumeroRemision(consecutivo=int(newNumero)).put()
+                model(consecutivo=int(newNumero)).put()
         else:
-            msg = 'Parametro "tipo" debe ser "Factura" o "Remision"'
+            msg = 'Parametro "tipo" debe estar en "singletons"'
         self.response.write(msg)
 
 def getConsecutivo(entity_class):
@@ -770,16 +776,11 @@ class ImportCSV(webapp2.RequestHandler):
                 create_entity(entity_class,values)
         self.response.write('CSV importada con exito!')
         
-class Pivot(webapp2.RequestHandler):
+class DojoxLoader(webapp2.RequestHandler):
     def get(self): 
         template_values = {'entity_class': self.request.get('entityClass')}
-        template = JINJA_ENVIRONMENT.get_template('pivot.html')
-        self.response.write(template.render(template_values))
-        
-class TablaDinamica(webapp2.RequestHandler):
-    def get(self): 
-        template_values = {'entity_class': self.request.get('entityClass')}
-        template = JINJA_ENVIRONMENT.get_template('tablaDinamica.html')
+        template = self.request.get('template')
+        template = JINJA_ENVIRONMENT.get_template(template)
         self.response.write(template.render(template_values))
         
 class GetBienesoServicios(webapp2.RequestHandler):
@@ -858,7 +859,8 @@ class FixPrecios(webapp2.RequestHandler):
                 del precio._properties['grupoDePrecios']
             precio.put()
 
-        
-            
-                 
-        
+JINJA_ENVIRONMENT.globals['tagForField']=tagForField
+JINJA_ENVIRONMENT.globals['adjustText']=adjustText
+JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
+JINJA_ENVIRONMENT.globals['createTemplateString']=createTemplateString
+JINJA_ENVIRONMENT.globals['autoNum']=autoNum        

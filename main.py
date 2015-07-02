@@ -8,8 +8,9 @@ application = webapp2.WSGIApplication([
     ('/logout',LogOut),
     ('/validateUser', ValidateUser),
     # Single Page App
-    ('/home', Home),
-    ('/getWidget',GetWidget),
+    ('/home', Home),# The rooot of the 1-page app
+    ('/getWidget',GetWidget),#Gets the right widget for each content pane in the 1-page app. 
+    ('/dojoxLoader',DojoxLoader),#uses dojox to load remote html in a content pane with scripts enabled
     # CRUD GENERAL
     ('/addEntity',AddEntity),
     ('/saveEntity', SaveEntity),
@@ -42,8 +43,7 @@ application = webapp2.WSGIApplication([
     ('/setNumero', SetNumber),
     ('/importCSV', ImportCSV),
     # Analisis
-    ('/pivot',Pivot),
-    ('/tablaDinamica',TablaDinamica),
     ('/getProductSales',GetProductSales) ,
+    #MISC
     ('/fixPrecios',FixPrecios)
 ], debug=True)

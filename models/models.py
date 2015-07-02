@@ -5,6 +5,7 @@ class Empleado(ndb.Model):
     apellido = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
     email = ndb.StringProperty(indexed=True)
+    activo = ndb.BooleanProperty(default=True)
 
 class GrupoDePrecios(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
@@ -162,4 +163,6 @@ class Deuda(ndb.Model):
     interes = ndb.FloatProperty(default=0)
     vencimiento = ndb.DateProperty()
     comentario = ndb.TextProperty()
-    pagada = ndb.FloatProperty()
+    montoPagado = ndb.IntegerProperty(default=0)
+    pagada = ndb.ComputedProperty(lambda self: 100 * self.montoPagado / self.monto)
+    
