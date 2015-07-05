@@ -3,7 +3,8 @@ require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','doj
 function(request,registry,parser,dom,on,query,Standby) {
 	var entity_class = saludable.entity_class;
 	var pivotUrl = {'Clientes': '/getProductSales?' ,
-					'IVA': '/entityData?entityClass=Factura'
+					'IVA': '/entityData?entityClass=Factura',
+					'Gastos': '/entityData?entityClass=Egreso'
 				}; 
 	var url = pivotUrl[entity_class];
 	var config = {
@@ -18,6 +19,13 @@ function(request,registry,parser,dom,on,query,Standby) {
 				exclusions: {'anulada':['true'],'iva':['false'] },
 				hiddenAttributes:['id','empleado','anulada'],
 				aggregatorName:'Suma'
+		},
+		'Gastos':{
+					rows: ['sucursal','tipo','resumen',"proveedor"],
+					vals: ['total'],
+					exclusions:{},
+					hiddenAttributes:[],
+					aggregatorName:'Suma'
 			}
 	};
 	

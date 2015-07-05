@@ -37,7 +37,6 @@ def isAdminUser():
 
 class LogIn(webapp2.RequestHandler):
     def get(self):
-        print 'Testing!'
         self.redirect(users.create_login_url('/validateUser'))
 
 class ValidateUser(webapp2.RequestHandler):

@@ -32,19 +32,20 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var adminNodes = makeStore(['Sucursal','Empleado'],'Admin');
-		var informeNodes = makeStore(['Clientes','IVA'],'Informes','tablaDinamica');
+		var adminNodes1 = makeStore(['Sucursal','Empleado'],'Admin');
+		var adminNodes2 = makeStore(['Numeros'],'Admin','numeros');
+		var informeNodes = makeStore(['Clientes','IVA','Gastos'],'Informes','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
 					{id : 'Deudas', name : 'Deudas', parent:'root', clickable:false},
 					{id : 'Informes', name : 'Informes', parent:'root', clickable:false},
-					{id : 'Admin', name : 'Admin', parent:'root', clickable:false},
-					{id : 'Numeros', name : 'Numeros', parent:'root', template:'numeros', clickable:true, 'leaf':true}];
+					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
 		data.push.apply(data,deudaNodes);
-		data.push.apply(data,adminNodes);
+		data.push.apply(data,adminNodes1);
+		data.push.apply(data,adminNodes2);
 		data.push.apply(data,informeNodes);
 		
 		var myStore = new Memory({
