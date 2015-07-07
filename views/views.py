@@ -499,6 +499,24 @@ class GetCompras(webapp2.RequestHandler):
         self.response.out.write(JSONEncoder().encode(records))
            
 
+class GetAllCompras(webapp2.RequestHandler):
+    def get(self):
+        records = []
+        entity_query = buildQuery('Egreso', self.request.params)
+        egresos = entity_query.fetch()
+        for egreso in egresos:
+            for compra in egreso.compras:
+                compra = compra.to_dict()
+                compra['egreso']=egreso.numero
+                compra['proveedor']=egreso.proveedor.get().rotulo
+                compra['fecha']=egreso.fecha
+                compra['tipo']=egreso.tipo.get().rotulo
+                compra['sucursal']=egreso.sucursal.get().rotulo
+                records.append(compra)
+        response = {'records':records}
+        self.response.out.write(JSONEncoder().encode(response))
+
+
 class CrearEgreso(webapp2.RequestHandler):
     def get(self):
         prop_tipo = Egreso._properties['tipo']

@@ -44,6 +44,7 @@ application = webapp2.WSGIApplication([
     ('/importCSV', ImportCSV),
     # Analisis
     ('/getProductSales',GetProductSales) ,
+    ('/getAllCompras',GetAllCompras) ,    
     #MISC
     ('/fixPrecios',FixPrecios)
 ], debug=True)

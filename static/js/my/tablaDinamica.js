@@ -4,7 +4,7 @@ function(request,registry,parser,dom,on,query,Standby) {
 	var entity_class = saludable.entity_class;
 	var pivotUrl = {'Clientes': '/getProductSales?' ,
 					'IVA': '/entityData?entityClass=Factura',
-					'Gastos': '/entityData?entityClass=Egreso'
+					'Gastos': '/getAllCompras?'
 				}; 
 	var url = pivotUrl[entity_class];
 	var config = {
@@ -21,8 +21,8 @@ function(request,registry,parser,dom,on,query,Standby) {
 				aggregatorName:'Suma'
 		},
 		'Gastos':{
-					rows: ['sucursal','tipo','resumen',"proveedor"],
-					vals: ['total'],
+					rows: ['sucursal','tipo','bienoservicio',"proveedor"],
+					vals: ['compra'],
 					exclusions:{},
 					hiddenAttributes:[],
 					aggregatorName:'Suma'
