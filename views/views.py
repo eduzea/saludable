@@ -505,6 +505,7 @@ class GetAllCompras(webapp2.RequestHandler):
         entity_query = buildQuery('Egreso', self.request.params)
         egresos = entity_query.fetch()
         for egreso in egresos:
+            print egreso
             for compra in egreso.compras:
                 compra = compra.to_dict()
                 compra['egreso']=egreso.numero

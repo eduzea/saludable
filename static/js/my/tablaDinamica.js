@@ -2,16 +2,23 @@
 require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojox/widget/Standby"], 
 function(request,registry,parser,dom,on,query,Standby) {
 	var entity_class = saludable.entity_class;
-	var pivotUrl = {'Clientes': '/getProductSales?' ,
+	var pivotUrl = {'Ingresos': '/getProductSales?' ,
 					'IVA': '/entityData?entityClass=Factura',
 					'Gastos': '/getAllCompras?'
 				}; 
 	var url = pivotUrl[entity_class];
 	var config = {
-		'Clientes': {
+		'Ingresos': {
 				rows : ["cliente",'producto'],
 				vals : ["venta"],
 				aggregatorName:'Suma'
+		},
+		'Gastos':{
+					rows: ['sucursal','tipo','bienoservicio',"proveedor","detalle"],
+					vals: ['compra'],
+					exclusions:{},
+					hiddenAttributes:[],
+					aggregatorName:'Suma'
 		},
 		'IVA': {
 				rows : ["cliente",'numero','fecha'],
@@ -20,13 +27,6 @@ function(request,registry,parser,dom,on,query,Standby) {
 				hiddenAttributes:['id','empleado','anulada'],
 				aggregatorName:'Suma'
 		},
-		'Gastos':{
-					rows: ['sucursal','tipo','bienoservicio',"proveedor"],
-					vals: ['compra'],
-					exclusions:{},
-					hiddenAttributes:[],
-					aggregatorName:'Suma'
-			}
 	};
 	
 	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
