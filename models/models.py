@@ -11,6 +11,16 @@ class GrupoDePrecios(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
+class Sucursal(ndb.Model):
+    nombre = ndb.StringProperty()
+    direccion = ndb.StringProperty()
+    telefono = ndb.IntegerProperty()
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+    
+class Ciudad(ndb.Model):
+    nombre = ndb.StringProperty()
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+    
 class Cliente(ndb.Model):
     """Models an individual Client."""
     nombre = ndb.StringProperty(indexed=True)
@@ -18,7 +28,7 @@ class Cliente(ndb.Model):
     nit = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.StringProperty(indexed=True)
+    ciudad = ndb.KeyProperty(kind=Ciudad)
     diasPago = ndb.IntegerProperty()
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
@@ -121,12 +131,6 @@ class Compra(ndb.Model):
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     compra = ndb.IntegerProperty()
-
-class Sucursal(ndb.Model):
-    nombre = ndb.StringProperty()
-    direccion = ndb.StringProperty()
-    telefono = ndb.IntegerProperty()
-    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
 
 class Egreso(ndb.Model):
     numero = ndb.IntegerProperty()

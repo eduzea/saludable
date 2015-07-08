@@ -32,7 +32,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var adminNodes1 = makeStore(['Sucursal','Empleado'],'Admin');
+		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad'],'Admin');
 		var adminNodes2 = makeStore(['Numeros'],'Admin','numeros');
 		var informeNodes = makeStore(['Ingresos','Gastos','Tendencias','IVA'],'Informes','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},
