@@ -485,6 +485,8 @@ class GetProductSales(webapp2.RequestHandler):
                 venta['factura']=factura.numero
                 venta['cliente']=factura.cliente.id()
                 venta['fecha']=factura.fecha
+                venta['mesnum']=factura.fecha.month
+                venta['mes']=factura.fecha.strftime('%B')
                 records.append(venta)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
@@ -507,12 +509,13 @@ class GetAllCompras(webapp2.RequestHandler):
         entity_query = buildQuery('Egreso', self.request.params)
         egresos = entity_query.fetch()
         for egreso in egresos:
-            print egreso
             for compra in egreso.compras:
                 compra = compra.to_dict()
                 compra['egreso']=egreso.numero
                 compra['proveedor']=egreso.proveedor.get().rotulo
                 compra['fecha']=egreso.fecha
+                compra['mesnum']=egreso.fecha.month
+                compra['mes']=egreso.fecha.strftime('%B')
                 compra['tipo']=egreso.tipo.get().rotulo
                 compra['sucursal']=egreso.sucursal.get().rotulo
                 records.append(compra)
