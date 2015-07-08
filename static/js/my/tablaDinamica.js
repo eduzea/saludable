@@ -23,7 +23,7 @@ function(request,registry,parser,dom,on,query,Standby) {
 		},
 		'Tendencias':{
 					cols:['mesnum','mes'],
-					rows: ['cliente'],
+					rows: ['cliente','year'],
 					vals: ['venta'],
 					exclusions:{},
 					hiddenAttributes:[],

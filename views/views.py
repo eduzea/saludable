@@ -487,6 +487,7 @@ class GetProductSales(webapp2.RequestHandler):
                 venta['fecha']=factura.fecha
                 venta['mesnum']=factura.fecha.month
                 venta['mes']=factura.fecha.strftime('%B')
+                venta['year']=factura.fecha.year
                 records.append(venta)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
@@ -516,6 +517,7 @@ class GetAllCompras(webapp2.RequestHandler):
                 compra['fecha']=egreso.fecha
                 compra['mesnum']=egreso.fecha.month
                 compra['mes']=egreso.fecha.strftime('%B')
+                compra['year']=egreso.fecha.year
                 compra['tipo']=egreso.tipo.get().rotulo
                 compra['sucursal']=egreso.sucursal.get().rotulo
                 records.append(compra)
