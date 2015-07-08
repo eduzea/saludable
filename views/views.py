@@ -152,8 +152,10 @@ def prepareRecords(entity_class, entities):
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
             if type(prop_value) == list:
                 value = ''
-                for item in prop_value:
-                    value += item.get().to_dict()['rotulo'] + ';'
+#                 for item in prop_value:
+#                     value += item.get().to_dict()['rotulo'] + ';'
+                if prop_value:
+                    value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
                 dicc[prop_key] = value
         dicc['id'] = entity.key.id()
         records.append(dicc)

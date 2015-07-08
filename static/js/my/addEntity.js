@@ -87,16 +87,16 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 		var propname = button.id.split('_')[2];
 		if (button.id.search('Agregar') != -1){
 			on(button,"click",function(e){
-				bienoservicio = registry.byId(propname +  '_' + entity_class).value;
+				bienoservicio = registry.byId(propname +  '_' + entity_class).attr('displayedValue');
 				var textarea = registry.byId('text' + propname + '_' + entity_class);
-				var text = textarea.value + bienoservicio +'; ';
+				var text = textarea.value + bienoservicio +';';
 				textarea.set('value',text);
 			});	
 		}else{
 			on(button,"click",function(e){
-			bienoservicio = registry.byId(propname + '_' + entity_class).value;
+			bienoservicio = registry.byId(propname + '_' + entity_class).attr('displayedValue');
 			var textarea = registry.byId('text' + propname +  '_' + entity_class);
-			var text = textarea.value.replace(bienoservicio+';','').trim();
+			var text = textarea.value.replace(bienoservicio + ';','').trim();
 			textarea.set('value',text);
 		});
 		}

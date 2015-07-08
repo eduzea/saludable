@@ -14,7 +14,7 @@ function(request,registry,parser,dom,on,query,Standby) {
 				aggregatorName:'Suma'
 		},
 		'Gastos':{
-					rows: ['sucursal','tipo','bienoservicio',"proveedor","detalle"],
+					rows: ['sucursal','tipo','bienoservicio',"proveedor"],
 					vals: ['compra'],
 					exclusions:{},
 					hiddenAttributes:[],

@@ -243,6 +243,9 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
    				}else{
 		        	var id= dijit.id.replace('_' + entity_class,''); 
 		        	if(id in rowData){
+		        		if (rowData[id] instanceof Array){//If a list, take first only...
+		        			rowData[id]=rowData[id][0];
+		        		}
 		        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
 		        		dijit.set("displayedValue", rowData[id],false);
 		        	}	   				
