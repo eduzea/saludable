@@ -480,7 +480,7 @@ class GetProductSales(webapp2.RequestHandler):
                 if venta['porcion'].get():
                     venta['peso']=venta['porcion'].get().valor * venta['cantidad']
                 else: 
-                    print venta
+                    print factura.numero, ":", venta
                     continue
                 venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
                 venta['factura']=factura.numero

@@ -1,13 +1,5 @@
 [
 	{
-		"unidades": "1",
-		"rotulo": "11",
-		"valor": 1
-	}, {
-		"unidades": "Und",
-		"rotulo": "1Und",
-		"valor": 1
-	}, {
 		"unidades": "Unidad",
 		"rotulo": "1Unidad",
 		"valor": 1
@@ -72,6 +64,14 @@
 		"rotulo": "250g",
 		"valor": 250
 	}, {
+		"unidades": "Gr",
+		"rotulo": "300Gr",
+		"valor": 300
+	}, {
+		"unidades": "g",
+		"rotulo": "450g",
+		"valor": 450
+	}, {
 		"unidades": "g",
 		"rotulo": "50g",
 		"valor": 50
@@ -79,6 +79,14 @@
 		"unidades": "g",
 		"rotulo": "500g",
 		"valor": 500
+	}, {
+		"unidades": "g",
+		"rotulo": "5000g",
+		"valor": 5000
+	}, {
+		"unidades": "g",
+		"rotulo": "60g",
+		"valor": 60
 	}, {
 		"unidades": "g",
 		"rotulo": "70g",

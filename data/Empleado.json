@@ -1,23 +1,27 @@
 [
 	{
+		"nombre": "Adela",
+		"activo": true,
+		"rotulo": "Adela Rodriguez",
+		"apellido": "Rodriguez",
+		"email": null
+	}, {
 		"nombre": "Eduardo",
+		"activo": true,
 		"rotulo": "Eduardo Zea",
-		"apellido": "Zea"
+		"apellido": "Zea",
+		"email": "eduzea@gmail.com"
+	}, {
+		"nombre": "Johanna",
+		"activo": true,
+		"rotulo": "Johanna Alonso",
+		"apellido": "Alonso",
+		"email": "johanna.alonso@salud-able.com"
 	}, {
 		"nombre": "Natalia",
+		"activo": true,
 		"rotulo": "Natalia Aljure",
-		"apellido": "Aljure"
-	}, {
-		"nombre": "Ofelia",
-		"rotulo": "Ofelia Garcia",
-		"apellido": "Garcia"
-	}, {
-		"nombre": "Ismenia",
-		"rotulo": "Ismenia Leon",
-		"apellido": "Leon"
-	}, {
-		"nombre": "Adela",
-		"rotulo": "Adela Rodriguez",
-		"apellido": "Rodriguez"
+		"apellido": "Aljure",
+		"email": "nataljure@salud-able.com"
 	}
 ]

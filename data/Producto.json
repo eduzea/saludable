@@ -48,8 +48,8 @@
 		"nombre": "FRESA",
 		"rotulo": "FRESA"
 	}, {
-		"nombre": "FRUTOS AMARILLOS X 150",
-		"rotulo": "FRUTOS AMARILLOS X 150"
+		"nombre": "FRUTOS AMARILLOS",
+		"rotulo": "FRUTOS AMARILLOS"
 	}, {
 		"nombre": "FRUTOS ROJOS",
 		"rotulo": "FRUTOS ROJOS"
@@ -141,6 +141,9 @@
 		"nombre": "SANDIA",
 		"rotulo": "SANDIA"
 	}, {
+		"nombre": "SEMANARIO (7 X 750)",
+		"rotulo": "SEMANARIO (7 X 750)"
+	}, {
 		"nombre": "SMOTHIE GMB",
 		"rotulo": "SMOTHIE GMB"
 	}, {
@@ -164,6 +167,12 @@
 	}, {
 		"nombre": "UVA",
 		"rotulo": "UVA"
+	}, {
+		"nombre": "ZAPOTE",
+		"rotulo": "ZAPOTE"
+	}, {
+		"nombre": "Zapote",
+		"rotulo": "Zapote"
 	}, {
 		"nombre": "fresa",
 		"rotulo": "fresa"

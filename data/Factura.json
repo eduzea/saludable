@@ -4293,7 +4293,7 @@
 		"numero": 2082,
 		"montoIva": 0.0,
 		"total": 697700,
-		"subtotal": 0.0,
+		"subtotal": 697700,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
@@ -4303,9 +4303,9 @@
 				"precio": 7200,
 				"cantidad": 6
 			}, {
-				"producto": "FALAFELS",
+				"producto": "FALAFES",
 				"venta": 654500,
-				"porcion": "1u",
+				"porcion": "1.Unidad",
 				"precio": 350,
 				"cantidad": 1870
 			}
@@ -9177,16 +9177,16 @@
 		"fecha": "2014-03-18",
 		"numero": 2179,
 		"montoIva": 0.0,
-		"total": 675500,
-		"subtotal": 0.0,
+		"total": 654500,
+		"subtotal": 654500,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
-				"producto": "FALAFELS",
-				"venta": 675500,
-				"porcion": "1u",
+				"producto": "FALAFES",
+				"venta": 654500,
+				"porcion": "1.Unidad",
 				"precio": 350,
-				"cantidad": 1930
+				"cantidad": 1870
 			}
 		]
 	}, {
@@ -12809,9 +12809,47 @@
 		"numero": 2345,
 		"montoIva": 0.0,
 		"total": 65000,
-		"subtotal": 0.0,
+		"subtotal": 65000,
 		"cliente": "C&P.CORREA.ZOE",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "MANGO",
+				"venta": 9900,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 2
+			}, {
+				"producto": "MARACUYA",
+				"venta": 11000,
+				"porcion": "750.g",
+				"precio": 5500,
+				"cantidad": 2
+			}, {
+				"producto": "FRESA",
+				"venta": 8600,
+				"porcion": "750.g",
+				"precio": 4300,
+				"cantidad": 2
+			}, {
+				"producto": "LULO",
+				"venta": 9900,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 2
+			}, {
+				"producto": "PI\u00d1A",
+				"venta": 12400,
+				"porcion": "1000.g",
+				"precio": 6200,
+				"cantidad": 2
+			}, {
+				"producto": "CURUBA",
+				"venta": 13200,
+				"porcion": "1000.g",
+				"precio": 6600,
+				"cantidad": 2
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -12839,9 +12877,41 @@
 		"numero": 2347,
 		"montoIva": 0.0,
 		"total": 54000,
-		"subtotal": 0.0,
+		"subtotal": 54000,
 		"cliente": "C&P.CORREA.ZOE",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "MANGO",
+				"venta": 9900,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 2
+			}, {
+				"producto": "PI\u00d1A",
+				"venta": 12400,
+				"porcion": "1000.g",
+				"precio": 6200,
+				"cantidad": 2
+			}, {
+				"producto": "FRESA",
+				"venta": 8600,
+				"porcion": "750.g",
+				"precio": 4300,
+				"cantidad": 2
+			}, {
+				"producto": "LULO",
+				"venta": 9900,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 2
+			}, {
+				"producto": "CURUBA",
+				"venta": 13200,
+				"porcion": "1000.g",
+				"precio": 6600,
+				"cantidad": 2
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -13406,8 +13476,8 @@
 		"fecha": "2014-04-24",
 		"numero": 2361,
 		"montoIva": 0.0,
-		"total": 39400,
-		"subtotal": 39400,
+		"total": 61700,
+		"subtotal": 61700,
 		"cliente": "C&P.CORREA.ZOE",
 		"ventas": [
 			{
@@ -13434,6 +13504,18 @@
 				"porcion": "750.g",
 				"precio": 4950,
 				"cantidad": 2
+			}, {
+				"producto": "PI\u00d1A",
+				"venta": 12400,
+				"porcion": "1000.g",
+				"precio": 6200,
+				"cantidad": 2
+			}, {
+				"producto": "CURUBA",
+				"venta": 9900,
+				"porcion": "1000.g",
+				"precio": 9900,
+				"cantidad": 1
 			}
 		]
 	}, {
@@ -15001,7 +15083,7 @@
 		"numero": 2399,
 		"montoIva": 0.0,
 		"total": 414000,
-		"subtotal": 0.0,
+		"subtotal": 414000,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
@@ -15010,12 +15092,6 @@
 				"porcion": "1000.g",
 				"precio": 7000,
 				"cantidad": 4
-			}, {
-				"producto": "FALAFELS",
-				"venta": 350000,
-				"porcion": "1u",
-				"precio": 350,
-				"cantidad": 1000
 			}, {
 				"producto": "PI\u00d1A",
 				"venta": 18000,
@@ -15028,6 +15104,12 @@
 				"porcion": "1000.g",
 				"precio": 6000,
 				"cantidad": 3
+			}, {
+				"producto": "FALAFES",
+				"venta": 350000,
+				"porcion": "1.Unidad",
+				"precio": 350,
+				"cantidad": 1000
 			}
 		]
 	}, {
@@ -16131,17 +16213,11 @@
 		"fecha": "2014-05-12",
 		"numero": 2421,
 		"montoIva": 0.0,
-		"total": 414000,
-		"subtotal": 0.0,
+		"total": 479000,
+		"subtotal": 479000,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
-				"producto": "FALAFELS",
-				"venta": 350000,
-				"porcion": "1u",
-				"precio": 350,
-				"cantidad": 1000
-			}, {
 				"producto": "LULO",
 				"venta": 33000,
 				"porcion": "1000.g",
@@ -16165,6 +16241,12 @@
 				"porcion": "1000.g",
 				"precio": 6600,
 				"cantidad": 5
+			}, {
+				"producto": "FALAFES",
+				"venta": 350000,
+				"porcion": "1.Unidad",
+				"precio": 350,
+				"cantidad": 1000
 			}
 		]
 	}, {
@@ -20538,9 +20620,77 @@
 		"numero": 2514,
 		"montoIva": 0.0,
 		"total": 305700,
-		"subtotal": 0.0,
+		"subtotal": 305700,
 		"cliente": "HARRY.SAS.HARRY.SASSON",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "FRESA",
+				"venta": 105000,
+				"porcion": "190.g",
+				"precio": 1050,
+				"cantidad": 100
+			}, {
+				"producto": "MANGO",
+				"venta": 32000,
+				"porcion": "100.g",
+				"precio": 800,
+				"cantidad": 40
+			}, {
+				"producto": "DURAZNO",
+				"venta": 11000,
+				"porcion": "125.g",
+				"precio": 1100,
+				"cantidad": 10
+			}, {
+				"producto": "UVA",
+				"venta": 24000,
+				"porcion": "180.g",
+				"precio": 1200,
+				"cantidad": 20
+			}, {
+				"producto": "LULO",
+				"venta": 16000,
+				"porcion": "120.g",
+				"precio": 800,
+				"cantidad": 20
+			}, {
+				"producto": "MORA",
+				"venta": 8000,
+				"porcion": "110.g",
+				"precio": 800,
+				"cantidad": 10
+			}, {
+				"producto": "GUAYABA",
+				"venta": 13200,
+				"porcion": "100.g",
+				"precio": 660,
+				"cantidad": 20
+			}, {
+				"producto": "PI\u00d1A",
+				"venta": 39600,
+				"porcion": "1000.g",
+				"precio": 6600,
+				"cantidad": 6
+			}, {
+				"producto": "MORA",
+				"venta": 29700,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 6
+			}, {
+				"producto": "GUAYABA",
+				"venta": 24000,
+				"porcion": "750.g",
+				"precio": 4000,
+				"cantidad": 6
+			}, {
+				"producto": "LULO",
+				"venta": 3200,
+				"porcion": "750.g",
+				"precio": 800,
+				"cantidad": 4
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20549,9 +20699,17 @@
 		"numero": 2515,
 		"montoIva": 0.0,
 		"total": 7500,
-		"subtotal": 0.0,
+		"subtotal": 7500,
 		"cliente": "AVESCO.SA.MERCADO.93",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "MANGO",
+				"venta": 7500,
+				"porcion": "1000.g",
+				"precio": 7500,
+				"cantidad": 1
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20560,9 +20718,65 @@
 		"numero": 2516,
 		"montoIva": 0.0,
 		"total": 297600,
-		"subtotal": 0.0,
+		"subtotal": 297600,
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "FEIJOA",
+				"venta": 72000,
+				"porcion": "170.g",
+				"precio": 1200,
+				"cantidad": 60
+			}, {
+				"producto": "GUANABANA.FRUTA",
+				"venta": 81000,
+				"porcion": "180.g",
+				"precio": 1620,
+				"cantidad": 50
+			}, {
+				"producto": "MELON",
+				"venta": 19600,
+				"porcion": "200.g",
+				"precio": 980,
+				"cantidad": 20
+			}, {
+				"producto": "PATILLA",
+				"venta": 18000,
+				"porcion": "200.g",
+				"precio": 900,
+				"cantidad": 20
+			}, {
+				"producto": "PI\u00d1A",
+				"venta": 29700,
+				"porcion": "150.g",
+				"precio": 990,
+				"cantidad": 30
+			}, {
+				"producto": "MORA",
+				"venta": 9500,
+				"porcion": "125.g",
+				"precio": 950,
+				"cantidad": 10
+			}, {
+				"producto": "LULO",
+				"venta": 20400,
+				"porcion": "150.g",
+				"precio": 1020,
+				"cantidad": 20
+			}, {
+				"producto": "MANGO",
+				"venta": 31200,
+				"porcion": "150.g",
+				"precio": 1040,
+				"cantidad": 30
+			}, {
+				"producto": "PATILLA",
+				"venta": 16200,
+				"porcion": "180.g",
+				"precio": 810,
+				"cantidad": 20
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20571,9 +20785,47 @@
 		"numero": 2517,
 		"montoIva": 0.0,
 		"total": 310110,
-		"subtotal": 0.0,
+		"subtotal": 310110,
 		"cliente": "INVERSIONES.LEHAL.SA.CLUB.COLOMBIA",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "FRUTOS.ROJOS",
+				"venta": 74880,
+				"porcion": "160.g",
+				"precio": 780,
+				"cantidad": 96
+			}, {
+				"producto": "FRESA",
+				"venta": 53550,
+				"porcion": "170.g",
+				"precio": 450,
+				"cantidad": 119
+			}, {
+				"producto": "MORA",
+				"venta": 63000,
+				"porcion": "150.g",
+				"precio": 600,
+				"cantidad": 105
+			}, {
+				"producto": "MANGO",
+				"venta": 51480,
+				"porcion": "130.g",
+				"precio": 660,
+				"cantidad": 78
+			}, {
+				"producto": "CURUBA",
+				"venta": 25200,
+				"porcion": "140.g",
+				"precio": 600,
+				"cantidad": 42
+			}, {
+				"producto": "MORA",
+				"venta": 42000,
+				"porcion": "700.g",
+				"precio": 6000,
+				"cantidad": 7
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20582,9 +20834,47 @@
 		"numero": 2518,
 		"montoIva": 0.0,
 		"total": 73600,
-		"subtotal": 0.0,
+		"subtotal": 73600,
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.97",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "MORA",
+				"venta": 13200,
+				"porcion": "1000.g",
+				"precio": 6600,
+				"cantidad": 2
+			}, {
+				"producto": "GUANABANA",
+				"venta": 15000,
+				"porcion": "1000.g",
+				"precio": 7500,
+				"cantidad": 2
+			}, {
+				"producto": "LULO",
+				"venta": 13000,
+				"porcion": "1000.g",
+				"precio": 6500,
+				"cantidad": 2
+			}, {
+				"producto": "FRESA",
+				"venta": 12000,
+				"porcion": "1000.g",
+				"precio": 6000,
+				"cantidad": 2
+			}, {
+				"producto": "MANGO",
+				"venta": 13600,
+				"porcion": "1000.g",
+				"precio": 6800,
+				"cantidad": 2
+			}, {
+				"producto": "FEIJOA",
+				"venta": 6800,
+				"porcion": "1000.g",
+				"precio": 6800,
+				"cantidad": 1
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20593,9 +20883,41 @@
 		"numero": 2519,
 		"montoIva": 0.0,
 		"total": 36000,
-		"subtotal": 0.0,
+		"subtotal": 36000,
 		"cliente": "POLKA.DOT/NATALIA.BOHORQUEZ",
-		"ventas": []
+		"ventas": [
+			{
+				"producto": "LULO",
+				"venta": 7000,
+				"porcion": "1000.g",
+				"precio": 7000,
+				"cantidad": 1
+			}, {
+				"producto": "MORA",
+				"venta": 7000,
+				"porcion": "1000.g",
+				"precio": 7000,
+				"cantidad": 1
+			}, {
+				"producto": "MARACUYA",
+				"venta": 7500,
+				"porcion": "1000.g",
+				"precio": 7500,
+				"cantidad": 1
+			}, {
+				"producto": "UVA",
+				"venta": 7000,
+				"porcion": "1000.g",
+				"precio": 7000,
+				"cantidad": 1
+			}, {
+				"producto": "FRUTOS.ROJOS",
+				"venta": 7500,
+				"porcion": "1000.g",
+				"precio": 7500,
+				"cantidad": 1
+			}
+		]
 	}, {
 		"anulada": false,
 		"iva": false,
@@ -20766,8 +21088,8 @@
 		"fecha": "2014-07-11",
 		"numero": 2523,
 		"montoIva": 0.0,
-		"total": 274600,
-		"subtotal": 274600,
+		"total": 294400,
+		"subtotal": 294400,
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"ventas": [
 			{
@@ -20830,6 +21152,12 @@
 				"porcion": "750.g",
 				"precio": 4950,
 				"cantidad": 8
+			}, {
+				"producto": "CURUBA",
+				"venta": 19800,
+				"porcion": "750.g",
+				"precio": 4950,
+				"cantidad": 4
 			}
 		]
 	}, {
@@ -24240,13 +24568,13 @@
 		"numero": 2600,
 		"montoIva": 0.0,
 		"total": 675500,
-		"subtotal": 0.0,
+		"subtotal": 675500,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
-				"producto": "FALAFELS",
+				"producto": "FALAFES",
 				"venta": 675500,
-				"porcion": "1u",
+				"porcion": "1.Unidad",
 				"precio": 350,
 				"cantidad": 1930
 			}
@@ -41108,7 +41436,7 @@
 		"numero": 2970,
 		"montoIva": 0.0,
 		"total": 593800,
-		"subtotal": 0.0,
+		"subtotal": 593800,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
@@ -41132,7 +41460,7 @@
 			}, {
 				"producto": "FALAFES",
 				"venta": 416000,
-				"porcion": "1.Und",
+				"porcion": "1.Unidad",
 				"precio": 320,
 				"cantidad": 1300
 			}
@@ -43363,7 +43691,7 @@
 		"numero": 3016,
 		"montoIva": 0.0,
 		"total": 380200,
-		"subtotal": 0.0,
+		"subtotal": 380200,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
@@ -43385,12 +43713,6 @@
 				"precio": 6600,
 				"cantidad": 10
 			}, {
-				"producto": "FALAFES",
-				"venta": 140800,
-				"porcion": "1.Und",
-				"precio": 320,
-				"cantidad": 440
-			}, {
 				"producto": "MARACUYA",
 				"venta": 35000,
 				"porcion": "1000.g",
@@ -43408,6 +43730,12 @@
 				"porcion": "1000.g",
 				"precio": 6400,
 				"cantidad": 5
+			}, {
+				"producto": "FALAFES",
+				"venta": 140800,
+				"porcion": "1.Unidad",
+				"precio": 320,
+				"cantidad": 440
 			}
 		]
 	}, {
@@ -44633,13 +44961,13 @@
 		"numero": 3048,
 		"montoIva": 0.0,
 		"total": 603500,
-		"subtotal": 0.0,
+		"subtotal": 603500,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"ventas": [
 			{
 				"producto": "FALAFES",
 				"venta": 603500,
-				"porcion": "1.Und",
+				"porcion": "1.Unidad",
 				"precio": 355,
 				"cantidad": 1700
 			}
@@ -46648,12 +46976,6 @@
 				"precio": 9500,
 				"cantidad": 3
 			}, {
-				"producto": "PAPAYA",
-				"venta": 22500,
-				"porcion": "1.1",
-				"precio": 7500,
-				"cantidad": 3
-			}, {
 				"producto": "PI\u00d1A",
 				"venta": 24000,
 				"porcion": "1000.g",
@@ -46676,6 +46998,12 @@
 				"venta": 25500,
 				"porcion": "1000.g",
 				"precio": 8500,
+				"cantidad": 3
+			}, {
+				"producto": "PAPAYA",
+				"venta": 22500,
+				"porcion": "1000.g",
+				"precio": 7500,
 				"cantidad": 3
 			}
 		]
@@ -49404,12 +49732,6 @@
 				"precio": 6400,
 				"cantidad": 5
 			}, {
-				"producto": "FALAFES",
-				"venta": 461500,
-				"porcion": "1.Und",
-				"precio": 355,
-				"cantidad": 1300
-			}, {
 				"producto": "GUANABANA",
 				"venta": 21000,
 				"porcion": "1000.g",
@@ -49421,6 +49743,12 @@
 				"porcion": "1000.g",
 				"precio": 7000,
 				"cantidad": 5
+			}, {
+				"producto": "FALAFES",
+				"venta": 461500,
+				"porcion": "1.Unidad",
+				"precio": 355,
+				"cantidad": 1300
 			}
 		]
 	}, {
@@ -53040,7 +53368,7 @@
 			}, {
 				"producto": "FALAFES",
 				"venta": 639000,
-				"porcion": "1.Und",
+				"porcion": "1.Unidad",
 				"precio": 355,
 				"cantidad": 1800
 			}
@@ -53793,7 +54121,7 @@
 			{
 				"producto": "LULO",
 				"venta": 150000,
-				"porcion": "1.Und",
+				"porcion": "5000.g",
 				"precio": 30000,
 				"cantidad": 5
 			}
