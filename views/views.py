@@ -663,7 +663,7 @@ class MostrarFactura(webapp2.RequestHandler):
         data = {'numero' : entity.numero,
                 'cliente': unicode(cliente.rotulo),
                 'direccion': unicode(cliente.direccion),
-                'ciudad': unicode(cliente.ciudad),
+                'ciudad': unicode(cliente.ciudad.get().rotulo),
                 'nit':cliente.nit, 
                 'fecha': entity.fecha.strftime('%Y-%m-%d'),
                 'telefono':cliente.telefono,
