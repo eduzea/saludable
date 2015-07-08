@@ -482,8 +482,7 @@ class GetProductSales(webapp2.RequestHandler):
                 else: 
                     print venta
                     continue
-                if factura.cliente.get():
-                    venta['ciudad']=factura.cliente.get().ciudad
+                venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
                 venta['factura']=factura.numero
                 venta['cliente']=factura.cliente.id()
                 venta['fecha']=factura.fecha
