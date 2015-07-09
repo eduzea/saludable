@@ -10,7 +10,7 @@ function(request,registry,parser,dom,on,query,Standby) {
 	var url = pivotUrl[entity_class];
 	var config = {
 		'Ingresos': {
-				rows : ["cliente",'producto'],
+				rows : ['ciudad',"cliente"],
 				vals : ["venta"],
 				aggregatorName:'Suma'
 		},
