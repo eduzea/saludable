@@ -1,12 +1,7 @@
 <head>
     <title>Tabla Dinamica</title>
-    <link rel="stylesheet" type="text/css" href="../static/js/lib/pivot/pivot.css">
-    <script type="text/javascript" src="../static/js/lib/jquery/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="../static/js/lib/jquery/jquery-ui-1.9.2.custom.min.js"></script>
-    <script type="text/javascript" src="../static/js/lib/pivot/pivot.js"></script>
-    <script type="text/javascript" src="../static/js/lib/pivot/pivot.es.js"></script>
-    <script>saludable.entity_class = '{{ entity_class }}';</script>
-    <script type="text/javascript" src="../static/js/my/tablaDinamica.js"></script>
+    <script>saludable.entity_class = 'PyG';</script>
+    <script type="text/javascript" src="../static/js/my/pYg.js"></script>
 </head>
 <style>
     .pivot {font-family: Verdana;}
@@ -29,4 +24,4 @@
 		</td>
 	</tr>
 </table>
-<div class = 'pivot' id="output_{{ entity_class }}" style="margin: 10px;"></div>
+<div class = 'pyg' id="output_{{ entity_class }}" style="margin: 10px;"></div>

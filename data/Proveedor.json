@@ -1,255 +1,1073 @@
 [
 	{
-		"telefono": "3447000",
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Agua;",
 		"bienesoservicios": ["Servicios.Publicos-Agua"],
-		"nombre": "ACUEDUCTO DE BOGOTA",
+		"direccion": "Av. Calle 24 No. 37-15",
+		"ciudad": "Bogota",
 		"rotulo": "ACUEDUCTO DE BOGOTA",
-		"nit": "NA",
+		"nombre": "ACUEDUCTO DE BOGOTA",
+		"telefono": "3447000",
+		"nit": "NA"
+	}, {
 		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "Av. Calle 24 No. 37-15"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Servicios-Fumigacion"],
-		"nombre": "ARRAZAR FUMIGACIONES",
-		"rotulo": "ARRAZAR FUMIGACIONES",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"nombre": "Aldemar Castro",
-		"rotulo": "Aldemar Castro",
-		"nit": "000",
-		"diasPago": 15,
-		"ciudad": "Bogota",
-		"direccion": "Cr 28 con 68"
-	}, {
-		"telefono": "3077060",
-		"bienesoservicios": ["Servicios.Financieros"],
-		"nombre": "BANCO CAJA SOCIAL",
-		"rotulo": "BANCO CAJA SOCIAL",
-		"nit": "NA",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "Centro Nari\u00f1o"
-	}, {
-		"telefono": "7115115",
-		"bienesoservicios": ["Servicios.Publicos-Energia"],
-		"nombre": "CODENSA",
-		"rotulo": "CODENSA",
-		"nit": "NA",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "Bogota"
-	}, {
-		"telefono": "xxx",
-		"bienesoservicios": ["Impuestos.Nacionales"],
-		"nombre": "DIAN",
-		"rotulo": "DIAN",
-		"nit": "xxx",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xxx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"nombre": "DISTRIQUIMICOS",
-		"rotulo": "DISTRIQUIMICOS",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Impuestos.Distritales"],
-		"nombre": "Distrito Capital",
-		"rotulo": "Distrito Capital",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"nombre": "EL SURTIDO II",
-		"rotulo": "EL SURTIDO II",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"nombre": "ENVAPACK",
-		"rotulo": "ENVAPACK",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
-		"nombre": "ETB",
-		"rotulo": "ETB",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Arriendo"],
-		"nombre": "Elizabeth Perez",
-		"rotulo": "Elizabeth Perez",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "Cr 28 A # 68"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Servicios.Publicos-Gas"],
-		"nombre": "GAS NATURAL",
-		"rotulo": "GAS NATURAL",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": [],
-		"nombre": "INVERSIONES BERODI",
-		"rotulo": "INVERSIONES BERODI",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Nomina.-.Administrativa"],
-		"nombre": "Johanna Alonso",
-		"rotulo": "Johanna Alonso",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"nombre": "LUZ MARINA GARZON",
-		"rotulo": "LUZ MARINA GARZON",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"nombre": "Lilia Sierra",
-		"rotulo": "Lilia Sierra",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Transporte.del.Producto-Local"],
-		"nombre": "Oscar Gil",
-		"rotulo": "Oscar Gil",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"nombre": "PAPELERIA PRISMA",
-		"rotulo": "PAPELERIA PRISMA",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"nombre": "PLASTICOS Y POLIETILENO",
-		"rotulo": "PLASTICOS Y POLIETILENO",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"nombre": "QUIMICOS GAC LTDA",
-		"rotulo": "QUIMICOS GAC LTDA",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"nombre": "QUIMIENVASES",
-		"rotulo": "QUIMIENVASES",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Servicios-Varios"],
-		"nombre": "SERVIENTREGA",
-		"rotulo": "SERVIENTREGA",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
-		"nombre": "SUR ENVIOS",
-		"rotulo": "SUR ENVIOS",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"nombre": "SURTIFRUVER",
-		"rotulo": "SURTIFRUVER",
-		"nit": "000",
-		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
-	}, {
-		"telefono": "000",
+		"textbienesoservicios": "Nomina - Operativa;",
 		"bienesoservicios": ["Nomina.-.Operativa"],
-		"nombre": "Servicol",
-		"rotulo": "Servicol",
-		"nit": "000",
-		"diasPago": 0,
+		"direccion": "Cra 28 A No. 68 - 74",
 		"ciudad": "Bogota",
-		"direccion": "xx"
+		"rotulo": "ADELAIDA RODRIGUEZ",
+		"nombre": "ADELAIDA RODRIGUEZ",
+		"telefono": "2255392",
+		"nit": "5111111"
 	}, {
-		"telefono": "000",
-		"bienesoservicios": [],
-		"nombre": "TISSAN",
-		"rotulo": "TISSAN",
-		"nit": "000",
 		"diasPago": 0,
-		"ciudad": "Bogota",
-		"direccion": "xx"
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "ALBA VASQUEZ",
+		"nombre": "ALBA VASQUEZ",
+		"telefono": "NA",
+		"nit": "NA"
 	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "ALEJANDRO DIAZ",
+		"nombre": "ALEJANDRO DIAZ",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "Cra 28 a No. 68-74",
+		"ciudad": "Bogot\u00e0",
+		"rotulo": "ALIRIA RODRIGUEZ",
+		"nombre": "ALIRIA RODRIGUEZ",
+		"telefono": "2222222",
+		"nit": "2222222"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "TUNAL",
+		"ciudad": "BOGOTA",
+		"rotulo": "ALVARO TORRES",
+		"nombre": "ALVARO TORRES",
+		"telefono": "2222222",
+		"nit": "2000000"
+	}, {
+		"diasPago": 30,
+		"textbienesoservicios": "Pruebas laboratorio;",
+		"bienesoservicios": ["Pruebas.laboratorio"],
+		"direccion": "CRA 28A No. 71 - 89",
+		"ciudad": "BOGOTA",
+		"rotulo": "AMC COLOMBIA",
+		"nombre": "AMC COLOMBIA",
+		"telefono": "6302585",
+		"nit": "900458352-9"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios-Fumigacion;",
+		"bienesoservicios": ["Servicios-Fumigacion"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "ARRAZAR FUMIGACIONES",
+		"nombre": "ARRAZAR FUMIGACIONES",
 		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;Nomina - Operativa;",
+		"bienesoservicios": ["Nomina-Turnos", "Nomina.-.Operativa"],
+		"direccion": "Calle 68",
+		"ciudad": "Bogota",
+		"rotulo": "Adelaida Rodriguez",
+		"nombre": "Adelaida Rodriguez",
+		"telefono": "2255936",
+		"nit": "555555555"
+	}, {
+		"diasPago": 15,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "Cr 28 con 68",
+		"ciudad": "Bogota",
+		"rotulo": "Aldemar Castro",
+		"nombre": "Aldemar Castro",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;Materiales de Construccion;Plasticos;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas", "Materiales.de.Construccion", "Plasticos"],
+		"direccion": "Cra. 8a No. 15-30",
+		"ciudad": "Cali",
+		"rotulo": "Almacen de Plasticos Washington",
+		"nombre": "Almacen de Plasticos Washington",
+		"telefono": "8892666",
+		"nit": "29.055.828-3"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Utensilios;",
+		"bienesoservicios": ["Utensilios"],
+		"direccion": "Calle 13 No. 8-52 ",
+		"ciudad": "Cali",
+		"rotulo": "Almacen y Cristaleria la 13",
+		"nombre": "Almacen y Cristaleria la 13",
+		"telefono": "8893333",
+		"nit": "900212550-4"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Utensilios;",
+		"bienesoservicios": ["Utensilios"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "Almacenes El Paisa",
+		"nombre": "Almacenes El Paisa",
+		"telefono": " ",
+		"nit": "14.437.181-2"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Quimicos;",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"direccion": "Calle 19 No. 5-46",
+		"ciudad": "Cali",
+		"rotulo": "Aquimicos e Insumos SAS",
+		"nombre": "Aquimicos e Insumos SAS",
+		"telefono": "8812210",
+		"nit": "900740299-4"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Financieros;",
+		"bienesoservicios": ["Servicios.Financieros"],
+		"direccion": "Centro Nari\u00f1o",
+		"ciudad": "Bogota",
+		"rotulo": "BANCO CAJA SOCIAL",
+		"nombre": "BANCO CAJA SOCIAL",
+		"telefono": "3077060",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Quimicos;Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Quimicos", "Materia.Prima-Varios"],
+		"direccion": "CRA 20 A NO. 73-51",
+		"ciudad": "BOGOTA",
+		"rotulo": "BELL CHEN INTERNACIONAL SA",
+		"nombre": "BELL CHEN INTERNACIONAL SA",
+		"telefono": "3490368",
+		"nit": "811027326-5"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
+		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "BETTY LEMOS",
+		"nombre": "BETTY LEMOS",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Implementos de Aseo;Materia Prima-Quimicos;Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Implementos.de.Aseo", "Materia.Prima-Quimicos", "Materia.Prima-Varios"],
+		"direccion": "CLL 73 NO. 20-51 LOCAL 1",
+		"ciudad": "BOGOTA",
+		"rotulo": "CASA QUIMICOS",
+		"nombre": "CASA QUIMICOS",
+		"telefono": "5434605",
+		"nit": "900458352-9"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "CRA 26 NO. 67-45",
+		"ciudad": "BOGOTA",
+		"rotulo": "CAUCHOS ARGO",
+		"nombre": "CAUCHOS ARGO",
+		"telefono": "6307241",
+		"nit": "79409121"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "CLAUDIA HERRERA",
+		"nombre": "CLAUDIA HERRERA",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Energia;",
+		"bienesoservicios": ["Servicios.Publicos-Energia"],
+		"direccion": "Bogota",
+		"ciudad": "Bogota",
+		"rotulo": "CODENSA",
+		"nombre": "CODENSA",
+		"telefono": "7115115",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Impuestos Nacionales;",
+		"bienesoservicios": ["Impuestos.Nacionales"],
+		"direccion": "xxx",
+		"ciudad": "Bogota",
+		"rotulo": "DIAN",
+		"nombre": "DIAN",
+		"telefono": "xxx",
+		"nit": "xxx"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Dotacion;",
+		"bienesoservicios": ["Dotacion"],
+		"direccion": "ALAMEDA",
+		"ciudad": "CALI",
+		"rotulo": "DISTRIBUCIONES DANASCO S.A.",
+		"nombre": "DISTRIBUCIONES DANASCO S.A.",
+		"telefono": "5574422",
+		"nit": "9000911754"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Quimicos;",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "DISTRIQUIMICOS",
+		"nombre": "DISTRIQUIMICOS",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cra 26 No. 8-37 Local 19",
+		"ciudad": "Cali",
+		"rotulo": "Disdecol",
+		"nombre": "Disdecol",
+		"telefono": "5572546",
+		"nit": "10.062.793-4"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cr 27 No. 9-31",
+		"ciudad": "Cali",
+		"rotulo": "Distribuciones y Montajes SAS",
+		"nombre": "Distribuciones y Montajes SAS",
+		"telefono": "3101603",
+		"nit": "900341794-7"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Plasticos;",
+		"bienesoservicios": ["Plasticos"],
+		"direccion": "Calle 9 No. 26-131",
+		"ciudad": "Cali",
+		"rotulo": "Distribuidora Caliplasticos Ltda.",
+		"nombre": "Distribuidora Caliplasticos Ltda.",
+		"telefono": "5569040",
+		"nit": "890312487-1"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cl 9 #26-79",
+		"ciudad": "Cali",
+		"rotulo": "Distrifer",
+		"nombre": "Distrifer",
+		"telefono": "5577577",
+		"nit": "10483345-4"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Impuestos Distritales;",
+		"bienesoservicios": ["Impuestos.Distritales"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "Distrito Capital",
+		"nombre": "Distrito Capital",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "EL SURTIDO II",
+		"nombre": "EL SURTIDO II",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Agua;Servicios Publicos-Energia;",
+		"bienesoservicios": ["Servicios.Publicos-Agua", "Servicios.Publicos-Energia"],
+		"direccion": "CL 9B 27-13",
+		"ciudad": "CALI",
+		"rotulo": "EMCALI",
+		"nombre": "EMCALI",
+		"telefono": "0",
+		"nit": "0"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
 		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"nombre": "VALENPLAST",
-		"rotulo": "VALENPLAST",
-		"nit": "000",
-		"diasPago": 0,
+		"direccion": "xx",
 		"ciudad": "Bogota",
-		"direccion": "xx"
+		"rotulo": "ENVAPACK",
+		"nombre": "ENVAPACK",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Telecomunicaciones;",
+		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "ETB",
+		"nombre": "ETB",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Carrera 6 No. 18-02",
+		"ciudad": "Cali",
+		"rotulo": "El Comercio Electrico SAS",
+		"nombre": "El Comercio Electrico SAS",
+		"telefono": "8845000",
+		"nit": "890.323.635-2"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Arriendo;",
+		"bienesoservicios": ["Arriendo"],
+		"direccion": "Cr 28 A # 68",
+		"ciudad": "Bogota",
+		"rotulo": "Elizabeth Perez",
+		"nombre": "Elizabeth Perez",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cr 8 No. 16-31",
+		"ciudad": "Cali",
+		"rotulo": "Espumas Andres Hernandez",
+		"nombre": "Espumas Andres Hernandez",
+		"telefono": "8821009",
+		"nit": "31.842.494-0"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "CLL 68 28-43",
+		"ciudad": "BOGOTA",
+		"rotulo": "FERRELECTRICOS INAFER",
+		"nombre": "FERRELECTRICOS INAFER",
+		"telefono": "3118498",
+		"nit": "19092732-6"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "CLL 68 NO. 28-23",
+		"ciudad": "BOGOTA",
+		"rotulo": "FERRRETERIA NORTE ",
+		"nombre": "FERRRETERIA NORTE ",
+		"telefono": "2401036",
+		"nit": "2879929-7"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cra 26A No. 2-56 Oeste",
+		"ciudad": "Cali",
+		"rotulo": "Ferreteria y Electricos Circunvalar",
+		"nombre": "Ferreteria y Electricos Circunvalar",
+		"telefono": "5562414",
+		"nit": "7.275.805-8"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Cr 23 No 11-68",
+		"ciudad": "Cali",
+		"rotulo": "Ferro Materiales Junin",
+		"nombre": "Ferro Materiales Junin",
+		"telefono": "3785446",
+		"nit": "1.144.027.047-7"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Calle 9 No. 24-13",
+		"ciudad": "Cali",
+		"rotulo": "Ferro Pintualameda",
+		"nombre": "Ferro Pintualameda",
+		"telefono": "5569009",
+		"nit": "1.143.851.704-8"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "Cll 9 B 23 D 24 B",
+		"ciudad": "Cali",
+		"rotulo": "Frutas y Verduras Jheison",
+		"nombre": "Frutas y Verduras Jheison",
+		"telefono": "3144808751",
+		"nit": "944701378"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Gas;",
+		"bienesoservicios": ["Servicios.Publicos-Gas"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "GAS NATURAL",
+		"nombre": "GAS NATURAL",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "Cra 88 No. 80-71",
+		"ciudad": "Bogot\u00e0",
+		"rotulo": "GRAFICAS LOS CEREZOS",
+		"nombre": "GRAFICAS LOS CEREZOS",
+		"telefono": "4366883",
+		"nit": "19073612-1"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "Guillermo Ocampo",
+		"nombre": "Guillermo Ocampo",
+		"telefono": " ",
+		"nit": " "
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "HOMECENTER CALI SUR",
+		"nombre": "HOMECENTER CALI SUR",
+		"telefono": " ",
+		"nit": "800.242.106-2"
+	}, {
+		"diasPago": 10,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "TERRON",
+		"ciudad": "CALI",
+		"rotulo": "HUGO MARTINEZ",
+		"nombre": "HUGO MARTINEZ",
+		"telefono": "3105171713",
+		"nit": "16587770"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"direccion": "Cra 28 A No. 68 - 74",
+		"ciudad": "BOGOTA",
+		"rotulo": "IMPRESOS Y COPIAS",
+		"nombre": "IMPRESOS Y COPIAS",
+		"telefono": "4754430",
+		"nit": "19276579-6"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Arriendo;",
+		"bienesoservicios": ["Arriendo"],
+		"direccion": ".",
+		"ciudad": "CALI",
+		"rotulo": "INMOBILIARIA VALENCIA",
+		"nombre": "INMOBILIARIA VALENCIA",
+		"telefono": ".",
+		"nit": "."
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Hielo Seco;",
+		"bienesoservicios": ["Materia.Prima-Hielo.Seco"],
+		"direccion": "Calle 52 A No. 85G - 24",
+		"ciudad": "Bogota",
+		"rotulo": "INVERSIONES BERODI",
+		"nombre": "INVERSIONES BERODI",
+		"telefono": "2954938",
+		"nit": "830122139-1"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "Cra 28 A No. 68 - 74",
+		"ciudad": "Bogota",
+		"rotulo": "ISMENIA LEON",
+		"nombre": "ISMENIA LEON",
+		"telefono": "2255392",
+		"nit": "5111111"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Administrativa;",
+		"bienesoservicios": ["Nomina.-.Administrativa"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "Johanna Alonso",
+		"nombre": "Johanna Alonso",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "CR 29 \u00b7 19-25",
+		"ciudad": "CALI",
+		"rotulo": "LA PLATANERA",
+		"nombre": "LA PLATANERA",
+		"telefono": "3355949",
+		"nit": "333"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "CLL 9 \u00b7 24-40 ALAMEDA",
+		"ciudad": "CALI",
+		"rotulo": "LA TIENDA DEL PLASTICO Y MISCELANIA",
+		"nombre": "LA TIENDA DEL PLASTICO Y MISCELANIA",
+		"telefono": "5140698",
+		"nit": "1212121"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "por verificar",
+		"ciudad": "Cali",
+		"rotulo": "LEIDY RODRIGUEZ",
+		"nombre": "LEIDY RODRIGUEZ",
+		"telefono": "por verificar",
+		"nit": "por verificar"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "LEIVER VILLAMUEZ",
+		"nombre": "LEIVER VILLAMUEZ",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Servicios Publicos-Gas;",
+		"bienesoservicios": ["Servicios.Publicos-Gas"],
+		"direccion": "Palmira",
+		"ciudad": "CALI",
+		"rotulo": "LIDA GAS S.A.EPS",
+		"nombre": "LIDA GAS S.A.EPS",
+		"telefono": "2712755",
+		"nit": "8913009731"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "LUZ MARINA GARZON",
+		"nombre": "LUZ MARINA GARZON",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Servicios Publicos-Gas;",
+		"bienesoservicios": ["Servicios.Publicos-Gas"],
+		"direccion": "Planta Yumbo",
+		"ciudad": "Cali",
+		"rotulo": "Lida Gas",
+		"nombre": "Lida Gas",
+		"telefono": "2712755",
+		"nit": "8913009731"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "Lilia Sierra",
+		"nombre": "Lilia Sierra",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios-Fumigacion;",
+		"bienesoservicios": ["Servicios-Fumigacion"],
+		"direccion": "Diagonal 61B No. 22A - 38",
+		"ciudad": "Bogota",
+		"rotulo": "MASIF SAS",
+		"nombre": "MASIF SAS",
+		"telefono": "3466148",
+		"nit": "199999"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "CLL 5",
+		"ciudad": "CALI",
+		"rotulo": "MERCAMIO",
+		"nombre": "MERCAMIO",
+		"telefono": "9999",
+		"nit": "9000061224-9"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
+		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
+		"direccion": "CRa 28a No. 68-74",
+		"ciudad": "Bogota",
+		"rotulo": "Martha Guerrero",
+		"nombre": "Martha Guerrero",
+		"telefono": "2255936",
+		"nit": "1111111"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Alameda",
+		"ciudad": "Cali",
+		"rotulo": "Miscelanea Ferrocolor Alameda",
+		"nombre": "Miscelanea Ferrocolor Alameda",
+		"telefono": " ",
+		"nit": "79587880-1"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Utensilios;",
+		"bienesoservicios": ["Utensilios"],
+		"direccion": "Cra 26 No. 8-71",
+		"ciudad": "Cali",
+		"rotulo": "Multidesechables Alameda",
+		"nombre": "Multidesechables Alameda",
+		"telefono": "3841808",
+		"nit": "1.151.938.011"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Quimicos;",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"direccion": "CR 5 # 18-35 LOCAL 102B",
+		"ciudad": "CALI",
+		"rotulo": "NEW CHEMICAL S.A.S.",
+		"nombre": "NEW CHEMICAL S.A.S.",
+		"telefono": "3962884",
+		"nit": "9004694190"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Mantenimiento.y.arreglos.locativos"],
+		"direccion": "BOGOTA",
+		"ciudad": "BOGOTA",
+		"rotulo": "NRWIN HERRAMIENTAS",
+		"nombre": "NRWIN HERRAMIENTAS",
+		"telefono": "2222222",
+		"nit": "222222222"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Administrativa;",
+		"bienesoservicios": ["Nomina.-.Administrativa"],
+		"direccion": "Calle 13 # 108-100",
+		"ciudad": "Cali",
+		"rotulo": "Natalia Aljure",
+		"nombre": "Natalia Aljure",
+		"telefono": "3202235392",
+		"nit": "31.472.076"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Honorarios;",
+		"bienesoservicios": ["Honorarios"],
+		"direccion": "NA",
+		"ciudad": "Bogota",
+		"rotulo": "Nelson Molano",
+		"nombre": "Nelson Molano",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Alimentacion Empleado;Combustible;Materia Prima-Varios;Papeleria;Servicios-Varios;Taxis y Pasajes de Bus;Utensilios;",
+		"bienesoservicios": ["Alimentacion.Empleado", "Combustible", "Materia.Prima-Varios", "Papeleria", "Servicios-Varios", "Taxis.y.Pasajes.de.Bus", "Utensilios"],
+		"direccion": " ",
+		"ciudad": " ",
+		"rotulo": "No reportado",
+		"nombre": "No reportado",
+		"telefono": " ",
+		"nit": " "
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"direccion": "Cra 28 A No. 68 - 74",
+		"ciudad": "Bogota",
+		"rotulo": "OFELIA GARCIA",
+		"nombre": "OFELIA GARCIA",
+		"telefono": "2255392",
+		"nit": "5111111"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"direccion": "cr 25 oeste",
+		"ciudad": "Cali",
+		"rotulo": "Olimica s.a.",
+		"nombre": "Olimica s.a.",
+		"telefono": "5146334",
+		"nit": "8901074873"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Transporte del Producto-Local;",
+		"bienesoservicios": ["Transporte.del.Producto-Local"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "Oscar Gil",
+		"nombre": "Oscar Gil",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "UNICENTRO",
+		"ciudad": "CALI",
+		"rotulo": "PANAMERICANA",
+		"nombre": "PANAMERICANA",
+		"telefono": "4851100",
+		"nit": "830037946-3"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "PAPELERIA PRISMA",
+		"nombre": "PAPELERIA PRISMA",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "Cra 23 No. 67 - 05",
+		"ciudad": "BOGOTA",
+		"rotulo": "PLAST PAPEL SAS",
+		"nombre": "PLAST PAPEL SAS",
+		"telefono": "2128202",
+		"nit": "900622977-4"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "PLASTICOS Y POLIETILENO",
+		"nombre": "PLASTICOS Y POLIETILENO",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "Cll 68 No. 57 - 00",
+		"ciudad": "BOGOTA",
+		"rotulo": "PRINTFOT",
+		"nombre": "PRINTFOT",
+		"telefono": "6309039",
+		"nit": "52157147-8"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "CR 7 #20A07",
+		"ciudad": "CALI",
+		"rotulo": "PRODUCPLASTICOS DEL VALLE",
+		"nombre": "PRODUCPLASTICOS DEL VALLE",
+		"telefono": "8890658",
+		"nit": "12121212"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Dotacion;Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Dotacion", "Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "CRA 23 NO. 66A - 49",
+		"ciudad": "BOGOTA",
+		"rotulo": "PROVEEPLAST",
+		"nombre": "PROVEEPLAST",
+		"telefono": "2359335",
+		"nit": "9430958-8"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Quimicos;",
+		"bienesoservicios": ["Materia.Prima-Quimicos"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "QUIMICOS GAC LTDA",
+		"nombre": "QUIMICOS GAC LTDA",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Varios;",
+		"bienesoservicios": ["Materia.Prima-Varios"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "QUIMIENVASES",
+		"nombre": "QUIMIENVASES",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "7 DE AGOSTO",
+		"ciudad": "BOGOTA",
+		"rotulo": "RIGOBERTO REYES",
+		"nombre": "RIGOBERTO REYES",
+		"telefono": "22222222",
+		"nit": "79607028"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
+		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "RUBEN BERMUDEZ",
+		"nombre": "RUBEN BERMUDEZ",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "Carrera 30 No. 9-29",
+		"ciudad": "Cali",
+		"rotulo": "Recarga de Cartuchos El Boyaco",
+		"nombre": "Recarga de Cartuchos El Boyaco",
+		"telefono": "5146956",
+		"nit": "38.851.445-3"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "PLAZA",
+		"ciudad": "CALI",
+		"rotulo": "SANTA HELENA",
+		"nombre": "SANTA HELENA",
+		"telefono": "2525252",
+		"nit": "4444"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Operativa;",
+		"bienesoservicios": ["Nomina.-.Operativa"],
+		"direccion": "AV CLL 100 NO. 17A 12",
+		"ciudad": "BOGOTA",
+		"rotulo": "SERVICOL",
+		"nombre": "SERVICOL",
+		"telefono": "2567975",
+		"nit": "900568326"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios-Varios;",
+		"bienesoservicios": ["Servicios-Varios"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "SERVIENTREGA",
+		"nombre": "SERVIENTREGA",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Transporte del Producto-Intermunicipal;",
+		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "SUR ENVIOS",
+		"nombre": "SUR ENVIOS",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Fruta;",
+		"bienesoservicios": ["Materia.Prima-Fruta"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "SURTIFRUVER",
+		"nombre": "SURTIFRUVER",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "Cra 24 No. 67 - 81",
+		"ciudad": "Bogota",
+		"rotulo": "SURTITODO LTDA",
+		"nombre": "SURTITODO LTDA",
+		"telefono": "3291551",
+		"nit": "900091899-8"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"direccion": "CLL 68 NO. 28-10",
+		"ciudad": "BOGOTA",
+		"rotulo": "SUS PINTURAS SAS",
+		"nombre": "SUS PINTURAS SAS",
+		"telefono": "2319857",
+		"nit": "99999999"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Equipos;",
+		"bienesoservicios": ["Equipos"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "Salomon Cobo",
+		"nombre": "Salomon Cobo",
+		"telefono": " ",
+		"nit": "6316285"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materiales de Construccion;",
+		"bienesoservicios": ["Materiales.de.Construccion"],
+		"direccion": "Calle 15 No. 12-09/43",
+		"ciudad": "Cali",
+		"rotulo": "Suri Ceramicas La 15",
+		"nombre": "Suri Ceramicas La 15",
+		"telefono": "8899228",
+		"nit": "79.395.042"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Varios;Alimentacion Empleado;Utensilios;",
+		"bienesoservicios": ["Materia.Prima-Varios", "Alimentacion.Empleado", "Utensilios"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "Surtifamiliar",
+		"nombre": "Surtifamiliar",
+		"telefono": " ",
+		"nit": " "
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Taxis y Pasajes de Bus;",
+		"bienesoservicios": ["Taxis.y.Pasajes.de.Bus"],
+		"direccion": "NA",
+		"ciudad": "Bogota",
+		"rotulo": "TAPPSI",
+		"nombre": "TAPPSI",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Papeleria;",
+		"bienesoservicios": ["Papeleria"],
+		"direccion": "FRENTE A PLANTA",
+		"ciudad": "BOGOTA",
+		"rotulo": "TECNICINTAS",
+		"nombre": "TECNICINTAS",
+		"telefono": "2222222",
+		"nit": "900526935-7"
+	}, {
+		"diasPago": 5,
+		"textbienesoservicios": "Servicios-Varios;",
+		"bienesoservicios": ["Servicios-Varios"],
+		"direccion": "CLL 25 # 4N 20",
+		"ciudad": "CALI",
+		"rotulo": "TELEREGIONAL DEL VALLE",
+		"nombre": "TELEREGIONAL DEL VALLE",
+		"telefono": "6683535",
+		"nit": "9007940438"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Vigilancia;",
+		"bienesoservicios": ["Vigilancia"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "TELESENTINEL",
+		"nombre": "TELESENTINEL",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "",
+		"bienesoservicios": [],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "TISSAN",
+		"nombre": "TISSAN",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Servicios Publicos-Telecomunicaciones;",
+		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
+		"direccion": " ",
+		"ciudad": "Cali",
+		"rotulo": "UNE",
+		"nombre": "UNE",
+		"telefono": " ",
+		"nit": " "
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"direccion": "xx",
+		"ciudad": "Bogota",
+		"rotulo": "VALENPLAST",
+		"nombre": "VALENPLAST",
+		"telefono": "000",
+		"nit": "000"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Utensilios;",
+		"bienesoservicios": ["Utensilios"],
+		"direccion": "CRA 24 NO. 65 - 13",
+		"ciudad": "BOGOTA",
+		"rotulo": "VARIEDADES DEL 7 DE AGOSTO",
+		"nombre": "VARIEDADES DEL 7 DE AGOSTO",
+		"telefono": "3111273",
+		"nit": "52308474-0"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Equipos;",
+		"bienesoservicios": ["Equipos"],
+		"direccion": "Call 44 N Av 2E-10 NORTE",
+		"ciudad": "Cali",
+		"rotulo": "Variadores S.A.",
+		"nombre": "Variadores S.A.",
+		"telefono": "3816101",
+		"nit": "800002482-8"
+	}, {
+		"diasPago": 0,
+		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
+		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
+		"direccion": "NA",
+		"ciudad": "Cali",
+		"rotulo": "YENNY ALBORNOZ",
+		"nombre": "YENNY ALBORNOZ",
+		"telefono": "NA",
+		"nit": "NA"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Transporte del Producto-Intermunicipal;",
+		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
+		"direccion": "cll 22 # 5/55",
+		"ciudad": "Cali",
+		"rotulo": "bodegas modulares",
+		"nombre": "bodegas modulares",
+		"telefono": "8808233",
+		"nit": "16658412"
+	}, {
+		"diasPago": 1,
+		"textbienesoservicios": "Servicios Publicos-Gas;Taxis y Pasajes de Bus;",
+		"bienesoservicios": ["Servicios.Publicos-Gas", "Taxis.y.Pasajes.de.Bus"],
+		"direccion": "movil",
+		"ciudad": "Cali",
+		"rotulo": "taxi",
+		"nombre": "taxi",
+		"telefono": "2444444",
+		"nit": "111111"
 	}
 ]

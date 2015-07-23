@@ -32,9 +32,10 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad'],'Admin');
+		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad','Clase','Cuenta','Grupo','SubCuenta'],'Admin');
 		var adminNodes2 = makeStore(['Numeros'],'Admin','numeros');
 		var informeNodes = makeStore(['Ingresos','Gastos','Tendencias','IVA'],'Informes','tablaDinamica');
+		var informeNodes2 = makeStore(['PyG'],'Informes','pYg');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
@@ -47,6 +48,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		data.push.apply(data,adminNodes1);
 		data.push.apply(data,adminNodes2);
 		data.push.apply(data,informeNodes);
+		data.push.apply(data,informeNodes2);
 		
 		var myStore = new Memory({
 		data : data,

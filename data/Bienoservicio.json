@@ -28,6 +28,10 @@
 		"rotulo": "Equipos",
 		"tipo": "Costo.Variable"
 	}, {
+		"nombre": "Honorarios",
+		"rotulo": "Honorarios",
+		"tipo": "Costo.Variable"
+	}, {
 		"nombre": "Impuestos Distritales",
 		"rotulo": "Impuestos Distritales",
 		"tipo": "Costo.Variable"
@@ -87,6 +91,10 @@
 		"nombre": "Nomina - Operativa",
 		"rotulo": "Nomina - Operativa",
 		"tipo": "Costo.Fijo"
+	}, {
+		"nombre": "Nomina Administrativa",
+		"rotulo": "Nomina Administrativa",
+		"tipo": "Costo.Variable"
 	}, {
 		"nombre": "Pago de deuda",
 		"rotulo": "Pago de deuda",
@@ -151,5 +159,9 @@
 		"nombre": "Utensilios",
 		"rotulo": "Utensilios",
 		"tipo": "Costo.Variable"
+	}, {
+		"nombre": "Vigilancia",
+		"rotulo": "Vigilancia",
+		"tipo": "Costo.Fijo"
 	}
 ]

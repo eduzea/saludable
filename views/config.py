@@ -21,7 +21,11 @@ classModels = {'Cliente':Cliente,
                'NumeroFactura':NumeroFactura, 
                'Venta':Venta,
                'Proveedor':Proveedor, 
-               'Bienoservicio':Bienoservicio, 
+               'Bienoservicio':Bienoservicio,
+               'Clase':Clase,
+               'Grupo':Grupo,
+               'Cuenta':Cuenta,
+               'SubCuenta':SubCuenta, 
                'PorcionCompra':PorcionCompra, 
                'Egreso':Egreso,
                'Compra':Compra,
@@ -30,7 +34,8 @@ classModels = {'Cliente':Cliente,
                'Sucursal':Sucursal,
                'Ciudad':Ciudad,
                'Acreedor':Acreedor,
-               'Deuda':Deuda}
+               'Deuda':Deuda,
+               'Devolucion':Devolucion}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -48,7 +53,11 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'TipoEgreso':['nombre'],
            'TipoAcreedor':['nombre'],
            'Acreedor':['nombre'],
-           'Deuda':['numero']}
+           'Deuda':['numero'],
+           'Clase':['pucNumber'],
+           'Grupo':['pucNumber'],
+           'Cuenta':['pucNumber'],
+           'SubCuenta':['pucNumber']}
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -100,7 +109,31 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                          ],
             'Bienoservicio':[
                              {'id':'tipo', 'ui':'Tipo de Egreso', 'width':'10em'},
-                             {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'20em'}
+                             {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                             {'id':'clase','ui':'Clase', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                             {'id':'grupo','ui':'Grupo', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                             {'id':'cuenta','ui':'Cuenta', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                             {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      ],
+            'Clase':[
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      ],
+            'Grupo':[
+                      {'id':'clase','ui':'Clase', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                                            
+                      ],
+            'Cuenta':[
+                      {'id':'grupo','ui':'Grupo', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      ],
+            'SubCuenta':[
+                      {'id':'cuenta','ui':'Cuenta', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},   
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                       ],
             'PorcionCompra':[
                              {'id':'valor','ui':'Porcion', 'required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
@@ -144,5 +177,45 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                      ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html'}
+templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html'}
 
+pucGastosOperacionales = {'Operacionales de Administracion':
+             {'Gastos de personal': 
+              ['Sueldos','Jornales','Horas extra','Comisiones','Auxilio de trasporte','Prima de servicios',
+               'Prima de vacaciones','Aportes ARP','Aportes EPS','Aportes Pension','Aportes Caja de Compensacion',
+               'Aportes ICBF','Aportes SENA'
+               ],
+              'Honorarios': 
+              ['Asesoria juridica','Asesoria tecnica','Otros'
+               ],
+              'Impuestos': ['Industria y comercio','De vehiculos','IVA descontable','Otros'
+                            ],
+              'Arrendamientos': ['Maquinaria y equipo',
+                                 'Construcciones y edificaciones'
+                                 ],
+              'Servicios': ['Acueducto y Alcantarillado',
+                            'Energia Electrica',
+                            'Telecom',
+                            'Gas',
+                            'Aseo y vigilancia',
+                            'Otros'
+                            ],
+              'Mantenimiento y reparciones':
+              ['Construcciones y edificaciones',
+               'Equipo de oficina',
+               'Equipos de computo',
+               'Flota y equipo de transporte',
+               'Otros'],
+              'Adecuacion e instalacion':
+              ['Instalaciones electricas',
+               'Reparaciones locativas'
+               'Otros'
+               ],
+              'Gastos de viaje':
+              ['Alojamiento y manuntencion',
+               'Pasajes aereos',
+               'Pasajes terrestres',
+               'Otros'
+               ]
+              }
+             }

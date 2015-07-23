@@ -90,6 +90,12 @@ class Factura(ndb.Model):
     iva = ndb.ComputedProperty(lambda self: True if self.montoIva else False)
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
+#     resumen = ndb.ComputedProperty(lambda self: self.ventas[0].producto.id())#consider a better option for this!
+    
+class Devolucion(ndb.Model):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    factura = ndb.KeyProperty(kind=Factura)
 
 ########## EGRESOS #######
 
@@ -100,7 +106,10 @@ class TipoEgreso(ndb.Model):
 def objListToString(objList):
     text =''
     for obj in objList:
-        text += obj.get().nombre + ';'
+        if obj.get():
+            text += obj.get().nombre + ';'
+        else:
+            print "Inconsistent record:", objList
     return text
     
 
@@ -115,9 +124,40 @@ class Proveedor(ndb.Model):
     bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
     textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
 
-class Bienoservicio(ndb.Model):
-    tipo = ndb.KeyProperty(kind=TipoEgreso)
+# PUC classes - Consider implementing this from config...
+class Clase(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
+    pucNumber = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    
+class Grupo(ndb.Model):
+    clase = ndb.KeyProperty(kind=Clase)
+    nombre = ndb.StringProperty(indexed=True)
+    pucNumber = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Cuenta(ndb.Model):
+    grupo = ndb.KeyProperty(kind=Grupo)
+    nombre = ndb.StringProperty(indexed=True)
+    pucNumber = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class SubCuenta(ndb.Model):
+    cuenta = ndb.KeyProperty(kind=Cuenta)
+    nombre = ndb.StringProperty(indexed=True)
+    pucNumber = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+##################################################################################
+
+class Bienoservicio(ndb.Model):
+    nombre = ndb.StringProperty(indexed=True)
+    tipo = ndb.KeyProperty(kind=TipoEgreso)
+    clase = ndb.KeyProperty(kind=Clase)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta)
+    puc = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 class PorcionCompra(ndb.Model):
@@ -141,7 +181,7 @@ class Egreso(ndb.Model):
     compras = ndb.StructuredProperty(Compra,repeated=True)
     proveedor = ndb.KeyProperty(kind=Proveedor)
     total = ndb.IntegerProperty()
-    resumen = ndb.TextProperty()
+    resumen = ndb.StringProperty(indexed=True)
     comentario = ndb.TextProperty()
     
 class TipoAcreedor(ndb.Model):

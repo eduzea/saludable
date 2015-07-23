@@ -10,6 +10,38 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: Egreso
+  properties:
+  - name: empleado
+  - name: numero
+  - name: fecha
+
+- kind: Egreso
+  properties:
+  - name: numero
+  - name: fecha
+
+- kind: Egreso
+  properties:
+  - name: numero
+  - name: resumen
+  - name: fecha
+
+- kind: Egreso
+  properties:
+  - name: resumen
+  - name: fecha
+
+- kind: Factura
+  properties:
+  - name: cliente
+  - name: fecha
+
+- kind: Factura
+  properties:
+  - name: resumen
+  - name: fecha
+
 - kind: Precio
   properties:
   - name: grupo
