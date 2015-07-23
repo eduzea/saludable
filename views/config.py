@@ -180,6 +180,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                      ],
             'OtrosIngresos':[
                              {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                             {'id':'empleado','ui':'Empleado','width':'8em'},
                              {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
                              {'id':'descripcion', 'ui':'Descripcion','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
                              {'id':'total','ui':'Monto','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}

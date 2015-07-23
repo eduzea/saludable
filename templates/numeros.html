@@ -60,6 +60,20 @@
 				</button>
 			</td>
 		</tr>
+		<tr>
+			<td><label>Proximo Numero de Otros Ingresos:</label></td>
+			<td>
+				<div>{{tagForField('NumeroOtrosIngresos',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('OtrosIngresos'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numOtrosIngresosBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
 	</table>
 	<br />
 	<div id='numeroMsg' style="color: red"></div>

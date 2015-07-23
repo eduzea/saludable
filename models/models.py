@@ -102,9 +102,11 @@ class Devolucion(ndb.Model):
     
 class OtrosIngresos(ndb.Model):
     numero = ndb.IntegerProperty()
+    empleado = ndb.KeyProperty(kind=Empleado)
     fecha = ndb.DateProperty()
     descripcion = ndb.TextProperty()
     total = ndb.IntegerProperty()
+    
 
 ########## EGRESOS #######
 

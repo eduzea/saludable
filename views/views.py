@@ -866,7 +866,7 @@ def getOtrosGastos(fechaDesde, fechaHasta):
             'financieros':gastosFinancieros,'extraordinarios':gastosExtraordinarios})
 
 def getIngresosNoOperacionales(fechaDesde, fechaHasta):
-    return getTotalFromModel('Factura', {'cliente':ndb.Key('Cliente','Sonia.Caballero'),'fechaDesde':fechaDesde, 'fechaHasta': fechaHasta})
+    return getTotalFromModel('OtrosIngresos', {'fechaDesde':fechaDesde, 'fechaHasta': fechaHasta})
 
 def getImpuestos(fechaDesde, fechaHasta):
     renta = getTotalFromModel('Egreso', {'resumen':'Impuesto.-.Renta', 
@@ -938,7 +938,7 @@ def getPyGData(fechaDesde,fechaHasta):
             'margenAntesDeImpuestos':'{:.2%}'.format(margenAntesDeImpuestos),
             'impuestos':'${:,}'.format(impuestos.total),
             'renta':'${:,}'.format(impuestos.renta),
-            'cREE':'${:,}'.format(impuestos.cree),
+            'cree':'${:,}'.format(impuestos.cree),
             'utilidadNeta':'${:,}'.format(utilidadNeta),
             'margenNeto': '{:.2%}'.format(margenNeto)
     }
