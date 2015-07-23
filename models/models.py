@@ -66,6 +66,9 @@ class NumeroRemision(ndb.Model):
 
 class NumeroDeuda(ndb.Model):
     consecutivo = ndb.IntegerProperty()
+    
+class NumeroOtrosIngresos(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
 
 class Remision(ndb.Model):
     numero = ndb.IntegerProperty()
@@ -96,6 +99,12 @@ class Devolucion(ndb.Model):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     factura = ndb.KeyProperty(kind=Factura)
+    
+class OtrosIngresos(ndb.Model):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    descripcion = ndb.TextProperty()
+    total = ndb.IntegerProperty()
 
 ########## EGRESOS #######
 

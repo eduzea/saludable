@@ -7,7 +7,8 @@ widgetTemplate = {'add':'addEntity.html', 'show':'showEntities.html'}
 singletons = {'NumeroFactura':NumeroFactura,
               'NumeroRemision':NumeroRemision,
               'NumeroEgreso':NumeroEgreso,              
-              'NumeroDeuda':NumeroDeuda
+              'NumeroDeuda':NumeroDeuda,
+              'NumeroOtrosIngresos':NumeroOtrosIngresos
               }
 
 classModels = {'Cliente':Cliente, 
@@ -35,7 +36,8 @@ classModels = {'Cliente':Cliente,
                'Ciudad':Ciudad,
                'Acreedor':Acreedor,
                'Deuda':Deuda,
-               'Devolucion':Devolucion}
+               'Devolucion':Devolucion,
+               'OtrosIngresos':OtrosIngresos}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -57,7 +59,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Clase':['pucNumber'],
            'Grupo':['pucNumber'],
            'Cuenta':['pucNumber'],
-           'SubCuenta':['pucNumber']}
+           'SubCuenta':['pucNumber'],
+           'OtrosIngresos':['numero']}
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -174,7 +177,13 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                      {'id':'comentario', 'ui':'Comentario','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
                      {'id':'montoPagado', 'ui':'Monto Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'5.5em','default':'0'},
 #                      {'id':'pagada', 'ui':'% Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'3em','default':'0'},
-                     ]
+                     ],
+            'OtrosIngresos':[
+                             {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                             {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                             {'id':'descripcion', 'ui':'Descripcion','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
+                             {'id':'total','ui':'Monto','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}
+                             ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
 templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html'}
