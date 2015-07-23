@@ -750,7 +750,14 @@ def getCostosIndirectos(fechaDesde, fechaHasta):
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta}
                                  )
-    varios = getTotalFromModel('Egreso', {'resumen':'Servicios-Varios',
+    varios = getTotalFromModel('Egreso', {'resumen':['Servicios-Varios',
+                                                     'Servicios-Fumigacion',
+                                                     'Alimentacion.Empleado',
+                                                     'Utensilios',
+                                                     'Vigilancia',
+                                                     'Combustible',
+                                                     'Dotacion',
+                                                     'Pruebas.laboratorio'],
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta}
                                )
@@ -1114,7 +1121,7 @@ class GuardarEgreso(webapp2.RequestHandler):
         else:
             numero = getConsecutivoEgreso()
 
-        resumen = compras[0].bienoservicio.id() if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' 
+        resumen = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
         egreso = Egreso(id=str(numero), numero=int(numero), resumen = resumen, tipo = tipo.key, proveedor = proveedor.key, 
                         empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'], sucursal = sucursal.key,
                         comentario = values['comentario'])
