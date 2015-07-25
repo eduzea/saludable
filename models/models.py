@@ -80,9 +80,9 @@ class NumeroOtrosIngresos(ndb.Model):
 class NumeroActivoFijo(ndb.Model):
     consecutivo = ndb.IntegerProperty()
 
-class NumeroCuentaBancaria(ndb.Model):
+class NumeroPagoRecibido(ndb.Model):
     consecutivo = ndb.IntegerProperty()
-
+    
 class Remision(ndb.Model):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -107,7 +107,25 @@ class Factura(ndb.Model):
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
     pagada = ndb.BooleanProperty(default=False)
+    abono = ndb.IntegerProperty(default=0)
 #     resumen = ndb.ComputedProperty(lambda self: self.ventas[0].producto.id())#consider a better option for this!
+    
+class MedioDePago(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class CuentaTransferencias(Record):    
+    numero = ndb.StringProperty(indexed=True)
+    cliente = ndb.KeyProperty(kind=Cliente)
+    rotulo = ndb.ComputedProperty(lambda self: self.cliente.id() + '-' + self.numero)
+    
+class PagoRecibido(Record):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
+    medio = ndb.KeyProperty(kind=MedioDePago)
+    documento = ndb.StringProperty(indexed=True)
+    monto = ndb.IntegerProperty()
     
 class Devolucion(ndb.Model):
     numero = ndb.IntegerProperty()

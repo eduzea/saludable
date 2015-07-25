@@ -9,7 +9,8 @@ singletons = {'NumeroFactura':NumeroFactura,
               'NumeroEgreso':NumeroEgreso,              
               'NumeroDeuda':NumeroDeuda,
               'NumeroOtrosIngresos':NumeroOtrosIngresos,
-              'NumeroActivoFijo':NumeroActivoFijo
+              'NumeroActivoFijo':NumeroActivoFijo,
+              'NumeroPagoRecibido':NumeroPagoRecibido
               }
 
 classModels = {'Cliente':Cliente, 
@@ -46,7 +47,10 @@ classModels = {'Cliente':Cliente,
                'Banco':Banco,
                'TipoDeCuenta':TipoDeCuenta,
                'SaldoCuentaBancaria':SaldoCuentaBancaria,
-               'CuentaPorCobrar':CuentaPorCobrar}
+               'CuentaPorCobrar':CuentaPorCobrar,
+               'MedioDePago':MedioDePago,
+               'CuentaTransferencias':CuentaTransferencias,
+               'PagoRecibido':PagoRecibido}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -77,7 +81,10 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Banco':['nombre'],
            'TipoDeCuenta':['nombre'],
            'SaldoCuentaBancaria':['fecha'],
-           'CuentaPorCobrar':['cliente']
+           'CuentaPorCobrar':['cliente'],
+           'MedioDePago':['nombre'],
+           'CuentaTransferencias':['numero'],
+           'PagoRecibido':['numero'],
            }
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -243,7 +250,22 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                                    {'id':'cuenta','ui':'Cuenta','width':'10em'},
                                    {'id':'fecha', 'ui':'Fecha','width':'5em'},
                                    {'id':'saldo', 'ui':'Saldo','width':'5em','required':'true','valid':'dijit/form/NumberTextBox'},
-                                   ]
+                                   ],
+            'MedioDePago':[
+                           {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                           ],
+            'CuentaTransferencias':[
+                           {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                           {'id':'cliente','ui':'Cliente','width':'15em'},
+                           ],
+            'PagoRecibido':[
+                              {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                              {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                              {'id':'cliente','ui':'Cliente','width':'15em'},
+                              {'id':'medio','ui':'Medio de pago','width':'15em'},
+                              {'id':'documento','ui':'Documento','required':'false', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                              {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                              ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
 templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html','CuentasPorCobrar':'CuentasPorCobrar.html'}

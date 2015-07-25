@@ -14,6 +14,7 @@ from dateutil import parser
 from google.appengine.api import users
 from google.appengine.datastore.datastore_query import Cursor
 from models.models import *
+from followup import *
 from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
 from jinja2._markupsafe import Markup
 from config import *
@@ -113,7 +114,6 @@ class GetColumns(webapp2.RequestHandler):
         entity_class = self.request.get('entityClass')
         self.response.write(json.dumps(getColumns(entity_class)))
         
-
 
 def buildQuery(entity_class,params):
     entityClass = classModels[entity_class]
@@ -301,12 +301,14 @@ class SaveEntity(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST
         values = post_data.mixed()
-        entity_class = values.pop("entity_class")
-        
+        entity_class = values.pop("entity_class")     
         for key,value in values.iteritems():
             values[rreplace(key, '_' + entity_class,'',1)] = values.pop(key)
         response = create_entity(entity_class,values)
+        if entity_class in postSaveAction:
+            postSaveAction[entity_class](response['entity'])
         self.response.out.write(JSONEncoder().encode(response))
+
 
 def tagForField(entity_class, prop=None, auto=None):
     tag = ''
@@ -1148,9 +1150,9 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
             if factura.cliente.id() in saldos:
-                saldos[factura.cliente.id()] += factura.total
+                saldos[factura.cliente.id()] += factura.total-factura.abono
             else:
-                saldos[factura.cliente.id()] = factura.total
+                saldos[factura.cliente.id()] = factura.total-factura.abono
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
         self.response.out.write(json.dumps(response))
@@ -1159,7 +1161,7 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
         cliente = self.request.get('cliente') 
         facturas = Factura.query(Factura.cliente == ndb.Key('Cliente',cliente))
-        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'total':factura.total} for factura in facturas if not factura.pagada]
+        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'total':factura.total, 'abono':factura.abono} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
         
 class FixPrecios(webapp2.RequestHandler):

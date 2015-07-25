@@ -33,9 +33,9 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var activoNodes2 = makeStore(['SaldoCuentaBancaria',{name:'CuentasPorCobrar',template:'CuentasPorCobrar'},'Inventario'],'Activos Circulantes'); 
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var ingresoNodes = makeStore(['Factura','Remision','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
+		var ingresoNodes = makeStore(['Factura','Remision','PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
-		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta',{name:'PUC', clickable:false}],'Admin');
+		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
 		var adminNodes2 = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
 		var adminNodes3 = makeStore(['Numeros'],'Admin','numeros');
 		var informeNodes = makeStore(['Ventas','Gastos','Tendencias','IVA'],'Informes','tablaDinamica');

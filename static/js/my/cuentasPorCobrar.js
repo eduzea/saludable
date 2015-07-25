@@ -38,9 +38,14 @@ function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, qu
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
+			
+			var numFormatter=function(data){
+					return number.format(data[this.field],{pattern:'###,###'});
+				};
+			
 			var resumenColumns = [
-				{field:'cliente', name:'Cliente','style':"text-align: center", 'width':'20em'},
-				{field:'monto', name:'Saldo','style':"text-align: center", 'width':'10em'}
+				{field:'cliente', name:'Cliente',style:"text-align: center", width:'20em'},
+				{field:'monto', name:'Saldo',style:"text-align: center", width:'10em', formatter: numFormatter}
 			];
 										
 			var detalleColumn = { field : 'detalle', name : '', widgetsInCell: true, width:'5em',
@@ -104,7 +109,8 @@ function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, qu
 			var detalleColumns = [
 				{field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
 				{field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
-				{field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em'},
+				{field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
+				{field:'abono', name:'Abono', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
 			];
 
 			gridProps['store']=new Memory();
