@@ -1,4 +1,6 @@
 from google.appengine.ext import ndb
+from google.appengine.api import users
+from datetime import date
 
 class Empleado(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
@@ -6,6 +8,11 @@ class Empleado(ndb.Model):
     rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
     email = ndb.StringProperty(indexed=True)
     activo = ndb.BooleanProperty(default=True)
+
+class Record(ndb.Model):
+    fechaCreacion = ndb.DateProperty()
+    empleadoCreador = ndb.StringProperty(indexed=True)
+     
 
 class GrupoDePrecios(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)
@@ -69,6 +76,12 @@ class NumeroDeuda(ndb.Model):
     
 class NumeroOtrosIngresos(ndb.Model):
     consecutivo = ndb.IntegerProperty()
+    
+class NumeroActivoFijo(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
+
+class NumeroCuentaBancaria(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
 
 class Remision(ndb.Model):
     numero = ndb.IntegerProperty()
@@ -93,6 +106,7 @@ class Factura(ndb.Model):
     iva = ndb.ComputedProperty(lambda self: True if self.montoIva else False)
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
+    pagada = ndb.BooleanProperty(default=False)
 #     resumen = ndb.ComputedProperty(lambda self: self.ventas[0].producto.id())#consider a better option for this!
     
 class Devolucion(ndb.Model):
@@ -208,7 +222,6 @@ class Acreedor(ndb.Model):
     ciudad = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
-
 class Deuda(ndb.Model):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
@@ -220,4 +233,72 @@ class Deuda(ndb.Model):
     comentario = ndb.TextProperty()
     montoPagado = ndb.IntegerProperty(default=0)
     pagada = ndb.ComputedProperty(lambda self: 100 * self.montoPagado / self.monto)
+
+class CapitalPagado(Record):
+    fecha = ndb.DateProperty()
+    valor = ndb.IntegerProperty()
+
+class CapitalSocial(Record):
+    socio = ndb.StringProperty(indexed=True)
+    acciones = ndb.IntegerProperty()
+    total =  ndb.IntegerProperty()
+    participacion = ndb.ComputedProperty(lambda self: 100 * self.total / CapitalPagado.query().fetch()[-1].valor)
+    rotulo= ndb.ComputedProperty(lambda self: self.socio)
     
+class Activo(Record):
+    numero = ndb.IntegerProperty()
+    nombre = ndb.StringProperty(indexed=True)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta)
+    comentario = ndb.TextProperty()
+
+class ActivoFijo(Activo):
+    fechaDeAdquisicion = ndb.DateProperty() #Fecha de adquisicion del activo
+    valorPagado = ndb.IntegerProperty()
+    valorActual = ndb.IntegerProperty()
+    total = ndb.ComputedProperty(lambda self: self.valorActual)
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+
+class Banco(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    direccion = ndb.StringProperty(indexed=True)
+    telefono = ndb.StringProperty(indexed=True)
+    contacto = ndb.StringProperty(indexed=True)
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+
+class TipoDeCuenta(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo= ndb.ComputedProperty(lambda self: self.nombre)    
+
+class CuentaBancaria(Record):
+    numero = ndb.StringProperty(indexed=True)
+    banco = ndb.KeyProperty(kind=Banco)
+    tipo = ndb.KeyProperty(kind=TipoDeCuenta)
+    titular = ndb.StringProperty(indexed=True)
+    rotulo= ndb.ComputedProperty(lambda self: self.banco.get().rotulo +'-' + self.numero)
+
+class SaldoCuentaBancaria(Record):
+    cuenta = ndb.KeyProperty(kind=CuentaBancaria)
+    fecha = ndb.DateProperty()
+    saldo = ndb.IntegerProperty()
+
+class CuentaPorCobrar(Record):
+    deudor = ndb.KeyProperty(kind=Cliente)
+    facturas = ndb.KeyProperty(kind=Factura, repeated=True)
+    total = ndb.ComputedProperty(lambda self: sum([factura.get().total for factura in self.facturas]))
+
+class AnticipoImpuestos(Activo):
+    entidad = ndb.StringProperty(indexed=True)
+    total = ndb.IntegerProperty()
+
+class Pasivo(Record):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty() #Fecha de adquisicion
+    empleado = ndb.KeyProperty(kind=Empleado)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta)
+    total = ndb.IntegerProperty()
+    
+            

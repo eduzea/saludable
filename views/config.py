@@ -8,7 +8,8 @@ singletons = {'NumeroFactura':NumeroFactura,
               'NumeroRemision':NumeroRemision,
               'NumeroEgreso':NumeroEgreso,              
               'NumeroDeuda':NumeroDeuda,
-              'NumeroOtrosIngresos':NumeroOtrosIngresos
+              'NumeroOtrosIngresos':NumeroOtrosIngresos,
+              'NumeroActivoFijo':NumeroActivoFijo
               }
 
 classModels = {'Cliente':Cliente, 
@@ -37,7 +38,15 @@ classModels = {'Cliente':Cliente,
                'Acreedor':Acreedor,
                'Deuda':Deuda,
                'Devolucion':Devolucion,
-               'OtrosIngresos':OtrosIngresos}
+               'OtrosIngresos':OtrosIngresos,
+               'CapitalSocial':CapitalSocial,
+               'CapitalPagado':CapitalPagado,
+               'ActivoFijo':ActivoFijo,
+               'CuentaBancaria':CuentaBancaria,
+               'Banco':Banco,
+               'TipoDeCuenta':TipoDeCuenta,
+               'SaldoCuentaBancaria':SaldoCuentaBancaria,
+               'CuentaPorCobrar':CuentaPorCobrar}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -60,7 +69,16 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Grupo':['pucNumber'],
            'Cuenta':['pucNumber'],
            'SubCuenta':['pucNumber'],
-           'OtrosIngresos':['numero']}
+           'OtrosIngresos':['numero'],
+           'CapitalSocial':['socio'],
+           'CapitalPagado':['fecha'],
+           'ActivoFijo':['numero'],
+           'CuentaBancaria':['numero'],
+           'Banco':['nombre'],
+           'TipoDeCuenta':['nombre'],
+           'SaldoCuentaBancaria':['fecha'],
+           'CuentaPorCobrar':['cliente']
+           }
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                        {'id':'negocio','ui':'Negocio', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
@@ -94,7 +112,8 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
                        {'id':'fecha', 'ui':'Fecha', 'width':'8em'},
                        {'id':'total', 'ui':'Valor', 'width':'8em'},
-                       {'id':'empleado', 'ui':'Empleado', 'width':'10em'}
+                       {'id':'empleado', 'ui':'Empleado', 'width':'10em'},
+                       {'id':'pagada', 'ui':'Pagada', 'width':'4em'}
                        ],
             'Remision':[{'id':'numero', 'ui':'Numero','width':'4em'},
                        {'id':'empleado', 'ui':'Empleado','width':'8em'},
@@ -184,10 +203,50 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                              {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
                              {'id':'descripcion', 'ui':'Descripcion','required':'true','valid':'dijit/form/SimpleTextarea','width':'10em'},
                              {'id':'total','ui':'Monto','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'}
-                             ]
+                             ],
+            'CapitalSocial':[
+                             {'id':'socio','ui':'Socio', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
+                             {'id':'acciones','ui':'No. Acciones','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'},
+                             {'id':'total','ui':'Valor','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'},
+                             {'id':'participacion', 'ui':'Participacion (%)','required':'true','valid':'','width':'8em', 'disabled':True}
+                             ],
+            'CapitalPagado':[
+                             {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                             {'id':'valor','ui':'Valor','required':'true','valid':'dijit/form/NumberTextBox','width':'10em'},
+                             ],
+            'ActivoFijo':[
+                      {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','width':'5em','required':'true','valid':''},
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                      {'id':'grupo','ui':'Grupo', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'8em'},
+                      {'id':'cuenta','ui':'Cuenta', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'8em'},
+                      {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'8em'},
+                      {'id':'valorPagado','ui':'Valor Pagado','required':'true','valid':'dijit/form/NumberTextBox','width':'8em'},
+                      {'id':'valorActual','ui':'Valor Actual','required':'true','valid':'dijit/form/NumberTextBox','width':'8em'},
+                      ],
+            'CuentaBancaria':[
+                              {'id':'banco','ui':'Banco','width':'10em'},
+                              {'id':'tipo','ui':'Tipo de Cuenta','width':'5em'},
+                              {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                              {'id':'titular','ui':'Titular', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                              ],
+            'Banco':[
+                     {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                     {'id':'direccion','ui':'Direccion', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                     {'id':'telefono','ui':'Telefono', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                     {'id':'contacto','ui':'Contacto', 'required':'false', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                     ],
+            'TipoDeCuenta':[
+                            {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
+                            ],
+            'SaldoCuentaBancaria':[
+                                   {'id':'cuenta','ui':'Cuenta','width':'10em'},
+                                   {'id':'fecha', 'ui':'Fecha','width':'5em'},
+                                   {'id':'saldo', 'ui':'Saldo','width':'5em','required':'true','valid':'dijit/form/NumberTextBox'},
+                                   ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html'}
+templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html','CuentasPorCobrar':'CuentasPorCobrar.html'}
 
 pucGastosOperacionales = {'Operacionales de Administracion':
              {'Gastos de personal': 

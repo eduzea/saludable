@@ -2,14 +2,14 @@
 require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojox/widget/Standby"], 
 function(request,registry,parser,dom,on,query,Standby) {
 	var entity_class = saludable.entity_class;
-	var pivotUrl = {'Ingresos': '/getProductSales?' ,
+	var pivotUrl = {'Ventas': '/getProductSales?' ,
 					'Gastos': '/getAllCompras?',
 					'Tendencias':'/getProductSales?',
 					'IVA': '/entityData?entityClass=Factura'
 				}; 
 	var url = pivotUrl[entity_class];
 	var config = {
-		'Ingresos': {
+		'Ventas': {
 				rows : ['ciudad',"cliente"],
 				vals : ["venta"],
 				aggregatorName:'Suma'

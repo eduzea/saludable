@@ -1,0 +1,16 @@
+<head>
+	<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
+	<link rel="stylesheet" href="../static/css/grid.css" />
+	<script type="text/javascript" src="../static/js/my/cuentasPorCobrar.js"></script>
+</head>
+<div id='widget{{entity_class}}' title="{{entity_class}}" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'true', isLayoutContainer:'true',useMenu:'false', tabPosition: 'bottom'">
+	<div data-dojo-type="dojox/layout/ContentPane" id='{{entity_class}}_resumen' title="Por Cliente" 
+	style="overflow: hidden !important;" >
+		<div id='{{entity_class}}_resumen_grid'></div>
+	</div>
+	<div data-dojo-type="dojox/layout/ContentPane" id='{{entity_class}}_detalle' title="Detalle" 
+	style="overflow: hidden !important;">
+		<center><div id='{{entity_class}}_title'></div></center>
+		<div id='{{entity_class}}_detalle_grid'></div>
+	</div>
+</div>

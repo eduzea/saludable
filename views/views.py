@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import sys
+import random
 from _struct import Struct
 sys.path.insert(0, 'libs/python-dateutil-1.5')
 sys.path.insert(0, 'libs/easydict-1.6')
@@ -231,7 +232,7 @@ def check_types(entity_class, values):
         if type(value) is FloatProperty:
             values[key] = float(values[key])
         if type(value) is ndb.BooleanProperty:#checkbox value should be 'si'o 'no'
-            values[key] = True if values[key] == 'si' else False
+            values[key] = True if (values[key] == 'si' or values[key])  else False
         if type(value) is KeyProperty:
             if value._repeated == True:
                 items = []
@@ -251,15 +252,18 @@ def check_types(entity_class, values):
                 key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
                 values[key]=key_obj
         if type(value) == ndb.DateProperty:
-            try:
-                values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
-            except:
-                start = values[key].find( '(' )
-                end = values[key].find( ')' )
-                if start != -1 and end != -1:
-                    result = values[key][start:end+1]
-                    fecha = values[key].replace(result,'')
-                values[key] = parser.parse(fecha)
+            if key == 'fechaCreacion':
+                values[key]=date.today()
+            else:
+                try:
+                    values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+                except:
+                    start = values[key].find( '(' )
+                    end = values[key].find( ')' )
+                    if start != -1 and end != -1:
+                        result = values[key][start:end+1]
+                        fecha = values[key].replace(result,'')
+                    values[key] = parser.parse(fecha)
         if type(value) == ndb.StructuredProperty:
             objList = []
             listVals = values[key]
@@ -267,6 +271,9 @@ def check_types(entity_class, values):
                 obj = check_types(value._modelclass._class_name(),listItem)             
                 objList.append(value._modelclass(**obj))
             values[key]=objList
+        if key == 'empleadoCreador':
+            values[key] = users.get_current_user().email()
+
     if 'proplistdata' in values:
         values.pop("proplistdata")
     keys = values.keys()
@@ -315,12 +322,9 @@ def tagForField(entity_class, prop=None, auto=None):
         tag = "<select name='" + prop['id'] + '_' + entity_class + "' id='" + prop['id'] + '_' + entity_class + "' data-dojo-type='dijit/form/Select'>"
         options = classModels[prop['type']._kind].query().fetch()
         for option in options:
-            try:
-                dicc = option.to_dict()
-                option_value = getKey(prop['type']._kind, dicc)
-                tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
-            except Exception as e:
-                print option
+            dicc = option.to_dict()
+            option_value = getKey(prop['type']._kind, dicc)
+            tag += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
         tag += "</select>"
         if prop['type']._repeated == True:
             tag += '<button class = "listprop" id="listpropBtnAgregar' + '_' + entity_class + '_' + prop['id'] + '" data-dojo-type="dijit/form/Button">Agregar</button>'
@@ -342,6 +346,7 @@ def tagForField(entity_class, prop=None, auto=None):
         tag +='" required="' + prop['required'] 
         dojoprops = ' data-dojo-props="' + prop['dojoprops'] + '"' if 'dojoprops' in prop else ''
         tag += '" data-dojo-type="' + prop['valid'] + '" style="width: ' + prop['width'] + ';"' + ' value="' + value + '"' + dojoprops
+        tag += 'disabled' if 'disabled' in prop else ''
         tag += '/>'
     return Markup(tag)
 
@@ -757,7 +762,10 @@ def getCostosIndirectos(fechaDesde, fechaHasta):
                                                      'Vigilancia',
                                                      'Combustible',
                                                      'Dotacion',
-                                                     'Pruebas.laboratorio'],
+                                                     'Dotacion.empleados',
+                                                     'Pruebas.laboratorio',
+                                                     'Cursos.para.el.personal',
+                                                     'Medicinas.Botiquin'],
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta}
                                )
@@ -839,7 +847,8 @@ def getGastosAdministrativos(fechaDesde,fechaHasta):
     honorarios = getTotalFromModel('Egreso', {'resumen':'Honorarios',
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta})
-    mantenimientoYreparaciones = getTotalFromModel('Egreso', {'resumen':'Mantenimiento.y.arreglos.locativos',
+    mantenimientoYreparaciones = getTotalFromModel('Egreso', {'resumen':['Mantenimiento.y.arreglos.locativos',
+                                                                         'Materiales.de.Construccion'],
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta})
     gastosLegales = getTotalFromModel('Egreso', {'resumen':'Gastos.legales',
@@ -869,7 +878,8 @@ def getIngresosNoOperacionales(fechaDesde, fechaHasta):
     return getTotalFromModel('OtrosIngresos', {'fechaDesde':fechaDesde, 'fechaHasta': fechaHasta})
 
 def getImpuestos(fechaDesde, fechaHasta):
-    renta = getTotalFromModel('Egreso', {'resumen':'Impuesto.-.Renta', 
+    renta = getTotalFromModel('Egreso', {'resumen':['Impuesto.-.Renta',
+                                                    'Impuestos.Nacionales'], 
                                          'fechaDesde':fechaDesde,
                                          'fechaHasta':fechaHasta})
     cree = getTotalFromModel('Egreso', {'resumen':'Impuesto.-.CREE', 
@@ -887,7 +897,8 @@ def getPyGData(fechaDesde,fechaHasta):
     utilidadOperacional = ventasNetas.total - costos.total - gastosAdministrativos.total - gastosDeVentas.total
     margenOperacional = utilidadOperacional / ventasNetas.total
     otrosGastos = getOtrosGastos(fechaDesde, fechaHasta)
-    utilidadAntesDeImpuestos = utilidadOperacional - otrosGastos.total
+    ingresosNoOperacionales = getIngresosNoOperacionales(fechaDesde, fechaHasta)
+    utilidadAntesDeImpuestos = utilidadOperacional - otrosGastos.total + ingresosNoOperacionales
     margenAntesDeImpuestos = utilidadAntesDeImpuestos / ventasNetas.total
     impuestos = getImpuestos(fechaDesde,fechaHasta)
     utilidadNeta = utilidadAntesDeImpuestos - impuestos.total 
@@ -930,7 +941,7 @@ def getPyGData(fechaDesde,fechaHasta):
             'camaraDeComercio':'${:,}'.format(gastosAdministrativos.camaraDeComercio),
             'utilidadOperacional':'${:,}'.format(utilidadOperacional),
             'margenOperacional':'{:.2%}'.format(margenOperacional),
-            'ingresosNoOperacionales':'${:,}'.format(getIngresosNoOperacionales(fechaDesde, fechaHasta)),
+            'ingresosNoOperacionales':'${:,}'.format(ingresosNoOperacionales),
             'otrosGastos':'${:,}'.format(otrosGastos.total),
             'financieros':'${:,}'.format(otrosGastos.financieros),
             'extraordinarios':'${:,}'.format(otrosGastos.extraordinarios),
@@ -1128,6 +1139,28 @@ class GuardarEgreso(webapp2.RequestHandler):
         egreso.put()
         entity = egreso
         self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
+        
+
+class GetCuentasPorCobrar(webapp2.RequestHandler):
+    def get(self):
+        response = []
+        saldos={}
+        facturas = Factura.query(Factura.pagada == False).fetch()
+        for factura in facturas:
+            if factura.cliente.id() in saldos:
+                saldos[factura.cliente.id()] += factura.total
+            else:
+                saldos[factura.cliente.id()] = factura.total
+        for key,value in saldos.iteritems():
+            response.append({'id':key,'cliente':key, 'monto':value})
+        self.response.out.write(json.dumps(response))
+
+class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
+    def get(self):
+        cliente = self.request.get('cliente') 
+        facturas = Factura.query(Factura.cliente == ndb.Key('Cliente',cliente))
+        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'total':factura.total} for factura in facturas if not factura.pagada]
+        self.response.out.write(JSONEncoder().encode(response))    
         
 class FixPrecios(webapp2.RequestHandler):
     def get(self):

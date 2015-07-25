@@ -510,6 +510,46 @@
 		"telefono": "3216230806",
 		"nit": "9008305569"
 	}, {
+		"diasPago": 30,
+		"negocio": "LA FLORA",
+		"direccion": "Av 6 N # 38N-28",
+		"grupoDePrecios": "PIZZA.AL.PASO",
+		"ciudad": "Cali",
+		"rotulo": "PIZZA AL PASO LA FLORA",
+		"nombre": "PIZZA AL PASO",
+		"telefono": " ",
+		"nit": " "
+	}, {
+		"diasPago": 30,
+		"negocio": "PALMIRA",
+		"direccion": "Cra. 100 #15-144, ",
+		"grupoDePrecios": "PIZZA.AL.PASO",
+		"ciudad": "Cali",
+		"rotulo": "PIZZA AL PASO PALMIRA",
+		"nombre": "PIZZA AL PASO",
+		"telefono": "4882000",
+		"nit": "1"
+	}, {
+		"diasPago": 30,
+		"negocio": "PE\u00d1ON",
+		"direccion": "Cra 2A No. 2 \u2013 55 Oeste",
+		"grupoDePrecios": "PIZZA.AL.PASO",
+		"ciudad": "Bogota",
+		"rotulo": "PIZZA AL PASO PE\u00d1ON",
+		"nombre": "PIZZA AL PASO",
+		"telefono": "4882000",
+		"nit": "1"
+	}, {
+		"diasPago": 30,
+		"negocio": "UNICENTRO",
+		"direccion": "UNICENTRO",
+		"grupoDePrecios": "PIZZA.AL.PASO",
+		"ciudad": "Cali",
+		"rotulo": "PIZZA AL PASO UNICENTRO",
+		"nombre": "PIZZA AL PASO ",
+		"telefono": "3169384",
+		"nit": "1"
+	}, {
 		"diasPago": 0,
 		"negocio": " ",
 		"direccion": "CLL 86 A # 13 A 23",
