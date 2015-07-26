@@ -40,7 +40,7 @@ function(request,registry,parser,dom,on,query,Standby) {
 	
 	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
 	//Modal to show its loading
-	var standby = new Standby({target: "output_" + entity_class});
+	var standby = new Standby({target: 'pivot_standby'});
 	document.body.appendChild(standby.domNode);
 	standby.startup();
 	on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){

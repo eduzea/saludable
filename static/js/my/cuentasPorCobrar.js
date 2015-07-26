@@ -1,40 +1,25 @@
 //# sourceURL=../static/js/my/cuentasPorCobrar.js
 require(['dojo/store/Memory',
-		 'dojo/store/JsonRest',
-		 'gridx/Grid',
-		 'gridx/core/model/cache/Sync',
-		 'dojo/request','dijit/form/Button',
-		 'gridx/modules/CellWidget',
+		 'dojo/request',
+		 'dijit/form/Button',
 		 'dijit/registry',
-		 'dojo/query',
-		 'dojo/parser',
 		 'dojo/dom',
-		 "dojo/dom-construct",
-		 'dojox/html/entities',
 		 "dojo/number",
 		 "dojo/on",
-		 'gridx/support/exporter/toCSV',
-		 'dojo/aspect',
-		 'dojo/topic',
 		 "dojox/widget/Standby",
+		 'gridx/Grid',
 		 //Gridx modules
-		 "gridx/modules/Bar",
-		 'gridx/support/Summary',
-		 'gridx/support/DropDownPager',
-		 'gridx/support/QuickFilter',
-		 'gridx/support/LinkSizer',
-		 'gridx/support/LinkPager',
-		 'gridx/modules/SingleSort',
-		 "gridx/modules/Pagination",
-		 "gridx/modules/pagination/PaginationBar",
-		 'gridx/modules/Filter',
-		 'gridx/modules/filter/FilterBar',
-		 'gridx/support/exporter/exporter',
+		 'gridx/modules/CellWidget',"gridx/modules/Bar",'gridx/support/Summary','gridx/support/DropDownPager','gridx/support/QuickFilter',
+		 'gridx/support/LinkSizer','gridx/support/LinkPager','gridx/modules/SingleSort',"gridx/modules/Pagination","gridx/modules/pagination/PaginationBar",
+		 'gridx/modules/Filter','gridx/modules/filter/FilterBar',
 		 //End gridx modules
-		 'dijit/form/SimpleTextarea',
-		 'dijit/form/CheckBox'], 
-function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect,topic,Standby) {
+], 
+function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 	var entity_class = saludable.entity_class;
+	var standby = new Standby({target: entity_class+'_resumen'});
+	document.body.appendChild(standby.domNode);
+	standby.startup();
+	standby.show();	
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
@@ -56,13 +41,15 @@ function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, qu
 						onClick : function() {
 		                    var selectedRowId = cellWidget.cell.row.id;
 		                    var rowData = resumenGrid.row(selectedRowId, true).rawData();
+		                    standby.show();
 		                    request("getDetalleCuentasPorCobrar?cliente="+rowData.id,{handleAs:'json'}).then(
 		                    	function(response){
 		                    		var grid = registry.byId(entity_class+'_detalle_grid');
 		                    		grid.model.clearCache();
 									grid.model.store.setData(response);
 									grid.body.refresh();
-									dom.byId(entity_class + '_title').innerHTML = rowData.id; 
+									dom.byId(entity_class + '_title').innerHTML = rowData.id;
+									standby.hide(); 
 									var widget = registry.byId('widget'+entity_class);
 									widget.selectChild(widget.getChildren()[1]);
 									}
@@ -77,7 +64,6 @@ function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, qu
 			
 			var gridProps = 
 			 {
-			 	cacheClass: Cache,
 			 	store: resumenStore,
 	          	structure: resumenColumns,
 	          	paginationInitialPageSize: 100,
@@ -105,10 +91,12 @@ function(Memory, JsonRest, Grid, Cache, request, Button, CellWidget,registry, qu
 			
 			var resumenGrid = new Grid(gridProps, entity_class+'_resumen_grid');
 			resumenGrid.startup();
+			standby.hide();
 			
 			var detalleColumns = [
 				{field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
 				{field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
+				{field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'10em'},
 				{field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
 				{field:'abono', name:'Abono', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
 			];

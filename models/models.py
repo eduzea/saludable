@@ -29,7 +29,6 @@ class Ciudad(ndb.Model):
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
 class Cliente(ndb.Model):
-    """Models an individual Client."""
     nombre = ndb.StringProperty(indexed=True)
     negocio = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)

@@ -1145,19 +1145,21 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         saldos={}
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
-            if factura.cliente.id() in saldos:
-                saldos[factura.cliente.id()] += factura.total-factura.abono
+            if factura.cliente.get().nombre in saldos:
+                saldos[factura.cliente.get().nombre] += factura.total-factura.abono
             else:
-                saldos[factura.cliente.id()] = factura.total-factura.abono
+                saldos[factura.cliente.get().nombre] = factura.total-factura.abono
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
         self.response.out.write(json.dumps(response))
 
 class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
-        cliente = self.request.get('cliente') 
-        facturas = Factura.query(Factura.cliente == ndb.Key('Cliente',cliente))
-        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'total':factura.total, 'abono':factura.abono} for factura in facturas if not factura.pagada]
+        cliente = self.request.get('cliente')
+        clienteNegocios = Cliente.query(Cliente.nombre == cliente).fetch()
+        qry = buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
+        facturas = qry.fetch()
+        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':factura.abono} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
         
 class FixPrecios(webapp2.RequestHandler):
