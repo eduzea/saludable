@@ -1,0 +1,18 @@
+[
+	{
+		"rotulo": "CHEQUE",
+		"fechaCreacion": "2015-07-25",
+		"nombre": "CHEQUE",
+		"empleadoCreador": "eduzea@gmail.com"
+	}, {
+		"rotulo": "EFECTIVO",
+		"fechaCreacion": "2015-07-25",
+		"nombre": "EFECTIVO",
+		"empleadoCreador": "eduzea@gmail.com"
+	}, {
+		"rotulo": "TRANSFERENCIA",
+		"fechaCreacion": "2015-07-25",
+		"nombre": "TRANSFERENCIA",
+		"empleadoCreador": "eduzea@gmail.com"
+	}
+]

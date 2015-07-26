@@ -497,11 +497,7 @@ class GetProductSales(webapp2.RequestHandler):
             if factura.anulada: continue
             for venta in factura.ventas:
                 venta = venta.to_dict()
-                if venta['porcion'].get():
-                    venta['peso']=venta['porcion'].get().valor * venta['cantidad']
-                else: 
-                    print factura.numero, ":", venta
-                    continue
+                venta['peso']=venta['porcion'].get().valor * venta['cantidad']
                 venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
                 venta['factura']=factura.numero
                 venta['cliente']=factura.cliente.id()
@@ -989,7 +985,7 @@ class ImportScript(webapp2.RequestHandler):
 #         data = json.loads(data)
         json_data.close()
         for record in data:
-            print record
+#             print record
             create_entity(entity_class, record)
         self.response.write('Registros Importados!')
 

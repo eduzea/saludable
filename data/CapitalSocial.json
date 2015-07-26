@@ -1,0 +1,19 @@
+[
+	{
+		"rotulo": "Eloy Humberto Zea Gonzalez",
+		"empleadoCreador": "eduzea@gmail.com",
+		"total": 27240000,
+		"socio": "Eloy Humberto Zea Gonzalez",
+		"acciones": 27240,
+		"fechaCreacion": null,
+		"participacion": 30
+	}, {
+		"rotulo": "Gustavo Eduardo Zea",
+		"empleadoCreador": "eduzea@gmail.com",
+		"total": 63560000,
+		"socio": "Gustavo Eduardo Zea",
+		"acciones": 63560,
+		"fechaCreacion": null,
+		"participacion": 70
+	}
+]

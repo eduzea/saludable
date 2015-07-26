@@ -1,0 +1,15 @@
+[
+	{
+		"nombre": "Activo",
+		"pucNumber": "1",
+		"rotulo": "Activo"
+	}, {
+		"nombre": "Gastos",
+		"pucNumber": "5",
+		"rotulo": "Gastos"
+	}, {
+		"nombre": "Costos de producci\u00f3n o de operaci\u00f3n",
+		"pucNumber": "7",
+		"rotulo": "Costos de producci\u00f3n o de operaci\u00f3n"
+	}
+]

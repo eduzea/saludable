@@ -1,0 +1,133 @@
+[
+	{
+		"rotulo": "NA",
+		"nombre": "NA",
+		"pucNumber": "0",
+		"grupo": "0"
+	}, {
+		"rotulo": "Caja",
+		"nombre": "Caja",
+		"pucNumber": "1105",
+		"grupo": "11"
+	}, {
+		"rotulo": "Bancos",
+		"nombre": "Bancos",
+		"pucNumber": "1110",
+		"grupo": "11"
+	}, {
+		"rotulo": "Clientes",
+		"nombre": "Clientes",
+		"pucNumber": "1305",
+		"grupo": "13"
+	}, {
+		"rotulo": "Anticipo de impuestos y contribuciones o saldos a favor",
+		"nombre": "Anticipo de impuestos y contribuciones o saldos a favor",
+		"pucNumber": "1355",
+		"grupo": "13"
+	}, {
+		"rotulo": "Productos terminados",
+		"nombre": "Productos terminados",
+		"pucNumber": "1430",
+		"grupo": "14"
+	}, {
+		"rotulo": "Envases y empaques",
+		"nombre": "Envases y empaques",
+		"pucNumber": "1460",
+		"grupo": "14"
+	}, {
+		"rotulo": "Maquinaria y equipo",
+		"nombre": "Maquinaria y equipo",
+		"pucNumber": "1520",
+		"grupo": "15"
+	}, {
+		"rotulo": "Equipos de oficina",
+		"nombre": "Equipos de oficina",
+		"pucNumber": "1524",
+		"grupo": "15"
+	}, {
+		"rotulo": "Flota y equipo de transporte",
+		"nombre": "Flota y equipo de transporte",
+		"pucNumber": "1540",
+		"grupo": "15"
+	}, {
+		"rotulo": "Depreciacion acumulada",
+		"nombre": "Depreciacion acumulada",
+		"pucNumber": "1592",
+		"grupo": "15"
+	}, {
+		"rotulo": "Marcas",
+		"nombre": "Marcas",
+		"pucNumber": "1610",
+		"grupo": "16"
+	}, {
+		"rotulo": "Derechos",
+		"nombre": "Derechos",
+		"pucNumber": "1624",
+		"grupo": "16"
+	}, {
+		"rotulo": "Know how",
+		"nombre": "Know how",
+		"pucNumber": "1630",
+		"grupo": "16"
+	}, {
+		"rotulo": "Cargos diferidos",
+		"nombre": "Cargos diferidos",
+		"pucNumber": "1710",
+		"grupo": "17"
+	}, {
+		"rotulo": "Gastos de personal",
+		"nombre": "Gastos de personal",
+		"pucNumber": "5105",
+		"grupo": "51"
+	}, {
+		"rotulo": "Honorarios",
+		"nombre": "Honorarios",
+		"pucNumber": "5110",
+		"grupo": "51"
+	}, {
+		"rotulo": "Impuestos",
+		"nombre": "Impuestos",
+		"pucNumber": "5115",
+		"grupo": "51"
+	}, {
+		"rotulo": "Arrendamientos",
+		"nombre": "Arrendamientos",
+		"pucNumber": "5120",
+		"grupo": "51"
+	}, {
+		"rotulo": "Servicios",
+		"nombre": "Servicios",
+		"pucNumber": "5135",
+		"grupo": "51"
+	}, {
+		"rotulo": "Mantenimiento y reparaciones",
+		"nombre": "Mantenimiento y reparaciones",
+		"pucNumber": "5145",
+		"grupo": "51"
+	}, {
+		"rotulo": "Diversos",
+		"nombre": "Diversos",
+		"pucNumber": "5195",
+		"grupo": "51"
+	}, {
+		"rotulo": "Servicios",
+		"nombre": "Servicios",
+		"pucNumber": "5235",
+		"grupo": "52"
+	}, {
+		"rotulo": "Financieros",
+		"nombre": "Financieros",
+		"pucNumber": "5305",
+		"grupo": "53"
+	}, {
+		"rotulo": "Impuestos de renta y complementarios",
+		"nombre": "Impuestos de renta y complementarios",
+		"pucNumber": "5405",
+		"grupo": "54"
+	}, {
+		"rotulo": "Gastos de personal",
+		"nombre": "Gastos de personal",
+		"pucNumber": "7205",
+		"grupo": "72"
+	}
+]

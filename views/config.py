@@ -268,7 +268,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                               ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html','CuentasPorCobrar':'CuentasPorCobrar.html'}
+templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html','CuentasPorCobrar':'cuentasPorCobrar.html'}
 
 pucGastosOperacionales = {'Operacionales de Administracion':
              {'Gastos de personal': 

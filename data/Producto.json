@@ -39,6 +39,21 @@
 		"nombre": "Elementos desechables ",
 		"rotulo": "Elementos desechables "
 	}, {
+		"nombre": "Encurtido de Berengena con Pimientos",
+		"rotulo": "Encurtido de Berengena con Pimientos"
+	}, {
+		"nombre": "Encurtido de Zuquinis con especias",
+		"rotulo": "Encurtido de Zuquinis con especias"
+	}, {
+		"nombre": "Encurtido de alcachofas",
+		"rotulo": "Encurtido de alcachofas"
+	}, {
+		"nombre": "Encurtido de champi\u00f1ones a la griega",
+		"rotulo": "Encurtido de champi\u00f1ones a la griega"
+	}, {
+		"nombre": "FACTURA FISICA FALTANTE",
+		"rotulo": "FACTURA FISICA FALTANTE"
+	}, {
 		"nombre": "FALAFES",
 		"rotulo": "FALAFES"
 	}, {
@@ -47,6 +62,12 @@
 	}, {
 		"nombre": "FRESA",
 		"rotulo": "FRESA"
+	}, {
+		"nombre": "FRESA KIWI",
+		"rotulo": "FRESA KIWI"
+	}, {
+		"nombre": "FRESA MANGO",
+		"rotulo": "FRESA MANGO"
 	}, {
 		"nombre": "FRUTOS AMARILLOS",
 		"rotulo": "FRUTOS AMARILLOS"
@@ -75,6 +96,9 @@
 		"nombre": "LULO",
 		"rotulo": "LULO"
 	}, {
+		"nombre": "LULO KIWI",
+		"rotulo": "LULO KIWI"
+	}, {
 		"nombre": "LULO TAJADO",
 		"rotulo": "LULO TAJADO"
 	}, {
@@ -86,6 +110,9 @@
 	}, {
 		"nombre": "MANZANA",
 		"rotulo": "MANZANA"
+	}, {
+		"nombre": "MARACUMANGO",
+		"rotulo": "MARACUMANGO"
 	}, {
 		"nombre": "MARACUYA",
 		"rotulo": "MARACUYA"
@@ -105,8 +132,14 @@
 		"nombre": "MERMELADA DE UVA",
 		"rotulo": "MERMELADA DE UVA"
 	}, {
+		"nombre": "MERMELADA SABORES",
+		"rotulo": "MERMELADA SABORES"
+	}, {
 		"nombre": "MORA",
 		"rotulo": "MORA"
+	}, {
+		"nombre": "MORA FRESA AGRAZ",
+		"rotulo": "MORA FRESA AGRAZ"
 	}, {
 		"nombre": "Mango Biche",
 		"rotulo": "Mango Biche"
@@ -119,6 +152,9 @@
 	}, {
 		"nombre": "Mermelada Frutos rojos",
 		"rotulo": "Mermelada Frutos rojos"
+	}, {
+		"nombre": "Mermelada compuesta",
+		"rotulo": "Mermelada compuesta"
 	}, {
 		"nombre": "NISPERO",
 		"rotulo": "NISPERO"
@@ -135,6 +171,15 @@
 		"nombre": "PI\u00d1A",
 		"rotulo": "PI\u00d1A"
 	}, {
+		"nombre": "PI\u00d1A FRESA",
+		"rotulo": "PI\u00d1A FRESA"
+	}, {
+		"nombre": "PI\u00d1AS ANDIA",
+		"rotulo": "PI\u00d1AS ANDIA"
+	}, {
+		"nombre": "PI\u00d1AS SANDIA",
+		"rotulo": "PI\u00d1AS SANDIA"
+	}, {
 		"nombre": "Refrigerio navide\u00f1o adultos",
 		"rotulo": "Refrigerio navide\u00f1o adultos"
 	}, {
@@ -149,6 +194,9 @@
 	}, {
 		"nombre": "SMOTHIE LMF",
 		"rotulo": "SMOTHIE LMF"
+	}, {
+		"nombre": "SUBARRIENDO",
+		"rotulo": "SUBARRIENDO"
 	}, {
 		"nombre": "SURTIDAS",
 		"rotulo": "SURTIDAS"
@@ -176,9 +224,6 @@
 	}, {
 		"nombre": "fresa",
 		"rotulo": "fresa"
-	}, {
-		"nombre": "juan soto",
-		"rotulo": "juan soto"
 	}, {
 		"nombre": "lulo",
 		"rotulo": "lulo"

@@ -550,6 +550,16 @@
 		"telefono": "3169384",
 		"nit": "1"
 	}, {
+		"diasPago": 30,
+		"negocio": "UNICO",
+		"direccion": "CENTRO COMERCIAL UNICO LOCAL 347",
+		"grupoDePrecios": "PIZZA.AL.PASO",
+		"ciudad": "Cali",
+		"rotulo": "PIZZA AL PASO UNICO",
+		"nombre": "PIZZA AL PASO",
+		"telefono": "4882000",
+		"nit": "1"
+	}, {
 		"diasPago": 0,
 		"negocio": " ",
 		"direccion": "CLL 86 A # 13 A 23",
@@ -599,6 +609,16 @@
 		"nombre": "SARODI",
 		"telefono": "3220732",
 		"nit": "900016780-1"
+	}, {
+		"diasPago": 30,
+		"negocio": "FIT",
+		"direccion": "CLL 14 #85-37 INGENIO 2",
+		"grupoDePrecios": "SMOOTHIE.FIT",
+		"ciudad": "Cali",
+		"rotulo": "SOMOOTHIE FIT",
+		"nombre": "SOMOOTHIE",
+		"telefono": "1",
+		"nit": "9007857261"
 	}, {
 		"diasPago": 0,
 		"negocio": "CENTRICO",

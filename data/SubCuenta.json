@@ -1,0 +1,193 @@
+[
+	{
+		"pucNumber": "0",
+		"nombre": "NA",
+		"cuenta": "0",
+		"rotulo": "NA"
+	}, {
+		"pucNumber": "110505",
+		"nombre": "Caja general",
+		"cuenta": "1105",
+		"rotulo": "Caja general"
+	}, {
+		"pucNumber": "111005",
+		"nombre": "Moneda nacional",
+		"cuenta": "1110",
+		"rotulo": "Moneda nacional"
+	}, {
+		"pucNumber": "130505",
+		"nombre": "Clientes Nacionales",
+		"cuenta": "1305",
+		"rotulo": "Clientes Nacionales"
+	}, {
+		"pucNumber": "135520",
+		"nombre": "Sobrantes en liquidaci\u00f3n privada de impuestos",
+		"cuenta": "1355",
+		"rotulo": "Sobrantes en liquidaci\u00f3n privada de impuestos"
+	}, {
+		"pucNumber": "135595",
+		"nombre": "Otros",
+		"cuenta": "1355",
+		"rotulo": "Otros"
+	}, {
+		"pucNumber": "143005",
+		"nombre": "Productos manofacturados",
+		"cuenta": "1430",
+		"rotulo": "Productos manofacturados"
+	}, {
+		"pucNumber": "152405",
+		"nombre": "Muebles y enseres",
+		"cuenta": "1524",
+		"rotulo": "Muebles y enseres"
+	}, {
+		"pucNumber": "154030",
+		"nombre": "Motocicletas",
+		"cuenta": "1540",
+		"rotulo": "Motocicletas"
+	}, {
+		"pucNumber": "159210",
+		"nombre": "Maquinaria y equipo",
+		"cuenta": "1592",
+		"rotulo": "Maquinaria y equipo"
+	}, {
+		"pucNumber": "159215",
+		"nombre": "Equipo de oficina",
+		"cuenta": "1592",
+		"rotulo": "Equipo de oficina"
+	}, {
+		"pucNumber": "161010",
+		"nombre": "Formadas",
+		"cuenta": "1610",
+		"rotulo": "Formadas"
+	}, {
+		"pucNumber": "171004",
+		"nombre": "Organizaci\u00f3n y preoperativos",
+		"cuenta": "1710",
+		"rotulo": "Organizaci\u00f3n y preoperativos"
+	}, {
+		"pucNumber": "171024",
+		"nombre": "Mejoras a propiedades ajenas",
+		"cuenta": "1710",
+		"rotulo": "Mejoras a propiedades ajenas"
+	}, {
+		"pucNumber": "510506",
+		"nombre": "Sueldos",
+		"cuenta": "5105",
+		"rotulo": "Sueldos"
+	}, {
+		"pucNumber": "510551",
+		"nombre": "Dotaci\u00f3n y suministro a trabajadores",
+		"cuenta": "5105",
+		"rotulo": "Dotaci\u00f3n y suministro a trabajadores"
+	}, {
+		"pucNumber": "510563",
+		"nombre": "Capacitaci\u00f3n al personal",
+		"cuenta": "5105",
+		"rotulo": "Capacitaci\u00f3n al personal"
+	}, {
+		"pucNumber": "510595",
+		"nombre": "Otros",
+		"cuenta": "5105",
+		"rotulo": "Otros"
+	}, {
+		"pucNumber": "511025",
+		"nombre": "Asesoria juridica",
+		"cuenta": "5110",
+		"rotulo": "Asesoria juridica"
+	}, {
+		"pucNumber": "511030",
+		"nombre": "Asesoria financiera",
+		"cuenta": "5110",
+		"rotulo": "Asesoria financiera"
+	}, {
+		"pucNumber": "511505",
+		"nombre": "Industria y comercio",
+		"cuenta": "5115",
+		"rotulo": "Industria y comercio"
+	}, {
+		"pucNumber": "511540",
+		"nombre": "De vehiculos",
+		"cuenta": "5115",
+		"rotulo": "De vehiculos"
+	}, {
+		"pucNumber": "511570",
+		"nombre": "IVA descontable",
+		"cuenta": "5115",
+		"rotulo": "IVA descontable"
+	}, {
+		"pucNumber": "511595",
+		"nombre": "Otros",
+		"cuenta": "5115",
+		"rotulo": "Otros"
+	}, {
+		"pucNumber": "512010",
+		"nombre": "Construcciones y edificaciones",
+		"cuenta": "5120",
+		"rotulo": "Construcciones y edificaciones"
+	}, {
+		"pucNumber": "513505",
+		"nombre": "Aseo y vigilancia",
+		"cuenta": "5135",
+		"rotulo": "Aseo y vigilancia"
+	}, {
+		"pucNumber": "513525",
+		"nombre": "Acueducto y alcantarillado",
+		"cuenta": "5135",
+		"rotulo": "Acueducto y alcantarillado"
+	}, {
+		"pucNumber": "513530",
+		"nombre": "Energia electrica",
+		"cuenta": "5135",
+		"rotulo": "Energia electrica"
+	}, {
+		"pucNumber": "513535",
+		"nombre": "Tel\u00e9fono",
+		"cuenta": "5135",
+		"rotulo": "Tel\u00e9fono"
+	}, {
+		"pucNumber": "513555",
+		"nombre": "Gas",
+		"cuenta": "5135",
+		"rotulo": "Gas"
+	}, {
+		"pucNumber": "513595",
+		"nombre": "Otros",
+		"cuenta": "5135",
+		"rotulo": "Otros"
+	}, {
+		"pucNumber": "514510",
+		"nombre": "Construcciones y edificaciones",
+		"cuenta": "5145",
+		"rotulo": "Construcciones y edificaciones"
+	}, {
+		"pucNumber": "519525 ",
+		"nombre": "Elementos de aseo y cafeter\u00eda",
+		"cuenta": "5195",
+		"rotulo": "Elementos de aseo y cafeter\u00eda"
+	}, {
+		"pucNumber": "519530",
+		"nombre": "\u00datiles, papeler\u00eda y fotocopias",
+		"cuenta": "5195",
+		"rotulo": "\u00datiles, papeler\u00eda y fotocopias"
+	}, {
+		"pucNumber": "519535",
+		"nombre": "Combustibles y lubricantes",
+		"cuenta": "5195",
+		"rotulo": "Combustibles y lubricantes"
+	}, {
+		"pucNumber": "523550",
+		"nombre": "Transporte, fletes y acarreos",
+		"cuenta": "5235",
+		"rotulo": "Transporte, fletes y acarreos"
+	}, {
+		"pucNumber": "530505",
+		"nombre": "Gastos bancarios",
+		"cuenta": "5305",
+		"rotulo": "Gastos bancarios"
+	}, {
+		"pucNumber": "720506",
+		"nombre": "Sueldos",
+		"cuenta": "7205",
+		"rotulo": "Sueldos"
+	}
+]
