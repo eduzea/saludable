@@ -1161,7 +1161,26 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         facturas = qry.fetch()
         response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':factura.abono} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
-        
+
+def getUltimasExistencias():
+    ciudades = Ciudad.query().fetch()
+    existencias=[]
+    for ciudad in ciudades:
+        qry = buildQuery('InventarioRegistro', {'ciudad':ciudad.key,'sortBy':'-fecha'})
+        lastOne, next_curs, more = qry.fetch_page(1, start_cursor='')
+        existenciasCiudad = InventarioRegistro.query(InventarioRegistro.ciudad ==ciudad.key,
+                                               InventarioRegistro.fecha == lastOne.fecha).fetch()
+        existencias.append(existenciasCiudad)
+    for registro in existencias:
+        registro['id']=registro.producto + '-' + registro.porcion
+    return existencias
+    
+class GetExistencias(webapp2.RequestHandler):
+    def get(self):
+        existencias = getUltimasExistencias()
+        template = JINJA_ENVIRONMENT.get_template('PyG.htm')
+        self.response.write(template.render(existencias))
+
 class FixPrecios(webapp2.RequestHandler):
     def get(self):
         precios = Precio.query().fetch()

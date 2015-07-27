@@ -27,6 +27,8 @@ application = webapp2.WSGIApplication([
     #CuentasPorCobrar
     ('/getCuentasPorCobrar', GetCuentasPorCobrar),
     ('/getDetalleCuentasPorCobrar', GetDetalleCuentasPorCobrar),
+    #Inventario
+    ('/getExistencias', GetExistencias),
     #Ingresos
     ('/crearFactura', CrearFactura),
     ('/guardarFactura', GuardarFactura),

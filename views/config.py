@@ -10,7 +10,8 @@ singletons = {'NumeroFactura':NumeroFactura,
               'NumeroDeuda':NumeroDeuda,
               'NumeroOtrosIngresos':NumeroOtrosIngresos,
               'NumeroActivoFijo':NumeroActivoFijo,
-              'NumeroPagoRecibido':NumeroPagoRecibido
+              'NumeroPagoRecibido':NumeroPagoRecibido,
+              'NumeroInventarioRegistro':NumeroInventarioRegistro
               }
 
 classModels = {'Cliente':Cliente, 
@@ -50,7 +51,8 @@ classModels = {'Cliente':Cliente,
                'CuentaPorCobrar':CuentaPorCobrar,
                'MedioDePago':MedioDePago,
                'CuentaTransferencias':CuentaTransferencias,
-               'PagoRecibido':PagoRecibido}
+               'PagoRecibido':PagoRecibido,
+               'InventarioRegistro':InventarioRegistro}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -85,6 +87,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'MedioDePago':['nombre'],
            'CuentaTransferencias':['numero'],
            'PagoRecibido':['numero'],
+           'InventarioRegistro':['numero']
            }
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -265,48 +268,20 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                               {'id':'medio','ui':'Medio de pago','width':'15em'},
                               {'id':'documento','ui':'Documento','required':'false', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                               {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
-                              ]
+                              ],
+            'InventarioRegistro':[
+                                  {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                                  {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                                  {'id':'ciudad','ui':'Ciudad','width':'5em'},
+                                  {'id':'producto','ui':'Producto','width':'10em'},
+                                  {'id':'porcion','ui':'Porcion','width':'5em'},
+                                  {'id':'existencias','ui':'Existencias','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
+                                  ]
             }
 createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateUrls = {'tablaDinamica':'/tablaDinamica.html', 'numeros':'/numeros.html','pYg':'/pYg.html','CuentasPorCobrar':'cuentasPorCobrar.html'}
+templateUrls = {'tablaDinamica':'/tablaDinamica.html',
+                'numeros':'/numeros.html',
+                'pYg':'/pYg.html',
+                'CuentasPorCobrar':'cuentasPorCobrar.html',
+                'Existencias':'exsitencias.html'}
 
-pucGastosOperacionales = {'Operacionales de Administracion':
-             {'Gastos de personal': 
-              ['Sueldos','Jornales','Horas extra','Comisiones','Auxilio de trasporte','Prima de servicios',
-               'Prima de vacaciones','Aportes ARP','Aportes EPS','Aportes Pension','Aportes Caja de Compensacion',
-               'Aportes ICBF','Aportes SENA'
-               ],
-              'Honorarios': 
-              ['Asesoria juridica','Asesoria tecnica','Otros'
-               ],
-              'Impuestos': ['Industria y comercio','De vehiculos','IVA descontable','Otros'
-                            ],
-              'Arrendamientos': ['Maquinaria y equipo',
-                                 'Construcciones y edificaciones'
-                                 ],
-              'Servicios': ['Acueducto y Alcantarillado',
-                            'Energia Electrica',
-                            'Telecom',
-                            'Gas',
-                            'Aseo y vigilancia',
-                            'Otros'
-                            ],
-              'Mantenimiento y reparciones':
-              ['Construcciones y edificaciones',
-               'Equipo de oficina',
-               'Equipos de computo',
-               'Flota y equipo de transporte',
-               'Otros'],
-              'Adecuacion e instalacion':
-              ['Instalaciones electricas',
-               'Reparaciones locativas'
-               'Otros'
-               ],
-              'Gastos de viaje':
-              ['Alojamiento y manuntencion',
-               'Pasajes aereos',
-               'Pasajes terrestres',
-               'Otros'
-               ]
-              }
-             }

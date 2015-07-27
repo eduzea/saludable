@@ -82,6 +82,9 @@ class NumeroActivoFijo(ndb.Model):
 class NumeroPagoRecibido(ndb.Model):
     consecutivo = ndb.IntegerProperty()
     
+class NumeroInventarioRegistro(ndb.Model):
+    consecutivo = ndb.IntegerProperty()
+    
 class Remision(ndb.Model):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -138,6 +141,17 @@ class OtrosIngresos(ndb.Model):
     descripcion = ndb.TextProperty()
     total = ndb.IntegerProperty()
     
+############ INVENTARIO ####################
+
+class Inventario(Record):
+    ciudad = ndb.KeyProperty(kind=Ciudad)
+    producto = ndb.KeyProperty(kind=Producto)
+    porcion = ndb.KeyProperty(kind=Porcion)
+    existencias = ndb.IntegerProperty()
+
+class InventarioRegistro(Inventario):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
 
 ########## EGRESOS #######
 

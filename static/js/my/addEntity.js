@@ -66,13 +66,13 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 				dom.byId('server_response'+ '_' + entity_class).innerHTML = response_user;
 				setTimeout(function() {
 					numero = registry.byId('numero'+ '_' + entity_class);
-					dom.byId('reset'+ '_'+ entity_class).click();
 					dom.byId('server_response'+  '_' + entity_class).innerHTML = '';
 					if (numero){
-						value = numero.value;
-						numero.set('value', value + 1);	
+						value = numero.value;	
 					}
-				}, 3000);
+					dom.byId('reset'+ '_'+ entity_class).click();
+					numero ? numero.set('value', value + 1):'';
+				}, 2000);
 			});
 		} else {
 			alert('Formulario incompleto. Favor corregir.');

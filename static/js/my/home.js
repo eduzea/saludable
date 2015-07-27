@@ -30,7 +30,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		};
 		
 		var activoNodes = makeStore([{name:'ActivoFijo', clickable:true},{name:'Activos Circulantes', clickable:false}],'Activos');
-		var activoNodes2 = makeStore(['SaldoCuentaBancaria',{name:'CuentasPorCobrar',template:'CuentasPorCobrar'},{name:'Inventario',clickable:false}],'Activos Circulantes'); 
+		var activoCirculanteNodes = makeStore(['SaldoCuentaBancaria',{name:'CuentasPorCobrar',template:'CuentasPorCobrar'},{name:'Inventario',clickable:false}],'Activos Circulantes'); 
+		var inventarioNodes = makeStore(['InventarioRegistro',{name:'Existencias',clickable:true, template:'Existencias'}],'Inventario');
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var ingresoNodes = makeStore(['Factura','Remision','PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
@@ -48,7 +49,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 					{id : 'Informes', name : 'Informes', parent:'root', clickable:false},
 					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,activoNodes);
-		data.push.apply(data,activoNodes2);
+		data.push.apply(data,activoCirculanteNodes);
+		data.push.apply(data,inventarioNodes);
 		data.push.apply(data,pasivoNodes);			
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);

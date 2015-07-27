@@ -8,7 +8,7 @@ function(request,registry,parser,dom,on) {
 			dom.byId('numeroMsg').innerHTML = response;
 		});
 	};
-	var numbers = ['Factura','Remision','Egreso','Deuda','OtrosIngresos'];
+	var numbers = ['Factura','Remision','Egreso','Deuda','OtrosIngresos','InventarioRegistro'];
 	numbers.forEach(function(model){
 		parser.instantiate([dom.byId('num'+ model + 'Btn')]);
 		parser.instantiate([dom.byId('numero_Numero' + model)]);
