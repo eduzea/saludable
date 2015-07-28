@@ -109,8 +109,8 @@ class Factura(ndb.Model):
     montoIva = ndb.IntegerProperty(default=0)
     anulada = ndb.BooleanProperty(default=False)
     pagada = ndb.BooleanProperty(default=False)
-    abono = ndb.IntegerProperty(default=0)
-    pagoRef = ndb.IntegerProperty(default=0)
+    abono = ndb.IntegerProperty(repeated = True)
+    pagoRef = ndb.IntegerProperty(repeated = True)
 #     resumen = ndb.ComputedProperty(lambda self: self.ventas[0].producto.id())#consider a better option for this!
     
 class MedioDePago(Record):

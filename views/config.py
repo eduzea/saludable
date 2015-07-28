@@ -123,7 +123,8 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                        {'id':'fecha', 'ui':'Fecha', 'width':'8em'},
                        {'id':'total', 'ui':'Valor', 'width':'8em'},
                        {'id':'empleado', 'ui':'Empleado', 'width':'10em'},
-                       {'id':'pagada', 'ui':'Pagada', 'width':'4em'}
+                       {'id':'pagada', 'ui':'Pagada', 'width':'4em'},
+                       {'id':'pagoRef', 'ui':'Ref. Pago', 'width':'4em'},
                        ],
             'Remision':[{'id':'numero', 'ui':'Numero','width':'4em'},
                        {'id':'empleado', 'ui':'Empleado','width':'8em'},

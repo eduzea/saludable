@@ -166,7 +166,10 @@ def prepareRecords(entity_class, entities):
 #                 for item in prop_value:
 #                     value += item.get().to_dict()['rotulo'] + ';'
                 if prop_value:
-                    value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
+                    if type(prop_value[0]) == ndb.Key:
+                        value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
+                    else:
+                        value = ','.join(str(x) for x in prop_value)
                 dicc[prop_key] = value
         dicc['id'] = entity.key.id()
         records.append(dicc)
@@ -969,8 +972,8 @@ class Test(webapp2.RequestHandler):
         facturas = Factura.query(Factura.fecha > datetime(2015,05,30)).order(-Factura.fecha).fetch()
         for factura in facturas:
             factura.pagada = False
-            factura.abono = 0
-            factura.pagoRef = 0
+            factura.abono = []
+            factura.pagoRef = []
             factura.put()
         self.response.write("Done!")
 #         template = JINJA_ENVIRONMENT.get_template('test.html')
@@ -1156,9 +1159,9 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
             if factura.cliente.get().nombre in saldos:
-                saldos[factura.cliente.get().nombre] += factura.total-factura.abono
+                saldos[factura.cliente.get().nombre] += ( factura.total-sum(factura.abono) )
             else:
-                saldos[factura.cliente.get().nombre] = factura.total-factura.abono
+                saldos[factura.cliente.get().nombre] = ( factura.total- sum(factura.abono) )
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
         self.response.out.write(json.dumps(response))
@@ -1169,7 +1172,7 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         clienteNegocios = Cliente.query(Cliente.nombre == cliente).fetch()
         qry = buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
         facturas = qry.fetch()
-        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':factura.abono} for factura in facturas if not factura.pagada]
+        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':sum(factura.abono)} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
 
 def getUltimasExistencias():

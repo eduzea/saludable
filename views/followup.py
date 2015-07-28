@@ -13,7 +13,10 @@ def removePayment(pago):
     facturasAjustadas.sort(key=lambda factura: factura.numero)
     for factura in facturasAjustadas:
         factura.pagada = False
-        factura.abono = 0
+        index = factura.pagoRef.index(pago.numero)
+        factura.pagoRef.remove(pago.numero)
+        if factura.abono:
+            del factura.abono[index]
         factura.put()          
 
 
@@ -29,14 +32,15 @@ def updateCuentasPorCobrar(response):
             facturasImpagas.extend(facturas)
         facturasImpagas.sort(key=lambda factura: factura.numero)
         for factura in facturasImpagas:
-            if (factura.total-factura.abono) <= pagado:
-                pagado = pagado - (factura.total-factura.abono)
+            if ( factura.total-sum(factura.abono) ) <= pagado:
+                pagado = pagado - ( factura.total- sum(factura.abono) )
                 factura.pagada = True
-                factura.pagoRef = pago.numero
+                factura.pagoRef.append(pago.numero)
+                factura.abono.append(pagado)
                 factura.put()
             else:
-                factura.abono += pagado
-                factura.pagoRef = pago.numero
+                factura.abono.append(pagado)
+                factura.pagoRef.append(pago.numero)
                 factura.put()
                 break
     elif response['message'] == 'Updated':
