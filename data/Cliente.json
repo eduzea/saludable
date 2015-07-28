@@ -20,6 +20,16 @@
 		"telefono": "3125591063",
 		"nit": "11412591"
 	}, {
+		"diasPago": 0,
+		"negocio": "RESTAURANTE",
+		"direccion": "Calle 73 No. 11-34 piso 2",
+		"grupoDePrecios": "Precios.2015",
+		"ciudad": "Bogota",
+		"rotulo": "ALFONSO ABRIL RESTAURANTE",
+		"nombre": "ALFONSO ABRIL",
+		"telefono": "3118562330",
+		"nit": "6753102"
+	}, {
 		"diasPago": 30,
 		"negocio": "ARP",
 		"direccion": "Avda. El Dorado 68B-85 P. 10",
@@ -69,6 +79,16 @@
 		"nombre": "Alejandro Caicedo",
 		"telefono": "310 494 8757",
 		"nit": "1111111"
+	}, {
+		"diasPago": 0,
+		"negocio": "Restaurante",
+		"direccion": "Calle 73 No. 11-34 piso 2",
+		"grupoDePrecios": "PARTICULARES",
+		"ciudad": "Bogota",
+		"rotulo": "Alfonso Abril Restaurante",
+		"nombre": "Alfonso Abril",
+		"telefono": "3118562330",
+		"nit": "6753102"
 	}, {
 		"diasPago": 8,
 		"negocio": "ZOE",

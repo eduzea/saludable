@@ -995,7 +995,7 @@ class ImportScript(webapp2.RequestHandler):
 #         data = json.loads(data)
         json_data.close()
         for record in data:
-#             print record
+            print record
             create_entity(entity_class, record)
         self.response.write('Registros Importados!')
 

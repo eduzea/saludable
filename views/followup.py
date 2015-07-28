@@ -29,8 +29,8 @@ def updateCuentasPorCobrar(response):
             facturasImpagas.extend(facturas)
         facturasImpagas.sort(key=lambda factura: factura.numero)
         for factura in facturasImpagas:
-            if factura.total-factura.abono <= pagado:
-                pagado = pagado - factura.total-factura.abono
+            if (factura.total-factura.abono) <= pagado:
+                pagado = pagado - (factura.total-factura.abono)
                 factura.pagada = True
                 factura.pagoRef = pago.numero
                 factura.put()
