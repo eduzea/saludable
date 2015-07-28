@@ -42,7 +42,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 		                    var selectedRowId = cellWidget.cell.row.id;
 		                    var rowData = resumenGrid.row(selectedRowId, true).rawData();
 		                    standby.show();
-		                    request("getDetalleCuentasPorCobrar?cliente="+rowData.id,{handleAs:'json'}).then(
+		                    request("getDetalleCuentasPorCobrar?cliente=" + encodeURIComponent(rowData.id),{handleAs:'json'}).then(
 		                    	function(response){
 		                    		var grid = registry.byId(entity_class+'_detalle_grid');
 		                    		grid.model.clearCache();

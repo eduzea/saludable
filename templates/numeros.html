@@ -88,6 +88,21 @@
 				</button>
 			</td>
 		</tr>
+		<tr>
+			<td><label>Proximo Numero de PagoRecibido:</label></td>
+			<td>
+				<div>{{tagForField('NumeroPagoRecibido',
+					{'type':'','id':'numero','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'width':'5em', 'editable':True},
+					autoNum('PagoRecibido'))}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numPagoRecibidoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+
 	</table>
 	<br />
 	<div id='numeroMsg' style="color: red"></div>

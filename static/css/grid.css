@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.dojoxGridHeader .dojoxGridCell {
+text-align: center !important;
+}
+
 .factura-grid{
 	height: 320px;
     width: 100%;

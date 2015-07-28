@@ -39,8 +39,26 @@ indexes:
 
 - kind: Factura
   properties:
+  - name: cliente
+  - name: pagada
+  - name: numero
+
+- kind: Factura
+  properties:
+  - name: pagada
+  - name: fecha
+    direction: desc
+
+- kind: Factura
+  properties:
   - name: resumen
   - name: fecha
+
+- kind: InventarioRegistro
+  properties:
+  - name: ciudad
+  - name: numero
+    direction: desc
 
 - kind: Precio
   properties:

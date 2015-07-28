@@ -287,9 +287,10 @@ def create_entity(entity_class, values):
     key = getKey(entity_class, values)
     entity = classModels[entity_class].get_by_id(key)
     if entity:
+        oldVals = entity.to_dict()
         entity.populate(**values)
         entity.put()
-        return {'message':"Updated",'key':key, 'entity':entity}
+        return {'message':"Updated",'key':key, 'entity':entity, 'old':oldVals}
     else:
         values['id']=key
         entity = classModels[entity_class](**values)
@@ -306,7 +307,7 @@ class SaveEntity(webapp2.RequestHandler):
             values[rreplace(key, '_' + entity_class,'',1)] = values.pop(key)
         response = create_entity(entity_class,values)
         if entity_class in postSaveAction:
-            postSaveAction[entity_class](response['entity'])
+            postSaveAction[entity_class](response)
         self.response.out.write(JSONEncoder().encode(response))
 
 
@@ -411,6 +412,8 @@ class DeleteEntity(webapp2.RequestHandler):
         except Exception as ex:
             self.response.out.write(ex.message)
             return
+        if entity_class in postDeleteAction:
+            postDeleteAction[entity_class]({'entity':entity, 'message':'Deleted'})
         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
 
 class GetClientes(webapp2.RequestHandler):
@@ -962,9 +965,16 @@ class PyG(webapp2.RequestHandler):
         self.response.write(template.render(pYgData))
 
 class Test(webapp2.RequestHandler):
-    def get(self):        
-        template = JINJA_ENVIRONMENT.get_template('test.html')
-        self.response.write(template.render())
+    def get(self):
+        facturas = Factura.query(Factura.fecha > datetime(2015,05,30)).order(-Factura.fecha).fetch()
+        for factura in facturas:
+            factura.pagada = False
+            factura.abono = 0
+            factura.pagoRef = 0
+            factura.put()
+        self.response.write("Done!")
+#         template = JINJA_ENVIRONMENT.get_template('test.html')
+#         self.response.write(template.render())
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
@@ -1167,19 +1177,20 @@ def getUltimasExistencias():
     existencias=[]
     for ciudad in ciudades:
         qry = buildQuery('InventarioRegistro', {'ciudad':ciudad.key,'sortBy':'-fecha'})
-        lastOne, next_curs, more = qry.fetch_page(1, start_cursor='')
+        lastOne, next_curs, more = qry.fetch_page(1)
+        if not lastOne: continue
         existenciasCiudad = InventarioRegistro.query(InventarioRegistro.ciudad ==ciudad.key,
-                                               InventarioRegistro.fecha == lastOne.fecha).fetch()
-        existencias.append(existenciasCiudad)
-    for registro in existencias:
-        registro['id']=registro.producto + '-' + registro.porcion
+                                               InventarioRegistro.fecha == lastOne[0].fecha).fetch()
+        for item in existenciasCiudad:
+            producto = item.to_dict()
+            producto['id']= item.producto.id() + '-' + item.porcion.id()
+            existencias.append(producto)
     return existencias
     
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
         existencias = getUltimasExistencias()
-        template = JINJA_ENVIRONMENT.get_template('PyG.htm')
-        self.response.write(template.render(existencias))
+        self.response.write(JSONEncoder().encode(existencias))
 
 class FixPrecios(webapp2.RequestHandler):
     def get(self):

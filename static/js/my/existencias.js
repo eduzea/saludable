@@ -15,7 +15,7 @@ require(['dojo/store/Memory',
 ], 
 function(Memory, request, registry,dom,number,on,Standby,Grid) {
 	var entity_class = saludable.entity_class;
-	var standby = new Standby({target: entity_class+'_grid'});
+	var standby = new Standby({target: 'centerPane'});
 	document.body.appendChild(standby.domNode);
 	standby.startup();
 	standby.show();	
@@ -23,11 +23,11 @@ function(Memory, request, registry,dom,number,on,Standby,Grid) {
 		function(response){
 			var store = new Memory({data: response});
 			var columns = [
-				{field:'ciudad', name:'Ciudad',style:"text-align: center", width:'50em'},
+				{field:'ciudad', name:'Ciudad',style:"text-align: center", width:'10em'},
 				{field:'fecha', name:'Fecha',style:"text-align: center", width:'10em'},
-				{field:'producto', name:'producto',style:"text-align: center", width:'10em'},
-				{field:'porcion', name:'porcion',style:"text-align: center", width:'10em'},
-				{field:'existencias', name:'existencias',style:"text-align: center", width:'10em'},
+				{field:'producto', name:'Producto',style:"text-align: center", width:'10em'},
+				{field:'porcion', name:'Porcion',style:"text-align: center", width:'10em'},
+				{field:'existencias', name:'Existencias',style:"text-align: center", width:'10em'},
 			];
 			
 			var gridProps = 

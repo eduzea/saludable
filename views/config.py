@@ -265,9 +265,9 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                               {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
                               {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
                               {'id':'cliente','ui':'Cliente','width':'15em'},
-                              {'id':'medio','ui':'Medio de pago','width':'15em'},
+                              {'id':'medio','ui':'Medio de pago','width':'8em'},
                               {'id':'documento','ui':'Documento','required':'false', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
-                              {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'10em'},
+                              {'id':'monto','ui':'Monto','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
                               ],
             'InventarioRegistro':[
                                   {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
@@ -283,5 +283,5 @@ templateUrls = {'tablaDinamica':'/tablaDinamica.html',
                 'numeros':'/numeros.html',
                 'pYg':'/pYg.html',
                 'CuentasPorCobrar':'cuentasPorCobrar.html',
-                'Existencias':'exsitencias.html'}
+                'Existencias':'existencias.html'}
 
