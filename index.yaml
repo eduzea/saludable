@@ -81,3 +81,8 @@ indexes:
   - name: grupoDePrecios
   - name: producto
   - name: porcion
+
+- kind: Precio
+  properties:
+  - name: producto
+  - name: porcion

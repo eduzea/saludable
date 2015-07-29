@@ -3,6 +3,7 @@ from __future__ import division
 import sys
 import random
 from _struct import Struct
+from xmlrpclib import Boolean
 sys.path.insert(0, 'libs/python-dateutil-1.5')
 sys.path.insert(0, 'libs/easydict-1.6')
 from datetime import datetime, date, time
@@ -62,34 +63,24 @@ class LogOut(webapp2.RequestHandler):
     def get(self):
         self.redirect(users.create_logout_url('/login'))
 
+getTemplateData={}
+
 class GetWidget(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
         temp_name = self.request.get('template')
-        template_name = ''
         template_values = {}
-        if temp_name in templateUrls:
-            template_name = 'dojoxWidgetLoader.html'
-            template_values['template'] = templateUrls[temp_name]
+        if temp_name in templateStrings:
+            template_name = 'dojoxWidgetLoader.html'# This is used to wrap any template in the dojox content pane so the scripts can run. 
+            template_values['template'] = templateStrings[temp_name]
         else:
-            template_name = 'widget.html'#carga los views genericos de creacion y listado
+            template_name = 'widget.html'#carga los views genericos de creacion y listado.
+            template_values['template'] = createTemplateString(entityClass)
         template_values['entity_class']=entityClass
         template = JINJA_ENVIRONMENT.get_template(template_name)
         self.response.write(template.render(template_values))
 
 
-# class GetWidget(webapp2.RequestHandler):
-#     def get(self):
-#         entityClass = self.request.get('entityClass')
-#         temp_name = self.request.get('template')
-#         template_values = {'entity_class': entityClass}
-#         template_name = ''
-#         if temp_name in templateNames:
-#             template_name = templateNames[temp_name]
-#         else:
-#             template_name = 'widget.html'#carga los views genericos de creacion y listado
-#         template = JINJA_ENVIRONMENT.get_template(template_name)
-#         self.response.write(template.render(template_values))
 
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
@@ -105,7 +96,8 @@ def getColumns(entity_class):
     for column in uiConfig[entity_class]:
         colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['width']}
         if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
-            colProps['type']='Integer'
+            if not props[column['id']]._repeated:
+                colProps['type']='Integer'
         columns.append(colProps);
     return columns
 
@@ -116,6 +108,7 @@ class GetColumns(webapp2.RequestHandler):
         
 
 def buildQuery(entity_class,params):
+    params = check_types(entity_class, params,False) # Make sure data is of the proper type for filters
     entityClass = classModels[entity_class]
     conditions = []
     for key,value in params.iteritems():
@@ -123,11 +116,14 @@ def buildQuery(entity_class,params):
         if key == "sortBy": continue
         if key == "count": continue
         if key == 'cursor': continue
+        condition = ''
         if 'fecha' in key:
             if 'Desde' in key:
-                condition = entityClass._properties['fecha'] >= datetime.strptime(value, "%Y-%m-%d").date()
+                condition = entityClass._properties['fecha'] >= value
             elif 'Hasta' in key:
-                condition = entityClass._properties['fecha'] <= datetime.strptime(value, "%Y-%m-%d").date()
+                condition = entityClass._properties['fecha'] <= value
+            else:
+                condition = entityClass._properties['fecha'] == value
         else:
             if not isinstance(value, list):
                 condition = entityClass._properties[key]==value
@@ -150,10 +146,15 @@ def buildQuery(entity_class,params):
 def prepareRecords(entity_class, entities):
     records=[]
     props = classModels[entity_class]._properties
+    fields = [field['id'] for field in uiConfig[entity_class]]
     for entity in entities:
         dicc = entity.to_dict()
-        dicc = {key: dicc[key] for key in dicc if type(props[key]) != ndb.StructuredProperty }
+        dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
+        keysToRemove =[]
         for prop_key, prop_value in dicc.iteritems():
+            if prop_key not in fields:#don't bother with fields that are not in the ui
+                keysToRemove.append(prop_key)
+                continue 
             if type(prop_value) == ndb.Key:
                 try:
                     dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
@@ -161,6 +162,8 @@ def prepareRecords(entity_class, entities):
                     dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
             if type(prop_value) == date:
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+            if type(prop_value) == bool: 
+                dicc[prop_key] = 'Si' if prop_value == True else 'No'
             if type(prop_value) == list:
                 value = ''
 #                 for item in prop_value:
@@ -169,8 +172,9 @@ def prepareRecords(entity_class, entities):
                     if type(prop_value[0]) == ndb.Key:
                         value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
                     else:
-                        value = ','.join(str(x) for x in prop_value)
+                        value = ', '.join(str(x) for x in prop_value)
                 dicc[prop_key] = value
+        dicc = {key: dicc[key] for key in dicc if key not in keysToRemove}
         dicc['id'] = entity.key.id()
         records.append(dicc)
     return records
@@ -190,7 +194,8 @@ def getEntities(entity_class, self, entity_query):
 class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass');
-        entity_query = buildQuery(entity_class, self.request.params)
+        simpleDict = {key: value for key,value in self.request.params.iteritems()}
+        entity_query = buildQuery(entity_class, simpleDict)
         count = self.request.get('count');
         if count:
             response = getEntitiesByPage(entity_class, entity_query, int(count), self)
@@ -225,9 +230,10 @@ def getKey(entity_class,dicc):
             key += ' ' + unicode(dicc[keypart])
     return '.'.join(key.split())
         
-def check_types(entity_class, values):
+def check_types(entity_class, values, removeNonModel=True):
     props = classModels[entity_class]._properties
     for key, value in props.iteritems():
+        if not key in values: continue
         if type(value) is ComputedProperty:
             values.pop(key, None)
         if type(value) is IntegerProperty:
@@ -251,22 +257,21 @@ def check_types(entity_class, values):
                         key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
                         items.append(key_obj)
                     values[key] = items
-            else:   
-                key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
-                values[key]=key_obj
+            else:
+                if type(values[key]) is list:
+                    for index,val in enumerate(values[key]):
+                        if type(val) is ndb.Key: continue
+                        values[key][index] = ndb.Key(value._kind,val.strip().replace(' ','.'))
+                else:   
+                    key_obj = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
+                    values[key]=key_obj
         if type(value) == ndb.DateProperty:
             if key == 'fechaCreacion':
                 values[key]=date.today()
             else:
-                try:
-                    values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
-                except:
-                    start = values[key].find( '(' )
-                    end = values[key].find( ')' )
-                    if start != -1 and end != -1:
-                        result = values[key][start:end+1]
-                        fecha = values[key].replace(result,'')
-                    values[key] = parser.parse(fecha)
+                if not isinstance(values[key],datetime):
+                    if isinstance(values[key],basestring):
+                        values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
         if type(value) == ndb.StructuredProperty:
             objList = []
             listVals = values[key]
@@ -279,10 +284,11 @@ def check_types(entity_class, values):
 
     if 'proplistdata' in values:
         values.pop("proplistdata")
-    keys = values.keys()
-    for item in keys:
-        if item not in props:
-            values.pop(item)
+    if removeNonModel:
+        keys = values.keys()
+        for item in keys:
+            if item not in props:
+                values.pop(item)
     return values
             
 def create_entity(entity_class, values):
@@ -305,12 +311,12 @@ class SaveEntity(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST
         values = post_data.mixed()
-        entity_class = values.pop("entity_class")     
+        entityClass = values.pop("entityClass")     
         for key,value in values.iteritems():
-            values[rreplace(key, '_' + entity_class,'',1)] = values.pop(key)
-        response = create_entity(entity_class,values)
-        if entity_class in postSaveAction:
-            postSaveAction[entity_class](response)
+            values[rreplace(key, '_' + entityClass,'',1)] = values.pop(key)
+        response = create_entity(entityClass,values)
+        if entityClass in postSaveAction:
+            postSaveAction[entityClass](response)
         self.response.out.write(JSONEncoder().encode(response))
 
 
@@ -369,8 +375,8 @@ def adjustText(text):
         return text
 
 def createTemplateString(entity):
-    if entity in createTemplateStrings:
-        return createTemplateStrings[entity]
+    if entity in templateStrings:
+        return templateStrings[entity]
     else:
         return '/addEntity?entityClass=' + entity        
 
@@ -401,7 +407,7 @@ def autoNum(entity_class):
 class AddEntity(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        template_values = {'entity_class': entity_class, 'fields': fieldsInfo(entity_class), 'auto':autoNum(entity_class)}
+        template_values = {'entityClass': entity_class, 'fields': fieldsInfo(entity_class), 'auto':autoNum(entity_class)}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
 
@@ -445,12 +451,17 @@ class GetProducto(webapp2.RequestHandler):
 class GetPorcion(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST.mixed()
-        cliente = Cliente.get_by_id(post_data['cliente'])
         producto= Producto.get_by_id(post_data['producto']) 
-        grupo = cliente.grupoDePrecios
-        precios = Precio.query(Precio.grupoDePrecios == grupo,
-                               Precio.producto == producto.key,
-                               projection = [Precio.porcion], distinct=True).fetch()
+        precios = []
+        if 'cliente' in post_data:
+            cliente = Cliente.get_by_id(post_data['cliente'])
+            grupo = cliente.grupoDePrecios
+            precios = Precio.query(Precio.grupoDePrecios == grupo,
+                                   Precio.producto == producto.key,
+                                   projection = [Precio.porcion], distinct=True).fetch()
+        else:
+            precios = Precio.query(Precio.producto == producto.key,
+                                   projection = [Precio.porcion], distinct=True).fetch()
         porciones = [precio.porcion.id() for precio in precios]
         self.response.out.write(json.dumps(porciones))        
 
@@ -468,31 +479,78 @@ class GetPrice(webapp2.RequestHandler):
         except IndexError as e:
             self.response.out.write(e.message)
         self.response.out.write(precio)
-        
-class GetVentas(webapp2.RequestHandler):
+
+class GetDetails(webapp2.RequestHandler):
     def get(self):
-        facturaKey = self.request.get('facturaKey')
-        tipo = self.request.get('tipo')
-        if tipo == 'Factura':
-            query = Factura.query(Factura.numero == int(facturaKey))
-            entity = query.fetch()[0]
-        else:
-            query = Remision.query(Remision.numero == int(facturaKey))
-            entity = query.fetch()[0]
+        entityClass = self.request.get('entityClass')
+        key = self.request.get('key')
+        detailField = detailFields[entityClass]
+        keyParts = keyDefs[entityClass]
+        keyVals = key.split('.')
+        filters = {}
+        for keyPart,keyVal in zip(keyParts,keyVals):
+            filters[keyPart]=keyVal
+        qry = buildQuery(entityClass,filters)
+        parentRecord = qry.fetch()[0]
+        details = parentRecord.to_dict()[detailField]
         records=[]
-        for venta in entity.ventas:
-            dicc = venta.to_dict()
-            for prop_key, prop_value in dicc.iteritems():
+        for detail in details:
+            if type(detail) == ndb.Key:
+                detail = detail.get().to_dict()
+            for prop_key, prop_value in detail.iteritems():
                 if type(prop_value) == ndb.Key:
                     try:
-                        dicc[prop_key] = dicc[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
+                        detail[prop_key] = detail[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
                     except Exception as e:
-                        dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+                        detail[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
                 if type(prop_value) == date:
-                    dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
-            dicc['id'] = dicc['producto'] + dicc['porcion'];
-            records.append(dicc)
+                    detail[prop_key] = prop_value.strftime('%Y-%m-%d')
+#             detail['id'] = getKey(detailField.capitalize(), detail)
+            records.append(detail)
         self.response.out.write(json.dumps(records))
+        
+# class GetDetails2(webapp2.RequestHandler):
+#     def get(self):
+#         entityClass = self.request.get('entityClass')
+#         key = self.request.get('key')
+#         keyParts = keyDefs[entityClass]
+#         keyVals = key.split('.')
+#         filters = {}
+#         for keyPart,keyVal in zip(keyParts,keyVals):
+#             filters[keyPart]=keyVal
+#         parentRecord = buildQuery(entityClass,filters).fetch()[0]
+#         details = parentRecord.to_dict()[detailFields[entityClass]]
+#         campos = [field['id'] for field in uiConfig[entityClass]]
+#         for i in xrange(len(details)):
+#             if isinstance(details[i],ndb.Key):
+#                 details[i] = details[i].get().to_dict()
+#                 details[i] = {key:value for key,value in details[i].iteritems() if key in campos}
+#         self.response.out.write(JSONEncoder().encode(details))
+
+# class GetVentas(webapp2.RequestHandler):
+#     def get(self):
+#         facturaKey = self.request.get('facturaKey')
+#         tipo = self.request.get('tipo')
+#         if tipo == 'Factura':
+#             query = Factura.query(Factura.numero == int(facturaKey))
+#             entity = query.fetch()[0]
+#         else:
+#             query = Remision.query(Remision.numero == int(facturaKey))
+#             entity = query.fetch()[0]
+#         records=[]
+#         for venta in entity.ventas:
+#             dicc = venta.to_dict()
+#             for prop_key, prop_value in dicc.iteritems():
+#                 if type(prop_value) == ndb.Key:
+#                     try:
+#                         dicc[prop_key] = dicc[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
+#                     except Exception as e:
+#                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+#                 if type(prop_value) == date:
+#                     dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+#             dicc['id'] = dicc['producto'] + dicc['porcion'];
+#             records.append(dicc)
+#         self.response.out.write(json.dumps(records))
         
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
@@ -515,16 +573,16 @@ class GetProductSales(webapp2.RequestHandler):
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
 
-class GetCompras(webapp2.RequestHandler):
-    def get(self):
-        egresoKey = self.request.get('egresoKey')
-        query = Egreso.query(Egreso.numero == int(egresoKey))
-        egreso = query.fetch()[0]
-        records = []
-        for compra in egreso.compras:
-            compra = compra.to_dict()
-            records.append(compra)
-        self.response.out.write(JSONEncoder().encode(records))
+# class GetCompras(webapp2.RequestHandler):
+#     def get(self):
+#         egresoKey = self.request.get('egresoKey')
+#         query = Egreso.query(Egreso.numero == int(egresoKey))
+#         egreso = query.fetch()[0]
+#         records = []
+#         for compra in egreso.compras:
+#             compra = compra.to_dict()
+#             records.append(compra)
+#         self.response.out.write(JSONEncoder().encode(records))
            
 
 class GetAllCompras(webapp2.RequestHandler):
@@ -666,6 +724,8 @@ class GuardarFactura(webapp2.RequestHandler):
                                montoIva=values['iva'])
             factura.put()
             entity = factura
+            if 'Factura' in postSaveAction:
+                postSaveAction['Factura']({'entity':factura, 'message':'Created'})
         self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
         
 
@@ -719,6 +779,47 @@ class AnularFactura(webapp2.RequestHandler):
         entity.anulada = True
         entity.put()
         self.response.write('Se anulo ' + tipo + ' :' + key)
+
+#################### INVENTARIO #########################
+def getInventarioData(request):
+    prop_ciudad = InventarioRegistro._properties['ciudad']
+    prop_producto = InventarioRegistro._properties['producto']
+    prop_porcion = InventarioRegistro._properties['porcion']
+    prop_existencias = InventarioRegistro._properties['existencias']
+    props = {
+             'ciudad':{'ui': 'Ciudad', 'id': 'ciudad','required':'true','type':prop_ciudad},
+             'producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
+             'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+             'existencias':{'ui': 'Existencias', 'id': 'existencias','required':'true', 'valid':'dijit/form/NumberTextBox',
+                     'width':'5em', 'type':prop_existencias}
+        }
+    return {'props':props}
+
+    
+getTemplateData['Inventario'] = getInventarioData
+
+class GuardarInventario(webapp2.RequestHandler):        
+    def post(self):
+        post_data = self.request.body
+        values = json.loads(post_data)
+        registros =[]
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        ciudad = ndb.Key('Ciudad',values['ciudad'])
+        for registro in values['registros']:
+            registroObj = InventarioRegistro(fecha = fecha,
+                                             ciudad = ciudad,
+                                             producto=Producto.get_by_id(registro['producto']).key,
+                                             porcion=Porcion.get_by_id(registro['porcion']).key,
+                                             existencias = registro['existencias'])
+                                             
+            registroObj.put()
+            registros.append(registroObj.key)
+        inventario = Inventario(id=values['fecha'], fecha = fecha, ciudad = ciudad , registros=registros)
+        inventario.put()
+        if 'Inventario' in postSaveAction:
+                postSaveAction['Inventario']({'entity':inventario, 'message':'Created'})
+        self.response.out.write(json.dumps({'result':'Success','inventarioId': inventario.key.id()})) 
+
 
 ##################### FORMULAS P&G ##################################
 # This function assumes the queried entities have a 'total' field
@@ -1077,10 +1178,18 @@ class ImportCSV(webapp2.RequestHandler):
                 values = {props[i] : row[i] for i in range(len(props))}
                 create_entity(entity_class,values)
         self.response.write('CSV importada con exito!')
-        
+
+
+# HTML Templates can only be served from Python, unless they are put in static (which makes no sens if they are dynamic).
+# Thus any template to be shown in Dojox content pane has to be served through python. This is a generic template
+# serving request handler.        
 class DojoxLoader(webapp2.RequestHandler):
     def get(self): 
-        template_values = {'entity_class': self.request.get('entityClass')}
+        entityClass = self.request.get('entityClass')
+        template_values = {}
+        if entityClass in getTemplateData:
+            template_values = getTemplateData[entityClass](self.request)
+        template_values['entityClass'] = entityClass
         template = self.request.get('template')
         template = JINJA_ENVIRONMENT.get_template(template)
         self.response.write(template.render(template_values))
@@ -1150,7 +1259,6 @@ class GuardarEgreso(webapp2.RequestHandler):
         egreso.put()
         entity = egreso
         self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
-        
 
 class GetCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
@@ -1195,18 +1303,44 @@ class GetExistencias(webapp2.RequestHandler):
         existencias = getUltimasExistencias()
         self.response.write(JSONEncoder().encode(existencias))
 
-class FixPrecios(webapp2.RequestHandler):
+class Fix(webapp2.RequestHandler):
     def get(self):
-        precios = Precio.query().fetch()
-        for precio in precios:
-            if precio.grupoDePrecios:
-                precio.grupo = precio.grupoDePrecios
-            if 'grupoDePrecios' in precio._properties:
-                del precio._properties['grupoDePrecios']
-            precio.put()
+        clientes = ['DANARO.LTDA.PIZZERIA.SALERNO',
+                    'INVERCHANG.SAS.Chilli.Chang',
+                    'LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO',
+                    'PIZZA.AL.PASO.PALMIRA',
+                    'PURA.CASTA.MANUEL.ODEF.MORALES',
+                    'HAMBURGUESERIAS.S.A.S..ALIMENTOS',
+                    'EDUCACION.CIGLO.XXI.S.A..COLEGIO.LA.ARBOLEDA',
+                    'PEKRS.GROUP.RESTAURANTE',
+                    'EUROPAN.PANADERIA.EUROPEA',
+                    'HARRY.SAS.HARRY.SASSON',
+                    'HARRY.SAS.HARRYS.BAR',
+                    'OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE',
+                    'PAESA.SA.SALTO.DEL.ANGEL',
+                    'PAESA.SA.COTIDIANO.ANDINO',
+                    'PAESA.SA.COTIDIANO.ROSALES',
+                    'Restaurante.Criterion.Restaurante',
+                    'AVESCO.SA.MERCADO.93',
+                    'AVESCO.SA.MERCADO.USAQUEN',
+                    'CARMEL.CLUB.CAMPESTRE',
+                    'CORPORACION.CLUB.EL.NOGAL',
+                    'RESTAURANTE.EL.ARABE',
+                    'TREINTA.Y.DOS.SEPTIMA.SAS.CENTRICO']
+#         keys = list(map(lambda x: ndb.Key('Cliente',x), clientes))
+        filters = {'fechaDesde':datetime(2015,04,30),'cliente': clientes}
+        query = buildQuery('Factura', filters)
+        facturas = query.fetch()
+        for factura in facturas:
+            if not factura.iva:
+                print factura.cliente.id(), '-', factura.fecha
+                factura.montoIva = int(factura.total * 0.16)
+                factura.total = factura.montoIva + factura.subtotal  
+                factura.put()
+        self.response.out.write('Done!')
 
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
-JINJA_ENVIRONMENT.globals['createTemplateString']=createTemplateString
+# JINJA_ENVIRONMENT.globals['createTemplateString']=createTemplateString
 JINJA_ENVIRONMENT.globals['autoNum']=autoNum        

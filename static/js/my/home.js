@@ -31,7 +31,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		
 		var activoNodes = makeStore([{name:'ActivoFijo', clickable:true},{name:'Activos Circulantes', clickable:false}],'Activos');
 		var activoCirculanteNodes = makeStore(['SaldoCuentaBancaria',{name:'CuentasPorCobrar',template:'CuentasPorCobrar'},{name:'Inventario',clickable:false}],'Activos Circulantes'); 
-		var inventarioNodes = makeStore(['InventarioRegistro',{name:'Existencias',clickable:true, template:'Existencias'}],'Inventario');
+		var inventarioNodes = makeStore(['Inventario',{name:'Existencias',clickable:true, template:'Existencias'}],'Inventario');
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var ingresoNodes = makeStore(['Factura','Remision','PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');

@@ -3,7 +3,7 @@
     width: 100%;
 }
 
-.dojoxGridHeader .dojoxGridCell {
+.dojoxGridHeader {
 text-align: center !important;
 }
 

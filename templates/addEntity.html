@@ -2,7 +2,7 @@
 {% autoescape false %}
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script>saludable.entity_class = '{{ entity_class }}';</script>
+		<script>saludable.entity_class = '{{ entityClass }}';</script>
 		<script type="text/javascript" src="../static/js/my/addEntity.js"></script>
 		<script>
 			require(["dojo/parser","dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox",'dijit/form/SimpleTextarea','dijit/form/NumberTextBox','dijit/form/Select','dijit/form/CheckBox','dojox/validate',
@@ -12,26 +12,26 @@
 	</head>	
 	<body class="claro">
 		<center>
-		<div class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm_{{ entity_class }}" data-dojo-id="addEntityForm_{{ entity_class }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
+		<div class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm_{{ entityClass }}" data-dojo-id="addEntityForm_{{ entityClass }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
 			<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 				{% for field in fields %}
 				<tr>
 					<td><label for="name">{{ field.ui }}:</label></td>
 					<td>
-						{{ tagForField(entity_class, field, auto)}}						
+						{{ tagForField(entityClass, field, auto)}}						
 					</td>
 				</tr>
 				{% endfor %}
 			</table>
-			<button data-dojo-type="dijit/form/Button" id="agregar_btn_{{ entity_class }}" type="button">
-				Agregar {{ entity_class }}
+			<button data-dojo-type="dijit/form/Button" id="agregar_btn_{{ entityClass }}" type="button">
+				Agregar {{ entityClass }}
 			</button>
-			<button id='reset_{{ entity_class }}' data-dojo-type="dijit/form/Button" type="reset">
+			<button id='reset_{{ entityClass }}' data-dojo-type="dijit/form/Button" type="reset">
 				Borrar todo
 			</button>
 			<br/>
 			<br/>
-			<div id="server_response_{{ entity_class }}" style="color: red"></div>
+			<div id="server_response_{{ entityClass }}" style="color: red"></div>
 		</div>			
 		</center>
 	</body>

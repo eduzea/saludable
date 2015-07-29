@@ -19,15 +19,17 @@ application = webapp2.WSGIApplication([
     ('/getColumns', GetColumns),
     ('/deleteEntity', DeleteEntity),
     ('/getPrice', GetPrice),
-    ('/getVentas', GetVentas),
+#     ('/getVentas', GetVentas),
     ('/getProducto', GetProducto),
     ('/getPorcion', GetPorcion),
     ('/getClientes', GetClientes),
     ('/getEmpleados', GetEmpleados),
+    ('/getDetails',GetDetails),
     #CuentasPorCobrar
     ('/getCuentasPorCobrar', GetCuentasPorCobrar),
     ('/getDetalleCuentasPorCobrar', GetDetalleCuentasPorCobrar),
     #Inventario
+    ('/guardarInventario',GuardarInventario),
     ('/getExistencias', GetExistencias),
     #Ingresos
     ('/crearFactura', CrearFactura),
@@ -41,7 +43,7 @@ application = webapp2.WSGIApplication([
     ('/getBienesoServicios',GetBienesoServicios),
     ('/getProveedores',GetProveedores),
     ('/addBienoservicio',Addbienoservicio),
-    ('/getCompras',GetCompras),
+#     ('/getCompras',GetCompras),
     # Data Management
     ('/exportScript', ExportScript),
     ('/importScript', ImportScript),
@@ -52,5 +54,5 @@ application = webapp2.WSGIApplication([
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
     #MISC
-    ('/fixPrecios',FixPrecios)
+    ('/fix',Fix)
 ], debug=True)

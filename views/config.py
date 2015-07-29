@@ -11,7 +11,6 @@ singletons = {'NumeroFactura':NumeroFactura,
               'NumeroOtrosIngresos':NumeroOtrosIngresos,
               'NumeroActivoFijo':NumeroActivoFijo,
               'NumeroPagoRecibido':NumeroPagoRecibido,
-              'NumeroInventarioRegistro':NumeroInventarioRegistro
               }
 
 classModels = {'Cliente':Cliente, 
@@ -52,7 +51,8 @@ classModels = {'Cliente':Cliente,
                'MedioDePago':MedioDePago,
                'CuentaTransferencias':CuentaTransferencias,
                'PagoRecibido':PagoRecibido,
-               'InventarioRegistro':InventarioRegistro}
+               'InventarioRegistro':InventarioRegistro,
+               'Inventario':Inventario}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -62,7 +62,9 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Sucursal':['nombre'],
            'Ciudad':['nombre'], 
            'Factura':['numero'],
-           'Egreso':['numero'], 
+           'Venta':['producto','porcion'],
+           'Egreso':['numero'],
+           'Compra':['bienoservicio'], 
            'Remision':['numero'],
            'Proveedor':['nombre'],
            'Bienoservicio':['nombre'],
@@ -87,7 +89,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'MedioDePago':['nombre'],
            'CuentaTransferencias':['numero'],
            'PagoRecibido':['numero'],
-           'InventarioRegistro':['numero']
+           'InventarioRegistro':['numero'],
+           'Inventario':['fecha']
            }
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
@@ -277,12 +280,29 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                                   {'id':'producto','ui':'Producto','width':'10em'},
                                   {'id':'porcion','ui':'Porcion','width':'5em'},
                                   {'id':'existencias','ui':'Existencias','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
-                                  ]
+                                  ],
+            'Inventario':[
+                          {'id':'ciudad','ui':'Ciudad','width':'5em'},
+                          {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''}
+                          ]
             }
-createTemplateStrings = {'Remision':'/crearFactura?entityClass=Remision','Factura':'/crearFactura?entityClass=Factura', 'Egreso':'/crearEgreso'}
-templateUrls = {'tablaDinamica':'/tablaDinamica.html',
-                'numeros':'/numeros.html',
-                'pYg':'/pYg.html',
-                'CuentasPorCobrar':'cuentasPorCobrar.html',
-                'Existencias':'existencias.html'}
+
+templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
+                   'Factura':'/crearFactura?entityClass=Factura', 
+                   'Egreso':'/crearEgreso',
+                   'Inventario':'/dojoxLoader?entityClass=Inventario&template=crearInventario.html',
+#                    'Inventario':'/crearInventario.html',
+                   'tablaDinamica':'/tablaDinamica.html',
+                   'numeros':'/numeros.html',
+                   'pYg':'/pYg.html',
+                   'CuentasPorCobrar':'cuentasPorCobrar.html',
+                   'Existencias':'existencias.html'
+                   }
+detailFields = {
+               'Factura':'ventas',
+               'Remision':'ventas',
+               'Egreso':'compras',
+               'Inventario':'registros'
+               }
+
 
