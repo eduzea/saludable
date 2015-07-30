@@ -153,6 +153,11 @@ class Inventario(Record):
     fecha = ndb.DateProperty()
     registros = ndb.KeyProperty(kind=InventarioRegistro, repeated = True)
 
+class Existencias(Inventario):
+    ultimoInventario = ndb.KeyProperty(kind=Inventario)
+    ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
+    
+
 
 ########## EGRESOS #######
 

@@ -232,8 +232,14 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 							dijit.store.add(item);								
 						});
 						dijit.body.refresh();
-						dijit.total = dijit.updateTotal();
-						dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
+						// This is ugly. Think of a more general way. Perhaps each view should provide
+						// a configuration/function or the extra things it should update
+						if (dijit.updateTotal){
+							dijit.total = dijit.updateTotal();	
+						}
+						if (dom.byId(numeroDomId[entity_class])){
+							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;							
+						}
    					});
    				}else{
 		        	var id= dijit.id.replace('_' + entity_class,''); 

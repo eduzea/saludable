@@ -129,8 +129,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		var conIva = registry.byId('iva'+ '_' + entity_class).checked;
 		var iva = conIva ? 0.16 : 0;
 		grid.subtotal = sumTotal;
-		grid.iva = sumTotal * iva;
-		grid.total = sumTotal* (1 + iva);
+		grid.iva = Math.floor(sumTotal * iva);
+		grid.total = grid.subtotal + grid.iva;
 		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###'});
 		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###'});
 		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
@@ -156,7 +156,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	var actualizarFacturas = function(response, data, entity_class){
 		var id = 'gridNode'+ '_' + entity_class;
 		var grid = registry.byId(id);
-		var key = response.facturaId;
+		var key = response.id;
 		data['id'] = key;
 		data['numero']=key;
 		if (grid){
@@ -194,7 +194,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 						factura_data['cliente']=registry.byId('cliente'+ '_' + entity_class).attr('displayedValue');
 						actualizarFacturas(response, factura_data, entity_class);
 						var pagina = registry.byId( '_' + entity_class + 'PorPagina').checked;
-						var url = '/mostrarFactura?facturaId='+response.facturaId + '&tipo=' + entity_class+ '&pagina='+ pagina.toString();
+						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entity_class+ '&pagina='+ pagina.toString();
 						window.open(url);
 					}else{
 						message = 'No se pudo guardar este pedido!';
@@ -210,7 +210,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 						dom.byId('subtotal').innerHTML = '';
 						dom.byId('iva').innerHTML = '';
 						dom.byId('numero'+ '_' + entity_class).innerHTML = '';
-					}, 3000);
+					}, 2000);
+					topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
 				});
 		});
 	

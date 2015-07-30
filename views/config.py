@@ -52,7 +52,8 @@ classModels = {'Cliente':Cliente,
                'CuentaTransferencias':CuentaTransferencias,
                'PagoRecibido':PagoRecibido,
                'InventarioRegistro':InventarioRegistro,
-               'Inventario':Inventario}
+               'Inventario':Inventario,
+               'Existencias':Existencias}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -89,7 +90,6 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'MedioDePago':['nombre'],
            'CuentaTransferencias':['numero'],
            'PagoRecibido':['numero'],
-           'InventarioRegistro':['numero'],
            'Inventario':['fecha']
            }
 
@@ -295,8 +295,8 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'tablaDinamica':'/tablaDinamica.html',
                    'numeros':'/numeros.html',
                    'pYg':'/pYg.html',
-                   'CuentasPorCobrar':'cuentasPorCobrar.html',
-                   'Existencias':'existencias.html'
+                   'CuentasPorCobrar':'/cuentasPorCobrar.html',
+                   'Existencias':'/existencias.html'
                    }
 detailFields = {
                'Factura':'ventas',

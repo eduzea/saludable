@@ -159,12 +159,13 @@ require(['dojo/dom',
 			store : store,
 			structure : columns,
 			modules : [	"gridx/modules/CellWidget",
-						'gridx/modules/SingleSort'
+						'gridx/modules/SingleSort',
+						'gridx/modules/Edit'
 						]
 		}, 'grid'+ '_' + entityClass);
 		grid.startup();
 		domClass.add(dom.byId('grid'+ '_' + entityClass),'factura-grid');
-		
+				
 		parser.instantiate([dom.byId('guardar'+ '_' + entityClass + 'Btn')]);
 		on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click',
 		function(e){
@@ -180,7 +181,7 @@ require(['dojo/dom',
 					var message='';
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este inventario!';
-						//actualizarInventarios(response, inventario_data, entityClass);
+						actualizarInventarios(response, inventario_data, entityClass);
 					}else{
 						message = 'No se pudo guardar este inventario!';
 					}
@@ -192,8 +193,24 @@ require(['dojo/dom',
         				grid.body.refresh();
 						dom.byId('mensaje'+ '_' + entityClass).innerHTML = '';
 					}, 2000);
+					
+					topic.publish('INVENTARIO', {'action':'ADD'});
 				});
 		});
 		
+		var actualizarInventarios = function(response, data, entity_class){
+			var id = 'gridNode'+ '_' + entityClass;
+			var grid = registry.byId(id);
+			var key = response.inventarioId;
+			data['id'] = key;
+			data['numero']=key;
+			if (grid){
+				var row = grid.store.get(key);
+				if (row){
+					grid.store.remove(key);
+				}
+				grid.store.add(data);
+			}
+		};
 	}
 );

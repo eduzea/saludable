@@ -229,6 +229,14 @@ def getKey(entity_class,dicc):
         else:
             key += ' ' + unicode(dicc[keypart])
     return '.'.join(key.split())
+
+def parseDateString(string):
+    start = string.find( '(' )
+    end = string.find( ')' )
+    if start != -1 and end != -1:
+        result = string[start:end+1]
+        fecha = string.replace(result,'')
+    return parser.parse(fecha)
         
 def check_types(entity_class, values, removeNonModel=True):
     props = classModels[entity_class]._properties
@@ -271,7 +279,10 @@ def check_types(entity_class, values, removeNonModel=True):
             else:
                 if not isinstance(values[key],datetime):
                     if isinstance(values[key],basestring):
-                        values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+                        try:
+                            values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
+                        except:
+                            values[key]=parseDateString(values[key])
         if type(value) == ndb.StructuredProperty:
             objList = []
             listVals = values[key]
@@ -422,7 +433,7 @@ class DeleteEntity(webapp2.RequestHandler):
             self.response.out.write(ex.message)
             return
         if entity_class in postDeleteAction:
-            postDeleteAction[entity_class]({'entity':entity, 'message':'Deleted'})
+            postDeleteAction[entity_class](entity)
         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
 
 class GetClientes(webapp2.RequestHandler):
@@ -651,11 +662,10 @@ class CrearFactura(webapp2.RequestHandler):
         empleadoName = empleado.rotulo
         empleadoValue = empleado.key.id()
         props = {'Cliente':{'ui': 'Cliente', 'id': 'cliente','required':'true','type':prop_cliente},
-#                  'Empleado':{'ui': 'Empleado', 'id': 'empleado','required':'true','type':prop_empleado},
-             'Empleado': {'value':empleadoValue,'label':empleadoName},
-             'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
-             'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
-             'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
+                 'Empleado': {'value':empleadoValue,'label':empleadoName},
+                 'Producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
+                 'Porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+                 'Cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true', 'valid':'dijit/form/NumberTextBox',
                          'width':'5em', 'type':prop_cantidad}
             }
         template_values = {'props': props, 'entityClass':entityClass}
@@ -694,6 +704,7 @@ class GuardarFactura(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.body
         values = json.loads(post_data)
+        entityClass = values['entity_class']
         ventas =[]
         for venta in values['ventas']:
             producto = venta['producto'].replace(' ','.')
@@ -704,42 +715,34 @@ class GuardarFactura(webapp2.RequestHandler):
                            venta = venta['venta']))
         cliente = Cliente.get_by_id(values['cliente'])
         empleado = Empleado.get_by_id(values['empleado'])
-        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         numero = ''
         if values['numero']:
             numero = values['numero']
         else:
             numero = getConsecutivo(values['entity_class'])
-        
-        if values['entity_class'] == 'Remision':
-            remision = Remision(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+        entity = classModels[entityClass].query(classModels[entityClass].numero == int(numero)).fetch()
+        if entity:    
+            if entityClass in preSaveAction:
+                preSaveAction[entityClass](entity)
+            entity.populate(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+                                          fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
+                                          montoIva=values['iva'])
+        else:
+            entity = classModels[entityClass](id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
                                  fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
                                  montoIva=values['iva'])
-            remision.put()
-            entity = remision
-        else:
-            factura = Factura(id=str(numero), numero=int(numero), cliente = cliente.key, 
-                              empleado = empleado.key, fecha = fecha, ventas=ventas, total=int(values['total']),
-                              subtotal=values['subtotal'], 
-                               montoIva=values['iva'])
-            factura.put()
-            entity = factura
-            if 'Factura' in postSaveAction:
-                postSaveAction['Factura']({'entity':factura, 'message':'Created'})
-        self.response.out.write(json.dumps({'result':'Success','facturaId': entity.key.id()}))     
-        
-
-        
+        entity.put()
+        if entityClass in postSaveAction:
+                postSaveAction[entityClass](entity)
+        self.response.out.write(json.dumps({'result':'Success','id': entity.key.id()}))     
+                
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
-        key = self.request.get('facturaId')
-        tipo = self.request.get('tipo')
+        key = self.request.get('id')
+        entityClass = self.request.get('entityClass')
         facturaPorPagina = self.request.get('pagina')
-        if tipo == 'Factura':
-            entity = Factura.get_by_id(key)
-        else:
-            entity = Remision.get_by_id(key)
-        
+        entity = classModels[entityClass].get_by_id(key)
         cliente = entity.cliente.get()
         empleado = entity.empleado.get()
         data = {'numero' : entity.numero,
@@ -755,7 +758,7 @@ class MostrarFactura(webapp2.RequestHandler):
                 'iva': '{:,.0f}'.format(entity.montoIva),
                 'subtotal': '{:,.0f}'.format(entity.subtotal if entity.montoIva != 0 else 0),
                 'exento':'{:,.0f}'.format(entity.subtotal if entity.montoIva==0 else 0),
-                'remision': True if tipo == 'Remision' else False
+                'remision': True if entityClass == 'Remision' else False
                 }
         ventas = []
         for venta in entity.ventas:
@@ -803,18 +806,21 @@ class GuardarInventario(webapp2.RequestHandler):
         post_data = self.request.body
         values = json.loads(post_data)
         registros =[]
-        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         ciudad = ndb.Key('Ciudad',values['ciudad'])
         for registro in values['registros']:
-            registroObj = InventarioRegistro(fecha = fecha,
+            producto = Producto.get_by_id(registro['producto']).key
+            porcion = Porcion.get_by_id(registro['porcion']).key
+            registroObj = InventarioRegistro(id = producto.id() + "." + porcion.id(),
+                                             fecha = fecha,
                                              ciudad = ciudad,
-                                             producto=Producto.get_by_id(registro['producto']).key,
-                                             porcion=Porcion.get_by_id(registro['porcion']).key,
+                                             producto = producto,
+                                             porcion = porcion,
                                              existencias = registro['existencias'])
                                              
             registroObj.put()
             registros.append(registroObj.key)
-        inventario = Inventario(id=values['fecha'], fecha = fecha, ciudad = ciudad , registros=registros)
+        inventario = Inventario(id=str(fecha)+'.'+ ciudad.id(), fecha = fecha, ciudad = ciudad , registros=registros)
         inventario.put()
         if 'Inventario' in postSaveAction:
                 postSaveAction['Inventario']({'entity':inventario, 'message':'Created'})
@@ -1089,7 +1095,7 @@ class JSONEncoder(json.JSONEncoder):
         elif isinstance(o, (datetime, date, time)):
             return str(o)  # Or whatever other date format you're OK with...
         else:
-            print "Hold on!"
+            print "Hold on! Unexpected type!"
 
 class ImportScript(webapp2.RequestHandler):
     def get(self):
@@ -1243,7 +1249,7 @@ class GuardarEgreso(webapp2.RequestHandler):
                            compra = compra['compra']))
         proveedor = Proveedor.get_by_id(values['proveedor'])
         empleado = Empleado.get_by_id(values['empleado'])
-        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d')
+        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         tipo = TipoEgreso.get_by_id(values['tipo'])
         sucursal = Sucursal.get_by_id(values['sucursal'])
         numero = ''
@@ -1282,26 +1288,21 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         facturas = qry.fetch()
         response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':sum(factura.abono)} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
-
-def getUltimasExistencias():
-    ciudades = Ciudad.query().fetch()
-    existencias=[]
-    for ciudad in ciudades:
-        qry = buildQuery('InventarioRegistro', {'ciudad':ciudad.key,'sortBy':'-fecha'})
-        lastOne, next_curs, more = qry.fetch_page(1)
-        if not lastOne: continue
-        existenciasCiudad = InventarioRegistro.query(InventarioRegistro.ciudad ==ciudad.key,
-                                               InventarioRegistro.fecha == lastOne[0].fecha).fetch()
-        for item in existenciasCiudad:
-            producto = item.to_dict()
-            producto['id']= item.producto.id() + '-' + item.porcion.id()
-            existencias.append(producto)
-    return existencias
     
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
-        existencias = getUltimasExistencias()
-        self.response.write(JSONEncoder().encode(existencias))
+        existencias = Existencias.query().fetch()
+        if existencias:
+            records=[]
+            for existenciasCiudad in existencias:
+                for registro in existenciasCiudad.registros:
+                    entity = registro.get()
+                    records.append({'id': entity.producto.id() + '.' + entity.porcion.id(), 
+                                    'ciudad':entity.ciudad.id(),
+                                    'producto':entity.producto.id(),
+                                    'porcion':entity.porcion.id(),
+                                    'existencias':entity.existencias})
+        self.response.write(json.dumps(records))
 
 class Fix(webapp2.RequestHandler):
     def get(self):
