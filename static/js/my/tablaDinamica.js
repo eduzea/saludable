@@ -5,7 +5,8 @@ function(request,registry,parser,dom,on,query,Standby) {
 	var pivotUrl = {'Ventas': '/getProductSales?' ,
 					'Gastos': '/getAllCompras?',
 					'Tendencias':'/getProductSales?',
-					'IVA': '/entityData?entityClass=Factura'
+					'Recaudado': '/entityData?entityClass=Factura&iva=true',
+					'Pagado': '/getIVAPagado?'
 				}; 
 	var url = pivotUrl[entity_class];
 	var config = {
@@ -29,13 +30,19 @@ function(request,registry,parser,dom,on,query,Standby) {
 					hiddenAttributes:[],
 					aggregatorName:'Suma'
 		},
-		'IVA': {
+		'Recaudado': {
 				rows : ["cliente",'numero','fecha'],
 				vals : ["montoIva"],
 				exclusions: {'anulada':['true'],'iva':['false'] },
 				hiddenAttributes:['id','empleado','anulada'],
 				aggregatorName:'Suma'
 		},
+		'Pagado': {
+				rows : ["proveedor",'numero','fecha'],
+				vals : ["ivaPagado"],
+				hiddenAttributes:['id','empleado'],
+				aggregatorName:'Suma'
+		}
 	};
 	
 	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);

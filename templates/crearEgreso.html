@@ -49,6 +49,9 @@
 							{{tagForField('Egreso',props['proveedor'])}}
 						</div>
 					</td>
+					<td>
+						<input id="iva_{{entityClass}}" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaEgreso">IVA</label>
+					</td>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -86,7 +89,9 @@
 				<td>
 					<button id='guardar_EgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
 				</td>
-				<td><label>TOTAL: $ </label><label id="total">0</label></td>
+				<td><label>SUBTOTAL: $ </label><label id="subtotal">0</label></td><td>
+				<td><label>IVA: $ </label><label id="iva">0</label></td></td><td>
+				<td><label>TOTAL: $ </label><label id="total">0</label></td></td><td>
 			</tr>
 			<tr><td><div id='mensaje_Egreso' style="color: red"></div></td></tr>
 		</table>

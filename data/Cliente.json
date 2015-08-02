@@ -11,6 +11,16 @@
 		"nit": " "
 	}, {
 		"diasPago": 0,
+		"negocio": "LITOGRAFIA",
+		"direccion": "CRA. 28A No. 68-74",
+		"grupoDePrecios": "PARTICULARES",
+		"ciudad": "Bogota",
+		"rotulo": "ALBERTO CABALLERO LITOGRAFIA",
+		"nombre": "ALBERTO CABALLERO",
+		"telefono": "2255936",
+		"nit": "2222222"
+	}, {
+		"diasPago": 0,
 		"negocio": "Particular",
 		"direccion": "Fruver",
 		"grupoDePrecios": "Aldemar",
@@ -211,6 +221,16 @@
 		"nit": "8050227865"
 	}, {
 		"diasPago": 0,
+		"negocio": "PARTICULAR",
+		"direccion": "PARTICULAR",
+		"grupoDePrecios": "PARTICULARES",
+		"ciudad": "Bogota",
+		"rotulo": "GIOVANNY BELLO PARTICULAR",
+		"nombre": "GIOVANNY BELLO",
+		"telefono": "2111111",
+		"nit": "5248568"
+	}, {
+		"diasPago": 0,
 		"negocio": " ",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
@@ -351,6 +371,16 @@
 		"nit": "6666666"
 	}, {
 		"diasPago": 0,
+		"negocio": "PARTICULAR",
+		"direccion": "ZOE",
+		"grupoDePrecios": "CYP",
+		"ciudad": "Bogota",
+		"rotulo": "LAURA AMOROCHO PARTICULAR",
+		"nombre": "LAURA AMOROCHO",
+		"telefono": "31750085-38",
+		"nit": "52751778"
+	}, {
+		"diasPago": 0,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
@@ -429,6 +459,16 @@
 		"nombre": "MISTER WINGS",
 		"telefono": "330 3045",
 		"nit": "1"
+	}, {
+		"diasPago": 0,
+		"negocio": "PARTICULAR",
+		"direccion": "Calle 68-engativa",
+		"grupoDePrecios": "PARTICULARES",
+		"ciudad": "Bogota",
+		"rotulo": "OFELIA GARCIA PARTICULAR",
+		"nombre": "OFELIA GARCIA",
+		"telefono": "2293972",
+		"nit": "51833857"
 	}, {
 		"diasPago": 1,
 		"negocio": "PARTICULAR",

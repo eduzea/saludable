@@ -49,10 +49,11 @@ application = webapp2.WSGIApplication([
     ('/importScript', ImportScript),
     ('/setNumero', SetNumber),
     ('/importCSV', ImportCSV),
-    # Analisis
+    # Informes
     ('/getProductSales',GetProductSales) ,
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
+    ('/getIVAPagado',getIVAPagado) ,
     #MISC
     ('/fix',Fix)
 ], debug=True)

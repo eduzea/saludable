@@ -12,7 +12,7 @@ require([
 		var entity_class = saludable.entity_class;
 		parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
 		//Modal to show its loading
-		var standby = new Standby({target: "output_" + entity_class});
+		var standby = new Standby({target: 'PyG_/pYg.html'});
 		document.body.appendChild(standby.domNode);
 		standby.startup();
 		on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){

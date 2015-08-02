@@ -121,19 +121,19 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
                         ],
             'Ciudad':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'10em'},
                         ],
-            'Factura':[{'id':'numero', 'ui':'Numero','width':'4em'},
+            'Factura':[{'id':'numero', 'ui':'Numero','width':'3em'},
                        {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
-                       {'id':'fecha', 'ui':'Fecha', 'width':'8em'},
-                       {'id':'total', 'ui':'Valor', 'width':'8em'},
-                       {'id':'empleado', 'ui':'Empleado', 'width':'10em'},
-                       {'id':'pagada', 'ui':'Pagada', 'width':'4em'},
+                       {'id':'fecha', 'ui':'Fecha', 'width':'5em'},
+                       {'id':'total', 'ui':'Valor', 'width':'5em'},
+                       {'id':'empleado', 'ui':'Empleado', 'width':'8em'},
+                       {'id':'pagada', 'ui':'Pagada', 'width':'3em'},
                        {'id':'pagoRef', 'ui':'Ref. Pago', 'width':'4em'},
                        ],
-            'Remision':[{'id':'numero', 'ui':'Numero','width':'4em'},
+            'Remision':[{'id':'numero', 'ui':'Numero','width':'3em'},
                        {'id':'empleado', 'ui':'Empleado','width':'8em'},
                        {'id':'cliente', 'ui':'Cliente', 'width':'20em'},
-                       {'id':'fecha', 'ui':'Fecha','width':'8em'},
-                       {'id':'total', 'ui':'Valor','width':'8em'}],
+                       {'id':'fecha', 'ui':'Fecha','width':'5em'},
+                       {'id':'total', 'ui':'Valor','width':'5em'}],
             'Proveedor':[
                          {'id':'nombre','ui':'Nombre', 'required':'true', 'valid':'dijit/form/ValidationTextBox', 'width':'10em'},
                          {'id':'ciudad','ui':'Ciudad', 'required':'true', 'valid':'dijit/form/ValidationTextBox','width':'5em'},
@@ -284,6 +284,14 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true', 'valid':
             'Inventario':[
                           {'id':'ciudad','ui':'Ciudad','width':'5em'},
                           {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''}
+                          ],
+            'GastoAnexo':[
+                          {'id':'numero','ui':'No.','required':'true', 'valid':'dijit/form/NumberTextBox','width':'2em'},
+                          {'id':'fecha', 'ui':'Fecha','width':'5em','required':'true','valid':''},
+                          {'id':'proveedor','ui':'Proveedor','width':'15em'},
+                          {'id':'resumen','ui':'Bien o Servicio','width':'15em'},
+                          {'id':'total','ui':'Total','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
+                          {'id':'ivaPagado','ui':'IVA','required':'true', 'valid':'dijit/form/NumberTextBox','width':'5em'},
                           ]
             }
 
@@ -304,5 +312,19 @@ detailFields = {
                'Egreso':'compras',
                'Inventario':'registros'
                }
+exentosDeIVA = {
+                'Materia.Prima-Fruta',
+                'Nomina.-.Operativa',
+                'Nomina-Turnos',
+                'Nomina.-.Administrativa',
+                'Taxis.y.Pasajes.de.Bus',
+                'Servicios.Publicos-Energia',
+                'Servicios.Publicos-Gas',
+                'Servicios.Publicos-Agua',
+                'Transporte.del.Producto-Local',
+                'Transporte.del.Producto-Intermunicipal',
+                'Mantenimiento.y.arreglos.locativos',
+                'Alimentacion.Empleado'
+                }
 
 

@@ -35,12 +35,13 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
 		var ingresoNodes = makeStore(['Factura','Remision','PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
-		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
-		var adminNodes1 = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
-		var adminNodes2 = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
-		var adminNodes3 = makeStore(['Numeros'],'Admin','numeros');
-		var informeNodes = makeStore(['Ventas','Gastos','Tendencias','IVA'],'Informes','tablaDinamica');
-		var informeNodes2 = makeStore(['PyG'],'Informes','pYg');
+		var egresoNodes = makeStore(['Egreso','GastoAnexo','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
+		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
+		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
+		var numeroNodes = makeStore(['Numeros'],'Admin','numeros');
+		var informeNodes = makeStore(['Ventas','Gastos','Tendencias',{name:'IVA',clickable:false}],'Informes','tablaDinamica');
+		var pYgNodes = makeStore(['PyG'],'Informes','pYg');
+		var IVANodes = makeStore(['Recaudado','Pagado'],'IVA','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Activos', name:'Activos', parent:'root', clickable:false},
 					{id : 'Pasivos', name:'Pasivos', parent:'root', clickable:false},
@@ -55,12 +56,12 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,egresoNodes);
 		data.push.apply(data,deudaNodes);
-		data.push.apply(data,adminNodes1);
-		data.push.apply(data,adminNodes2);
-		data.push.apply(data,adminNodes3);
+		data.push.apply(data,adminNodes);
+		data.push.apply(data,pucNodes);
+		data.push.apply(data,numeroNodes);
 		data.push.apply(data,informeNodes);
-		data.push.apply(data,informeNodes2);
-		
+		data.push.apply(data,pYgNodes);
+		data.push.apply(data,IVANodes);		
 		var myStore = new Memory({
 		data : data,
 		getChildren : function(object) {

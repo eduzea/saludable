@@ -108,7 +108,7 @@ class GetColumns(webapp2.RequestHandler):
         
 
 def buildQuery(entity_class,params):
-    params = check_types(entity_class, params,False) # Make sure data is of the proper type for filters
+    params = check_types(entity_class, params,True) # Make sure data is of the proper type for filters
     entityClass = classModels[entity_class]
     conditions = []
     for key,value in params.iteritems():
@@ -119,9 +119,9 @@ def buildQuery(entity_class,params):
         condition = ''
         if 'fecha' in key:
             if 'Desde' in key:
-                condition = entityClass._properties['fecha'] >= value
+                condition = entityClass._properties['fecha'] >= datetime.strptime(value, '%Y-%m-%d').date()
             elif 'Hasta' in key:
-                condition = entityClass._properties['fecha'] <= value
+                condition = entityClass._properties['fecha'] <= datetime.strptime(value, '%Y-%m-%d').date()
             else:
                 condition = entityClass._properties['fecha'] == value
         else:
@@ -152,9 +152,9 @@ def prepareRecords(entity_class, entities):
         dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
         keysToRemove =[]
         for prop_key, prop_value in dicc.iteritems():
-            if prop_key not in fields:#don't bother with fields that are not in the ui
-                keysToRemove.append(prop_key)
-                continue 
+#             if prop_key not in fields:#don't bother with fields that are not in the ui -careful! This limits use of this function
+#                 keysToRemove.append(prop_key)
+#                 continue 
             if type(prop_value) == ndb.Key:
                 try:
                     dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
@@ -238,14 +238,21 @@ def parseDateString(string):
         fecha = string.replace(result,'')
     return parser.parse(fecha)
         
-def check_types(entity_class, values, removeNonModel=True):
+def check_types(entity_class, values, forQuery=False):
     props = classModels[entity_class]._properties
     for key, value in props.iteritems():
         if not key in values: continue
-        if type(value) is ComputedProperty:
-            values.pop(key, None)
+        if values[key] == 'true': values[key] = True
+        if values[key] == 'false': values[key] = False
+        if not forQuery:# If the cehck is for create or update, should not include computed props
+            if type(value) is ComputedProperty:
+                values.pop(key, None)
         if type(value) is IntegerProperty:
-            values[key] = int(values[key])
+            if type(values[key]) is list:
+                for entry in values[key]:
+                    entry = int(entry)
+            else: 
+                values[key] = int(values[key])
         if type(value) is FloatProperty:
             values[key] = float(values[key])
         if type(value) is ndb.BooleanProperty:#checkbox value should be 'si'o 'no'
@@ -295,7 +302,7 @@ def check_types(entity_class, values, removeNonModel=True):
 
     if 'proplistdata' in values:
         values.pop("proplistdata")
-    if removeNonModel:
+    if not forQuery:
         keys = values.keys()
         for item in keys:
             if item not in props:
@@ -722,10 +729,11 @@ class GuardarFactura(webapp2.RequestHandler):
         else:
             numero = getConsecutivo(values['entity_class'])
         entity = classModels[entityClass].query(classModels[entityClass].numero == int(numero)).fetch()
-        if entity:    
+        if entity:
+            entity = entity[0]    
             if entityClass in preSaveAction:
                 preSaveAction[entityClass](entity)
-            entity.populate(id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+            entity.populate(numero=int(numero), cliente = cliente.key, empleado = empleado.key,
                                           fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
                                           montoIva=values['iva'])
         else:
@@ -1292,8 +1300,8 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
         existencias = Existencias.query().fetch()
+        records = []
         if existencias:
-            records=[]
             for existenciasCiudad in existencias:
                 for registro in existenciasCiudad.registros:
                     entity = registro.get()
@@ -1303,6 +1311,21 @@ class GetExistencias(webapp2.RequestHandler):
                                     'porcion':entity.porcion.id(),
                                     'existencias':entity.existencias})
         self.response.write(json.dumps(records))
+        
+class getIVAPagado(webapp2.RequestHandler):
+    def get(self):
+        simpleDict = {key: value for key,value in self.request.params.iteritems()}
+        entity_query = buildQuery('Egreso', simpleDict)
+        egresos = entity_query.fetch()
+        records = []
+        for egreso in egresos:
+            egresoDicc = egreso.to_dict()
+            if not egreso.resumen in exentosDeIVA:
+                egresoDicc['subTotal'] = int(egreso.total/1.16)
+                egresoDicc['ivaPagado'] = egreso.total - egresoDicc['subTotal']
+                records.append(egresoDicc)
+        response = {'records':records, 'count':len(records)}
+        return self.response.out.write(JSONEncoder().encode(response))   
 
 class Fix(webapp2.RequestHandler):
     def get(self):

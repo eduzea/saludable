@@ -1,6 +1,5 @@
 from google.appengine.ext import ndb
-from google.appengine.api import users
-from datetime import date
+
 
 class Empleado(ndb.Model):
     nombre = ndb.StringProperty(indexed=True)

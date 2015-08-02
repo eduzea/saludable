@@ -72,21 +72,23 @@ def removeFactura(factura):
 
 def restarExistencias(factura):
     ciudad = factura.cliente.get().ciudad
-    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()[0]#This function assumes that Existencias for every city exist in the Datastore
-    indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-    for venta in factura.ventas:
-        ventaKey = venta.producto.id() + '.' + venta.porcion.id() 
-        if ventaKey in indexMap:
-            index = indexMap[ventaKey]
-            productoPorcion = existencias.registros[index].get()
-            if productoPorcion.existencias >= venta.cantidad:
-                productoPorcion.existencias -= venta.cantidad
-                productoPorcion.put()
+    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()
+    if existencias:
+        existencias = existencias[0]
+        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
+        for venta in factura.ventas:
+            ventaKey = venta.producto.id() + '.' + venta.porcion.id() 
+            if ventaKey in indexMap:
+                index = indexMap[ventaKey]
+                productoPorcion = existencias.registros[index].get()
+                if productoPorcion.existencias >= venta.cantidad:
+                    productoPorcion.existencias -= venta.cantidad
+                    productoPorcion.put()
+                else:
+                    print "NO ALCANZA!" 
             else:
-                print "NO ALCANZA!" 
-        else:
-            print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
-    existencias.put()
+                print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
+        existencias.put()
 
 preSaveAction['Factura'] = removeFactura
 postSaveAction['Factura'] = restarExistencias
