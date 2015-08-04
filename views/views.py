@@ -469,18 +469,22 @@ class GetProducto(webapp2.RequestHandler):
 class GetPorcion(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST.mixed()
-        producto= Producto.get_by_id(post_data['producto']) 
-        precios = []
-        if 'cliente' in post_data:
-            cliente = Cliente.get_by_id(post_data['cliente'])
-            grupo = cliente.grupoDePrecios
-            precios = Precio.query(Precio.grupoDePrecios == grupo,
-                                   Precio.producto == producto.key,
-                                   projection = [Precio.porcion], distinct=True).fetch()
+        porciones = []
+        if 'producto' in post_data:
+            producto= Producto.get_by_id(post_data['producto'])
+            precios = []
+            if 'cliente' in post_data:
+                cliente = Cliente.get_by_id(post_data['cliente'])
+                grupo = cliente.grupoDePrecios
+                precios = Precio.query(Precio.grupoDePrecios == grupo,
+                                       Precio.producto == producto.key,
+                                       projection = [Precio.porcion], distinct=True).fetch()
+            else:
+                precios = Precio.query(Precio.producto == producto.key,
+                                       projection = [Precio.porcion], distinct=True).fetch()
+            porciones = [precio.porcion.id() for precio in precios]
         else:
-            precios = Precio.query(Precio.producto == producto.key,
-                                   projection = [Precio.porcion], distinct=True).fetch()
-        porciones = [precio.porcion.id() for precio in precios]
+            porciones = [porcion.key.id() for porcion in Porcion.query().fetch()]  
         self.response.out.write(json.dumps(porciones))        
 
 
@@ -527,48 +531,6 @@ class GetDetails(webapp2.RequestHandler):
             records.append(detail)
         self.response.out.write(json.dumps(records))
         
-# class GetDetails2(webapp2.RequestHandler):
-#     def get(self):
-#         entityClass = self.request.get('entityClass')
-#         key = self.request.get('key')
-#         keyParts = keyDefs[entityClass]
-#         keyVals = key.split('.')
-#         filters = {}
-#         for keyPart,keyVal in zip(keyParts,keyVals):
-#             filters[keyPart]=keyVal
-#         parentRecord = buildQuery(entityClass,filters).fetch()[0]
-#         details = parentRecord.to_dict()[detailFields[entityClass]]
-#         campos = [field['id'] for field in uiConfig[entityClass]]
-#         for i in xrange(len(details)):
-#             if isinstance(details[i],ndb.Key):
-#                 details[i] = details[i].get().to_dict()
-#                 details[i] = {key:value for key,value in details[i].iteritems() if key in campos}
-#         self.response.out.write(JSONEncoder().encode(details))
-
-# class GetVentas(webapp2.RequestHandler):
-#     def get(self):
-#         facturaKey = self.request.get('facturaKey')
-#         tipo = self.request.get('tipo')
-#         if tipo == 'Factura':
-#             query = Factura.query(Factura.numero == int(facturaKey))
-#             entity = query.fetch()[0]
-#         else:
-#             query = Remision.query(Remision.numero == int(facturaKey))
-#             entity = query.fetch()[0]
-#         records=[]
-#         for venta in entity.ventas:
-#             dicc = venta.to_dict()
-#             for prop_key, prop_value in dicc.iteritems():
-#                 if type(prop_value) == ndb.Key:
-#                     try:
-#                         dicc[prop_key] = dicc[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
-#                     except Exception as e:
-#                         dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
-#                 if type(prop_value) == date:
-#                     dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
-#             dicc['id'] = dicc['producto'] + dicc['porcion'];
-#             records.append(dicc)
-#         self.response.out.write(json.dumps(records))
         
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
@@ -589,19 +551,7 @@ class GetProductSales(webapp2.RequestHandler):
                 venta['year']=factura.fecha.year
                 records.append(venta)
         response = {'records':records}
-        self.response.out.write(JSONEncoder().encode(response))
-
-# class GetCompras(webapp2.RequestHandler):
-#     def get(self):
-#         egresoKey = self.request.get('egresoKey')
-#         query = Egreso.query(Egreso.numero == int(egresoKey))
-#         egreso = query.fetch()[0]
-#         records = []
-#         for compra in egreso.compras:
-#             compra = compra.to_dict()
-#             records.append(compra)
-#         self.response.out.write(JSONEncoder().encode(records))
-           
+        self.response.out.write(JSONEncoder().encode(response))           
 
 class GetAllCompras(webapp2.RequestHandler):
     def get(self):
@@ -934,8 +884,7 @@ def getVentasNetas(fechaDesde, fechaHasta):
     return edict({'total': ventasPyG - devoluciones, 'ventas': ventasPyG, 'devoluciones': devoluciones})
 
 def getGastosDeVentas(fechaDesde,fechaHasta):
-    impuestos = getTotalFromModel('Egreso', {'resumen':['Impuestos.Nacionales',
-                                                        'Impuestos.Distritales'],
+    impuestos = getTotalFromModel('Egreso', {'resumen':['Impuesto.de.Industria.y.Comercio'],
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta})
     transportes = getTotalFromModel('Egreso', {'resumen':['Transporte.del.Producto-Local',
@@ -960,7 +909,8 @@ def getGastosDeVentas(fechaDesde,fechaHasta):
             'parqueadero':parqueadero,'publicidad':publicidad})
 
 def getGastosAdministrativos(fechaDesde,fechaHasta):
-    gastosDePersonal = getTotalFromModel('Egreso', {'resumen':'Nomina.-.Administrativa',
+    gastosDePersonal = getTotalFromModel('Egreso', {'resumen':['Nomina.-.Administrativa',
+                                                               'Aportes.Pension'],
                                                      'fechaDesde':fechaDesde,
                                                      'fechaHasta': fechaHasta})
     honorarios = getTotalFromModel('Egreso', {'resumen':'Honorarios',
@@ -997,8 +947,7 @@ def getIngresosNoOperacionales(fechaDesde, fechaHasta):
     return getTotalFromModel('OtrosIngresos', {'fechaDesde':fechaDesde, 'fechaHasta': fechaHasta})
 
 def getImpuestos(fechaDesde, fechaHasta):
-    renta = getTotalFromModel('Egreso', {'resumen':['Impuesto.-.Renta',
-                                                    'Impuestos.Nacionales'], 
+    renta = getTotalFromModel('Egreso', {'resumen':['Impuesto.-.Renta'], 
                                          'fechaDesde':fechaDesde,
                                          'fechaHasta':fechaHasta})
     cree = getTotalFromModel('Egreso', {'resumen':'Impuesto.-.CREE', 

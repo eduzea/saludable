@@ -29,7 +29,7 @@ require(['dojo/dom',
 		
 		var resetPorcion = function(producto){
 			if (producto == 'No hay precios definidos') return;
-			request.post('/getPorcion', {data : {'producto': producto}, handleAs:'json'}).then(
+			request.post('/getPorcion', {handleAs:'json'}).then(
 				function(porciones) {
 					var items = [];
 					porciones.forEach(function(porcion){

@@ -56,18 +56,20 @@ postDeleteAction['PagoRecibido'] = updateCuentasPorCobrar
             
 def removeFactura(factura):
     ciudad = factura.cliente.get().ciudad
-    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()[0]#This function assumes that Existencias for every city exist in the Datastore
-    indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-    for venta in factura.ventas:
-        ventaKey = venta.producto.id() + '.' + venta.porcion.id()    
-        if ventaKey in indexMap:
-            index = indexMap[ventaKey]
-            productoPorcion = existencias.registros[index].get()
-            productoPorcion.existencias += venta.cantidad
-            productoPorcion.put()
-        else:
-            print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
-    existencias.put()
+    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()
+    if existencias:
+        existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
+        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
+        for venta in factura.ventas:
+            ventaKey = venta.producto.id() + '.' + venta.porcion.id()    
+            if ventaKey in indexMap:
+                index = indexMap[ventaKey]
+                productoPorcion = existencias.registros[index].get()
+                productoPorcion.existencias += venta.cantidad
+                productoPorcion.put()
+            else:
+                print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
+        existencias.put()
 
 
 def restarExistencias(factura):

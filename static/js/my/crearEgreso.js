@@ -52,13 +52,10 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	var resetEgreso = function(){
 		dom.byId('mensaje_Egreso').innerHTML = '';
 		dom.byId('total').innerHTML = '';
-		dom.byId('subtotal').innerHTML = '';
-		dom.byId('iva').innerHTML = '';
 		dom.byId('numero_Egreso').innerHTML = '';
 		registry.byId('detalle_Egreso').set('value','');
 		registry.byId('cantidad_Egreso').set('value','');
 		registry.byId('precio_Egreso').set('value','');
-		dom.byId('total').innerHTML = '';
 		resetGrid();
 	};
 
@@ -94,14 +91,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		var conIva = registry.byId('iva'+ '_' + entity_class).checked;
-		var iva = conIva ? 0.16 : 0;
-		grid.total = sumTotal;
-		grid.subtotal = grid.total/(1 + iva);
-		grid.iva = grid.total - grid.subtotal;
-		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###'});
-		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###'});
-		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
+		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###'});
 		return sumTotal;
 	};
 	

@@ -156,7 +156,12 @@ class Existencias(Inventario):
     ultimoInventario = ndb.KeyProperty(kind=Inventario)
     ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
     
-
+class Produccion(Record):
+    fecha = ndb.DateProperty()
+    producto = ndb.KeyProperty(kind=Producto)
+    pesoFruta = ndb.IntegerProperty()
+    pesoPulpa = ndb.IntegerProperty()
+    rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
 
 ########## EGRESOS #######
 
