@@ -1,120 +1,73 @@
 [
 	{
-		"nombre": "ABACO",
-		"rotulo": "ABACO"
+		"nombre": "NA",
+		"clase": "7",
+		"rotulo": "NA",
+		"pucNumber": "0"
 	}, {
-		"nombre": "ADELA",
-		"rotulo": "ADELA"
+		"nombre": "Disponible",
+		"clase": "1",
+		"rotulo": "Disponible",
+		"pucNumber": "11"
 	}, {
-		"nombre": "ARABE",
-		"rotulo": "ARABE"
+		"nombre": "Deudores",
+		"clase": "1",
+		"rotulo": "Deudores",
+		"pucNumber": "13"
 	}, {
-		"nombre": "AVESCO",
-		"rotulo": "AVESCO"
+		"nombre": "Inventarios",
+		"clase": "1",
+		"rotulo": "Inventarios",
+		"pucNumber": "14"
 	}, {
-		"nombre": "Adriana Delgadillo",
-		"rotulo": "Adriana Delgadillo"
+		"nombre": "Propiedades, planta y equipo",
+		"clase": "1",
+		"rotulo": "Propiedades, planta y equipo",
+		"pucNumber": "15"
 	}, {
-		"nombre": "Aldemar",
-		"rotulo": "Aldemar"
+		"nombre": "Intangibles",
+		"clase": "1",
+		"rotulo": "Intangibles",
+		"pucNumber": "16"
 	}, {
-		"nombre": "CARMEL",
-		"rotulo": "CARMEL"
+		"nombre": "Diferidos",
+		"clase": "1",
+		"rotulo": "Diferidos",
+		"pucNumber": "17"
 	}, {
-		"nombre": "CASA FUEGO",
-		"rotulo": "CASA FUEGO"
+		"nombre": "Operacionales de administraci\u00f3n",
+		"clase": "5",
+		"rotulo": "Operacionales de administraci\u00f3n",
+		"pucNumber": "51"
 	}, {
-		"nombre": "CENTRICO",
-		"rotulo": "CENTRICO"
+		"nombre": "Operacionales de ventas",
+		"clase": "5",
+		"rotulo": "Operacionales de ventas",
+		"pucNumber": "52"
 	}, {
-		"nombre": "CHATOS",
-		"rotulo": "CHATOS"
+		"nombre": "No operacionales",
+		"clase": "5",
+		"rotulo": "No operacionales",
+		"pucNumber": "53"
 	}, {
-		"nombre": "COLEGIOS",
-		"rotulo": "COLEGIOS"
+		"nombre": "Impuestos de renta y complementarios",
+		"clase": "5",
+		"rotulo": "Impuestos de renta y complementarios",
+		"pucNumber": "54"
 	}, {
-		"nombre": "CYP",
-		"rotulo": "CYP"
+		"nombre": "Materia prima",
+		"clase": "7",
+		"rotulo": "Materia prima",
+		"pucNumber": "71"
 	}, {
-		"nombre": "Criterion",
-		"rotulo": "Criterion"
+		"nombre": "Mano de obra directa",
+		"clase": "7",
+		"rotulo": "Mano de obra directa",
+		"pucNumber": "72"
 	}, {
-		"nombre": "Ester",
-		"rotulo": "Ester"
-	}, {
-		"nombre": "GARDEL",
-		"rotulo": "GARDEL"
-	}, {
-		"nombre": "HANS",
-		"rotulo": "HANS"
-	}, {
-		"nombre": "HARRY",
-		"rotulo": "HARRY"
-	}, {
-		"nombre": "Hamburgueserias",
-		"rotulo": "Hamburgueserias"
-	}, {
-		"nombre": "Independiente Cali",
-		"rotulo": "Independiente Cali"
-	}, {
-		"nombre": "JUAN EL PANADERO",
-		"rotulo": "JUAN EL PANADERO"
-	}, {
-		"nombre": "Juan Soto",
-		"rotulo": "Juan Soto"
-	}, {
-		"nombre": "LEHAL",
-		"rotulo": "LEHAL"
-	}, {
-		"nombre": "Mango Biche",
-		"rotulo": "Mango Biche"
-	}, {
-		"nombre": "Mermelada Frutos rojos",
-		"rotulo": "Mermelada Frutos rojos"
-	}, {
-		"nombre": "NOGAL",
-		"rotulo": "NOGAL"
-	}, {
-		"nombre": "OTROS",
-		"rotulo": "OTROS"
-	}, {
-		"nombre": "PAESA",
-		"rotulo": "PAESA"
-	}, {
-		"nombre": "PAN TOLIMA",
-		"rotulo": "PAN TOLIMA"
-	}, {
-		"nombre": "PARTICULARES",
-		"rotulo": "PARTICULARES"
-	}, {
-		"nombre": "PIZZA AL PASO",
-		"rotulo": "PIZZA AL PASO"
-	}, {
-		"nombre": "POLKA",
-		"rotulo": "POLKA"
-	}, {
-		"nombre": "PRUEBA",
-		"rotulo": "PRUEBA"
-	}, {
-		"nombre": "Particulr",
-		"rotulo": "Particulr"
-	}, {
-		"nombre": "SALERNO",
-		"rotulo": "SALERNO"
-	}, {
-		"nombre": "SARODI",
-		"rotulo": "SARODI"
-	}, {
-		"nombre": "SARODY",
-		"rotulo": "SARODY"
-	}, {
-		"nombre": "SMOOTHIE FIT",
-		"rotulo": "SMOOTHIE FIT"
-	}, {
-		"nombre": "SURA",
-		"rotulo": "SURA"
-	}, {
-		"nombre": "TREPANDO",
-		"rotulo": "TREPANDO"
+		"nombre": "Costos indirectos",
+		"clase": "7",
+		"rotulo": "Costos indirectos",
+		"pucNumber": "73"
 	}
 ]

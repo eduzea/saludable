@@ -1,4 +1,5 @@
 from google.appengine.ext import ndb
+from datetime import datetime
 
 
 class Empleado(ndb.Model):
@@ -146,22 +147,34 @@ class InventarioRegistro(Record):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     existencias = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: '')
 
 class Inventario(Record):
     ciudad = ndb.KeyProperty(kind=Ciudad)
     fecha = ndb.DateProperty()
     registros = ndb.KeyProperty(kind=InventarioRegistro, repeated = True)
 
+class ExistenciasRegistro(InventarioRegistro):
+    pass
+
 class Existencias(Inventario):
     ultimoInventario = ndb.KeyProperty(kind=Inventario)
     ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
+    registros = ndb.KeyProperty(kind=ExistenciasRegistro, repeated = True)
     
+class ProductoPorcion(Record):
+    producto = ndb.KeyProperty(kind=Producto)
+    porcion = ndb.KeyProperty(kind=Porcion)
+
 class Produccion(Record):
     fecha = ndb.DateProperty()
+    ciudad = ndb.KeyProperty(kind=Ciudad)
     producto = ndb.KeyProperty(kind=Producto)
     pesoFruta = ndb.IntegerProperty()
+    productoPorcion = ndb.KeyProperty(kind=ProductoPorcion, repeated=True)
     pesoPulpa = ndb.IntegerProperty()
     rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
+
 
 ########## EGRESOS #######
 
@@ -184,7 +197,7 @@ class Proveedor(ndb.Model):
     nit = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.StringProperty(indexed=True)
+    ciudad = ndb.KeyProperty(kind=Ciudad)
     diasPago = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)

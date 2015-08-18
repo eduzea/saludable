@@ -5,6 +5,7 @@ Created on Jul 25, 2015
 '''
 from models.models import *
 from datetime import datetime, date, time
+from datastorelogic import create_entity
 
 preSaveAction = {}
 postSaveAction ={}
@@ -79,7 +80,7 @@ def restarExistencias(factura):
         existencias = existencias[0]
         indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
         for venta in factura.ventas:
-            ventaKey = venta.producto.id() + '.' + venta.porcion.id() 
+            ventaKey = ciudad.id() + '.' + venta.producto.id() + '.' + venta.porcion.id() 
             if ventaKey in indexMap:
                 index = indexMap[ventaKey]
                 productoPorcion = existencias.registros[index].get()
@@ -100,35 +101,45 @@ def actualizarExistencias(response):
     inventario = response['entity']
     existencias = Existencias.query(Existencias.ciudad == inventario.ciudad).fetch()
     if not existencias:
-        existencias = Existencias(id = str(datetime.today()) + '.' + inventario.ciudad.id(), 
-                                  ciudad = inventario.ciudad,
-                                  fecha = datetime.today(),
-                                  registros = inventario.registros,
-                                  ultimoInventario = inventario.key,
-                                  ultimasFacturas = []
-                                  )
+        registros = []
+        for registro in inventario.registros:
+            existenciaRegistro = create_entity('ExistenciasRegistro',registro.get().to_dict())['entity']#cloning record
+            existenciaRegistro.put()
+            registros.append(existenciaRegistro.key)
+        existencias = create_entity('Existencias', { 
+                                  'ciudad': inventario.ciudad,
+                                  'fecha' : datetime.today(),
+                                  'registros' : registros,
+                                  'ultimoInventario' : inventario.key,
+                                  'ultimasFacturas' : []}
+                                  )['entity']
         existencias.put()
         return
     else:
         existencias = existencias[0]
         indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
         for registro in inventario.registros:
-            if registro.id() in indexMap:
-                index = indexMap[registro.id()]
+            registroKey = registro.id().partition('.')[2]   
+            if  registroKey in indexMap:
+                index = indexMap[registroKey]
                 productoPorcion = existencias.registros[index].get()
                 productoPorcion.existencias = registro.get().existencias
                 productoPorcion.put()
             else:
                 registro = registro.get()
-                nuevoRegistro  = InventarioRegistro(id = registro.producto.id() + "." + registro.porcion.id(),
-                                             fecha = registro.fecha,
-                                             ciudad = registro.ciudad,
-                                             producto = registro.producto,
-                                             porcion = registro.porcion,
-                                             existencias = registro.existencias)
-                nuevoRegistro.put()
+                nuevoRegistro  = create_entity('ExistenciasRegistro',
+                                               {'fecha':registro.fecha,                                                                        
+                                                'ciudad': registro.ciudad,
+                                                'producto': registro.producto,
+                                                'porcion':  registro.porcion,
+                                                'existencias':  registro.existencias})['entity']
                 existencias.registros.append(nuevoRegistro.key)
         existencias.put()
+
+def actualizarInventarioRegistros(inventario):
+    for registro in inventario.registros:
+        registro.delete()
         
 postSaveAction['Inventario'] = actualizarExistencias
+postDeleteAction['Inventario'] = actualizarInventarioRegistros
 

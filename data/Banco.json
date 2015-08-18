@@ -1,11 +1,11 @@
 [
 	{
-		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2015-07-25",
 		"direccion": "Av Cra 36 No 23A 63",
-		"telefono": "2688610",
 		"rotulo": "Banco Caja Social",
-		"fechaCreacion": "2015-07-24",
+		"nombre": "Banco Caja Social",
+		"empleadoCreador": "eduzea@gmail.com",
 		"contacto": "",
-		"nombre": "Banco Caja Social"
+		"telefono": "2688610"
 	}
 ]

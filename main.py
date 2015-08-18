@@ -3,7 +3,6 @@ from views.views import *
 
 application = webapp2.WSGIApplication([
     #User Management                                  
-    ('/test', Test),
     ('/login',LogIn),
     ('/logout',LogOut),
     ('/validateUser', ValidateUser),
@@ -36,7 +35,6 @@ application = webapp2.WSGIApplication([
     ('/guardarFactura', GuardarFactura),
     ('/mostrarFactura', MostrarFactura),
     ('/anularFactura', AnularFactura),
-    ('/importFacturas',ImportFacturas),    
     # Egresos
     ('/crearEgreso', CrearEgreso),
     ('/guardarEgreso', GuardarEgreso),
@@ -48,12 +46,11 @@ application = webapp2.WSGIApplication([
     ('/exportScript', ExportScript),
     ('/importScript', ImportScript),
     ('/setNumero', SetNumber),
-    ('/importCSV', ImportCSV),
     # Informes
     ('/getProductSales',GetProductSales) ,
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
-    ('/getIVAPagado',getIVAPagado) ,
+    ('/getIVAPagado',GetIVAPagado) ,
     #MISC
     ('/fix',Fix)
 ], debug=True)

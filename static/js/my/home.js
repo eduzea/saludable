@@ -47,6 +47,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 					{id : 'Pasivos', name:'Pasivos', parent:'root', clickable:false},
 					{id : 'Ingresos', name : 'Ingresos', parent:'root', clickable:false},
 					{id : 'Egresos', name : 'Egresos', parent:'root', clickable:false},
+					{id : 'Produccion', name : 'Produccion', parent:'root', clickable:true},
 					{id : 'Informes', name : 'Informes', parent:'root', clickable:false},
 					{id : 'Admin', name : 'Admin', parent:'root', clickable:false}];
 		data.push.apply(data,activoNodes);

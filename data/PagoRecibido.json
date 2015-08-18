@@ -9,7 +9,7 @@
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "89655417"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 245435,
 		"fecha": "2015-06-17",
@@ -18,7 +18,7 @@
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "93130590"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 72650,
 		"fecha": "2015-06-24",
@@ -27,7 +27,7 @@
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "94753546"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 1738791,
 		"fecha": "2015-06-25",
@@ -36,7 +36,7 @@
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "95029570"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 2147349,
 		"fecha": "2015-06-26",
@@ -45,7 +45,7 @@
 		"cliente": "HARRY.SAS.HARRYS.BAR",
 		"documento": "95513493"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 1518081,
 		"fecha": "2015-06-30",
@@ -56,6 +56,51 @@
 	}, {
 		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
+		"monto": 345250,
+		"fecha": "2015-07-01",
+		"numero": 15,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "96449683"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 49085,
+		"fecha": "2015-07-03",
+		"numero": 16,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "AVESCO.SA.MERCADO.93",
+		"documento": "97058907"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 188000,
+		"fecha": "2015-07-07",
+		"numero": 17,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "97943868"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 159384,
+		"fecha": "2015-07-10",
+		"numero": 18,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
+		"documento": "99041381"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 49068,
+		"fecha": "2015-07-13",
+		"numero": 19,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "JARDIN.ABACO",
+		"documento": "99424239"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
 		"monto": 205300,
 		"fecha": "2015-06-03",
 		"numero": 2,
@@ -63,7 +108,97 @@
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "89985715"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 325050,
+		"fecha": "2015-07-14",
+		"numero": 20,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "99713011"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 537200,
+		"fecha": "2015-07-15",
+		"numero": 21,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "00173171"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 556944,
+		"fecha": "2015-07-16",
+		"numero": 22,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"documento": "00638609"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 260850,
+		"fecha": "2015-07-22",
+		"numero": 23,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "01371957"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 1401725,
+		"fecha": "2015-07-23",
+		"numero": 24,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE",
+		"documento": "01635788"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 684980,
+		"fecha": "2015-07-23",
+		"numero": 25,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"documento": "01636216"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 727012,
+		"fecha": "2015-07-24",
+		"numero": 26,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "Restaurante.Criterion.Restaurante",
+		"documento": "02013218"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 1880335,
+		"fecha": "2015-07-24",
+		"numero": 27,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "02247768"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 3190017,
+		"fecha": "2015-07-24",
+		"numero": 28,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "02247775"
+	}, {
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 168896,
+		"fecha": "2015-07-24",
+		"numero": 29,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
+		"documento": "02264077"
+	}, {
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 384700,
 		"fecha": "2015-06-09",
@@ -72,7 +207,97 @@
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "91317614"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
+		"medio": "TRANSFERENCIA",
+		"monto": 442800,
+		"fecha": "2015-07-27",
+		"numero": 30,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "02725724"
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 181656,
+		"fecha": "2015-07-28",
+		"numero": 31,
+		"empleadoCreador": null,
+		"cliente": "Alfonso.Abril.Restaurante",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 9164,
+		"fecha": "2015-07-07",
+		"numero": 32,
+		"empleadoCreador": null,
+		"cliente": "LAURA.AMOROCHO.PARTICULAR",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 26100,
+		"fecha": "2015-07-04",
+		"numero": 33,
+		"empleadoCreador": null,
+		"cliente": "GIOVANNY.BELLO.PARTICULAR",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 25200,
+		"fecha": "2015-06-16",
+		"numero": 34,
+		"empleadoCreador": null,
+		"cliente": "OFELIA.GARCIA.PARTICULAR",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 16800,
+		"fecha": "2015-06-24",
+		"numero": 35,
+		"empleadoCreador": null,
+		"cliente": "OFELIA.GARCIA.PARTICULAR",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 5916750,
+		"fecha": "2015-07-31",
+		"numero": 36,
+		"empleadoCreador": null,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 210685,
+		"fecha": "2015-07-29",
+		"numero": 37,
+		"empleadoCreador": null,
+		"cliente": "AVESCO.SA.MERCADO.93",
+		"documento": "03317309"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 345800,
+		"fecha": "2015-07-28",
+		"numero": 38,
+		"empleadoCreador": null,
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "03113393"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 129572,
+		"fecha": "2015-07-31",
+		"numero": 39,
+		"empleadoCreador": null,
+		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
+		"documento": "04082286"
+	}, {
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 205500,
 		"fecha": "2015-06-10",
@@ -81,7 +306,52 @@
 		"cliente": "JARDIN.ABACO",
 		"documento": "91640334"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 1728264,
+		"fecha": "2015-07-31",
+		"numero": 40,
+		"empleadoCreador": null,
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"documento": "04192054"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 369000,
+		"fecha": "2015-08-04",
+		"numero": 41,
+		"empleadoCreador": null,
+		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
+		"documento": "04540407"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 495900,
+		"fecha": "2015-08-04",
+		"numero": 42,
+		"empleadoCreador": null,
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"documento": "04675786"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 62100,
+		"fecha": "2015-08-05",
+		"numero": 43,
+		"empleadoCreador": null,
+		"cliente": "AVESCO.SA.MERCADO.93",
+		"documento": "04866659"
+	}, {
+		"fechaCreacion": null,
+		"medio": "EFECTIVO",
+		"monto": 1304763,
+		"fecha": "2015-07-31",
+		"numero": 44,
+		"empleadoCreador": null,
+		"cliente": "TREINTA.Y.DOS.SEPTIMA.SAS.CENTRICO",
+		"documento": ""
+	}, {
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 180800,
 		"fecha": "2015-06-12",
@@ -90,7 +360,7 @@
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "91973915"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 26000,
 		"fecha": "2015-06-12",
@@ -99,7 +369,7 @@
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "91973916"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 268076,
 		"fecha": "2015-06-12",
@@ -108,7 +378,7 @@
 		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
 		"documento": "92289614"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 518799,
 		"fecha": "2015-07-16",
@@ -117,7 +387,7 @@
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": "92858181"
 	}, {
-		"fechaCreacion": "2015-07-27",
+		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 425750,
 		"fecha": "2015-06-17",

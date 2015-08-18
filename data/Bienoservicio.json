@@ -1,167 +1,471 @@
 [
 	{
-		"nombre": "Alimentacion Empleado",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Alimentacion Empleado",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Alimentacion Empleado",
+		"grupo": null
 	}, {
-		"nombre": "Arriendo",
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5105",
+		"puc": null,
+		"rotulo": "Aportes ARL",
+		"subcuenta": "510568",
+		"nombre": "Aportes ARL",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5105",
+		"puc": null,
+		"rotulo": "Aportes Caja de Compensacion",
+		"subcuenta": "510572",
+		"nombre": "Aportes Caja de Compensacion",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5105",
+		"puc": null,
+		"rotulo": "Aportes EPS",
+		"subcuenta": "510569",
+		"nombre": "Aportes EPS",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5105",
+		"puc": null,
+		"rotulo": "Aportes Pension",
+		"subcuenta": "510570",
+		"nombre": "Aportes Pension",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Fijo",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Arriendo",
-		"tipo": "Costo.Fijo"
+		"subcuenta": null,
+		"nombre": "Arriendo",
+		"grupo": null
 	}, {
-		"nombre": "Combustible",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Camara de comercio",
+		"subcuenta": null,
+		"nombre": "Camara de comercio",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Combustible",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Combustible",
+		"grupo": null
 	}, {
-		"nombre": "Cursos para el personal",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Cursos para el personal",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Cursos para el personal",
+		"grupo": null
 	}, {
-		"nombre": "Dotacion",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Dotacion",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Dotacion",
+		"grupo": null
 	}, {
-		"nombre": "Dotacion empleados",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Dotacion empleados",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Dotacion empleados",
+		"grupo": null
 	}, {
-		"nombre": "Equipos",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Equipos",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Equipos",
+		"grupo": null
 	}, {
-		"nombre": "Honorarios",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Gastos Extraordinarios",
+		"subcuenta": null,
+		"nombre": "Gastos Extraordinarios",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Gastos legales",
+		"subcuenta": null,
+		"nombre": "Gastos legales",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Honorarios",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Honorarios",
+		"grupo": null
 	}, {
-		"nombre": "Impuestos Distritales",
-		"rotulo": "Impuestos Distritales",
-		"tipo": "Costo.Variable"
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5405",
+		"puc": null,
+		"rotulo": "Impuesto - CREE",
+		"subcuenta": "0",
+		"nombre": "Impuesto - CREE",
+		"grupo": "54"
 	}, {
-		"nombre": "Impuestos Nacionales",
-		"rotulo": "Impuestos Nacionales",
-		"tipo": "Costo.Variable"
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5115",
+		"puc": null,
+		"rotulo": "Impuesto - IVA",
+		"subcuenta": "0",
+		"nombre": "Impuesto - IVA",
+		"grupo": "51"
 	}, {
-		"nombre": "Mano de Obra",
-		"rotulo": "Mano de Obra",
-		"tipo": "Costo.Variable"
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5405",
+		"puc": null,
+		"rotulo": "Impuesto - Renta",
+		"subcuenta": "0",
+		"nombre": "Impuesto - Renta",
+		"grupo": "54"
 	}, {
-		"nombre": "Mantenimiento y arreglos locativos",
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5115",
+		"puc": null,
+		"rotulo": "Impuesto de Industria y Comercio",
+		"subcuenta": "511505",
+		"nombre": "Impuesto de Industria y Comercio",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Mantenimiento de vehiculos",
+		"subcuenta": null,
+		"nombre": "Mantenimiento de vehiculos",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Mantenimiento y arreglos locativos",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Mantenimiento y arreglos locativos",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Bolsas Plasticas",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Bolsas Plasticas",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Bolsas Plasticas",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Fruta",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Fruta",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Fruta",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Hielo Seco",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Hielo Seco",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Hielo Seco",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Implementos de Aseo",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Implementos de Aseo",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Implementos de Aseo",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Quimicos",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Quimicos",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Quimicos",
+		"grupo": null
 	}, {
-		"nombre": "Materia Prima-Varios",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materia Prima-Varios",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materia Prima-Varios",
+		"grupo": null
 	}, {
-		"nombre": "Materiales de Construccion",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Materiales de Construccion",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Materiales de Construccion",
+		"grupo": null
 	}, {
-		"nombre": "Medicinas Botiquin",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Medicinas Botiquin",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Medicinas Botiquin",
+		"grupo": null
 	}, {
-		"nombre": "Nomina-Turnos",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Nomina-Turnos",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Nomina-Turnos",
+		"grupo": null
 	}, {
-		"nombre": "Nomina - Administrativa",
+		"tipo": "Costo.Fijo",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Nomina - Administrativa",
-		"tipo": "Costo.Fijo"
+		"subcuenta": null,
+		"nombre": "Nomina - Administrativa",
+		"grupo": null
 	}, {
-		"nombre": "Nomina - Operativa",
+		"tipo": "Costo.Fijo",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Nomina - Operativa",
-		"tipo": "Costo.Fijo"
+		"subcuenta": null,
+		"nombre": "Nomina - Operativa",
+		"grupo": null
 	}, {
-		"nombre": "Nomina Administrativa",
-		"rotulo": "Nomina Administrativa",
-		"tipo": "Costo.Variable"
-	}, {
-		"nombre": "Pago de deuda",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Pago de deuda",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Pago de deuda",
+		"grupo": null
 	}, {
-		"nombre": "Papeleria",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Papeleria",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Papeleria",
+		"grupo": null
 	}, {
-		"nombre": "Plasticos",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Parqueadero",
+		"subcuenta": null,
+		"nombre": "Parqueadero",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5155",
+		"puc": null,
+		"rotulo": "Pasajes Aereos",
+		"subcuenta": "515515",
+		"nombre": "Pasajes Aereos",
+		"grupo": "51"
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Plasticos",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Plasticos",
+		"grupo": null
 	}, {
-		"nombre": "Prestamo Empresa a Socio",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Prestamo Empresa a Socio",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Prestamo Empresa a Socio",
+		"grupo": null
 	}, {
-		"nombre": "Pruebas laboratorio",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Pruebas laboratorio",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Pruebas laboratorio",
+		"grupo": null
 	}, {
-		"nombre": "Servicios-Fumigacion",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
+		"rotulo": "Publicidad",
+		"subcuenta": null,
+		"nombre": "Publicidad",
+		"grupo": null
+	}, {
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios-Fumigacion",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios-Fumigacion",
+		"grupo": null
 	}, {
-		"nombre": "Servicios-Varios",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios-Varios",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios-Varios",
+		"grupo": null
 	}, {
-		"nombre": "Servicios Financieros",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios Financieros",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios Financieros",
+		"grupo": null
 	}, {
-		"nombre": "Servicios Publicos-Agua",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios Publicos-Agua",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios Publicos-Agua",
+		"grupo": null
 	}, {
-		"nombre": "Servicios Publicos-Energia",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios Publicos-Energia",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios Publicos-Energia",
+		"grupo": null
 	}, {
-		"nombre": "Servicios Publicos-Gas",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios Publicos-Gas",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios Publicos-Gas",
+		"grupo": null
 	}, {
-		"nombre": "Servicios Publicos-Telecomunicaciones",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Servicios Publicos-Telecomunicaciones",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Servicios Publicos-Telecomunicaciones",
+		"grupo": null
 	}, {
-		"nombre": "Taxis y Pasajes de Bus",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Taxis y Pasajes de Bus",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Taxis y Pasajes de Bus",
+		"grupo": null
 	}, {
-		"nombre": "Transporte del Producto-Intermunicipal",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Transporte del Producto-Intermunicipal",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Transporte del Producto-Intermunicipal",
+		"grupo": null
 	}, {
-		"nombre": "Transporte del Producto-Local",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Transporte del Producto-Local",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Transporte del Producto-Local",
+		"grupo": null
 	}, {
-		"nombre": "Utensilios",
+		"tipo": "Costo.Variable",
+		"clase": null,
+		"cuenta": null,
+		"puc": null,
 		"rotulo": "Utensilios",
-		"tipo": "Costo.Variable"
+		"subcuenta": null,
+		"nombre": "Utensilios",
+		"grupo": null
 	}, {
-		"nombre": "Vigilancia",
+		"tipo": "Costo.Fijo",
+		"clase": "5",
+		"cuenta": "5135",
+		"puc": null,
 		"rotulo": "Vigilancia",
-		"tipo": "Costo.Fijo"
+		"subcuenta": "513505",
+		"nombre": "Vigilancia",
+		"grupo": "51"
 	}
 ]

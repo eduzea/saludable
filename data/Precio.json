@@ -36,6 +36,11 @@
 		"precio": 6000
 	}, {
 		"producto": "ARAZA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7700
+	}, {
+		"producto": "ARAZA",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7500
@@ -111,6 +116,11 @@
 		"precio": 6500
 	}, {
 		"producto": "CURUBA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 6900
+	}, {
+		"producto": "CURUBA",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6500
@@ -181,6 +191,11 @@
 		"precio": 9000
 	}, {
 		"producto": "DURAZNO",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7200
+	}, {
+		"producto": "DURAZNO",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
@@ -227,27 +242,27 @@
 	}, {
 		"producto": "ENCURTIDO.DE.ALCACHOFAS",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "250.Gr",
+		"porcion": "250.g",
 		"precio": 8000
 	}, {
 		"producto": "ENCURTIDO.DE.ALCACHOFAS",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 15000
 	}, {
 		"producto": "ENCURTIDO.DE.BERENJENA.CON.PIMENTON",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "250.Gr",
+		"porcion": "250.g",
 		"precio": 7500
 	}, {
 		"producto": "ENCURTIDO.DE.BERENJENA.CON.PIMENTON",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 12000
 	}, {
 		"producto": "ENCURTIDO.DE.ZUQUINIS.CON.ESPECIAS",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 9000
 	}, {
 		"producto": "Elementos.desechables",
@@ -262,12 +277,12 @@
 	}, {
 		"producto": "Encurtido.de.champi\u00f1ones.a.la.griega",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "250.Gr",
+		"porcion": "250.g",
 		"precio": 5000
 	}, {
 		"producto": "Encurtido.de.champi\u00f1ones.a.la.griega",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 8550
 	}, {
 		"producto": "FACTURA.FISICA.FALTANTE",
@@ -344,6 +359,11 @@
 		"grupoDePrecios": "PARTICULARES",
 		"porcion": "1000.g",
 		"precio": 9000
+	}, {
+		"producto": "FEIJOA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7000
 	}, {
 		"producto": "FEIJOA",
 		"grupoDePrecios": "SARODI",
@@ -461,6 +481,11 @@
 		"precio": 5000
 	}, {
 		"producto": "FRESA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 6200
+	}, {
+		"producto": "FRESA",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6000
@@ -527,7 +552,7 @@
 	}, {
 		"producto": "FRESA",
 		"grupoDePrecios": "LEHAL",
-		"porcion": "300.Gr",
+		"porcion": "300.g",
 		"precio": 4500
 	}, {
 		"producto": "FRESA",
@@ -621,6 +646,11 @@
 		"precio": 8000
 	}, {
 		"producto": "FRUTOS.ROJOS",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7200
+	}, {
+		"producto": "FRUTOS.ROJOS",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7200
@@ -636,14 +666,14 @@
 		"precio": 760
 	}, {
 		"producto": "FRUTOS.ROJOS",
-		"grupoDePrecios": "LEHAL",
-		"porcion": "160.g",
-		"precio": 800
-	}, {
-		"producto": "FRUTOS.ROJOS.X.150",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "150.g",
 		"precio": 1200
+	}, {
+		"producto": "FRUTOS.ROJOS",
+		"grupoDePrecios": "LEHAL",
+		"porcion": "160.g",
+		"precio": 800
 	}, {
 		"producto": "GUANABANA",
 		"grupoDePrecios": "ABACO",
@@ -734,6 +764,11 @@
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"porcion": "1000.g",
 		"precio": 6200
+	}, {
+		"producto": "GUANABANA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7900
 	}, {
 		"producto": "GUANABANA",
 		"grupoDePrecios": "SALERNO",
@@ -859,6 +894,11 @@
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"porcion": "1000.g",
 		"precio": 4000
+	}, {
+		"producto": "GUAYABA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 5700
 	}, {
 		"producto": "GUAYABA",
 		"grupoDePrecios": "SALERNO",
@@ -1001,6 +1041,11 @@
 		"precio": 6800
 	}, {
 		"producto": "LULO",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7000
+	}, {
+		"producto": "LULO",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6800
@@ -1051,9 +1096,19 @@
 		"precio": 1000
 	}, {
 		"producto": "LULO",
+		"grupoDePrecios": "SALUDABLE",
+		"porcion": "2000.g",
+		"precio": 0
+	}, {
+		"producto": "LULO",
 		"grupoDePrecios": "COLEGIOS",
 		"porcion": "5000.g",
 		"precio": 30000
+	}, {
+		"producto": "LULO",
+		"grupoDePrecios": "SALUDABLE",
+		"porcion": "5000.g",
+		"precio": 0
 	}, {
 		"producto": "LULO",
 		"grupoDePrecios": "CENTRICO",
@@ -1169,6 +1224,11 @@
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"porcion": "1000.g",
 		"precio": 5600
+	}, {
+		"producto": "MANGO",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7000
 	}, {
 		"producto": "MANGO",
 		"grupoDePrecios": "SALERNO",
@@ -1301,6 +1361,11 @@
 		"precio": 7000
 	}, {
 		"producto": "MANGO.BICHE",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7200
+	}, {
+		"producto": "MANGO.BICHE",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7000
@@ -1416,6 +1481,11 @@
 		"precio": 7500
 	}, {
 		"producto": "MARACUYA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "MARACUYA",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 7500
@@ -1476,6 +1546,11 @@
 		"precio": 1150
 	}, {
 		"producto": "MARACUYA",
+		"grupoDePrecios": "SALUDABLE",
+		"porcion": "5000.g",
+		"precio": 0
+	}, {
+		"producto": "MARACUYA",
 		"grupoDePrecios": "PAESA",
 		"porcion": "50.g",
 		"precio": 460
@@ -1532,12 +1607,12 @@
 	}, {
 		"producto": "MERMELADA.SABORES",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "250.Gr",
+		"porcion": "250.g",
 		"precio": 6600
 	}, {
 		"producto": "MERMELADA.SABORES",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 8550
 	}, {
 		"producto": "MORA",
@@ -1626,6 +1701,11 @@
 		"precio": 7000
 	}, {
 		"producto": "MORA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 6900
+	}, {
+		"producto": "MORA",
 		"grupoDePrecios": "SALERNO",
 		"porcion": "1000.g",
 		"precio": 6500
@@ -1669,6 +1749,11 @@
 		"grupoDePrecios": "SALERNO",
 		"porcion": "150.g",
 		"precio": 1000
+	}, {
+		"producto": "MORA",
+		"grupoDePrecios": "SALUDABLE",
+		"porcion": "5000.g",
+		"precio": 0
 	}, {
 		"producto": "MORA",
 		"grupoDePrecios": "PAESA",
@@ -1717,12 +1802,12 @@
 	}, {
 		"producto": "Mermelada.compuesta",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "250.Gr",
+		"porcion": "250.g",
 		"precio": 7000
 	}, {
 		"producto": "Mermelada.compuesta",
 		"grupoDePrecios": "NOGAL",
-		"porcion": "500.Gr.",
+		"porcion": "500.g",
 		"precio": 10000
 	}, {
 		"producto": "NISPERO",
@@ -1826,9 +1911,24 @@
 		"precio": 6000
 	}, {
 		"producto": "PI\u00d1A",
+		"grupoDePrecios": "PARTICULARES",
+		"porcion": "1000.g",
+		"precio": 7200
+	}, {
+		"producto": "PI\u00d1A",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"porcion": "1000.g",
 		"precio": 5300
+	}, {
+		"producto": "PI\u00d1A",
+		"grupoDePrecios": "Particulr",
+		"porcion": "1000.g",
+		"precio": 7500
+	}, {
+		"producto": "PI\u00d1A",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 6600
 	}, {
 		"producto": "PI\u00d1A",
 		"grupoDePrecios": "SALERNO",
@@ -1879,6 +1979,11 @@
 		"grupoDePrecios": "PAESA",
 		"porcion": "200.g",
 		"precio": 1400
+	}, {
+		"producto": "SURTIDAS",
+		"grupoDePrecios": "PARTICULARES",
+		"porcion": "1000.g",
+		"precio": 8400
 	}, {
 		"producto": "SURTIDOS",
 		"grupoDePrecios": "HANS",
@@ -1936,6 +2041,11 @@
 		"precio": 10000
 	}, {
 		"producto": "TAMARINDO",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 12000
+	}, {
+		"producto": "TAMARINDO",
 		"grupoDePrecios": "TREPANDO",
 		"porcion": "1000.g",
 		"precio": 7000
@@ -1989,6 +2099,11 @@
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"porcion": "1000.g",
 		"precio": 4500
+	}, {
+		"producto": "TOMATE.DE.ARBOL",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 6300
 	}, {
 		"producto": "TOMATE.DE.ARBOL",
 		"grupoDePrecios": "SALERNO",
@@ -2069,6 +2184,11 @@
 		"grupoDePrecios": "POLKA",
 		"porcion": "1000.g",
 		"precio": 7000
+	}, {
+		"producto": "UVA",
+		"grupoDePrecios": "Precios.2015",
+		"porcion": "1000.g",
+		"precio": 7100
 	}, {
 		"producto": "UVA",
 		"grupoDePrecios": "SALERNO",
