@@ -72,10 +72,11 @@ def check_types(entity_class, values, forQuery=False):
                         try:
                             values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
                         except:
-                            values[key]=parseDateString(values[key])
+                            values[key]=parseDateString(values[key]).date()
         if type(value) == ndb.StructuredProperty:
+            if isinstance(values[key],basestring):
+                listVals = json.loads(values[key])
             objList = []
-            listVals = values[key]
             for listItem in listVals:
                 obj = check_types(value._modelclass._class_name(),listItem)             
                 objList.append(value._modelclass(**obj))

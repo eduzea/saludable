@@ -44,7 +44,8 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	});
 	
 	//CREATE GRID AFTER GETTING STRUCTURE FROM SERVER
-	request('/getColumns?entityClass=' + entity_class, {handleAs:'json'}).then(function(columns) {
+	request('/getColumns?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
+		var columns = response['columns'];
 		columns.forEach(function(column){
 			if (column.type == 'Integer'){
 				column.formatter=function(data){
@@ -219,12 +220,12 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	return label;
 	};
 
-	var fillForm = function(nodelist, rowData, entity_class){
+	var fillForm = function(nodelist, rowData, entityClass){
 		nodelist.forEach(function(node, index, array){
    			var dijit = registry.byId(node.id);
    			if (dijit){
    				if (dijit.id.indexOf("grid") > -1 ){
-   					request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entity_class, {handleAs:'json'}).then(function(response)
+   					request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entityClass, {handleAs:'json'}).then(function(response)
    					 {
    						dijit.model.clearCache();
 						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
@@ -237,16 +238,18 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 						if (dijit.updateTotal){
 							dijit.total = dijit.updateTotal();	
 						}
-						if (dom.byId(numeroDomId[entity_class])){
-							dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;							
+						if (dom.byId(numeroDomId[entityClass])){
+							dom.byId(numeroDomId[entityClass]).innerHTML = rowData.numero;							
 						}
+						if (entityClass in saludable.gridChangeFuncs)
+							saludable.gridChangeFuncs[entityClass](dijit);
    					});
    				}else{
    					var id = dijit.id;
-		        	if (id.indexOf(entity_class + "_Btn") > -1){//For key fields that are lists
-		        		var field = id.replace('_' + entity_class + '_Btn','');
+		        	if (id.indexOf(entity_class + "_Btn_list") > -1){//For key fields that are lists
+		        		var field = id.replace('_' + entity_class + '_Btn_list','');
 		        		//Find the button, fill the items list
-		        		var button = registry.byId(field + '_' + entity_class + '_Btn');
+		        		var button = registry.byId(field + '_' + entity_class + '_Btn_list');
 		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
 		        		//Find the list, populate it
 		        		var listName = field + '_' + entity_class + '_list';

@@ -12,13 +12,14 @@ from config import *
 from datastorelogic import *
 
 basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/ValidationTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
-                  'auto':'<input readonly ATTR_REPLACE>INNER_REPLACE</input>',
                   'IntegerProperty': '<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'FloatProperty':'<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'KeyProperty' : '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select> POST_REPLACE',
                   'DateProperty':'<input value = now data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:\'yyyy-MM-dd\', strict:true}" ATTR_REPLACE ></input>',
                   'TextProperty':'<textarea data-dojo-type="dijit/form/SimpleTextarea" ATTR_REPLACE > INNER_REPLACE </textarea>',
-                  'BooleanProperty':'<input type="text" data-dojo-type="dijit/form/CheckBox" ATTR_REPLACE > INNER_REPLACE </input>'
+                  'BooleanProperty':'<input type="text" data-dojo-type="dijit/form/CheckBox" ATTR_REPLACE > INNER_REPLACE </input>',
+                  'ComputedProperty':'<input readonly ATTR_REPLACE>INNER_REPLACE</input>',
+                  'StructuredProperty':'<div class = "addEntityForm" data-dojo-type="dijit/form/Form" style="border:1px solid #b5bcc7;" ATTR_REPLACE><table><tr>INNER_REPLACE</tr></table></div></br>POST_REPLACE'
                   }
 
 def getIdString(field,entity_class):
@@ -35,9 +36,19 @@ def getOptions(prop):
     return html
 
 def repeatedPropHTML(field, entity_class):
-    html = "<button class = listBtn id='" + field + '_' + entity_class + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button>"
+    html = "<button class = listBtn id='" + field + '_' + entity_class + "_Btn_list' data-dojo-type='dijit/form/Button'>Agregar</button>"
     html += "<div style='border:1px solid #b5bcc7;' id='" + field + '_' + entity_class + "_list' class='list'></div>"
     return html
+
+def structuredPropHTML(propType, fieldName, entity_class):
+    model = propType._modelclass._class_name()
+    fields = fieldsInfo(model)
+    inner=''
+    for field in fields:
+        inner += '<td>' + getTagHTML(field,model) + '</td>'
+    inner += "<td><button id='" + fieldName + "_" + entity_class + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button></td>"
+    post = '<div class= "struct-grid grid_' + entity_class + '" model ="' + model + '" id="grid_' + fieldName + '_' + entity_class +  '"/>'
+    return {'inner':inner, 'post':post}
 
 def getTagHTML(prop,entity_class):
     propType = prop.pop('type')
@@ -59,6 +70,10 @@ def getTagHTML(prop,entity_class):
         innerReplace += getOptions(propType)
         if propType._repeated == True:
             postReplace += repeatedPropHTML(prop['id'],entity_class)
+    elif type(propType) == ndb.StructuredProperty:
+        structPropHTML = structuredPropHTML(propType,prop['id'],entity_class)
+        innerReplace += structPropHTML['inner']
+        postReplace += structPropHTML['post'] 
     html = html.replace('ATTR_REPLACE',attrReplace).replace('INNER_REPLACE',innerReplace).replace('POST_REPLACE',postReplace)
     return html
 

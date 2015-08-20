@@ -1,5 +1,5 @@
+from __future__ import division
 from google.appengine.ext import ndb
-from datetime import datetime
 
 
 class Empleado(ndb.Model):
@@ -162,18 +162,24 @@ class Existencias(Inventario):
     ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
     registros = ndb.KeyProperty(kind=ExistenciasRegistro, repeated = True)
     
-class ProductoPorcion(Record):
-    producto = ndb.KeyProperty(kind=Producto)
+class ProductoPorcion(ndb.Model):
     porcion = ndb.KeyProperty(kind=Porcion)
+    cantidad = ndb.IntegerProperty()
+    rotulo =  ndb.ComputedProperty(lambda self: self.porcion.id())
+
+def pesoPulpa(productos):
+    peso = 0
+    for producto in productos:
+        peso += producto.porcion.get().valor * producto.cantidad
+    return peso / 1000
 
 class Produccion(Record):
     fecha = ndb.DateProperty()
     ciudad = ndb.KeyProperty(kind=Ciudad)
     producto = ndb.KeyProperty(kind=Producto)
     pesoFruta = ndb.IntegerProperty()
-    productoPorcion = ndb.KeyProperty(kind=ProductoPorcion, repeated=True)
-    pesoPulpa = ndb.IntegerProperty()
-    rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
+    productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
+    rendimiento = ndb.ComputedProperty(lambda self: 100 * pesoPulpa(self.productos) / self.pesoFruta)
 
 
 ########## EGRESOS #######

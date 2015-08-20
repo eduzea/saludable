@@ -16,25 +16,26 @@ def rreplace(s, old, new, occurrence):
 def parseDateString(string):
     start = string.find( '(' )
     end = string.find( ')' )
+    fecha = string
     if start != -1 and end != -1:
         result = string[start:end+1]
         fecha = string.replace(result,'')
     return parser.parse(fecha)
     
-def getColumns(entity_class):
+def getColumns(entityClass):
     columns=[]
-    props = classModels[entity_class]._properties
-    for column in uiConfig[entity_class]:
+    props = classModels[entityClass]._properties
+    for column in uiConfig[entityClass]:
         colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
         if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
             if not props[column['id']]._repeated:
                 colProps['type']='Integer'
         columns.append(colProps);
-    return columns
+    return {'columns':columns,'key':keyDefs[entityClass]}
 
-def getKey(entity_class,dicc):
+def getKey(entityClass,dicc):
     key = u''
-    for keypart in keyDefs[entity_class]:
+    for keypart in keyDefs[entityClass]:
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get()
             if entity:
@@ -46,13 +47,13 @@ def getKey(entity_class,dicc):
     return '.'.join(key.split())
 
 
-def prepareRecords(entity_class, entities):
+def prepareRecords(entityClass, entities):
     records=[]
-    props = classModels[entity_class]._properties
-    fields = [field['id'] for field in uiConfig[entity_class]]
+    props = classModels[entityClass]._properties
+    fields = [field['id'] for field in uiConfig[entityClass]]
     for entity in entities:
         dicc = entity.to_dict()
-        dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
+#         dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
         keysToRemove =[]
         for prop_key, prop_value in dicc.iteritems():
             if type(prop_value) == ndb.Key:
@@ -64,7 +65,10 @@ def prepareRecords(entity_class, entities):
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
             if type(prop_value) == bool: 
                 dicc[prop_key] = 'Si' if prop_value == True else 'No'
-            if type(prop_value) == list:
+            if type(props[prop_key]) == ndb.StructuredProperty:
+                if type(prop_value) == list:
+                    dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})
+            elif type(prop_value) == list:
                 value = ''
                 if prop_value:
                     if type(prop_value[0]) == ndb.Key:
@@ -86,16 +90,16 @@ def createTemplateString(entity):
     else:
         return '/addEntity?entityClass=' + entity        
 
-def fieldsInfo(entity_class):
-    props = classModels[entity_class]._properties
-    fields = uiConfig[entity_class]
+def fieldsInfo(entityClass):
+    props = classModels[entityClass]._properties
+    fields = uiConfig[entityClass]
     for field in fields:
         field['type']=props[field['id']]
     return fields
 
-def getConsecutivo(entity_class):
+def getConsecutivo(entityClass):
     tipo = {'Remision' : NumeroRemision, 'Factura' : NumeroFactura }
-    numero = tipo[entity_class].query().fetch()
+    numero = tipo[entityClass].query().fetch()
     if numero:
         numero[0].consecutivo = numero[0].consecutivo + 1
         numero[0].put()

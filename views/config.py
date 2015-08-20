@@ -97,7 +97,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'InventarioRegistro':['fecha','ciudad','producto','porcion'],
            'Existencias':['fecha','ciudad'],
            'ExistenciasRegistro':['ciudad','producto','porcion'],
-           'Produccion':['fecha','ciudad','producto']
+           'Produccion':['fecha','ciudad','producto'],
+           'ProductoPorcion':['porcion']
            }
 
 uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'width:10em'},
@@ -284,25 +285,20 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                           {'id':'ciudad','ui':'Ciudad','style':'width:5em'},
                           {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
                           ],
-            'GastoAnexo':[
-                          {'id':'numero','ui':'No.','required':'true', 'style':'width:2em'},
-                          {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
-                          {'id':'proveedor','ui':'Proveedor','style':'width:15em'},
-                          {'id':'resumen','ui':'Bien o Servicio','style':'width:15em'},
-                          {'id':'total','ui':'Total','required':'true', 'style':'width:5em'},
-                          {'id':'ivaPagado','ui':'IVA','required':'true', 'style':'width:5em'},
-                          ],
             'Produccion':[
-                          {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
+                          {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
                           {'id':'ciudad','ui':'Ciudad','style':'width:5em'},
-                          {'id':'producto','ui':'Producto','style':'width:10em'},
-                          {'id': 'productoPorcion','ui':'ProductoPorcion','style':'width:10em'},
-                          {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},
-                          {'id':'pesoPulpa','ui':'Peso Pulpa (kg)','required':'true', 'style':'width:5em'},
+                          {'id':'producto','ui':'Fruta', 'style':'width:10em'},
+                          {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
+                          {'id':'productos','ui':'Productos','style':'width:10em'},
                           {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:3em'},
-                          ]
+                          ],
+            'ProductoPorcion':[
+                               {'id':'porcion','ui':'Porcion','style':'width:5em'},
+                               {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0}
+                            ]
             }
-
+            
 templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'Factura':'/crearFactura?entityClass=Factura', 
                    'Egreso':'/crearEgreso',
@@ -317,7 +313,8 @@ detailFields = {
                'Factura':'ventas',
                'Remision':'ventas',
                'Egreso':'compras',
-               'Inventario':'registros'
+               'Inventario':'registros',
+               'Produccion':'productos'
                }
 exentosDeIVA = {
                 'Materia.Prima-Fruta',

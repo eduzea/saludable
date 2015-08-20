@@ -582,7 +582,8 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        existencias = Existencias.query().fetch()[0]
-        existencias.registros = []
-        existencias.put()
+        egresos = Egreso.query(Egreso.proveedor == ndb.Key('Proveedor','No.reportado')).fetch()
+        for egreso in egresos:
+            egreso.proveedor = ndb.Key('Proveedor','NO.REPORTADO')
+            egreso.put()
         self.response.out.write('Done!')
