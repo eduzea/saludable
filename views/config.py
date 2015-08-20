@@ -233,12 +233,12 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                              {'id':'participacion', 'ui':'Participacion (%)','required':'true','style':'width:8em', 'disabled':'true'}
                              ],
             'CapitalPagado':[
-                             {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
+                             {'id':'fecha', 'ui':'Fecha','style':'width:10em','required':'true'},
                              {'id':'valor','ui':'Valor','required':'true','style':'width:10em'},
                              ],
             'ActivoFijo':[
-                      {'id':'numero','ui':'No.','required':'true', 'style':'width:2em'},
-                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:5em','required':'true'},
+                      {'id':'numero','ui':'No.','required':'true', 'style':'width:2em', 'readonly':'true', 'auto':'true'},
+                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:10em','required':'true'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:8em'},
                       {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:8em'},
@@ -275,7 +275,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                            ],
             'PagoRecibido':[
                               {'id':'numero','ui':'No.','required':'true', 'style':'width:2em','readonly':'true','auto':''},
-                              {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
+                              {'id':'fecha', 'ui':'Fecha','style':'width:8em','required':'true'},
                               {'id':'cliente','ui':'Cliente','style':'width:15em'},
                               {'id':'medio','ui':'Medio de pago','style':'width:8em'},
                               {'id':'documento','ui':'Documento','required':'false', 'style':'width:10em'},

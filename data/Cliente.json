@@ -151,6 +151,16 @@
 		"nit": "900016780-1"
 	}, {
 		"diasPago": 30,
+		"negocio": "CAFETERIA",
+		"direccion": "PANCE",
+		"grupoDePrecios": "COLEGIOS",
+		"ciudad": "Cali",
+		"rotulo": "COLEGIO BOLIVAR CAFETERIA",
+		"nombre": "COLEGIO BOLIVAR",
+		"telefono": "8555050",
+		"nit": "."
+	}, {
+		"diasPago": 30,
 		"negocio": "",
 		"direccion": "",
 		"grupoDePrecios": "NOGAL",
@@ -269,6 +279,16 @@
 		"nombre": "HARRY SAS",
 		"telefono": "3 45 03 04",
 		"nit": "830144557-1"
+	}, {
+		"diasPago": 30,
+		"negocio": "/COLEGIO BOLIVAR",
+		"direccion": "PANCE",
+		"grupoDePrecios": "COLEGIOS",
+		"ciudad": "Cali",
+		"rotulo": "INCAFE SAS /COLEGIO BOLIVAR",
+		"nombre": "INCAFE SAS",
+		"telefono": "8555050",
+		"nit": "9001612461"
 	}, {
 		"diasPago": 30,
 		"negocio": "Chilli Chang",

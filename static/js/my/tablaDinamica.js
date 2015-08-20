@@ -86,5 +86,5 @@ function(request,registry,parser,dom,on,query,Standby) {
         }
         alert('Usa Ctr + C para copiar el informe. Despues pegalo en Excel.');
     });
-	
+	registry.byId('standby_centerPane').hide();
 }); 

@@ -1,19 +1,1585 @@
 [
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2015-08-05",
 		"fecha": "2015-08-05",
 		"ultimasFacturas": [],
-		"ultimoInventario": "2015-08-04.Bogota",
-		"ciudad": "Bogota",
+		"ultimoInventario": {
+			"fechaCreacion": "2015-08-05",
+			"ciudad": {
+				"nombre": "Cali",
+				"rotulo": "Cali"
+			},
+			"registros": [
+				{
+					"fechaCreacion": "2015-08-05",
+					"existencias": 1,
+					"producto": {
+						"nombre": "FRESA",
+						"rotulo": "FRESA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "750g",
+						"valor": 750
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 12,
+					"producto": {
+						"nombre": "FRESA",
+						"rotulo": "FRESA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "300g",
+						"valor": 300
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 0,
+					"producto": {
+						"nombre": "FRESA",
+						"rotulo": "FRESA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 30,
+					"producto": {
+						"nombre": "FRESA",
+						"rotulo": "FRESA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 5,
+					"producto": {
+						"nombre": "FRUTOS AMARILLOS",
+						"rotulo": "FRUTOS AMARILLOS"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 1,
+					"producto": {
+						"nombre": "FRUTOS ROJOS",
+						"rotulo": "FRUTOS ROJOS"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 100,
+					"producto": {
+						"nombre": "FRUTOS ROJOS",
+						"rotulo": "FRUTOS ROJOS"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 100,
+					"producto": {
+						"nombre": "GUANABANA",
+						"rotulo": "GUANABANA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 110,
+					"producto": {
+						"nombre": "GUANABANA",
+						"rotulo": "GUANABANA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "180g",
+						"valor": 180
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 90,
+					"producto": {
+						"nombre": "GUAYABA",
+						"rotulo": "GUAYABA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 58,
+					"producto": {
+						"nombre": "GUAYABA",
+						"rotulo": "GUAYABA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "750g",
+						"valor": 750
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 22,
+					"producto": {
+						"nombre": "GUAYABA",
+						"rotulo": "GUAYABA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 110,
+					"producto": {
+						"nombre": "LULO",
+						"rotulo": "LULO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 4,
+					"producto": {
+						"nombre": "LULO",
+						"rotulo": "LULO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "750g",
+						"valor": 750
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 110,
+					"producto": {
+						"nombre": "MANGO",
+						"rotulo": "MANGO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 3,
+					"producto": {
+						"nombre": "MANGO",
+						"rotulo": "MANGO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "5000g",
+						"valor": 5000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 50,
+					"producto": {
+						"nombre": "MANGO",
+						"rotulo": "MANGO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 8,
+					"producto": {
+						"nombre": "MANGO",
+						"rotulo": "MANGO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 30,
+					"producto": {
+						"nombre": "MANGO BICHE",
+						"rotulo": "MANGO BICHE"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "200g",
+						"valor": 200
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 267,
+					"producto": {
+						"nombre": "MARACUYA",
+						"rotulo": "MARACUYA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 25,
+					"producto": {
+						"nombre": "MARACUYA",
+						"rotulo": "MARACUYA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 2,
+					"producto": {
+						"nombre": "MARACUYA PEPA",
+						"rotulo": "MARACUYA PEPA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 2,
+					"producto": {
+						"nombre": "MARACUYA",
+						"rotulo": "MARACUYA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "750g",
+						"valor": 750
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 82,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "750g",
+						"valor": 750
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 340,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 300,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "110g",
+						"valor": 110
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 160,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 100,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "125g",
+						"valor": 125
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 10,
+					"producto": {
+						"nombre": "PATILLA",
+						"rotulo": "PATILLA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "200g",
+						"valor": 200
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 5,
+					"producto": {
+						"nombre": "PI\u00d1A",
+						"rotulo": "PI\u00d1A"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "1000g",
+						"valor": 1000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 40,
+					"producto": {
+						"nombre": "PI\u00d1A",
+						"rotulo": "PI\u00d1A"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 18,
+					"producto": {
+						"nombre": "TOMATE DE ARBOL",
+						"rotulo": "TOMATE DE ARBOL"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 150,
+					"producto": {
+						"nombre": "UVA",
+						"rotulo": "UVA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 10,
+					"producto": {
+						"nombre": "UVA",
+						"rotulo": "UVA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "150g",
+						"valor": 150
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 200,
+					"producto": {
+						"nombre": "UVA",
+						"rotulo": "UVA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "200g",
+						"valor": 200
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 100,
+					"producto": {
+						"nombre": "UVA",
+						"rotulo": "UVA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "180g",
+						"valor": 180
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 20,
+					"producto": {
+						"nombre": "CURUBA",
+						"rotulo": "CURUBA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "100g",
+						"valor": 100
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 17,
+					"producto": {
+						"nombre": "LULO",
+						"rotulo": "LULO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "2000g",
+						"valor": 2000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 43,
+					"producto": {
+						"nombre": "LULO",
+						"rotulo": "LULO"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "5000g",
+						"valor": 5000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 5,
+					"producto": {
+						"nombre": "MARACUYA",
+						"rotulo": "MARACUYA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "5000g",
+						"valor": 5000
+					}
+				}, {
+					"fechaCreacion": "2015-08-05",
+					"existencias": 0,
+					"producto": {
+						"nombre": "MORA",
+						"rotulo": "MORA"
+					},
+					"fecha": "2015-08-04",
+					"ciudad": {
+						"nombre": "Cali",
+						"rotulo": "Cali"
+					},
+					"rotulo": "",
+					"empleadoCreador": null,
+					"porcion": {
+						"unidades": "g",
+						"rotulo": "5000g",
+						"valor": 5000
+					}
+				}
+			],
+			"empleadoCreador": null,
+			"fecha": "2015-08-04"
+		},
+		"ciudad": {
+			"nombre": "Cali",
+			"rotulo": "Cali"
+		},
 		"empleadoCreador": null,
-		"registros": []
-	}, {
-		"fechaCreacion": null,
-		"fecha": "2015-08-05",
-		"ultimasFacturas": [],
-		"ultimoInventario": "2015-08-04.Cali",
-		"ciudad": "Cali",
-		"empleadoCreador": null,
-		"registros": ["FRESA.750.g", "FRESA.300.g", "FRESA.1000.g", "FRESA.100.g", "FRUTOS.AMARILLOS.150.g", "FRUTOS.ROJOS.1000.g", "FRUTOS.ROJOS.150.g", "GUANABANA.100.g", "GUANABANA.180.g", "GUAYABA.100.g", "GUAYABA.750.g", "GUAYABA.1000.g", "LULO.100.g", "LULO.750.g", "MANGO.100.g", "MANGO.5000.g", "MANGO.150.g", "MANGO.1000.g", "MANGO.BICHE.200.g", "MARACUYA.100.g", "MARACUYA.150.g", "MARACUYA.PEPA.1000.g", "MARACUYA.750.g", "MORA.750.g", "MORA.150.g", "MORA.110.g", "MORA.100.g", "MORA.125.g", "PATILLA.200.g", "PI\u00d1A.1000.g", "PI\u00d1A.100.g", "TOMATE.DE.ARBOL.100.g", "UVA.100.g", "UVA.150.g", "UVA.200.g", "UVA.180.g", "CURUBA.100.g", "LULO.2000.g", "LULO.5000.g", "MARACUYA.5000.g", "MORA.5000.g"]
+		"registros": [
+			{
+				"fechaCreacion": "2015-08-05",
+				"existencias": 1,
+				"producto": {
+					"nombre": "FRESA",
+					"rotulo": "FRESA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "750g",
+					"valor": 750
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 12,
+				"producto": {
+					"nombre": "FRESA",
+					"rotulo": "FRESA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "300g",
+					"valor": 300
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 0,
+				"producto": {
+					"nombre": "FRESA",
+					"rotulo": "FRESA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 30,
+				"producto": {
+					"nombre": "FRESA",
+					"rotulo": "FRESA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 5,
+				"producto": {
+					"nombre": "FRUTOS AMARILLOS",
+					"rotulo": "FRUTOS AMARILLOS"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 1,
+				"producto": {
+					"nombre": "FRUTOS ROJOS",
+					"rotulo": "FRUTOS ROJOS"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 100,
+				"producto": {
+					"nombre": "FRUTOS ROJOS",
+					"rotulo": "FRUTOS ROJOS"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 100,
+				"producto": {
+					"nombre": "GUANABANA",
+					"rotulo": "GUANABANA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 110,
+				"producto": {
+					"nombre": "GUANABANA",
+					"rotulo": "GUANABANA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "180g",
+					"valor": 180
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 90,
+				"producto": {
+					"nombre": "GUAYABA",
+					"rotulo": "GUAYABA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 58,
+				"producto": {
+					"nombre": "GUAYABA",
+					"rotulo": "GUAYABA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "750g",
+					"valor": 750
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 22,
+				"producto": {
+					"nombre": "GUAYABA",
+					"rotulo": "GUAYABA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 110,
+				"producto": {
+					"nombre": "LULO",
+					"rotulo": "LULO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 4,
+				"producto": {
+					"nombre": "LULO",
+					"rotulo": "LULO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "750g",
+					"valor": 750
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 110,
+				"producto": {
+					"nombre": "MANGO",
+					"rotulo": "MANGO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 3,
+				"producto": {
+					"nombre": "MANGO",
+					"rotulo": "MANGO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "5000g",
+					"valor": 5000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 50,
+				"producto": {
+					"nombre": "MANGO",
+					"rotulo": "MANGO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 8,
+				"producto": {
+					"nombre": "MANGO",
+					"rotulo": "MANGO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 30,
+				"producto": {
+					"nombre": "MANGO BICHE",
+					"rotulo": "MANGO BICHE"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "200g",
+					"valor": 200
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 267,
+				"producto": {
+					"nombre": "MARACUYA",
+					"rotulo": "MARACUYA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 25,
+				"producto": {
+					"nombre": "MARACUYA",
+					"rotulo": "MARACUYA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 2,
+				"producto": {
+					"nombre": "MARACUYA PEPA",
+					"rotulo": "MARACUYA PEPA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 2,
+				"producto": {
+					"nombre": "MARACUYA",
+					"rotulo": "MARACUYA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "750g",
+					"valor": 750
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 82,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "750g",
+					"valor": 750
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 340,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 300,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "110g",
+					"valor": 110
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 160,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 100,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "125g",
+					"valor": 125
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 10,
+				"producto": {
+					"nombre": "PATILLA",
+					"rotulo": "PATILLA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "200g",
+					"valor": 200
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 5,
+				"producto": {
+					"nombre": "PI\u00d1A",
+					"rotulo": "PI\u00d1A"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "1000g",
+					"valor": 1000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 40,
+				"producto": {
+					"nombre": "PI\u00d1A",
+					"rotulo": "PI\u00d1A"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 18,
+				"producto": {
+					"nombre": "TOMATE DE ARBOL",
+					"rotulo": "TOMATE DE ARBOL"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 150,
+				"producto": {
+					"nombre": "UVA",
+					"rotulo": "UVA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 10,
+				"producto": {
+					"nombre": "UVA",
+					"rotulo": "UVA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "150g",
+					"valor": 150
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 200,
+				"producto": {
+					"nombre": "UVA",
+					"rotulo": "UVA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "200g",
+					"valor": 200
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 100,
+				"producto": {
+					"nombre": "UVA",
+					"rotulo": "UVA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "180g",
+					"valor": 180
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 20,
+				"producto": {
+					"nombre": "CURUBA",
+					"rotulo": "CURUBA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "100g",
+					"valor": 100
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 17,
+				"producto": {
+					"nombre": "LULO",
+					"rotulo": "LULO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "2000g",
+					"valor": 2000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 43,
+				"producto": {
+					"nombre": "LULO",
+					"rotulo": "LULO"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "5000g",
+					"valor": 5000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 5,
+				"producto": {
+					"nombre": "MARACUYA",
+					"rotulo": "MARACUYA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "5000g",
+					"valor": 5000
+				}
+			}, {
+				"fechaCreacion": "2015-08-05",
+				"existencias": 0,
+				"producto": {
+					"nombre": "MORA",
+					"rotulo": "MORA"
+				},
+				"fecha": "2015-08-04",
+				"ciudad": {
+					"nombre": "Cali",
+					"rotulo": "Cali"
+				},
+				"rotulo": "",
+				"empleadoCreador": null,
+				"porcion": {
+					"unidades": "g",
+					"rotulo": "5000g",
+					"valor": 5000
+				}
+			}
+		]
 	}
 ]

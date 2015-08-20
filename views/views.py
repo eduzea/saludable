@@ -497,9 +497,20 @@ class ImportScript(webapp2.RequestHandler):
 class ExportScript(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        data = classModels[entity_class].query().fetch()
-        if 'unpack' in self.request.params:
-            self.response.write(JSONEncoder(default=unpack).encode(data))
+        numRange = self.request.get('range')
+        unpack = self.request.get('unpack').split(',')
+        model = classModels[entity_class]
+        data =[]
+        if numRange:
+            start = int(numRange.split('-')[0])
+            end = int(numRange.split('-')[1])
+            data = model.query(model.numero >= start, model.numero <= end).fetch()
+        else:
+            data = model.query().fetch()
+        if unpack:
+            encoder = JSONEncoder();
+            encoder.unpack = unpack
+            self.response.write(encoder.encode(data))
         else:
             self.response.write(JSONEncoder().encode(data))
 
@@ -582,8 +593,7 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        egresos = Egreso.query(Egreso.proveedor == ndb.Key('Proveedor','No.reportado')).fetch()
-        for egreso in egresos:
-            egreso.proveedor = ndb.Key('Proveedor','NO.REPORTADO')
-            egreso.put()
+        existencias = Existencias.query().fetch()
+        for existencia in existencias:
+            existencia.key.delete()
         self.response.out.write('Done!')

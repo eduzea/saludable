@@ -9,9 +9,10 @@ require(['dojo/dom',
 		"dijit/Tree", 
 		"dojo/store/Memory", 
 		"dojo/ready",
-		'dojo/request', 
+		'dojo/request',
+		"dojox/widget/Standby", 
 		"dojo/domReady!"], 
-function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memory, ready,request) {
+function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memory, ready,request,Standby) {
 	ready(function() {
 
 		var makeStore = function(nodes,parent,template){
@@ -91,7 +92,11 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 	};
 	
 	saludable.widgetCache = {};
-		
+	
+	var standby = new Standby({id:'standby_centerPane', target: 'centerPane'});
+	document.body.appendChild(standby.domNode);
+	standby.startup();	
+
 	tree.onClick = function(item, node, evt){
 		if (!item.clickable) return;
 		var entityClass = item.id;
@@ -101,6 +106,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 			domConstruct.empty("centerPane");
 			registry.byId('centerPane').addChild(widget);
 		}else{
+			standby.show();
 			request('/getWidget?entityClass=' + entityClass + '&template=' + item.template).then(
 				function(response){
 					var contentPane = new ContentPane({content:response});

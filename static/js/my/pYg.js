@@ -27,5 +27,5 @@ require([
 				standby.hide();
 			});		
 		});
-	}
-);
+		registry.byId('standby_centerPane').hide();
+	});

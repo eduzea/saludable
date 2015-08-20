@@ -139,22 +139,16 @@ def getConsecutivoEgreso():
         NumeroEgreso(consecutivo=1).put()
         return 1 
 
-#there should be a better way of accomplishing this: passing unpack param to JSONEncoder
-#temporary kludge
-def unpack(o):
-    if isinstance(o, ndb.key.Key):
-        return o.get().to_dict()
-    if isinstance(o, ndb.Model):
-        return o.to_dict()
-    elif isinstance(o, (datetime, date, time)):
-        return str(o)  # Or whatever other date format you're OK with...
-    else:
-        print "Hold on! Unexpected type!"
-    
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, ndb.key.Key):
-            return o.id()
+            if hasattr(self, 'unpack'):
+                if o.kind() in self.unpack:
+                    return o.get().to_dict()
+                else:
+                    return o.id()
+            else:
+                return o.id()
         if isinstance(o, ndb.Model):
             return o.to_dict()
         elif isinstance(o, (datetime, date, time)):

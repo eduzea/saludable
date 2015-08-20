@@ -238,4 +238,5 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	grid.startup();
 	grid.updateTotal = updateTotal;
 	domClass.add(dom.byId('grid_Egreso'),'egreso-grid');
+	registry.byId('standby_centerPane').hide();
 }); 

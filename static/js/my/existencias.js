@@ -72,5 +72,5 @@ function(Memory, request, registry,dom,number,on,Standby,Grid,topic) {
      topic.subscribe('INVENTARIO', grid.listenerfunc);
      topic.subscribe('FACTURA',grid.listenerfunc);
      getData();
-   
+	registry.byId('standby_centerPane').hide();
 });

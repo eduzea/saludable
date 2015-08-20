@@ -16,4 +16,5 @@ function(request,registry,parser,dom,on) {
 			actualizarNumero(model,registry.byId('numerox_' + model).value);		
 		});
 	});
+	registry.byId('standby_centerPane').hide();
 });

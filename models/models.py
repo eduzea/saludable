@@ -143,7 +143,7 @@ class OtrosIngresos(ndb.Model):
     
 ############ INVENTARIO ####################
 
-class InventarioRegistro(Record):
+class InventarioRegistro(ndb.Model):
     fecha = ndb.DateProperty()
     ciudad = ndb.KeyProperty(kind=Ciudad)
     producto = ndb.KeyProperty(kind=Producto)

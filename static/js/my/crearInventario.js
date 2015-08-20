@@ -174,6 +174,7 @@ require(['dojo/dom',
 			var gridData = getGridData();
 			var grid = registry.byId('grid'+ '_' + entityClass);
 			var inventario_data = {'fecha':fecha,'ciudad':ciudad,'registros':gridData, 'entityClass':entityClass};
+			registry.byId('standby_centerPane').show();
 			request.post('/guardarInventario', {
 					data : json.stringify(inventario_data),
 					handleAs:'json'
@@ -185,6 +186,7 @@ require(['dojo/dom',
 					}else{
 						message = 'No se pudo guardar este inventario!';
 					}
+					registry.byId('standby_centerPane').hide();
 					dom.byId('mensaje'+ '_' + entityClass).innerHTML = message;
 					setTimeout(function() {
 						var grid =registry.byId('grid'+ '_' + entityClass);
@@ -193,8 +195,8 @@ require(['dojo/dom',
         				grid.body.refresh();
 						dom.byId('mensaje'+ '_' + entityClass).innerHTML = '';
 					}, 2000);
-					
 					topic.publish('INVENTARIO', {'action':'ADD'});
+					
 				});
 		});
 		
@@ -212,5 +214,5 @@ require(['dojo/dom',
 				grid.store.add(data);
 			}
 		};
-	}
-);
+		registry.byId('standby_centerPane').hide();
+	});

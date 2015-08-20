@@ -229,5 +229,6 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 			});
 		});
 	});
+	registry.byId('standby_centerPane').hide();
 });
 

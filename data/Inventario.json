@@ -1,9 +1,67 @@
 [
 	{
-		"fechaCreacion": null,
-		"ciudad": "Cali",
-		"registros": ["FRESA.750.g", "FRESA.300.g", "FRESA.1000.g", "FRESA.100.g", "FRUTOS.AMARILLOS.150.g", "FRUTOS.ROJOS.1000.g", "FRUTOS.ROJOS.150.g", "GUANABANA.100.g", "GUANABANA.180.g", "GUAYABA.100.g", "GUAYABA.750.g", "GUAYABA.1000.g", "LULO.100.g", "LULO.750.g", "MANGO.100.g", "MANGO.5000.g", "MANGO.150.g", "MANGO.1000.g", "MANGO.BICHE.200.g", "MARACUYA.100.g", "MARACUYA.150.g", "MARACUYA.PEPA.1000.g", "MARACUYA.750.g", "MORA.750.g", "MORA.150.g", "MORA.110.g", "MORA.100.g", "MORA.125.g", "PATILLA.200.g", "PI\u00d1A.1000.g", "PI\u00d1A.100.g", "TOMATE.DE.ARBOL.100.g", "UVA.100.g", "UVA.150.g", "UVA.200.g", "UVA.180.g", "CURUBA.100.g", "LULO.2000.g", "LULO.5000.g", "MARACUYA.5000.g", "MORA.5000.g"],
-		"empleadoCreador": 'eduzea@gmail.com',
-		"fecha": "2015-08-04"
+		"empleadoCreador": "eduzea@gmail.com",
+		"registros": [
+			{
+				"porcion": "100.g",
+				"producto": "ARAZA",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 34,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "1000.g",
+				"producto": "ARAZA",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 1,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "1000.g",
+				"producto": "CURUBA",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 1,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "120.g",
+				"producto": "CURUBA",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 3,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "1000.g",
+				"producto": "DURAZNO",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 4,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "125.g",
+				"producto": "DURAZNO",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 4,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "170.g",
+				"producto": "DURAZNO",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 4,
+				"ciudad": "Cali"
+			}, {
+				"porcion": "120.g",
+				"producto": "FEIJOA",
+				"fecha": "2015-08-04",
+				"rotulo": "",
+				"existencias": 10,
+				"ciudad": "Cali"
+			}
+		],
+		"fechaCreacion": "2015-08-20",
+		"fecha": "2015-08-04",
+		"ciudad": "Cali"
 	}
 ]

@@ -19,7 +19,6 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 	var standby = new Standby({target: entity_class+'_resumen'});
 	document.body.appendChild(standby.domNode);
 	standby.startup();
-	standby.show();	
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
@@ -108,4 +107,5 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			
 		}
 	);
+	registry.byId('standby_centerPane').hide();
 });

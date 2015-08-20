@@ -49,8 +49,12 @@ def check_types(entity_class, values, forQuery=False):
                         if type(item) is ndb.Key:
                             items.append(item)
                             continue
-                        key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
-                        items.append(key_obj)
+                        elif type(item) is dict: #it's an unpacked object! Create it, put it, and assign key
+                            obj = create_entity(value._kind, item)['entity']
+                            items.append(obj.key)
+                        else:#its a key.id string
+                            key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
+                            items.append(key_obj)
                     values[key] = items
             else:
                 if type(values[key]) is list:#If this is a query with OR condition
@@ -74,6 +78,7 @@ def check_types(entity_class, values, forQuery=False):
                         except:
                             values[key]=parseDateString(values[key]).date()
         if type(value) == ndb.StructuredProperty:
+            listVals = values[key]
             if isinstance(values[key],basestring):
                 listVals = json.loads(values[key])
             objList = []
