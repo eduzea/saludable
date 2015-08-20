@@ -60,6 +60,8 @@ class Venta(ndb.Model):
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     venta = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.producto.id() +' '+ self.porcion.id())
+    
 
 class NumeroFactura(ndb.Model):
     consecutivo = ndb.IntegerProperty()
@@ -175,7 +177,7 @@ def pesoPulpa(productos):
 
 class Produccion(Record):
     fecha = ndb.DateProperty()
-    ciudad = ndb.KeyProperty(kind=Ciudad)
+    sucursal = ndb.KeyProperty(kind=Sucursal)
     producto = ndb.KeyProperty(kind=Producto)
     pesoFruta = ndb.IntegerProperty()
     productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
@@ -256,6 +258,7 @@ class Compra(ndb.Model):
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     compra = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
 
 class Egreso(ndb.Model):
     numero = ndb.IntegerProperty()

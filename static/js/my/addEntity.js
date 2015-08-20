@@ -105,6 +105,8 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 						grid.model.clearCache();
 						grid.model.store.setData([]);
         				grid.body.refresh();
+        				if (entityClass in saludable.gridChangeFuncs)
+								saludable.gridChangeFuncs[entityClass](grid);
 					});
 					
 				}, 2000);

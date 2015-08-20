@@ -97,7 +97,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'InventarioRegistro':['fecha','ciudad','producto','porcion'],
            'Existencias':['fecha','ciudad'],
            'ExistenciasRegistro':['ciudad','producto','porcion'],
-           'Produccion':['fecha','ciudad','producto'],
+           'Produccion':['fecha','sucursal','producto'],
            'ProductoPorcion':['porcion']
            }
 
@@ -230,7 +230,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                              {'id':'socio','ui':'Socio', 'required':'true',  'style':'width:10em'},
                              {'id':'acciones','ui':'No. Acciones','required':'true','style':'width:10em'},
                              {'id':'total','ui':'Valor','required':'true','style':'width:10em'},
-                             {'id':'participacion', 'ui':'Participacion (%)','required':'true','style':'width:8em', 'disabled':True}
+                             {'id':'participacion', 'ui':'Participacion (%)','required':'true','style':'width:8em', 'disabled':'true'}
                              ],
             'CapitalPagado':[
                              {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
@@ -287,7 +287,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                           ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
-                          {'id':'ciudad','ui':'Ciudad','style':'width:5em'},
+                          {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
                           {'id':'producto','ui':'Fruta', 'style':'width:10em'},
                           {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
                           {'id':'productos','ui':'Productos','style':'width:10em'},
