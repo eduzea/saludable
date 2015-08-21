@@ -111,12 +111,12 @@ def getConsecutivo(entityClass):
 #################### INVENTARIO #########################
 getTemplateData={}
 def getInventarioTemplateData(request):
-    prop_ciudad = InventarioRegistro._properties['ciudad']
+    prop_ciudad = InventarioRegistro._properties['sucursal']
     prop_producto = InventarioRegistro._properties['producto']
     prop_porcion = InventarioRegistro._properties['porcion']
     prop_existencias = InventarioRegistro._properties['existencias']
     props = {
-             'ciudad':{'ui': 'Ciudad', 'id': 'ciudad','required':'true','type':prop_ciudad},
+             'sucursal':{'ui': 'Sucursal', 'id': 'sucursal','required':'true','type':prop_ciudad},
              'producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
              'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
              'existencias':{'ui': 'Existencias', 'id': 'existencias','required':'true',

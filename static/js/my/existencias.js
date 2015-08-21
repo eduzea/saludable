@@ -35,7 +35,7 @@ function(Memory, request, registry,dom,number,on,Standby,Grid,topic) {
 	//create and ready grid
 	var store = new Memory({});
 	var columns = [
-		{field:'ciudad', name:'Ciudad',style:"text-align: center", width:'10em'},
+		{field:'sucursal', name:'Sucursal',style:"text-align: center", width:'10em'},
 		{field:'producto', name:'Producto',style:"text-align: center", width:'10em'},
 		{field:'porcion', name:'Porcion',style:"text-align: center", width:'10em'},
 		{field:'existencias', name:'Existencias',style:"text-align: center", width:'10em'},

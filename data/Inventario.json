@@ -8,60 +8,60 @@
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 34,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "1000.g",
 				"producto": "ARAZA",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 1,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "1000.g",
 				"producto": "CURUBA",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 1,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "120.g",
 				"producto": "CURUBA",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 3,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "1000.g",
 				"producto": "DURAZNO",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 4,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "125.g",
 				"producto": "DURAZNO",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 4,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "170.g",
 				"producto": "DURAZNO",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 4,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}, {
 				"porcion": "120.g",
 				"producto": "FEIJOA",
 				"fecha": "2015-08-04",
 				"rotulo": "",
 				"existencias": 10,
-				"ciudad": "Cali"
+				"sucursal": "Cali"
 			}
 		],
 		"fechaCreacion": "2015-08-20",
 		"fecha": "2015-08-04",
-		"ciudad": "Cali"
+		"sucursal": "Cali"
 	}
 ]

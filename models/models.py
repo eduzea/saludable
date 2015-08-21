@@ -34,7 +34,8 @@ class Cliente(ndb.Model):
     nit = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.KeyProperty(kind=Ciudad)
+    ciudad = ndb.KeyProperty(kind=Ciudad)#donde esta el cliente
+    sucursal = ndb.KeyProperty(kind=Sucursal, default=ndb.Key('Sucursal','Cali'))#que sucursal produce
     diasPago = ndb.IntegerProperty()
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
@@ -145,14 +146,14 @@ class OtrosIngresos(ndb.Model):
 
 class InventarioRegistro(ndb.Model):
     fecha = ndb.DateProperty()
-    ciudad = ndb.KeyProperty(kind=Ciudad)
+    sucursal = ndb.KeyProperty(kind=Sucursal)
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     existencias = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: '')
 
 class Inventario(Record):
-    ciudad = ndb.KeyProperty(kind=Ciudad)
+    sucursal = ndb.KeyProperty(kind=Sucursal)
     fecha = ndb.DateProperty()
     registros = ndb.KeyProperty(kind=InventarioRegistro, repeated = True)
 

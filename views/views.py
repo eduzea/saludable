@@ -110,8 +110,10 @@ class SaveEntity(webapp2.RequestHandler):
         for key,value in values.iteritems():
             values[rreplace(key, '_' + entityClass,'',1)] = values.pop(key)
         response = create_entity(entityClass,values)
+        if response['message'] == 'Updated':
+            preSaveAction[entityClass](response['old'])
         if entityClass in postSaveAction:
-            postSaveAction[entityClass](response)
+            postSaveAction[entityClass](response['entity'])
         self.response.out.write(JSONEncoder().encode(response))
 
 class AddEntity(webapp2.RequestHandler):
@@ -438,12 +440,12 @@ class GuardarInventario(webapp2.RequestHandler):
         values = json.loads(post_data)
         registros =[]
         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        ciudad = ndb.Key('Ciudad',values['ciudad'])
+        sucursal = ndb.Key('Sucursal',values['sucursal'])
         for registro in values['registros']:
             producto = Producto.get_by_id(registro['producto']).key
             porcion = Porcion.get_by_id(registro['porcion']).key
             registroObj = create_entity('InventarioRegistro',{'fecha' : fecha,
-                                                              'ciudad' : ciudad,
+                                                              'sucursal' : sucursal,
                                                               'producto' : producto,
                                                               'porcion' : porcion,
                                                               'existencias' : registro['existencias']})['entity']
@@ -451,11 +453,11 @@ class GuardarInventario(webapp2.RequestHandler):
             registroObj.put()
             registros.append(registroObj.key)
         inventario = create_entity('Inventario', {'fecha' : fecha,
-                                                  'ciudad' : ciudad,
+                                                  'sucursal' : sucursal,
                                                   'registros': registros})['entity']
         inventario.put()
         if 'Inventario' in postSaveAction:
-                postSaveAction['Inventario']({'entity':inventario, 'message':'Created'})
+                postSaveAction['Inventario'](inventario)
         self.response.out.write(json.dumps({'result':'Success','inventarioId': inventario.key.id()})) 
 
 class PyG(webapp2.RequestHandler):
@@ -585,7 +587,7 @@ class GetExistencias(webapp2.RequestHandler):
                 for registro in existenciasCiudad.registros:
                     entity = registro.get()
                     records.append({'id': entity.producto.id() + '.' + entity.porcion.id(), 
-                                    'ciudad':entity.ciudad.id(),
+                                    'sucursal':entity.sucursal.id(),
                                     'producto':entity.producto.id(),
                                     'porcion':entity.porcion.id(),
                                     'existencias':entity.existencias})
@@ -593,7 +595,12 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        existencias = Existencias.query().fetch()
-        for existencia in existencias:
-            existencia.key.delete()
+#         existencias = Existencias.query().fetch()
+#         for existencia in existencias:
+#             existencia.key.delete()
+        inventarios = Inventario.query().fetch()
+        for inventario in inventarios:
+            for registro in inventario.registros:
+                registro.delete()
+            inventario.key.delete()
         self.response.out.write('Done!')

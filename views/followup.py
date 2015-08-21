@@ -11,6 +11,7 @@ preSaveAction = {}
 postSaveAction ={}
 postDeleteAction={}
 
+####################### PAGO RECIBIDO Y CUENTAS POR COBRAR ###################################
 def removePayment(pago):
     facturasAjustadas = Factura.query(Factura.pagoRef == pago.numero).fetch()
     facturasAjustadas.sort(key=lambda factura: factura.numero)
@@ -23,41 +24,36 @@ def removePayment(pago):
         factura.put()          
 
 
-def updateCuentasPorCobrar(response):
-    pago = response['entity']
-    if response['message'] == 'Created':
-        cliente = pago.cliente
-        pagado = pago.monto
-        clienteNegocios = Cliente.query(Cliente.nombre == cliente.get().nombre).fetch()
-        facturasImpagas = []
-        for negocio in clienteNegocios: 
-            facturas = Factura.query(Factura.pagada == False, Factura.cliente == negocio.key).fetch()
-            facturasImpagas.extend(facturas)
-        facturasImpagas.sort(key=lambda factura: factura.numero)
-        for factura in facturasImpagas:
-            if ( factura.total-sum(factura.abono) ) <= pagado:
-                pagado = pagado - ( factura.total- sum(factura.abono) )
-                factura.pagada = True
-                factura.pagoRef.append(pago.numero)
-                factura.abono.append(pagado)
-                factura.put()
-            else:
-                factura.abono.append(pagado)
-                factura.pagoRef.append(pago.numero)
-                factura.put()
-                break
-    elif response['message'] == 'Updated':
-        removePayment(pago)
-        updateCuentasPorCobrar({'entity':pago, 'message':'Created'})
-    else:
-        removePayment(pago)
+def updateCuentasPorCobrar(pago):
+    cliente = pago.cliente
+    pagado = pago.monto
+    clienteNegocios = Cliente.query(Cliente.nombre == cliente.get().nombre).fetch()
+    facturasImpagas = []
+    for negocio in clienteNegocios: 
+        facturas = Factura.query(Factura.pagada == False, Factura.cliente == negocio.key).fetch()
+        facturasImpagas.extend(facturas)
+    facturasImpagas.sort(key=lambda factura: factura.numero)
+    for factura in facturasImpagas:
+        if ( factura.total-sum(factura.abono) ) <= pagado:
+            pagado = pagado - ( factura.total- sum(factura.abono) )
+            factura.pagada = True
+            factura.pagoRef.append(pago.numero)
+            factura.abono.append(pagado)
+            factura.put()
+        else:
+            factura.abono.append(pagado)
+            factura.pagoRef.append(pago.numero)
+            factura.put()
+            break
 
+preSaveAction['PagoRecibido'] = removePayment
 postSaveAction['PagoRecibido'] = updateCuentasPorCobrar
-postDeleteAction['PagoRecibido'] = updateCuentasPorCobrar
-            
+postDeleteAction['PagoRecibido'] = removePayment
+
+######################### FACTURA Y EXISTENCIAS ##############################
 def removeFactura(factura):
-    ciudad = factura.cliente.get().ciudad
-    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()
+    sucursal = factura.cliente.get().sucursal
+    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
     if existencias:
         existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
         indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
@@ -74,13 +70,13 @@ def removeFactura(factura):
 
 
 def restarExistencias(factura):
-    ciudad = factura.cliente.get().ciudad
-    existencias = Existencias.query(Existencias.ciudad == ciudad).fetch()
+    sucursal = factura.cliente.get().sucursal
+    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
     if existencias:
         existencias = existencias[0]
         indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
         for venta in factura.ventas:
-            ventaKey = ciudad.id() + '.' + venta.producto.id() + '.' + venta.porcion.id() 
+            ventaKey = sucursal.id() + '.' + venta.producto.id() + '.' + venta.porcion.id() 
             if ventaKey in indexMap:
                 index = indexMap[ventaKey]
                 productoPorcion = existencias.registros[index].get()
@@ -97,9 +93,10 @@ preSaveAction['Factura'] = removeFactura
 postSaveAction['Factura'] = restarExistencias
 postDeleteAction['Factura'] = removeFactura
 
-def actualizarExistencias(response):
-    inventario = response['entity']
-    existencias = Existencias.query(Existencias.ciudad == inventario.ciudad).fetch()
+######################### INVENTARIO Y EXISTENCIAS ################################
+
+def actualizarExistencias(inventario):
+    existencias = Existencias.query(Existencias.sucursal == inventario.sucursal).fetch()
     if not existencias:
         registros = []
         for registro in inventario.registros:
@@ -107,7 +104,7 @@ def actualizarExistencias(response):
             existenciaRegistro.put()
             registros.append(existenciaRegistro.key)
         existencias = create_entity('Existencias', { 
-                                  'ciudad': inventario.ciudad,
+                                  'sucursal': inventario.sucursal,
                                   'fecha' : datetime.today(),
                                   'registros' : registros,
                                   'ultimoInventario' : inventario.key,
@@ -129,7 +126,7 @@ def actualizarExistencias(response):
                 registro = registro.get()
                 nuevoRegistro  = create_entity('ExistenciasRegistro',
                                                {'fecha':registro.fecha,                                                                        
-                                                'ciudad': registro.ciudad,
+                                                'sucursal': registro.sucursal,
                                                 'producto': registro.producto,
                                                 'porcion':  registro.porcion,
                                                 'existencias':  registro.existencias})['entity']
@@ -142,4 +139,51 @@ def actualizarInventarioRegistros(inventario):
         
 postSaveAction['Inventario'] = actualizarExistencias
 postDeleteAction['Inventario'] = actualizarInventarioRegistros
+
+######################### PRODUCCION Y EXISTENCIAS ##########################
+
+def sumarExistencias(produccion):
+    sucursal = produccion.sucursal
+    producto = produccion.producto
+    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
+    if existencias:
+        existencias = existencias[0]
+        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
+        for productoPorcion in produccion.productos:
+            key = sucursal.id() + '.' + producto.id() + '.' + productoPorcion.porcion.id() 
+            if key in indexMap:
+                index = indexMap[key]
+                existenciasProductoPorcion = existencias.registros[index].get()
+                existenciasProductoPorcion.existencias += productoPorcion.cantidad
+                existenciasProductoPorcion.put()
+            else:
+                nuevoRegistro  = create_entity('ExistenciasRegistro',
+                                               {'fecha':produccion.fecha,                                                                        
+                                                'sucursal': sucursal,
+                                                'producto': producto,
+                                                'porcion':  productoPorcion.porcion,
+                                                'existencias':  productoPorcion.existencias})['entity']
+                existencias.registros.append(nuevoRegistro.key)
+        existencias.put()
+        
+def removeProduccion(produccion):
+    sucursal = produccion.sucursal
+    producto = produccion.producto
+    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
+    if existencias:
+        existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
+        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
+        for productoPorcion in produccion.productos:
+            key = sucursal.id() + '.' + producto.id() + '.' + productoPorcion.porcion.id() 
+            if key in indexMap:
+                index = indexMap[key]
+                existenciasProductoPorcion = existencias.registros[index].get()
+                existenciasProductoPorcion.existencias -= productoPorcion.cantidad
+                existenciasProductoPorcion.put()
+        existencias.put()
+
+preSaveAction['Produccion'] = removeProduccion
+postSaveAction['Produccion'] = sumarExistencias
+postDeleteAction['Produccion']=removeProduccion
+
 

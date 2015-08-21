@@ -16,9 +16,6 @@ require(['dojo/store/Memory',
 ], 
 function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 	var entity_class = saludable.entity_class;
-	var standby = new Standby({target: entity_class+'_resumen'});
-	document.body.appendChild(standby.domNode);
-	standby.startup();
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
@@ -90,7 +87,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			
 			var resumenGrid = new Grid(gridProps, entity_class+'_resumen_grid');
 			resumenGrid.startup();
-			standby.hide();
+			registry.byId('standby_centerPane').hide();
 			
 			var detalleColumns = [
 				{field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
@@ -107,5 +104,4 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			
 		}
 	);
-	registry.byId('standby_centerPane').hide();
 });

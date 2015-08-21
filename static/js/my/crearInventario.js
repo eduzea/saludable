@@ -170,10 +170,10 @@ require(['dojo/dom',
 		on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click',
 		function(e){
 			var fecha = registry.byId('fecha'+ '_' + entityClass).toString();
-			var ciudad = registry.byId('ciudad'+ '_' + entityClass).value;
+			var sucursal = registry.byId('sucursal'+ '_' + entityClass).value;
 			var gridData = getGridData();
 			var grid = registry.byId('grid'+ '_' + entityClass);
-			var inventario_data = {'fecha':fecha,'ciudad':ciudad,'registros':gridData, 'entityClass':entityClass};
+			var inventario_data = {'fecha':fecha,'sucursal':sucursal,'registros':gridData, 'entityClass':entityClass};
 			registry.byId('standby_centerPane').show();
 			request.post('/guardarInventario', {
 					data : json.stringify(inventario_data),

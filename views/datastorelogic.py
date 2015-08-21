@@ -160,17 +160,36 @@ def autoNum(entity_class):
             return  1
     else:
         return None    
- 
+
+def removeComputedProps(klass,oldDicc):
+    dicc = {}
+    for key,propertType in klass._properties.iteritems():
+        if type(propertType) is ndb.StructuredProperty:
+            purged = []
+            for item in oldDicc[key]:
+                purged.append(removeComputedProps(propertType._modelclass,item))
+            dicc[key]=purged
+        else:
+            if type(propertType) is not ndb.ComputedProperty:
+                dicc[key] = oldDicc[key]
+    return dicc
+
+def cloneEntity(entity):
+    oldDicc = entity.to_dict() 
+    klass = entity.__class__
+    dicc = removeComputedProps(klass,oldDicc)
+    return klass(**dicc)
+     
 
 def create_entity(entity_class, values):
     values = check_types(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
     key = getKey(entity_class, values)
     entity = classModels[entity_class].get_by_id(key)
     if entity:
-        oldVals = entity.to_dict()
+        oldentity = cloneEntity(entity)
         entity.populate(**values)
         entity.put()
-        return {'message':"Updated",'key':key, 'entity':entity, 'old':oldVals}
+        return {'message':"Updated",'key':key, 'entity':entity, 'old':oldentity}
     else:
         values['id']=key
         entity = classModels[entity_class](**values)
