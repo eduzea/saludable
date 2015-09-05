@@ -38,6 +38,7 @@ class Cliente(ndb.Model):
     sucursal = ndb.KeyProperty(kind=Sucursal, default=ndb.Key('Sucursal','Cali'))#que sucursal produce
     diasPago = ndb.IntegerProperty()
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
+    iva = ndb.BooleanProperty(default=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     
 class Producto(ndb.Model):
@@ -96,6 +97,7 @@ class Remision(ndb.Model):
     iva = ndb.BooleanProperty(default=False)
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
+    factura = ndb.IntegerProperty(default=0)
     
 class Factura(ndb.Model):
     numero = ndb.IntegerProperty()
@@ -111,7 +113,7 @@ class Factura(ndb.Model):
     pagada = ndb.BooleanProperty(default=False)
     abono = ndb.IntegerProperty(repeated = True)
     pagoRef = ndb.IntegerProperty(repeated = True)
-#     resumen = ndb.ComputedProperty(lambda self: self.ventas[0].producto.id())#consider a better option for this!
+    remisiones = ndb.IntegerProperty(repeated = True)
     
 class MedioDePago(Record):
     nombre = ndb.StringProperty(indexed=True)

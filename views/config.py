@@ -130,7 +130,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                         ],
             'Ciudad':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         ],
-            'Factura':[{'id':'numero', 'ui':'Numero','style':'width:3em'},
+            'Factura':[{'id':'numero', 'ui':'Numero','style':'width:4em'},
                        {'id':'cliente', 'ui':'Cliente', 'style':'width:20em'},
                        {'id':'fecha', 'ui':'Fecha', 'style':'width:5em'},
                        {'id':'total', 'ui':'Valor', 'style':'width:5em'},
@@ -138,11 +138,12 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
                        {'id':'pagada', 'ui':'Pagada', 'style':'width:3em'},
                        {'id':'pagoRef', 'ui':'Ref. Pago', 'style':'width:4em'},
                        ],
-            'Remision':[{'id':'numero', 'ui':'Numero','style':'width:3em'},
+            'Remision':[{'id':'numero', 'ui':'Numero','style':'width:4em'},
                        {'id':'empleado', 'ui':'Empleado','style':'width:8em'},
                        {'id':'cliente', 'ui':'Cliente', 'style':'width:20em'},
                        {'id':'fecha', 'ui':'Fecha','style':'width:5em'},
-                       {'id':'total', 'ui':'Valor','style':'width:5em'}],
+                       {'id':'total', 'ui':'Valor','style':'width:5em'},
+                       {'id':'factura', 'ui':'Factura', 'style':'width:5em'}],
             'Proveedor':[
                          {'id':'nombre','ui':'Nombre', 'required':'true',  'style':'width:15em'},
                          {'id':'ciudad','ui':'Ciudad', 'required':'true', 'style':'width:5em'},
@@ -308,7 +309,8 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'numeros':'/numeros.html',
                    'pYg':'/pYg.html',
                    'CuentasPorCobrar':'/cuentasPorCobrar.html',
-                   'Existencias':'/existencias.html'
+                   'Existencias':'/existencias.html',
+                   'ConsolidarFactura':'consolidarFactura.html'
                    }
 detailFields = {
                'Factura':'ventas',

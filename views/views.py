@@ -111,7 +111,8 @@ class SaveEntity(webapp2.RequestHandler):
             values[rreplace(key, '_' + entityClass,'',1)] = values.pop(key)
         response = create_entity(entityClass,values)
         if response['message'] == 'Updated':
-            preSaveAction[entityClass](response['old'])
+            if entityClass in preSaveAction: 
+                preSaveAction[entityClass](response['old'])
         if entityClass in postSaveAction:
             postSaveAction[entityClass](response['entity'])
         self.response.out.write(JSONEncoder().encode(response))
@@ -148,7 +149,7 @@ class GetEmpleados(webapp2.RequestHandler):
         empleados = Empleado.query().fetch()
         empleados = [{'value':empleado.key.id(), 'name': empleado.rotulo } for empleado in empleados]
         self.response.out.write(json.dumps(empleados))
-
+    
 class GetProducto(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST.mixed()
@@ -409,7 +410,8 @@ class MostrarFactura(webapp2.RequestHandler):
                 'iva': '{:,.0f}'.format(entity.montoIva),
                 'subtotal': '{:,.0f}'.format(entity.subtotal if entity.montoIva != 0 else 0),
                 'exento':'{:,.0f}'.format(entity.subtotal if entity.montoIva==0 else 0),
-                'remision': True if entityClass == 'Remision' else False
+                'remision': True if entityClass == 'Remision' else False,
+                'remisiones': ', '.join(str(remision) for remision in entity.remisiones) if hasattr(entity, 'remisiones') else ''
                 }
         ventas = []
         for venta in entity.ventas:
@@ -433,6 +435,42 @@ class AnularFactura(webapp2.RequestHandler):
         entity.anulada = True
         entity.put()
         self.response.write('Se anulo ' + tipo + ' :' + key)
+        
+class ConsolidarFactura(webapp2.RequestHandler):
+    def post(self):
+        post_data = self.request.body
+        values = json.loads(post_data)
+        values = [int(value) for value in values]
+        remisiones = buildQuery('Remision',{'numero':values}).fetch()
+        ventas = {}
+        nextFactura = autoNum('Factura')
+        for remision in remisiones:
+            for venta in remision.ventas:
+                key = venta.producto.id() + '.' + venta.porcion.id()
+                if key in ventas:
+                    ventas[key].cantidad += venta.cantidad
+                    ventas[key].venta += venta.venta
+                else:
+                    ventas[key] = venta
+            remision.factura = nextFactura
+            remision.put()
+        ventas = [venta for venta in ventas.itervalues()]
+        subtotal = sum([venta.venta for venta in ventas])
+        iva = 0.16 if remisiones[0].cliente.get().iva else 0
+        empleado = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+        values = {'numero':nextFactura,
+                  'cliente':remisiones[0].cliente,
+                  'fecha':date.today(),
+                  'ventas':ventas,
+                  'total': subtotal * (1 + iva),
+                  'subtotal':subtotal,
+                  'montoIva':subtotal * iva,
+                  'empleado': empleado.key,
+                  'pagada':False,
+                  'remisiones':[remision.numero for remision in remisiones]
+                  }
+        response = create_entity('Factura', values)['entity']
+        self.response.out.write(JSONEncoder().encode(response))                
         
 class GuardarInventario(webapp2.RequestHandler):        
     def post(self):

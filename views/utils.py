@@ -90,6 +90,16 @@ def createTemplateString(entity):
     else:
         return '/addEntity?entityClass=' + entity        
 
+def fieldInfo(entityClass, fieldName):
+    props = classModels[entityClass]._properties
+    fields = uiConfig[entityClass]    
+    fieldProp = {}
+    for field in fields:
+        if field['id'] == fieldName:
+            fieldProp = field 
+            fieldProp['type']= props[fieldName]
+            return fieldProp
+
 def fieldsInfo(entityClass):
     props = classModels[entityClass]._properties
     fields = uiConfig[entityClass]

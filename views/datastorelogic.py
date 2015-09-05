@@ -83,8 +83,11 @@ def check_types(entity_class, values, forQuery=False):
                 listVals = json.loads(values[key])
             objList = []
             for listItem in listVals:
-                obj = check_types(value._modelclass._class_name(),listItem)             
-                objList.append(value._modelclass(**obj))
+                if isinstance(listItem, ndb.Model):
+                    objList.append(listItem)
+                else:
+                    obj = check_types(value._modelclass._class_name(),listItem)             
+                    objList.append(value._modelclass(**obj))
             values[key]=objList
         if key == 'empleadoCreador':
             values[key] = users.get_current_user().email()

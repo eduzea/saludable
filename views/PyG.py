@@ -4,7 +4,8 @@ Created on Aug 8, 2015
 @author: eduze_000
 '''
 from easydict import EasyDict as edict
-from utils import *
+from datastorelogic import buildQuery
+
 ##################### FORMULAS P&G ##################################
 # This function assumes the queried entities have a 'total' field
 def getTotalFromModel(model, qryParams):

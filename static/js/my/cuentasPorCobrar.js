@@ -37,7 +37,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 						onClick : function() {
 		                    var selectedRowId = cellWidget.cell.row.id;
 		                    var rowData = resumenGrid.row(selectedRowId, true).rawData();
-		                    standby.show();
+		                    registry.byId('standby_centerPane').show();
 		                    request("getDetalleCuentasPorCobrar?cliente=" + encodeURIComponent(rowData.id),{handleAs:'json'}).then(
 		                    	function(response){
 		                    		var grid = registry.byId(entity_class+'_detalle_grid');
@@ -45,7 +45,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 									grid.model.store.setData(response);
 									grid.body.refresh();
 									dom.byId(entity_class + '_title').innerHTML = rowData.id;
-									standby.hide(); 
+									registry.byId('standby_centerPane').hide(); 
 									var widget = registry.byId('widget'+entity_class);
 									widget.selectChild(widget.getChildren()[1]);
 									}

@@ -643,7 +643,7 @@ table {
 	mso-font-charset: 0;
 	mso-number-format:
 		"_\(\[$$-240A\]\\ * \#\,\#\#0_\)\;_\(\[$$-240A\]\\ * \\\(\#\,\#\#0\\\)\;_\(\[$$-240A\]\\ * \0022-\0022??_\)\;_\(\@_\)";
-	text-align: left;
+	text-align: right;
 	vertical-align: middle;
 	border-top: none;
 	border-right: 1.0pt solid windowtext;
@@ -692,7 +692,7 @@ table {
 	mso-font-charset: 0;
 	mso-number-format:
 		"_\(\[$$-240A\]\\ * \#\,\#\#0_\)\;_\(\[$$-240A\]\\ * \\\(\#\,\#\#0\\\)\;_\(\[$$-240A\]\\ * \0022-\0022??_\)\;_\(\@_\)";
-	text-align: left;
+	text-align: right;
 	vertical-align: middle;
 	border-top: .5pt solid windowtext;
 	border-right: 1.0pt solid windowtext;
@@ -742,7 +742,7 @@ table {
 	mso-font-charset: 0;
 	mso-number-format:
 		"_\(\[$$-240A\]\\ * \#\,\#\#0_\)\;_\(\[$$-240A\]\\ * \\\(\#\,\#\#0\\\)\;_\(\[$$-240A\]\\ * \0022-\0022??_\)\;_\(\@_\)";
-	text-align: left;
+	text-align: right;
 	vertical-align: middle;
 	border-top: none;
 	border-right: 1.0pt solid windowtext;
@@ -2124,8 +2124,8 @@ EXCEL -->
 					style='height: 14.25pt; border-top: none'>VENDIDO A:</td>
 				<td class=xl1153711 colspan=2
 					style='border-right: 1.0pt solid black'>{{adjustText(data.cliente)}}</td>
-				<td class=xl1013711 style='border-top: none; border-left: none'>&nbsp;</td>
-				<td class=xl693711 style='border-top: none'>&nbsp;</td>
+				<td class=xl1013711 style='border-top: none; border-left: none'>&nbsp;REMISIONES: </td>
+				<td class=xl693711 style='border-top: none'>{{data.remisiones}}&nbsp;</td>
 			</tr>
 			<tr height=19 style='height: 14.25pt'>
 				<td height=19 class=xl703711 style='height: 14.25pt'>Dirección:</td>
@@ -2198,30 +2198,22 @@ EXCEL -->
 					presente FACTURA DE VENTA se asimila en todos sus efectos a la
 					LETRA DE CAMBIO. ( Art.774 Numeral 6 del C.Cio.)</td>
 				<td class=xl903711 style='border-top:1.0pt solid black;'>TOTAL GRAVADO</td>
-				<td class=xl913711 width=131 style='width: 98pt;border-top:1.0pt solid black;'><span
-					style='mso-spacerun: yes;'> </span>$<span style='mso-spacerun: yes'>           
-				</span>{{data.subtotal}}</td>
+				<td class=xl913711 width=131 style='width: 98pt;border-top:1.0pt solid black;'>$ {{data.subtotal}}</td>
 			</tr>
 			<tr height=19 style='height: 14.25pt'>
 				<td height=19 class=xl903711
 					style='height: 14.25pt; border-left: none'>TOTAL EXENTO</td>
-				<td class=xl913711 width=131 style='width: 98pt'><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                                    </span>0</td>
+				<td class=xl913711 width=131 style='width: 98pt'>$ 0</td>
 			</tr>
 			<tr height=19 style='height: 14.25pt'>
 				<td height=19 class=xl923711 width=110
-					style='height: 14.25pt; border-left: none; width: 83pt'>IVA<span
-					style='mso-spacerun: yes'> </span></td>
-				<td class=xl933711 width=131 style='border-top: none; width: 98pt'><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                </span>{{data.iva}}</td>
+					style='height: 14.25pt; border-left: none; width: 83pt'>IVA</td>
+				<td class=xl933711 width=131 style='border-top: none; width: 98pt'>$ {{data.iva}}</td>
 			</tr>
 			<tr height=31 style='height: 23.25pt'>
 				<td height=31 class=xl943711 width=110
-					style='height: 23.25pt; border-left: none; width: 83pt'>TOTAL
-					FACTURA</td>
-				<td class=xl953711 width=131 style='width: 98pt'><span
-					style='mso-spacerun: yes;'> </span>$<span style='mso-spacerun: yes'>           
-				</span>{{data.total}}</td>
+					style='height: 23.25pt; border-left: none; width: 83pt'>TOTAL FACTURA</td>
+				<td class=xl953711 width=131 style='width: 98pt'>$ {{data.total}}</td>
 			</tr>
 			<tr height=19 style='height: 14.25pt'>
 				<td colspan=5 rowspan=2 height=39 class=xl1263711

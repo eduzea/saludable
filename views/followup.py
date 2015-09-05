@@ -67,7 +67,10 @@ def removeFactura(factura):
             else:
                 print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
         existencias.put()
-
+    remisiones = Remision.query(Remision.factura == factura.numero)
+    for remision in remisiones:
+        remision.factura = 0
+        remision.put()
 
 def restarExistencias(factura):
     sucursal = factura.cliente.get().sucursal
@@ -162,7 +165,7 @@ def sumarExistencias(produccion):
                                                 'sucursal': sucursal,
                                                 'producto': producto,
                                                 'porcion':  productoPorcion.porcion,
-                                                'existencias':  productoPorcion.existencias})['entity']
+                                                'existencias':  productoPorcion.cantidad})['entity']
                 existencias.registros.append(nuevoRegistro.key)
         existencias.put()
         

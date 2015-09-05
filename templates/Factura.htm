@@ -109,14 +109,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <td class=xl95 style='border-top:none'>VENDIDO A:</td>
   <td class=xl94 style='border-top:none'>{{adjustText(data.cliente)}}</td>
   <td class=xl97 style='border-top:none'>&nbsp;</td>
-  <td class=xl101 style='border-top:none'>&nbsp;</td>
-  <td class=xl93 style='border-top:none'>&nbsp;</td>
+  <td class=xl101 style='border-top:none'>&nbsp;REMISIONES:&nbsp;</td>
+  <td class=xl93 style='border-top:none'>{{data.remisiones}}&nbsp;</td>
   <td></td>
   <td class=xl95 style='border-top:none'>VENDIDO A:</td>
   <td class=xl94 style='border-top:none'>{{adjustText(data.cliente)}}</td>
   <td class=xl97 style='border-top:none'>&nbsp;</td>
-  <td class=xl101 style='border-top:none'>&nbsp;</td>
-  <td class=xl93 style='border-top:none'>&nbsp;</td>
+  <td class=xl101 style='border-top:none'>&nbsp;REMISIONES:&nbsp;</td>
+  <td class=xl93 style='border-top:none'>{{data.remisiones}}&nbsp;</td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td height=24 style='height:18.0pt'></td>
@@ -204,18 +204,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
  <tr height=20 style='height:15.0pt'>
   <td height=20 style='height:15.0pt'></td>
   <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{adjustText(venta.producto +'-' + venta.porcion)}}</td>
-  <td class=xl78 style="text-align: center;"><span style='mso-spacerun:yes'>               </span>{{venta.cantidad}} </td>
-  <td class=xl77><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>             </span>{{venta.precio}} </td>
-  <td class=xl76><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                  </span>{{venta.valorTotal}} </td>
+  <td class=xl78>{{venta.cantidad}} </td>
+  <td class=xl77>$ {{venta.precio}} </td>
+  <td class=xl76>$ {{venta.valorTotal}} </td>
   <td></td>
   <td colspan=2 class=xl136 style='border-right:1.0pt solid black'>{{adjustText(venta.producto +'-' + venta.porcion)}}</td>
-  <td class=xl78 style='text-align: center;'><span style='mso-spacerun:yes;' >               </span>{{venta.cantidad}}</td>
-  <td class=xl77><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>             </span>{{venta.precio}} </td>
-  <td class=xl76><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                  </span>{{venta.valorTotal}} </td>
+  <td class=xl78> {{venta.cantidad}} </td>
+  <td class=xl77>$   {{venta.precio}} </td>
+  <td class=xl76>$   {{venta.valorTotal}} </td>
  </tr>
  {% endfor %}
  {% for row in range(18-data.numVentas)%}
@@ -241,46 +237,38 @@ xmlns="http://www.w3.org/TR/REC-html40">
   asimila en todos sus efectos a la LETRA DE CAMBIO. ( Art.774 Numeral 6 del
   C.Cio.)</td>
   <td class=xl71 style='border-left:none; border-top:1.0pt solid black'>TOTAL GRAVADO</td>
-  <td class=xl70 width=137 style='width:103pt;border-top:1.0pt solid black'>$<span style='mso-spacerun:yes'>                </span>{{data.subtotal}}</td>
+  <td class=xl70 width=137 style='width:103pt;border-top:1.0pt solid black'>$ {{data.subtotal}}</td>
   <td></td>
   <td colspan=3 rowspan=4 class=xl108 width=278 style='border-right:1.0pt solid black;
   border-bottom:1.0pt solid black;width:209pt'>La presente FACTURA DE VENTA se
   asimila en todos sus efectos a la LETRA DE CAMBIO. ( Art.774 Numeral 6 del
   C.Cio.)</td>
   <td class=xl71 style='border-left:none:;border-top:1.0pt solid black'>TOTAL GRAVADO</td>
-  <td class=xl70 width=137 style='width:103pt;border-top:1.0pt solid black'><span
-  style='mso-spacerun:yes'> </span>$<span style='mso-spacerun:yes'>                </span>{{data.subtotal}}</td>
+  <td class=xl70 width=137 style='width:103pt;border-top:1.0pt solid black'>$ {{data.subtotal}}</td>
  </tr>
  <tr height=20 style='height:15.0pt'>
   <td height=20 style='height:15.0pt'></td>
   <td class=xl71 style='border-left:none'>TOTAL EXENTO</td>
-  <td class=xl70 width=137 style='width:103pt'><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                                    </span>{{data.exento}}</td>
+  <td class=xl70 width=137 style='width:103pt'>$ {{data.exento}}</td>
   <td></td>
   <td class=xl71 style='border-left:none'>TOTAL EXENTO</td>
-  <td class=xl70 width=137 style='width:103pt'><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                                    </span>{{data.exento}}</td>
+  <td class=xl70 width=137 style='width:103pt'>$ {{data.exento}}</td>
  </tr>
  <tr height=20 style='height:15.0pt'>
   <td height=20 style='height:15.0pt'></td>
-  <td class=xl69 width=112 style='border-left:none;width:84pt'>IVA<span style='mso-spacerun:yes'>                </span></td>
-  <td class=xl68 width=137 style='border-top:none;width:103pt'><span style='mso-spacerun:yes'> </span>$<span
-  style='mso-spacerun:yes'>                </span>{{data.iva}}</td>
+  <td class=xl69 width=112 style='border-left:none;width:84pt'>IVA</td>
+  <td class=xl68 width=137 style='border-top:none;width:103pt'>$ {{data.iva}}</td>
   <td></td>
-  <td class=xl69 width=112 style='border-left:none;width:84pt'>IVA<span
-  style='mso-spacerun:yes'> </span></td>
-  <td class=xl68 width=137 style='border-top:none;width:103pt'><span
-  style='mso-spacerun:yes'> </span>$<span style='mso-spacerun:yes'>                </span>{{data.iva}}</td>
+  <td class=xl69 width=112 style='border-left:none;width:84pt'>IVA</td>
+  <td class=xl68 width=137 style='border-top:none;width:103pt'>$ {{data.iva}}</td>
  </tr>
  <tr height=31 style='height:23.25pt'>
   <td height=31 style='height:23.25pt'></td>
   <td class=xl67 width=112 style='border-left:none;width:84pt'>TOTAL FACTURA</td>
-  <td class=xl68 width=137 style='width:103pt'><span
-  style='mso-spacerun:yes'> </span>$<span style='mso-spacerun:yes'>                </span>{{data.total}} </td>
+  <td class=xl68 width=137 style='width:103pt'>$ {{data.total}} </td>
   <td></td>
   <td class=xl67 width=112 style='border-left:none;width:84pt'>TOTAL FACTURA</td>
-  <td class=xl68 width=137 style='width:103pt'><span
-  style='mso-spacerun:yes'> </span>$<span style='mso-spacerun:yes'>                </span>{{data.total}} </td>
+  <td class=xl68 width=137 style='width:103pt'>$ {{data.total}} </td>
  </tr>
  <tr height=20 style='height:15.0pt'>
   <td height=20 style='height:15.0pt'></td>

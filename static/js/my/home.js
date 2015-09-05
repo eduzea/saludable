@@ -35,7 +35,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var inventarioNodes = makeStore(['Inventario',{name:'Existencias',clickable:true, template:'Existencias'}],'Inventarios');
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var ingresoNodes = makeStore(['Factura','Remision','PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
+		var ingresoNodes = makeStore(['Factura',{name:'Remisiones',clickable:false},'PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
+		var remisionNodes = makeStore(['Remision',{name:'Consolidar Factura', clickable:true, template:'ConsolidarFactura'}],'Remisiones');
 		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
 		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
 		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
@@ -56,6 +57,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		data.push.apply(data,inventarioNodes);
 		data.push.apply(data,pasivoNodes);			
 		data.push.apply(data,ingresoNodes);
+		data.push.apply(data,remisionNodes);
 		data.push.apply(data,egresoNodes);
 		data.push.apply(data,deudaNodes);
 		data.push.apply(data,adminNodes);
@@ -80,6 +82,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
     });
     // Create the Tree.
     var tree = new Tree({
+        id: 'rootTree',
         model: myModel,
         showRoot : false
     });
