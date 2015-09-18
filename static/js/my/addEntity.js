@@ -49,16 +49,14 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 			var formdata = registry.byId('addEntityForm'+  '_' + entityClass).get('value');
 			formdata.entityClass = entityClass;
 			//Get data from repeated Key fields, if any
-			proplistdata = {};
 			var propNodes = query('.listBtn'); //since using button to attach list of selected key values
 			if(propNodes.length > 0){
 				propNodes.forEach(function(node){
 					var id = node.getAttribute('widgetid');
-					var propname = id.replace('_' + entityClass + '_Btn_list','');
+					var propname = id.replace('_Btn_list','');
 					var button = registry.byId(id);
-					proplistdata[propname]=button.items; 	
+					formdata[propname]= json.stringify(button.items); 	
 				});
-				formdata.proplistdata = json.stringify(proplistdata);
 			}
 			
 			//Get data from grids, if any

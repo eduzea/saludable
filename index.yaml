@@ -96,4 +96,9 @@ indexes:
   properties:
   - name: cliente
   - name: numero
+
+- kind: Remision
+  properties:
+  - name: cliente
+  - name: numero
     direction: desc

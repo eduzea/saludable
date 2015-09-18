@@ -2,6 +2,8 @@
 	{
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -12,6 +14,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "LITOGRAFIA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA. 28A No. 68-74",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -22,6 +26,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "Particular",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Fruver",
 		"grupoDePrecios": "Aldemar",
 		"ciudad": "Bogota",
@@ -32,6 +38,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "RESTAURANTE",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 73 No. 11-34 piso 2",
 		"grupoDePrecios": "Precios.2015",
 		"ciudad": "Bogota",
@@ -42,6 +50,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "ARP",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Avda. El Dorado 68B-85 P. 10",
 		"grupoDePrecios": "SURA",
 		"ciudad": "Bogota",
@@ -52,6 +62,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "MERCADO 93",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 93 A# 12-73",
 		"grupoDePrecios": "AVESCO",
 		"ciudad": "Bogota",
@@ -62,6 +74,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "MERCADO USAQUEN",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra. 6 # 119-18",
 		"grupoDePrecios": "AVESCO",
 		"ciudad": "Bogota",
@@ -72,6 +86,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "Personal",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 108 No. 17a -50",
 		"grupoDePrecios": "Adriana.Delgadillo",
 		"ciudad": "Bogota",
@@ -82,6 +98,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "Independiente",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra 98 # 4C-246, Apt 201 , Torre 3",
 		"grupoDePrecios": "Independiente.Cali",
 		"ciudad": "Cali",
@@ -92,6 +110,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "Restaurante",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 73 No. 11-34 piso 2",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -102,6 +122,8 @@
 	}, {
 		"diasPago": 8,
 		"negocio": "ZOE",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 108 # 8 B-32",
 		"grupoDePrecios": "CYP",
 		"ciudad": "Bogota",
@@ -112,6 +134,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "AUTO NORTE 153-81",
 		"grupoDePrecios": "CARMEL",
 		"ciudad": "Bogota",
@@ -122,6 +146,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -132,6 +158,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 118 # 5-41",
 		"grupoDePrecios": "OTROS",
 		"ciudad": "Bogota",
@@ -142,6 +170,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "AV CLL 82 # 9-11",
 		"grupoDePrecios": "CHATOS",
 		"ciudad": "Bogota",
@@ -152,6 +182,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "CAFETERIA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "PANCE",
 		"grupoDePrecios": "COLEGIOS",
 		"ciudad": "Cali",
@@ -162,6 +194,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "",
 		"grupoDePrecios": "NOGAL",
 		"ciudad": "Bogota",
@@ -172,6 +206,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "Particular",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Candelaria",
 		"grupoDePrecios": "Criterion",
 		"ciudad": "Bogota",
@@ -182,6 +218,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "PIZZERIA SALERNO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 5 No. 66-125 El limonar",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -192,6 +230,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -202,6 +242,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "COLEGIO LA ARBOLEDA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "PANCE",
 		"grupoDePrecios": "COLEGIOS",
 		"ciudad": "Cali",
@@ -212,6 +254,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -222,6 +266,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "PANADERIA EUROPEA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CR 70#10BIS 116",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -232,6 +278,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "PARTICULAR",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -242,6 +290,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Cali",
@@ -252,6 +302,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "ALIMENTOS",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "AV CALLE NOVENA NORTE # 9 -31 ",
 		"grupoDePrecios": "Hamburgueserias",
 		"ciudad": "Cali",
@@ -262,6 +314,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "HARRY SASSON",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA 9 #75-70",
 		"grupoDePrecios": "HARRY",
 		"ciudad": "Bogota",
@@ -272,6 +326,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "HARRYS BAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 70 #5-57 - Zona G",
 		"grupoDePrecios": "HARRY",
 		"ciudad": "Bogota",
@@ -280,8 +336,22 @@
 		"telefono": "3 45 03 04",
 		"nit": "830144557-1"
 	}, {
+		"diasPago": 0,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"sucursal": "Cali",
+		"direccion": "82 N 12- 72",
+		"grupoDePrecios": "Imperial",
+		"ciudad": "Bogota",
+		"rotulo": "IMPERIAL RESTAURANTE",
+		"nombre": "IMPERIAL",
+		"telefono": "7043939",
+		"nit": "314282"
+	}, {
 		"diasPago": 30,
 		"negocio": "/COLEGIO BOLIVAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "PANCE",
 		"grupoDePrecios": "COLEGIOS",
 		"ciudad": "Cali",
@@ -290,8 +360,22 @@
 		"telefono": "8555050",
 		"nit": "9001612461"
 	}, {
+		"diasPago": 1,
+		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
+		"direccion": "CALI",
+		"grupoDePrecios": "Independiente.Cali",
+		"ciudad": "Cali",
+		"rotulo": "INDEPENDIENTE CALI PARTICULAR",
+		"nombre": "INDEPENDIENTE CALI",
+		"telefono": "111",
+		"nit": "111"
+	}, {
 		"diasPago": 30,
 		"negocio": "Chilli Chang",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Av. 6ta AN # 28 - 71",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -302,6 +386,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "EL DIA QUE ME QUIERAS",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 69 # 4-26",
 		"grupoDePrecios": "GARDEL",
 		"ciudad": "Bogota",
@@ -312,6 +398,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "CLUB COLOMBIA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "AV CL 82 # 9-11",
 		"grupoDePrecios": "LEHAL",
 		"ciudad": "Bogota",
@@ -322,6 +410,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 110 # 8-47",
 		"grupoDePrecios": "ABACO",
 		"ciudad": "Bogota",
@@ -332,6 +422,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA 13 A # 127-10",
 		"grupoDePrecios": "HANS",
 		"ciudad": "Bogota",
@@ -342,6 +434,8 @@
 	}, {
 		"diasPago": 8,
 		"negocio": "BROT CALLE 81",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 81 # 7 - 93",
 		"grupoDePrecios": "JUAN.EL.PANADERO",
 		"ciudad": "Bogota",
@@ -352,6 +446,8 @@
 	}, {
 		"diasPago": 8,
 		"negocio": "BROT CALLE 97",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 97 # 11A -52",
 		"grupoDePrecios": "JUAN.EL.PANADERO",
 		"ciudad": "Bogota",
@@ -362,6 +458,8 @@
 	}, {
 		"diasPago": 8,
 		"negocio": "PARQUE CHICO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA 7# 93A - 05",
 		"grupoDePrecios": "JUAN.EL.PANADERO",
 		"ciudad": "Bogota",
@@ -372,6 +470,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -382,6 +482,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "Personal ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 71 No. 1 -18 edif portal de la quebrada apto 801",
 		"grupoDePrecios": "Juan.Soto",
 		"ciudad": "Bogota",
@@ -392,6 +494,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "ZOE",
 		"grupoDePrecios": "CYP",
 		"ciudad": "Bogota",
@@ -402,6 +506,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -412,6 +518,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "RESTAURANTE CARAMBOLO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 14 NTE. #9 N 18",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -422,6 +530,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA 28 A # 68-74",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -432,6 +542,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "PURA CASTA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Avenida Ca\u00f1asgordas 106 a 22 - Ciudad Jard\u00edn",
 		"grupoDePrecios": "ABACO",
 		"ciudad": "Cali",
@@ -442,6 +554,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -452,6 +566,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -462,6 +578,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "SMOTHIES",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CR 16 #127-81 Torre 4 ap 603",
 		"grupoDePrecios": "Ester",
 		"ciudad": "Cali",
@@ -472,6 +590,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "RESTAURANTE",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra. 105 # 14 \u2013 05 2do piso",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -482,6 +602,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 68-engativa",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -492,6 +614,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CR 98# 4C 246 RINCON CAMPESTRE 2 TORRE 3 AP 902",
 		"grupoDePrecios": "Independiente.Cali",
 		"ciudad": "Cali",
@@ -502,6 +626,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "RESTAURANTE",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Parque Fern\u00e1ndez Madrid 7-12 Zona Amurallada",
 		"grupoDePrecios": "HARRY",
 		"ciudad": "Cartagena",
@@ -512,6 +638,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "PARTICULAR",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CALLE 6A 88-51",
 		"grupoDePrecios": "SARODI",
 		"ciudad": "Bogota",
@@ -522,6 +650,8 @@
 	}, {
 		"diasPago": 45,
 		"negocio": "COTIDIANO ANDINO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CC ANDINO LOCAL 402",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "Bogota",
@@ -532,6 +662,8 @@
 	}, {
 		"diasPago": 45,
 		"negocio": "COTIDIANO ROSALES",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CRA 5 #71 -45 - ROSALES",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "Bogota",
@@ -542,6 +674,8 @@
 	}, {
 		"diasPago": 45,
 		"negocio": "SALTO DEL ANGEL",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra 13 # 93A - 45",
 		"grupoDePrecios": "PAESA",
 		"ciudad": "Bogota",
@@ -552,6 +686,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 57 # 16 A-27",
 		"grupoDePrecios": "PAN.TOLIMA",
 		"ciudad": "Bogota",
@@ -562,6 +698,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "independiente",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cali",
 		"grupoDePrecios": "ABACO",
 		"ciudad": "Cali",
@@ -572,6 +710,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": " ",
 		"grupoDePrecios": "PARTICULARES",
 		"ciudad": "Bogota",
@@ -582,6 +722,8 @@
 	}, {
 		"diasPago": 1,
 		"negocio": "RESTAURANTE",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "UNI JAVERIANA",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -592,6 +734,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "JARDIN",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra 100 No. 15 - 114",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Cali",
@@ -602,6 +746,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "LA FLORA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Av 6 N # 38N-28",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Cali",
@@ -612,6 +758,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "PALMIRA",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra. 100 #15-144, ",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Cali",
@@ -622,6 +770,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "PE\u00d1ON",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Cra 2A No. 2 \u2013 55 Oeste",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Bogota",
@@ -632,6 +782,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "UNICENTRO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "UNICENTRO",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Cali",
@@ -642,6 +794,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "UNICO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CENTRO COMERCIAL UNICO LOCAL 347",
 		"grupoDePrecios": "PIZZA.AL.PASO",
 		"ciudad": "Cali",
@@ -652,6 +806,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 86 A # 13 A 23",
 		"grupoDePrecios": "POLKA",
 		"ciudad": "Bogota",
@@ -662,6 +818,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "MANUEL ODEF MORALES",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Avenida Ca\u00f1asgordas 106 a 22 - Ciudad Jard\u00edn - Cali",
 		"grupoDePrecios": "SALERNO",
 		"ciudad": "Cali",
@@ -672,6 +830,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 69 A # 6-41",
 		"grupoDePrecios": "OTROS",
 		"ciudad": "Bogota",
@@ -682,6 +842,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "Restaurante",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "Calle 69A#5-75 ",
 		"grupoDePrecios": "Criterion",
 		"ciudad": "Bogota",
@@ -692,6 +854,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": " ",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "cll 65 \u00b7 23- 10",
 		"grupoDePrecios": "SARODI",
 		"ciudad": "Bogota",
@@ -702,6 +866,8 @@
 	}, {
 		"diasPago": 30,
 		"negocio": "FIT",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CLL 14 #85-37 INGENIO 2",
 		"grupoDePrecios": "SMOOTHIE.FIT",
 		"ciudad": "Cali",
@@ -712,6 +878,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "CENTRICO",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "CR 7 # 32-16 PISO 41",
 		"grupoDePrecios": "CENTRICO",
 		"ciudad": "Bogota",
@@ -722,6 +890,8 @@
 	}, {
 		"diasPago": 0,
 		"negocio": "CLOWNS",
+		"iva": true,
+		"sucursal": "Cali",
 		"direccion": "AVE COLOMBIA #5-105 ESQ.",
 		"grupoDePrecios": "TREPANDO",
 		"ciudad": "Cali",

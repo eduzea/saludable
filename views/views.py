@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import division
 import sys
 sys.path.insert(0, 'libs/python-dateutil-1.5')
@@ -87,6 +88,15 @@ class GetColumns(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
         self.response.write(json.dumps(getColumns(entity_class)))
+
+class GetRemisionesByName(webapp2.RequestHandler):
+    def get(self):
+        razonSocial = self.request.get('razonSocial')
+        clientes = Cliente.query(Cliente.nombre == razonSocial).fetch()
+        clientes = [cliente.key for cliente in clientes]
+        remisiones = buildQuery('Remision', {'cliente':clientes, 'sortBy':'-numero'}).fetch()
+        records = prepareRecords('Remision', remisiones)
+        self.response.write(json.dumps(records))    
 
 class EntityData(webapp2.RequestHandler):
     def get(self):
@@ -633,12 +643,13 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-#         existencias = Existencias.query().fetch()
-#         for existencia in existencias:
-#             existencia.key.delete()
-        inventarios = Inventario.query().fetch()
-        for inventario in inventarios:
-            for registro in inventario.registros:
-                registro.delete()
-            inventario.key.delete()
+        facturas = buildQuery('Factura', {'fechaDesde': '2015-7-31',
+                                          'cliente' : ['PAESA.SA.SALTO.DEL.ANGEL']}
+                              ).fetch()
+        for factura in facturas:
+            factura.pagada = False
+            factura.pagoRef = []
+            factura.abono = []
+            factura.put
+        print facturas
         self.response.out.write('Done!')

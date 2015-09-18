@@ -7,102 +7,166 @@ import json
 from datetime import datetime, date
 from google.appengine.api import users
 from config import *
-from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty
+from google.appengine.ext.ndb.model import IntegerProperty, KeyProperty, ComputedProperty, FloatProperty,\
+    BooleanProperty
 from google.appengine.datastore.datastore_query import Cursor
 from utils import parseDateString, getKey
 
-def check_types(entity_class, values, forQuery=False):
-    props = classModels[entity_class]._properties
-    if 'fechaCreacion' in props and not forQuery:
+#=============================================================#
+# Functions to validate values for entity construction
+#=============================================================#
+
+def checkStringProperty(key, value):
+    if isinstance(value,basestring):
+        return value.strip()
+    else:
+        raise Exception("Attempted to assign non-string value to StringProperty" + key + ": " + value)    
+
+def checkIntegerProperty(key, value):
+    if isinstance(value, int): 
+        return value
+    else:#try to cast
+        try:
+            return int(value)
+        except Exception:
+            raise Exception("Attempted to assign non-int value to IntegerProperty " + key + ": " + value)
+
+def checkFloatProperty(key, value):
+    if isinstance(value, float): 
+        return value
+    else:#try to cast
+        try:
+            int(value)
+            return value
+        except Exception:
+            raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + value)
+
+def checkKeyProperty(key, propertyType, value):
+    if isinstance(value, ndb.Key):
+        return value
+    elif isinstance(value, dict): #it's an unpacked object! Create it, put it, and assign key
+        obj = create_entity(propertyType._kind, value)['entity']
+        return obj.key
+    elif isinstance(value,basestring):#its a key.id string
+        key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
+        return key_obj
+    else:
+        raise Exception("Attempted to assign non-key value to KeyProperty " + key + ": " + value)
+
+def checkBooleanProperty(key, value):
+    if isinstance(value,bool): return value
+    if value == 'true': return True
+    if value == 'false': return False
+    raise Exception('Attempted to assing non-bool value to BooleanProperty ' + key + ': ' + value)
+
+def checkDateProperty(key,value):
+    if isinstance(value,datetime): return value
+    if isinstance(value,basestring):
+        try:
+            return datetime.strptime(value, '%Y-%m-%d').date()
+        except:
+            try:
+                return parseDateString(value).date()
+            except:
+                raise Exception("Could not parse string " + value + 'into proper date')
+
+def checkStructuredProperty(key, propertyType, value):
+    if isinstance(value,basestring):
+        value = json.loads(value)
+    if isinstance(value, ndb.Model): return value 
+    return checkEntityCreate(propertyType._modelclass._class_name(),value)             
+
+#======================================
+# Entity Init functions
+#======================================
+def dataStoreObjectInit(props, values):
+    if 'fechaCreacion' in props:
         values['fechaCreacion'] = datetime.today().date()
+    if 'empleadoCreador' in props:
         values['empleadoCreador'] = users.get_current_user().email()
-    proplistdata = None
-    if 'proplistdata' in values:
-        proplistdata = json.loads(values['proplistdata'])
+    return values
+#=====================================
+# Type checking for entity creation and queries
+#=====================================
+
+def checkFieldType(key, propertyType, value):
+    if type(propertyType) is BooleanProperty:
+        value = checkBooleanProperty(key,value)
+    if type(propertyType) is IntegerProperty:
+        value = checkIntegerProperty(key, value)
+    if type(propertyType) is FloatProperty:
+        value = checkFloatProperty(key, value)
+    if type(propertyType) is KeyProperty:
+        value = checkKeyProperty(key, propertyType, value)
+    if type(propertyType) == ndb.DateProperty:
+        value = checkDateProperty(key, value)
+    if type(propertyType) == ndb.StructuredProperty:
+        value = checkStructuredProperty(key, propertyType, value)
+    if type(propertyType) == ndb.StringProperty:
+        value = checkStringProperty(key,value)
+    return value
+
+def checkEntityCreate(entityClass, values, forQuery=False):
+    """ Check (and adjust if need be) the values given to create a datastore entity
+        Arguments:
+            *entityClass*: The string with the name of the entity model that will be created
+            with the values being checked.
+            *values*: A dictionary with the field names and values for the entity to be created. 
+        Returns: dictionary of values that are guaranteed to be type correct for entity creation.
+    """
+    props = classModels[entityClass]._properties
+    values = dataStoreObjectInit(props, values)
+    for key, value in props.iteritems():
+        #property should be skipped in these cases
+        if not key in values: continue
+        if type(value) is ComputedProperty:
+            values.pop(key, None)
+            continue
+        #Check if repeated property
+        if value._repeated == True:
+            if isinstance(values[key],basestring):
+                values[key] = json.loads(values[key])
+            if isinstance(values[key],list):
+                ndbKeys = []
+                for entry in values[key]:
+                    entry = checkFieldType(key, value, entry)
+                    ndbKeys.append(entry)
+                values[key] = ndbKeys
+            else:
+                values[key] = checkFieldType(key, value, values[key])
+                values[key] = [values[key]]
+        else:
+            values[key] = checkFieldType(key, value, values[key])
+    # Remove fields not in the model        
+    keys = values.keys()
+    for item in keys:
+        if item not in props:
+            values.pop(item)
+
+    return values
+
+
+def checkQueryValues(entityClass, values):
+    """ Check (and adjust if need be) the values given to query the datastore
+        Arguments:
+            *entityClass*: The string with the name of the entity model that will be created
+            with the values being checked.
+            *values*: A dictionary with the field names and values for the entity to be created. 
+        Returns: dictionary of values that are guaranteed to be type correct for entity query.
+    """
+    props = classModels[entityClass]._properties
     for key, value in props.iteritems():
         if not key in values: continue
-        if values[key] == 'true': values[key] = True
-        if values[key] == 'false': values[key] = False
-        if not forQuery:# If the cehck is for create or update, should not include computed props
-            if type(value) is ComputedProperty:
-                values.pop(key, None)
-        if type(value) is IntegerProperty:
-            if type(values[key]) is list:
-                for entry in values[key]:
-                    entry = int(entry)
-            else: 
-                values[key] = int(values[key])
-        if type(value) is FloatProperty:
-            values[key] = float(values[key])
-        if type(value) is ndb.BooleanProperty:#checkbox value should be 'si'o 'no'
-            values[key] = True if (values[key] == 'si' or values[key])  else False
-        if type(value) is KeyProperty:
-            if value._repeated == True:
-                items = []
-                if proplistdata:
-                    for item in proplistdata[key]:
-                        key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))#in case it comes in label form
-                        items.append(key_obj)
-                    values[key]= items
-                else:
-                    for item in values[key]:
-                        if type(item) is ndb.Key:
-                            items.append(item)
-                            continue
-                        elif type(item) is dict: #it's an unpacked object! Create it, put it, and assign key
-                            obj = create_entity(value._kind, item)['entity']
-                            items.append(obj.key)
-                        else:#its a key.id string
-                            key_obj = ndb.Key(value._kind,item.strip().replace(' ','.'))
-                            items.append(key_obj)
-                    values[key] = items
-            else:
-                if type(values[key]) is list:#If this is a query with OR condition
-                    for index,val in enumerate(values[key]):
-                        if type(val) is ndb.Key: continue
-                        values[key][index] = ndb.Key(value._kind,val.strip().replace(' ','.'))
-                else:
-                    if type(values[key]) is ndb.Key: continue
-                    if values[key]:   
-                        values[key] = ndb.Key(value._kind,values[key].strip().replace(' ','.'))
-                    else:
-                        values[key]=None
-        if type(value) == ndb.DateProperty:
-            if key == 'fechaCreacion':
-                values[key]=date.today()
-            else:
-                if not isinstance(values[key],datetime):
-                    if isinstance(values[key],basestring):
-                        try:
-                            values[key] = datetime.strptime(values[key], '%Y-%m-%d').date()
-                        except:
-                            values[key]=parseDateString(values[key]).date()
-        if type(value) == ndb.StructuredProperty:
-            listVals = values[key]
-            if isinstance(values[key],basestring):
-                listVals = json.loads(values[key])
-            objList = []
-            for listItem in listVals:
-                if isinstance(listItem, ndb.Model):
-                    objList.append(listItem)
-                else:
-                    obj = check_types(value._modelclass._class_name(),listItem)             
-                    objList.append(value._modelclass(**obj))
-            values[key]=objList
-        if key == 'empleadoCreador':
-            values[key] = users.get_current_user().email()
-
-    if 'proplistdata' in values:
-        values.pop("proplistdata")
-    if not forQuery:
-        keys = values.keys()
-        for item in keys:
-            if item not in props:
-                values.pop(item)
+        if isinstance(values[key],list):#If this is a query with OR condition
+            for index,val in enumerate(values[key]):
+                if type(val) is ndb.Key: continue
+                values[key][index] = checkFieldType(key, value, values[key][index])
+        else:
+            values[key] = checkFieldType(key, value, values[key])
     return values
 
 def buildQuery(entity_class,params):
-    params = check_types(entity_class, params,True) # Make sure data is of the proper type for filters
+    params = checkQueryValues(entity_class, params) # Make sure data is of the proper type for filters
     entityClass = classModels[entity_class]
     conditions = []
     for key,value in params.iteritems():
@@ -185,7 +249,7 @@ def cloneEntity(entity):
      
 
 def create_entity(entity_class, values):
-    values = check_types(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
+    values = checkEntityCreate(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
     key = getKey(entity_class, values)
     entity = classModels[entity_class].get_by_id(key)
     if entity:
@@ -202,7 +266,7 @@ def create_entity(entity_class, values):
     
 def createVenta(row):
     values = {'producto':row[1], 'porcion':row[2], 'cantidad':row[3], 'precio':row[4], 'venta':row[5]}
-    values = check_types('Venta', values)
+    values = checkEntityCreate('Venta', values)
     venta = Venta(producto = values['producto'],
                   porcion = values['porcion'],
                   cantidad = values['cantidad'],

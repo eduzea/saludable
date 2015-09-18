@@ -36,6 +36,7 @@ application = webapp2.WSGIApplication([
     ('/mostrarFactura', MostrarFactura),
     ('/anularFactura', AnularFactura),
     ('/consolidarFactura',ConsolidarFactura),
+    ('/getRemisionesByName',GetRemisionesByName),
     # Egresos
     ('/crearEgreso', CrearEgreso),
     ('/guardarEgreso', GuardarEgreso),

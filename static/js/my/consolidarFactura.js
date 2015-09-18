@@ -32,12 +32,12 @@ function(dom, parser, registry, query, on, number, Store, request, Standby, Grid
 	
 	var getRemisiones = function(cliente){	
 		registry.byId('standby_centerPane').show();
-			request.get('/entityData?entityClass=Remision&cliente=' + cliente + '&sortBy=-numero',
+			request.get('/getRemisionesByName?razonSocial=' + cliente,
 			 {handleAs:'json'}).then(
 				function(response) {
 					var grid = registry.byId('grid_consolidarFactura');
 		    		grid.model.clearCache();
-		    		grid.model.store.setData(response.records);
+		    		grid.model.store.setData(response);
 					grid.body.refresh();
 					registry.byId('standby_centerPane').hide();
 			});
@@ -66,6 +66,7 @@ function(dom, parser, registry, query, on, number, Store, request, Standby, Grid
 		               {pluginClass: "gridx/support/QuickFilter", style: 'text-align: right;'}
 		        ],
 		        barBottom: [
+		        		"gridx/support/Summary",
 		                {pluginClass: "gridx/support/LinkPager", style: 'text-align: right;'},
 		                {pluginClass: "gridx/support/LinkSizer", style: 'text-align: right;'}
 		        ],

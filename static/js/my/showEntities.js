@@ -273,38 +273,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
         });
         
 	};
-
-/*		
-	var fillForm = function(nodelist, rowData, entity_class){
-		nodelist.forEach(function(node, index, array){
-   			var dijit = registry.byId(node.id);
-   			if (dijit){
-   				if (dijit.id.indexOf("grid") > -1 ){
-   					request(urlForDetails[entity_class] + rowData['id'] + '&tipo=' + entity_class, {handleAs:'json'}).then(function(response)
-   					 {
-   						dijit.model.clearCache();
-						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
-						response.forEach(function(item){
-							dijit.store.add(item);								
-						});
-						dijit.body.refresh();
-						dijit.total = dijit.updateTotal();
-						dom.byId(numeroDomId[entity_class]).innerHTML = rowData.numero;
-   					});
-   				}else{
-		        	var id= dijit.id.replace('_' + entity_class,''); 
-		        	if(id in rowData){
-		        		if (rowData[id] instanceof Array){//If a list, take first only...
-		        			rowData[id]=rowData[id][0];
-		        		}
-		        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
-		        		dijit.set("displayedValue", rowData[id],false);
-		        	}	   				
-   				}			
-   			}
-        });
-	};
-*/				
+		
 	var exportarDatos = function(){
 		var grid = registry.byId('gridNode_'+ entity_class);
 		toCSV(grid).then(function(csv){

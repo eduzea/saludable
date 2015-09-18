@@ -32,7 +32,7 @@ def updateCuentasPorCobrar(pago):
     for negocio in clienteNegocios: 
         facturas = Factura.query(Factura.pagada == False, Factura.cliente == negocio.key).fetch()
         facturasImpagas.extend(facturas)
-    facturasImpagas.sort(key=lambda factura: factura.numero)
+    facturasImpagas.sort(key=lambda factura: factura.fecha)
     for factura in facturasImpagas:
         if ( factura.total-sum(factura.abono) ) <= pagado:
             pagado = pagado - ( factura.total- sum(factura.abono) )

@@ -2124,8 +2124,8 @@ EXCEL -->
 					style='height: 14.25pt; border-top: none'>VENDIDO A:</td>
 				<td class=xl1153711 colspan=2
 					style='border-right: 1.0pt solid black'>{{adjustText(data.cliente)}}</td>
-				<td class=xl1013711 style='border-top: none; border-left: none'>&nbsp;REMISIONES: </td>
-				<td class=xl693711 style='border-top: none'>{{data.remisiones}}&nbsp;</td>
+				<td class=xl1013711 style='border-top: none; border-left: none'>{{'REMISIONES:' if data.remisiones else ''}}</td>
+				<td class=xl693711 style='border-top: none'>{{adjustText(data.remisiones)}}&nbsp;</td>
 			</tr>
 			<tr height=19 style='height: 14.25pt'>
 				<td height=19 class=xl703711 style='height: 14.25pt'>Dirección:</td>

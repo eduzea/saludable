@@ -109,14 +109,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
   <td class=xl95 style='border-top:none'>VENDIDO A:</td>
   <td class=xl94 style='border-top:none'>{{adjustText(data.cliente)}}</td>
   <td class=xl97 style='border-top:none'>&nbsp;</td>
-  <td class=xl101 style='border-top:none'>&nbsp;REMISIONES:&nbsp;</td>
-  <td class=xl93 style='border-top:none'>{{data.remisiones}}&nbsp;</td>
+  <td class=xl101 style='border-top:none'>&nbsp;{{'REMISIONES:' if data.remisiones else ''}}&nbsp;</td>
+  <td class=xl93 style='border-top:none'>{{adjustText(data.remisiones)}}&nbsp;</td>
   <td></td>
   <td class=xl95 style='border-top:none'>VENDIDO A:</td>
   <td class=xl94 style='border-top:none'>{{adjustText(data.cliente)}}</td>
   <td class=xl97 style='border-top:none'>&nbsp;</td>
-  <td class=xl101 style='border-top:none'>&nbsp;REMISIONES:&nbsp;</td>
-  <td class=xl93 style='border-top:none'>{{data.remisiones}}&nbsp;</td>
+  <td class=xl101 style='border-top:none'>&nbsp;{{'REMISIONES:' if data.remisiones else ''}}&nbsp;</td>
+  <td class=xl93 style='border-top:none'>{{adjustText(data.remisiones)}}&nbsp;</td>
  </tr>
  <tr height=24 style='mso-height-source:userset;height:18.0pt'>
   <td height=24 style='height:18.0pt'></td>

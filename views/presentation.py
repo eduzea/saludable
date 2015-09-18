@@ -1,8 +1,4 @@
-'''
-Created on Aug 11, 2015
-
-@author: eduze_000
-'''
+# -*- coding: utf-8 -*- 
 from utils import fieldsInfo, fieldInfo, getKey
 from google.appengine.ext import ndb
 from google.appengine.api import users
@@ -20,8 +16,11 @@ def tagForField(entity_class, prop, auto=None, customId=None):
 
 def getClientesConRemision(tagId):
     remisiones = Remision.query(projection = [Remision.cliente], distinct = True).fetch()
-    clientes = [{'value':remision.cliente.id(), 'rotulo':remision.cliente.get().rotulo} for remision in remisiones]
-    return Markup(getSelectTagHTML(tagId, clientes))
+    clientes = set([remision.cliente.get().nombre.strip() for remision in remisiones])
+    clientes = [{'value':cliente, 'rotulo':cliente} for cliente in clientes]
+    clientes.sort(key = lambda cliente: cliente['rotulo'])
+    html = getSelectTagHTML(tagId, clientes)
+    return Markup(html)
 
 def adjustText(text):
     html=''
