@@ -25,8 +25,8 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 				};
 			
 			var resumenColumns = [
-				{field:'cliente', name:'Cliente',style:"text-align: center", width:'20em'},
-				{field:'monto', name:'Saldo',style:"text-align: center", width:'10em', formatter: numFormatter}
+				{id:'cliente', field:'cliente', name:'Cliente',style:"text-align: center", width:'20em'},
+				{id:'monto', field:'monto', name:'Saldo',style:"text-align: center", width:'10em', formatter: numFormatter}
 			];
 										
 			var detalleColumn = { field : 'detalle', name : '', widgetsInCell: true, width:'5em',
@@ -64,6 +64,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 	          	structure: resumenColumns,
 	          	paginationInitialPageSize: 100,
 			  	pageSize: 100,
+			  	sortInitialOrder : { colId: 'monto', descending: true },
 		        barTop: [
 		               //"gridx/support/Summary",
 		               //"gridx/support/DropDownPager",
@@ -89,19 +90,24 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			resumenGrid.startup();
 			registry.byId('standby_centerPane').hide();
 			
+			var boolFormatter=function(data){
+					return data[this.field] ? 'Si' : 'No';
+				};
+			
 			var detalleColumns = [
-				{field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
-				{field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
-				{field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'10em'},
-				{field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
-				{field:'abono', name:'Abono', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
+				{id:'factura', field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
+				{id:'fecha', field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
+				{id: 'negocio', field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'10em'},
+				{id: 'total', field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
+				{id: 'abono', field:'abono', name:'Abono', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
+				{id: 'vencida', field:'vencida', name:'Vencida', 'style':"text-align: center", 'width':'5em',formatter: boolFormatter},
 			];
 
 			gridProps['store']=new Memory();
 			gridProps['structure']=detalleColumns;
+			gridProps['sortInitialOrder'] = { colId: 'fecha', descending: false };
 			var detalleGrid = new Grid(gridProps, entity_class+'_detalle_grid');
 			detalleGrid.startup();
-			
 		}
 	);
 });

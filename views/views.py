@@ -623,7 +623,8 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         clienteNegocios = Cliente.query(Cliente.nombre == cliente).fetch()
         qry = buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
         facturas = qry.fetch()
-        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,'total':factura.total, 'abono':sum(factura.abono)} for factura in facturas if not factura.pagada]
+        response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,
+                     'total':factura.total, 'abono':sum(factura.abono), 'vencida':estaVencida(factura)} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
     
 class GetExistencias(webapp2.RequestHandler):
@@ -647,9 +648,9 @@ class Fix(webapp2.RequestHandler):
                                           'cliente' : ['PAESA.SA.SALTO.DEL.ANGEL']}
                               ).fetch()
         for factura in facturas:
+            #print factura.numero, '-', factura.fecha
             factura.pagada = False
             factura.pagoRef = []
             factura.abono = []
-            factura.put
-        print facturas
+            factura.put()
         self.response.out.write('Done!')

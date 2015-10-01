@@ -3,7 +3,7 @@ Created on Aug 8, 2015
 
 @author: eduze_000
 '''
-from datetime import time
+from datetime import time, datetime, timedelta
 from dateutil import parser
 from config import *
 from datastorelogic import *
@@ -26,7 +26,7 @@ def getColumns(entityClass):
     columns=[]
     props = classModels[entityClass]._properties
     for column in uiConfig[entityClass]:
-        colProps = { 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
+        colProps = { 'id':column['id'], 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
         if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
             if not props[column['id']]._repeated:
                 colProps['type']='Integer'
@@ -63,8 +63,6 @@ def prepareRecords(entityClass, entities):
                     dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
             if type(prop_value) == date:
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
-            if type(prop_value) == bool: 
-                dicc[prop_key] = 'Si' if prop_value == True else 'No'
             if type(props[prop_key]) == ndb.StructuredProperty:
                 if type(prop_value) == list:
                     dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})
@@ -118,6 +116,11 @@ def getConsecutivo(entityClass):
         tipo[entity_class](consecutivo=int(0)).put()
         return 0;
     
+def estaVencida(factura):
+    diasPago = factura.cliente.get().diasPago
+    fechaVencimiento = factura.fecha + timedelta(days=diasPago)
+    return date.today() > fechaVencimiento
+     
 #################### INVENTARIO #########################
 getTemplateData={}
 def getInventarioTemplateData(request):

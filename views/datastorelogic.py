@@ -36,8 +36,7 @@ def checkFloatProperty(key, value):
         return value
     else:#try to cast
         try:
-            int(value)
-            return value
+            return float(value)
         except Exception:
             raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + value)
 

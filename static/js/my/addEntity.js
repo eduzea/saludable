@@ -1,9 +1,9 @@
 //# sourceURL=../static/js/my/addEntity.js
-require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style', 'dojo/on', 
+require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
 		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/number",
-		 'gridx/Grid', 'dijit/form/Button','gridx/modules/CellWidget',
+		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox', 'gridx/modules/CellWidget',
 		 'dojo/domReady!'],
-function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button) {
+function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox) {
 	var entityClass = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
 	var buttons={};
@@ -49,7 +49,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 			var formdata = registry.byId('addEntityForm'+  '_' + entityClass).get('value');
 			formdata.entityClass = entityClass;
 			//Get data from repeated Key fields, if any
-			var propNodes = query('.listBtn'); //since using button to attach list of selected key values
+			var propNodes = query('.listBtn'); //since we are using button to attach list of selected key values
 			if(propNodes.length > 0){
 				propNodes.forEach(function(node){
 					var id = node.getAttribute('widgetid');
@@ -86,6 +86,7 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 						grid.store.add(prepareForGrid(response.entity));
 					}
 					response_user = 'Se actualizo ' + entityClass + ': ' + response.key;
+					topic.publish(entityClass.toUpperCase(), {'action':'UPDATE','label':response.entity.rotulo,'value':response.key});
 				}
 				dom.byId('server_response'+ '_' + entityClass).innerHTML = response_user;
 				setTimeout(function() {
@@ -227,6 +228,95 @@ function(request, dom, fx, registry, domStyle, on, parser,query,JSON,topic,json,
 			});
 		});
 	});
+	
+	parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);
+	var form = registry.byId('addEntityForm'+ '_' + entityClass);
+	form.listenerfunc = function(data){
+        var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
+        if (nodelist.length == 0){
+        	var contentPane= registry.byId(grid.gridName + '_add');
+			contentPane.set("onDownloadEnd", function(){
+				nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass );
+				parser.instantiate(nodelist);
+				fillForm(nodelist, data, entityClass);	
+			});
+        }else{
+    		fillForm(nodelist, data, entityClass);
+        }
+	};
+	topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
+	
+	var fillForm = function(nodelist, rowData, entityClass){
+		nodelist.forEach(function(node, index, array){
+			var dijit = registry.byId(node.id);
+			if (dijit){
+				if (dijit.id.indexOf("grid") > -1 ){
+					request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entityClass, {handleAs:'json'}).then(function(response)
+					 {
+						dijit.model.clearCache();
+						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
+						response.forEach(function(item){
+							dijit.store.add(item);								
+						});
+						dijit.body.refresh();
+						if (dijit.updateTotal){
+							dijit.total = dijit.updateTotal();	
+						}
+						if (dom.byId('numero_' + entityClass)){
+							dom.byId('numero_' + entityClass).innerHTML = rowData.numero;							
+						}
+						if (entityClass in saludable.gridChangeFuncs)
+							saludable.gridChangeFuncs[entityClass](dijit);
+					});
+				}else{
+					var id = dijit.id;
+		        	if (id.indexOf(entityClass + "_Btn_list") > -1){//For key fields that are lists
+		        		var field = id.replace('_' + entityClass + '_Btn_list','');
+		        		//Find the button, fill the items list
+		        		var button = registry.byId(field + '_' + entityClass + '_Btn_list');
+		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
+		        		//Find the list, populate it
+		        		var listName = field + '_' + entityClass + '_list';
+		        		$('#'+listName).empty();
+		        		button.items.forEach(function(item){
+		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+		        		});
+	
+		        	}
+		        	id= dijit.id.replace('_' + entityClass,''); 
+		        	if(id in rowData){
+		        		if (rowData[id] instanceof Array){//If a list, take first only...
+		        			rowData[id]=rowData[id][0];
+		        		}
+		        		if (dijit instanceof Checkbox){
+		        			dijit.set('checked', rowData[id]);
+		        		}else{
+			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
+			        		dijit.set("displayedValue", rowData[id],false);		        			
+		        		}
+		        	}
+		        		   				
+				}			
+			}
+    	});
+    };
+  
+	var getValueFromLabel = function(dijit, label){
+		if (!dijit.options){
+			return label;
+		} 
+		var options = dijit.getOptions();
+		var lookup = {};
+		for (var i = 0, len = options.length; i < len; i++) {
+			lookup[html.decode(options[i].label)] = options[i].value;
+		}
+		if (label in lookup){
+			return lookup[label];	
+		}else{
+			dijit.addOption({label:label.replace('.',' '),selected:true, value:label.replace(' ','.')});
+		}
+	return label;
+	};
 	registry.byId('standby_centerPane').hide();
 });
 

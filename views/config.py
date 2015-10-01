@@ -302,7 +302,7 @@ uiConfig = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'
             }
             
 templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
-                   'Factura':'/crearFactura?entityClass=Factura', 
+                'Factura':'/crearFactura?entityClass=Factura', 
                    'Egreso':'/crearEgreso',
                    'Inventario':'/dojoxLoader?entityClass=Inventario&template=crearInventario.html',
                    'tablaDinamica':'/tablaDinamica.html',

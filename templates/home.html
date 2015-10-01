@@ -10,8 +10,10 @@
 			async: 1,
 			parseOnLoad:1,
 			dojoBlankHtmlUrl: '/blank.html',
+			baseUrl : 'static/js/',
 			packages: [
-			{name: 'gridx', location: '/static/js/lib/gridx'}
+				{name: 'gridx', location: '/static/js/lib/gridx'},
+				{name: 'my', location: '/static/js/my'}
 			]};
 		</script>
 		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>

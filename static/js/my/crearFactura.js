@@ -16,16 +16,17 @@ require(['dojo/dom',
 		"dojo/number",
 		'dijit/form/Select',
 		'dojo/dom-class',
+		'dojox/html/entities',
 		'dojo/ready',
 		'dojo/topic',
 		'dojo/store/Memory',
-		'gridx/modules/SingleSort',
 		'dijit/form/CheckBox',
+		'gridx/modules/SingleSort',
 		'gridx/modules/Edit',
 		'dijit/form/NumberTextBox'
 		], 
-function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic,Memory) {
-	var entity_class = saludable.entity_class;	
+function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, html, ready,topic,Memory,Checkbox) {
+	var entityClass = saludable.entity_class;	
 	
 	var resetCliente = function(cliente){	
 		request.post('/getClientes', {handleAs:'json'}).then(function(response){
@@ -33,7 +34,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			response.forEach(function(cliente){
 				items.push({ "value": cliente.value, "label": cliente.name });
 			});
-			var clienteSelect = registry.byId('cliente'+ '_' + entity_class);
+			var clienteSelect = registry.byId('cliente'+ '_' + entityClass);
 			clienteSelect.options = items;
 			clienteSelect.reset();
 			console.log('RESET CLIENTE!');
@@ -54,7 +55,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			        	idProperty: "value",
 			            data: items
 			        });
-					var productoSelect = registry.byId('producto'+ '_' + entity_class);
+					var productoSelect = registry.byId('producto'+ '_' + entityClass);
 					productoSelect.setStore(productoStore);
 					productoSelect.reset();
 					resetPorcion(productoSelect.value);
@@ -63,7 +64,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	var resetPorcion = function(producto){
 			if (producto == 'No hay precios definidos') return;
-			cliente = registry.byId('cliente'+ '_' + entity_class).value;	
+			cliente = registry.byId('cliente'+ '_' + entityClass).value;	
 			request.post('/getPorcion', {
 					data : {'cliente':cliente, 'producto': producto},
 					handleAs:'json'
@@ -76,34 +77,34 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			        	idProperty: "value",
 			            data: items
 			        });
-					var porcionSelect = registry.byId('porcion'+ '_' + entity_class);
+					var porcionSelect = registry.byId('porcion'+ '_' + entityClass);
 					porcionSelect.setStore(porcionStore);
 					porcionSelect.reset();
 			});
 		};
 		
-    parser.instantiate([dom.byId('cliente'+ '_' + entity_class)]);
-    var clienteSelect = registry.byId('cliente'+ '_' + entity_class);
+    parser.instantiate([dom.byId('cliente'+ '_' + entityClass)]);
+    var clienteSelect = registry.byId('cliente'+ '_' + entityClass);
     clienteSelect.onChange = resetProducto; 
     clienteSelect.set('style','font-size:70%');
     resetProducto(clienteSelect.value);
     	
     var productoSelect = new Select({
-        name: "producto"+ '_' + entity_class,
+        name: "producto"+ '_' + entityClass,
         style: "width: 200px;font-size:70%",
         store: new Store(),
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
         onChange: resetPorcion
-	}, "producto"+ '_' + entity_class);
+	}, "producto"+ '_' + entityClass);
 	productoSelect.startup();
 	
     var porcionSelect = new Select({
-        name: "porcion"+ '_' + entity_class,
+        name: "porcion"+ '_' + entityClass,
         style: "font-size:70%",
         labelAttr: "name",
         maxHeight: -1, // tells _HasDropDown to fit menu within viewport
-	}, "porcion"+ '_' + entity_class);
+	}, "porcion"+ '_' + entityClass);
 	porcionSelect.startup();
 	
 	var selects = [clienteSelect, productoSelect, porcionSelect];
@@ -115,7 +116,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
     		select.options = sorted;
     		select.set("value",sorted[0].value);
    		};
-   		topic.subscribe(select.id.replace( '_' + entity_class,'').toUpperCase(), select.listenerfunc);
+   		topic.subscribe(select.id.replace( '_' + entityClass,'').toUpperCase(), select.listenerfunc);
 	});
 
   	
@@ -125,8 +126,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		var grid = registry.byId('grid'+ '_' + entity_class);
-		var conIva = registry.byId('iva'+ '_' + entity_class).checked;
+		var grid = registry.byId('grid'+ '_' + entityClass);
+		var conIva = registry.byId('iva'+ '_' + entityClass).checked;
 		var iva = conIva ? 0.16 : 0;
 		grid.subtotal = sumTotal;
 		grid.iva = Math.floor(sumTotal * iva);
@@ -136,25 +137,25 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
 	};
 	
-	parser.instantiate([dom.byId('iva'+ '_' + entity_class)]);
-    on(registry.byId('iva'+ '_' + entity_class), 'change', updateTotal);
+	parser.instantiate([dom.byId('iva'+ '_' + entityClass)]);
+    on(registry.byId('iva'+ '_' + entityClass), 'change', updateTotal);
 		
-	var getFormData = function(entity_class){
-		var formdata = registry.byId('addEntityForm' + '_' + entity_class).get('value');
+	var getFormData = function(entityClass){
+		var formdata = registry.byId('addEntityForm' + '_' + entityClass).get('value');
 		for (prop in formdata) {
-			formdata[prop.replace('_' + entity_class, '')] = formdata[prop];
+			formdata[prop.replace('_' + entityClass, '')] = formdata[prop];
 			delete formdata[prop];
 		}
 		return formdata;
 	};
 	
 	var getGridData = function(){
-		var store = registry.byId('grid'+ '_' + entity_class).store;
+		var store = registry.byId('grid'+ '_' + entityClass).store;
 		return store.query();
 	};
 	
-	var actualizarFacturas = function(response, data, entity_class){
-		var id = 'gridNode'+ '_' + entity_class;
+	var actualizarFacturas = function(response, data, entityClass){
+		var id = 'gridNode'+ '_' + entityClass;
 		var grid = registry.byId(id);
 		var key = response.id;
 		data['id'] = key;
@@ -172,18 +173,18 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		e.value = !e.value;
 	};
 	
-	parser.instantiate([dom.byId('guardar'+ '_' + entity_class + 'Btn')]);
-	on(registry.byId('guardar'+ '_' + entity_class +'Btn'),'click',
+	parser.instantiate([dom.byId('guardar'+ '_' + entityClass + 'Btn')]);
+	on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click',
 		function(e){
-			var cliente = registry.byId('cliente'+ '_' + entity_class).value;
-			var empleado = registry.byId('empleado'+ '_' + entity_class).value;		
-			var fecha = registry.byId('fecha'+ '_' + entity_class).toString();
-			var numero = dom.byId('numero'+ '_' + entity_class).innerHTML.replace('No.','');
+			var cliente = registry.byId('cliente'+ '_' + entityClass).value;
+			var empleado = registry.byId('empleado'+ '_' + entityClass).value;		
+			var fecha = registry.byId('fecha'+ '_' + entityClass).toString();
+			var numero = dom.byId('numero'+ '_' + entityClass).innerHTML.replace('No.','');
 			var gridData = getGridData();
-			var grid = registry.byId('grid'+ '_' + entity_class);
+			var grid = registry.byId('grid'+ '_' + entityClass);
 			updateTotal();
 			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'iva':grid.iva,'total':grid.total,  
-			'numero':numero, 'entity_class':entity_class};
+			'numero':numero, 'entity_class':entityClass};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'
@@ -191,38 +192,38 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					var message='';
 					if(response.result == 'Success'){
 						message = 'Se grabo exitosamente este pedido!';
-						factura_data['cliente']=registry.byId('cliente'+ '_' + entity_class).attr('displayedValue');
-						actualizarFacturas(response, factura_data, entity_class);
-						var pagina = registry.byId( '_' + entity_class + 'PorPagina').checked;
-						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entity_class+ '&pagina='+ pagina.toString();
+						factura_data['cliente']=registry.byId('cliente'+ '_' + entityClass).attr('displayedValue');
+						actualizarFacturas(response, factura_data, entityClass);
+						var pagina = registry.byId( '_' + entityClass + 'PorPagina').checked;
+						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entityClass+ '&pagina='+ pagina.toString();
 						window.open(url);
 					}else{
 						message = 'No se pudo guardar este pedido!';
 					}
-					dom.byId('mensaje'+ '_' + entity_class).innerHTML = message;
+					dom.byId('mensaje'+ '_' + entityClass).innerHTML = message;
 					setTimeout(function() {
-						var grid =registry.byId('grid'+ '_' + entity_class);
+						var grid =registry.byId('grid'+ '_' + entityClass);
 						grid.model.clearCache();
 						grid.model.store.setData([]);
         				grid.body.refresh();
-						dom.byId('mensaje'+ '_' + entity_class).innerHTML = '';
+						dom.byId('mensaje'+ '_' + entityClass).innerHTML = '';
 						dom.byId('total').innerHTML = '';
 						dom.byId('subtotal').innerHTML = '';
 						dom.byId('iva').innerHTML = '';
-						dom.byId('numero'+ '_' + entity_class).innerHTML = '';
+						dom.byId('numero'+ '_' + entityClass).innerHTML = '';
 					}, 2000);
 					topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
 				});
 		});
 	
-	parser.instantiate([dom.byId('agregarPedidoBtn'+ '_' + entity_class)]);
-	on(registry.byId('agregarPedidoBtn'+ '_' + entity_class),'click',function(e){
-		var form = registry.byId('addEntityForm' +  '_' + entity_class);
+	parser.instantiate([dom.byId('agregarPedidoBtn'+ '_' + entityClass)]);
+	on(registry.byId('agregarPedidoBtn'+ '_' + entityClass),'click',function(e){
+		var form = registry.byId('addEntityForm' +  '_' + entityClass);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
 			return;
 		}
-		var formdata = getFormData(entity_class);
+		var formdata = getFormData(entityClass);
 		request.post("getPrice",
 		{
 			data: {'producto':formdata['producto'], 'cliente':formdata['cliente'], 'porcion': formdata['porcion']}
@@ -231,7 +232,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 				alert("No hay precio definido para esta combinacion producto x cliente! Definelo primero.");
 				return;	
 			}
-			var grid = registry.byId('grid'+ '_' + entity_class);
+			var grid = registry.byId('grid'+ '_' + entityClass);
 			var id = formdata['producto'] + formdata['porcion'];
 			var row = grid.store.get(id);
 			if (row){
@@ -246,32 +247,32 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		
 	});
 	
-	parser.instantiate([dom.byId('nueva'+ '_' + entity_class+'Btn')]);
-	on(registry.byId('nueva'+ '_' + entity_class+'Btn'),'click',function(e){
-		registry.byId('addEntityForm' +  '_' + entity_class).reset();
-		var grid = registry.byId('grid'+ '_' + entity_class);
+	parser.instantiate([dom.byId('nueva'+ '_' + entityClass+'Btn')]);
+	on(registry.byId('nueva'+ '_' + entityClass+'Btn'),'click',function(e){
+		registry.byId('addEntityForm' +  '_' + entityClass).reset();
+		var grid = registry.byId('grid'+ '_' + entityClass);
 		grid.model.clearCache();
 		grid.model.store.setData([]);
 		grid.body.refresh();		
 		updateTotal();
-		dom.byId('numero'+ '_' + entity_class).innerHTML='';
+		dom.byId('numero'+ '_' + entityClass).innerHTML='';
 	});
 	
-	if (dom.byId('anular'+ '_' + entity_class+'Btn')){
-		parser.instantiate([dom.byId('anular'+ '_' + entity_class+'Btn')]);
-		on(registry.byId('anular'+ '_' + entity_class+'Btn'),'click',function(e){
-			var numero = dom.byId('numero'+ '_' + entity_class).innerHTML;
-			request('/anularFactura?tipo=' + entity_class + '&id=' + numero).then(function(){
-				registry.byId('anulada'+ '_' + entity_class).set('value','ANULADA');
-				domAttr.set('anulada'+ '_' + entity_class, 'style', 'visibility:visible;color:red');
+	if (dom.byId('anular'+ '_' + entityClass+'Btn')){
+		parser.instantiate([dom.byId('anular'+ '_' + entityClass+'Btn')]);
+		on(registry.byId('anular'+ '_' + entityClass+'Btn'),'click',function(e){
+			var numero = dom.byId('numero'+ '_' + entityClass).innerHTML;
+			request('/anularFactura?tipo=' + entityClass + '&id=' + numero).then(function(){
+				registry.byId('anulada'+ '_' + entityClass).set('value','ANULADA');
+				domAttr.set('anulada'+ '_' + entityClass, 'style', 'visibility:visible;color:red');
 			});
 		});		
 	}
-	parser.instantiate([dom.byId('anulada'+ '_' + entity_class)]);
-	var anuladaText= registry.byId('anulada'+ '_' + entity_class);
+	parser.instantiate([dom.byId('anulada'+ '_' + entityClass)]);
+	var anuladaText= registry.byId('anulada'+ '_' + entityClass);
 	anuladaText.onChange = function(anulada){
 		this.set('value',anulada ? 'ANULADA' : '');
-		domAttr.set('anulada'+ '_' + entity_class, 'style', 'width:100px;border:none;color:red');
+		domAttr.set('anulada'+ '_' + entityClass, 'style', 'width:100px;border:none;color:red');
 		};
 
 	
@@ -323,7 +324,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					'gridx/modules/SingleSort',
 					'gridx/modules/Edit'
 					]
-	}, 'grid'+ '_' + entity_class);
+	}, 'grid'+ '_' + entityClass);
 	grid.startup();
 	grid.edit.connect(grid.edit, "onApply", function(cell) {
 		var origData = grid.store.get(cell.row.id);
@@ -334,6 +335,100 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		}
 	);
 	grid.updateTotal = updateTotal;
-	domClass.add(dom.byId('grid'+ '_' + entity_class),'factura-grid');
+	domClass.add(dom.byId('grid'+ '_' + entityClass),'factura-grid');
+	
+	//This is a temporary solution. This code is repeated in addEntity.js and should be made reusable.
+	// One approach is to create thsi view through addEntity.js and no as a custom view.
+	// The other is to compenentize the logic of fillForm and include it in the custom crearFactura.js
+	
+	parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);
+	var form = registry.byId('addEntityForm'+ '_' + entityClass);
+	form.listenerfunc = function(data){
+        var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
+        if (nodelist.length == 0){
+        	var contentPane= registry.byId(grid.gridName + '_add');
+			contentPane.set("onDownloadEnd", function(){
+				nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass );
+				parser.instantiate(nodelist);
+				fillForm(nodelist, data, entityClass);	
+			});
+        }else{
+    		fillForm(nodelist, data, entityClass);
+        }
+	};
+	topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
+	
+	var fillForm = function(nodelist, rowData, entityClass){
+		nodelist.forEach(function(node, index, array){
+			var dijit = registry.byId(node.id);
+			if (dijit){
+				if (dijit.id.indexOf("grid") > -1 ){
+					request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entityClass, {handleAs:'json'}).then(function(response)
+					 {
+						dijit.model.clearCache();
+						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
+						response.forEach(function(item){
+							dijit.store.add(item);								
+						});
+						dijit.body.refresh();
+						if (dijit.updateTotal){
+							dijit.total = dijit.updateTotal();	
+						}
+						if (dom.byId('numero_' + entityClass)){
+							dom.byId('numero_' + entityClass).innerHTML = rowData.numero;							
+						}
+						if (entityClass in saludable.gridChangeFuncs)
+							saludable.gridChangeFuncs[entityClass](dijit);
+					});
+				}else{
+					var id = dijit.id;
+		        	if (id.indexOf(entityClass + "_Btn_list") > -1){//For key fields that are lists
+		        		var field = id.replace('_' + entityClass + '_Btn_list','');
+		        		//Find the button, fill the items list
+		        		var button = registry.byId(field + '_' + entityClass + '_Btn_list');
+		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
+		        		//Find the list, populate it
+		        		var listName = field + '_' + entityClass + '_list';
+		        		$('#'+listName).empty();
+		        		button.items.forEach(function(item){
+		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+		        		});
+	
+		        	}
+		        	id= dijit.id.replace('_' + entityClass,''); 
+		        	if(id in rowData){
+		        		if (rowData[id] instanceof Array){//If a list, take first only...
+		        			rowData[id]=rowData[id][0];
+		        		}
+		        		if (dijit instanceof Checkbox){
+		        			dijit.set('checked', rowData[id]);
+		        		}else{
+			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
+			        		dijit.set("displayedValue", rowData[id],false);		        			
+		        		}
+		        	}
+		        		   				
+				}			
+			}
+    	});
+    };
+  
+	var getValueFromLabel = function(dijit, label){
+		if (!dijit.options){
+			return label;
+		} 
+		var options = dijit.getOptions();
+		var lookup = {};
+		for (var i = 0, len = options.length; i < len; i++) {
+			lookup[html.decode(options[i].label)] = options[i].value;
+		}
+		if (label in lookup){
+			return lookup[label];	
+		}else{
+			dijit.addOption({label:label.replace('.',' '),selected:true, value:label.replace(' ','.')});
+		}
+	return label;
+	};
+	
 	registry.byId('standby_centerPane').hide();
 }); 

@@ -10,7 +10,7 @@ function(dom,registry,domAttr)
 	 };
 	 
 	 
-	//Specify model type specific logic for click events
+	//Specify model specific logic for click events
 	saludable.gridChangeFuncs =
 	{
 		'Produccion':

@@ -109,6 +109,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 			domConstruct.empty("centerPane");
 			registry.byId('centerPane').addChild(widget);
 		}else{
+			if (item.alreadyClicked) return;
+			item.alreadyClicked=true;
 			standby.show();
 			request('/getWidget?entityClass=' + entityClass + '&template=' + item.template).then(
 				function(response){
