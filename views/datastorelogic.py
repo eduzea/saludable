@@ -73,7 +73,22 @@ def checkStructuredProperty(key, propertyType, value):
     if isinstance(value,basestring):
         value = json.loads(value)
     if isinstance(value, ndb.Model): return value 
-    return checkEntityCreate(propertyType._modelclass._class_name(),value)             
+    return checkEntityCreate(propertyType._modelclass._class_name(),value)
+
+def representsInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+def checkComputedProperty(key, value):
+    if isinstance(value,basestring):
+        if value == 'true': return True
+        if value == 'false': return False
+        if representsInt(value): return int(value)
+    else:
+        return value
 
 #======================================
 # Entity Init functions
@@ -103,6 +118,8 @@ def checkFieldType(key, propertyType, value):
         value = checkStructuredProperty(key, propertyType, value)
     if type(propertyType) == ndb.StringProperty:
         value = checkStringProperty(key,value)
+    if type(propertyType) == ndb.ComputedProperty:
+        value = checkComputedProperty(key, value)
     return value
 
 def checkEntityCreate(entityClass, values, forQuery=False):
