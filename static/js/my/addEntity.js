@@ -47,6 +47,14 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 		if (registry.byId('addEntityForm'+ '_' + entityClass).validate()) {
 			//Get top form data
 			var formdata = registry.byId('addEntityForm'+  '_' + entityClass).get('value');
+			for(var key in formdata) {//In case the form has controls that return values as array (eg. checkbox)
+			    if(formdata.hasOwnProperty(key)) {
+			    	if (Array.isArray(formdata[key])){
+        				formdata[key] = formdata[key].length > 0 ? formdata[key][0] : false;				    		
+			    	}
+
+    			}
+			}
 			formdata.entityClass = entityClass;
 			//Get data from repeated Key fields, if any
 			var propNodes = query('.listBtn'); //since we are using button to attach list of selected key values

@@ -2,33 +2,32 @@ from __future__ import division
 from google.appengine.ext import ndb
 
 
-class Empleado(ndb.Model):
+class Record(ndb.Model):
+    fechaCreacion = ndb.DateProperty()
+    empleadoCreador = ndb.StringProperty(indexed=True)
+    activo = ndb.BooleanProperty(default = True)
+
+class Empleado(Record):
     nombre = ndb.StringProperty(indexed=True)
     apellido = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
     email = ndb.StringProperty(indexed=True)
-    activo = ndb.BooleanProperty(default=True)
-
-class Record(ndb.Model):
-    fechaCreacion = ndb.DateProperty()
-    empleadoCreador = ndb.StringProperty(indexed=True)
      
-
-class GrupoDePrecios(ndb.Model):
+class GrupoDePrecios(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Sucursal(ndb.Model):
+class Sucursal(Record):
     nombre = ndb.StringProperty()
     direccion = ndb.StringProperty()
     telefono = ndb.IntegerProperty()
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
-class Ciudad(ndb.Model):
+class Ciudad(Record):
     nombre = ndb.StringProperty()
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
-class Cliente(ndb.Model):
+class Cliente(Record):
     nombre = ndb.StringProperty(indexed=True)
     negocio = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
@@ -41,22 +40,22 @@ class Cliente(ndb.Model):
     iva = ndb.BooleanProperty(default=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     
-class Producto(ndb.Model):
+class Producto(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Porcion(ndb.Model):
+class Porcion(Record):
     valor = ndb.IntegerProperty()
     unidades = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
 
-class Precio(ndb.Model):
+class Precio(Record):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     precio = ndb.IntegerProperty()
     
-class Venta(ndb.Model):
+class Venta(Record):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
@@ -65,28 +64,28 @@ class Venta(ndb.Model):
     rotulo = ndb.ComputedProperty(lambda self: self.producto.id() +' '+ self.porcion.id())
     
 
-class NumeroFactura(ndb.Model):
+class NumeroFactura(Record):
     consecutivo = ndb.IntegerProperty()
 
-class NumeroEgreso(ndb.Model):
+class NumeroEgreso(Record):
     consecutivo = ndb.IntegerProperty()
     
-class NumeroRemision(ndb.Model):
+class NumeroRemision(Record):
     consecutivo = ndb.IntegerProperty()
 
-class NumeroDeuda(ndb.Model):
+class NumeroDeuda(Record):
     consecutivo = ndb.IntegerProperty()
     
-class NumeroOtrosIngresos(ndb.Model):
+class NumeroOtrosIngresos(Record):
     consecutivo = ndb.IntegerProperty()
     
-class NumeroActivoFijo(ndb.Model):
+class NumeroActivoFijo(Record):
     consecutivo = ndb.IntegerProperty()
 
-class NumeroPagoRecibido(ndb.Model):
+class NumeroPagoRecibido(Record):
     consecutivo = ndb.IntegerProperty()
     
-class Remision(ndb.Model):
+class Remision(Record):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
     empleado = ndb.KeyProperty(kind=Empleado)
@@ -99,7 +98,7 @@ class Remision(ndb.Model):
     anulada = ndb.BooleanProperty(default=False)
     factura = ndb.IntegerProperty(default=0)
     
-class Factura(ndb.Model):
+class Factura(Record):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
     empleado = ndb.KeyProperty(kind=Empleado)
@@ -132,12 +131,12 @@ class PagoRecibido(Record):
     documento = ndb.StringProperty(indexed=True)
     monto = ndb.IntegerProperty()
     
-class Devolucion(ndb.Model):
+class Devolucion(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     factura = ndb.KeyProperty(kind=Factura)
     
-class OtrosIngresos(ndb.Model):
+class OtrosIngresos(Record):
     numero = ndb.IntegerProperty()
     empleado = ndb.KeyProperty(kind=Empleado)
     fecha = ndb.DateProperty()
@@ -146,7 +145,7 @@ class OtrosIngresos(ndb.Model):
     
 ############ INVENTARIO ####################
 
-class InventarioRegistro(ndb.Model):
+class InventarioRegistro(Record):
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
     producto = ndb.KeyProperty(kind=Producto)
@@ -167,7 +166,7 @@ class Existencias(Inventario):
     ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
     registros = ndb.KeyProperty(kind=ExistenciasRegistro, repeated = True)
     
-class ProductoPorcion(ndb.Model):
+class ProductoPorcion(Record):
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
     rotulo =  ndb.ComputedProperty(lambda self: self.porcion.id())
@@ -189,7 +188,7 @@ class Produccion(Record):
 
 ########## EGRESOS #######
 
-class TipoEgreso(ndb.Model):
+class TipoEgreso(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
@@ -203,7 +202,7 @@ def objListToString(objList):
     return text
     
 
-class Proveedor(ndb.Model):
+class Proveedor(Record):
     nombre = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
@@ -215,24 +214,24 @@ class Proveedor(ndb.Model):
     textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
 
 # PUC classes - Consider implementing this from config...
-class Clase(ndb.Model):
+class Clase(Record):
     nombre = ndb.StringProperty(indexed=True)
     pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
-class Grupo(ndb.Model):
+class Grupo(Record):
     clase = ndb.KeyProperty(kind=Clase)
     nombre = ndb.StringProperty(indexed=True)
     pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Cuenta(ndb.Model):
+class Cuenta(Record):
     grupo = ndb.KeyProperty(kind=Grupo)
     nombre = ndb.StringProperty(indexed=True)
     pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class SubCuenta(ndb.Model):
+class SubCuenta(Record):
     cuenta = ndb.KeyProperty(kind=Cuenta)
     nombre = ndb.StringProperty(indexed=True)
     pucNumber = ndb.StringProperty(indexed=True)
@@ -240,7 +239,7 @@ class SubCuenta(ndb.Model):
 
 ##################################################################################
 
-class Bienoservicio(ndb.Model):
+class Bienoservicio(Record):
     nombre = ndb.StringProperty(indexed=True)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     clase = ndb.KeyProperty(kind=Clase)
@@ -250,12 +249,12 @@ class Bienoservicio(ndb.Model):
     puc = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class PorcionCompra(ndb.Model):
+class PorcionCompra(Record):
     valor = ndb.IntegerProperty()
     unidades = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
 
-class Compra(ndb.Model):
+class Compra(Record):
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
     detalle = ndb.StringProperty()
     cantidad = ndb.IntegerProperty()
@@ -263,7 +262,7 @@ class Compra(ndb.Model):
     compra = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
 
-class Egreso(ndb.Model):
+class Egreso(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
@@ -275,11 +274,11 @@ class Egreso(ndb.Model):
     resumen = ndb.StringProperty(indexed=True)
     comentario = ndb.TextProperty()
     
-class TipoAcreedor(ndb.Model):
+class TipoAcreedor(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Acreedor(ndb.Model):
+class Acreedor(Record):
     tipo = ndb.KeyProperty(kind=TipoAcreedor)
     nombre = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
@@ -288,7 +287,7 @@ class Acreedor(ndb.Model):
     ciudad = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
-class Deuda(ndb.Model):
+class Deuda(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     empleado = ndb.KeyProperty(kind=Empleado)

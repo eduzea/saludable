@@ -177,13 +177,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click',
 		function(e){
 			var cliente = registry.byId('cliente'+ '_' + entityClass).value;
-			var empleado = registry.byId('empleado'+ '_' + entityClass).value;		
 			var fecha = registry.byId('fecha'+ '_' + entityClass).toString();
 			var numero = dom.byId('numero'+ '_' + entityClass).innerHTML.replace('No.','');
 			var gridData = getGridData();
 			var grid = registry.byId('grid'+ '_' + entityClass);
 			updateTotal();
-			var factura_data = {'cliente':cliente,'empleado':empleado,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'iva':grid.iva,'total':grid.total,  
+			var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'montoIva':grid.iva,'total':grid.total,  
 			'numero':numero, 'entity_class':entityClass};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),

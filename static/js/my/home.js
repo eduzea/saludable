@@ -34,10 +34,13 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var activoCirculanteNodes = makeStore(['SaldoCuentaBancaria',{name:'CuentasPorCobrar',template:'CuentasPorCobrar'},{name:'Inventarios',clickable:false}],'Activos Circulantes'); 
 		var inventarioNodes = makeStore(['Inventario',{name:'Existencias',clickable:true, template:'Existencias'}],'Inventarios');
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
-		var deudaNodes = makeStore(['Acreedor','Deuda','TipoAcreedor'],'Deudas');
-		var ingresoNodes = makeStore(['Factura',{name:'Remisiones',clickable:false},'PagoRecibido','Cliente','Producto','Porcion','GrupoDePrecios','Precio','OtrosIngresos'],'Ingresos');
+		var deudaNodes = makeStore(['Deuda',{name:'AdminDeudas',clickable:false}],'Deudas');
+		var adminDeudasNodes = makeStore(['Acreedor','TipoAcreedor'],'AdminDeudas');
+		var ingresoNodes = makeStore(['Factura',{name:'Remisiones',clickable:false},'PagoRecibido','OtrosIngresos',{name:'AdminIngresos',clickable:false}],'Ingresos');
+		var adminIngresoNodes = makeStore(['Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'AdminIngresos');
 		var remisionNodes = makeStore(['Remision',{name:'Consolidar Factura', clickable:true, template:'ConsolidarFactura'}],'Remisiones');
-		var egresoNodes = makeStore(['Egreso','Proveedor','Bienoservicio','TipoEgreso'],'Egresos');
+		var egresoNodes = makeStore(['Egreso', {name:'AdminEngresos',clickable:false} ],'Egresos');
+		var adminEgresoNodes = makeStore(['Proveedor','Bienoservicio','TipoEgreso'],'AdminEngresos');
 		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
 		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
 		var numeroNodes = makeStore(['Numeros'],'Admin','numeros');
@@ -58,8 +61,11 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		data.push.apply(data,pasivoNodes);			
 		data.push.apply(data,ingresoNodes);
 		data.push.apply(data,remisionNodes);
+		data.push.apply(data,adminIngresoNodes);
 		data.push.apply(data,egresoNodes);
+		data.push.apply(data,adminEgresoNodes);
 		data.push.apply(data,deudaNodes);
+		data.push.apply(data,adminDeudasNodes);
 		data.push.apply(data,adminNodes);
 		data.push.apply(data,pucNodes);
 		data.push.apply(data,numeroNodes);

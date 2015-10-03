@@ -8,6 +8,7 @@ require(['dojo/dom',
 		'gridx/core/model/cache/Sync',
 		'dojo/request', 
 		'dijit/form/Button',
+		'dijit/form/CheckBox',
 		"gridx/modules/CellWidget",
 		'dojo/query',
 		"dojo/on",
@@ -15,6 +16,7 @@ require(['dojo/dom',
 		"dojo/number",
 		'dijit/form/Select',
 		'dojo/dom-class',
+		'dojox/html/entities',
 		'dojo/ready',
 		'dojo/topic',
 		'dojo/store/Memory',
@@ -23,7 +25,7 @@ require(['dojo/dom',
 		'gridx/modules/Edit',
 		'dijit/form/NumberTextBox'
 		], 
-	function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, ready,topic,Memory)
+	function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Checkbox, CellWidget, query, on,json,number,Select,domClass, html, ready,topic,Memory)
 	{
 		var entityClass = 'Inventario';
 		
@@ -214,5 +216,99 @@ require(['dojo/dom',
 				grid.store.add(data);
 			}
 		};
+		
+		//This is a temporary solution. This code is repeated in addEntity.js and should be made reusable.
+		// One approach is to create thsi view through addEntity.js and no as a custom view.
+		// The other is to compenentize the logic of fillForm and include it in the custom crearFactura.js
+		
+		parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);
+		var form = registry.byId('addEntityForm'+ '_' + entityClass);
+		form.listenerfunc = function(data){
+	        var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
+	        if (nodelist.length == 0){
+	        	var contentPane= registry.byId(grid.gridName + '_add');
+				contentPane.set("onDownloadEnd", function(){
+					nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass );
+					parser.instantiate(nodelist);
+					fillForm(nodelist, data, entityClass);	
+				});
+	        }else{
+	    		fillForm(nodelist, data, entityClass);
+	        }
+		};
+		topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
+		
+		var fillForm = function(nodelist, rowData, entityClass){
+			nodelist.forEach(function(node, index, array){
+				var dijit = registry.byId(node.id);
+				if (dijit){
+					if (dijit.id.indexOf("grid") > -1 ){
+						request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entityClass, {handleAs:'json'}).then(function(response)
+						 {
+							dijit.model.clearCache();
+							dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
+							response.forEach(function(item){
+								dijit.store.add(item);								
+							});
+							dijit.body.refresh();
+							if (dijit.updateTotal){
+								dijit.total = dijit.updateTotal();	
+							}
+							if (dom.byId('numero_' + entityClass)){
+								dom.byId('numero_' + entityClass).innerHTML = rowData.numero;							
+							}
+							if (entityClass in saludable.gridChangeFuncs)
+								saludable.gridChangeFuncs[entityClass](dijit);
+						});
+					}else{
+						var id = dijit.id;
+			        	if (id.indexOf(entityClass + "_Btn_list") > -1){//For key fields that are lists
+			        		var field = id.replace('_' + entityClass + '_Btn_list','');
+			        		//Find the button, fill the items list
+			        		var button = registry.byId(field + '_' + entityClass + '_Btn_list');
+			        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
+			        		//Find the list, populate it
+			        		var listName = field + '_' + entityClass + '_list';
+			        		$('#'+listName).empty();
+			        		button.items.forEach(function(item){
+			        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+			        		});
+		
+			        	}
+			        	id= dijit.id.replace('_' + entityClass,''); 
+			        	if(id in rowData){
+			        		if (rowData[id] instanceof Array){//If a list, take first only...
+			        			rowData[id]=rowData[id][0];
+			        		}
+			        		if (dijit instanceof Checkbox){
+			        			dijit.set('checked', rowData[id]);
+			        		}else{
+				        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
+				        		dijit.set("displayedValue", rowData[id],false);		        			
+			        		}
+			        	}
+			        		   				
+					}			
+				}
+	    	});
+	    };
+	  
+		var getValueFromLabel = function(dijit, label){
+			if (!dijit.options){
+				return label;
+			} 
+			var options = dijit.getOptions();
+			var lookup = {};
+			for (var i = 0, len = options.length; i < len; i++) {
+				lookup[html.decode(options[i].label)] = options[i].value;
+			}
+			if (label in lookup){
+				return lookup[label];	
+			}else{
+				dijit.addOption({label:label.replace('.',' '),selected:true, value:label.replace(' ','.')});
+			}
+		return label;
+		};		
+		
 		registry.byId('standby_centerPane').hide();
 	});

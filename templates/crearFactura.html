@@ -18,21 +18,13 @@
 		<div data-dojo-type="dijit/form/Form" id="addEntityForm_{{entityClass}}" data-dojo-id="addEntityForm_{{entityClass}}" encType="multipart/form-data">
 			<table style="table-layout: fixed;"> 
 				<tr>
-					<td><label for='empleado_{{entityClass}}'>Empleado:</label></td>
-					<td><div>
-	 						<select name='empleado_{{entityClass}}' id='empleado_{{entityClass}}' data-dojo-type='dijit/form/Select'>"
-								<option value='{{props["Empleado"]["value"]}}'>{{props["Empleado"]["label"]}}</option>
-	        				</select>
-						</div>
-					</td>
 					<td><label for='fecha_{{entityClass}}'>Fecha: </label></td>
 					<td><input type="text" name='fecha_{{entityClass}}' id='fecha_{{entityClass}}' value="now" 
 							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
-							required="true" style="width:100px;font-size:70%" />
+							required="true" style="width:100px;" />
 					</td>
-					<td><label for='numero_{{entityClass}}'>&nbsp;&nbsp;No.: </label> </td>
-					<td><div id='numero_{{entityClass}}'></div></td>
-					<td>&nbsp;&nbsp;<input id="_{{entityClass}}PorPagina" name="_{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
+					<td><label for='numero_{{entityClass}}'>No.: </label> </td>
+					<td><div id='numero_{{entityClass}}'></div></td>					
 				</tr>					
 				<tr>
 					<td><label for='cliente_{{entityClass}}'>Cliente: </label></td>
@@ -43,11 +35,12 @@
 					<td><label for='porcion_{{entityClass}}'>Porcion: </label></td>
 					<td><div id='porcion_{{entityClass}}'></div></td>
 					<td>
+						<input id="iva_{{entityClass}}" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
+					</td>
+					<td><input id="_{{entityClass}}PorPagina" name="_{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
+					<td>
 						<input type="text" name="anulada_{{entityClass}}" data-dojo-type="dijit/form/TextBox"
     					data-dojo-props="readOnly:true" id="anulada_{{entityClass}}" style="visibility: hidden;width:100px;border:none"/>
-					</td>
-					<td>
-						<input id="iva_{{entityClass}}" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
 					</td>
 				</tr>
 				<tr>
@@ -57,7 +50,6 @@
 					<td>{{tagForField(entityClass,props['Cantidad'])}}</td>
 					<td><button id='agregarPedidoBtn_{{entityClass}}' data-dojo-type="dijit/form/Button">Agregar al Pedido</button></td>
 					<td><button id='nueva_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Nueva {{entityClass}}</button></td>
-					<td></td>
 					<td><button id='anular_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Anular {{entityClass}}</button></td>
 				</tr>
 			</table>

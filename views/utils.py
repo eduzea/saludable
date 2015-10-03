@@ -25,7 +25,7 @@ def parseDateString(string):
 def getColumns(entityClass):
     columns=[]
     props = classModels[entityClass]._properties
-    for column in uiConfig[entityClass]:
+    for column in uiConfigShow[entityClass]:
         colProps = { 'id':column['id'], 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
         if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
             if not props[column['id']]._repeated:
@@ -50,7 +50,7 @@ def getKey(entityClass,dicc):
 def prepareRecords(entityClass, entities):
     records=[]
     props = classModels[entityClass]._properties
-    fields = [field['id'] for field in uiConfig[entityClass]]
+    fields = [field['id'] for field in uiConfigShow[entityClass]]
     for entity in entities:
         dicc = entity.to_dict()
 #         dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
@@ -90,7 +90,7 @@ def createTemplateString(entity):
 
 def fieldInfo(entityClass, fieldName):
     props = classModels[entityClass]._properties
-    fields = uiConfig[entityClass]    
+    fields = uiConfigShow[entityClass]    
     fieldProp = {}
     for field in fields:
         if field['id'] == fieldName:
@@ -100,7 +100,7 @@ def fieldInfo(entityClass, fieldName):
 
 def fieldsInfo(entityClass):
     props = classModels[entityClass]._properties
-    fields = uiConfig[entityClass]
+    fields = uiConfigAdd[entityClass]
     for field in fields:
         field['type']=props[field['id']]
     return fields

@@ -4,13 +4,16 @@ Created on Aug 8, 2015
 @author: eduze_000
 '''
 from easydict import EasyDict as edict
-from datastorelogic import buildQuery
+from datastorelogic import DataStoreInterface
 
+############# Init the instance! ################# There's probably a better way!
+if 'dataStoreInterface' not in globals():
+    dataStoreInterface = DataStoreInterface()
 ##################### FORMULAS P&G ##################################
 # This function assumes the queried entities have a 'total' field
 def getTotalFromModel(model, qryParams):
 #     qryParams.pop("resumen", None)
-    query = buildQuery(model, qryParams)
+    query = dataStoreInterface.buildQuery(model, qryParams)
     entities = query.fetch()
     if entities:
         return sum([entity.total for entity in entities])

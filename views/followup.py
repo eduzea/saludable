@@ -5,12 +5,12 @@ Created on Jul 25, 2015
 '''
 from models.models import *
 from datetime import datetime, date, time
-from datastorelogic import create_entity
+from datastorelogic import DataStoreInterface
 
-preSaveAction = {}
-postSaveAction ={}
-postDeleteAction={}
+# Create the Instance - this approach is suspect...
 
+if 'dataStoreInterface' not in globals():
+    dataStoreInterface = DataStoreInterface()
 ####################### PAGO RECIBIDO Y CUENTAS POR COBRAR ###################################
 def removePayment(pago):
     facturasAjustadas = Factura.query(Factura.pagoRef == pago.numero).fetch()
@@ -46,9 +46,10 @@ def updateCuentasPorCobrar(pago):
             factura.put()
             break
 
-preSaveAction['PagoRecibido'] = removePayment
-postSaveAction['PagoRecibido'] = updateCuentasPorCobrar
-postDeleteAction['PagoRecibido'] = removePayment
+dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateCuentasPorCobrar)
+dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
+
 
 ######################### FACTURA Y EXISTENCIAS ##############################
 def removeFactura(factura):
@@ -92,9 +93,9 @@ def restarExistencias(factura):
                 print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
         existencias.put()
 
-preSaveAction['Factura'] = removeFactura
-postSaveAction['Factura'] = restarExistencias
-postDeleteAction['Factura'] = removeFactura
+dataStoreInterface.registerFollowUpLogic('pre','update','Factura',removeFactura)
+dataStoreInterface.registerFollowUpLogic('post', 'create','Factura', restarExistencias)
+dataStoreInterface.registerFollowUpLogic('post','delete','Factura', removeFactura)
 
 ######################### INVENTARIO Y EXISTENCIAS ################################
 
@@ -103,10 +104,10 @@ def actualizarExistencias(inventario):
     if not existencias:
         registros = []
         for registro in inventario.registros:
-            existenciaRegistro = create_entity('ExistenciasRegistro',registro.get().to_dict())['entity']#cloning record
+            existenciaRegistro = dataStoreInterface.create_entity('ExistenciasRegistro',registro.get().to_dict())['entity']#cloning record
             existenciaRegistro.put()
             registros.append(existenciaRegistro.key)
-        existencias = create_entity('Existencias', { 
+        existencias = dataStoreInterface.create_entity('Existencias', { 
                                   'sucursal': inventario.sucursal,
                                   'fecha' : datetime.today(),
                                   'registros' : registros,
@@ -127,7 +128,7 @@ def actualizarExistencias(inventario):
                 productoPorcion.put()
             else:
                 registro = registro.get()
-                nuevoRegistro  = create_entity('ExistenciasRegistro',
+                nuevoRegistro  = dataStoreInterface.create_entity('ExistenciasRegistro',
                                                {'fecha':registro.fecha,                                                                        
                                                 'sucursal': registro.sucursal,
                                                 'producto': registro.producto,
@@ -140,8 +141,8 @@ def actualizarInventarioRegistros(inventario):
     for registro in inventario.registros:
         registro.delete()
         
-postSaveAction['Inventario'] = actualizarExistencias
-postDeleteAction['Inventario'] = actualizarInventarioRegistros
+dataStoreInterface.registerFollowUpLogic('post', 'create','Inventario', actualizarExistencias)
+dataStoreInterface.registerFollowUpLogic('post','delete','Inventario', actualizarInventarioRegistros)
 
 ######################### PRODUCCION Y EXISTENCIAS ##########################
 
@@ -160,7 +161,7 @@ def sumarExistencias(produccion):
                 existenciasProductoPorcion.existencias += productoPorcion.cantidad
                 existenciasProductoPorcion.put()
             else:
-                nuevoRegistro  = create_entity('ExistenciasRegistro',
+                nuevoRegistro  = dataStoreInterface.create_entity('ExistenciasRegistro',
                                                {'fecha':produccion.fecha,                                                                        
                                                 'sucursal': sucursal,
                                                 'producto': producto,
@@ -185,8 +186,7 @@ def removeProduccion(produccion):
                 existenciasProductoPorcion.put()
         existencias.put()
 
-preSaveAction['Produccion'] = removeProduccion
-postSaveAction['Produccion'] = sumarExistencias
-postDeleteAction['Produccion']=removeProduccion
-
+dataStoreInterface.registerFollowUpLogic('pre','update','Produccion', removeProduccion)
+dataStoreInterface.registerFollowUpLogic('post','create','Produccion', sumarExistencias)
+dataStoreInterface.registerFollowUpLogic('post','delete','Produccion', removeProduccion)
 

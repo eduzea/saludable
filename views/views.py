@@ -14,6 +14,9 @@ from PyG import *
 from presentation import *
 
 
+if 'dataStoreInterface' not in globals():
+    dataStoreInterface = DataStoreInterface()
+
 class Home(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -94,7 +97,7 @@ class GetRemisionesByName(webapp2.RequestHandler):
         razonSocial = self.request.get('razonSocial')
         clientes = Cliente.query(Cliente.nombre == razonSocial).fetch()
         clientes = [cliente.key for cliente in clientes]
-        remisiones = buildQuery('Remision', {'cliente':clientes, 'sortBy':'-numero'}).fetch()
+        remisiones = dataStoreInterface.buildQuery('Remision', {'cliente':clientes, 'sortBy':'-numero'}).fetch()
         records = prepareRecords('Remision', remisiones)
         self.response.write(json.dumps(records))    
 
@@ -102,13 +105,13 @@ class EntityData(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass');
         simpleDict = {key: value for key,value in self.request.params.iteritems()}
-        entity_query = buildQuery(entity_class, simpleDict)
+        entity_query = dataStoreInterface.buildQuery(entity_class, simpleDict)
         count = self.request.get('count');
         if count:
-            response = getEntitiesByPage(entity_class, entity_query, int(count), self)
+            response = dataStoreInterface.getEntitiesByPage(self.request.get('cursor'),entity_class, entity_query, int(count))
             response['records']=prepareRecords(entity_class, response['records'])
         else:
-            response = getEntities(entity_class, self, entity_query)
+            response = dataStoreInterface.getEntities(entity_class, entity_query)
             response['records']=prepareRecords(entity_class, response['records'])    
         self.response.write(json.dumps(response))        
 
@@ -119,34 +122,33 @@ class SaveEntity(webapp2.RequestHandler):
         entityClass = values.pop("entityClass")     
         for key,value in values.iteritems():
             values[rreplace(key, '_' + entityClass,'',1)] = values.pop(key)
-        response = create_entity(entityClass,values)
-        if response['message'] == 'Updated':
-            if entityClass in preSaveAction: 
-                preSaveAction[entityClass](response['old'])
-        if entityClass in postSaveAction:
-            postSaveAction[entityClass](response['entity'])
+        response = dataStoreInterface.create_entity(entityClass,values)
         self.response.out.write(JSONEncoder().encode(response))
 
 class AddEntity(webapp2.RequestHandler):
     def get(self):
         entity_class = self.request.get('entityClass')
-        template_values = {'entityClass': entity_class, 'fields': fieldsInfo(entity_class), 'auto':autoNum(entity_class)}
+        template_values = {'entityClass': entity_class, 'fields': fieldsInfo(entity_class), 'auto':dataStoreInterface.autoNum(entity_class)}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
 
 class DeleteEntity(webapp2.RequestHandler):        
     def post(self):
         key = self.request.POST.get('key')
-        entity_class = self.request.POST.get('entity_class')
-        try:
-            entity = classModels[entity_class].get_by_id(key)
-            entity.key.delete()
-        except Exception as ex:
-            self.response.out.write(ex.message)
-            return
-        if entity_class in postDeleteAction:
-            postDeleteAction[entity_class](entity)
-        self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
+        entityClass = self.request.POST.get('entity_class')
+        dataStoreInterface.deleteEntity(entityClass, key)
+        self.response.out.write("Se elimino exitosamente: " + entityClass + " " + key)        
+# class DeleteEntity(webapp2.RequestHandler):        
+#     def post(self):
+#         key = self.request.POST.get('key')
+#         entity_class = self.request.POST.get('entity_class')
+#         try:
+#             entity = classModels[entity_class].get_by_id(key)
+#             entity.key.delete()
+#         except Exception as ex:
+#             self.response.out.write(ex.message)
+#             return
+#         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
 
 class GetClientes(webapp2.RequestHandler):
     def post(self):
@@ -232,7 +234,7 @@ class GetDetails(webapp2.RequestHandler):
         filters = {}
         for keyPart,keyVal in zip(keyParts,keyVals):
             filters[keyPart]=keyVal
-        qry = buildQuery(entityClass,filters)
+        qry = dataStoreInterface.buildQuery(entityClass,filters)
         parentRecord = qry.fetch()[0]
         details = parentRecord.to_dict()[detailField]
         records=[]
@@ -255,7 +257,7 @@ class GetDetails(webapp2.RequestHandler):
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
         records = []
-        entity_query = buildQuery('Factura', self.request.params)
+        entity_query = dataStoreInterface.buildQuery('Factura', self.request.params)
         facturas = entity_query.fetch()
         for factura in facturas:
             if factura.anulada: continue
@@ -276,7 +278,7 @@ class GetProductSales(webapp2.RequestHandler):
 class GetAllCompras(webapp2.RequestHandler):
     def get(self):
         records = []
-        entity_query = buildQuery('Egreso', self.request.params)
+        entity_query = dataStoreInterface.buildQuery('Egreso', self.request.params)
         egresos = entity_query.fetch()
         for egreso in egresos:
             for compra in egreso.compras:
@@ -374,30 +376,52 @@ class GuardarFactura(webapp2.RequestHandler):
                            cantidad = venta['cantidad'],
                            precio = venta['precio'],
                            venta = venta['venta']))
-        cliente = Cliente.get_by_id(values['cliente'])
-        empleado = Empleado.get_by_id(values['empleado'])
-        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        numero = ''
-        if values['numero']:
-            numero = values['numero']
-        else:
-            numero = getConsecutivo(values['entity_class'])
-        entity = classModels[entityClass].query(classModels[entityClass].numero == int(numero)).fetch()
-        if entity:
-            entity = entity[0]    
-            if entityClass in preSaveAction:
-                preSaveAction[entityClass](entity)
-            entity.populate(numero=int(numero), cliente = cliente.key, empleado = empleado.key,
-                                          fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
-                                          montoIva=values['iva'])
-        else:
-            entity = classModels[entityClass](id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
-                                 fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
-                                 montoIva=values['iva'])
-        entity.put()
-        if entityClass in postSaveAction:
-                postSaveAction[entityClass](entity)
+        values['ventas'] = ventas
+        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+        values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
+        values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(values['entity_class'])
+        entity = dataStoreInterface.create_entity(entityClass, values)['entity']
         self.response.out.write(json.dumps({'result':'Success','id': entity.key.id()}))     
+
+
+
+# class GuardarFactura(webapp2.RequestHandler):        
+#     def post(self):
+#         post_data = self.request.body
+#         values = json.loads(post_data)
+#         entityClass = values['entity_class']
+#         ventas =[]
+#         for venta in values['ventas']:
+#             producto = venta['producto'].replace(' ','.')
+#             ventas.append(Venta(producto=Producto.get_by_id(producto).key,
+#                            porcion=Porcion.get_by_id(venta['porcion']).key,
+#                            cantidad = venta['cantidad'],
+#                            precio = venta['precio'],
+#                            venta = venta['venta']))
+#         cliente = Cliente.get_by_id(values['cliente'])
+#         empleado = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+#         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
+#         numero = ''
+#         if values['numero']:
+#             numero = values['numero']
+#         else:
+#             numero = getConsecutivo(values['entity_class'])
+#         entity = classModels[entityClass].query(classModels[entityClass].numero == int(numero)).fetch()
+#         if entity:
+#             entity = entity[0]    
+#             if entityClass in preSaveAction:
+#                 preSaveAction[entityClass](entity)
+#             entity.populate(numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+#                                           fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
+#                                           montoIva=values['iva'])
+#         else:
+#             entity = classModels[entityClass](id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
+#                                  fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
+#                                  montoIva=values['iva'])
+#         entity.put()
+#         if entityClass in postSaveAction:
+#                 postSaveAction[entityClass](entity)
+#         self.response.out.write(json.dumps({'result':'Success','id': entity.key.id()}))     
                 
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
@@ -451,9 +475,9 @@ class ConsolidarFactura(webapp2.RequestHandler):
         post_data = self.request.body
         values = json.loads(post_data)
         values = [int(value) for value in values]
-        remisiones = buildQuery('Remision',{'numero':values}).fetch()
+        remisiones = dataStoreInterface.buildQuery('Remision',{'numero':values}).fetch()
         ventas = {}
-        nextFactura = autoNum('Factura')
+        nextFactura = dataStoreInterface.autoNum('Factura')
         for remision in remisiones:
             for venta in remision.ventas:
                 key = venta.producto.id() + '.' + venta.porcion.id()
@@ -479,7 +503,7 @@ class ConsolidarFactura(webapp2.RequestHandler):
                   'pagada':False,
                   'remisiones':[remision.numero for remision in remisiones]
                   }
-        response = create_entity('Factura', values)['entity']
+        response = dataStoreInterface.create_entity('Factura', values)['entity']
         self.response.out.write(JSONEncoder().encode(response))                
         
 class GuardarInventario(webapp2.RequestHandler):        
@@ -492,7 +516,7 @@ class GuardarInventario(webapp2.RequestHandler):
         for registro in values['registros']:
             producto = Producto.get_by_id(registro['producto']).key
             porcion = Porcion.get_by_id(registro['porcion']).key
-            registroObj = create_entity('InventarioRegistro',{'fecha' : fecha,
+            registroObj = dataStoreInterface.create_entity('InventarioRegistro',{'fecha' : fecha,
                                                               'sucursal' : sucursal,
                                                               'producto' : producto,
                                                               'porcion' : porcion,
@@ -500,12 +524,10 @@ class GuardarInventario(webapp2.RequestHandler):
                                              
             registroObj.put()
             registros.append(registroObj.key)
-        inventario = create_entity('Inventario', {'fecha' : fecha,
+        inventario = dataStoreInterface.create_entity('Inventario', {'fecha' : fecha,
                                                   'sucursal' : sucursal,
                                                   'registros': registros})['entity']
         inventario.put()
-        if 'Inventario' in postSaveAction:
-                postSaveAction['Inventario'](inventario)
         self.response.out.write(json.dumps({'result':'Success','inventarioId': inventario.key.id()})) 
 
 class PyG(webapp2.RequestHandler):
@@ -519,7 +541,7 @@ class PyG(webapp2.RequestHandler):
 class GetIVAPagado(webapp2.RequestHandler):
     def get(self):
         simpleDict = {key: value for key,value in self.request.params.iteritems()}
-        entity_query = buildQuery('Egreso', simpleDict)
+        entity_query = dataStoreInterface.buildQuery('Egreso', simpleDict)
         egresos = entity_query.fetch()
         records = []
         for egreso in egresos:
@@ -540,7 +562,7 @@ class ImportScript(webapp2.RequestHandler):
         json_data.close()
         for record in data:
             print record
-            create_entity(entity_class, record)
+            dataStoreInterface.create_entity(entity_class, record)
         self.response.write('Registros Importados!')
 
 
@@ -584,23 +606,12 @@ class GuardarEgreso(webapp2.RequestHandler):
                            cantidad = compra['cantidad'],
                            precio = compra['precio'],
                            compra = compra['compra']))
-        proveedor = Proveedor.get_by_id(values['proveedor'])
-        empleado = Empleado.get_by_id(values['empleado'])
-        fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        tipo = TipoEgreso.get_by_id(values['tipo'])
-        sucursal = Sucursal.get_by_id(values['sucursal'])
-        numero = ''
-        if values['numero']:
-            numero = values['numero']
-        else:
-            numero = getConsecutivoEgreso()
-
-        resumen = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
-        egreso = Egreso(id=str(numero), numero=int(numero), resumen = resumen, tipo = tipo.key, proveedor = proveedor.key, 
-                        empleado = empleado.key, fecha = fecha, compras=compras, total=values['total'], sucursal = sucursal.key,
-                        comentario = values['comentario'])
-        egreso.put()
-        entity = egreso
+        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+        values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
+        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivoEgreso()  
+        values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
+        
+        entity = dataStoreInterface.create_entity('Egreso', values)['entity']
         self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
 
 class GetCuentasPorCobrar(webapp2.RequestHandler):
@@ -621,7 +632,7 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
         cliente = self.request.get('cliente')
         clienteNegocios = Cliente.query(Cliente.nombre == cliente).fetch()
-        qry = buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
+        qry = dataStoreInterface.buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
         facturas = qry.fetch()
         response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,
                      'total':factura.total, 'abono':sum(factura.abono), 'vencida':estaVencida(factura)} for factura in facturas if not factura.pagada]
@@ -644,7 +655,7 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        facturas = buildQuery('Factura', {'fechaDesde': '2015-7-31',
+        facturas = dataStoreInterface.buildQuery('Factura', {'fechaDesde': '2015-7-31',
                                           'cliente' : ['PAESA.SA.SALTO.DEL.ANGEL']}
                               ).fetch()
         for factura in facturas:

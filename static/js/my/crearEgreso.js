@@ -1,11 +1,30 @@
 //# sourceURL=../static/js/my/crearEgreso.js
 
-require(['dojo/dom','dojo/dom-attr','dijit/registry','dojo/parser','dojo/store/Memory', 'gridx/Grid', 'gridx/core/model/cache/Sync', 'dojo/request', 
-		'dijit/form/Button', "gridx/modules/CellWidget", 'dojo/query',"dojo/on","dojo/json","dojo/number",'dijit/form/Select',
-		'dojo/dom-class', 'dojo/ready', 'dojo/topic','dojo/store/Memory','gridx/modules/SingleSort','dojo/domReady!'], 
-function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, 
-	query, on,json,number,Select,domClass, ready,topic, Memory) {
-	var entity_class = saludable.entity_class;
+require(['dojo/dom',
+		'dojo/dom-attr',
+		'dijit/registry',
+		'dojo/parser',
+		'dojo/store/Memory',
+		'dojo/request',
+		'dijit/form/Select',
+		'dijit/form/Button',
+		'dijit/form/CheckBox',
+		'dojo/query',
+		"dojo/on",
+		"dojo/json",
+		"dojo/number",
+		'dojo/dom-class',
+		'dojox/html/entities',
+		'dojo/ready',
+		'dojo/topic',
+		'gridx/Grid',
+		'gridx/core/model/cache/Sync',
+		"gridx/modules/CellWidget",		
+		'gridx/modules/SingleSort',
+		'dojo/domReady!'], 
+function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbox,  
+	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
+	var entityClass = saludable.entity_class;
 	
 
 	var resetBienoservicio = function(tipo){	
@@ -82,7 +101,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
     		select.options = sorted;
     		select.set("value",sorted[0].value);
    		};
-   		topic.subscribe(select.id.replace('_' + entity_class,'').toUpperCase(), select.listenerfunc);
+   		topic.subscribe(select.id.replace('_' + entityClass,'').toUpperCase(), select.listenerfunc);
 	});
   	
 	var updateTotal = function(){
@@ -95,8 +114,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		return sumTotal;
 	};
 	
-	var getEgresoFormData = function(entity_class){
-		var formdata = registry.byId('addEntityForm' +  '_' + entity_class).get('value');
+	var getEgresoFormData = function(entityClass){
+		var formdata = registry.byId('addEntityForm' +  '_' + entityClass).get('value');
 		for (prop in formdata) {
 			formdata[prop.replace('_Egreso', '')] = formdata[prop];
 			delete formdata[prop];
@@ -131,14 +150,13 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	on(registry.byId('guardar_EgresoBtn'),'click',
 		function(e){
 			var tipo = registry.byId('tipo_Egreso').value;
-			var proveedor = registry.byId('proveedor_Egreso').value;
-			var empleado = registry.byId('empleado_Egreso').value;		
+			var proveedor = registry.byId('proveedor_Egreso').value;		
 			var fecha = registry.byId('fecha_Egreso').toString();
 			var numero = dom.byId('numero_Egreso').innerHTML.replace('No.','');
 			var gridData = getGridData();
 			var comentario = registry.byId('comentario_Egreso').value;
 			var sucursal = registry.byId('sucursal_Egreso').value;
-			var egreso_data = {'proveedor':proveedor,'empleado':empleado,'fecha':fecha,'sucursal':sucursal,'compras':gridData, 'total':updateTotal(), 
+			var egreso_data = {'proveedor':proveedor,'fecha':fecha,'sucursal':sucursal,'compras':gridData, 'total':updateTotal(), 
 			'numero':numero, 'tipo':tipo, 'comentario': comentario};
 			request.post('/guardarEgreso', {
 					data : json.stringify(egreso_data),
@@ -162,12 +180,12 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	parser.instantiate([dom.byId('agregarCompraBtn')]);
 	on(registry.byId('agregarCompraBtn'),'click',function(e){
-		var form = registry.byId('addEntityForm' +  '_' + entity_class);
+		var form = registry.byId('addEntityForm' +  '_' + entityClass);
 		if (!form.validate()){
 			alert("'Cantidad' no puede estar vacio!");
 			return;
 		}
-		var formdata = getEgresoFormData(entity_class);
+		var formdata = getEgresoFormData(entityClass);
 		var grid = registry.byId('grid_Egreso');
 		var id = formdata['bienoservicio'] + formdata['detalle'].replace(/ /g,'');
 		var row = grid.store.get(id);
@@ -185,7 +203,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	
 	parser.instantiate([dom.byId('nuevo_EgresoBtn')]);
 	on(registry.byId('nuevo_EgresoBtn'),'click',function(e){
-		registry.byId('addEntityForm' +  '_' + entity_class).reset();
+		registry.byId('addEntityForm' +  '_' + entityClass).reset();
 		resetGrid();
 		dom.byId('numero_Egreso').innerHTML='';
 	});
@@ -238,5 +256,101 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	grid.startup();
 	grid.updateTotal = updateTotal;
 	domClass.add(dom.byId('grid_Egreso'),'egreso-grid');
+	
+	//This is a temporary solution. This code is repeated in addEntity.js and should be made reusable.
+	// One approach is to create thsi view through addEntity.js and no as a custom view.
+	// The other is to compenentize the logic of fillForm and include it in the custom crearFactura.js
+	
+	parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);
+	var form = registry.byId('addEntityForm'+ '_' + entityClass);
+	form.listenerfunc = function(data){
+        var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
+        if (nodelist.length == 0){
+        	var contentPane= registry.byId(grid.gridName + '_add');
+			contentPane.set("onDownloadEnd", function(){
+				nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass );
+				parser.instantiate(nodelist);
+				fillForm(nodelist, data, entityClass);	
+			});
+        }else{
+    		fillForm(nodelist, data, entityClass);
+        }
+	};
+	topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
+	
+	var fillForm = function(nodelist, rowData, entityClass){
+		nodelist.forEach(function(node, index, array){
+			var dijit = registry.byId(node.id);
+			if (dijit){
+				if (dijit.id.indexOf("grid") > -1 ){
+					request('/getDetails?key=' + rowData['id'] + '&entityClass=' + entityClass, {handleAs:'json'}).then(function(response)
+					 {
+						dijit.model.clearCache();
+						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
+						response.forEach(function(item){
+							dijit.store.add(item);								
+						});
+						dijit.body.refresh();
+						if (dijit.updateTotal){
+							dijit.total = dijit.updateTotal();	
+						}
+						if (dom.byId('numero_' + entityClass)){
+							dom.byId('numero_' + entityClass).innerHTML = rowData.numero;							
+						}
+						if (entityClass in saludable.gridChangeFuncs)
+							saludable.gridChangeFuncs[entityClass](dijit);
+					});
+				}else{
+					var id = dijit.id;
+		        	if (id.indexOf(entityClass + "_Btn_list") > -1){//For key fields that are lists
+		        		var field = id.replace('_' + entityClass + '_Btn_list','');
+		        		//Find the button, fill the items list
+		        		var button = registry.byId(field + '_' + entityClass + '_Btn_list');
+		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
+		        		//Find the list, populate it
+		        		var listName = field + '_' + entityClass + '_list';
+		        		$('#'+listName).empty();
+		        		button.items.forEach(function(item){
+		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+		        		});
+	
+		        	}
+		        	id= dijit.id.replace('_' + entityClass,''); 
+		        	if(id in rowData){
+		        		if (rowData[id] instanceof Array){//If a list, take first only...
+		        			rowData[id]=rowData[id][0];
+		        		}
+		        		if (dijit instanceof Checkbox){
+		        			dijit.set('checked', rowData[id]);
+		        		}else{
+			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
+			        		dijit.set("displayedValue", rowData[id],false);		        			
+		        		}
+		        	}
+		        		   				
+				}			
+			}
+    	});
+    };
+  
+	var getValueFromLabel = function(dijit, label){
+		if (!dijit.options){
+			return label;
+		} 
+		var options = dijit.getOptions();
+		var lookup = {};
+		for (var i = 0, len = options.length; i < len; i++) {
+			lookup[html.decode(options[i].label)] = options[i].value;
+		}
+		if (label in lookup){
+			return lookup[label];	
+		}else{
+			dijit.addOption({label:label.replace('.',' '),selected:true, value:label.replace(' ','.')});
+		}
+	return label;
+	};
+	
+	
+	
 	registry.byId('standby_centerPane').hide();
 }); 

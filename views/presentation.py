@@ -7,6 +7,9 @@ from jinja2._markupsafe import Markup
 from config import *
 from datastorelogic import *
 
+############### Init the instance ##############
+dataStoreInterface = DataStoreInterface()
+
 ################## FUNCTIONS TO BE EXPOSED TO JINJA VIA pythonFunction() #####################
 def tagForField(entity_class, prop, auto=None, customId=None):
     if isinstance(prop,basestring):
@@ -62,7 +65,7 @@ JINJA_ENVIRONMENT.globals['pythonFunction']=pythonFunction #generic function dis
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
-JINJA_ENVIRONMENT.globals['autoNum']=autoNum        
+JINJA_ENVIRONMENT.globals['autoNum']= dataStoreInterface.autoNum        
 
 basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/ValidationTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'IntegerProperty': '<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
@@ -70,7 +73,7 @@ basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/Validation
                   'KeyProperty' : '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select> POST_REPLACE',
                   'DateProperty':'<input value = now data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:\'yyyy-MM-dd\', strict:true}" ATTR_REPLACE ></input>',
                   'TextProperty':'<textarea data-dojo-type="dijit/form/SimpleTextarea" ATTR_REPLACE > INNER_REPLACE </textarea>',
-                  'BooleanProperty':'<input type="text" data-dojo-type="dijit/form/CheckBox" ATTR_REPLACE > INNER_REPLACE </input>',
+                  'BooleanProperty':'<input type="text" data-dojo-type="dijit/form/CheckBox" onchange="this.value = this.checked;" ATTR_REPLACE > INNER_REPLACE </input>',
                   'ComputedProperty':'<input readonly ATTR_REPLACE>INNER_REPLACE</input>',
                   'StructuredProperty':'<div class = "addEntityForm" data-dojo-type="dijit/form/Form" style="border:1px solid #b5bcc7;" ATTR_REPLACE><table><tr>INNER_REPLACE</tr></table></div></br>POST_REPLACE'
                   }
@@ -90,6 +93,7 @@ def getOptions(prop):
     options = classModels[prop._kind].query().fetch()
     html = ''
     for option in options:
+        if not option.activo: continue
         dicc = option.to_dict()
         option_value = getKey(prop._kind, dicc)
         html += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
@@ -116,7 +120,7 @@ def getTagHTML(prop,entity_class, customId=None):
     if 'default' in prop:
         prop['value'] = str(prop.pop('default'))
     if 'auto' in prop:
-        prop['value'] = str(autoNum(entity_class))
+        prop['value'] = str(dataStoreInterface.autoNum(entity_class))
         propType = ndb.IntegerProperty() 
     html = basisTagString[str(propType).partition('(')[0]]
     attrReplace = ''
