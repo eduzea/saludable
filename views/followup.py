@@ -141,6 +141,7 @@ def actualizarInventarioRegistros(inventario):
     for registro in inventario.registros:
         registro.delete()
         
+dataStoreInterface.registerFollowUpLogic('post', 'update','Inventario', actualizarExistencias)
 dataStoreInterface.registerFollowUpLogic('post', 'create','Inventario', actualizarExistencias)
 dataStoreInterface.registerFollowUpLogic('post','delete','Inventario', actualizarInventarioRegistros)
 

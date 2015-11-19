@@ -34,12 +34,12 @@ def getColumns(entityClass):
     return {'columns':columns,'key':keyDefs[entityClass]}
 
 def getKey(entityClass,dicc):
-    key = u''
+    key = ''
     for keypart in keyDefs[entityClass]:
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get()
             if entity:
-                key += ' ' + entity.key.id()
+                key += ' ' + entity.key.id().decode('utf-8')
             else:
                 print "Entity not found by key:" + keypart 
         else:
