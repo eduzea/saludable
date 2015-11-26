@@ -36,7 +36,7 @@ def checkIntegerProperty(key, value):
         try:
             return int(value)
         except Exception:
-            raise Exception("Attempted to assign non-int value to IntegerProperty " + key + ": " + value)
+            raise Exception("Attempted to assign non-int value to IntegerProperty " + key + ": " + str(value))
 
 def checkFloatProperty(key, value):
     if isinstance(value, float): 
@@ -45,7 +45,7 @@ def checkFloatProperty(key, value):
         try:
             return float(value)
         except Exception:
-            raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + value)
+            raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + str(value))
 
 
 def checkBooleanProperty(key, value):
