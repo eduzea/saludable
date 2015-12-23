@@ -1,67 +1,10 @@
 [
 	{
+		"fechaCreacion": "2015-11-02",
+		"fecha": "2015-10-30",
+		"sucursal": "Cali",
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
-		"registros": [
-			{
-				"porcion": "100.g",
-				"producto": "ARAZA",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 34,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "1000.g",
-				"producto": "ARAZA",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 1,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "1000.g",
-				"producto": "CURUBA",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 1,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "120.g",
-				"producto": "CURUBA",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 3,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "1000.g",
-				"producto": "DURAZNO",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 4,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "125.g",
-				"producto": "DURAZNO",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 4,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "170.g",
-				"producto": "DURAZNO",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 4,
-				"sucursal": "Cali"
-			}, {
-				"porcion": "120.g",
-				"producto": "FEIJOA",
-				"fecha": "2015-08-04",
-				"rotulo": "",
-				"existencias": 10,
-				"sucursal": "Cali"
-			}
-		],
-		"fechaCreacion": "2015-08-20",
-		"fecha": "2015-08-04",
-		"sucursal": "Cali"
+		"registros": ["2015-10-30.Cali.FRESA.190.g", "2015-10-30.Cali.GUANABANA.180.g", "2015-10-30.Cali.FRESA.200.g", "2015-10-30.Cali.FRESA.150.g", "2015-10-30.Cali.GUAYABA.750.g", "2015-10-30.Cali.GUAYABA.100.g", "2015-10-30.Cali.GUAYABA.1000.g", "2015-10-30.Cali.LULO.120.g", "2015-10-30.Cali.LULO.100.g", "2015-10-30.Cali.LULO.750.g", "2015-10-30.Cali.LULO.150.g", "2015-10-30.Cali.LULO.1000.g", "2015-10-30.Cali.MANGO.750.g", "2015-10-30.Cali.MANGO.100.g", "2015-10-30.Cali.MANGO.170.g", "2015-10-30.Cali.MANGO.150.g", "2015-10-30.Cali.MANGO.1000.g", "2015-10-30.Cali.MANGO.5000.g", "2015-10-30.Cali.MANGO.BICHE.50.g", "2015-10-30.Cali.MANGO.BICHE.5000.g", "2015-10-30.Cali.MARACUYA.100.g", "2015-10-30.Cali.MARACUYA.150.g", "2015-10-30.Cali.MARACUYA.1000.g", "2015-10-30.Cali.MARACUYA.750.g", "2015-10-30.Cali.MORA.750.g", "2015-10-30.Cali.MORA.125.g", "2015-10-30.Cali.MORA.110.g", "2015-10-30.Cali.MORA.100.g", "2015-10-30.Cali.MORA.1000.g", "2015-10-30.Cali.MORA.5000.g", "2015-10-30.Cali.MORA.50.g", "2015-10-30.Cali.MORA.150.g", "2015-10-30.Cali.PI\u00d1A.100.g", "2015-10-30.Cali.PI\u00d1A.1000.g", "2015-10-30.Cali.FRUTOS.ROJOS.150.g", "2015-10-30.Cali.TOMATE.DE.ARBOL.100.g", "2015-10-30.Cali.TOMATE.DE.ARBOL.1000.g", "2015-10-30.Cali.UVA.100.g", "2015-10-30.Cali.UVA.200.g", "2015-10-30.Cali.UVA.180.g", "2015-10-30.Cali.UVA.1000.g", "2015-10-30.Cali.UVA.5000.g", "2015-10-30.Cali.UVA.750.g", "2015-10-30.Cali.DURAZNO.125.g", "2015-10-30.Cali.DURAZNO.150.g", "2015-10-30.Cali.DURAZNO.1000.g", "2015-10-30.Cali.PATILLA.200.g", "2015-10-30.Cali.PATILLA.150.g", "2015-10-30.Cali.PATILLA.70.g", "2015-10-30.Cali.FRUTOS.ROJOS.5000.g", "2015-10-30.Cali.GRANIZADO.FRUTOS.AMARILLOS.4500.ML", "2015-10-30.Cali.GRANIZADO.MARACUYA.4500.ML", "2015-10-30.Cali.CURUBA.100.g", "2015-10-30.Cali.TAMARINDO.100.g", "2015-10-30.Cali.FEIJOA.120.g", "2015-10-30.Cali.SMOTHIE.LMF.170.g", "2015-10-30.Cali.FRUTOS.AMARILLOS.150.g"]
 	}
 ]

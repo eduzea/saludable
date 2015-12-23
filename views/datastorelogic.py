@@ -27,7 +27,7 @@ def checkStringProperty(key, value):
     if isinstance(value,basestring):
         return value.strip()
     else:
-        raise Exception("Attempted to assign non-string value to StringProperty" + key + ": " + value)    
+        raise Exception("Attempted to assign non-string value to StringProperty: " + key + ": " + str(value))    
 
 def checkIntegerProperty(key, value):
     if isinstance(value, int): 
@@ -36,7 +36,7 @@ def checkIntegerProperty(key, value):
         try:
             return int(value)
         except Exception:
-            raise Exception("Attempted to assign non-int value to IntegerProperty " + key + ": " + value)
+            raise Exception("Attempted to assign non-int value to IntegerProperty " + key + ": " + str(value))
 
 def checkFloatProperty(key, value):
     if isinstance(value, float): 
@@ -45,7 +45,7 @@ def checkFloatProperty(key, value):
         try:
             return float(value)
         except Exception:
-            raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + value)
+            raise Exception("Attempted to assign non-float value to FloatProperty " + key + ": " + str(value))
 
 
 def checkBooleanProperty(key, value):
@@ -111,13 +111,14 @@ class DataStoreInterface():
             key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
             return key_obj
         else:
-            raise Exception("Attempted to assign non-key value to KeyProperty " + key + ": " + value)
+            raise Exception( "Attempted to assign non-key value to KeyProperty " + key + ": " + str(value) )
         
     #=====================================
     # Type checking for entity creation and queries
     #=====================================
     
     def _checkFieldType(self,key, propertyType, value):
+        if value == None: return value # let datastore handle this case...
         if type(propertyType) is BooleanProperty:
             value = checkBooleanProperty(key,value)
         if type(propertyType) is IntegerProperty:

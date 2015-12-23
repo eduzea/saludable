@@ -34,7 +34,7 @@ def getColumns(entityClass):
     return {'columns':columns,'key':keyDefs[entityClass]}
 
 def getKey(entityClass,dicc):
-    key = u''
+    key = ''
     for keypart in keyDefs[entityClass]:
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get()

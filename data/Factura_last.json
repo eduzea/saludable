@@ -1,0 +1,1629 @@
+[
+	{
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-09",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3589,
+		"cliente": "C&P.CORREA.ZOE",
+		"abono": [],
+		"total": 416600,
+		"subtotal": 416600,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 40,
+				"producto": "GUANABANA",
+				"venta": 31600,
+				"precio": 790,
+				"rotulo": "GUANABANA 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FRESA",
+				"venta": 116000,
+				"precio": 5800,
+				"rotulo": "FRESA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 60,
+				"producto": "LULO",
+				"venta": 42000,
+				"precio": 700,
+				"rotulo": "LULO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MARACUYA",
+				"venta": 75000,
+				"precio": 7500,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 70,
+				"producto": "MARACUYA",
+				"venta": 56000,
+				"precio": 800,
+				"rotulo": "MARACUYA 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 60,
+				"producto": "MANGO",
+				"venta": 43200,
+				"precio": 720,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 8,
+				"producto": "MANGO",
+				"venta": 52800,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-09",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3590,
+		"cliente": "JARDIN.HANS.ANDERSEN",
+		"abono": [],
+		"total": 379088,
+		"subtotal": 326800,
+		"montoIva": 52288,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 2,
+				"producto": "CURUBA",
+				"venta": 11000,
+				"precio": 5500,
+				"rotulo": "CURUBA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 2,
+				"producto": "GUANABANA",
+				"venta": 15000,
+				"precio": 7500,
+				"rotulo": "GUANABANA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "GUAYABA",
+				"venta": 40000,
+				"precio": 5000,
+				"rotulo": "GUAYABA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "FRESA",
+				"venta": 44000,
+				"precio": 5500,
+				"rotulo": "FRESA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "MORA",
+				"venta": 49600,
+				"precio": 6200,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "MANGO",
+				"venta": 60000,
+				"precio": 7500,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "GULUPA",
+				"venta": 57600,
+				"precio": 7200,
+				"rotulo": "GULUPA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "PI\u00d1A",
+				"venta": 49600,
+				"precio": 6200,
+				"rotulo": "PI\u00d1A 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-09",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3591,
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"abono": [],
+		"total": 961060,
+		"subtotal": 828500,
+		"montoIva": 132560,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 170,
+				"producto": "LULO",
+				"venta": 144500,
+				"precio": 850,
+				"rotulo": "LULO 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 120,
+				"producto": "FRESA",
+				"venta": 138000,
+				"precio": 1150,
+				"rotulo": "FRESA 190.g",
+				"porcion": "190.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 55000,
+				"precio": 5500,
+				"rotulo": "MANGO 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MARACUYA",
+				"venta": 60000,
+				"precio": 6000,
+				"rotulo": "MARACUYA 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FEIJOA",
+				"venta": 17000,
+				"precio": 850,
+				"rotulo": "FEIJOA 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 200,
+				"producto": "MANGO",
+				"venta": 170000,
+				"precio": 850,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MORA",
+				"venta": 52000,
+				"precio": 5200,
+				"rotulo": "MORA 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 20,
+				"producto": "PI\u00d1A",
+				"venta": 132000,
+				"precio": 6600,
+				"rotulo": "PI\u00d1A 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 50,
+				"producto": "DURAZNO",
+				"venta": 60000,
+				"precio": 1200,
+				"rotulo": "DURAZNO 125.g",
+				"porcion": "125.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-09",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3592,
+		"cliente": "DANARO.LTDA.PIZZERIA.SALERNO",
+		"abono": [],
+		"total": 63104,
+		"subtotal": 54400,
+		"montoIva": 8704,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 8,
+				"producto": "MANGO",
+				"venta": 54400,
+				"precio": 6800,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-10",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3593,
+		"cliente": "DANARO.LTDA.PIZZERIA.SALERNO",
+		"abono": [],
+		"total": 292320,
+		"subtotal": 252000,
+		"montoIva": 40320,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 10,
+				"producto": "LULO",
+				"venta": 68000,
+				"precio": 6800,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 50,
+				"producto": "MANGO",
+				"venta": 34000,
+				"precio": 680,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 60,
+				"producto": "MANGO",
+				"venta": 27000,
+				"precio": 450,
+				"rotulo": "MANGO 60.g",
+				"porcion": "60.g"
+			}, {
+				"cantidad": 150,
+				"producto": "MANGO",
+				"venta": 123000,
+				"precio": 820,
+				"rotulo": "MANGO 120.g",
+				"porcion": "120.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-10",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3594,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 191400,
+		"subtotal": 191400,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 3,
+				"producto": "MANGO",
+				"venta": 19800,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "CURUBA",
+				"venta": 30000,
+				"precio": 6000,
+				"rotulo": "CURUBA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 6,
+				"producto": "LULO",
+				"venta": 38400,
+				"precio": 6400,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 1,
+				"producto": "GUANABANA",
+				"venta": 7000,
+				"precio": 7000,
+				"rotulo": "GUANABANA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "UVA",
+				"venta": 32000,
+				"precio": 6400,
+				"rotulo": "UVA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 7,
+				"producto": "MORA",
+				"venta": 46200,
+				"precio": 6600,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "TOMATE.DE.ARBOL",
+				"venta": 18000,
+				"precio": 6000,
+				"rotulo": "TOMATE.DE.ARBOL 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-10",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3595,
+		"cliente": "PIZZA.AL.PASO.UNICENTRO",
+		"abono": [],
+		"total": 97092,
+		"subtotal": 83700,
+		"montoIva": 13392,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 5,
+				"producto": "MANGO",
+				"venta": 28000,
+				"precio": 5600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "LULO",
+				"venta": 27500,
+				"precio": 5500,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 1,
+				"producto": "MARACUYA",
+				"venta": 6200,
+				"precio": 6200,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 4,
+				"producto": "MORA",
+				"venta": 22000,
+				"precio": 5500,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-10",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3597,
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"abono": [],
+		"total": 235480,
+		"subtotal": 203000,
+		"montoIva": 32480,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 70,
+				"producto": "FRESA",
+				"venta": 63000,
+				"precio": 900,
+				"rotulo": "FRESA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 60,
+				"producto": "MANGO",
+				"venta": 60000,
+				"precio": 1000,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 40,
+				"producto": "LULO",
+				"venta": 40000,
+				"precio": 1000,
+				"rotulo": "LULO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 40,
+				"producto": "MORA",
+				"venta": 40000,
+				"precio": 1000,
+				"rotulo": "MORA 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-10",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3598,
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"abono": [],
+		"total": 631388,
+		"subtotal": 544300,
+		"montoIva": 87088,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 80,
+				"producto": "FRESA",
+				"venta": 84000,
+				"precio": 1050,
+				"rotulo": "FRESA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 60,
+				"producto": "GUANABANA.FRUTA",
+				"venta": 101400,
+				"precio": 1690,
+				"rotulo": "GUANABANA.FRUTA 180.g",
+				"porcion": "180.g"
+			}, {
+				"cantidad": 80,
+				"producto": "MANGO",
+				"venta": 97600,
+				"precio": 1220,
+				"rotulo": "MANGO 170.g",
+				"porcion": "170.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MELON",
+				"venta": 10200,
+				"precio": 1020,
+				"rotulo": "MELON 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 10,
+				"producto": "UVA",
+				"venta": 16200,
+				"precio": 1620,
+				"rotulo": "UVA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 10,
+				"producto": "PATILLA",
+				"venta": 9500,
+				"precio": 950,
+				"rotulo": "PATILLA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 30,
+				"producto": "SMOTHIE.LMF",
+				"venta": 42000,
+				"precio": 1400,
+				"rotulo": "SMOTHIE.LMF 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO.BICHE",
+				"venta": 4200,
+				"precio": 420,
+				"rotulo": "MANGO.BICHE 50.g",
+				"porcion": "50.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MORA",
+				"venta": 3900,
+				"precio": 390,
+				"rotulo": "MORA 50.g",
+				"porcion": "50.g"
+			}, {
+				"cantidad": 20,
+				"producto": "GUANABANA.FRUTA",
+				"venta": 28000,
+				"precio": 1400,
+				"rotulo": "GUANABANA.FRUTA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 30,
+				"producto": "LULO",
+				"venta": 33000,
+				"precio": 1100,
+				"rotulo": "LULO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 40,
+				"producto": "MANGO",
+				"venta": 44000,
+				"precio": 1100,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 30,
+				"producto": "MORA",
+				"venta": 29700,
+				"precio": 990,
+				"rotulo": "MORA 125.g",
+				"porcion": "125.g"
+			}, {
+				"cantidad": 20,
+				"producto": "PI\u00d1A",
+				"venta": 20000,
+				"precio": 1000,
+				"rotulo": "PI\u00d1A 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 10,
+				"producto": "PATILLA",
+				"venta": 8400,
+				"precio": 840,
+				"rotulo": "PATILLA 180.g",
+				"porcion": "180.g"
+			}, {
+				"cantidad": 10,
+				"producto": "UVA",
+				"venta": 12200,
+				"precio": 1220,
+				"rotulo": "UVA 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-11",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3599,
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"abono": [],
+		"total": 93380,
+		"subtotal": 80500,
+		"montoIva": 12880,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 70,
+				"producto": "MARACUYA",
+				"venta": 80500,
+				"precio": 1150,
+				"rotulo": "MARACUYA 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-11",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3600,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 141520,
+		"subtotal": 122000,
+		"montoIva": 19520,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 7,
+				"producto": "MARACUYA",
+				"venta": 49000,
+				"precio": 7000,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 66000,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 1,
+				"producto": "GUANABANA",
+				"venta": 7000,
+				"precio": 7000,
+				"rotulo": "GUANABANA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-11",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3601,
+		"cliente": "DANARO.LTDA.PIZZERIA.SALERNO",
+		"abono": [],
+		"total": 102776,
+		"subtotal": 88600,
+		"montoIva": 14176,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 50,
+				"producto": "MANGO",
+				"venta": 41000,
+				"precio": 820,
+				"rotulo": "MANGO 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 70,
+				"producto": "MANGO",
+				"venta": 47600,
+				"precio": 680,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-11",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3602,
+		"cliente": "SOMOOTHIE.FIT",
+		"abono": [],
+		"total": 33060,
+		"subtotal": 28500,
+		"montoIva": 4560,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 10,
+				"producto": "FRESA",
+				"venta": 6000,
+				"precio": 600,
+				"rotulo": "FRESA 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 10,
+				"producto": "FRESA.MANGO",
+				"venta": 10500,
+				"precio": 1050,
+				"rotulo": "FRESA.MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 10,
+				"producto": "FRUTOS.ROJOS",
+				"venta": 12000,
+				"precio": 1200,
+				"rotulo": "FRUTOS.ROJOS 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-11",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3603,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 32480,
+		"subtotal": 28000,
+		"montoIva": 4480,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 4,
+				"producto": "MARACUYA",
+				"venta": 28000,
+				"precio": 7000,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-12",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3604,
+		"cliente": "SOMOOTHIE.FIT",
+		"abono": [],
+		"total": 12760,
+		"subtotal": 11000,
+		"montoIva": 1760,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 10,
+				"producto": "FRUTOS.AMARILLOS",
+				"venta": 11000,
+				"precio": 1100,
+				"rotulo": "FRUTOS.AMARILLOS 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Eduardo.Zea",
+		"fecha": "2015-09-14",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3605,
+		"cliente": "EDUCACION.SIGLO.XXI.S.A..COLEGIO.LA.ARBOLEDA",
+		"abono": [],
+		"total": 382800,
+		"subtotal": 330000,
+		"montoIva": 52800,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 6,
+				"producto": "PI\u00d1A",
+				"venta": 180000,
+				"precio": 30000,
+				"rotulo": "PI\u00d1A 5000.g",
+				"porcion": "5000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "MORA",
+				"venta": 150000,
+				"precio": 30000,
+				"rotulo": "MORA 5000.g",
+				"porcion": "5000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-14",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3606,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 254400,
+		"subtotal": 254400,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 12,
+				"producto": "LULO",
+				"venta": 76800,
+				"precio": 6400,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 8,
+				"producto": "MANGO",
+				"venta": 52800,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 2,
+				"producto": "MARACUYA",
+				"venta": 14000,
+				"precio": 7000,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MORA",
+				"venta": 66000,
+				"precio": 6600,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 7,
+				"producto": "UVA",
+				"venta": 44800,
+				"precio": 6400,
+				"rotulo": "UVA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-14",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3607,
+		"cliente": "PIZZA.AL.PASO.LA.FLORA",
+		"abono": [],
+		"total": 68700,
+		"subtotal": 68700,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 6,
+				"producto": "MANGO",
+				"venta": 33600,
+				"precio": 5600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "MARACUYA",
+				"venta": 18600,
+				"precio": 6200,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "LULO",
+				"venta": 16500,
+				"precio": 5500,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3608,
+		"cliente": "PIZZA.AL.PASO.PALMIRA",
+		"abono": [],
+		"total": 56200,
+		"subtotal": 56200,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 5,
+				"producto": "MANGO",
+				"venta": 28000,
+				"precio": 5600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "LULO",
+				"venta": 16500,
+				"precio": 5500,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 1,
+				"producto": "MARACUYA",
+				"venta": 6200,
+				"precio": 6200,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 1,
+				"producto": "MORA",
+				"venta": 5500,
+				"precio": 5500,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3609,
+		"cliente": "DANARO.LTDA.PIZZERIA.SALERNO",
+		"abono": [],
+		"total": 289768,
+		"subtotal": 249800,
+		"montoIva": 39968,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 6,
+				"producto": "LULO",
+				"venta": 40800,
+				"precio": 6800,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 200,
+				"producto": "MANGO",
+				"venta": 164000,
+				"precio": 820,
+				"rotulo": "MANGO 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 100,
+				"producto": "MANGO",
+				"venta": 45000,
+				"precio": 450,
+				"rotulo": "MANGO 60.g",
+				"porcion": "60.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3610,
+		"cliente": "SOMOOTHIE.FIT",
+		"abono": [],
+		"total": 165300,
+		"subtotal": 142500,
+		"montoIva": 22800,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 20,
+				"producto": "FRESA.MANGO",
+				"venta": 21000,
+				"precio": 1050,
+				"rotulo": "FRESA.MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MARACUMANGO",
+				"venta": 11500,
+				"precio": 1150,
+				"rotulo": "MARACUMANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 10000,
+				"precio": 1000,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "LULO.KIWI",
+				"venta": 24000,
+				"precio": 1200,
+				"rotulo": "LULO.KIWI 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "LULO",
+				"venta": 22000,
+				"precio": 1100,
+				"rotulo": "LULO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FRUTOS.ROJOS",
+				"venta": 24000,
+				"precio": 1200,
+				"rotulo": "FRUTOS.ROJOS 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FRESA",
+				"venta": 18000,
+				"precio": 900,
+				"rotulo": "FRESA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 2,
+				"producto": "FRESA",
+				"venta": 12000,
+				"precio": 6000,
+				"rotulo": "FRESA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3611,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 66000,
+		"subtotal": 66000,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 66000,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3612,
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"abono": [],
+		"total": 226200,
+		"subtotal": 195000,
+		"montoIva": 31200,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 80,
+				"producto": "MANGO",
+				"venta": 80000,
+				"precio": 1000,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "MARACUYA",
+				"venta": 23000,
+				"precio": 1150,
+				"rotulo": "MARACUYA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "MORA",
+				"venta": 20000,
+				"precio": 1000,
+				"rotulo": "MORA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 80,
+				"producto": "FRESA",
+				"venta": 72000,
+				"precio": 900,
+				"rotulo": "FRESA 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3613,
+		"cliente": "HAMBURGUESERIAS.S.A.S..ALIMENTOS",
+		"abono": [],
+		"total": 69136,
+		"subtotal": 59600,
+		"montoIva": 9536,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 1,
+				"producto": "MORA",
+				"venta": 6800,
+				"precio": 6800,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 4,
+				"producto": "MANGO",
+				"venta": 27200,
+				"precio": 6800,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 2,
+				"producto": "FRESA",
+				"venta": 12000,
+				"precio": 6000,
+				"rotulo": "FRESA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 2,
+				"producto": "LULO",
+				"venta": 13600,
+				"precio": 6800,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-16",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3614,
+		"cliente": "HARRY.SAS.HARRYS.BAR",
+		"abono": [],
+		"total": 1071840,
+		"subtotal": 924000,
+		"montoIva": 147840,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 100,
+				"producto": "UVA",
+				"venta": 130000,
+				"precio": 1300,
+				"rotulo": "UVA 180.g",
+				"porcion": "180.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FEIJOA",
+				"venta": 17000,
+				"precio": 850,
+				"rotulo": "FEIJOA 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 20,
+				"producto": "GUAYABA",
+				"venta": 14000,
+				"precio": 700,
+				"rotulo": "GUAYABA 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 80,
+				"producto": "LULO",
+				"venta": 68000,
+				"precio": 850,
+				"rotulo": "LULO 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 120,
+				"producto": "MANGO",
+				"venta": 102000,
+				"precio": 850,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 80,
+				"producto": "MORA",
+				"venta": 68000,
+				"precio": 850,
+				"rotulo": "MORA 110.g",
+				"porcion": "110.g"
+			}, {
+				"cantidad": 20,
+				"producto": "DURAZNO",
+				"venta": 24000,
+				"precio": 1200,
+				"rotulo": "DURAZNO 125.g",
+				"porcion": "125.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MORA",
+				"venta": 52000,
+				"precio": 5200,
+				"rotulo": "MORA 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 10,
+				"producto": "LULO",
+				"venta": 52000,
+				"precio": 5200,
+				"rotulo": "LULO 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 10,
+				"producto": "GUAYABA",
+				"venta": 43000,
+				"precio": 4300,
+				"rotulo": "GUAYABA 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 55000,
+				"precio": 5500,
+				"rotulo": "MANGO 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 260,
+				"producto": "FRESA",
+				"venta": 299000,
+				"precio": 1150,
+				"rotulo": "FRESA 190.g",
+				"porcion": "190.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3615,
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"abono": [],
+		"total": 851788,
+		"subtotal": 734300,
+		"montoIva": 117488,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 10,
+				"producto": "FEIJOA",
+				"venta": 11000,
+				"precio": 1100,
+				"rotulo": "FEIJOA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 10,
+				"producto": "LULO",
+				"venta": 11000,
+				"precio": 1100,
+				"rotulo": "LULO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 40,
+				"producto": "MANGO",
+				"venta": 44000,
+				"precio": 1100,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 40,
+				"producto": "FRESA",
+				"venta": 33200,
+				"precio": 830,
+				"rotulo": "FRESA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "GUANABANA.FRUTA",
+				"venta": 24400,
+				"precio": 1220,
+				"rotulo": "GUANABANA.FRUTA 130.g",
+				"porcion": "130.g"
+			}, {
+				"cantidad": 40,
+				"producto": "MORA",
+				"venta": 39600,
+				"precio": 990,
+				"rotulo": "MORA 125.g",
+				"porcion": "125.g"
+			}, {
+				"cantidad": 20,
+				"producto": "MARACUYA",
+				"venta": 27600,
+				"precio": 1380,
+				"rotulo": "MARACUYA 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "PI\u00d1A",
+				"venta": 20000,
+				"precio": 1000,
+				"rotulo": "PI\u00d1A 150.g",
+				"porcion": "150.g"
+			}, {
+				"cantidad": 20,
+				"producto": "FEIJOA",
+				"venta": 25200,
+				"precio": 1260,
+				"rotulo": "FEIJOA 170.g",
+				"porcion": "170.g"
+			}, {
+				"cantidad": 80,
+				"producto": "FRESA",
+				"venta": 84000,
+				"precio": 1050,
+				"rotulo": "FRESA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 60,
+				"producto": "GUANABANA.FRUTA",
+				"venta": 101400,
+				"precio": 1690,
+				"rotulo": "GUANABANA.FRUTA 180.g",
+				"porcion": "180.g"
+			}, {
+				"cantidad": 80,
+				"producto": "MANGO",
+				"venta": 97600,
+				"precio": 1220,
+				"rotulo": "MANGO 170.g",
+				"porcion": "170.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MELON",
+				"venta": 10200,
+				"precio": 1020,
+				"rotulo": "MELON 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 40,
+				"producto": "UVA",
+				"venta": 64800,
+				"precio": 1620,
+				"rotulo": "UVA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 40,
+				"producto": "PATILLA",
+				"venta": 38000,
+				"precio": 950,
+				"rotulo": "PATILLA 200.g",
+				"porcion": "200.g"
+			}, {
+				"cantidad": 20,
+				"producto": "SMOTHIE.LMF",
+				"venta": 24000,
+				"precio": 1200,
+				"rotulo": "SMOTHIE.LMF 170.g",
+				"porcion": "170.g"
+			}, {
+				"cantidad": 20,
+				"producto": "MANGO.BICHE",
+				"venta": 8400,
+				"precio": 420,
+				"rotulo": "MANGO.BICHE 50.g",
+				"porcion": "50.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MORA",
+				"venta": 3900,
+				"precio": 390,
+				"rotulo": "MORA 50.g",
+				"porcion": "50.g"
+			}, {
+				"cantidad": 60,
+				"producto": "MANGO",
+				"venta": 66000,
+				"precio": 1100,
+				"rotulo": "MANGO 150.g",
+				"porcion": "150.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": true,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3616,
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"abono": [],
+		"total": 444860,
+		"subtotal": 383500,
+		"montoIva": 61360,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 130,
+				"producto": "FRESA",
+				"venta": 149500,
+				"precio": 1150,
+				"rotulo": "FRESA 190.g",
+				"porcion": "190.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MANGO",
+				"venta": 55000,
+				"precio": 5500,
+				"rotulo": "MANGO 750.g",
+				"porcion": "750.g"
+			}, {
+				"cantidad": 100,
+				"producto": "MANGO",
+				"venta": 85000,
+				"precio": 850,
+				"rotulo": "MANGO 100.g",
+				"porcion": "100.g"
+			}, {
+				"cantidad": 40,
+				"producto": "FEIJOA",
+				"venta": 34000,
+				"precio": 850,
+				"rotulo": "FEIJOA 120.g",
+				"porcion": "120.g"
+			}, {
+				"cantidad": 50,
+				"producto": "DURAZNO",
+				"venta": 60000,
+				"precio": 1200,
+				"rotulo": "DURAZNO 125.g",
+				"porcion": "125.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3617,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 200000,
+		"subtotal": 200000,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 5,
+				"producto": "LULO",
+				"venta": 32000,
+				"precio": 6400,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "GUANABANA",
+				"venta": 35000,
+				"precio": 7000,
+				"rotulo": "GUANABANA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "MANGO",
+				"venta": 33000,
+				"precio": 6600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "MARACUYA",
+				"venta": 35000,
+				"precio": 7000,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "MORA",
+				"venta": 33000,
+				"precio": 6600,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "UVA",
+				"venta": 32000,
+				"precio": 6400,
+				"rotulo": "UVA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3618,
+		"cliente": "PIZZA.AL.PASO.UNICENTRO",
+		"abono": [],
+		"total": 118700,
+		"subtotal": 118700,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 7,
+				"producto": "MANGO",
+				"venta": 39200,
+				"precio": 5600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 5,
+				"producto": "MARACUYA",
+				"venta": 31000,
+				"precio": 6200,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 4,
+				"producto": "LULO",
+				"venta": 22000,
+				"precio": 5500,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "MORA",
+				"venta": 16500,
+				"precio": 5500,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 2,
+				"producto": "FRESA",
+				"venta": 10000,
+				"precio": 5000,
+				"rotulo": "FRESA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3619,
+		"cliente": "PIZZA.AL.PASO.JARDIN",
+		"abono": [],
+		"total": 178700,
+		"subtotal": 178700,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 12,
+				"producto": "MANGO",
+				"venta": 67200,
+				"precio": 5600,
+				"rotulo": "MANGO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 10,
+				"producto": "MARACUYA",
+				"venta": 62000,
+				"precio": 6200,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 6,
+				"producto": "LULO",
+				"venta": 33000,
+				"precio": 5500,
+				"rotulo": "LULO 1000.g",
+				"porcion": "1000.g"
+			}, {
+				"cantidad": 3,
+				"producto": "MORA",
+				"venta": 16500,
+				"precio": 5500,
+				"rotulo": "MORA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}, {
+		"anulada": false,
+		"iva": false,
+		"empleado": "Natalia.Aljure",
+		"fecha": "2015-09-18",
+		"remisiones": [],
+		"pagoRef": [],
+		"numero": 3620,
+		"cliente": "TREPANDO.SAS.CLOWNS",
+		"abono": [],
+		"total": 49000,
+		"subtotal": 49000,
+		"montoIva": 0,
+		"pagada": false,
+		"ventas": [
+			{
+				"cantidad": 7,
+				"producto": "MARACUYA",
+				"venta": 49000,
+				"precio": 7000,
+				"rotulo": "MARACUYA 1000.g",
+				"porcion": "1000.g"
+			}
+		]
+	}
+]
