@@ -287,21 +287,33 @@ class DataStoreInterface():
         entity = classModels[entity_class].get_by_id(key)
         if entity:
             if entity_class in self._funcMap['pre']['update']:
-                self._funcMap['pre']['update'][entity_class](entity)
+                try:
+                    self._funcMap['pre']['update'][entity_class](entity)
+                except Exception as e:
+                    print 'Pre-Update: ' + e.message
             oldentity = self._cloneEntity(entity)
             entity.populate(**values)
             entity.put()
             if entity_class in self._funcMap['post']['update']:
-                self._funcMap['post']['update'][entity_class](entity)
+                try:
+                    self._funcMap['post']['update'][entity_class](entity)
+                except Exception as e:
+                    print 'Post-Update: ' + e.message
             return {'message':"Updated",'key':key, 'entity':entity, 'old':oldentity}
         else:
             values['id']=key
             if entity_class in self._funcMap['pre']['create']:
-                self._funcMap['pre']['create'][entity_class](entity)
+                try:
+                    self._funcMap['pre']['create'][entity_class](entity)
+                except Exception as e:
+                    print 'Pre-Create' + e.message
             entity = classModels[entity_class](**values)
             entity.put()
             if entity_class in self._funcMap['post']['create']:
-                self._funcMap['post']['create'][entity_class](entity)
+                try:
+                    self._funcMap['post']['create'][entity_class](entity)
+                except Exception as e:
+                    print 'Post-Create: ' + e.message
             self._autoIncrease(entity_class)
             return {'message':"Created",'key':key, 'entity':entity}
         
@@ -315,8 +327,14 @@ class DataStoreInterface():
         else:
             raise Exception("Can't interpret " + str(entity) + "as an entity!")
         if entityClass in self._funcMap['pre']['delete']:
-            self._funcMap['pre']['delete'][entityClass](entity)
+            try:
+                self._funcMap['pre']['delete'][entityClass](entity)
+            except Exception as e:
+                print 'Pre-Delete: ' + e.message
         entity.key.delete()
         if entityClass in self._funcMap['post']['delete']:
-            self._funcMap['post']['delete'][entityClass](entity)
+            try:
+                self._funcMap['post']['delete'][entityClass](entity)
+            except Exception as e:
+                print 'Post-Delete: ' + e.message
     

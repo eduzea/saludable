@@ -39,7 +39,7 @@ def getKey(entityClass,dicc):
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get()
             if entity:
-                key += ' ' + entity.key.id()
+                key += ' ' + unicode(entity.key.id(),'utf-8') 
             else:
                 print "Entity not found by key:" + keypart 
         else:
