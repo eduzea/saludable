@@ -284,7 +284,10 @@ class GetAllCompras(webapp2.RequestHandler):
             for compra in egreso.compras:
                 compra = compra.to_dict()
                 compra['egreso']=egreso.numero
-                compra['proveedor']=egreso.proveedor.get().rotulo
+                try:
+                    compra['proveedor']=egreso.proveedor.get().rotulo
+                except Exception as e:
+                    print egreso.proveedor
                 compra['fecha']=egreso.fecha
                 compra['mesnum']=egreso.fecha.month
                 compra['mes']=egreso.fecha.strftime('%B')
