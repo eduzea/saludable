@@ -35,7 +35,7 @@
 					<td><label for='porcion_{{entityClass}}'>Porcion: </label></td>
 					<td><div id='porcion_{{entityClass}}'></div></td>
 					<td>
-						<input id="iva_{{entityClass}}" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=true checked  onchange="this.value = !this.value"/> <label for="ivaFactura">IVA</label>
+						<input id="iva_{{entityClass}}" style="display: none;" name="iva_{{entityClass}}" data-dojo-type="dijit/form/CheckBox" value=false  onchange="this.value = !this.value"/> <label for="ivaFactura" style="display: none;" >IVA</label>
 					</td>
 					<td><input id="_{{entityClass}}PorPagina" name="_{{entityClass}}PorPagina" data-dojo-type="dijit/form/CheckBox"/> <label>1 {{entityClass}} por pagina</label></td>
 					<td>

@@ -150,7 +150,7 @@
 		"telefono": "3118562330",
 		"nit": "6753102"
 	}, {
-		"fechaCreacion": "2015-11-18",
+		"fechaCreacion": "2015-12-23",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA PALMIRA (K9)",
 		"iva": true,
@@ -161,7 +161,7 @@
 		"activo": true,
 		"rotulo": "BRVS LTDA KARENS PIZZA PALMIRA (K9)",
 		"nombre": "BRVS LTDA",
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "8007938",
 		"nit": "815002637"
 	}, {
@@ -359,6 +359,36 @@
 		"empleadoCreador": null,
 		"telefono": "3158424",
 		"nit": "8050227865"
+	}, {
+		"fechaCreacion": "2015-12-18",
+		"diasPago": 8,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "CIUDAD JARDIN",
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"rotulo": "FUSION WOK S.A.S. RESTAURANTE",
+		"nombre": "FUSION WOK S.A.S.",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3183586060",
+		"nit": "9004252529"
+	}, {
+		"fechaCreacion": "2015-12-18",
+		"diasPago": 8,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "CIUDAD JARDIN",
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"rotulo": "FUSION WOKSAS RESTAURANTE",
+		"nombre": "FUSION WOKSAS",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3183586060",
+		"nit": "9004252529"
 	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
@@ -705,6 +735,21 @@
 		"telefono": "315 5079/ 315 4551",
 		"nit": "149804022"
 	}, {
+		"fechaCreacion": "2016-03-04",
+		"diasPago": 30,
+		"negocio": "CREPES & WAFFLES",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "CR 37 # 10-303 BODEGHA 16 ACOPI",
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"rotulo": "MAQUITE CREPES & WAFFLES",
+		"nombre": "MAQUITE",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "654 34 06",
+		"nit": "800070655-5"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
 		"negocio": " ",
@@ -765,6 +810,21 @@
 		"telefono": "330 3045",
 		"nit": "1"
 	}, {
+		"fechaCreacion": "2016-01-21",
+		"diasPago": 8,
+		"negocio": "RESTAURANTE CABRESTERO",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "CR 70 CON 13A",
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"rotulo": "MORELIA GOMEZ RESTAURANTE CABRESTERO",
+		"nombre": "MORELIA GOMEZ",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3155597138",
+		"nit": "66852835"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
@@ -795,18 +855,18 @@
 		"telefono": "3130006",
 		"nit": "1'010101"
 	}, {
-		"fechaCreacion": "2015-10-09",
+		"fechaCreacion": "2016-01-15",
 		"diasPago": 30,
 		"negocio": "RESTAURANTE",
 		"iva": true,
 		"ciudad": "Cartagena",
 		"sucursal": "Cali",
 		"direccion": "Hotel Charleston Santa Teresa. Cl. 31 #31-23",
-		"grupoDePrecios": "HARRY",
+		"grupoDePrecios": "HARRY.CARTAGENA",
 		"activo": true,
 		"rotulo": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS RESTAURANTE",
 		"nombre": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6647958",
 		"nit": "900735451-8"
 	}, {
@@ -1065,6 +1125,66 @@
 		"telefono": "2484899",
 		"nit": "900419473-5"
 	}, {
+		"fechaCreacion": "2015-12-03",
+		"diasPago": 30,
+		"negocio": "CENTENARIO",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "PE\u00d1ON",
+		"grupoDePrecios": "TORTELLI",
+		"activo": true,
+		"rotulo": "RESTAURANTE TORTELLI S.A.S. CENTENARIO",
+		"nombre": "RESTAURANTE TORTELLI S.A.S.",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "8933227",
+		"nit": "9003764230"
+	}, {
+		"fechaCreacion": "2015-12-03",
+		"diasPago": 30,
+		"negocio": "PE\u00d1ON",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Pe\u00f1\u00f3n Cll 3 oeste 3-15",
+		"grupoDePrecios": "TORTELLI",
+		"activo": true,
+		"rotulo": "RESTAURANTE TORTELLI S.A.S. PE\u00d1ON",
+		"nombre": "RESTAURANTE TORTELLI S.A.S.",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3160414",
+		"nit": "9003764230"
+	}, {
+		"fechaCreacion": "2015-12-04",
+		"diasPago": 30,
+		"negocio": "SANTA MONICA",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Cll 29 Norte 6 Bis-67",
+		"grupoDePrecios": "TORTELLI",
+		"activo": true,
+		"rotulo": "RESTAURANTE TORTELLI S.A.S. SANTA MONICA",
+		"nombre": "RESTAURANTE TORTELLI S.A.S.",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "893 32 27 ext 101",
+		"nit": "9003764230"
+	}, {
+		"fechaCreacion": "2015-12-03",
+		"diasPago": 30,
+		"negocio": "SUR",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Av. San Joaqu\u00edn 15-09 local 8 Centro Comercial Palmas Mall",
+		"grupoDePrecios": "TORTELLI",
+		"activo": true,
+		"rotulo": "RESTAURANTE TORTELLI S.A.S. SUR",
+		"nombre": "RESTAURANTE TORTELLI S.A.S.",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "8933227",
+		"nit": "9003764230"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "Restaurante",
@@ -1094,6 +1214,21 @@
 		"empleadoCreador": null,
 		"telefono": "3220732",
 		"nit": "900016780-1"
+	}, {
+		"fechaCreacion": "2016-02-22",
+		"diasPago": 8,
+		"negocio": "PANPAYA AEROPUERTO",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "PARCELACION INDUSTRIAL PALMASECA",
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"rotulo": "SAULO MARIO ALVAREZ PANPAYA AEROPUERTO",
+		"nombre": "SAULO MARIO ALVAREZ",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3175098871",
+		"nit": "162785386"
 	}, {
 		"fechaCreacion": null,
 		"diasPago": 30,
@@ -1202,21 +1337,6 @@
 	}, {
 		"fechaCreacion": "2015-11-17",
 		"diasPago": 30,
-		"negocio": "KARENS PIZZA PALMIRA (K9)",
-		"iva": true,
-		"ciudad": "Cali",
-		"sucursal": "Cali",
-		"direccion": "Calle 9 # 62C-06",
-		"grupoDePrecios": "KARENS.PIZZA",
-		"activo": true,
-		"rotulo": "VALENCIA & SOTO S.A KARENS PIZZA PALMIRA (K9)",
-		"nombre": "VALENCIA & SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
-		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
-		"diasPago": 30,
 		"negocio": "KARENS PIZZA AV. SEXTA (K4)",
 		"iva": true,
 		"ciudad": "Cali",
@@ -1259,5 +1379,35 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "5519130",
 		"nit": "890.316.660-8"
+	}, {
+		"fechaCreacion": "2015-12-28",
+		"diasPago": 30,
+		"negocio": "",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Carrera 8 # 31 -42",
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"rotulo": "VENTOLINI S.A ",
+		"nombre": "VENTOLINI S.A",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "4891010 x503",
+		"nit": "800.065.567"
+	}, {
+		"fechaCreacion": "2016-04-01",
+		"diasPago": 1,
+		"negocio": "CLIENTE",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CR 19 # 59-46",
+		"grupoDePrecios": "Juan.Soto",
+		"activo": true,
+		"rotulo": "VLADIMIR LEON CLIENTE",
+		"nombre": "VLADIMIR LEON",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3108145104",
+		"nit": "111"
 	}
 ]

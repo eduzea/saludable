@@ -1,126 +1,291 @@
 [
 	{
+		"fechaCreacion": null,
 		"nombre": "ABACO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "ABACO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "ADELA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "ADELA"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "ARABE",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "ARABE"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "AVESCO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "AVESCO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Adriana Delgadillo",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Adriana Delgadillo"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Aldemar",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Aldemar"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "CARMEL",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "CARMEL"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "CASA FUEGO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "CASA FUEGO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "CENTRICO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "CENTRICO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "CHATOS",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "CHATOS"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "COLEGIOS"
 	}, {
+		"fechaCreacion": "2016-03-04",
+		"nombre": "CREPES & WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "CREPES & WAFFLES"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "CYP",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "CYP"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Criterion",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Criterion"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Ester",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Ester"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "GARDEL",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "GARDEL"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "HANS",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "HANS"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "HARRY",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "HARRY"
 	}, {
+		"fechaCreacion": "2016-01-15",
+		"nombre": "HARRY CARTAGENA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "HARRY CARTAGENA"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "Hamburgueserias",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Hamburgueserias"
 	}, {
+		"fechaCreacion": null,
+		"nombre": "Imperial",
+		"activo": true,
+		"empleadoCreador": null,
+		"rotulo": "Imperial"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "Independiente Cali",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Independiente Cali"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "JUAN EL PANADERO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "JUAN EL PANADERO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Juan Soto",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Juan Soto"
 	}, {
+		"fechaCreacion": "2015-11-17",
+		"nombre": "KARENS PIZZA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "KARENS PIZZA"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "LEHAL",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "LEHAL"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Mango Biche",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Mango Biche"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Mermelada Frutos rojos",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Mermelada Frutos rojos"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "NOGAL",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "NOGAL"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "OTROS",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "OTROS"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "PAESA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "PAESA"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "PAN TOLIMA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "PAN TOLIMA"
 	}, {
+		"fechaCreacion": "2015-11-25",
+		"nombre": "PANPAYA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "PANPAYA"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "PARTICULARES",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "PARTICULARES"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "PIZZA AL PASO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "PIZZA AL PASO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "POLKA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "POLKA"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "PRUEBA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "PRUEBA"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Particulr",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Particulr"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "Precios 2015",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "Precios 2015"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SALERNO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SALERNO"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SALUDABLE",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SALUDABLE"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SARODI",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SARODI"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SARODY",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SARODY"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SMOOTHIE FIT",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SMOOTHIE FIT"
 	}, {
+		"fechaCreacion": null,
 		"nombre": "SURA",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "SURA"
 	}, {
+		"fechaCreacion": "2015-12-01",
+		"nombre": "TORTELLI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "TORTELLI"
+	}, {
+		"fechaCreacion": null,
 		"nombre": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": null,
 		"rotulo": "TREPANDO"
+	}, {
+		"fechaCreacion": "2015-12-26",
+		"nombre": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "VENTOLINI"
 	}
 ]

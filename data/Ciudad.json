@@ -1,0 +1,21 @@
+[
+	{
+		"fechaCreacion": null,
+		"nombre": "Bogota",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "Bogota"
+	}, {
+		"fechaCreacion": null,
+		"nombre": "Cali",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "Cali"
+	}, {
+		"fechaCreacion": null,
+		"nombre": "Cartagena",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "Cartagena"
+	}
+]

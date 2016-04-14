@@ -437,7 +437,7 @@ class MostrarFactura(webapp2.RequestHandler):
         data = {'numero' : entity.numero,
                 'cliente': unicode(cliente.rotulo),
                 'direccion': unicode(cliente.direccion),
-                'ciudad': unicode(cliente.ciudad.get().rotulo),
+                'ciudad': unicode(cliente.ciudad.id()),
                 'nit':cliente.nit, 
                 'fecha': entity.fecha.strftime('%Y-%m-%d'),
                 'telefono':cliente.telefono,
@@ -611,7 +611,7 @@ class GuardarEgreso(webapp2.RequestHandler):
                            compra = compra['compra']))
         values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivoEgreso()  
+        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivo('Egreso')  
         values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
         
         entity = dataStoreInterface.create_entity('Egreso', values)['entity']

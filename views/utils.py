@@ -106,15 +106,19 @@ def fieldsInfo(entityClass):
     return fields
 
 def getConsecutivo(entityClass):
-    tipo = {'Remision' : NumeroRemision, 'Factura' : NumeroFactura }
-    numero = tipo[entityClass].query().fetch()
-    if numero:
-        numero[0].consecutivo = numero[0].consecutivo + 1
-        numero[0].put()
-        return numero[0].consecutivo
+    """
+    Returns the next key number to use for an entityClass. It does not increase the entityClass counter, 
+    which should only get increased if the object is effectively saved to the datastore.
+    """
+    if 'Numero' + entityClass in singletons:
+        numero = singletons['Numero' + entityClass].query().get()
+        if numero:
+            return numero.consecutivo + 1
+        else:
+            singletons['Numero' + entityClass](consecutivo=int(0)).put()
+            return 0;
     else:
-        tipo[entity_class](consecutivo=int(0)).put()
-        return 0;
+        raise Exception("No hay consecutivo en esta entityClass!")
     
 def estaVencida(factura):
     diasPago = factura.cliente.get().diasPago

@@ -312,6 +312,19 @@
 		"telefono": "4878332",
 		"nit": "1062278921"
 	}, {
+		"fechaCreacion": "2016-01-23",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
+		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
+		"ciudad": "Cali",
+		"direccion": "x",
+		"activo": true,
+		"rotulo": "Andres Manrique",
+		"nombre": "Andres Manrique",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "114384042"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
 		"textbienesoservicios": "Materia Prima-Quimicos;",
@@ -428,6 +441,19 @@
 		"empleadoCreador": null,
 		"telefono": "6307241",
 		"nit": "79409121"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Gastos Extraordinarios;",
+		"bienesoservicios": ["Gastos.Extraordinarios"],
+		"ciudad": "Cali",
+		"direccion": "CARRE 17 * 22-41",
+		"activo": true,
+		"rotulo": "CDA LA PLAYA",
+		"nombre": "CDA LA PLAYA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3715415",
+		"nit": "900575363-0"
 	}, {
 		"fechaCreacion": "2015-10-03",
 		"diasPago": 1,
@@ -910,6 +936,19 @@
 		"telefono": "8821009",
 		"nit": "31.842.494-0"
 	}, {
+		"fechaCreacion": "2016-02-03",
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
+		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
+		"ciudad": "Cali",
+		"direccion": "CC 11 No10-26",
+		"activo": true,
+		"rotulo": "FABIO ORREGON ALZATE",
+		"nombre": "FABIO ORREGON ALZATE",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "8855736-8856310",
+		"nit": "900580467-4"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
 		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
@@ -1222,6 +1261,19 @@
 		"telefono": "2255392",
 		"nit": "5111111"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "Autopista sur oriental * 1 8 - 11",
+		"activo": true,
+		"rotulo": "IVAN MARIN PUNTO AZUL",
+		"nombre": "IVAN MARIN PUNTO AZUL",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3773092",
+		"nit": "1130670252-6"
+	}, {
 		"fechaCreacion": "2015-10-03",
 		"diasPago": 1,
 		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
@@ -1234,6 +1286,19 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "33",
 		"nit": "14638732"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 15,
+		"textbienesoservicios": "Nomina-Turnos;",
+		"bienesoservicios": ["Nomina-Turnos"],
+		"ciudad": "Cali",
+		"direccion": "X",
+		"activo": true,
+		"rotulo": "JUAN DAVID LOPEZ LUNA",
+		"nombre": "JUAN DAVID LOPEZ LUNA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "1144177196"
 	}, {
 		"fechaCreacion": "2015-10-03",
 		"diasPago": 1,
@@ -2132,18 +2197,18 @@
 		"telefono": "8899228",
 		"nit": "79.395.042"
 	}, {
-		"fechaCreacion": "2015-10-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;Alimentacion Empleado;Utensilios;Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Varios", "Alimentacion.Empleado", "Utensilios", "Materia.Prima-Fruta"],
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Materia Prima-Varios;Alimentacion Empleado;Utensilios;Materia Prima-Fruta;Papeleria;",
+		"bienesoservicios": ["Materia.Prima-Varios", "Alimentacion.Empleado", "Utensilios", "Materia.Prima-Fruta", "Papeleria"],
 		"ciudad": "Cali",
-		"direccion": "",
+		"direccion": "p",
 		"activo": true,
 		"rotulo": "Surtifamiliar",
 		"nombre": "Surtifamiliar",
-		"empleadoCreador": "nataljure@salud-able.com",
-		"telefono": "",
-		"nit": ""
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "805028991-6"
 	}, {
 		"fechaCreacion": "2015-10-03",
 		"diasPago": 1,
@@ -2392,6 +2457,19 @@
 		"telefono": "NA",
 		"nit": "NA"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Alimentacion Empleado;",
+		"bienesoservicios": ["Alimentacion.Empleado"],
+		"ciudad": "Cali",
+		"direccion": "X",
+		"activo": true,
+		"rotulo": "alimento no reportado",
+		"nombre": "alimento no reportado",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "3"
+	}, {
 		"fechaCreacion": "2015-11-21",
 		"diasPago": 1,
 		"textbienesoservicios": "Mantenimiento y arreglos locativos;Dotacion;Papeleria;",
@@ -2509,6 +2587,19 @@
 		"telefono": "33",
 		"nit": "860076919-1"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Utensilios;",
+		"bienesoservicios": ["Utensilios"],
+		"ciudad": "Cali",
+		"direccion": "calle 9 * 27- 13",
+		"activo": true,
+		"rotulo": "cristaleria la novena",
+		"nombre": "cristaleria la novena",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5569083",
+		"nit": "6082523-3"
+	}, {
 		"fechaCreacion": "2015-12-05",
 		"diasPago": 1,
 		"textbienesoservicios": "Materia Prima-Implementos de Aseo;Medicinas Botiquin;",
@@ -2625,6 +2716,19 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "3365621",
 		"nit": "94492505"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "calle 2 1 * 11-24",
+		"activo": true,
+		"rotulo": "frenos alvaro",
+		"nombre": "frenos alvaro",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8980392",
+		"nit": "458325-5"
 	}, {
 		"fechaCreacion": "2015-12-05",
 		"diasPago": 1,
@@ -2834,6 +2938,19 @@
 		"telefono": "5140776",
 		"nit": "31306081-4"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "carrera 15 calle 21",
+		"activo": true,
+		"rotulo": "motores japoneses",
+		"nombre": "motores japoneses",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "6871422",
+		"nit": "805015305-7"
+	}, {
 		"fechaCreacion": "2015-12-05",
 		"diasPago": 1,
 		"textbienesoservicios": "Mantenimiento de vehiculos;",
@@ -2846,6 +2963,19 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "5570191",
 		"nit": "1130664306-0"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "x",
+		"activo": true,
+		"rotulo": "no reportado",
+		"nombre": "no reportado",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "2"
 	}, {
 		"fechaCreacion": null,
 		"diasPago": 1,
@@ -2951,6 +3081,19 @@
 		"telefono": "3185847166",
 		"nit": "6240404"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "ca6 * 13-76",
+		"activo": true,
+		"rotulo": "roberto rivera castillo",
+		"nombre": "roberto rivera castillo",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8892061",
+		"nit": "16701267-6"
+	}, {
 		"fechaCreacion": "2015-12-12",
 		"diasPago": 1,
 		"textbienesoservicios": "Papeleria;",
@@ -2977,6 +3120,32 @@
 		"telefono": "8845209",
 		"nit": "16728657-2"
 	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Mantenimiento de vehiculos;",
+		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
+		"ciudad": "Cali",
+		"direccion": "s",
+		"activo": true,
+		"rotulo": "servicio electrico automotriz",
+		"nombre": "servicio electrico automotriz",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "16488428-1"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Alimentacion Empleado;",
+		"bienesoservicios": ["Alimentacion.Empleado"],
+		"ciudad": "Cali",
+		"direccion": "carrera 23d * 9 - 52",
+		"activo": true,
+		"rotulo": "surtipanes",
+		"nombre": "surtipanes",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5576993",
+		"nit": "66785836-9"
+	}, {
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"textbienesoservicios": "Materiales de Construccion;Mantenimiento y arreglos locativos;",
@@ -2989,5 +3158,18 @@
 		"empleadoCreador": null,
 		"telefono": "8962700",
 		"nit": "860500480-8"
+	}, {
+		"fechaCreacion": "2016-01-16",
+		"diasPago": 1,
+		"textbienesoservicios": "Transporte del Producto-Local;",
+		"bienesoservicios": ["Transporte.del.Producto-Local"],
+		"ciudad": "Cali",
+		"direccion": "X",
+		"activo": true,
+		"rotulo": "transportador no reportado",
+		"nombre": "transportador no reportado",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "3"
 	}
 ]
