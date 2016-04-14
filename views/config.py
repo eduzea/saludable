@@ -109,7 +109,8 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                        {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'},
                        {'id':'nit','ui':'NIT', 'required':'true', 'style':'width:6em'},
                        {'id':'diasPago','ui':'Dias para pago', 'required':'true','style':'width:4em'},
-                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'style':'width:5em'}
+                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'style':'width:5em'},
+                       {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                        ],
             'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
@@ -303,14 +304,14 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
             }
 
 uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'width:10em'},
-                       {'id':'negocio','ui':'Negocio', 'required':'true', 'style':'width:10em'},
+                       {'id':'negocio','ui':'Negocio', 'required':'true', 'style':'width:8em'},
                        {'id':'ciudad','ui':'Ciudad', 'required':'true', 'style':'width:5em'},
-                       {'id':'sucursal','ui':'Provee', 'required':'true', 'style':'width:5em'},
                        {'id':'direccion','ui':'Direccion', 'required':'true', 'style':'width:8em'},
                        {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'},
                        {'id':'nit','ui':'NIT', 'required':'true', 'style':'width:6em'},
-                       {'id':'diasPago','ui':'Dias para pago', 'required':'true','style':'width:4em'},
-                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'style':'width:5em'}
+                       {'id':'diasPago','ui':'Dias para pago', 'required':'true','style':'width:3em'},
+                       {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'style':'width:5em'},
+                       {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'}
                        ],
             'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},

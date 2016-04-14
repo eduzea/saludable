@@ -21,7 +21,7 @@ application = webapp2.WSGIApplication([
 #     ('/getVentas', GetVentas),
     ('/getProducto', GetProducto),
     ('/getPorcion', GetPorcion),
-    ('/getClientes', GetClientes),
+#     ('/getClientes', GetClientes),
     ('/getEmpleados', GetEmpleados),
     ('/getDetails',GetDetails),
     #CuentasPorCobrar
