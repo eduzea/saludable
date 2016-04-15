@@ -220,9 +220,10 @@ class GetProveedores(webapp2.RequestHandler):
     def get(self):
         bienoservicio = Bienoservicio.get_by_id(self.request.get('bienoservicio'))
         todos = Proveedor.query()
-        proveedores = todos.filter(Proveedor.bienesoservicios.IN([bienoservicio.key])).fetch()
+        proveedores = todos.filter(Proveedor.bienesoservicios.IN([bienoservicio.key]), Proveedor.activo == True).fetch()
         response = [{'value':proveedor.key.id(), 'name': proveedor.rotulo } for proveedor in proveedores]
         self.response.out.write(json.dumps(response))
+
 
 class GetDetails(webapp2.RequestHandler):
     def get(self):
@@ -658,13 +659,10 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        facturas = dataStoreInterface.buildQuery('Factura', {'fechaDesde': '2015-7-31',
-                                          'cliente' : ['PAESA.SA.SALTO.DEL.ANGEL']}
-                              ).fetch()
-        for factura in facturas:
-            #print factura.numero, '-', factura.fecha
-            factura.pagada = False
-            factura.pagoRef = []
-            factura.abono = []
-            factura.put()
-        self.response.out.write('Done!')
+        provs = Proveedor.query().fetch()
+        self.response.out.write(provs)
+#         for prov in provs:
+#             prov.activo = True
+#             print prov
+#             prov.put()
+        self.response.out.write(provs)
