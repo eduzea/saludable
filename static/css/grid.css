@@ -3,10 +3,14 @@
     width: 100%;
 }
 
-.dojoxGridHeader {
-text-align: center !important;
+.gridxGroupHeader, .gridxHeaderRow .gridxCell {
+	text-align: center !important;
 }
-
+.pagos-factura-grid{
+	height: 440px;
+    width: 460px;
+	
+}
 .factura-grid{
 	height: 320px;
     width: 100%;

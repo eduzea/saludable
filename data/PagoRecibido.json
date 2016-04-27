@@ -5,6 +5,7 @@
 		"monto": 281050,
 		"fecha": "2015-06-02",
 		"numero": 1,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "89655417"
@@ -14,6 +15,7 @@
 		"monto": 245435,
 		"fecha": "2015-06-17",
 		"numero": 10,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "93130590"
@@ -23,6 +25,7 @@
 		"monto": 72650,
 		"fecha": "2015-06-24",
 		"numero": 11,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "94753546"
@@ -32,6 +35,7 @@
 		"monto": 1738791,
 		"fecha": "2015-06-25",
 		"numero": 12,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "95029570"
@@ -41,6 +45,7 @@
 		"monto": 2147349,
 		"fecha": "2015-06-26",
 		"numero": 13,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRYS.BAR",
 		"documento": "95513493"
@@ -50,6 +55,7 @@
 		"monto": 1518081,
 		"fecha": "2015-06-30",
 		"numero": 14,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "PAESA.SA.COTIDIANO.ANDINO",
 		"documento": "96033335"
@@ -59,6 +65,7 @@
 		"monto": 345250,
 		"fecha": "2015-07-01",
 		"numero": 15,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "96449683"
@@ -68,6 +75,7 @@
 		"monto": 49085,
 		"fecha": "2015-07-03",
 		"numero": 16,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "97058907"
@@ -77,6 +85,7 @@
 		"monto": 188000,
 		"fecha": "2015-07-07",
 		"numero": 17,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "97943868"
@@ -86,6 +95,7 @@
 		"monto": 159384,
 		"fecha": "2015-07-10",
 		"numero": 18,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
 		"documento": "99041381"
@@ -95,6 +105,7 @@
 		"monto": 49068,
 		"fecha": "2015-07-13",
 		"numero": 19,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JARDIN.ABACO",
 		"documento": "99424239"
@@ -104,6 +115,7 @@
 		"monto": 205300,
 		"fecha": "2015-06-03",
 		"numero": 2,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "89985715"
@@ -113,6 +125,7 @@
 		"monto": 325050,
 		"fecha": "2015-07-14",
 		"numero": 20,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "99713011"
@@ -122,6 +135,7 @@
 		"monto": 537200,
 		"fecha": "2015-07-15",
 		"numero": 21,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "00173171"
@@ -131,6 +145,7 @@
 		"monto": 556944,
 		"fecha": "2015-07-16",
 		"numero": 22,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": "00638609"
@@ -140,6 +155,7 @@
 		"monto": 260850,
 		"fecha": "2015-07-22",
 		"numero": 23,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "01371957"
@@ -149,6 +165,7 @@
 		"monto": 1401725,
 		"fecha": "2015-07-23",
 		"numero": 24,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE",
 		"documento": "01635788"
@@ -158,6 +175,7 @@
 		"monto": 684980,
 		"fecha": "2015-07-23",
 		"numero": 25,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "INVERCHANG.SAS.Chilli.Chang",
 		"documento": "01636216"
@@ -167,6 +185,7 @@
 		"monto": 727012,
 		"fecha": "2015-07-24",
 		"numero": 26,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "Restaurante.Criterion.Restaurante",
 		"documento": "02013218"
@@ -176,6 +195,7 @@
 		"monto": 1880335,
 		"fecha": "2015-07-24",
 		"numero": 27,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "02247768"
@@ -185,6 +205,7 @@
 		"monto": 3190017,
 		"fecha": "2015-07-24",
 		"numero": 28,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "02247775"
@@ -194,6 +215,7 @@
 		"monto": 168896,
 		"fecha": "2015-07-24",
 		"numero": 29,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
 		"documento": "02264077"
@@ -203,6 +225,7 @@
 		"monto": 384700,
 		"fecha": "2015-06-09",
 		"numero": 3,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "91317614"
@@ -212,6 +235,7 @@
 		"monto": 442800,
 		"fecha": "2015-07-27",
 		"numero": 30,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "02725724"
@@ -221,6 +245,7 @@
 		"monto": 181656,
 		"fecha": "2015-07-28",
 		"numero": 31,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "Alfonso.Abril.Restaurante",
 		"documento": ""
@@ -230,6 +255,7 @@
 		"monto": 9164,
 		"fecha": "2015-07-07",
 		"numero": 32,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "LAURA.AMOROCHO.PARTICULAR",
 		"documento": ""
@@ -239,6 +265,7 @@
 		"monto": 26100,
 		"fecha": "2015-07-04",
 		"numero": 33,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "GIOVANNY.BELLO.PARTICULAR",
 		"documento": ""
@@ -248,6 +275,7 @@
 		"monto": 25200,
 		"fecha": "2015-06-16",
 		"numero": 34,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "OFELIA.GARCIA.PARTICULAR",
 		"documento": ""
@@ -257,6 +285,7 @@
 		"monto": 16800,
 		"fecha": "2015-06-24",
 		"numero": 35,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "OFELIA.GARCIA.PARTICULAR",
 		"documento": ""
@@ -266,6 +295,7 @@
 		"monto": 5916750,
 		"fecha": "2015-07-31",
 		"numero": 36,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"documento": ""
@@ -275,6 +305,7 @@
 		"monto": 210685,
 		"fecha": "2015-07-29",
 		"numero": 37,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "03317309"
@@ -284,6 +315,7 @@
 		"monto": 345800,
 		"fecha": "2015-07-28",
 		"numero": 38,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "03113393"
@@ -293,6 +325,7 @@
 		"monto": 129572,
 		"fecha": "2015-07-31",
 		"numero": 39,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
 		"documento": "04082286"
@@ -302,6 +335,7 @@
 		"monto": 205500,
 		"fecha": "2015-06-10",
 		"numero": 4,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JARDIN.ABACO",
 		"documento": "91640334"
@@ -311,6 +345,7 @@
 		"monto": 1728264,
 		"fecha": "2015-07-31",
 		"numero": 40,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": "04192054"
@@ -320,6 +355,7 @@
 		"monto": 369000,
 		"fecha": "2015-08-04",
 		"numero": 41,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "04540407"
@@ -329,6 +365,7 @@
 		"monto": 495900,
 		"fecha": "2015-08-04",
 		"numero": 42,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "INVERCHANG.SAS.Chilli.Chang",
 		"documento": "04675786"
@@ -338,6 +375,7 @@
 		"monto": 62100,
 		"fecha": "2015-08-05",
 		"numero": 43,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "04866659"
@@ -347,6 +385,7 @@
 		"monto": 1304763,
 		"fecha": "2015-07-31",
 		"numero": 44,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "TREINTA.Y.DOS.SEPTIMA.SAS.CENTRICO",
 		"documento": ""
@@ -356,6 +395,7 @@
 		"monto": 635500,
 		"fecha": "2015-08-11",
 		"numero": 45,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "RESTAURANTE.EL.ARABE",
 		"documento": ""
@@ -365,6 +405,7 @@
 		"monto": 216100,
 		"fecha": "2015-08-11",
 		"numero": 46,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "06065200"
@@ -374,6 +415,7 @@
 		"monto": 636840,
 		"fecha": "2015-08-12",
 		"numero": 47,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "INVERCHANG.SAS.Chilli.Chang",
 		"documento": "06095304"
@@ -383,6 +425,7 @@
 		"monto": 1122288,
 		"fecha": "2015-08-18",
 		"numero": 48,
+		"activo": true,
 		"empleadoCreador": null,
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": "07741774"
@@ -392,6 +435,7 @@
 		"monto": 638000,
 		"fecha": "2015-08-19",
 		"numero": 49,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE",
 		"documento": "07914665"
@@ -401,6 +445,7 @@
 		"monto": 180800,
 		"fecha": "2015-06-12",
 		"numero": 5,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "91973915"
@@ -410,6 +455,7 @@
 		"monto": 338550,
 		"fecha": "2015-08-20",
 		"numero": 50,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "08074928"
@@ -419,6 +465,7 @@
 		"monto": 287100,
 		"fecha": "2015-08-14",
 		"numero": 51,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "TREINTA.Y.DOS.SEPTIMA.SAS.CENTRICO",
 		"documento": ""
@@ -428,6 +475,7 @@
 		"monto": 55800,
 		"fecha": "2015-08-20",
 		"numero": 52,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "IMPERIAL.RESTAURANTE",
 		"documento": ""
@@ -437,6 +485,7 @@
 		"monto": 635500,
 		"fecha": "2015-08-11",
 		"numero": 53,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "RESTAURANTE.EL.ARABE",
 		"documento": "45148"
@@ -446,6 +495,7 @@
 		"monto": 724229,
 		"fecha": "2015-06-26",
 		"numero": 54,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "CARMEL.CLUB.CAMPESTRE",
 		"documento": "40999"
@@ -455,6 +505,7 @@
 		"monto": 344600,
 		"fecha": "2015-06-03",
 		"numero": 55,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "RESTAURANTE.EL.ARABE",
 		"documento": "38962"
@@ -464,6 +515,7 @@
 		"monto": 342548,
 		"fecha": "2015-07-06",
 		"numero": 56,
+		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"cliente": "RESTAURANTE.EL.ARABE",
 		"documento": "13006"
@@ -473,6 +525,7 @@
 		"monto": 66350,
 		"fecha": "2015-07-30",
 		"numero": 58,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "MARIA.ESPERANZA.BAZURTO",
 		"documento": ""
@@ -482,6 +535,7 @@
 		"monto": 297556,
 		"fecha": "2015-07-30",
 		"numero": 59,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "SARODI",
 		"documento": ""
@@ -491,6 +545,7 @@
 		"monto": 26000,
 		"fecha": "2015-06-12",
 		"numero": 6,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "91973916"
@@ -500,6 +555,7 @@
 		"monto": 181656,
 		"fecha": "2015-08-21",
 		"numero": 60,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "ALFONSO.ABRIL.RESTAURANTE",
 		"documento": ""
@@ -509,6 +565,7 @@
 		"monto": 1738640,
 		"fecha": "2015-08-24",
 		"numero": 61,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"documento": ""
@@ -518,6 +575,7 @@
 		"monto": 407276,
 		"fecha": "2015-08-24",
 		"numero": 62,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "SOMOOTHIE.FIT",
 		"documento": ""
@@ -527,6 +585,7 @@
 		"monto": 106394,
 		"fecha": "2015-08-24",
 		"numero": 64,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "EUROPAN.PANADERIA.EUROPEA",
 		"documento": ""
@@ -536,6 +595,7 @@
 		"monto": 188394,
 		"fecha": "2015-08-24",
 		"numero": 65,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "JUAN.SOTO",
 		"documento": ""
@@ -545,6 +605,7 @@
 		"monto": 60000,
 		"fecha": "2015-08-24",
 		"numero": 66,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "OLGA.LUCIA.RUBIO.PARTICULAR",
 		"documento": ""
@@ -554,6 +615,7 @@
 		"monto": 17400,
 		"fecha": "2015-08-24",
 		"numero": 67,
+		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"cliente": "ALFONSO.ABRIL.RESTAURANTE",
 		"documento": ""
@@ -563,6 +625,7 @@
 		"monto": 567240,
 		"fecha": "2015-08-21",
 		"numero": 68,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "INVERCHANG.SAS.Chilli.Chang",
 		"documento": "08506104"
@@ -572,6 +635,7 @@
 		"monto": 263520,
 		"fecha": "2015-08-21",
 		"numero": 69,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "08644612"
@@ -581,6 +645,7 @@
 		"monto": 268076,
 		"fecha": "2015-06-12",
 		"numero": 7,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
 		"documento": "92289614"
@@ -590,6 +655,7 @@
 		"monto": 369700,
 		"fecha": "2015-08-26",
 		"numero": 70,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "C&P.CORREA.ZOE",
 		"documento": "09808095"
@@ -599,6 +665,7 @@
 		"monto": 510632,
 		"fecha": "2015-08-31",
 		"numero": 71,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "RESTAURANTE.EL.ARABE",
 		"documento": ""
@@ -608,6 +675,7 @@
 		"monto": 1723951,
 		"fecha": "2015-08-31",
 		"numero": 72,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": ""
@@ -617,6 +685,7 @@
 		"monto": 399550,
 		"fecha": "2015-09-01",
 		"numero": 73,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "11608054"
@@ -626,6 +695,7 @@
 		"monto": 258835,
 		"fecha": "2015-09-02",
 		"numero": 74,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "AVESCO.SA.MERCADO.93",
 		"documento": "11702094"
@@ -635,44 +705,239 @@
 		"monto": 2598124,
 		"fecha": "2015-08-25",
 		"numero": 75,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "09317223"
 	}, {
-		"fechaCreacion": "2015-09-08",
+		"fechaCreacion": null,
 		"medio": "TRANSFERENCIA",
 		"monto": 1538645,
 		"fecha": "2015-08-25",
 		"numero": 76,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "HARRY.SAS.HARRY.SASSON",
 		"documento": "09317215"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 539528,
+		"fecha": "2015-09-21",
+		"numero": 77,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "15272258"
 	}, {
 		"fechaCreacion": "2015-09-08",
 		"medio": "EFECTIVO",
 		"monto": 651800,
 		"fecha": "2015-09-08",
 		"numero": 78,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "TREPANDO.SAS.CLOWNS",
 		"documento": ""
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 1271457,
+		"fecha": "2015-09-21",
+		"numero": 79,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "EDUCACION.SIGLO.XXI.S.A..COLEGIO.LA.ARBOLEDA",
+		"documento": "15290376"
 	}, {
 		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 518799,
 		"fecha": "2015-07-16",
 		"numero": 8,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
 		"documento": "92858181"
+	}, {
+		"fechaCreacion": null,
+		"medio": "TRANSFERENCIA",
+		"monto": 902325,
+		"fecha": "2015-09-22",
+		"numero": 80,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE",
+		"documento": "15515442"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 1302680,
+		"fecha": "2015-10-13",
+		"numero": 81,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "INVERCHANG.SAS.Chilli.Chang",
+		"documento": "20246148"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 3374318,
+		"fecha": "2015-09-23",
+		"numero": 82,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "15868631"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 619842,
+		"fecha": "2015-09-24",
+		"numero": 83,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "15947916"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 896650,
+		"fecha": "2015-09-29",
+		"numero": 84,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "OPERADORA.RESTAURANTE.Y.EVENTOS.CARTAGENA.SAS.RESTAURANTE",
+		"documento": "16761311"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 1256331,
+		"fecha": "2015-09-30",
+		"numero": 85,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"documento": "17416078"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 1765605,
+		"fecha": "2015-10-15",
+		"numero": 86,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "PAESA.SA.SALTO.DEL.ANGEL",
+		"documento": "20870808"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 416600,
+		"fecha": "2015-10-29",
+		"numero": 87,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "24097209"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 81160,
+		"fecha": "2015-10-21",
+		"numero": 88,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "AVESCO.SA.MERCADO.93",
+		"documento": "22217090"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 1759133,
+		"fecha": "2015-10-23",
+		"numero": 89,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "22812487"
 	}, {
 		"fechaCreacion": "2015-07-28",
 		"medio": "TRANSFERENCIA",
 		"monto": 425750,
 		"fecha": "2015-06-17",
 		"numero": 9,
+		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"cliente": "JUAN.EL.PANADERO.SAS.BROT.CALLE.81",
 		"documento": "93129155"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 170288,
+		"fecha": "2015-10-23",
+		"numero": 90,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "LUCAS.ANDRES.LOPEZ.SERNA.RESTAURANTE.CARAMBOLO",
+		"documento": "22867249"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 3571946,
+		"fecha": "2015-10-26",
+		"numero": 91,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "HARRY.SAS.HARRY.SASSON",
+		"documento": "22935847"
+	}, {
+		"fechaCreacion": "2016-01-18",
+		"medio": "TRANSFERENCIA",
+		"monto": 280195,
+		"fecha": "2015-10-28",
+		"numero": 92,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "AVESCO.SA.MERCADO.93",
+		"documento": "23853573"
+	}, {
+		"fechaCreacion": "2016-03-22",
+		"medio": "TRANSFERENCIA",
+		"monto": 438000,
+		"fecha": "2015-11-09",
+		"numero": 93,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "26101652"
+	}, {
+		"fechaCreacion": "2016-03-22",
+		"medio": "TRANSFERENCIA",
+		"monto": 418000,
+		"fecha": "2015-11-12",
+		"numero": 94,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "27338320"
+	}, {
+		"fechaCreacion": "2016-03-22",
+		"medio": "TRANSFERENCIA",
+		"monto": 406300,
+		"fecha": "2015-12-04",
+		"numero": 95,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "31969320"
+	}, {
+		"fechaCreacion": "2016-03-22",
+		"medio": "TRANSFERENCIA",
+		"monto": 413300,
+		"fecha": "2015-12-22",
+		"numero": 96,
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"cliente": "C&P.CORREA.ZOE",
+		"documento": "35926518"
 	}
 ]

@@ -44,7 +44,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false}],'Admin');
 		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
 		var numeroNodes = makeStore(['Numeros'],'Admin','numeros');
-		var informeNodes = makeStore(['Ventas','Gastos','Tendencias',{name:'IVA',clickable:false}],'Informes','tablaDinamica');
+		var informeNodes = makeStore(['Ventas','Gastos','Tendencias',{name:'Pagos',clickable:true,template:'InformeDePagos'},{name:'IVA',clickable:false}],'Informes','tablaDinamica');
 		var pYgNodes = makeStore(['PyG'],'Informes','pYg');
 		var IVANodes = makeStore(['Recaudado','Pagado'],'IVA','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},

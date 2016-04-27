@@ -65,6 +65,11 @@ indexes:
   - name: numero
     direction: desc
 
+- kind: PagoRecibido
+  properties:
+  - name: cliente
+  - name: fecha
+
 - kind: Precio
   properties:
   - name: grupo

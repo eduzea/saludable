@@ -509,6 +509,20 @@ class ConsolidarFactura(webapp2.RequestHandler):
                   }
         response = dataStoreInterface.create_entity('Factura', values)['entity']
         self.response.out.write(JSONEncoder().encode(response))                
+
+class GetInformePagos(webapp2.RequestHandler):
+    def get(self):
+        cliente = self.request.get('cliente')
+        clienteNegocios = Cliente.query(Cliente.nombre == cliente).fetch()
+        fechaDesde = self.request.get('fechaDesde')
+        fechaHasta = self.request.get('fechaHasta')
+        factura_query = dataStoreInterface.buildQuery('Factura', {'fechaDesde':fechaDesde,'fechaHasta': fechaHasta,'cliente':[cliente.key for cliente in clienteNegocios]})
+        facturas = factura_query.fetch()
+        pagos_query = dataStoreInterface.buildQuery('PagoRecibido', {'fechaDesde':fechaDesde,'fechaHasta': fechaHasta,'cliente':[cliente.key for cliente in clienteNegocios]})
+        pagos = pagos_query.fetch() 
+        response = {'facturas': facturas, 'pagos':pagos}
+        self.response.out.write(JSONEncoder().encode(response)) 
+
         
 class GuardarInventario(webapp2.RequestHandler):        
     def post(self):

@@ -1,5 +1,6 @@
 from __future__ import division
 from google.appengine.ext import ndb
+from datetime import datetime, timedelta
 
 
 class Record(ndb.Model):
@@ -109,6 +110,8 @@ class Factura(Record):
     iva = ndb.ComputedProperty(lambda self: True if self.montoIva else False)
     montoIva = ndb.IntegerProperty(default=0)
     anulada = ndb.BooleanProperty(default=False)
+    #A hack to work around lack of support for datetime.date in computed properties...http://stackoverflow.com/questions/22652872/google-appengine-computed-property-date-return-throws-exception
+    fechaVencimiento = ndb.ComputedProperty(lambda self: datetime.combine(self.fecha + timedelta(days = self.cliente.get().diasPago),datetime.min.time()))
     pagada = ndb.BooleanProperty(default=False)
     abono = ndb.IntegerProperty(repeated = True)
     pagoRef = ndb.IntegerProperty(repeated = True)

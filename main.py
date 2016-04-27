@@ -49,6 +49,7 @@ application = webapp2.WSGIApplication([
     ('/importScript', ImportScript),
     ('/setNumero', SetNumber),
     # Informes
+    ('/informePagos',GetInformePagos) ,
     ('/getProductSales',GetProductSales) ,
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
