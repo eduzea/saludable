@@ -61,7 +61,7 @@ def prepareRecords(entityClass, entities):
                     dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
                 except Exception:
                     dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
-            if type(prop_value) == date:
+            if type(prop_value) == date or type(prop_value) == datetime :
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
             if type(props[prop_key]) == ndb.StructuredProperty:
                 if type(prop_value) == list:

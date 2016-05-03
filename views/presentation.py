@@ -17,6 +17,16 @@ def tagForField(entity_class, prop, auto=None, customId=None):
     tag = getTagHTML(prop, entity_class, customId)
     return Markup(tag)
 
+
+def selectForField(entityClass, field, tagId):
+    entity = classModels[entityClass]
+    entities = entity.query(entity._properties['activo'] != False).fetch()
+    options = set([getattr(entity, field) for entity in entities])
+    optionsObjs = [{'value':option,'rotulo':option} for option in options]
+    optionsObjs.sort()
+    html = getSelectTagHTML(tagId, optionsObjs)
+    return Markup(html)
+
 def getClientesConRemision(tagId):
     remisiones = Remision.query(projection = [Remision.cliente], distinct = True).fetch()
     clientes = set([remision.cliente.get().nombre.strip() for remision in remisiones])
@@ -63,6 +73,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 JINJA_ENVIRONMENT.globals['pythonFunction']=pythonFunction #generic function dispatcher
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
+JINJA_ENVIRONMENT.globals['selectForField']=selectForField
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
 JINJA_ENVIRONMENT.globals['autoNum']= dataStoreInterface.autoNum        

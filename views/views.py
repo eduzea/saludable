@@ -2,6 +2,7 @@
 
 from __future__ import division
 import sys
+import csv
 sys.path.insert(0, 'libs/python-dateutil-1.5')
 sys.path.insert(0, 'libs/easydict-1.6')
 import webapp2
@@ -12,6 +13,7 @@ from config import *
 from utils import *
 from PyG import *
 from presentation import *
+from importCSV import *
 
 
 if 'dataStoreInterface' not in globals():
@@ -520,8 +522,17 @@ class GetInformePagos(webapp2.RequestHandler):
         facturas = factura_query.fetch()
         pagos_query = dataStoreInterface.buildQuery('PagoRecibido', {'fechaDesde':fechaDesde,'fechaHasta': fechaHasta,'cliente':[cliente.key for cliente in clienteNegocios]})
         pagos = pagos_query.fetch() 
-        response = {'facturas': facturas, 'pagos':pagos}
+        response = {'facturas': prepareRecords('Factura', facturas), 'pagos':pagos}
         self.response.out.write(JSONEncoder().encode(response)) 
+
+
+class ImportCSV(webapp2.RequestHandler):
+    def get(self):
+        entityClass = self.request.get('entityClass')
+        datafile = self.request.get('datafile')
+        importCSV('data/' + datafile, entityClass)
+        self.response.write('Registros Importados!')
+
 
         
 class GuardarInventario(webapp2.RequestHandler):        
@@ -673,10 +684,12 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        provs = Proveedor.query().fetch()
-        self.response.out.write(provs)
-#         for prov in provs:
-#             prov.activo = True
-#             print prov
-#             prov.put()
-        self.response.out.write(provs)
+        clientes = Cliente.query().fetch()
+        for cliente in clientes:
+            if cliente.nit == '':
+                cliente.nit = 'NA'
+            else:
+                nit = cliente.nit.replace('.','').replace('-','')[:9]
+                cliente.nit = nit
+            cliente.put()
+        self.response.out.write('Done!')

@@ -129,6 +129,9 @@ class CuentaTransferencias(Record):
 class PagoRecibido(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
+    oficina = ndb.StringProperty(indexed=True, default='')
+    descripcion = ndb.StringProperty(indexed=True)
+    comentario =  ndb.TextProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
     medio = ndb.KeyProperty(kind=MedioDePago)
     documento = ndb.StringProperty(indexed=True)

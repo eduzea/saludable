@@ -46,9 +46,9 @@ def updateCuentasPorCobrar(pago):
             factura.put()
             break
 
-dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
-dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateCuentasPorCobrar)
-dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
+#dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
+#dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateCuentasPorCobrar)
+#dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
 
 
 ######################### FACTURA Y EXISTENCIAS ##############################

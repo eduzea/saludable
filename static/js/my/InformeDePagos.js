@@ -22,8 +22,9 @@ function(request,registry,parser,dom,on,query,Standby, Store, domClass, number, 
 	
 	var facturaStore = new Store();
 	var factura_columns = [
-		{field : 'numero', name : '#', style: "text-align: center"},
-		{field : 'total', name : 'Monto', style: "text-align: center",
+		{field : 'numero', name : '#', style: "text-align: center;", width:'2.5em'},
+		{field : 'cliente', name : 'Negocio', style: "text-align: center",width:'15em'},
+		{field : 'total', name : 'Monto', style: "text-align: center", width:'4em',
 				formatter: function(data){
 					return number.format(data.total,{pattern:'###,###'});
 				}		
@@ -61,13 +62,13 @@ function(request,registry,parser,dom,on,query,Standby, Store, domClass, number, 
 				]
 	}, 'pagos_pagos');
 	facturasGrid.startup();
-	domClass.add(dom.byId('pagos_pagos'),'pagos-factura-grid');
+	domClass.add(dom.byId('pagos_pagos'),'pagos-pagos-grid');
 	
 	on(registry.byId('GenerarInformeBtn_Pagos'),'click', function(e){
 		var desde = registry.byId('fecha_pagos_1').value.toISOString().split('T')[0];
 		var hasta =  registry.byId('fecha_pagos_2').value.toISOString().split('T')[0];
 		var cliente = registry.byId('pagos_cliente').value;
-		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta + '&cliente=' + cliente ;
+		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta + '&cliente=' + encodeURIComponent(cliente) ;
 		standby.show(); 
 		request('/informePagos?' + appendUrl, {handleAs:'json'}).then(function(response) {
 			var facturas = response.facturas;

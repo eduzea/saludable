@@ -8,6 +8,11 @@
 }
 .pagos-factura-grid{
 	height: 440px;
+    width: 500px;
+	
+}
+.pagos-pagos-grid{
+	height: 440px;
     width: 460px;
 	
 }
