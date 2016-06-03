@@ -386,8 +386,24 @@ class GuardarFactura(webapp2.RequestHandler):
         values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(values['entity_class'])
-        entity = dataStoreInterface.create_entity(entityClass, values)['entity']
-        self.response.out.write(json.dumps({'result':'Success','id': entity.key.id()}))     
+        factura = dataStoreInterface.create_entity(entityClass, values)['entity']
+        #Cuando el pago es contra recibo, crear automaticamente el PagoRecibido
+        cliente = values['cliente'].get() # turns out the values dict gest modified by the create_entity function. It now holds the client key.
+        if cliente.diasPago == 0:
+            values['pagada'] = True
+            pago = dataStoreInterface.create_entity('PagoRecibido', 
+            {'numero':getConsecutivo('PagoRecibido'),
+             'fecha':values['fecha'],
+             'cliente':cliente.key,
+             'medio':'EFECTIVO',
+             'monto':values['total'],
+             'facturas':[values['numero']]
+             }
+                                                    )['entity']
+            factura.pagoRef = pago.numero
+            factura.put
+            
+        self.response.out.write(json.dumps({'result':'Success','id': factura.key.id()}))     
 
 
 
@@ -685,15 +701,8 @@ class GetExistencias(webapp2.RequestHandler):
 class Fix(webapp2.RequestHandler):
     def get(self):
         facturas = dataStoreInterface.buildQuery('Factura',
-                                                 {'cliente':["VALENCIA Y SOTO S.A KARENS PIZZA CIUDAD JARDIN (K8)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA FLORA (K1)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA SAN FERNANDO (K2)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA NOVENA (K5)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA 52 (K6)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA AV. SEXTA (K4)",
-                                                            "VALENCIA Y SOTO S.A KARENS PIZZA BOGOTA (K7)"]})
+                                                 {'cliente':"TREPANDO SAS CLOWNS"})
         for factura in facturas:
-            fixCliente = factura.cliente.id().replace('Y','&')
-            factura.cliente = ndb.Key('Cliente',fixCliente)
+            factura.pagada = True
             factura.put()
         self.response.out.write('Done!')

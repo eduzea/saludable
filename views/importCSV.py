@@ -47,6 +47,7 @@ def processFacturasString(facturasString, monto, numero):
         if not factura: continue
         total += factura.total
         factura.pagada = True
+        factura.pagoRef = [int(numero)]
         factura.put()
     if total != monto:
         if total > monto:

@@ -120,8 +120,8 @@ class Factura(Record):
     #A hack to work around lack of support for datetime.date in computed properties...http://stackoverflow.com/questions/22652872/google-appengine-computed-property-date-return-throws-exception
     fechaVencimiento = ndb.ComputedProperty(lambda self: datetime.combine(self.fecha + timedelta(days = self.cliente.get().diasPago),datetime.min.time()))
     pagada = ndb.BooleanProperty(default=False)
-    abono = ndb.IntegerProperty(repeated = True)
-    pagoRef = ndb.IntegerProperty(repeated = True)
+    #abono = ndb.IntegerProperty(repeated = True)
+    pagoRef = ndb.IntegerProperty()
     remisiones = ndb.IntegerProperty(repeated = True)
     
 class MedioDePago(Record):
