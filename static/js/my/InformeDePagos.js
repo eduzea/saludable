@@ -7,13 +7,14 @@ require(['dojo/request',
 		 'dojo/query',
 		 "dojox/widget/Standby",
 		 'dojo/store/Memory',
+		 'dojo/aspect',
 		 'dojo/dom-class',
 		 "dojo/number",
 		 'gridx/Grid',
 		 'gridx/core/model/cache/Sync',
 		 'gridx/modules/SingleSort'
 ], 
-function(request,registry,parser,dom,on,query,Standby, Store, domClass, number, Grid, Cache) {
+function(request,registry,parser,dom,on,query,Standby, Store, aspect, domClass, number, Grid, Cache) {
 	parser.instantiate([dom.byId('GenerarInformeBtn_Pagos')]);
 	//Modal to show its loading
 	var standby = new Standby({target: 'pagos_standby'});
@@ -22,14 +23,15 @@ function(request,registry,parser,dom,on,query,Standby, Store, domClass, number, 
 	
 	var facturaStore = new Store();
 	var factura_columns = [
-		{field : 'numero', name : '#', style: "text-align: center;", width:'2.5em'},
+		{field : 'numero', name : '#', style: "text-align: center;", width:'2em'},
 		{field : 'cliente', name : 'Negocio', style: "text-align: center",width:'15em'},
-		{field : 'total', name : 'Monto', style: "text-align: center", width:'4em',
+		{field : 'total', name : 'Monto', style: "text-align: center", width:'4.5em',
 				formatter: function(data){
 					return number.format(data.total,{pattern:'###,###'});
 				}		
 		},
-		{field : 'fechaVencimiento', name : 'Vencimiento', style: "text-align: center"},
+		{field : 'fecha', name : 'Fecha', style: "text-align: center",width:'5em'},
+		{field : 'fechaVencimiento', name : 'Vence', style: "text-align: center"},
 	];
 	
 	var facturasGrid = new Grid({
@@ -39,19 +41,33 @@ function(request,registry,parser,dom,on,query,Standby, Store, domClass, number, 
 	modules : [	'gridx/modules/SingleSort'
 				]
 	}, 'pagos_facturas');
+	
+	//Colorear factura pagadas o vencidas
+	aspect.after(facturasGrid.body, 'onAfterRow', function(row) {
+		var key = row.id;
+		var record = row.grid.store.get(key); 
+		var vence = record ['fechaVencimiento'].replace(/-/g, '\/').replace(/T.+/, '');
+		if (record['pagada'] == true){
+			row.node().style.color = 'green';
+		}else if (new Date(vence) < new Date()){
+			row.node().style.color = 'red';
+		}
+	}, true);
+	
 	facturasGrid.startup();
 	domClass.add(dom.byId('pagos_facturas'),'pagos-factura-grid');
 
 	var pagoStore = new Store();
 	var pago_columns = [
-		{field : 'numero', name : '#', style: "text-align: center"},
+		{field : 'numero', name : '#', style: "text-align: center",width:'2.5em'},
 		{field : 'fecha', name : 'Fecha', style: "text-align: center"},
 		{field : 'monto', name : 'Monto', style: "text-align: center",
 				formatter: function(data){
 					return number.format(data.monto,{pattern:'###,###'});
 				}		
 		},
-		{field : 'medio', name : 'Medio', style: "text-align: center"},
+		{field : 'medio', name : 'Medio', style: "text-align: center",width:'4.5em'},
+		{field : 'facturas', name : 'Facturas', style: "text-align: center"}
 	];
 	
 	var pagosGrid = new Grid({

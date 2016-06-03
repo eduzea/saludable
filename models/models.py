@@ -98,7 +98,14 @@ class Remision(Record):
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
     factura = ndb.IntegerProperty(default=0)
-    
+
+# def tryDiasPago(self):
+#     try:
+#         return self.cliente.get().diasPago
+#     except Exception:
+#         print 'Factura No. ', self.numero, ' Has client problem'
+#         return 0
+            
 class Factura(Record):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -136,6 +143,7 @@ class PagoRecibido(Record):
     medio = ndb.KeyProperty(kind=MedioDePago)
     documento = ndb.StringProperty(indexed=True)
     monto = ndb.IntegerProperty()
+    facturas = ndb.IntegerProperty(repeated = True)
     
 class Devolucion(Record):
     numero = ndb.IntegerProperty()

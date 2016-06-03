@@ -684,12 +684,16 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        clientes = Cliente.query().fetch()
-        for cliente in clientes:
-            if cliente.nit == '':
-                cliente.nit = 'NA'
-            else:
-                nit = cliente.nit.replace('.','').replace('-','')[:9]
-                cliente.nit = nit
-            cliente.put()
+        facturas = dataStoreInterface.buildQuery('Factura',
+                                                 {'cliente':["VALENCIA Y SOTO S.A KARENS PIZZA CIUDAD JARDIN (K8)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA FLORA (K1)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA SAN FERNANDO (K2)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA NOVENA (K5)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA LA 52 (K6)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA AV. SEXTA (K4)",
+                                                            "VALENCIA Y SOTO S.A KARENS PIZZA BOGOTA (K7)"]})
+        for factura in facturas:
+            fixCliente = factura.cliente.id().replace('Y','&')
+            factura.cliente = ndb.Key('Cliente',fixCliente)
+            factura.put()
         self.response.out.write('Done!')

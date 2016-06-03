@@ -2,7 +2,7 @@ import csv
 import locale
 from datetime import datetime
 import dateutil
-from models.models import PagoRecibido, Cliente
+from models.models import PagoRecibido, Cliente, Factura
 from datastorelogic import DataStoreInterface
 from google.appengine._internal.django.utils import datastructures
 
@@ -14,7 +14,6 @@ def importCSV(path,entity):
         reader = csv.reader(f)
         for row in reader:
             pago = csv2PagoRecibido(row)
-            print pago
             
 def csv2PagoRecibido(record):
     numero = record[0]
@@ -25,21 +24,37 @@ def csv2PagoRecibido(record):
     documento = record[5].strip()#51624971
     cliente = None
     descripcion = ''
-    if medio == 'TRANSFERENCIA':
-        nit = processClienteString(record[6])#000000900376423  PROVEEDOR 000000900376423
-        cliente = Cliente.query(Cliente.nit == processNIT(nit)).fetch()
-        if not cliente:
-            print 'WARNING: NO SE PUDO INDENTIFICAR EL CLIENTE: ', record[6]
-            return
-        cliente = cliente[0].key
-        descripcion = processDescripcionString(record[6])#000000900376423  PROVEEDOR 000000900376423
+    nit = processClienteString(record[6])#000000900376423  PROVEEDOR 000000900376423
+    cliente = Cliente.query(Cliente.nit == processNIT(nit)).fetch()
+    if not cliente:
+        print 'WARNING: NO SE PUDO INDENTIFICAR EL CLIENTE: ', record[6]
+        return
+    cliente = cliente[0].key
+    descripcion = processDescripcionString(record[6])#000000900376423  PROVEEDOR 000000900376423
+    facturas = processFacturasString(record[7], monto, numero)
     values =  {'numero':numero,'fecha':fecha, 'medio':medio, 'oficina':oficina,'monto':monto, 'documento':documento, 'cliente':cliente,
-           'descripcion':descripcion}
+           'descripcion':descripcion, 'facturas':facturas}
     pago = dataStoreInterface.create_entity('PagoRecibido',values)
     return pago
-    
+
+def processFacturasString(facturasString, monto, numero):
+    monto = int(monto)
+    if facturasString is '': return []
+    facturas = facturasString.strip().split('-')
+    total = 0
+    for facturaKey in facturas:
+        factura = Factura.get_by_id(facturaKey)
+        if not factura: continue
+        total += factura.total
+        factura.pagada = True
+        factura.put()
+    if total != monto:
+        if total > monto:
+            print 'WARNING: Pago # ', numero ,' : ', monto, ' es menos que la suma de las facturas: ', total, ' = ', 1.0 * total/monto,' % '
+    return facturas
+
 def processNIT(nitString):
-    nit = nitString.replace('.','').replace('-','')[:9]
+    nit = nitString.lstrip('0').replace('.','').replace('-','')[:9]
     return nit
     
 def processDateString(string):
@@ -60,7 +75,7 @@ def processMedioString(string):
     return 'EFECTIVO'
     
 def processMontoString(string):
-    return string.strip().replace(',00','').replace('$','').replace('.','')
+    return string.strip().replace('$','').replace('.','').replace(',','')
 
 def processClienteString(string):
     if string.strip() == '': return ''

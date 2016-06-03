@@ -288,6 +288,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                               {'id':'oficina','ui':'Oficina','style':'width:8em'},
                               {'id':'documento','ui':'Documento','required':'false', 'style':'width:10em'},
                               {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
+                              {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:5em'}
                               ],
             'Inventario':[
                           {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
@@ -494,6 +495,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                               {'id':'oficina','ui':'Oficina','style':'width:8em'},
                               {'id':'documento','ui':'Documento','required':'false', 'style':'width:10em'},
                               {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
+                              {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:5em'},
                               ],
             'Inventario':[
                           {'id':'sucursal','ui':'Sucursal','style':'width:5em'},

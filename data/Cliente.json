@@ -90,7 +90,7 @@
 		"telefono": "4055900",
 		"nit": "800256161-9"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "MERCADO 93",
 		"iva": true,
@@ -103,9 +103,9 @@
 		"nombre": "AVESCO SA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2362500",
-		"nit": "860025461-0"
+		"nit": "860025461"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "MERCADO USAQUEN",
 		"iva": true,
@@ -118,7 +118,7 @@
 		"nombre": "AVESCO SA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2134192",
-		"nit": "860025461-0"
+		"nit": "860025461"
 	}, {
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
@@ -330,7 +330,7 @@
 		"telefono": "3209675847",
 		"nit": "79907494"
 	}, {
-		"fechaCreacion": null,
+		"fechaCreacion": "2016-05-06",
 		"diasPago": 30,
 		"negocio": "PIZZERIA SALERNO",
 		"iva": true,
@@ -341,9 +341,9 @@
 		"activo": true,
 		"rotulo": "DANARO LTDA PIZZERIA SALERNO",
 		"nombre": "DANARO LTDA",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8938989",
-		"nit": "890304587-6"
+		"nit": "890304587"
 	}, {
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
@@ -630,7 +630,7 @@
 		"telefono": "3220732",
 		"nit": "900016780-1"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 0,
 		"negocio": "",
 		"iva": true,
@@ -643,7 +643,7 @@
 		"nombre": "JARDIN ABACO",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6197512",
-		"nit": "830123705-3"
+		"nit": "830123705"
 	}, {
 		"fechaCreacion": null,
 		"diasPago": 0,
@@ -660,7 +660,7 @@
 		"telefono": "627 0928",
 		"nit": "8000628134-3"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "BROT CALLE 81",
 		"iva": true,
@@ -673,9 +673,9 @@
 		"nombre": "JUAN EL PANADERO SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6748954",
-		"nit": "900450289-6"
+		"nit": "900450289"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "BROT CALLE 97",
 		"iva": true,
@@ -688,9 +688,9 @@
 		"nombre": "JUAN EL PANADERO SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6366067",
-		"nit": "900450289-6"
+		"nit": "900450289"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "PARQUE CHICO",
 		"iva": true,
@@ -703,7 +703,7 @@
 		"nombre": "JUAN EL PANADERO SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6748954",
-		"nit": "900450289-6"
+		"nit": "900450289"
 	}, {
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
@@ -810,7 +810,7 @@
 		"telefono": "315 5079/ 315 4551",
 		"nit": "149804022"
 	}, {
-		"fechaCreacion": "2016-03-04",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "CREPES & WAFFLES",
 		"iva": true,
@@ -821,9 +821,9 @@
 		"activo": true,
 		"rotulo": "MAQUITE CREPES & WAFFLES",
 		"nombre": "MAQUITE",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "654 34 06",
-		"nit": "800070655-5"
+		"nit": "800070655"
 	}, {
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 0,
@@ -1260,7 +1260,7 @@
 		"telefono": "8933227",
 		"nit": "9003764230"
 	}, {
-		"fechaCreacion": "2016-04-14",
+		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "Restaurante",
 		"iva": true,
@@ -1273,7 +1273,7 @@
 		"nombre": "Restaurante Criterion",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3142934192",
-		"nit": "830128070-8"
+		"nit": "830128070"
 	}, {
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
