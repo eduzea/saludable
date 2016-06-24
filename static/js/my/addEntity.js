@@ -1,9 +1,9 @@
 //# sourceURL=../static/js/my/addEntity.js
 require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
 		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/number",
-		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox', 'gridx/modules/CellWidget',
+		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready', 'gridx/modules/CellWidget',
 		 'dojo/domReady!'],
-function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox) {
+function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready) {
 	var entityClass = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
 	var buttons={};
@@ -254,8 +254,11 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 	};
 	topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
 	
-	if (entityClass in saludable.addEntityFuncs)
-					saludable.addEntityFuncs[entityClass]();
+	ready(function(){
+		if (entityClass in saludable.addEntityFuncs)
+				saludable.addEntityFuncs[entityClass]();		
+	});
+
 	
 	
 	var fillForm = function(nodelist, rowData, entityClass){

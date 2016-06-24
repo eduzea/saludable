@@ -670,14 +670,16 @@ class GuardarLoteDeCompra(webapp2.RequestHandler):
             values = {'fruta':ndb.Key(Fruta,fruta.detalle),
                       'proveedor': egreso.proveedor,
                       'fecha':egreso.fecha,
-                      'precio':fruta.precio}
+                      'precio':fruta.precio,
+                      'peso':fruta.cantidad
+                      }
             dataStoreInterface.create_entity('LoteDeCompra', values)
         self.response.out.write('Success')
 
 class GetLotes(webapp2.RequestHandler):
     def get(self):
         fruta = self.request.get('fruta')
-        lotes = dataStoreInterface.buildQuery('LoteDeCompra',{'fruta':fruta}).fetch()
+        lotes = dataStoreInterface.buildQuery('LoteDeCompra',{'fruta':fruta, 'procesado':False}).fetch()
         self.response.write(JSONEncoder().encode(lotes))
 
 class GetCuentasPorCobrar(webapp2.RequestHandler):

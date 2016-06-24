@@ -38,13 +38,14 @@ function(dom,registry,domAttr,request,topic,number)
 					items.push({ "value": 'NO.HAY', "label": 'NO HAY' });
 				}else{
 					response.forEach(function(lote){
-						items.push({ "value": lote.rotulo, "label": lote.rotulo, 'precio': lote.precio});
+						items.push({ "value": lote.rotulo, "label": lote.rotulo, 'precio': lote.precio, 'peso':lote.peso});
 					});								
 				}
 				var loteSelect = registry.byId('loteDeCompra_Produccion');
 				loteSelect.options = [];
 				loteSelect.addOption(items);
 				loteSelect.reset();
+				loteSelect.onChange();
 			}
 		);
 	};
@@ -60,6 +61,10 @@ function(dom,registry,domAttr,request,topic,number)
 			loteSelect = registry.byId('loteDeCompra_Produccion');
 			loteSelect.listenerfunc = getLotes; 
 			topic.subscribe('FRUTA_PRODUCCION', loteSelect.listenerfunc);
+			loteSelect.onChange = function(){
+				pesoTextBox = registry.byId('pesoFruta_Produccion');
+				pesoTextBox.set('value',loteSelect.getOptions(loteSelect.value)['peso']);
+			};
 			frutaSelect.onChange();
 		}
 	};

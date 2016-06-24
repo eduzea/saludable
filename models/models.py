@@ -219,6 +219,8 @@ class LoteDeCompra(Record):
     proveedor = ndb.KeyProperty(kind=Proveedor)
     fecha = ndb.DateProperty()
     precio = ndb.IntegerProperty()
+    peso = ndb.IntegerProperty()
+    procesado = ndb.BooleanProperty(default = False)
     rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
 
 def costoBruto(produccion):

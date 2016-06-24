@@ -7,6 +7,7 @@ from models.models import *
 from datetime import datetime, date, time
 from datastorelogic import DataStoreInterface
 
+
 # Create the Instance - this approach is suspect...
 
 if 'dataStoreInterface' not in globals():
@@ -147,6 +148,13 @@ dataStoreInterface.registerFollowUpLogic('post','delete','Inventario', actualiza
 
 ######################### PRODUCCION Y EXISTENCIAS ##########################
 
+def produccionPostCreate(produccion):
+    lote = produccion.loteDeCompra.get()
+    if lote.peso == produccion.pesoFruta:#si se produjo todo lo que se compro
+        lote.procesado = True
+        lote.put()
+    sumarExistencias(produccion)
+                                     
 def sumarExistencias(produccion):
     sucursal = produccion.sucursal
     producto = produccion.fruta
@@ -170,8 +178,15 @@ def sumarExistencias(produccion):
                                                 'existencias':  productoPorcion.cantidad})['entity']
                 existencias.registros.append(nuevoRegistro.key)
         existencias.put()
+
         
 def removeProduccion(produccion):
+    lote = produccion.loteDeCompra.get()
+    lote.procesado = False
+    lote.put()
+    correctExistencias(produccion)
+
+def correctExistencias(produccion):    
     sucursal = produccion.sucursal
     producto = produccion.fruta
     existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
@@ -188,5 +203,30 @@ def removeProduccion(produccion):
         existencias.put()
 
 dataStoreInterface.registerFollowUpLogic('pre','update','Produccion', removeProduccion)
-dataStoreInterface.registerFollowUpLogic('post','create','Produccion', sumarExistencias)
+dataStoreInterface.registerFollowUpLogic('post','create','Produccion', produccionPostCreate)
 dataStoreInterface.registerFollowUpLogic('post','delete','Produccion', removeProduccion)
+
+####################################################################################################
+def removeEgreso(egreso):
+    if egreso.resumen == 'Materia.Prima-Fruta':
+        for fruta in egreso.compras:
+            ndb.Key(LoteDeCompra, fruta.detalle + '.' + egreso.proveedor.id() + '.' + str(egreso.fecha)).delete()
+
+def postCreateEgreso(egreso):
+    if egreso.resumen == 'Materia.Prima-Fruta':
+        for fruta in egreso.compras:
+            values = {'fruta':ndb.Key(Fruta,fruta.detalle),
+                      'proveedor': egreso.proveedor,
+                      'fecha':egreso.fecha,
+                      'precio':fruta.precio,
+                      'peso':fruta.cantidad
+                      }
+            dataStoreInterface.create_entity('LoteDeCompra', values)
+
+    
+
+dataStoreInterface.registerFollowUpLogic('post','create','Egreso', postCreateEgreso)
+dataStoreInterface.registerFollowUpLogic('pre','update','Egreso', removeEgreso)
+dataStoreInterface.registerFollowUpLogic('post','update','Egreso', postCreateEgreso)
+dataStoreInterface.registerFollowUpLogic('post','delete','Egreso', removeEgreso)
+
