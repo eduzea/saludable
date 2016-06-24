@@ -79,7 +79,7 @@
 110,Diciembre 10 de 2015,Transferencia otra entidad    ,ACH                           ,"$603,200 ",33167080,000000805003730  PROVEEDOR PROVDIC10                                  ,
 111,Diciembre 10 de 2015,Transferencia otra entidad    ,ACH                           ,"$423,400 ",33205561,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
 112,Diciembre 15 de 2015,Transferencia otra entidad    ,ACH                           ,"$812,000 ",34278058,000000805003730  PROVEEDOR PROVDIC15                                  ,
-113,Diciembre 15 de 2015,Deposito en cheque local      ,UNICENTRO                     ,"$381,872 ",1964,                                                                      ,
+113,Diciembre 15 de 2015,Deposito en cheque local      ,UNICENTRO                     ,"$381,872 ",1964,8000628134 HANS ANDERSEN,3792
 114,Diciembre 15 de 2015,Transferencia otra entidad    ,ACH                           ,"$317,686 ",34378823,8002410124       PROVEEDOR Can. 003757-003759-                        ,3757-3759
 115,Diciembre 17 de 2015,Deposito en cheque local      ,AVENIDA COLOMBIA              ,"$795,760 ",12112,                                                                      ,
 116,Diciembre 18 de 2015,Transferencia otra entidad    ,ACH                           ,"$165,996 ",35476699,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
@@ -91,40 +91,40 @@
 122,Diciembre 28 de 2015,Transferencia otra entidad    ,ACH                           ,"$66,004 ",36947209,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
 123,Diciembre 29 de 2015,Transferencia otra entidad    ,ACH                           ,"$1,213,882 ",37112357,900735451        PROVEEDOR OPERADORA RESTA0                           ,
 124,Diciembre 30 de 2015,Transferencia otra entidad    ,ACH                           ,"$1,117,861 ",37559672,8002410124       PROVEEDOR Can. 003779-003794-                        , 3779-3794
-125,Enero 6 de 2016,Transferencia otra entidad    ,ACH                           ,"$382,800 ",38123133,000000805003730  PROVEEDOR PROVENE05                                  ,
+125,Enero 6 de 2016,Transferencia otra entidad    ,ACH                           ,"$382,800 ",38123133,000000805003730  PROVEEDOR PROVENE05                                  ,3790-3786
 126,Enero 6 de 2016,Deposito en efectivo          ,AVENIDA COLOMBIA              ,"$1,654,000 ",14094,                                                                      ,
 127,Enero 6 de 2016,Abono nomina y/o proveed      ,ACH                           ,"$1,812,037 ",38218252,8000655675       PROVEEDOREFABRICA DE ALVENTOLINI PAGO FP             ,
 128,Enero 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$870,187 ",38709056,8000655675       ADMON     FP 3928                                    ,3928
 129,Enero 13 de 2016,Deposito en cheque local      ,CALLE NOVENA                  ,"$2,041,293 ",2171,                                                                      ,
 130,Enero 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$845,775 ",39197381,000000900376423  PROVEEDOR 000000900376423 TORTELLI,3854-3855-3856-3869-3870-3871
 131,Enero 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$998,760 ",39713331,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
-132,Enero 15 de 2016,Transferencia otra entidad    ,ACH                           ,"$522,000 ",39835282,000000805003730  PROVEEDOR PROVENE13 EDUCACION SIGLO XXI                  ,
+132,Enero 15 de 2016,Transferencia otra entidad    ,ACH                           ,"$522,000 ",39835282,000000805003730  PROVEEDOR PROVENE13 EDUCACION SIGLO XXI                  ,3809-3810
 133,Enero 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,553,587 ",40450265,8002410124       PROVEEDOR Can. 003819-003821-003839-  PAESA,3819-3821-3839
 134,Enero 19 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,217,912 ",40611657,000000900376423  PROVEEDOR 000000900376423 TORTELLI                     ,3879-3880-3881-3884-3910-3912-3914-3916-3930
 135,Enero 19 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,984,261 ",40735402,00008000655675   PAGOS     FP 3938 3954 3966 3972 3990 VENTOLINI,3938-3954-3966-3972-3990
 136,Enero 20 de 2016,Deposito en efectivo          ,CHICO                         ,"$46,400 ",3905,JEFE PAESA,
-137,Enero 21 de 2016,Transferencia otra entidad    ,ACH                           ,"$142,680 ",41210941,000000805003730  PROVEEDOR PROVENE20 EDUCACION SIGLO XXI,
+137,Enero 21 de 2016,Transferencia otra entidad    ,ACH                           ,"$142,680 ",41210941,000000805003730  PROVEEDOR PROVENE20 EDUCACION SIGLO XXI,3844
 138,Enero 25 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,872,296 ",41867442,900735451        PROVEEDOR OPERADORA RESTA0                           ,
 139,Enero 28 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,299,785 ",42822534,830144557        PROVEEDOR HARRYSA SAS HAR0                           ,3873-3924-4030
 140,Enero 28 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,867,985 ",42822539,830144557        PROVEEDOR HARRYSA SAS RES0                           ,3862-3874-4028
-141,Enero 29 de 2016,Deposito en cheque local      ,UNICENTRO                     ,"$376,304 ",2036,HANS,
+141,Enero 29 de 2016,Deposito en cheque local      ,UNICENTRO                     ,"$376,304 ",2036,8000628134 HANS ANDERSEN,4086
 142,Enero 29 de 2016,Transferencia otra entidad    ,ACH                           ,"$221,212 ",43238328,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
 143,Enero 29 de 2016,Transferencia otra entidad    ,ACH                           ,"$315,757 ",43238986,8002410124       PROVEEDOR Can. 003865- PAESA,3865
 144,Febrero 1 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,958,323 ",43669081,000000900376423  PROVEEDOR 000000900376423 TORTELLI,3940-3942-3944-3946-3956-3958-3960-3984-3986-3988-4031-4034-4036-4038
 145,Febrero 1 de 2016,Deposito en cheque local      ,AVENIDA ESTACION              ,"$504,020 ",32182,                                                                      ,
 146,Febrero 2 de 2016,Transferencia otra entidad    ,ACH                           ,"$273,760 ",43749227,000000805003730  PROVEEDOR PROVFEB02                                  ,
 147,Febrero 3 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,582,242 ",44297740,8000655675       PROVEEDOR Pago factura No 3992                       ,3992-3998-4016-4046-4048
-148,Febrero 9 de 2016,Transferencia otra entidad    ,ACH                           ,"$920,353 ",45520010,000000900376423  PROVEEDOR 000000900376423                            ,
+148,Febrero 9 de 2016,Transferencia otra entidad    ,ACH                           ,"$920,353 ",45520010,000000900376423  PROVEEDOR 000000900376423                            ,4078-4094-4096-4100-4108-4112-4114
 149,Febrero 9 de 2016,Deposito en cheque local      ,AVENIDA COLOMBIA              ,"$843,088 ",17892, 890304587 DANARO,3724-3738
 150,Febrero 9 de 2016,Transferencia otra entidad    ,ACH                           ,"$738,224 ",45671459,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
 151,Febrero 17 de 2016,Transferencia otra entidad    ,ACH                           ,"$736,047 ",47527113,8002410124       PROVEEDOR Can. 003980-                               ,3980
-152,Febrero 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$714,657 ",47591423,000000805003730  PROVEEDOR PROVFEB17                                  ,
+152,Febrero 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$714,657 ",47591423,000000805003730  PROVEEDOR PROVFEB17                                  ,4147-4074
 153,Febrero 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$672,412 ",47739875,"8000655675       PROVEEDOR PAGO DE FACTURAS No 4062, 4070             ",4062-4070
 154,Febrero 19 de 2016,Transferencia otra entidad    ,ACH                           ,"$115,768 ",48096562,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
 155,Febrero 22 de 2016,Deposito en cheque local      ,CALLE NOVENA                  ,"$3,352,219 ",78005,890316660 KARENS PIZZA,
 156,Febrero 22 de 2016,Transferencia otra entidad    ,ACH                           ,"$374,894 ",48346950,000000900376423  PROVEEDOR 000000900376423                            ,4118-4120-4124-4122
 157,Febrero 23 de 2016,Transferencia otra entidad    ,ACH                           ,"$776,342 ",48616019,8000655675       TRASLADOS SIN INFORMACION                            ,
-158,Febrero 24 de 2016,Transferencia otra entidad    ,ACH                           ,"$34,800 ",48735060,000000805003730  PROVEEDOR PROVFEB23                                  ,
+158,Febrero 24 de 2016,Transferencia otra entidad    ,ACH                           ,"$34,800 ",48735060,000000805003730  PROVEEDOR PROVFEB23                                  ,4102
 159,Febrero 24 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,306,385 ",48737545,900735451        PROVEEDOR OPERADORA RESTA0                           ,
 160,Febrero 25 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,727,099 ",49026626,830144557        PROVEEDOR HARRYSA SAS HAR0                           ,4084-4153-4191-4241
 161,Febrero 25 de 2016,Transferencia otra entidad    ,ACH                           ,"$4,061,952 ",49026635,830144557        PROVEEDOR HARRYSA SAS RES0                           ,4082-4151-4189-4245
@@ -132,11 +132,11 @@
 163,Marzo 3 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,127,520 ",50584580,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
 164,Marzo 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$535,985 ",51624971,000000900376423  PROVEEDOR 000000900376423                            ,4159-4169-4183-4195-4235
 165,Marzo 10 de 2016,Deposito en cheque local      ,UNICENTRO CALI                ,"$140,360 ",104407,                                                                      ,
-166,Marzo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$125,976 ",52695939,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
+166,Marzo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$125,976 ",52695939,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,4128-4187
 167,Marzo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,454,737 ",52696087,8000655675       PROVEEDOR FP 4197 4205 4249 4253 4268 4278 4349      ,4197-4205-4249-4253-4268-4278-4349
-168,Marzo 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$554,844 ",53005011,000000900376423  PROVEEDOR 000000900376423                            ,
+168,Marzo 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$554,844 ",53005011,000000900376423  PROVEEDOR 000000900376423                            ,4255- 4272-4288-4326
 169,Marzo 15 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,285,841 ",53459752,8002410124       PROVEEDOR Can. 004157-004193-                        ,4157-4193
-170,Marzo 17 de 2016,Transferencia otra entidad    ,ACH                           ,"$313,200 ",53861071,000000805003730  PROVEEDOR PROVMZO16                                  ,
+170,Marzo 17 de 2016,Transferencia otra entidad    ,ACH                           ,"$313,200 ",53861071,000000805003730  PROVEEDOR PROVMZO16                                  ,4211
 171,Marzo 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$922,896 ",54487255,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
 172,Marzo 22 de 2016,Deposito en cheque local      ,AVENIDA COLOMBIA              ,"$963,032 ",22507, 890304587 DANARO,
 173,Marzo 22 de 2016,Deposito en cheque local      ,AVENIDA COLOMBIA              ,"$1,624,348 ",22508,                                                                      ,
@@ -147,12 +147,12 @@
 178,Marzo 30 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,021,500 ",55715071,900735451        PROVEEDOR OPERADORA RESTA0                           ,
 179,Marzo 31 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,489,517 ",56304797,8002410124       PROVEEDOR Can. 004247-004294-004346-                 ,4247-4294-4346
 180,Abril 5 de 2016,Transferencia otra entidad    ,ACH                           ,"$181,318 ",57007753,000000900376423  PROVEEDOR 000000900376423                            ,4486-4524
-181,Abril 6 de 2016,Transferencia otra entidad    ,ACH                           ,"$487,200 ",57384379,000000805003730  PROVEEDOR PROVABR05                                  ,
-182,Abril 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$132,936 ",58251807,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
+181,Abril 6 de 2016,Transferencia otra entidad    ,ACH                           ,"$487,200 ",57384379,000000805003730  PROVEEDOR PROVABR05                                  ,4361
+182,Abril 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$132,936 ",58251807,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,4274-4336
 183,Abril 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$572,721 ",58353501,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4406-4407-4438
 184,Abril 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$855,026 ",59237317,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
-185,Abril 15 de 2016,Transferencia otra entidad    ,ACH                           ,"$444,370 ",59999138,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,
-186,Abril 18 de 2016,Deposito en cheque local      ,MULTIFUNCIONAL UNICENTRO      ,"$395,096 ",90604748,                                                                      ,
+185,Abril 15 de 2016,Transferencia otra entidad    ,ACH                           ,"$444,370 ",59999138,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4470
+186,Abril 18 de 2016,Deposito en cheque local      ,MULTIFUNCIONAL UNICENTRO      ,"$395,096 ",90604748,8000628134 HANS ANDERSEN,4377
 187,Abril 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,338,391 ",60434210,8002410124       PROVEEDOR Can. 004381-004444-                        , 4381-4444
 188,Abril 19 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,960,589 ",60619609,000000800065567  PROVEEDOR 000000800065567                            ,
 189,Abril 25 de 2016,Deposito en cheque local      ,CALLE NOVENA                  ,"$1,535,462 ",109180,890316660 KARENS PIZZA,4310-4312-4316-4318-4320-4314-4324
@@ -161,28 +161,37 @@
 192,Abril 26 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,390,210 ",62028577,830144557        PROVEEDOR HARRYSA SAS RES0                           ,4442-4500-4562-4620-4648-4657
 193,Abril 28 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,069,530 ",62494034,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
 194,Abril 29 de 2016,Deposito en cheque local      ,AVENIDA COLOMBIA              ,"$626,400 ",25994,SALERNO,3815-3829-3841
-195,Abril 29 de 2016,Transferencia otra entidad    ,ACH                           ,"$616,395 ",62790256,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,
+195,Abril 29 de 2016,Transferencia otra entidad    ,ACH                           ,"$616,395 ",62790256,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4520-4530
 196,Mayo 2 de 2016,Deposito en efectivo          ,AVENIDA ESTACION              ,"$1,231,000 ",122,SALERNO,3974-4018-4050-4068-4173-4161
-197,Mayo 2 de 2016,Transferencia otra entidad    ,ACH                           ,"$535,788 ",63307975,000000900376423  PROVEEDOR 000000900376423                            ,
-198,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$787,602 ",65823088,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,
-199,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$136,648 ",65506374,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
-200,Mayo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$174,000 ",65090444,000000805003730  PROVEEDOR PROVMAY11                                  ,
-201,Mayo 10 de 2016,Transferencia otra entidad    ,ACH                           ,"$175,874 ",64832167,000000900376423  PROVEEDOR 000000900376423                            ,
-202,Mayo 5 de 2016,Deposito en cheque local      ,MULTIFUNCIONAL UNICENTRO      ,"$456,808 ",90607470,                                                                      ,
+197,Mayo 2 de 2016,Transferencia otra entidad    ,ACH                           ,"$535,788 ",63307975,000000900376423  PROVEEDOR 000000900376423                            ,4654-4681-4698
+198,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$787,602 ",65823088,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4640-4642
+199,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$136,648 ",65506374,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,4428-4450-4556
+200,Mayo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$174,000 ",65090444,000000805003730  PROVEEDOR PROVMAY11                                  ,4552
+201,Mayo 10 de 2016,Transferencia otra entidad    ,ACH                           ,"$175,874 ",64832167,000000900376423  PROVEEDOR 000000900376423                            ,4713
+202,Mayo 5 de 2016,Deposito en cheque local      ,MULTIFUNCIONAL UNICENTRO      ,"$456,808 ",90607470,8000628134 HANS ANDERSEN,4691
 203,Mayo 6 de 2016,Transferencia otra entidad    ,ACH                           ,"$113,100 ",64442460,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4552
-204,Mayo 10 de 2016,Transferencia otra entidad    ,ACH                           ,"$175,874 ",64832167,000000900376423  PROVEEDOR 000000900376423                            ,
-205,Mayo 11 de 2016,Transferencia otra entidad    ,ACH                           ,"$174,000 ",65090444,000000805003730  PROVEEDOR PROVMAY11                                  ,
-206,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$136,648 ",65506374,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
-207,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$787,602 ",65823088,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,
-208,Mayo 16 de 2016,Transferencia otra entidad    ,ACH                           ,"$3,854,400 ",66302828,8000655675       ADMON     PAGO FP                                    ,
-209,Mayo 16 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,567,555 ",66302912,8002410124       PROVEEDOR Can. 004568-004624-004656-                 ,4568-4624-4656
-210,Mayo 17 de 2016,Transferencia otra entidad    ,ACH                           ,"$454,950 ",66531069,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
-211,Mayo 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$994,260 ",66651872,900735451        PROVEEDOR OPERADORA RESTA0                           ,
-212,Mayo 18 de 2016,Deposito en cheque local      ,AVENIDA ESTACION              ,"$2,709,049 ",39217,890316660 KARENS PIZZA,4410-4412-4414-4416-4418-4420-4422-4518-4504-4508-4510-4512-4514-4516
-213,Mayo 25 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,459,290 ",67815983,830144557        PROVEEDOR HARRYSA SAS HAR0                           ,4688-4708-4709-4737-4752
-214,Mayo 26 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,409,397 ",68196558,830144557        PROVEEDOR HARRYSA SAS RES0                           ,4736-4753
-215,Mayo 27 de 2016,Transferencia otra entidad    ,ACH                           ,"$62,800 ",68807331,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
-216,Mayo 27 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,526,942 ",68811083,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4677-4678-4700-4701
-217,Mayo 31 de 2016,Transferencia otra entidad    ,ACH                           ,"$262,665 ",69339473,8002410124       PROVEEDOR Can. 004687-                               ,4687
-218,Mayo 31 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,156,291 ",69340213,8000655675       TRASLADOS FP 4646 4660 4665 4694 4699                ,4646-4660-4665-4694-4699
-219,Junio 2 de 2016,Transferencia otra entidad    ,ACH                           ,"$696,098 ",69656930,000000805003730  PROVEEDOR PROVJUN2                                   ,
+205,Mayo 13 de 2016,Transferencia otra entidad    ,ACH                           ,"$136,648 ",65506374,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,
+207,Mayo 16 de 2016,Transferencia otra entidad    ,ACH                           ,"$3,854,400 ",66302828,8000655675       ADMON     PAGO FP                                    ,
+208,Mayo 16 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,567,555 ",66302912,8002410124       PROVEEDOR Can. 004568-004624-004656-                 ,4568-4624-4656
+209,Mayo 17 de 2016,Transferencia otra entidad    ,ACH                           ,"$454,950 ",66531069,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
+210,Mayo 18 de 2016,Transferencia otra entidad    ,ACH                           ,"$994,260 ",66651872,900735451        PROVEEDOR OPERADORA RESTA0                           ,
+211,Mayo 18 de 2016,Deposito en cheque local      ,AVENIDA ESTACION              ,"$2,709,049 ",39217,890316660 KARENS PIZZA,4410-4412-4414-4416-4418-4420-4422-4518-4504-4508-4510-4512-4514-4516
+212,Mayo 25 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,459,290 ",67815983,830144557        PROVEEDOR HARRYSA SAS HAR0                           ,4688-4708-4709-4737-4752
+213,Mayo 26 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,409,397 ",68196558,830144557        PROVEEDOR HARRYSA SAS RES0                           ,4736-4753
+214,Mayo 27 de 2016,Transferencia otra entidad    ,ACH                           ,"$62,800 ",68807331,16933637         PROVEEDOR LUCAS ANDRES LO0                           ,4863
+215,Mayo 27 de 2016,Transferencia otra entidad    ,ACH                           ,"$1,526,942 ",68811083,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4677-4678-4700-4701
+216,Mayo 31 de 2016,Transferencia otra entidad    ,ACH                           ,"$262,665 ",69339473,8002410124       PROVEEDOR Can. 004687-                               ,4687
+217,Mayo 31 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,156,291 ",69340213,8000655675       TRASLADOS FP 4646 4660 4665 4694 4699                ,4646-4660-4665-4694-4699
+218,Junio 2 de 2016,Transferencia otra entidad    ,ACH                           ,"$696,098 ",69656930,000000805003730  PROVEEDOR PROVJUN2                                   ,4690
+220,Junio 3 de 2016,Transferencia otra entidad    ,ACH                           ,"$592,021 ",70098336,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,
+221,Junio 4 de 2016,Abono nomina y/o proveed      ,ACH                           ,"$2,958,928 ",70271143,8000655675       PROVEEDOREFABRICA DE ALVENTOLINI PAGO FP 4705 4721 47,
+222,Junio 7 de 2016,Transferencia otra entidad    ,ACH                           ,"$347,082 ",70297748,830144557        PROVEEDOR HARRYSA SAS HAR0                           ,
+223,Junio 7 de 2016,Transferencia otra entidad    ,ACH                           ,"$539,798 ",70297751,830144557        PROVEEDOR HARRYSA SAS RES0                           ,
+229,Junio 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$530,342 ",70668923,000000900376423  PROVEEDOR 000000900376423                            ,
+230,Junio 8 de 2016,Transferencia otra entidad    ,ACH                           ,"$762,900 ",70692840,900610601        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-INVERCHANG SA,
+232,Junio 10 de 2016,Transferencia otra entidad    ,ACH                           ,"$96,525 ",71384963,800070655        PROVEEDOR TRANSFERENCIA ACH CR-INTERNET-MAQUITE S A  ,4756
+233,Junio 13 de 2016,Deposito en cheque local      ,CALLE NOVENA                  ,"$2,606,548 ",88299,890316660 KARENS PIZZA,4588-4598-4600-4602-4604-4606-4608-4668-4669-4670-4671-4672-4673-4667
+234,Junio 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$441,400 ",71956199,9006805636       TRASLADOS Transferencia a otra entidad por Portal Emp,
+235,Junio 14 de 2016,Abono nomina y/o proveed      ,ACH                           ,"$721,400 ",71969482,8300870470       PROVEEDOREASESORIAS Y SORANGE    PRESTAMO            ,4722-4711-4692-4618
+236,Junio 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$741,000 ",71975168,900735451        PROVEEDOR OPERADORA RESTA0                           ,
+237,Junio 14 de 2016,Transferencia otra entidad    ,ACH                           ,"$2,720,335 ",72047594,8000655675 Ventolini,4742-4743-4764

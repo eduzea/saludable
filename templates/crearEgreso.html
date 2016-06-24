@@ -25,6 +25,8 @@
 					</td>
 					<td><label for='sucursal_Egreso'>Sucursal: </label></td>
 					<td>{{tagForField('Egreso',props['sucursal'])}}</td>
+					<td><label for='fuente_Egreso'>Fuente: </label></td>
+					<td>{{tagForField('Egreso',props['fuente'])}}</td>
 					<td><label for='numero_Egreso'>No. Egreso: </label> </td>
 					<td><div id='numero_Egreso'></div></td>					
 				</tr>					
@@ -51,6 +53,7 @@
 					<td>
 						{{tagForField('Egreso',props['detalle'])}}
 					</td>
+					<td></td>
 					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
 				</tr>
 				<tr>
@@ -58,6 +61,7 @@
 					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
 					<td><label for='cantidad_Egreso'>Precio Unitario:</label></td>
 					<td>{{tagForField('Egreso',props['precio'])}}</td>
+					<td></td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>
 			</table>

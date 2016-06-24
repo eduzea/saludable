@@ -254,6 +254,10 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 	};
 	topic.subscribe('EDIT_'+ entityClass.toUpperCase(), form.listenerfunc);
 	
+	if (entityClass in saludable.addEntityFuncs)
+					saludable.addEntityFuncs[entityClass]();
+	
+	
 	var fillForm = function(nodelist, rowData, entityClass){
 		nodelist.forEach(function(node, index, array){
 			var dijit = registry.byId(node.id);

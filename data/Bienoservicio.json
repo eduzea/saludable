@@ -9,7 +9,7 @@
 		"rotulo": "Alimentacion Empleado",
 		"subcuenta": null,
 		"nombre": "Alimentacion Empleado",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -21,7 +21,7 @@
 		"rotulo": "Aportes ARL",
 		"subcuenta": "510568",
 		"nombre": "Aportes ARL",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -33,7 +33,7 @@
 		"rotulo": "Aportes Caja de Compensacion",
 		"subcuenta": "510572",
 		"nombre": "Aportes Caja de Compensacion",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -45,7 +45,7 @@
 		"rotulo": "Aportes EPS",
 		"subcuenta": "510569",
 		"nombre": "Aportes EPS",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -57,7 +57,7 @@
 		"rotulo": "Aportes Pension",
 		"subcuenta": "510570",
 		"nombre": "Aportes Pension",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -69,7 +69,7 @@
 		"rotulo": "Arriendo",
 		"subcuenta": null,
 		"nombre": "Arriendo",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -81,7 +81,7 @@
 		"rotulo": "Camara de comercio",
 		"subcuenta": null,
 		"nombre": "Camara de comercio",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -93,7 +93,7 @@
 		"rotulo": "Combustible",
 		"subcuenta": null,
 		"nombre": "Combustible",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -105,7 +105,7 @@
 		"rotulo": "Cursos para el personal",
 		"subcuenta": null,
 		"nombre": "Cursos para el personal",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -117,7 +117,7 @@
 		"rotulo": "Dotacion",
 		"subcuenta": null,
 		"nombre": "Dotacion",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -129,7 +129,7 @@
 		"rotulo": "Dotacion empleados",
 		"subcuenta": null,
 		"nombre": "Dotacion empleados",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -141,7 +141,7 @@
 		"rotulo": "Equipos",
 		"subcuenta": null,
 		"nombre": "Equipos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -153,7 +153,7 @@
 		"rotulo": "Gastos Extraordinarios",
 		"subcuenta": null,
 		"nombre": "Gastos Extraordinarios",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -165,7 +165,7 @@
 		"rotulo": "Gastos legales",
 		"subcuenta": null,
 		"nombre": "Gastos legales",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -177,7 +177,7 @@
 		"rotulo": "Honorarios",
 		"subcuenta": null,
 		"nombre": "Honorarios",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -189,7 +189,7 @@
 		"rotulo": "Impuesto - CREE",
 		"subcuenta": "0",
 		"nombre": "Impuesto - CREE",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "54"
 	}, {
 		"fechaCreacion": null,
@@ -201,7 +201,7 @@
 		"rotulo": "Impuesto - IVA",
 		"subcuenta": "0",
 		"nombre": "Impuesto - IVA",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -213,7 +213,7 @@
 		"rotulo": "Impuesto - Renta",
 		"subcuenta": "0",
 		"nombre": "Impuesto - Renta",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "54"
 	}, {
 		"fechaCreacion": null,
@@ -225,7 +225,7 @@
 		"rotulo": "Impuesto de Industria y Comercio",
 		"subcuenta": "511505",
 		"nombre": "Impuesto de Industria y Comercio",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -237,7 +237,7 @@
 		"rotulo": "Mantenimiento de vehiculos",
 		"subcuenta": null,
 		"nombre": "Mantenimiento de vehiculos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -249,7 +249,7 @@
 		"rotulo": "Mantenimiento y arreglos locativos",
 		"subcuenta": null,
 		"nombre": "Mantenimiento y arreglos locativos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -261,7 +261,7 @@
 		"rotulo": "Materia Prima-Bolsas Plasticas",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Bolsas Plasticas",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -273,7 +273,7 @@
 		"rotulo": "Materia Prima-Fruta",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Fruta",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -285,7 +285,7 @@
 		"rotulo": "Materia Prima-Hielo Seco",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Hielo Seco",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -297,7 +297,7 @@
 		"rotulo": "Materia Prima-Implementos de Aseo",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Implementos de Aseo",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -309,7 +309,7 @@
 		"rotulo": "Materia Prima-Quimicos",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Quimicos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -321,7 +321,7 @@
 		"rotulo": "Materia Prima-Varios",
 		"subcuenta": null,
 		"nombre": "Materia Prima-Varios",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -333,7 +333,7 @@
 		"rotulo": "Materiales de Construccion",
 		"subcuenta": null,
 		"nombre": "Materiales de Construccion",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -345,7 +345,7 @@
 		"rotulo": "Medicinas Botiquin",
 		"subcuenta": null,
 		"nombre": "Medicinas Botiquin",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -357,7 +357,7 @@
 		"rotulo": "Nomina-Turnos",
 		"subcuenta": null,
 		"nombre": "Nomina-Turnos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -369,7 +369,7 @@
 		"rotulo": "Nomina - Administrativa",
 		"subcuenta": null,
 		"nombre": "Nomina - Administrativa",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -381,7 +381,7 @@
 		"rotulo": "Nomina - Operativa",
 		"subcuenta": null,
 		"nombre": "Nomina - Operativa",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -393,7 +393,7 @@
 		"rotulo": "Pago de deuda",
 		"subcuenta": null,
 		"nombre": "Pago de deuda",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -405,7 +405,7 @@
 		"rotulo": "Papeleria",
 		"subcuenta": null,
 		"nombre": "Papeleria",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -417,7 +417,7 @@
 		"rotulo": "Parqueadero",
 		"subcuenta": null,
 		"nombre": "Parqueadero",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -429,7 +429,7 @@
 		"rotulo": "Pasajes Aereos",
 		"subcuenta": "515515",
 		"nombre": "Pasajes Aereos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}, {
 		"fechaCreacion": null,
@@ -441,7 +441,7 @@
 		"rotulo": "Plasticos",
 		"subcuenta": null,
 		"nombre": "Plasticos",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -453,7 +453,7 @@
 		"rotulo": "Prestamo Empresa a Socio",
 		"subcuenta": null,
 		"nombre": "Prestamo Empresa a Socio",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -465,7 +465,7 @@
 		"rotulo": "Pruebas laboratorio",
 		"subcuenta": null,
 		"nombre": "Pruebas laboratorio",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -477,7 +477,7 @@
 		"rotulo": "Publicidad",
 		"subcuenta": null,
 		"nombre": "Publicidad",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -489,7 +489,7 @@
 		"rotulo": "Servicios-Fumigacion",
 		"subcuenta": null,
 		"nombre": "Servicios-Fumigacion",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -501,7 +501,7 @@
 		"rotulo": "Servicios-Varios",
 		"subcuenta": null,
 		"nombre": "Servicios-Varios",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -513,7 +513,7 @@
 		"rotulo": "Servicios Financieros",
 		"subcuenta": null,
 		"nombre": "Servicios Financieros",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -525,8 +525,32 @@
 		"rotulo": "Servicios Publicos-Agua",
 		"subcuenta": null,
 		"nombre": "Servicios Publicos-Agua",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
+	}, {
+		"fechaCreacion": "2016-06-15",
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5135",
+		"puc": null,
+		"activo": true,
+		"rotulo": "Servicios Publicos-Alumbrado",
+		"subcuenta": "511595",
+		"nombre": "Servicios Publicos-Alumbrado",
+		"empleadoCreador": "eduzea@gmail.com",
+		"grupo": "73"
+	}, {
+		"fechaCreacion": "2016-06-15",
+		"tipo": "Costo.Variable",
+		"clase": "5",
+		"cuenta": "5135",
+		"puc": null,
+		"activo": true,
+		"rotulo": "Servicios Publicos-Aseo",
+		"subcuenta": "513505",
+		"nombre": "Servicios Publicos-Aseo",
+		"empleadoCreador": "eduzea@gmail.com",
+		"grupo": "73"
 	}, {
 		"fechaCreacion": null,
 		"tipo": "Costo.Variable",
@@ -537,7 +561,7 @@
 		"rotulo": "Servicios Publicos-Energia",
 		"subcuenta": null,
 		"nombre": "Servicios Publicos-Energia",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -549,7 +573,7 @@
 		"rotulo": "Servicios Publicos-Gas",
 		"subcuenta": null,
 		"nombre": "Servicios Publicos-Gas",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -561,7 +585,7 @@
 		"rotulo": "Servicios Publicos-Telecomunicaciones",
 		"subcuenta": null,
 		"nombre": "Servicios Publicos-Telecomunicaciones",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -573,7 +597,7 @@
 		"rotulo": "Taxis y Pasajes de Bus",
 		"subcuenta": null,
 		"nombre": "Taxis y Pasajes de Bus",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -585,7 +609,7 @@
 		"rotulo": "Transporte del Producto-Intermunicipal",
 		"subcuenta": null,
 		"nombre": "Transporte del Producto-Intermunicipal",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -597,7 +621,7 @@
 		"rotulo": "Transporte del Producto-Local",
 		"subcuenta": null,
 		"nombre": "Transporte del Producto-Local",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -609,7 +633,7 @@
 		"rotulo": "Utensilios",
 		"subcuenta": null,
 		"nombre": "Utensilios",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": null
 	}, {
 		"fechaCreacion": null,
@@ -621,7 +645,7 @@
 		"rotulo": "Vigilancia",
 		"subcuenta": "513505",
 		"nombre": "Vigilancia",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"grupo": "51"
 	}
 ]

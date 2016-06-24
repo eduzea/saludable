@@ -312,6 +312,7 @@ class CrearEgreso(webapp2.RequestHandler):
         prop_cantidad = Compra._properties['cantidad']
         prop_precio = Compra._properties['precio']
         prop_sucursal = Egreso._properties['sucursal']
+        prop_fuente = Egreso._properties['fuente']
         empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
         empleadoName = empleado.rotulo
         empleadoValue = empleado.key.id()
@@ -324,9 +325,11 @@ class CrearEgreso(webapp2.RequestHandler):
                  'cantidad':{'ui': 'Cantidad', 'id': 'cantidad','required':'true','style':'width:5em', 'type':prop_cantidad},
                  'precio':{'ui':'Precio Unitario','id':'precio','required':'true','style':'width:5em', 'type':prop_precio},
                  'tipo':{'ui':'Tipo', 'id':'tipo','required':'true','type':prop_tipo},
-                 'sucursal':{'ui':'Ciudad', 'id':'sucursal','required':'true','type':prop_sucursal}
+                 'sucursal':{'ui':'Ciudad', 'id':'sucursal','required':'true','type':prop_sucursal},
+                 'fuente':{'ui':'Fuente', 'id':'fuente','required':'true','type':prop_fuente},
                 }
         template_values = {'props': props, 'entityClass':'Egreso'}
+        print template_values
         template = JINJA_ENVIRONMENT.get_template('crearEgreso.html')
         self.response.write(template.render(template_values))
 
@@ -390,7 +393,6 @@ class GuardarFactura(webapp2.RequestHandler):
         #Cuando el pago es contra recibo, crear automaticamente el PagoRecibido
         cliente = values['cliente'].get() # turns out the values dict gest modified by the create_entity function. It now holds the client key.
         if cliente.diasPago == 0:
-            values['pagada'] = True
             pago = dataStoreInterface.create_entity('PagoRecibido', 
             {'numero':getConsecutivo('PagoRecibido'),
              'fecha':values['fecha'],
@@ -400,6 +402,7 @@ class GuardarFactura(webapp2.RequestHandler):
              'facturas':[values['numero']]
              }
                                                     )['entity']
+            factura.pagada = True
             factura.pagoRef = pago.numero
             factura.put
             
@@ -659,6 +662,24 @@ class GuardarEgreso(webapp2.RequestHandler):
         entity = dataStoreInterface.create_entity('Egreso', values)['entity']
         self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
 
+class GuardarLoteDeCompra(webapp2.RequestHandler):
+    def get(self):
+        egresoId = self.request.get('egresoId')
+        egreso = Egreso.get_by_id(egresoId)
+        for fruta in egreso.compras:
+            values = {'fruta':ndb.Key(Fruta,fruta.detalle),
+                      'proveedor': egreso.proveedor,
+                      'fecha':egreso.fecha,
+                      'precio':fruta.precio}
+            dataStoreInterface.create_entity('LoteDeCompra', values)
+        self.response.out.write('Success')
+
+class GetLotes(webapp2.RequestHandler):
+    def get(self):
+        fruta = self.request.get('fruta')
+        lotes = dataStoreInterface.buildQuery('LoteDeCompra',{'fruta':fruta}).fetch()
+        self.response.write(JSONEncoder().encode(lotes))
+
 class GetCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
         response = []
@@ -666,9 +687,9 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
             if factura.cliente.get().nombre in saldos:
-                saldos[factura.cliente.get().nombre] += ( factura.total-sum(factura.abono) )
+                saldos[factura.cliente.get().nombre] += factura.total
             else:
-                saldos[factura.cliente.get().nombre] = ( factura.total- sum(factura.abono) )
+                saldos[factura.cliente.get().nombre] =  factura.total
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
         self.response.out.write(json.dumps(response))
@@ -701,8 +722,10 @@ class GetExistencias(webapp2.RequestHandler):
 class Fix(webapp2.RequestHandler):
     def get(self):
         facturas = dataStoreInterface.buildQuery('Factura',
-                                                 {'cliente':"TREPANDO SAS CLOWNS"})
+                                                 {'numero':4765})
         for factura in facturas:
-            factura.pagada = True
+            factura.pagada = False
+            factura.pagoRef = 0
             factura.put()
+            print('Success!')
         self.response.out.write('Done!')

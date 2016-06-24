@@ -47,7 +47,7 @@ def processFacturasString(facturasString, monto, numero):
         if not factura: continue
         total += factura.total
         factura.pagada = True
-        factura.pagoRef = [int(numero)]
+        factura.pagoRef = int(numero)
         factura.put()
     if total != monto:
         if total > monto:
@@ -73,6 +73,8 @@ def processMedioString(string):
         return 'TRANSFERENCIA'
     if 'cheque' in string: 
         return 'CHEQUE'
+    if 'Abono nomina y/o proveed' in string:
+        return 'TRANSFERENCIA'
     return 'EFECTIVO'
     
 def processMontoString(string):

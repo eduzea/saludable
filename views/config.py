@@ -25,12 +25,15 @@ classModels = {'Cliente':Cliente,
                'Venta':Venta,
                'Proveedor':Proveedor, 
                'Bienoservicio':Bienoservicio,
+               'Fruta':Fruta,
+               'LoteDeCompra':LoteDeCompra,
                'Clase':Clase,
                'Grupo':Grupo,
                'Cuenta':Cuenta,
                'SubCuenta':SubCuenta, 
                'PorcionCompra':PorcionCompra, 
                'Egreso':Egreso,
+               'Fuente':Fuente,
                'Compra':Compra,
                'TipoEgreso':TipoEgreso,
                'TipoAcreedor':TipoAcreedor,
@@ -56,7 +59,8 @@ classModels = {'Cliente':Cliente,
                'Existencias':Existencias,
                'ExistenciasRegistro':ExistenciasRegistro,
                'Produccion':Produccion,
-               'ProductoPorcion':ProductoPorcion}
+               'ProductoPorcion':ProductoPorcion,
+               'Fuente':Fuente}
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'Porcion':['valor','unidades'], 
@@ -72,6 +76,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Remision':['numero'],
            'Proveedor':['nombre'],
            'Bienoservicio':['nombre'],
+           'Fruta':['nombre'],
+           'LoteDeCompra':['fruta','proveedor','fecha'],
            'PorcionCompra':['valor','unidades'],
            'TipoEgreso':['nombre'],
            'TipoAcreedor':['nombre'],
@@ -97,8 +103,9 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'InventarioRegistro':['fecha','sucursal','producto','porcion'],
            'Existencias':['fecha','sucursal'],
            'ExistenciasRegistro':['sucursal','producto','porcion'],
-           'Produccion':['fecha','sucursal','producto'],
-           'ProductoPorcion':['porcion']
+           'Produccion':['fecha','sucursal','fruta'],
+           'ProductoPorcion':['porcion'],
+           'Fuente':['nombre']
            }
 
 uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'width:10em'},
@@ -166,6 +173,9 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                              {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:10em'},
                              {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:10em'},
                       ],
+            'Fruta':[
+                     {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                    ],
             'Clase':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
@@ -297,15 +307,20 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
                           {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
-                          {'id':'producto','ui':'Fruta', 'style':'width:10em'},
+                          {'id':'fruta','ui':'Fruta', 'style':'width:10em'},
+                          {'id':'loteDeCompra','ui':'Lote de Compra', 'style':'width:10em'},
                           {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
                           {'id':'productos','ui':'Productos','style':'width:10em'},
                           {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:3em'},
+                          {'id':'costoBruto','ui':'Costo Bruto ($/kg)','required':'false', 'style':'width:5em'}
                           ],
             'ProductoPorcion':[
                                {'id':'porcion','ui':'Porcion','style':'width:5em'},
                                {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0}
-                            ]
+                            ],
+            'Fuente':[
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                    ],
             }
 
 uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style':'width:10em'},
@@ -373,6 +388,9 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                              {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:10em'},
                              {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:10em'},
                       ],
+            'Fruta':[
+                     {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                     ],
             'Clase':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
@@ -403,12 +421,13 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
             'Egreso':[
                       {'id':'numero','ui':'Numero','required':'true', 'style':'width:4em'},
                       {'id':'fecha', 'ui':'Fecha','style':'width:5em'},
-                      {'id':'sucursal', 'ui':'Ciudad','style':'width:5em'},
                       {'id':'proveedor','ui':'Proveedor','style':'width:10em'},
-                      {'id':'tipo','ui':'Tipo','style':'width:5em'},
+                      {'id':'sucursal', 'ui':'Ciudad','style':'width:5em'},
+                      {'id':'fuente', 'ui':'Fuente','style':'width:5em'},
+                      #{'id':'tipo','ui':'Tipo','style':'width:5em'},
                       {'id':'resumen','ui':'Bien o Servicio','required':'true','style':'width:10em'},
                       {'id':'total','ui':'Valor','required':'true', 'style':'width:5em'},
-                      {'id':'empleado','ui':'Empleado','style':'width:10em'}
+                      #{'id':'empleado','ui':'Empleado','style':'width:10em'}
                       ],
             'TipoAcreedor':[
                           {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
@@ -489,13 +508,13 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                            ],
             'PagoRecibido':[
                               {'id':'numero','ui':'No.','required':'true', 'style':'width:2em','readonly':'true','auto':''},
-                              {'id':'fecha', 'ui':'Fecha','style':'width:8em','required':'true'},
+                              {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
                               {'id':'cliente','ui':'Cliente','style':'width:15em'},
                               {'id':'medio','ui':'Medio de pago','style':'width:8em'},
-                              {'id':'oficina','ui':'Oficina','style':'width:8em'},
-                              {'id':'documento','ui':'Documento','required':'false', 'style':'width:10em'},
+                              {'id':'oficina','ui':'Oficina','style':'width:5em'},
+                              {'id':'documento','ui':'Documento','required':'false', 'style':'width:5em'},
                               {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
-                              {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:5em'},
+                              {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:10em'},
                               ],
             'Inventario':[
                           {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
@@ -503,16 +522,24 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                           ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
-                          {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
-                          {'id':'producto','ui':'Fruta', 'style':'width:10em'},
+                          #{'id':'sucursal','ui':'Sucursal','style':'width:5em'},
+                          {'id':'fruta','ui':'Fruta', 'style':'width:10em'},
                           {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
                           {'id':'productos','ui':'Productos','style':'width:10em'},
-                          {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:3em'},
+                          {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:5em'},
+                          {'id':'costoBruto','ui':'Costo Bruto ($/kg)','required':'false', 'style':'width:5em'}
                           ],
             'ProductoPorcion':[
                                {'id':'porcion','ui':'Porcion','style':'width:5em'},
                                {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0}
-                            ]
+                            ],
+            'Compra':[
+                      {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0},
+                      {}
+                      ],
+            'Fuente':[
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                    ]
             }
 
             
@@ -526,8 +553,15 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'pYg':'/pYg.html',
                    'CuentasPorCobrar':'/cuentasPorCobrar.html',
                    'Existencias':'/existencias.html',
-                   'ConsolidarFactura':'consolidarFactura.html'
+                   'ConsolidarFactura':'consolidarFactura.html',
+                   'EgresoFruta':'crearEgresoFruta.html'
                    }
+
+templateParams = {'EgresoFruta':{'detalle':Compra._properties['detalle'],
+                                 'cantidad':Compra._properties['cantidad'],
+                                 'precio':Compra._properties['precio']
+                                 }
+                  }
 detailFields = {
                'Factura':'ventas',
                'Remision':'ventas',

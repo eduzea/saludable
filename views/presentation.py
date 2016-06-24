@@ -7,6 +7,10 @@ from jinja2._markupsafe import Markup
 from config import *
 from datastorelogic import *
 
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 ############### Init the instance ##############
 dataStoreInterface = DataStoreInterface()
 
@@ -25,6 +29,12 @@ def selectForField(entityClass, field, tagId):
     optionsObjs = [{'value':option,'rotulo':option} for option in options]
     optionsObjs.sort()
     html = getSelectTagHTML(tagId, optionsObjs)
+    return Markup(html)
+
+def selectForEntityClass(entityClass, tagId):
+    options = getOptions(entityClass)
+    optionObj =  [{'value':option.key.id(),'rotulo':option.rotulo} for option in options]
+    html = getSelectTagHTML(tagId, optionObj)
     return Markup(html)
 
 def getClientesConRemision(tagId):
@@ -74,6 +84,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 JINJA_ENVIRONMENT.globals['pythonFunction']=pythonFunction #generic function dispatcher
 JINJA_ENVIRONMENT.globals['tagForField']=tagForField
 JINJA_ENVIRONMENT.globals['selectForField']=selectForField
+JINJA_ENVIRONMENT.globals['selectForEntityClass']=selectForEntityClass
 JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
 JINJA_ENVIRONMENT.globals['autoNum']= dataStoreInterface.autoNum        
@@ -93,20 +104,26 @@ def getSelectTagHTML(tagId, options):
     html = '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select>'
     innerReplace = ''
     for option in options:
-        innerReplace += "<option value='" + option['value'] + "'>" + option['rotulo'] + '</option>'
-    return html.replace('ATTR_REPLACE', ' id="' + tagId + '" ').replace('INNER_REPLACE',innerReplace)
+        innerReplace += "<option value='" + option['value'] + "'>" + option['value'] + '</option>'
+    return html.replace('ATTR_REPLACE', ' id="' + tagId + '" name= "' + tagId + '"').replace('INNER_REPLACE',innerReplace)
 
 def getIdString(field,entity_class):
     idname = field + '_' + entity_class
     return 'id="' + idname + '" name="' + idname + '" '
 
-def getOptions(prop):
-    options = classModels[prop._kind].query().fetch()
+def getOptions(entityClass):
+    options = classModels[entityClass].query().fetch()
+    return options
+
+def getOptionsHTML(entityClass):
+    if entityClass not in classModels:
+        entityClass = entityClass._kind
+    options = getOptions(entityClass)
     html = ''
     for option in options:
         if not option.activo: continue
         dicc = option.to_dict()
-        option_value = getKey(prop._kind, dicc)
+        option_value = getKey(entityClass, dicc)
         html += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
     return html
 
@@ -132,7 +149,9 @@ def getTagHTML(prop,entity_class, customId=None):
         prop['value'] = str(prop.pop('default'))
     if 'auto' in prop:
         prop['value'] = str(dataStoreInterface.autoNum(entity_class))
-        propType = ndb.IntegerProperty() 
+        propType = ndb.IntegerProperty()
+    #if propType._repeated:
+    #    propType = ndb.StringProperty()
     html = basisTagString[str(propType).partition('(')[0]]
     attrReplace = ''
     innerReplace = ''
@@ -146,7 +165,7 @@ def getTagHTML(prop,entity_class, customId=None):
         else:
             attrReplace += key + '="' + value + '" '
     if type(propType) == ndb.KeyProperty:
-        innerReplace += getOptions(propType)
+        innerReplace += getOptionsHTML(propType)
         if propType._repeated == True:
             postReplace += repeatedPropHTML(prop['id'],entity_class)
     elif type(propType) == ndb.StructuredProperty:

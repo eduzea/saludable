@@ -46,9 +46,9 @@ def updateCuentasPorCobrar(pago):
             factura.put()
             break
 
-#dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
+dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
 #dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateCuentasPorCobrar)
-#dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
+dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
 
 
 ######################### FACTURA Y EXISTENCIAS ##############################
@@ -149,7 +149,7 @@ dataStoreInterface.registerFollowUpLogic('post','delete','Inventario', actualiza
 
 def sumarExistencias(produccion):
     sucursal = produccion.sucursal
-    producto = produccion.producto
+    producto = produccion.fruta
     existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
     if existencias:
         existencias = existencias[0]
@@ -173,7 +173,7 @@ def sumarExistencias(produccion):
         
 def removeProduccion(produccion):
     sucursal = produccion.sucursal
-    producto = produccion.producto
+    producto = produccion.fruta
     existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
     if existencias:
         existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
@@ -190,4 +190,3 @@ def removeProduccion(produccion):
 dataStoreInterface.registerFollowUpLogic('pre','update','Produccion', removeProduccion)
 dataStoreInterface.registerFollowUpLogic('post','create','Produccion', sumarExistencias)
 dataStoreInterface.registerFollowUpLogic('post','delete','Produccion', removeProduccion)
-

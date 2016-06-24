@@ -105,7 +105,14 @@ class Remision(Record):
 #     except Exception:
 #         print 'Factura No. ', self.numero, ' Has client problem'
 #         return 0
-            
+
+def fechaVencimientoCheck(factura):
+    if factura.cliente.get():
+        return datetime.combine(factura.fecha + timedelta(days = factura.cliente.get().diasPago),datetime.min.time())
+    else:
+        print 'WARNING: El cliente de la factura ', factura.numero, ' parece no existir'
+        return datetime.today()
+
 class Factura(Record):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -118,7 +125,7 @@ class Factura(Record):
     montoIva = ndb.IntegerProperty(default=0)
     anulada = ndb.BooleanProperty(default=False)
     #A hack to work around lack of support for datetime.date in computed properties...http://stackoverflow.com/questions/22652872/google-appengine-computed-property-date-return-throws-exception
-    fechaVencimiento = ndb.ComputedProperty(lambda self: datetime.combine(self.fecha + timedelta(days = self.cliente.get().diasPago),datetime.min.time()))
+    fechaVencimiento = ndb.ComputedProperty(lambda self: fechaVencimientoCheck(self) )
     pagada = ndb.BooleanProperty(default=False)
     #abono = ndb.IntegerProperty(repeated = True)
     pagoRef = ndb.IntegerProperty()
@@ -191,13 +198,43 @@ def pesoPulpa(productos):
         peso += producto.porcion.get().valor * producto.cantidad
     return peso / 1000
 
+class Fruta(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Proveedor(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    nit = ndb.StringProperty(indexed=True)
+    direccion = ndb.StringProperty(indexed=True)
+    telefono = ndb.StringProperty(indexed=True)
+    ciudad = ndb.KeyProperty(kind=Ciudad)
+    diasPago = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
+    textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
+
+
+class LoteDeCompra(Record):
+    fruta = ndb.KeyProperty(kind=Fruta)
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    fecha = ndb.DateProperty()
+    precio = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
+
+def costoBruto(produccion):
+    costo = produccion.pesoFruta * produccion.loteDeCompra.precio / produccion.pesoPulpa
+    return costo
+
 class Produccion(Record):
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
-    producto = ndb.KeyProperty(kind=Producto)
+    fruta = ndb.KeyProperty(kind=Fruta)
+    loteDeCompra = ndb.KeyProperty(kind=LoteDeCompra)
     pesoFruta = ndb.IntegerProperty()
+    pesoPulpa = ndb.ComputedProperty(lambda self: pesoPulpa(self.productos))
     productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
-    rendimiento = ndb.ComputedProperty(lambda self: 100 * pesoPulpa(self.productos) / self.pesoFruta)
+    rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
+    costoBruto = ndb.ComputedProperty(lambda self: self.pesoFruta * self.loteDeCompra.get().precio / self.pesoPulpa)
 
 
 ########## EGRESOS #######
@@ -215,18 +252,6 @@ def objListToString(objList):
             print "Inconsistent record:", objList
     return text
     
-
-class Proveedor(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    nit = ndb.StringProperty(indexed=True)
-    direccion = ndb.StringProperty(indexed=True)
-    telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.KeyProperty(kind=Ciudad)
-    diasPago = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
-    textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
-
 # PUC classes - Consider implementing this from config...
 class Clase(Record):
     nombre = ndb.StringProperty(indexed=True)
@@ -262,6 +287,7 @@ class Bienoservicio(Record):
     subcuenta = ndb.KeyProperty(kind=SubCuenta)
     puc = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    
 
 class PorcionCompra(Record):
     valor = ndb.IntegerProperty()
@@ -276,10 +302,15 @@ class Compra(Record):
     compra = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
 
+class Fuente(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
 class Egreso(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
+    fuente = ndb.KeyProperty(kind=Fuente)
     empleado = ndb.KeyProperty(kind=Empleado)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     compras = ndb.StructuredProperty(Compra,repeated=True)
@@ -287,6 +318,7 @@ class Egreso(Record):
     total = ndb.IntegerProperty()
     resumen = ndb.StringProperty(indexed=True)
     comentario = ndb.TextProperty()
+    
     
 class TipoAcreedor(Record):
     nombre = ndb.StringProperty(indexed=True)

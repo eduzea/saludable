@@ -40,6 +40,8 @@ application = webapp2.WSGIApplication([
     # Egresos
     ('/crearEgreso', CrearEgreso),
     ('/guardarEgreso', GuardarEgreso),
+    ('/guardarLoteDeCompra', GuardarLoteDeCompra),
+    ('/getLotes',GetLotes),
     ('/getBienesoServicios',GetBienesoServicios),
     ('/getProveedores',GetProveedores),
     ('/addBienoservicio',Addbienoservicio),

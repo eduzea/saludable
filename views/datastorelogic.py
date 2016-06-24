@@ -3,7 +3,7 @@ Created on Aug 8, 2015
 
 @author: eduze_000
 '''
-import json
+import json, re
 from datetime import datetime, date
 from google.appengine.api import users
 from google.appengine.ext import ndb
@@ -156,7 +156,10 @@ class DataStoreInterface():
             #Check if repeated property
             if value._repeated == True:
                 if isinstance(values[key],basestring):
-                    values[key] = json.loads(values[key])
+                    try:
+                        values[key] = json.loads(values[key]) #if json
+                    except:
+                        values[key] = re.split('\W+', values[key])#values[key].split(',') #if token separated
                 if isinstance(values[key],list):
                     ndbKeys = []
                     for entry in values[key]:

@@ -27,7 +27,7 @@ def getColumns(entityClass):
     props = classModels[entityClass]._properties
     for column in uiConfigShow[entityClass]:
         colProps = { 'id':column['id'], 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
-        if column['id'] in props and type(props[column['id']]) == ndb.IntegerProperty:
+        if column['id'] in props and ( type(props[column['id']]) == ndb.IntegerProperty or type(props[column['id']]) == ndb.ComputedProperty)  :
             if not props[column['id']]._repeated:
                 colProps['type']='Integer'
         columns.append(colProps);
@@ -144,6 +144,15 @@ def getInventarioTemplateData(request):
     
 getTemplateData['Inventario'] = getInventarioTemplateData
 
+def getEgresoFrutaTemplateData(request):
+    props = {'detalle':{'type':Compra._properties['detalle'],'style': 'width:10em', 'ui': 'Fruta', 'id': 'detalle'},
+             'cantidad':{'type':Compra._properties['cantidad'],'style': 'width:5em;text-align: right', 'ui': 'Cantidad(kg)', 'id': 'cantidad'},
+             'precio':{'type':Compra._properties['precio'],'style': 'width:5em;text-align: right', 'ui': 'Precio', 'id': 'precio'},
+             'comentario':{'ui': 'Comentario', 'id': 'comentario','required':'false','style':'width:50em','type':Egreso._properties['comentario']}
+                                           }    
+    return {'props':props}    
+
+getTemplateData['Fruta'] = getEgresoFrutaTemplateData
 
 
 def getConsecutivoEgreso():
