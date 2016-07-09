@@ -1,0 +1,21 @@
+[
+	{
+		"activo": true,
+		"rotulo": "CAJA MENOR",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "CAJA MENOR",
+		"empleadoCreador": "eduzea@gmail.com"
+	}, {
+		"activo": true,
+		"rotulo": "CREDITO",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "CREDITO",
+		"empleadoCreador": "eduzea@gmail.com"
+	}, {
+		"activo": true,
+		"rotulo": "CUENTA CORRIENTE",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "CUENTA CORRIENTE",
+		"empleadoCreador": "eduzea@gmail.com"
+	}
+]

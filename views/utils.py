@@ -63,6 +63,12 @@ def prepareRecords(entityClass, entities):
                     dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
             if type(prop_value) == date or type(prop_value) == datetime :
                 dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+            ############# For dealing with old objects that no longer match the model definition
+            if prop_key not in props:
+                del entity._properties[prop_key]
+                entity.put()
+                continue
+            ##########
             if type(props[prop_key]) == ndb.StructuredProperty:
                 if type(prop_value) == list:
                     dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})

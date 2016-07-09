@@ -1,0 +1,111 @@
+[
+	{
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "ARAZA",
+		"activo": true,
+		"rotulo": "ARAZA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "CURUBA",
+		"activo": true,
+		"rotulo": "CURUBA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "DURAZNO",
+		"activo": true,
+		"rotulo": "DURAZNO"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "FEIJOA",
+		"activo": true,
+		"rotulo": "FEIJOA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "FRESA",
+		"activo": true,
+		"rotulo": "FRESA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "GUAYABA",
+		"activo": true,
+		"rotulo": "GUAYABA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "GUAYABA CORONILLA",
+		"activo": true,
+		"rotulo": "GUAYABA CORONILLA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "LULO",
+		"activo": true,
+		"rotulo": "LULO"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "MANGO",
+		"activo": true,
+		"rotulo": "MANGO"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "MANGO BICHE",
+		"activo": true,
+		"rotulo": "MANGO BICHE"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "MARACUYA",
+		"activo": true,
+		"rotulo": "MARACUYA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "MELON",
+		"activo": true,
+		"rotulo": "MELON"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "MORA",
+		"activo": true,
+		"rotulo": "MORA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "PI\u00d1A",
+		"activo": true,
+		"rotulo": "PI\u00d1A"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "SANDIA",
+		"activo": true,
+		"rotulo": "SANDIA"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "TAMARINDO",
+		"activo": true,
+		"rotulo": "TAMARINDO"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "TOMATE DE ARBOL",
+		"activo": true,
+		"rotulo": "TOMATE DE ARBOL"
+	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"fechaCreacion": "2016-06-21",
+		"nombre": "UVA",
+		"activo": true,
+		"rotulo": "UVA"
+	}
+]

@@ -312,7 +312,7 @@ class Egreso(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
-    fuente = ndb.KeyProperty(kind=Fuente)
+    fuente = ndb.KeyProperty(kind=Fuente, default=ndb.Key(Fuente,'CAJA.MENOR'))
     empleado = ndb.KeyProperty(kind=Empleado)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     compras = ndb.StructuredProperty(Compra,repeated=True)
