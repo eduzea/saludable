@@ -27,6 +27,7 @@ classModels = {'Cliente':Cliente,
                'Bienoservicio':Bienoservicio,
                'Fruta':Fruta,
                'LoteDeCompra':LoteDeCompra,
+               'LoteDeCompra':LoteDeCompra,
                'Clase':Clase,
                'Grupo':Grupo,
                'Cuenta':Cuenta,
@@ -72,6 +73,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Factura':['numero'],
            'Venta':['producto','porcion'],
            'Egreso':['numero'],
+           'LoteDeCompra':['fecha','fruta','proveedor'],
            'Compra':['bienoservicio'], 
            'Remision':['numero'],
            'Proveedor':['nombre'],
@@ -216,6 +218,14 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
             'TipoAcreedor':[
                           {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                           ],
+            'LoteDeCompra':[
+                            {'id':'fecha','ui':'Fecha', 'required':'true', 'style':'width:10em'},
+                            {'id':'fruta','ui':'Fruta', 'required':'true', 'style':'width:10em'},
+                            {'id':'proveedor','ui':'Proveedor', 'required':'true', 'style':'width:10em'},
+                            {'id':'precio','ui':'Precio($/kg)', 'required':'true', 'style':'width:10em'},
+                            {'id':'peso','ui':'Peso(kg)', 'required':'true', 'style':'width:10em'},
+                            {'id':'procesado','ui':'Procesado', 'required':'true', 'style':''},
+                            ],
             'Acreedor':[
                         {'id':'tipo','ui':'Tipo','style':'width:10em'},
                         {'id':'nombre','ui':'Nombre', 'required':'true',  'style':'width:10em'},
@@ -360,7 +370,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                        {'id':'fecha', 'ui':'Fecha', 'style':'width:5em'},
                        {'id':'total', 'ui':'Valor', 'style':'width:5em'},
                        {'id':'empleado', 'ui':'Empleado', 'style':'width:8em'},
-                       {'id':'fechaVencimiento', 'ui':'Vence', 'style':'width:8em'},
+                       {'id':'fechaVencimiento', 'ui':'Vence', 'style':'width:5em', 'type':'Date'},
                        {'id':'pagada', 'ui':'Pagada', 'style':'width:3em'},
                        {'id':'pagoRef', 'ui':'Ref. Pago', 'style':'width:4em'},
                        ],
@@ -391,6 +401,14 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
             'Fruta':[
                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                      ],
+            'LoteDeCompra':[
+                            {'id':'fecha','ui':'Fecha', 'required':'true', 'style':'width:10em'},
+                            {'id':'fruta','ui':'Fruta', 'required':'true', 'style':'width:10em'},
+                            {'id':'proveedor','ui':'Proveedor', 'required':'true', 'style':'width:10em'},
+                            {'id':'precio','ui':'Precio($/kg)', 'required':'true', 'style':'width:10em'},
+                            {'id':'peso','ui':'Peso(kg)', 'required':'true', 'style':'width:10em'},
+                            {'id':'procesado','ui':'Procesado', 'required':'true', 'style':'width:10em'},
+                            ],
             'Clase':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},

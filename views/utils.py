@@ -28,7 +28,7 @@ def getColumns(entityClass):
     for column in uiConfigShow[entityClass]:
         colProps = { 'id':column['id'], 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
         if column['id'] in props and ( type(props[column['id']]) == ndb.IntegerProperty or type(props[column['id']]) == ndb.ComputedProperty)  :
-            if not props[column['id']]._repeated:
+            if not props[column['id']]._repeated and 'type' not in column:
                 colProps['type']='Integer'
         columns.append(colProps);
     return {'columns':columns,'key':keyDefs[entityClass]}

@@ -265,15 +265,19 @@ class GetProductSales(webapp2.RequestHandler):
         for factura in facturas:
             if factura.anulada: continue
             for venta in factura.ventas:
-                venta = venta.to_dict()
-                venta['peso']=venta['porcion'].get().valor * venta['cantidad']
-                venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
-                venta['factura']=factura.numero
-                venta['cliente']=factura.cliente.id()
-                venta['fecha']=factura.fecha
-                venta['mesnum']=factura.fecha.month
-                venta['mes']=factura.fecha.strftime('%B')
-                venta['year']=factura.fecha.year
+                try:
+                    venta = venta.to_dict()
+                    venta['peso']=venta['porcion'].get().valor * venta['cantidad']
+                    venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
+                    venta['factura']=factura.numero
+                    venta['cliente']=factura.cliente.id()
+                    venta['fecha']=factura.fecha
+                    venta['fechaVencimiento']=factura.fechaVencimiento
+                    venta['mesnum']=factura.fecha.month
+                    venta['mes']=factura.fecha.strftime('%B')
+                    venta['year']=factura.fecha.year
+                except Exception as e:
+                    print factura.numero, " : ", e.message
                 records.append(venta)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))           

@@ -39,7 +39,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var ingresoNodes = makeStore(['Factura',{name:'Remisiones',clickable:false},'PagoRecibido','OtrosIngresos',{name:'AdminIngresos',clickable:false}],'Ingresos');
 		var adminIngresoNodes = makeStore(['Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'AdminIngresos');
 		var remisionNodes = makeStore(['Remision',{name:'Consolidar Factura', clickable:true, template:'ConsolidarFactura'}],'Remisiones');
-		var egresoNodes = makeStore(['Egreso', {name:'Fruta', clickable:true, template:'EgresoFruta'} ,{name:'AdminEngresos',clickable:false} ],'Egresos');
+		var egresoNodes = makeStore(['Egreso', {name:'Fruta', clickable:true, template:'EgresoFruta'},'LoteDeCompra' ,{name:'AdminEngresos',clickable:false} ],'Egresos');
 		var adminEgresoNodes = makeStore(['Proveedor','Bienoservicio','TipoEgreso'],'AdminEngresos');
 		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false},'Fruta','Fuente'],'Admin');
 		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
