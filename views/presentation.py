@@ -89,7 +89,7 @@ JINJA_ENVIRONMENT.globals['adjustText']=adjustText
 JINJA_ENVIRONMENT.globals['isAdminUser']=isAdminUser
 JINJA_ENVIRONMENT.globals['autoNum']= dataStoreInterface.autoNum        
 
-basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/ValidationTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
+basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props="trim:true, uppercase:true" ATTR_REPLACE > INNER_REPLACE </input>',
                   'IntegerProperty': '<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'FloatProperty':'<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'KeyProperty' : '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select> POST_REPLACE',

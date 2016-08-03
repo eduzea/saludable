@@ -723,11 +723,13 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        facturas = dataStoreInterface.buildQuery('Factura',
-                                                 {'numero':4765})
-        for factura in facturas:
-            factura.pagada = False
-            factura.pagoRef = 0
-            factura.put()
-            print('Success!')
+        lotes = LoteDeCompra.query(LoteDeCompra.fecha < date(2016, 7, 8)).fetch()
+        for lote in lotes:
+            lote.procesado = True
+            lote.put()
         self.response.out.write('Done!')
+
+
+
+
+

@@ -270,6 +270,8 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                       {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:8em'},
                       {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:8em'},
                       {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:8em'},
+                      {'id':'precioUnitario','ui':'Precio Unitario', 'required':'true', 'style':'width:8em'},
+                      {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:8em'},
                       {'id':'valorPagado','ui':'Valor Pagado','required':'true','style':'width:8em'},
                       {'id':'valorActual','ui':'Valor Actual','required':'true','style':'width:8em'},
                       ],

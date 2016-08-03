@@ -368,8 +368,10 @@ class Activo(Record):
 
 class ActivoFijo(Activo):
     fechaDeAdquisicion = ndb.DateProperty() #Fecha de adquisicion del activo
-    valorPagado = ndb.IntegerProperty()
-    valorActual = ndb.IntegerProperty()
+    precioUnitario = ndb.IntegerProperty()
+    cantidad = ndb.IntegerProperty()
+    valorPagado = ndb.ComputedProperty(lambda self: self.precioUnitario * self.cantidad)
+    valorActual = ndb.IntegerProperty()#depreciacion aqui
     total = ndb.ComputedProperty(lambda self: self.valorActual)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
 
