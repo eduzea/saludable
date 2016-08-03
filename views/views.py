@@ -23,34 +23,31 @@ class Home(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
-            empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
-            if empleado:
-                template_values = {'user': user}
-                template = JINJA_ENVIRONMENT.get_template('home.html')
-                self.response.write(template.render(template_values))
-            else:
-                self.redirect(users.create_login_url('/login'))
+            checkEmpleado(self,user)
         else:
             self.redirect(users.create_login_url('/login'))
 
+
+def checkEmpleado(self,user):
+    empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
+    if empleado:
+        template_values = {'user': user}
+        template = JINJA_ENVIRONMENT.get_template('home.html')
+        self.response.write(template.render(template_values))
+    else:
+        tag = '<h1>No hay un usuario registrado con ese login en Salud-Able!</h1><br>'
+        tag += '<h2>Pide al administrador eduzea@gmail.com que cree tu usuario.</h2><br>'
+        tag += '<a href="/logout">Log out</a>'
+        self.response.write(tag)
+
 class LogIn(webapp2.RequestHandler):
     def get(self):
-        self.redirect(users.create_login_url('/validateUser'))
-
-class ValidateUser(webapp2.RequestHandler):
-    def get(self):
-        empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
-        if empleado:
-            self.redirect(users.create_login_url('/home'))
-        else:
-            tag = '<h1>No hay un usuario registrado con ese login en Salud-Able!</h1><br>'
-            tag += '<h2>Pide al administrador eduzea@gmail.com que cree tu usuario.</h2><br>'
-            tag += '<a href="/logout">Log out</a>'
-            self.response.write(tag)
-            
+        user = users.get_current_user()
+        checkEmpleado(self,user)
+           
 class LogOut(webapp2.RequestHandler):
     def get(self):
-        self.redirect(users.create_logout_url('/login'))
+        self.redirect(users.create_logout_url('/home'))
 
 class GetWidget(webapp2.RequestHandler):
     def get(self):
@@ -397,17 +394,16 @@ class GuardarFactura(webapp2.RequestHandler):
         #Cuando el pago es contra recibo, crear automaticamente el PagoRecibido
         cliente = values['cliente'].get() # turns out the values dict gest modified by the create_entity function. It now holds the client key.
         if cliente.diasPago == 0:
-            pago = dataStoreInterface.create_entity('PagoRecibido', 
-            {'numero':getConsecutivo('PagoRecibido'),
-             'fecha':values['fecha'],
-             'cliente':cliente.key,
-             'medio':'EFECTIVO',
-             'monto':values['total'],
-             'facturas':[values['numero']]
-             }
-                                                    )['entity']
+#             pago = dataStoreInterface.create_entity('PagoRecibido', 
+#             {'numero':getConsecutivo('PagoRecibido'),
+#              'fecha':values['fecha'],
+#              'cliente':cliente.key,
+#              'medio':'EFECTIVO',
+#              'monto':values['total'],
+#              'facturas':[values['numero']]
+#              }
+#                                                     )['entity']
             factura.pagada = True
-            factura.pagoRef = pago.numero
             factura.put
             
         self.response.out.write(json.dumps({'result':'Success','id': factura.key.id()}))     

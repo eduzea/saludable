@@ -370,9 +370,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                        {'id':'fecha', 'ui':'Fecha', 'style':'width:5em'},
                        {'id':'total', 'ui':'Valor', 'style':'width:5em'},
                        {'id':'empleado', 'ui':'Empleado', 'style':'width:8em'},
-                       {'id':'fechaVencimiento', 'ui':'Vence', 'style':'width:5em', 'type':'Date'},
-                       {'id':'pagada', 'ui':'Pagada', 'style':'width:3em'},
-                       {'id':'pagoRef', 'ui':'Ref. Pago', 'style':'width:4em'},
+                       {'id':'fechaVencimiento', 'ui':'Vence', 'style':'width:5em', 'type':'Date'}
                        ],
             'Remision':[{'id':'numero', 'ui':'Numero','style':'width:4em'},
                        {'id':'empleado', 'ui':'Empleado','style':'width:8em'},

@@ -69,9 +69,10 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Editar",
-					parentGrid : grid.gridName, 
+					parentGrid : grid, 
 					onClick : function() {
-						var widget = saludable.widgetCache['widget' + this.parentGrid].getChildren()[0];
+						var grid = this.parentGrid;
+						var widget = saludable.widgetCache['widget' + grid.gridName].getChildren()[0];
 						widget.selectChild(widget.getChildren()[0]);
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;

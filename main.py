@@ -5,7 +5,6 @@ application = webapp2.WSGIApplication([
     #User Management                                  
     ('/login',LogIn),
     ('/logout',LogOut),
-    ('/validateUser', ValidateUser),
     # Single Page App
     ('/home', Home),# The rooot of the 1-page app
     ('/getWidget',GetWidget),#Gets the right widget for each content pane in the 1-page app. 
