@@ -272,7 +272,6 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                       {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:8em'},
                       {'id':'precioUnitario','ui':'Precio Unitario', 'required':'true', 'style':'width:8em'},
                       {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:8em'},
-                      {'id':'valorPagado','ui':'Valor Pagado','required':'true','style':'width:8em'},
                       {'id':'valorActual','ui':'Valor Actual','required':'true','style':'width:8em'},
                       ],
             'CuentaBancaria':[
@@ -489,11 +488,10 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                              ],
             'ActivoFijo':[
                       {'id':'numero','ui':'No.','required':'true', 'style':'width:2em', 'readonly':'true', 'auto':'true'},
-                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:10em','required':'true'},
+                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:8em','required':'true'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:8em'},
-                      {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:8em'},
-                      {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:8em'},
+                      {'id':'precioUnitario','ui':'Precio Unitario', 'required':'true', 'style':'width:10em'},
+                      {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:10em'},
                       {'id':'valorPagado','ui':'Valor Pagado','required':'true','style':'width:8em'},
                       {'id':'valorActual','ui':'Valor Actual','required':'true','style':'width:8em'},
                       ],
