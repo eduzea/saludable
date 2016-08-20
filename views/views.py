@@ -30,7 +30,7 @@ class Home(webapp2.RequestHandler):
 
 def checkEmpleado(self,user):
     empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
-    if empleado:
+    if True:#empleado:
         template_values = {'user': user}
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render(template_values))
@@ -723,11 +723,14 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        lotes = LoteDeCompra.query(LoteDeCompra.fecha < date(2016, 7, 8)).fetch()
-        for lote in lotes:
-            lote.procesado = True
-            lote.put()
-        self.response.out.write('Done!')
+      proveedores = Proveedor.query().fetch()
+      for proveedor in proveedores:
+        keys = []
+        for bos in proveedor.bienesoservicios:
+          keys.append(bos.id().upper())
+          bos = ndb.Key('Bienoservicio',bos.id().upper())
+          bos.put()         
+      self.response.out.write(keys)
 
 
 
