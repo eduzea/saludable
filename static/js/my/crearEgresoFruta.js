@@ -84,7 +84,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###'});
+		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###.#'});
 		return sumTotal;
 	};
 	
@@ -184,7 +184,10 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	var store = new Store();
 	var columns = [
 		{field : 'detalle', name : 'Fruta', style: "text-align: center"},
-		{field : 'cantidad', name : 'Cantidad(kg)', style: "text-align: center"},
+		{field : 'cantidad', name : 'Cantidad(kg)', style: "text-align: center",
+				formatter: function(data){
+					return number.format(data.cantidad,{pattern:'###,###.#'});
+				}},
 		{field : 'precio', name : 'Precio($/kg)', style: "text-align: center", 
 				formatter: function(data){
 					return number.format(data.precio,{pattern:'###,###'});
@@ -192,7 +195,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 		},
 		{field : 'compra', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.compra,{pattern:'###,###'});
+					return number.format(data.compra,{pattern:'###,###.#'});
 				}
 		},
 		{ 	field : 'Borrar', 

@@ -132,9 +132,9 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		grid.subtotal = sumTotal;
 		grid.iva = Math.floor(sumTotal * iva);
 		grid.total = grid.subtotal + grid.iva;
-		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###'});
-		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###'});
-		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###'});
+		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###.#'});
+		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###.#'});
+		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###.#'});
 	};
 	
 	parser.instantiate([dom.byId('iva'+ '_' + entityClass)]);
@@ -289,7 +289,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		},
 		{field : 'venta', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.venta,{pattern:'###,###'});
+					return number.format(data.venta,{pattern:'###,###.#'});
 				}
 		},
 		{ 	field : 'Borrar', 

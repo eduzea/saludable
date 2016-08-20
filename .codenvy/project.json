@@ -1,0 +1,1 @@
+{"runners":{"configs":{},"default":"system:/python/web/python27_gae1914"},"builders":{"configs":{}},"mixinTypes":["contribution"],"type":"GAEPython","attributes":{"language":["python"]}}

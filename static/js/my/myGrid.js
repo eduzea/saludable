@@ -91,7 +91,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 		columns.forEach(function(column){
 			if (column.type == 'Integer'){
 				column.formatter=function(data){
-					return number.format(data[this.field],{pattern:'###,###'});
+					return number.format(data[this.field],{pattern:'###,###.#'});
 				};
 			}
 		});

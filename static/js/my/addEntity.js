@@ -30,8 +30,8 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 	
 	//Utility func to serialize arrays to strings before passing to a grid
 	function prepareForGrid(object){
-		for (field in object){
-			objStrings = [];
+		for (var field in object){
+			var objStrings = [];
 			if ( object[field] instanceof Array){
 				object[field].forEach(function(item){
 					objStrings.push(item.rotulo);					
@@ -98,10 +98,10 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 				}
 				dom.byId('server_response'+ '_' + entityClass).innerHTML = response_user;
 				setTimeout(function() {
-					numero = registry.byId('numero'+ '_' + entityClass);
+					var numero = registry.byId('numero'+ '_' + entityClass);
 					dom.byId('server_response'+  '_' + entityClass).innerHTML = '';
 					if (numero){
-						value = numero.value;	
+						var value = numero.value;	
 					}
 					dom.byId('reset'+ '_'+ entityClass).click();
 					numero ? numero.set('value', value + 1):'';
@@ -128,7 +128,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 	var listpropBtns = query(".listBtn");
 	parser.instantiate(listpropBtns);
 	listpropBtns.forEach(function(buttonNode){
-		button = registry.byId(buttonNode.id);
+		var button = registry.byId(buttonNode.id);
 		var propname = buttonNode.id.split('_')[0];
 		var listName = propname + '_' + entityClass + '_list';
 		button.items = [];
@@ -151,7 +151,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 	
 	var getFormData = function(form,entityClass){
 		var formdata = form.get('value');
-		for (prop in formdata) {
+		for (var prop in formdata) {
 			formdata[prop.replace('_' + entityClass, '')] = formdata[prop];
 			delete formdata[prop];
 		}
@@ -168,7 +168,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 			columns.forEach(function(column){
 				if (column.type == 'Integer'){
 					column.formatter=function(data){
-						return number.format(data[this.field],{pattern:'###,###'});
+						return number.format(data[this.field],{pattern:'###,###.#',places:2});
 					};
 				}
 			});
