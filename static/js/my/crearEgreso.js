@@ -116,7 +116,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	
 	var getEgresoFormData = function(entityClass){
 		var formdata = registry.byId('addEntityForm' +  '_' + entityClass).get('value');
-		for (prop in formdata) {
+		for (var prop in formdata) {
 			formdata[prop.replace('_Egreso', '')] = formdata[prop];
 			delete formdata[prop];
 		}
@@ -213,7 +213,11 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	var columns = [
 		{field : 'bienoservicio', name : 'Bien o Servicio', style: "text-align: center"},
 		{field : 'detalle', name : 'Detalle', style: "text-align: center"},
-		{field : 'cantidad', name : 'Cantidad', style: "text-align: center"},
+		{field : 'cantidad', name : 'Cantidad', style: "text-align: center",
+		formatter: function(data){
+					return number.format(data.cantidad,{pattern:'###,###.#'});
+				}
+		},
 		{field : 'precio', name : 'Precio Unitario', style: "text-align: center", 
 				formatter: function(data){
 					return number.format(data.precio,{pattern:'###,###'});

@@ -90,7 +90,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	
 	var getEgresoFormData = function(entityClass){
 		var formdata = registry.byId('addEntityForm' +  '_' + entityClass + '_fruta').get('value');
-		for (prop in formdata) {
+		for (var prop in formdata) {
 			formdata[prop.replace('_Egreso_fruta', '')] = formdata[prop];
 			delete formdata[prop];
 		}

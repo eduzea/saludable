@@ -219,7 +219,7 @@ class LoteDeCompra(Record):
     proveedor = ndb.KeyProperty(kind=Proveedor)
     fecha = ndb.DateProperty()
     precio = ndb.IntegerProperty()
-    peso = ndb.IntegerProperty()
+    peso = ndb.FloatProperty()
     procesado = ndb.BooleanProperty(default = False)
     rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
 
@@ -232,7 +232,7 @@ class Produccion(Record):
     sucursal = ndb.KeyProperty(kind=Sucursal)
     fruta = ndb.KeyProperty(kind=Fruta)
     loteDeCompra = ndb.KeyProperty(kind=LoteDeCompra)
-    pesoFruta = ndb.IntegerProperty()
+    pesoFruta = ndb.FloatProperty()
     pesoPulpa = ndb.ComputedProperty(lambda self: pesoPulpa(self.productos))
     productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
     rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
@@ -299,9 +299,9 @@ class PorcionCompra(Record):
 class Compra(Record):
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
     detalle = ndb.StringProperty()
-    cantidad = ndb.IntegerProperty()
+    cantidad = ndb.FloatProperty()
     precio = ndb.IntegerProperty()
-    compra = ndb.IntegerProperty()
+    compra = ndb.FloatProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
 
 class Fuente(Record):
