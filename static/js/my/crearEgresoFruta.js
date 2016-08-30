@@ -27,7 +27,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	var entityClass = saludable.entity_class;
 	
 	var resetProveedor = function(){	
-		request('/getProveedores?bienoservicio=Materia.Prima-Fruta', {handleAs:'json'}).then(
+		request('/getProveedores?bienoservicio=MATERIA.PRIMA-FRUTA', {handleAs:'json'}).then(
 		function(response){
 			var items = [];
 			if (response.length == 0){
@@ -173,7 +173,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 			grid.store.remove(id);	
 		}
 		var total = formdata.cantidad * formdata.precio;
-		grid.store.add({'id':id,'bienoservicio':'Materia.Prima-Fruta','detalle':formdata.fruta, 'cantidad':formdata.cantidad, 
+		grid.store.add({'id':id,'bienoservicio':'MATERIA.PRIMA-FRUTA','detalle':formdata.fruta, 'cantidad':formdata.cantidad, 
 						'precio': formdata.precio, 'compra':total});
 		grid.total=updateTotal();
 
