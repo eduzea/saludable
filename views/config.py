@@ -560,13 +560,14 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
 
             
 templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
-                'Factura':'/crearFactura?entityClass=Factura', 
+                   'Factura':'/crearFactura?entityClass=Factura', 
                    'Egreso':'/crearEgreso',
                    'Inventario':'/dojoxLoader?entityClass=Inventario&template=crearInventario.html',
                    'tablaDinamica':'/tablaDinamica.html',
                    'InformeDePagos':'/InformeDePagos.html',
                    'numeros':'/numeros.html',
-                   'pYg':'/pYg.html',
+                   #'pYg':'/pYg.html',
+                   'Utilidades':'utilidades.html',
                    'CuentasPorCobrar':'/cuentasPorCobrar.html',
                    'Existencias':'/existencias.html',
                    'ConsolidarFactura':'consolidarFactura.html',

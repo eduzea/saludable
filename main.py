@@ -56,6 +56,7 @@ application = webapp2.WSGIApplication([
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
     ('/getIVAPagado',GetIVAPagado) ,
+    ('/getUtilidades',GetUtilidades)
     #MISC
     ('/fix',Fix)
 ], debug=True)

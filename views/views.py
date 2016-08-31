@@ -14,6 +14,7 @@ from utils import *
 from PyG import *
 from presentation import *
 from importCSV import *
+from puntoDeEquilibrio import *
 
 
 if 'dataStoreInterface' not in globals():
@@ -253,6 +254,12 @@ class GetDetails(webapp2.RequestHandler):
             records.append(detail)
         self.response.out.write(json.dumps(records))
         
+class GetUtilidades(webapp2.RequestHandler):
+    def get(self):
+        fechaDesde = self.request.get('fechaDesde')
+        fechaHasta = self.request.get('fechaHasta')
+        utilidadData = getUtilidadData(fechaDesde, fechaHasta)
+        self.response.out.write(utilidadData)
         
 class GetProductSales(webapp2.RequestHandler):
     def get(self):

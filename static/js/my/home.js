@@ -44,9 +44,9 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var adminNodes = makeStore(['Sucursal','Empleado','Ciudad','CapitalPagado','CuentaBancaria','Banco','TipoDeCuenta','MedioDePago','CuentaTransferencias',{name:'PUC', clickable:false},'Fruta','Fuente'],'Admin');
 		var pucNodes = makeStore(['Clase','Cuenta','Grupo','SubCuenta'],'PUC');
 		var numeroNodes = makeStore(['Numeros'],'Admin','numeros');
-		var informeNodes = makeStore(['Ventas','Gastos','Tendencias',{name:'Pagos',clickable:true,template:'InformeDePagos'},{name:'IVA',clickable:false}],'Informes','tablaDinamica');
-		var pYgNodes = makeStore(['PyG'],'Informes','pYg');
-		var IVANodes = makeStore(['Recaudado','Pagado'],'IVA','tablaDinamica');
+		var informeNodes = makeStore(['Ventas','Gastos','Utilidades',{name:'Pagos',clickable:true,template:'InformeDePagos'},{name:'IVA',clickable:false}],'Informes','tablaDinamica');
+		//var pYgNodes = makeStore(['PyG'],'Informes','pYg');
+		//var IVANodes = makeStore(['Recaudado','Pagado'],'IVA','tablaDinamica');
 		var data = [{id : 'root', name : 'root'},
 					{id : 'Activos', name:'Activos', parent:'root', clickable:false},
 					{id : 'Pasivos', name:'Pasivos', parent:'root', clickable:false},
@@ -70,8 +70,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		data.push.apply(data,pucNodes);
 		data.push.apply(data,numeroNodes);
 		data.push.apply(data,informeNodes);
-		data.push.apply(data,pYgNodes);
-		data.push.apply(data,IVANodes);		
+		//data.push.apply(data,pYgNodes);
+		//data.push.apply(data,IVANodes);		
 		var myStore = new Memory({
 		data : data,
 		getChildren : function(object) {
