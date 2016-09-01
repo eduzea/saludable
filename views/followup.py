@@ -208,14 +208,14 @@ dataStoreInterface.registerFollowUpLogic('post','delete','Produccion', removePro
 
 ####################################################################################################
 def removeEgreso(egreso):
-    if egreso.resumen == 'Materia.Prima-Fruta':
+    if egreso.resumen.upper() == 'MATERIA.PRIMA-FRUTA':
         for fruta in egreso.compras:
-            ndb.Key(LoteDeCompra, fruta.detalle + '.' + egreso.proveedor.id() + '.' + str(egreso.fecha)).delete()
+            ndb.Key(LoteDeCompra, fruta.detalle.upper() + '.' + egreso.proveedor.id() + '.' + str(egreso.fecha)).delete()
 
 def postCreateEgreso(egreso):
-    if egreso.resumen == 'Materia.Prima-Fruta':
+    if egreso.resumen.upper() == 'MATERIA.PRIMA-FRUTA':
         for fruta in egreso.compras:
-            values = {'fruta':ndb.Key(Fruta,fruta.detalle),
+            values = {'fruta':ndb.Key(Fruta,fruta.detalle.upper()),
                       'proveedor': egreso.proveedor,
                       'fecha':egreso.fecha,
                       'precio':fruta.precio,

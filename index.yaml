@@ -32,6 +32,11 @@ indexes:
   - name: resumen
   - name: fecha
 
+- kind: Egreso
+  properties:
+  - name: resumenU
+  - name: fecha
+
 - kind: Factura
   properties:
   - name: cliente

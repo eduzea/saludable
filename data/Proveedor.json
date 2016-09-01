@@ -1,49 +1,45 @@
 [
 	{
-		"fechaCreacion": "2015-11-24",
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Agua;",
-		"bienesoservicios": ["Servicios.Publicos-Agua"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-AGUA;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-AGUA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Av. Calle 24 No. 37-15",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ACUEDUCTO DE BOGOTA",
 		"nombre": "ACUEDUCTO DE BOGOTA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3447000",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-19",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Agua;",
-		"bienesoservicios": ["Servicios.Publicos-Agua"],
-		"ciudad": "Bogota",
-		"direccion": "Av. Calle 24 No. 37-15",
-		"activo": true,
-		"rotulo": "ACUEDUCTO DE Bogota",
-		"nombre": "ACUEDUCTO DE Bogota",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3447000",
-		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;",
-		"bienesoservicios": ["Nomina.-.Operativa"],
-		"ciudad": "Bogota",
-		"direccion": "Cra 28 A No. 68 - 74",
-		"activo": true,
+		"textbienesoservicios": "NOMINA-TURNOS;NOMINA - OPERATIVA;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS",
+			"NOMINA.-.OPERATIVA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Calle 68",
+		"activo": false,
 		"rotulo": "ADELAIDA RODRIGUEZ",
 		"nombre": "ADELAIDA RODRIGUEZ",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "2255392",
-		"nit": "5111111"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "2255936",
+		"nit": "555555555"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "ALBA VASQUEZ",
@@ -51,12 +47,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 15,
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Cr 28 con 68",
+		"activo": false,
+		"rotulo": "ALDEMAR CASTRO",
+		"nombre": "ALDEMAR CASTRO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "000",
+		"nit": "000"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "ALEJANDRO DIAZ",
@@ -64,25 +79,36 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cra 28 a No. 68-74",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ALIRIA RODRIGUEZ",
 		"nombre": "ALIRIA RODRIGUEZ",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2222222",
 		"nit": "2222222"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Dotacion empleados;Dotacion;Materia Prima-Fruta;Materia Prima-Varios;Materia Prima-Implementos de Aseo;Utensilios;",
-		"bienesoservicios": ["Dotacion.empleados", "Dotacion", "Materia.Prima-Fruta", "Materia.Prima-Varios", "Materia.Prima-Implementos.de.Aseo", "Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "DOTACION EMPLEADOS;DOTACION;MATERIA PRIMA-FRUTA;MATERIA PRIMA-VARIOS;MATERIA PRIMA-IMPLEMENTOS DE ASEO;UTENSILIOS;",
+		"bienesoservicios": [
+			"DOTACION.EMPLEADOS",
+			"DOTACION",
+			"MATERIA.PRIMA-FRUTA",
+			"MATERIA.PRIMA-VARIOS",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "ALKOSTO",
@@ -90,25 +116,101 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4893333",
 		"nit": "8909009431"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
 		"direccion": "xx",
 		"activo": true,
-		"rotulo": "ALKOSTO - natural food",
-		"nombre": "ALKOSTO - natural food",
+		"rotulo": "ALKOSTO - NATURAL FOOD",
+		"nombre": "ALKOSTO - NATURAL FOOD",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "900380783-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;MATERIALES DE CONSTRUCCION;PLASTICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS",
+			"MATERIALES.DE.CONSTRUCCION",
+			"PLASTICOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cra. 8a No. 15-30",
+		"activo": true,
+		"rotulo": "ALMACEN DE PLASTICOS WASHINGTON",
+		"nombre": "ALMACEN DE PLASTICOS WASHINGTON",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8892666",
+		"nit": "29.055.828-3"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Dotacion;Papeleria;Medicinas Botiquin;Materia Prima-Fruta;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Dotacion", "Papeleria", "Medicinas.Botiquin", "Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "EQUIPOS;",
+		"bienesoservicios": [
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 14 \u00b7 3 -00",
+		"activo": true,
+		"rotulo": "ALMACEN REFRIGERACION",
+		"nombre": "ALMACEN REFRIGERACION",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8802524",
+		"nit": "890101057-2"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "UTENSILIOS;",
+		"bienesoservicios": [
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 13 No. 8-52",
+		"activo": true,
+		"rotulo": "ALMACEN Y CRISTALERIA LA 13",
+		"nombre": "ALMACEN Y CRISTALERIA LA 13",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8893333",
+		"nit": "900212550-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "UTENSILIOS;",
+		"bienesoservicios": [
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "",
+		"activo": true,
+		"rotulo": "ALMACENES EL PAISA",
+		"nombre": "ALMACENES EL PAISA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "",
+		"nit": "14.437.181-2"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;DOTACION;PAPELERIA;MEDICINAS BOTIQUIN;MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"DOTACION",
+			"PAPELERIA",
+			"MEDICINAS.BOTIQUIN",
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "VVV",
 		"activo": true,
 		"rotulo": "ALMACENES LA 14",
@@ -116,12 +218,49 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "890300346-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;DOTACION;PAPELERIA;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"DOTACION",
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 9 - 26 - 58",
+		"activo": true,
+		"rotulo": "ALMACENES PAHI",
+		"nombre": "ALMACENES PAHI",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3087038",
+		"nit": "16638771-8"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION;",
+		"bienesoservicios": [
+			"DOTACION"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 9 * 53 - 141",
+		"activo": true,
+		"rotulo": "ALVAREZ BUDES YAMILES",
+		"nombre": "ALVAREZ BUDES YAMILES",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "5569030",
+		"nit": "32755753"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "ALVARO PLAZA",
@@ -129,38 +268,95 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "16691762"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "TUNAL",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ALVARO TORRES",
 		"nombre": "ALVARO TORRES",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2222222",
 		"nit": "2000000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 30,
-		"textbienesoservicios": "Pruebas laboratorio;",
-		"bienesoservicios": ["Pruebas.laboratorio"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "PRUEBAS LABORATORIO;",
+		"bienesoservicios": [
+			"PRUEBAS.LABORATORIO"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CRA 28A No. 71 - 89",
-		"activo": true,
+		"activo": false,
 		"rotulo": "AMC COLOMBIA",
 		"nombre": "AMC COLOMBIA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6302585",
 		"nit": "900458352-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "PAPELERIA;PUBLICIDAD;MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"PAPELERIA",
+			"PUBLICIDAD",
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "1",
+		"activo": true,
+		"rotulo": "ANDRES FERNANDO POLO",
+		"nombre": "ANDRES FERNANDO POLO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "4878332",
+		"nit": "1062278921"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 19 No. 5-46",
+		"activo": true,
+		"rotulo": "AQUIMICOS E INSUMOS SAS",
+		"nombre": "AQUIMICOS E INSUMOS SAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8812210",
+		"nit": "900740299-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "x",
+		"activo": true,
+		"rotulo": "ARLEY PIQUE",
+		"nombre": "ARLEY PIQUE",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "16785509"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
 		"textbienesoservicios": "",
 		"bienesoservicios": [],
-		"ciudad": "Cali",
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "ARLEY TIQUE",
@@ -168,142 +364,49 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "16785509"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios-Fumigacion;",
-		"bienesoservicios": ["Servicios-Fumigacion"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS-FUMIGACION;",
+		"bienesoservicios": [
+			"SERVICIOS-FUMIGACION"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ARRAZAR FUMIGACIONES",
 		"nombre": "ARRAZAR FUMIGACIONES",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;Nomina - Operativa;",
-		"bienesoservicios": ["Nomina-Turnos", "Nomina.-.Operativa"],
-		"ciudad": "Bogota",
-		"direccion": "Calle 68",
-		"activo": true,
-		"rotulo": "Adelaida Rodriguez",
-		"nombre": "Adelaida Rodriguez",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "2255936",
-		"nit": "555555555"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 15,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Bogota",
-		"direccion": "Cr 28 con 68",
-		"activo": true,
-		"rotulo": "Aldemar Castro",
-		"nombre": "Aldemar Castro",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "000",
-		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;Materiales de Construccion;Plasticos;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas", "Materiales.de.Construccion", "Plasticos"],
-		"ciudad": "Cali",
-		"direccion": "Cra. 8a No. 15-30",
-		"activo": true,
-		"rotulo": "Almacen de Plasticos Washington",
-		"nombre": "Almacen de Plasticos Washington",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8892666",
-		"nit": "29.055.828-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Equipos;",
-		"bienesoservicios": ["Equipos"],
-		"ciudad": "Cali",
-		"direccion": "calle 14 \u00b7 3 -00",
-		"activo": true,
-		"rotulo": "Almacen refrigeracion",
-		"nombre": "Almacen refrigeracion",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8802524",
-		"nit": "890101057-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Utensilios;",
-		"bienesoservicios": ["Utensilios"],
-		"ciudad": "Cali",
-		"direccion": "Calle 13 No. 8-52",
-		"activo": true,
-		"rotulo": "Almacen y Cristaleria la 13",
-		"nombre": "Almacen y Cristaleria la 13",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8893333",
-		"nit": "900212550-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Utensilios;",
-		"bienesoservicios": ["Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "",
+		"bienesoservicios": [
+			"SERVICIOS",
+			"PUBLICOS",
+			"ASEO"
+		],
+		"ciudad": "CALI",
 		"direccion": "",
 		"activo": true,
-		"rotulo": "Almacenes El Paisa",
-		"nombre": "Almacenes El Paisa",
+		"rotulo": "ASEO INTEGRAL CIUDAD LIMPIA S.A. ESP",
+		"nombre": "ASEO INTEGRAL CIUDAD LIMPIA S.A. ESP",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
-		"nit": "14.437.181-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Papeleria;Publicidad;Materia Prima-Varios;",
-		"bienesoservicios": ["Papeleria", "Publicidad", "Materia.Prima-Varios"],
-		"ciudad": "Cali",
-		"direccion": "1",
-		"activo": true,
-		"rotulo": "Andres Fernando Polo",
-		"nombre": "Andres Fernando Polo",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "4878332",
-		"nit": "1062278921"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"nit": "800048122"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Cali",
-		"direccion": "Calle 19 No. 5-46",
-		"activo": true,
-		"rotulo": "Aquimicos e Insumos SAS",
-		"nombre": "Aquimicos e Insumos SAS",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8812210",
-		"nit": "900740299-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
-		"direccion": "x",
-		"activo": true,
-		"rotulo": "Arley Pique",
-		"nombre": "Arley Pique",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3",
-		"nit": "16785509"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Servicios Financieros;",
-		"bienesoservicios": ["Servicios.Financieros"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS FINANCIEROS;",
+		"bienesoservicios": [
+			"SERVICIOS.FINANCIEROS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Centro Nari\u00f1o",
 		"activo": true,
 		"rotulo": "BANCO CAJA SOCIAL",
@@ -311,25 +414,33 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3077060",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Quimicos;Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Quimicos", "Materia.Prima-Varios"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS",
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CRA 20 A NO. 73-51",
-		"activo": true,
+		"activo": false,
 		"rotulo": "BELL CHEN INTERNACIONAL SA",
 		"nombre": "BELL CHEN INTERNACIONAL SA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3490368",
 		"nit": "811027326-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
-		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "BETTY LEMOS",
@@ -337,12 +448,46 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 8,
+		"textbienesoservicios": "",
+		"bienesoservicios": [],
+		"ciudad": "CALI",
+		"direccion": "carrera 57 2 ' 55",
+		"activo": true,
+		"rotulo": "BIOCENTER LABORATORIO",
+		"nombre": "BIOCENTER LABORATORIO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5133065",
+		"nit": "9007610001"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;Materia Prima-Implementos de Aseo;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas", "Materia.Prima-Implementos.de.Aseo"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-INTERMUNICIPAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-INTERMUNICIPAL"
+		],
+		"ciudad": "CALI",
+		"direccion": "cll 22 # 5/55",
+		"activo": true,
+		"rotulo": "BODEGAS MODULARES",
+		"nombre": "BODEGAS MODULARES",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8808233",
+		"nit": "16658412"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;MATERIA PRIMA-IMPLEMENTOS DE ASEO;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRERA 26 \u00b7 8 - 37",
 		"activo": true,
 		"rotulo": "BONNIPLAST",
@@ -350,12 +495,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5143216",
 		"nit": "900232942-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Camara de comercio;",
-		"bienesoservicios": ["Camara.de.comercio"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "CAMARA DE COMERCIO;",
+		"bienesoservicios": [
+			"CAMARA.DE.COMERCIO"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "CAMARA DE COMERCIO DE CALI",
@@ -363,38 +511,85 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Implementos de Aseo;Materia Prima-Quimicos;Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Implementos.de.Aseo", "Materia.Prima-Quimicos", "Materia.Prima-Varios"],
-		"ciudad": "Bogota",
-		"direccion": "CLL 73 NO. 20-51 LOCAL 1",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
+		"direccion": "x",
 		"activo": true,
+		"rotulo": "CARULLA",
+		"nombre": "CARULLA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "2"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-IMPLEMENTOS DE ASEO;MATERIA PRIMA-QUIMICOS;MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"MATERIA.PRIMA-QUIMICOS",
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "CLL 73 NO. 20-51 LOCAL 1",
+		"activo": false,
 		"rotulo": "CASA QUIMICOS",
 		"nombre": "CASA QUIMICOS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5434605",
 		"nit": "900458352-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CRA 26 NO. 67-45",
-		"activo": true,
+		"activo": false,
 		"rotulo": "CAUCHOS ARGO",
 		"nombre": "CAUCHOS ARGO",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6307241",
 		"nit": "79409121"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Parqueadero;",
-		"bienesoservicios": ["Parqueadero"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;MATERIA PRIMA-FRUTA;MATERIA PRIMA-IMPLEMENTOS DE ASEO;ALIMENTACION EMPLEADO;COMBUSTIBLE;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"MATERIA.PRIMA-FRUTA",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"ALIMENTACION.EMPLEADO",
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
+		"direccion": "RR",
+		"activo": true,
+		"rotulo": "CENCOSUD - JUMBO",
+		"nombre": "CENCOSUD - JUMBO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "900155107-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 * 48 - 81",
 		"activo": true,
 		"rotulo": "CENTRAL PARKING",
@@ -402,12 +597,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5137100",
 		"nit": "830087099-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Parqueadero;",
-		"bienesoservicios": ["Parqueadero"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "CIUDADELA UNICENTRO CALI",
@@ -415,12 +613,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "890321156-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "CLAUDIA HERRERA",
@@ -428,25 +629,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Energia;",
-		"bienesoservicios": ["Servicios.Publicos-Energia"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-ENERGIA;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-ENERGIA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Bogota",
-		"activo": true,
+		"activo": false,
 		"rotulo": "CODENSA",
 		"nombre": "CODENSA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "7115115",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Servicios Publicos-Gas;",
-		"bienesoservicios": ["Servicios.Publicos-Gas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-GAS;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-GAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "COLGAS",
@@ -454,25 +661,117 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "890310688-6"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;PAPELERIA;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 26 8 - 66",
+		"activo": true,
+		"rotulo": "COMERCIALIZADORA",
+		"nombre": "COMERCIALIZADORA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "5140155",
+		"nit": "94469270"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 5 * 59 - 71",
+		"activo": true,
+		"rotulo": "COMERCIALIZADORA DE ALIMENTOS SOLO FRUTAS",
+		"nombre": "COMERCIALIZADORA DE ALIMENTOS SOLO FRUTAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3799925",
+		"nit": "900350461"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Aportes ARL;Aportes Caja de Compensacion;Aportes EPS;Aportes Pension;",
-		"bienesoservicios": ["Aportes.ARL", "Aportes.Caja.de.Compensacion", "Aportes.EPS", "Aportes.Pension"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "APORTES ARL;APORTES CAJA DE COMPENSACION;APORTES EPS;APORTES PENSION;",
+		"bienesoservicios": [
+			"APORTES.ARL",
+			"APORTES.CAJA.DE.COMPENSACION",
+			"APORTES.EPS",
+			"APORTES.PENSION"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "NA",
 		"activo": true,
-		"rotulo": "Compensar - MiPlanilla.com",
-		"nombre": "Compensar - MiPlanilla.com",
+		"rotulo": "COMPENSAR - MIPLANILLA.COM",
+		"nombre": "COMPENSAR - MIPLANILLA.COM",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "9998600669427"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "MEDICINAS BOTIQUIN;",
+		"bienesoservicios": [
+			"MEDICINAS.BOTIQUIN"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "COPSERVIR - DROGAS LA REBAJA",
+		"nombre": "COPSERVIR - DROGAS LA REBAJA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "018000939900",
+		"nit": "830011670-3"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
+		"direccion": "atlantis plaza",
+		"activo": true,
+		"rotulo": "CREPES Y WAFFLES SA",
+		"nombre": "CREPES Y WAFFLES SA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "33",
+		"nit": "860076919-1"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
 		"diasPago": 0,
-		"textbienesoservicios": "Impuesto - CREE;Impuesto - Renta;Impuesto - IVA;",
-		"bienesoservicios": ["Impuesto.-.CREE", "Impuesto.-.Renta", "Impuesto.-.IVA"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-INTERMUNICIPAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-INTERMUNICIPAL"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "DEPRISA",
+		"nombre": "DEPRISA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "890100577-6"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "IMPUESTO - CREE;IMPUESTO - RENTA;IMPUESTO - IVA;",
+		"bienesoservicios": [
+			"IMPUESTO.-.CREE",
+			"IMPUESTO.-.RENTA",
+			"IMPUESTO.-.IVA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xxx",
 		"activo": true,
 		"rotulo": "DIAN",
@@ -480,12 +779,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "xxx",
 		"nit": "xxx"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Equipos;",
-		"bienesoservicios": ["Equipos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "EQUIPOS;",
+		"bienesoservicios": [
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 * 26 - 63",
 		"activo": true,
 		"rotulo": "DIANA JOYERIAS Y COMPRAVENTAS",
@@ -493,12 +795,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4899001",
 		"nit": "700007193-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "DIEGO BOTACHE",
@@ -506,25 +811,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "94462953"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
-		"direccion": "CARRERA 26 * 8 - 37",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "xx",
+		"activo": true,
+		"rotulo": "DISCORDOBA",
+		"nombre": "DISCORDOBA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "33",
+		"nit": "8600006151"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cra 26 No. 8-37 Local 19",
 		"activo": true,
 		"rotulo": "DISDECOL",
 		"nombre": "DISDECOL",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "4514938",
-		"nit": "10062793-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "5572546",
+		"nit": "10.062.793-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRERA 29 B * 19 - 35",
 		"activo": true,
 		"rotulo": "DISFRUWAAR",
@@ -532,12 +859,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3117360740",
 		"nit": "15812216-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Dotacion;",
-		"bienesoservicios": ["Dotacion"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "COMBUSTIBLE;",
+		"bienesoservicios": [
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 5 \u00b7 27 - 08",
+		"activo": true,
+		"rotulo": "DISTRACOM",
+		"nombre": "DISTRACOM",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5563119",
+		"nit": "811009788-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION;",
+		"bienesoservicios": [
+			"DOTACION"
+		],
+		"ciudad": "CALI",
 		"direccion": "ALAMEDA",
 		"activo": true,
 		"rotulo": "DISTRIBUCIONES DANASCO S.A.",
@@ -545,12 +891,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5574422",
 		"nit": "9000911754"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cr 27 No. 9-31",
+		"activo": true,
+		"rotulo": "DISTRIBUCIONES Y MONTAJES SAS",
+		"nombre": "DISTRIBUCIONES Y MONTAJES SAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3101603",
+		"nit": "900341794-7"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "PLASTICOS;",
+		"bienesoservicios": [
+			"PLASTICOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 9 No. 26-131",
+		"activo": true,
+		"rotulo": "DISTRIBUIDORA CALIPLASTICOS LTDA.",
+		"nombre": "DISTRIBUIDORA CALIPLASTICOS LTDA.",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5569040",
+		"nit": "890312487-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 16 * 8 - 67",
 		"activo": true,
 		"rotulo": "DISTRIBUIDORA COLPLASTICOS",
@@ -558,116 +939,144 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5569040",
 		"nit": "890312487-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION;DOTACION EMPLEADOS;",
+		"bienesoservicios": [
+			"DOTACION",
+			"DOTACION.EMPLEADOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 9 * 26-40",
 		"activo": true,
+		"rotulo": "DISTRIBUIDORA DAMASCO",
+		"nombre": "DISTRIBUIDORA DAMASCO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5574422",
+		"nit": "900091175-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cl 9 #26-79",
+		"activo": true,
+		"rotulo": "DISTRIFER",
+		"nombre": "DISTRIFER",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5577577",
+		"nit": "10483345-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "DISTRIQUIMICOS",
 		"nombre": "DISTRIQUIMICOS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cra 26 No. 8-37 Local 19",
-		"activo": true,
-		"rotulo": "Disdecol",
-		"nombre": "Disdecol",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5572546",
-		"nit": "10.062.793-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cr 27 No. 9-31",
-		"activo": true,
-		"rotulo": "Distribuciones y Montajes SAS",
-		"nombre": "Distribuciones y Montajes SAS",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3101603",
-		"nit": "900341794-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Plasticos;",
-		"bienesoservicios": ["Plasticos"],
-		"ciudad": "Cali",
-		"direccion": "Calle 9 No. 26-131",
-		"activo": true,
-		"rotulo": "Distribuidora Caliplasticos Ltda.",
-		"nombre": "Distribuidora Caliplasticos Ltda.",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5569040",
-		"nit": "890312487-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cl 9 #26-79",
-		"activo": true,
-		"rotulo": "Distrifer",
-		"nombre": "Distrifer",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5577577",
-		"nit": "10483345-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Impuesto de Industria y Comercio;",
-		"bienesoservicios": ["Impuesto.de.Industria.y.Comercio"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "IMPUESTO DE INDUSTRIA Y COMERCIO;",
+		"bienesoservicios": [
+			"IMPUESTO.DE.INDUSTRIA.Y.COMERCIO"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
-		"rotulo": "Distrito Capital",
-		"nombre": "Distrito Capital",
+		"activo": false,
+		"rotulo": "DISTRITO CAPITAL",
+		"nombre": "DISTRITO CAPITAL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;",
-		"bienesoservicios": ["Nomina.-.Operativa"],
-		"ciudad": "Cali",
-		"direccion": "NA",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "xx",
 		"activo": true,
 		"rotulo": "EDISON CHACON",
 		"nombre": "EDISON CHACON",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "NA",
+		"telefono": "33",
 		"nit": "94446738"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-08-04",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "NA",
 		"activo": true,
+		"rotulo": "EDWIN MUNOZ",
+		"nombre": "EDWIN MUNOZ",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3138687087",
+		"nit": "NA"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Carrera 6 No. 18-02",
+		"activo": true,
+		"rotulo": "EL COMERCIO ELECTRICO SAS",
+		"nombre": "EL COMERCIO ELECTRICO SAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8845000",
+		"nit": "890.323.635-2"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "EL SURTIDO II",
 		"nombre": "EL SURTIDO II",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 20 * 14-41",
 		"activo": true,
 		"rotulo": "EL TREN FIJO REPUESTOS",
@@ -675,12 +1084,32 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8851668",
 		"nit": "900328190-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Agua;Servicios Publicos-Energia;",
-		"bienesoservicios": ["Servicios.Publicos-Agua", "Servicios.Publicos-Energia"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ARRIENDO;",
+		"bienesoservicios": [
+			"ARRIENDO"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Cr 28 A # 68",
+		"activo": false,
+		"rotulo": "ELIZABETH PEREZ",
+		"nombre": "ELIZABETH PEREZ",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "000",
+		"nit": "000"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "SERVICIOS PUBLICOS-AGUA;SERVICIOS PUBLICOS-ENERGIA;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-AGUA",
+			"SERVICIOS.PUBLICOS-ENERGIA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CL 9B 27-13",
 		"activo": true,
 		"rotulo": "EMCALI",
@@ -688,38 +1117,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "0",
 		"nit": "0"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Agua;Servicios Publicos-Energia;",
-		"bienesoservicios": ["Servicios.Publicos-Agua", "Servicios.Publicos-Energia"],
-		"ciudad": "Cali",
-		"direccion": "CL 9B 27-13",
-		"activo": true,
-		"rotulo": "EMCali",
-		"nombre": "EMCali",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "0",
-		"nit": "0"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ENVAPACK",
 		"nombre": "ENVAPACK",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cr 8 No. 16-31",
+		"activo": true,
+		"rotulo": "ESPUMAS ANDRES HERNANDEZ",
+		"nombre": "ESPUMAS ANDRES HERNANDEZ",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8821009",
+		"nit": "31.842.494-0"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Combustible;",
-		"bienesoservicios": ["Combustible"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "COMBUSTIBLE;",
+		"bienesoservicios": [
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "ESSO",
@@ -727,25 +1165,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "14994902-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Telecomunicaciones;",
-		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-TELECOMUNICACIONES;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-TELECOMUNICACIONES"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ETB",
 		"nombre": "ETB",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Parqueadero;",
-		"bienesoservicios": ["Parqueadero"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "EVARISTO CABEZAS",
@@ -753,12 +1197,21 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "6077013"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;Dotacion;Dotacion empleados;Materia Prima-Implementos de Aseo;Papeleria;Utensilios;Materia Prima-Fruta;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Dotacion", "Dotacion.empleados", "Materia.Prima-Implementos.de.Aseo", "Papeleria", "Utensilios", "Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;DOTACION;DOTACION EMPLEADOS;MATERIA PRIMA-IMPLEMENTOS DE ASEO;PAPELERIA;UTENSILIOS;MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"DOTACION",
+			"DOTACION.EMPLEADOS",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"PAPELERIA",
+			"UTENSILIOS",
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "EXITO",
@@ -766,77 +1219,97 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "890900608-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
 		"diasPago": 1,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
-		"direccion": "xx",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS",
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 11 * 10 - 28",
 		"activo": true,
-		"rotulo": "Edison Chacon",
-		"nombre": "Edison Chacon",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "33",
-		"nit": "94446738"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Carrera 6 No. 18-02",
+		"rotulo": "FABIO ORREGO",
+		"nombre": "FABIO ORREGO",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "885 5736",
+		"nit": "900580457-4"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "MEDICINAS BOTIQUIN;DOTACION;",
+		"bienesoservicios": [
+			"MEDICINAS.BOTIQUIN",
+			"DOTACION"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
 		"activo": true,
-		"rotulo": "El Comercio Electrico SAS",
-		"nombre": "El Comercio Electrico SAS",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8845000",
-		"nit": "890.323.635-2"
-	}, {
-		"fechaCreacion": "2016-04-14",
+		"rotulo": "FALABELLA",
+		"nombre": "FALABELLA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "900017447-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Arriendo;",
-		"bienesoservicios": ["Arriendo"],
-		"ciudad": "Bogota",
-		"direccion": "Cr 28 A # 68",
+		"textbienesoservicios": "PASAJES AEREOS;",
+		"bienesoservicios": [
+			"PASAJES.AEREOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Parque Empresarial Multicentro, Bodega #15, Chachafruto, Playa Rica Rancher\u00edas,V\u00eda Guarne, Rionegro, Antioquia",
 		"activo": false,
-		"rotulo": "Elizabeth Perez",
-		"nombre": "Elizabeth Perez",
+		"rotulo": "FAST COLOMBIA S.A.S VIVA COLOMBIA",
+		"nombre": "FAST COLOMBIA S.A.S VIVA COLOMBIA",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "000",
-		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "019005558989",
+		"nit": "9003133493"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cr 8 No. 16-31",
-		"activo": true,
-		"rotulo": "Espumas Andres Hernandez",
-		"nombre": "Espumas Andres Hernandez",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8821009",
-		"nit": "31.842.494-0"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CLL 68 28-43",
-		"activo": true,
+		"activo": false,
 		"rotulo": "FERRELECTRICOS INAFER",
 		"nombre": "FERRELECTRICOS INAFER",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3118498",
 		"nit": "19092732-6"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cra 26A No. 2-56 Oeste",
+		"activo": true,
+		"rotulo": "FERRETERIA Y ELECTRICOS CIRCUNVALAR",
+		"nombre": "FERRETERIA Y ELECTRICOS CIRCUNVALAR",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5562414",
+		"nit": "7.275.805-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 * 23 A - 103",
 		"activo": true,
 		"rotulo": "FERRETODO LA 9",
@@ -844,25 +1317,84 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3853708",
 		"nit": "31283689-0"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
-		"direccion": "CLL 68 NO. 28-23",
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Cr 23 No 11-68",
 		"activo": true,
+		"rotulo": "FERRO MATERIALES JUNIN",
+		"nombre": "FERRO MATERIALES JUNIN",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3785446",
+		"nit": "1.144.027.047-7"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 9 No. 24-13",
+		"activo": true,
+		"rotulo": "FERRO PINTUALAMEDA",
+		"nombre": "FERRO PINTUALAMEDA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5569009",
+		"nit": "1.143.851.704-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 25 * 29a - 19",
+		"activo": true,
+		"rotulo": "FERROPINTURA EL COLOR",
+		"nombre": "FERROPINTURA EL COLOR",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3365621",
+		"nit": "94492505"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "CLL 68 NO. 28-23",
+		"activo": false,
 		"rotulo": "FERRRETERIA NORTE",
 		"nombre": "FERRRETERIA NORTE",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2401036",
 		"nit": "2879929-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Varios;Materia Prima-Implementos de Aseo;Utensilios;Papeleria;Plasticos;",
-		"bienesoservicios": ["Materia.Prima-Varios", "Materia.Prima-Implementos.de.Aseo", "Utensilios", "Papeleria", "Plasticos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;MATERIA PRIMA-IMPLEMENTOS DE ASEO;UTENSILIOS;PAPELERIA;PLASTICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"UTENSILIOS",
+			"PAPELERIA",
+			"PLASTICOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "FIESTAS MIL",
@@ -870,12 +1402,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "2"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRERA 29 B * 18 - 10",
 		"activo": true,
 		"rotulo": "FRUTAS Y VERDURAS FRESCAS DEL VALLE",
@@ -883,77 +1418,64 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3354742",
 		"nit": "38559012-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Pasajes Aereos;",
-		"bienesoservicios": ["Pasajes.Aereos"],
-		"ciudad": "Bogota",
-		"direccion": "Parque Empresarial Multicentro, Bodega #15, Chachafruto, Playa Rica Rancher\u00edas,V\u00eda Guarne, Rionegro, Antioquia",
-		"activo": true,
-		"rotulo": "Fast Colombia S.A.S Viva Colombia",
-		"nombre": "Fast Colombia S.A.S Viva Colombia",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "019005558989",
-		"nit": "9003133493"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cra 26A No. 2-56 Oeste",
-		"activo": true,
-		"rotulo": "Ferreteria y Electricos Circunvalar",
-		"nombre": "Ferreteria y Electricos Circunvalar",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5562414",
-		"nit": "7.275.805-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Cr 23 No 11-68",
-		"activo": true,
-		"rotulo": "Ferro Materiales Junin",
-		"nombre": "Ferro Materiales Junin",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3785446",
-		"nit": "1.144.027.047-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Calle 9 No. 24-13",
-		"activo": true,
-		"rotulo": "Ferro Pintualameda",
-		"nombre": "Ferro Pintualameda",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5569009",
-		"nit": "1.143.851.704-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "Cll 9 B 23 D 24 B",
 		"activo": true,
-		"rotulo": "Frutas y Verduras Jheison",
-		"nombre": "Frutas y Verduras Jheison",
+		"rotulo": "FRUTAS Y VERDURAS JHEISON",
+		"nombre": "FRUTAS Y VERDURAS JHEISON",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3144808751",
 		"nit": "944701378"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-07-07",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 9B # 23D-22B",
+		"activo": true,
+		"rotulo": "FRUTAS Y VERDURAS SANTIAGO",
+		"nombre": "FRUTAS Y VERDURAS SANTIAGO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3135831460",
+		"nit": "1112466748"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "SERVICIOS-VARIOS;PARQUEADERO;",
+		"bienesoservicios": [
+			"SERVICIOS-VARIOS",
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 98 18-49",
+		"activo": true,
+		"rotulo": "FUNDACI\u00d3N VALLE DEL LILI",
+		"nombre": "FUNDACI\u00d3N VALLE DEL LILI",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3319090",
+		"nit": "8903241775"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 15 14-37",
 		"activo": true,
 		"rotulo": "GAMAQUIM",
@@ -961,51 +1483,128 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8843690",
 		"nit": "805028004"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Gas;",
-		"bienesoservicios": ["Servicios.Publicos-Gas"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-GAS;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-GAS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "GAS NATURAL",
 		"nombre": "GAS NATURAL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-07-09",
 		"diasPago": 0,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Bogota",
-		"direccion": "Cra 88 No. 80-71",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "",
+		"activo": false,
+		"rotulo": "GINNA.VANESA.CORDOBA",
+		"nombre": "GINNA.VANESA.CORDOBA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "",
+		"nit": ""
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION;PAPELERIA;",
+		"bienesoservicios": [
+			"DOTACION",
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 9 * 27-27",
 		"activo": true,
+		"rotulo": "GLOBOS FIESTAS MIL",
+		"nombre": "GLOBOS FIESTAS MIL",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5580106",
+		"nit": "900605036-7"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Cra 88 No. 80-71",
+		"activo": false,
 		"rotulo": "GRAFICAS LOS CEREZOS",
 		"nombre": "GRAFICAS LOS CEREZOS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4366883",
 		"nit": "19073612-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "",
 		"activo": true,
-		"rotulo": "Guillermo Ocampo",
-		"nombre": "Guillermo Ocampo",
+		"rotulo": "GUILLERMO OCAMPO",
+		"nombre": "GUILLERMO OCAMPO",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 8,
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
+		"direccion": "bitaco",
+		"activo": true,
+		"rotulo": "HACIENDA ESTRELLITA SAS",
+		"nombre": "HACIENDA ESTRELLITA SAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3186085538",
+		"nit": "9004258352"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-LOCAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-LOCAL"
+		],
+		"ciudad": "CALI",
+		"direccion": "cc",
+		"activo": true,
+		"rotulo": "HERNAN ANTONIO GALIANO",
+		"nombre": "HERNAN ANTONIO GALIANO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3",
+		"nit": "16658412"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
 		"direccion": "",
 		"activo": true,
 		"rotulo": "HOMECENTER CALI SUR",
@@ -1013,25 +1612,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": "800.242.106-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "",
-		"activo": true,
-		"rotulo": "HOMECENTER Cali SUR",
-		"nombre": "HOMECENTER Cali SUR",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "",
-		"nit": "800.242.106-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 10,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "TERRON",
 		"activo": true,
 		"rotulo": "HUGO MARTINEZ",
@@ -1039,25 +1628,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3105171713",
 		"nit": "16587770"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Bogota",
-		"direccion": "Cra 28 A No. 68 - 74",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 27 * 8 - 97",
 		"activo": true,
+		"rotulo": "IMPORTACIONES ANI",
+		"nombre": "IMPORTACIONES ANI",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "5140815",
+		"nit": "16770118-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Cra 28 A No. 68 - 74",
+		"activo": false,
 		"rotulo": "IMPRESOS Y COPIAS",
 		"nombre": "IMPRESOS Y COPIAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4754430",
 		"nit": "19276579-6"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Arriendo;",
-		"bienesoservicios": ["Arriendo"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ARRIENDO;",
+		"bienesoservicios": [
+			"ARRIENDO"
+		],
+		"ciudad": "CALI",
 		"direccion": ".",
 		"activo": true,
 		"rotulo": "INMOBILIARIA VALENCIA",
@@ -1065,38 +1676,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": ".",
 		"nit": "."
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Hielo Seco;",
-		"bienesoservicios": ["Materia.Prima-Hielo.Seco"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-HIELO SECO;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-HIELO.SECO"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Calle 52 A No. 85G - 24",
-		"activo": true,
+		"activo": false,
 		"rotulo": "INVERSIONES BERODI",
 		"nombre": "INVERSIONES BERODI",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2954938",
 		"nit": "830122139-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cra 28 A No. 68 - 74",
-		"activo": true,
+		"activo": false,
 		"rotulo": "ISMENIA LEON",
 		"nombre": "ISMENIA LEON",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2255392",
 		"nit": "5111111"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "JHON ORDO\u00d1EZ",
@@ -1104,12 +1724,113 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "14638732"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA - ADMINISTRATIVA;",
+		"bienesoservicios": [
+			"NOMINA.-.ADMINISTRATIVA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
+		"rotulo": "JOHANNA ALONSO",
+		"nombre": "JOHANNA ALONSO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "000",
+		"nit": "000"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;Materia Prima-Implementos de Aseo;Utensilios;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Materia.Prima-Implementos.de.Aseo", "Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;PUBLICIDAD;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS",
+			"PUBLICIDAD"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "JOSE VICENTE ECHEVERRI",
+		"nombre": "JOSE VICENTE ECHEVERRI",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "16660805"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "EQUIPOS;",
+		"bienesoservicios": [
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "X",
+		"activo": true,
+		"rotulo": "JUAN CARLOS VILLOTA",
+		"nombre": "JUAN CARLOS VILLOTA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "X",
+		"nit": "1144181891"
+	},
+	{
+		"fechaCreacion": "2016-07-20",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "na",
+		"activo": false,
+		"rotulo": "JUAN DAVID LOPEZ LUNA",
+		"nombre": "JUAN DAVID LOPEZ LUNA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "na",
+		"nit": "na"
+	},
+	{
+		"fechaCreacion": "2016-04-20",
+		"diasPago": 15,
+		"textbienesoservicios": "",
+		"bienesoservicios": [],
+		"ciudad": "BOGOTA",
+		"direccion": "CLL 9B 27/13",
+		"activo": false,
+		"rotulo": "JUAN DAVID LUNA",
+		"nombre": "JUAN DAVID LUNA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3175880891",
+		"nit": "1144177146"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "JULY ANDREA RODRIGUEZ",
+		"nombre": "JULY ANDREA RODRIGUEZ",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "1143954897"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;MATERIA PRIMA-IMPLEMENTOS DE ASEO;UTENSILIOS;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "WW",
 		"activo": true,
 		"rotulo": "JUMBO",
@@ -1117,25 +1838,16 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "333",
 		"nit": "900155107-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Administrativa;",
-		"bienesoservicios": ["Nomina.-.Administrativa"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
-		"activo": true,
-		"rotulo": "Johanna Alonso",
-		"nombre": "Johanna Alonso",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "000",
-		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Materiales de Construccion;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Materiales.de.Construccion"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 * 26 - 37",
 		"activo": true,
 		"rotulo": "LA MISCELANEA",
@@ -1143,12 +1855,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5561837",
 		"nit": "16785509"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CR 29 \u00b7 19-25",
 		"activo": true,
 		"rotulo": "LA PLATANERA",
@@ -1156,12 +1871,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3355949",
 		"nit": "333"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CLL 9 \u00b7 24-40 ALAMEDA",
 		"activo": true,
 		"rotulo": "LA TIENDA DEL PLASTICO Y MISCELANIA",
@@ -1169,12 +1887,32 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5140698",
 		"nit": "1212121"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 10 * 53 - 05",
+		"activo": true,
+		"rotulo": "LAVA AUTOS SUPER WASH",
+		"nombre": "LAVA AUTOS SUPER WASH",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3307965",
+		"nit": "805026693-7"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;Nomina - Operativa;",
-		"bienesoservicios": ["Nomina-Turnos", "Nomina.-.Operativa"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;NOMINA - OPERATIVA;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS",
+			"NOMINA.-.OPERATIVA"
+		],
+		"ciudad": "CALI",
 		"direccion": "por verificar",
 		"activo": true,
 		"rotulo": "LEIDY RODRIGUEZ",
@@ -1182,12 +1920,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "por verificar",
 		"nit": "por verificar"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "LEIVER VILLAMUEZ",
@@ -1195,12 +1936,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Servicios Publicos-Gas;",
-		"bienesoservicios": ["Servicios.Publicos-Gas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-GAS;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-GAS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Planta Yumbo",
+		"activo": true,
+		"rotulo": "LIDA GAS",
+		"nombre": "LIDA GAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "2712755",
+		"nit": "8913009731"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "SERVICIOS PUBLICOS-GAS;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-GAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "Palmira",
 		"activo": true,
 		"rotulo": "LIDA GAS S.A.EPS",
@@ -1208,12 +1968,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2712755",
 		"nit": "8913009731"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
+		"rotulo": "LILIA SIERRA",
+		"nombre": "LILIA SIERRA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "000",
+		"nit": "000"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "LLANTAS Y LLANTAS",
@@ -1221,12 +2000,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "14938810-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARREA 23 * 8 A - 09",
 		"activo": true,
 		"rotulo": "LUBRICANTES Y VULCANIZADORA",
@@ -1234,25 +2016,45 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5542740",
 		"nit": "94433094-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+	},
+	{
+		"fechaCreacion": "2016-08-04",
+		"diasPago": 6,
+		"textbienesoservicios": "",
+		"bienesoservicios": [],
+		"ciudad": "CALI",
+		"direccion": "CLL 9B 27-13",
 		"activo": true,
+		"rotulo": "LUIS CAICEDO",
+		"nombre": "LUIS CAICEDO",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3165147574",
+		"nit": "1086040252"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "LUZ MARINA GARZON",
 		"nombre": "LUZ MARINA GARZON",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "LUZ PORTOCARRERO",
@@ -1260,51 +2062,132 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "1143964015"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Servicios Publicos-Gas;",
-		"bienesoservicios": ["Servicios.Publicos-Gas"],
-		"ciudad": "Cali",
-		"direccion": "Planta Yumbo",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;DOTACION;DOTACION EMPLEADOS;EQUIPOS;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"DOTACION",
+			"DOTACION.EMPLEADOS",
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 94 * 25 - 60",
 		"activo": true,
-		"rotulo": "Lida Gas",
-		"nombre": "Lida Gas",
+		"rotulo": "MAKRO SUPERMAYORISTA",
+		"nombre": "MAKRO SUPERMAYORISTA",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "2712755",
-		"nit": "8913009731"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+		"telefono": "3329556",
+		"nit": "900059238-5"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "EQUIPOS;MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"EQUIPOS",
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "CARRERA 3 * 24 - 129",
 		"activo": true,
-		"rotulo": "Lilia Sierra",
-		"nombre": "Lilia Sierra",
+		"rotulo": "MAPLASCALI",
+		"nombre": "MAPLASCALI",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "5240224",
+		"nit": "900332781-3"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
+		"direccion": "ciudad jardin",
+		"activo": true,
+		"rotulo": "MAQUITE",
+		"nombre": "MAQUITE",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "000",
-		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "3",
+		"nit": "800070655-5"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios-Fumigacion;",
-		"bienesoservicios": ["Servicios-Fumigacion"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "CRa 28a No. 68-74",
+		"activo": false,
+		"rotulo": "MARTHA GUERRERO",
+		"nombre": "MARTHA GUERRERO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "2255936",
+		"nit": "1111111"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "1",
+		"activo": true,
+		"rotulo": "MARTIN ZULETA",
+		"nombre": "MARTIN ZULETA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3117201332",
+		"nit": "64867141"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "SERVICIOS-FUMIGACION;",
+		"bienesoservicios": [
+			"SERVICIOS-FUMIGACION"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Diagonal 61B No. 22A - 38",
-		"activo": true,
+		"activo": false,
 		"rotulo": "MASIF SAS",
 		"nombre": "MASIF SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3466148",
 		"nit": "199999"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 8 * 26 - 17",
+		"activo": true,
+		"rotulo": "MEGA FRUVER",
+		"nombre": "MEGA FRUVER",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5140776",
+		"nit": "31306081-4"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "AV 3 C NORTE * 45 N - 29",
 		"activo": true,
 		"rotulo": "MEGA PRODUCTS",
@@ -1312,12 +2195,16 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6647160",
 		"nit": "900405744-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;Alimentacion Empleado;",
-		"bienesoservicios": ["Materia.Prima-Fruta", "Alimentacion.Empleado"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA",
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
 		"direccion": "CLL 5",
 		"activo": true,
 		"rotulo": "MERCAMIO",
@@ -1325,12 +2212,20 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "9999",
 		"nit": "9000061224-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Dotacion empleados;Dotacion;Materia Prima-Fruta;Materia Prima-Varios;Materia Prima-Implementos de Aseo;Utensilios;",
-		"bienesoservicios": ["Dotacion.empleados", "Dotacion", "Materia.Prima-Fruta", "Materia.Prima-Varios", "Materia.Prima-Implementos.de.Aseo", "Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "DOTACION EMPLEADOS;DOTACION;MATERIA PRIMA-FRUTA;MATERIA PRIMA-VARIOS;MATERIA PRIMA-IMPLEMENTOS DE ASEO;UTENSILIOS;",
+		"bienesoservicios": [
+			"DOTACION.EMPLEADOS",
+			"DOTACION",
+			"MATERIA.PRIMA-FRUTA",
+			"MATERIA.PRIMA-VARIOS",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 33 * 17 C - 52",
 		"activo": true,
 		"rotulo": "MERCATODO",
@@ -1338,12 +2233,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4423373",
 		"nit": "900061224-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Alameda",
+		"activo": true,
+		"rotulo": "MISCELANEA FERROCOLOR ALAMEDA",
+		"nombre": "MISCELANEA FERROCOLOR ALAMEDA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "",
+		"nit": "79587880-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 19*29 A - 11",
 		"activo": true,
 		"rotulo": "MORAS Y FRESAS NELLY",
@@ -1351,12 +2265,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3187107019",
 		"nit": "66751330-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRERA 15 # 12- 60",
 		"activo": true,
 		"rotulo": "MOTOLLANTAS CALI",
@@ -1364,64 +2281,63 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5569370",
 		"nit": "16793109-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
-		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
-		"ciudad": "Bogota",
-		"direccion": "CRa 28a No. 68-74",
-		"activo": true,
-		"rotulo": "Martha Guerrero",
-		"nombre": "Martha Guerrero",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "2255936",
-		"nit": "1111111"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
-		"direccion": "1",
-		"activo": true,
-		"rotulo": "Martin Zuleta",
-		"nombre": "Martin Zuleta",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3117201332",
-		"nit": "64867141"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Alameda",
-		"activo": true,
-		"rotulo": "Miscelanea Ferrocolor Alameda",
-		"nombre": "Miscelanea Ferrocolor Alameda",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "",
-		"nit": "79587880-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Utensilios;",
-		"bienesoservicios": ["Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "UTENSILIOS;",
+		"bienesoservicios": [
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "Cra 26 No. 8-71",
 		"activo": true,
-		"rotulo": "Multidesechables Alameda",
-		"nombre": "Multidesechables Alameda",
+		"rotulo": "MULTIDESECHABLES ALAMEDA",
+		"nombre": "MULTIDESECHABLES ALAMEDA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3841808",
 		"nit": "1.151.938.011"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA - ADMINISTRATIVA;",
+		"bienesoservicios": [
+			"NOMINA.-.ADMINISTRATIVA"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 13 # 108-100",
+		"activo": true,
+		"rotulo": "NATALIA ALJURE",
+		"nombre": "NATALIA ALJURE",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3202235392",
+		"nit": "31.472.076"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "HONORARIOS;",
+		"bienesoservicios": [
+			"HONORARIOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "NA",
+		"activo": false,
+		"rotulo": "NELSON MOLANO",
+		"nombre": "NELSON MOLANO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "NA",
+		"nit": "NA"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CR 5 # 18-35 LOCAL 102B",
 		"activo": true,
 		"rotulo": "NEW CHEMICAL S.A.S.",
@@ -1429,12 +2345,23 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3962884",
 		"nit": "9004694190"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Alimentacion Empleado;Combustible;Materia Prima-Varios;Papeleria;Servicios-Varios;Taxis y Pasajes de Bus;Utensilios;Transporte del Producto-Local;Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Combustible", "Materia.Prima-Varios", "Papeleria", "Servicios-Varios", "Taxis.y.Pasajes.de.Bus", "Utensilios", "Transporte.del.Producto-Local", "Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;COMBUSTIBLE;MATERIA PRIMA-VARIOS;PAPELERIA;SERVICIOS-VARIOS;TAXIS Y PASAJES DE BUS;UTENSILIOS;TRANSPORTE DEL PRODUCTO-LOCAL;MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"COMBUSTIBLE",
+			"MATERIA.PRIMA-VARIOS",
+			"PAPELERIA",
+			"SERVICIOS-VARIOS",
+			"TAXIS.Y.PASAJES.DE.BUS",
+			"UTENSILIOS",
+			"TRANSPORTE.DEL.PRODUCTO-LOCAL",
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "",
 		"activo": true,
 		"rotulo": "NO REPORTADO",
@@ -1442,64 +2369,80 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS",
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Bogota",
-		"activo": true,
+		"activo": false,
 		"rotulo": "NRWIN HERRAMIENTAS",
 		"nombre": "NRWIN HERRAMIENTAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2222222",
 		"nit": "222222222"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Administrativa;",
-		"bienesoservicios": ["Nomina.-.Administrativa"],
-		"ciudad": "Cali",
-		"direccion": "Calle 13 # 108-100",
-		"activo": true,
-		"rotulo": "Natalia Aljure",
-		"nombre": "Natalia Aljure",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3202235392",
-		"nit": "31.472.076"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Honorarios;",
-		"bienesoservicios": ["Honorarios"],
-		"ciudad": "Bogota",
-		"direccion": "NA",
-		"activo": true,
-		"rotulo": "Nelson Molano",
-		"nombre": "Nelson Molano",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "NA",
-		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Nomina-Turnos;",
-		"bienesoservicios": ["Nomina-Turnos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cra 28 A No. 68 - 74",
-		"activo": true,
+		"activo": false,
 		"rotulo": "OFELIA GARCIA",
 		"nombre": "OFELIA GARCIA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2255392",
 		"nit": "5111111"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Combustible;",
-		"bienesoservicios": ["Combustible"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "cr 25 oeste",
+		"activo": true,
+		"rotulo": "OLIMICA S.A.",
+		"nombre": "OLIMICA S.A.",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5146334",
+		"nit": "8901074873"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
+		"direccion": "alameda",
+		"activo": true,
+		"rotulo": "OLIMPICA",
+		"nombre": "OLIMPICA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "1",
+		"nit": "890107487-3"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "COMBUSTIBLE;",
+		"bienesoservicios": [
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 * 43 - 08",
 		"activo": true,
 		"rotulo": "OPESE",
@@ -1507,64 +2450,63 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5520611",
 		"nit": "900491889-0"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Cali",
-		"direccion": "cr 25 oeste",
-		"activo": true,
-		"rotulo": "Olimica s.a.",
-		"nombre": "Olimica s.a.",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5146334",
-		"nit": "8901074873"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cra 110b No. 64d-53",
-		"activo": true,
-		"rotulo": "Orlando Bernal",
-		"nombre": "Orlando Bernal",
+		"activo": false,
+		"rotulo": "ORLANDO BERNAL",
+		"nombre": "ORLANDO BERNAL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3158886828",
 		"nit": "79134665"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Transporte del Producto-Local;",
-		"bienesoservicios": ["Transporte.del.Producto-Local"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-LOCAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-LOCAL"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
-		"rotulo": "Oscar Gil",
-		"nombre": "Oscar Gil",
+		"activo": false,
+		"rotulo": "OSCAR GIL",
+		"nombre": "OSCAR GIL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "carrera 8 * 37 - 44",
 		"activo": true,
-		"rotulo": "Oxi Cali",
-		"nombre": "Oxi Cali",
+		"rotulo": "OXI CALI",
+		"nombre": "OXI CALI",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5242600",
 		"nit": "800126355-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
 		"direccion": "UNICENTRO",
 		"activo": true,
 		"rotulo": "PANAMERICANA",
@@ -1572,25 +2514,63 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4851100",
 		"nit": "830037946-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "PAPELERIA PRISMA",
 		"nombre": "PAPELERIA PRISMA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Parqueadero;",
-		"bienesoservicios": ["Parqueadero"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "calle 9 a * 26 - 121",
+		"activo": true,
+		"rotulo": "PAPELER\u00cdA ALFA",
+		"nombre": "PAPELER\u00cdA ALFA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5569037",
+		"nit": "3117692182"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 0,
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "PARQUEADERO CALI MIO",
+		"nombre": "PARQUEADERO CALI MIO",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "55061025-5"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "PARQUEADERO DE MOTOS YULIE",
@@ -1598,38 +2578,96 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "66949926-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Bogota",
-		"direccion": "Cra 23 No. 67 - 05",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
+		"direccion": "aeropuerto",
 		"activo": true,
+		"rotulo": "PARQUEADERO LAS PALMAS",
+		"nombre": "PARQUEADERO LAS PALMAS",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "800244815-5"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION;DOTACION EMPLEADOS;",
+		"bienesoservicios": [
+			"DOTACION",
+			"DOTACION.EMPLEADOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 100",
+		"activo": true,
+		"rotulo": "PAYLESS",
+		"nombre": "PAYLESS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "4855374",
+		"nit": "900197265-5"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "Cra 23 No. 67 - 05",
+		"activo": false,
 		"rotulo": "PLAST PAPEL SAS",
 		"nombre": "PLAST PAPEL SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2128202",
 		"nit": "900622977-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 10 * 13-50",
 		"activo": true,
+		"rotulo": "PLASTICOS LA 10",
+		"nombre": "PLASTICOS LA 10",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "8894420",
+		"nit": "2628178-6"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "PLASTICOS Y POLIETILENO",
 		"nombre": "PLASTICOS Y POLIETILENO",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
 		"direccion": "PASOANCHO",
 		"activo": true,
 		"rotulo": "POLLORIKO",
@@ -1637,12 +2675,22 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "25654101-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;Dotacion;Dotacion empleados;Materia Prima-Fruta;Materia Prima-Implementos de Aseo;Materia Prima-Varios;Papeleria;Utensilios;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Dotacion", "Dotacion.empleados", "Materia.Prima-Fruta", "Materia.Prima-Implementos.de.Aseo", "Materia.Prima-Varios", "Papeleria", "Utensilios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;DOTACION;DOTACION EMPLEADOS;MATERIA PRIMA-FRUTA;MATERIA PRIMA-IMPLEMENTOS DE ASEO;MATERIA PRIMA-VARIOS;PAPELERIA;UTENSILIOS;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"DOTACION",
+			"DOTACION.EMPLEADOS",
+			"MATERIA.PRIMA-FRUTA",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"MATERIA.PRIMA-VARIOS",
+			"PAPELERIA",
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "PRICESMART",
@@ -1650,25 +2698,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "900319753-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cll 68 No. 57 - 00",
-		"activo": true,
+		"activo": false,
 		"rotulo": "PRINTFOT",
 		"nombre": "PRINTFOT",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6309039",
 		"nit": "52157147-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "PROCAFECOL )TIENDA JUAN VALDEZ)",
@@ -1676,12 +2730,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "830112317-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-07-07",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 47 B # 25 A - 21 PALMIRA",
+		"activo": true,
+		"rotulo": "PRODRUAGRO LAS PALMAS",
+		"nombre": "PRODRUAGRO LAS PALMAS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3218003440",
+		"nit": "14887517"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CR 7 #20A07",
 		"activo": true,
 		"rotulo": "PRODUCPLASTICOS DEL VALLE",
@@ -1689,25 +2762,32 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8890658",
 		"nit": "12121212"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Dotacion;Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Dotacion", "Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "DOTACION;MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"DOTACION",
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CRA 23 NO. 66A - 49",
-		"activo": true,
+		"activo": false,
 		"rotulo": "PROVEEPLAST",
 		"nombre": "PROVEEPLAST",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2359335",
 		"nit": "9430958-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRER 29 B * 19 - 18",
 		"activo": true,
 		"rotulo": "PULPA DE GUANABANA Y MORAS CALIDAD",
@@ -1715,38 +2795,96 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3167078091",
 		"nit": "1151953765-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Quimicos;",
-		"bienesoservicios": ["Materia.Prima-Quimicos"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;ALIMENTACION EMPLEADO;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA",
+			"ALIMENTACION.EMPLEADO"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrer 28 * 19- 120",
 		"activo": true,
+		"rotulo": "QUICENO",
+		"nombre": "QUICENO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "4852762",
+		"nit": "805015151-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-QUIMICOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-QUIMICOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "QUIMICOS GAC LTDA",
 		"nombre": "QUIMICOS GAC LTDA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "QUIMIENVASES",
 		"nombre": "QUIMIENVASES",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
 		"diasPago": 1,
-		"textbienesoservicios": "Transporte del Producto-Intermunicipal;",
-		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "RAUL NU\u00d1EZ",
+		"nombre": "RAUL NU\u00d1EZ",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "94488722"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
+		"direccion": "Carrera 30 No. 9-29",
+		"activo": true,
+		"rotulo": "RECARGA DE CARTUCHOS EL BOYACO",
+		"nombre": "RECARGA DE CARTUCHOS EL BOYACO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "5146956",
+		"nit": "38.851.445-3"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-INTERMUNICIPAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-INTERMUNICIPAL"
+		],
+		"ciudad": "CALI",
 		"direccion": "MEDELLIN CALLE 79 B * 65 - 285",
 		"activo": true,
 		"rotulo": "RENTA FRIO",
@@ -1754,25 +2892,64 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4418832",
 		"nit": "811013082-2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
-		"direccion": "7 DE AGOSTO",
+	},
+	{
+		"fechaCreacion": "2016-08-19",
+		"diasPago": 1,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "CARRERA 24 \u00b7 9-46",
 		"activo": true,
+		"rotulo": "REPARACION MULTIMARCAS",
+		"nombre": "REPARACION MULTIMARCAS",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3185847166",
+		"nit": "6240404"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "7 DE AGOSTO",
+		"activo": false,
 		"rotulo": "RIGOBERTO REYES",
 		"nombre": "RIGOBERTO REYES",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "22222222",
 		"nit": "79607028"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
-		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "HONORARIOS;",
+		"bienesoservicios": [
+			"HONORARIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "NA",
+		"activo": true,
+		"rotulo": "ROSALBA VIAFARA",
+		"nombre": "ROSALBA VIAFARA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "NA",
+		"nit": "31912297"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "RUBEN BERMUDEZ",
@@ -1780,38 +2957,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Cali",
-		"direccion": "Carrera 30 No. 9-29",
+		"textbienesoservicios": "EQUIPOS;",
+		"bienesoservicios": [
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "",
 		"activo": true,
-		"rotulo": "Recarga de Cartuchos El Boyaco",
-		"nombre": "Recarga de Cartuchos El Boyaco",
+		"rotulo": "SALOMON COBO",
+		"nombre": "SALOMON COBO",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5146956",
-		"nit": "38.851.445-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Honorarios;",
-		"bienesoservicios": ["Honorarios"],
-		"ciudad": "Cali",
-		"direccion": "NA",
-		"activo": true,
-		"rotulo": "Rosalba Viafara",
-		"nombre": "Rosalba Viafara",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "NA",
-		"nit": "31912297"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "",
+		"nit": "6316285"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "CALI",
 		"direccion": "PLAZA",
 		"activo": true,
 		"rotulo": "SANTA HELENA",
@@ -1819,12 +2989,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2525252",
 		"nit": "4444"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARRERA 23 B * 27 - 13",
 		"activo": true,
 		"rotulo": "SANTIAGO PLAZA",
@@ -1832,38 +3005,47 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3858019",
 		"nit": "805022056"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;",
-		"bienesoservicios": ["Nomina.-.Operativa"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "NOMINA - OPERATIVA;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "AV CLL 100 NO. 17A 12",
-		"activo": true,
+		"activo": false,
 		"rotulo": "SERVICOL",
 		"nombre": "SERVICOL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2567975",
 		"nit": "900568326"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios-Varios;",
-		"bienesoservicios": ["Servicios-Varios"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "SERVICIOS-VARIOS;",
+		"bienesoservicios": [
+			"SERVICIOS-VARIOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "SERVIENTREGA",
 		"nombre": "SERVIENTREGA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CARERA 24 * 9 - 13",
 		"activo": true,
 		"rotulo": "SOLO PAPELES",
@@ -1871,103 +3053,115 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5568995",
 		"nit": "91206805-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Transporte del Producto-Intermunicipal;",
-		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "TRANSPORTE DEL PRODUCTO-INTERMUNICIPAL;",
+		"bienesoservicios": [
+			"TRANSPORTE.DEL.PRODUCTO-INTERMUNICIPAL"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "SUR ENVIOS",
 		"nombre": "SUR ENVIOS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Bogota",
-		"direccion": "xx",
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "Calle 15 No. 12-09/43",
 		"activo": true,
+		"rotulo": "SURI CERAMICAS LA 15",
+		"nombre": "SURI CERAMICAS LA 15",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "8899228",
+		"nit": "79.395.042"
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-VARIOS;ALIMENTACION EMPLEADO;UTENSILIOS;MATERIA PRIMA-FRUTA;EQUIPOS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-VARIOS",
+			"ALIMENTACION.EMPLEADO",
+			"UTENSILIOS",
+			"MATERIA.PRIMA-FRUTA",
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "SURTIFAMILIAR",
+		"nombre": "SURTIFAMILIAR",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "805028991-6"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "MATERIA PRIMA-FRUTA;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-FRUTA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "xx",
+		"activo": false,
 		"rotulo": "SURTIFRUVER",
 		"nombre": "SURTIFRUVER",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "Cra 24 No. 67 - 81",
-		"activo": true,
+		"activo": false,
 		"rotulo": "SURTITODO LTDA",
 		"nombre": "SURTITODO LTDA",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3291551",
 		"nit": "900091899-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MANTENIMIENTO Y ARREGLOS LOCATIVOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.Y.ARREGLOS.LOCATIVOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CLL 68 NO. 28-10",
-		"activo": true,
+		"activo": false,
 		"rotulo": "SUS PINTURAS SAS",
 		"nombre": "SUS PINTURAS SAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2319857",
 		"nit": "99999999"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Equipos;",
-		"bienesoservicios": ["Equipos"],
-		"ciudad": "Cali",
-		"direccion": "",
-		"activo": true,
-		"rotulo": "Salomon Cobo",
-		"nombre": "Salomon Cobo",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "",
-		"nit": "6316285"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materiales de Construccion;",
-		"bienesoservicios": ["Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "Calle 15 No. 12-09/43",
-		"activo": true,
-		"rotulo": "Suri Ceramicas La 15",
-		"nombre": "Suri Ceramicas La 15",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8899228",
-		"nit": "79.395.042"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Varios;Alimentacion Empleado;Utensilios;Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Varios", "Alimentacion.Empleado", "Utensilios", "Materia.Prima-Fruta"],
-		"ciudad": "Cali",
-		"direccion": "",
-		"activo": true,
-		"rotulo": "Surtifamiliar",
-		"nombre": "Surtifamiliar",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "",
-		"nit": ""
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "MANTENIMIENTO DE VEHICULOS;",
+		"bienesoservicios": [
+			"MANTENIMIENTO.DE.VEHICULOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALLE 9 *15-27",
 		"activo": true,
 		"rotulo": "TALLER MOTOS JUNIN",
@@ -1975,38 +3169,63 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3155111097",
 		"nit": "805028004"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Taxis y Pasajes de Bus;",
-		"bienesoservicios": ["Taxis.y.Pasajes.de.Bus"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "TAXIS Y PASAJES DE BUS;",
+		"bienesoservicios": [
+			"TAXIS.Y.PASAJES.DE.BUS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "NA",
-		"activo": true,
+		"activo": false,
 		"rotulo": "TAPPSI",
 		"nombre": "TAPPSI",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 0,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Bogota",
-		"direccion": "FRENTE A PLANTA",
+	},
+	{
+		"fechaCreacion": "2016-08-19",
+		"diasPago": 1,
+		"textbienesoservicios": "TAXIS Y PASAJES DE BUS;",
+		"bienesoservicios": [
+			"TAXIS.Y.PASAJES.DE.BUS"
+		],
+		"ciudad": "CALI",
+		"direccion": "MOVIL",
 		"activo": true,
+		"rotulo": "TAXI",
+		"nombre": "TAXI",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "2444444",
+		"nit": "111111"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "PAPELERIA;",
+		"bienesoservicios": [
+			"PAPELERIA"
+		],
+		"ciudad": "BOGOTA",
+		"direccion": "FRENTE A PLANTA",
+		"activo": false,
 		"rotulo": "TECNICINTAS",
 		"nombre": "TECNICINTAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2222222",
 		"nit": "900526935-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 5,
-		"textbienesoservicios": "Servicios-Varios;",
-		"bienesoservicios": ["Servicios-Varios"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "SERVICIOS-VARIOS;",
+		"bienesoservicios": [
+			"SERVICIOS-VARIOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "CLL 25 # 4N 20",
 		"activo": true,
 		"rotulo": "TELEREGIONAL DEL VALLE",
@@ -2014,12 +3233,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6683535",
 		"nit": "9007940438"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Vigilancia;",
-		"bienesoservicios": ["Vigilancia"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "VIGILANCIA;",
+		"bienesoservicios": [
+			"VIGILANCIA"
+		],
+		"ciudad": "CALI",
 		"direccion": "CALI",
 		"activo": true,
 		"rotulo": "TELESENTINEL",
@@ -2027,12 +3249,31 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3856129",
 		"nit": "8000148750"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-08-19",
 		"diasPago": 1,
-		"textbienesoservicios": "Combustible;",
-		"bienesoservicios": ["Combustible"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "PARQUEADERO;",
+		"bienesoservicios": [
+			"PARQUEADERO"
+		],
+		"ciudad": "CALI",
+		"direccion": "DG 32 * 38 - 00",
+		"activo": true,
+		"rotulo": "TEQUENDAMA PARKING",
+		"nombre": "TEQUENDAMA PARKING",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3752044",
+		"nit": "700004683-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "COMBUSTIBLE;",
+		"bienesoservicios": [
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "TERPEL",
@@ -2040,12 +3281,15 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "X",
 		"nit": "830095213-0"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Combustible;",
-		"bienesoservicios": ["Combustible"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "COMBUSTIBLE;",
+		"bienesoservicios": [
+			"COMBUSTIBLE"
+		],
+		"ciudad": "CALI",
 		"direccion": "X",
 		"activo": true,
 		"rotulo": "TEXACO",
@@ -2053,38 +3297,79 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3",
 		"nit": "14995363-9"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-08-19",
+		"diasPago": 1,
+		"textbienesoservicios": "DOTACION EMPLEADOS;",
+		"bienesoservicios": [
+			"DOTACION.EMPLEADOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 9 * 28-08",
+		"activo": true,
+		"rotulo": "TEXTILES MIRATEX",
+		"nombre": "TEXTILES MIRATEX",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3104026",
+		"nit": "700004683-8"
+	},
+	{
+		"fechaCreacion": "2016-08-19",
+		"diasPago": 1,
+		"textbienesoservicios": "MATERIALES DE CONSTRUCCION;",
+		"bienesoservicios": [
+			"MATERIALES.DE.CONSTRUCCION"
+		],
+		"ciudad": "CALI",
+		"direccion": "CALLE 23 \u00b7 18-02",
+		"activo": true,
+		"rotulo": "TIENDA CERAMICA CORONA",
+		"nombre": "TIENDA CERAMICA CORONA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "8962700",
+		"nit": "860500480-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 1,
+		"textbienesoservicios": "ALIMENTACION EMPLEADO;MATERIA PRIMA-IMPLEMENTOS DE ASEO;UTENSILIOS;",
+		"bienesoservicios": [
+			"ALIMENTACION.EMPLEADO",
+			"MATERIA.PRIMA-IMPLEMENTOS.DE.ASEO",
+			"UTENSILIOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "carrera 100 16-136",
+		"activo": true,
+		"rotulo": "TIENDAS D1",
+		"nombre": "TIENDAS D1",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3865060",
+		"nit": "900276962-1"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
 		"textbienesoservicios": "",
 		"bienesoservicios": [],
-		"ciudad": "Bogota",
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "TISSAN",
 		"nombre": "TISSAN",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;Materia Prima-Implementos de Aseo;Utensilios;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Materia.Prima-Implementos.de.Aseo", "Utensilios"],
-		"ciudad": "Cali",
-		"direccion": "carrera 100 16-136",
-		"activo": true,
-		"rotulo": "Tiendas D1",
-		"nombre": "Tiendas D1",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3865060",
-		"nit": "900276962-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Servicios Publicos-Telecomunicaciones;",
-		"bienesoservicios": ["Servicios.Publicos-Telecomunicaciones"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "SERVICIOS PUBLICOS-TELECOMUNICACIONES;",
+		"bienesoservicios": [
+			"SERVICIOS.PUBLICOS-TELECOMUNICACIONES"
+		],
+		"ciudad": "CALI",
 		"direccion": "",
 		"activo": true,
 		"rotulo": "UNE",
@@ -2092,25 +3377,63 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Materia Prima-Bolsas Plasticas;",
-		"bienesoservicios": ["Materia.Prima-Bolsas.Plasticas"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "MATERIA PRIMA-BOLSAS PLASTICAS;",
+		"bienesoservicios": [
+			"MATERIA.PRIMA-BOLSAS.PLASTICAS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "xx",
-		"activo": true,
+		"activo": false,
 		"rotulo": "VALENPLAST",
 		"nombre": "VALENPLAST",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "000",
 		"nit": "000"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-06-04",
+		"diasPago": 1,
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "c",
+		"activo": true,
+		"rotulo": "VANESSA CORDOBA",
+		"nombre": "VANESSA CORDOBA",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "3",
+		"nit": "1143945364"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Utensilios;",
-		"bienesoservicios": ["Utensilios"],
-		"ciudad": "Bogota",
+		"textbienesoservicios": "EQUIPOS;",
+		"bienesoservicios": [
+			"EQUIPOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "Call 44 N Av 2E-10 NORTE",
+		"activo": true,
+		"rotulo": "VARIADORES S.A.",
+		"nombre": "VARIADORES S.A.",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3816101",
+		"nit": "800002482-8"
+	},
+	{
+		"fechaCreacion": "2016-04-15",
+		"diasPago": 0,
+		"textbienesoservicios": "UTENSILIOS;",
+		"bienesoservicios": [
+			"UTENSILIOS"
+		],
+		"ciudad": "BOGOTA",
 		"direccion": "CRA 24 NO. 65 - 13",
 		"activo": true,
 		"rotulo": "VARIEDADES DEL 7 DE AGOSTO",
@@ -2118,12 +3441,16 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3111273",
 		"nit": "52308474-0"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 1,
-		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
-		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "C",
 		"activo": true,
 		"rotulo": "VIVIANA MUELAS",
@@ -2131,25 +3458,32 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "33",
 		"nit": "48575804"
-	}, {
-		"fechaCreacion": "2015-11-24",
+	},
+	{
+		"fechaCreacion": "2016-07-09",
 		"diasPago": 0,
-		"textbienesoservicios": "Equipos;",
-		"bienesoservicios": ["Equipos"],
-		"ciudad": "Cali",
-		"direccion": "Call 44 N Av 2E-10 NORTE",
-		"activo": true,
-		"rotulo": "Variadores S.A.",
-		"nombre": "Variadores S.A.",
+		"textbienesoservicios": "NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
+		"direccion": "",
+		"activo": false,
+		"rotulo": "YEIMI PERLAZA",
+		"nombre": "YEIMI PERLAZA",
 		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3816101",
-		"nit": "800002482-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
+		"telefono": "",
+		"nit": ""
+	},
+	{
+		"fechaCreacion": "2016-04-15",
 		"diasPago": 0,
-		"textbienesoservicios": "Nomina - Operativa;Nomina-Turnos;",
-		"bienesoservicios": ["Nomina.-.Operativa", "Nomina-Turnos"],
-		"ciudad": "Cali",
+		"textbienesoservicios": "NOMINA - OPERATIVA;NOMINA-TURNOS;",
+		"bienesoservicios": [
+			"NOMINA.-.OPERATIVA",
+			"NOMINA-TURNOS"
+		],
+		"ciudad": "CALI",
 		"direccion": "NA",
 		"activo": true,
 		"rotulo": "YENNY ALBORNOZ",
@@ -2157,356 +3491,5 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "NA",
 		"nit": "NA"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Dotacion;Papeleria;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Dotacion", "Papeleria"],
-		"ciudad": "Cali",
-		"direccion": "calle 9 - 26 - 58",
-		"activo": true,
-		"rotulo": "almacenes PAHI",
-		"nombre": "almacenes PAHI",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3087038",
-		"nit": "16638771-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 8,
-		"textbienesoservicios": "",
-		"bienesoservicios": [],
-		"ciudad": "Cali",
-		"direccion": "carrera 57 2 ' 55",
-		"activo": true,
-		"rotulo": "biocenter laboratorio",
-		"nombre": "biocenter laboratorio",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5133065",
-		"nit": "9007610001"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Transporte del Producto-Intermunicipal;",
-		"bienesoservicios": ["Transporte.del.Producto-Intermunicipal"],
-		"ciudad": "Cali",
-		"direccion": "cll 22 # 5/55",
-		"activo": true,
-		"rotulo": "bodegas modulares",
-		"nombre": "bodegas modulares",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8808233",
-		"nit": "16658412"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
-		"direccion": "x",
-		"activo": true,
-		"rotulo": "carulla",
-		"nombre": "carulla",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3",
-		"nit": "2"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Materia Prima-Fruta;Materia Prima-Implementos de Aseo;Alimentacion Empleado;Combustible;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Materia.Prima-Fruta", "Materia.Prima-Implementos.de.Aseo", "Alimentacion.Empleado", "Combustible"],
-		"ciudad": "Cali",
-		"direccion": "RR",
-		"activo": true,
-		"rotulo": "cencosud - JUMBO",
-		"nombre": "cencosud - JUMBO",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3",
-		"nit": "900155107-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
-		"direccion": "calle 5 * 59 - 71",
-		"activo": true,
-		"rotulo": "comercializadora de alimentos solo frutas",
-		"nombre": "comercializadora de alimentos solo frutas",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3799925",
-		"nit": "900350461"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
-		"direccion": "atlantis plaza",
-		"activo": true,
-		"rotulo": "crepes y waffles sa",
-		"nombre": "crepes y waffles sa",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "33",
-		"nit": "860076919-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Varios;",
-		"bienesoservicios": ["Materia.Prima-Varios"],
-		"ciudad": "Cali",
-		"direccion": "xx",
-		"activo": true,
-		"rotulo": "discordoba",
-		"nombre": "discordoba",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "33",
-		"nit": "8600006151"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Combustible;",
-		"bienesoservicios": ["Combustible"],
-		"ciudad": "Cali",
-		"direccion": "calle 5 \u00b7 27 - 08",
-		"activo": true,
-		"rotulo": "distracom",
-		"nombre": "distracom",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5563119",
-		"nit": "811009788-8"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Dotacion;Dotacion empleados;",
-		"bienesoservicios": ["Dotacion", "Dotacion.empleados"],
-		"ciudad": "Cali",
-		"direccion": "CALLE 9 * 26-40",
-		"activo": true,
-		"rotulo": "distribuidora DAMASCO",
-		"nombre": "distribuidora DAMASCO",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5574422",
-		"nit": "900091175-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;Materiales de Construccion;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos", "Materiales.de.Construccion"],
-		"ciudad": "Cali",
-		"direccion": "calle 25 * 29a - 19",
-		"activo": true,
-		"rotulo": "ferropintura el color",
-		"nombre": "ferropintura el color",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3365621",
-		"nit": "94492505"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Servicios-Varios;Parqueadero;",
-		"bienesoservicios": ["Servicios-Varios", "Parqueadero"],
-		"ciudad": "Cali",
-		"direccion": "carrera 98 18-49",
-		"activo": true,
-		"rotulo": "fundaci\u00f3n valle del lili",
-		"nombre": "fundaci\u00f3n valle del lili",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3319090",
-		"nit": "8903241775"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Dotacion;Papeleria;",
-		"bienesoservicios": ["Dotacion", "Papeleria"],
-		"ciudad": "Cali",
-		"direccion": "calle 9 * 27-27",
-		"activo": true,
-		"rotulo": "globos fiestas mil",
-		"nombre": "globos fiestas mil",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5580106",
-		"nit": "900605036-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 8,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
-		"direccion": "bitaco",
-		"activo": true,
-		"rotulo": "hacienda estrellita SAS",
-		"nombre": "hacienda estrellita SAS",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3186085538",
-		"nit": "9004258352"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Transporte del Producto-Local;",
-		"bienesoservicios": ["Transporte.del.Producto-Local"],
-		"ciudad": "Cali",
-		"direccion": "cc",
-		"activo": true,
-		"rotulo": "hernan Antonio Galiano",
-		"nombre": "hernan Antonio Galiano",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3",
-		"nit": "16658412"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Equipos;",
-		"bienesoservicios": ["Equipos"],
-		"ciudad": "Cali",
-		"direccion": "X",
-		"activo": true,
-		"rotulo": "juan carlos villota",
-		"nombre": "juan carlos villota",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "X",
-		"nit": "1144181891"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento de vehiculos;",
-		"bienesoservicios": ["Mantenimiento.de.vehiculos"],
-		"ciudad": "Cali",
-		"direccion": "calle 10 * 53 - 05",
-		"activo": true,
-		"rotulo": "lava autos super wash",
-		"nombre": "lava autos super wash",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3307965",
-		"nit": "805026693-7"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;Dotacion;Dotacion empleados;Equipos;",
-		"bienesoservicios": ["Alimentacion.Empleado", "Dotacion", "Dotacion.empleados", "Equipos"],
-		"ciudad": "Cali",
-		"direccion": "carrera 94 * 25 - 60",
-		"activo": true,
-		"rotulo": "makro supermayorista",
-		"nombre": "makro supermayorista",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3329556",
-		"nit": "900059238-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
-		"direccion": "ciudad jardin",
-		"activo": true,
-		"rotulo": "maquite",
-		"nombre": "maquite",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3",
-		"nit": "800070655-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;",
-		"bienesoservicios": ["Materia.Prima-Fruta"],
-		"ciudad": "Cali",
-		"direccion": "calle 8 * 26 - 17",
-		"activo": true,
-		"rotulo": "mega fruver",
-		"nombre": "mega fruver",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5140776",
-		"nit": "31306081-4"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Alimentacion Empleado;",
-		"bienesoservicios": ["Alimentacion.Empleado"],
-		"ciudad": "Cali",
-		"direccion": "alameda",
-		"activo": true,
-		"rotulo": "olimpica",
-		"nombre": "olimpica",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "1",
-		"nit": "890107487-3"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Papeleria;",
-		"bienesoservicios": ["Papeleria"],
-		"ciudad": "Cali",
-		"direccion": "calle 9 a * 26 - 121",
-		"activo": true,
-		"rotulo": "papeler\u00eda ALFA",
-		"nombre": "papeler\u00eda ALFA",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5569037",
-		"nit": "3117692182"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Dotacion;Dotacion empleados;",
-		"bienesoservicios": ["Dotacion", "Dotacion.empleados"],
-		"ciudad": "Cali",
-		"direccion": "carrera 100",
-		"activo": true,
-		"rotulo": "payless",
-		"nombre": "payless",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "4855374",
-		"nit": "900197265-5"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materia Prima-Fruta;Alimentacion Empleado;",
-		"bienesoservicios": ["Materia.Prima-Fruta", "Alimentacion.Empleado"],
-		"ciudad": "Cali",
-		"direccion": "carrer 28 * 19- 120",
-		"activo": true,
-		"rotulo": "quiceno",
-		"nombre": "quiceno",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "4852762",
-		"nit": "805015151-1"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
-		"direccion": "carrera 24 \u00b7 9-46",
-		"activo": true,
-		"rotulo": "reparacion multimarcas",
-		"nombre": "reparacion multimarcas",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "3185847166",
-		"nit": "6240404"
-	}, {
-		"fechaCreacion": "2015-11-19",
-		"diasPago": 1,
-		"textbienesoservicios": "Servicios Publicos-Gas;Taxis y Pasajes de Bus;",
-		"bienesoservicios": ["Servicios.Publicos-Gas", "Taxis.y.Pasajes.de.Bus"],
-		"ciudad": "Cali",
-		"direccion": "movil",
-		"activo": true,
-		"rotulo": "taxi",
-		"nombre": "taxi",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "2444444",
-		"nit": "111111"
-	}, {
-		"fechaCreacion": "2015-11-24",
-		"diasPago": 1,
-		"textbienesoservicios": "Materiales de Construccion;Mantenimiento y arreglos locativos;",
-		"bienesoservicios": ["Materiales.de.Construccion", "Mantenimiento.y.arreglos.locativos"],
-		"ciudad": "Cali",
-		"direccion": "calle 23 \u00b7 18-02",
-		"activo": true,
-		"rotulo": "tienda ceramica corona",
-		"nombre": "tienda ceramica corona",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "8962700",
-		"nit": "860500480-8"
 	}
 ]

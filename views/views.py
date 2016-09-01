@@ -303,8 +303,8 @@ class GetAllCompras(webapp2.RequestHandler):
                 compra['mesnum']=egreso.fecha.month
                 compra['mes']=egreso.fecha.strftime('%B')
                 compra['year']=egreso.fecha.year
-                compra['tipo']=egreso.tipo.get().rotulo
-                compra['sucursal']=egreso.sucursal.get().rotulo
+                compra['tipo']=ndb.Key('TipoEgreso',egreso.tipo.id().upper()).get().rotulo
+                compra['sucursal']=ndb.Key('Sucursal',egreso.sucursal.id().upper()).get().rotulo
                 records.append(compra)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
@@ -655,7 +655,7 @@ class GuardarEgreso(webapp2.RequestHandler):
         values = json.loads(post_data)
         compras =[]
         for compra in values['compras']:
-            bienoservicio = compra['bienoservicio'].replace(' ','.')
+            bienoservicio = compra['bienoservicio'].replace(' ','.').upper()
             compras.append(Compra(bienoservicio=Bienoservicio.get_by_id(bienoservicio).key,
                            detalle = compra['detalle'],
                            cantidad = compra['cantidad'],
@@ -730,14 +730,8 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-      proveedores = Proveedor.query().fetch()
-      for proveedor in proveedores:
-        keys = []
-        for bos in proveedor.bienesoservicios:
-          keys.append(bos.id().upper())
-          bos = ndb.Key('Bienoservicio',bos.id().upper())
-          bos.put()         
-      self.response.out.write(keys)
+        egresos = Egreso.query(Egreso.resumenU == 'MATERIA.PRIMA-FRUTA' ).fetch()
+        self.response.out.write("ARGGH!!")
 
 
 

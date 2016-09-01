@@ -134,7 +134,7 @@ class DataStoreInterface():
         if type(propertyType) == ndb.StringProperty:
             value = checkStringProperty(key,value)
         if type(propertyType) == ndb.ComputedProperty:
-            value = self._checkComputedProperty(key, value)
+            test = self._checkComputedProperty(key, value)
         return value
     
     def _checkEntityCreate(self,entityClass, values, forQuery=False):

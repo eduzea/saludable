@@ -56,6 +56,7 @@ def getCostosFijos(fechaDesde, fechaHasta):
                             'PARQUEADERO',
                             'CAMARA.DE.COMERCIO']
 
+    
     costos = getTotalFromModel('Egreso', {'resumen':costosDeProduccion,
                                                  'fechaDesde':fechaDesde,
                                                  'fechaHasta': fechaHasta})
@@ -65,7 +66,7 @@ def getCostosFijos(fechaDesde, fechaHasta):
     return costos + gastos
     
 def getCostosVariables(fechaDesde, fechaHasta):
-    costosDeProduccion = [  'MATERIA.PRIMA-FRUTA',
+    costosDeProduccion = [  'Materia.Prima-Fruta',
                             'MATERIA.PRIMA-BOLSAS.PLASTICAS',
                             'MATERIA.PRIMA-VARIOS',
                             'MATERIA.PRIMA-QUIMICOS',
@@ -114,12 +115,12 @@ def getUtilidadData(fechaDesde, fechaHasta):
     costosFijos = getCostosFijos(fechaDesde, fechaHasta)
     utilidadBruta = ventas - costosVariables
     utilidadNeta = utilidadBruta - costosFijos
-    return 
-    {'ventas' : ventas,
-     'costosVariables' : costosVariables,
-     'costosFijos' : costosFijos,
-     'utilidadBruta' : utilidadBruta,
-     'utilidadNeta' : utilidadNeta,
-     'margenBruto' : 100 * utilidadBruta / ventas,
-     'margenNeto' : 100 * utilidadNeta / ventas}
+    utilidadData =  {   'ventas' : ventas,
+                        'costosVariables' : costosVariables,
+                        'costosFijos' : costosFijos,
+                        'utilidadBruta' : utilidadBruta,
+                        'utilidadNeta' : utilidadNeta,
+                        'margenBruto' : 100 * utilidadBruta / ventas,
+                        'margenNeto' : 100 * utilidadNeta / ventas}
+    return utilidadData
 

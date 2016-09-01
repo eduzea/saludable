@@ -1,9 +1,30 @@
 [
 	{
-		"nombre": "Costo Fijo",
-		"rotulo": "Costo Fijo"
-	}, {
-		"nombre": "Costo Variable",
-		"rotulo": "Costo Variable"
+		"fechaCreacion": "2016-08-05",
+		"nombre": "COSTO FIJO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "COSTO FIJO"
+	},
+	{
+		"fechaCreacion": "2016-08-05",
+		"nombre": "COSTO VARIABLE",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "COSTO VARIABLE"
+	},
+	{
+		"fechaCreacion": "2016-08-05",
+		"nombre": "GASTO FIJO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "GASTO FIJO"
+	},
+	{
+		"fechaCreacion": "2016-08-05",
+		"nombre": "GASTO VARIABLE",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "GASTO VARIABLE"
 	}
 ]

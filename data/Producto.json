@@ -5,487 +5,589 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ARAZA"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"nombre": "CIRUELA DURAZNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "CIRUELA DURAZNO"
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "CONF. DE CEBOLLA AL VINO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "CONF. DE CEBOLLA AL VINO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "CONF PIMENTON",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "CONF PIMENTON"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-14",
 		"nombre": "CREMA DE COCO",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"rotulo": "CREMA DE COCO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "CURUBA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "CURUBA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "DESECHABLES",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "DESECHABLES"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "DURAZNO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "DURAZNO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "DURAZNO FRUTA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "DURAZNO FRUTA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ENCURTIDO DE ALCACHOFAS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ENCURTIDO DE ALCACHOFAS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ENCURTIDO DE BERENJENA CON PIMENTON",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ENCURTIDO DE BERENJENA CON PIMENTON"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ENCURTIDO DE PIMENTON CONFITADO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ENCURTIDO DE PIMENTON CONFITADO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ENCURTIDO DE ZUQUINIS CON ESPECIAS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ENCURTIDO DE ZUQUINIS CON ESPECIAS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Elementos desechables ",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Elementos desechables "
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Encurtido de Berengena con Pimientos",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Encurtido de Berengena con Pimientos"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Encurtido de Zuquinis con especias",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Encurtido de Zuquinis con especias"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Encurtido de alcachofas",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Encurtido de alcachofas"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Encurtido de champi\u00f1ones a la griega",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Encurtido de champi\u00f1ones a la griega"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FACTURA FISICA FALTANTE",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FACTURA FISICA FALTANTE"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FALAFES",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FALAFES"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FEIJOA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FEIJOA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRESA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRESA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRESA BANANO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRESA BANANO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRESA KIWI",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRESA KIWI"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRESA MANGO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRESA MANGO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRUTOS AMARILLOS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRUTOS AMARILLOS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRUTOS ROJOS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRUTOS ROJOS"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"nombre": "FRUTOS ROJOS PLUS",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "FRUTOS ROJOS PLUS"
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "FRUTOS ROJOS X 150",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "FRUTOS ROJOS X 150"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-19",
 		"nombre": "GRANIZADO DE LULO",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "GRANIZADO DE LULO"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-19",
 		"nombre": "GRANIZADO DE MANGO",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "GRANIZADO DE MANGO"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"nombre": "GRANIZADO FRUTOS AMARILLOS",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "GRANIZADO FRUTOS AMARILLOS"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"nombre": "GRANIZADO FRUTOS ROJOS",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "GRANIZADO FRUTOS ROJOS"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"nombre": "GRANIZADO MANGO BICHE",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "GRANIZADO MANGO BICHE"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-02",
 		"nombre": "GRANIZADO MARACUYA",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"rotulo": "GRANIZADO MARACUYA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "GUANABANA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "GUANABANA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "GUANABANA FRUTA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "GUANABANA FRUTA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "GUAYABA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "GUAYABA"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"nombre": "GUAYABA CORONILLA",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"rotulo": "GUAYABA CORONILLA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "GULUPA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "GULUPA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "JUGOS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "JUGOS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "LULADA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "LULADA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "LULO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "LULO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "LULO KIWI",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "LULO KIWI"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "LULO PI\u00d1A",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "LULO PI\u00d1A"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "LULO TAJADO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "LULO TAJADO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MANGO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MANGO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MANGO BICHE",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MANGO BICHE"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MANZANA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MANZANA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MARACUMANGO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MARACUMANGO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MARACUYA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MARACUYA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MARACUYA PEPA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MARACUYA PEPA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MELON",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MELON"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MERMELADA DE NARANJA CON ANIS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MERMELADA DE NARANJA CON ANIS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MERMELADA DE NARANJA CON JENGIBRE",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MERMELADA DE NARANJA CON JENGIBRE"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MERMELADA DE UVA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MERMELADA DE UVA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MERMELADA SABORES",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MERMELADA SABORES"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MORA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MORA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "MORA FRESA AGRAZ",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "MORA FRESA AGRAZ"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-04",
+		"nombre": "MORA FRUTA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "MORA FRUTA"
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Mango Biche",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Mango Biche"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Menu adultos",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Menu adultos"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Mermelada Frutos rojos",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Mermelada Frutos rojos"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Mermelada compuesta",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Mermelada compuesta"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "NISPERO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "NISPERO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PAPAYA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PAPAYA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PATILLA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PATILLA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PERA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PERA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PI\u00d1A",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PI\u00d1A"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PI\u00d1A FRESA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PI\u00d1A FRESA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "PI\u00d1AS SANDIA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "PI\u00d1AS SANDIA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Refrigerio navide\u00f1o adultos",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Refrigerio navide\u00f1o adultos"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SANDIA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SANDIA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SEMANARIO (7 X 750)",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SEMANARIO (7 X 750)"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SMOTHIE GMB",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SMOTHIE GMB"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SMOTHIE LMF",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SMOTHIE LMF"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SUBARRIENDO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SUBARRIENDO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SURTIDAS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SURTIDAS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "SURTIDOS",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SURTIDOS"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "TAMARINDO",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "TAMARINDO"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "TOMATE DE ARBOL",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "TOMATE DE ARBOL"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "UCHUVA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "UCHUVA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "UVA",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "UVA"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "ZAPOTE",
 		"activo": true,

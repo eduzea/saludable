@@ -7,7 +7,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "ARAZA",
+		"precio": 850,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "ARAZA",
 		"precio": 720,
@@ -15,7 +25,35 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-07",
+		"producto": "ARAZA",
+		"precio": 620,
+		"grupoDePrecios": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "ARAZA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "ARAZA",
+		"precio": 750,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7000,
@@ -23,7 +61,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7600,
@@ -31,7 +70,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7500,
@@ -39,7 +79,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 11500,
@@ -47,7 +88,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 6800,
@@ -55,7 +97,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 6800,
@@ -63,7 +106,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 6000,
@@ -71,7 +115,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7700,
@@ -79,7 +124,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7500,
@@ -87,7 +133,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 7500,
@@ -95,7 +142,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 720,
@@ -103,7 +151,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "ARAZA",
 		"precio": 825,
@@ -111,7 +160,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ARAZA",
 		"precio": 8200,
@@ -119,7 +169,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "ARAZA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "ARAZA",
+		"precio": 1125,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-07-13",
+		"producto": "ARAZA",
+		"precio": 1200,
+		"grupoDePrecios": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "160.g"
+	},
+	{
 		"fechaCreacion": "2016-03-23",
 		"producto": "ARAZA",
 		"precio": 1350,
@@ -127,15 +205,35 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
-		"fechaCreacion": "2016-01-14",
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"producto": "CIRUELA.DURAZNO",
+		"precio": 1200,
+		"grupoDePrecios": "ABACO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"producto": "CIRUELA.DURAZNO",
+		"precio": 1200,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-25",
 		"producto": "CONF.PIMENTON",
-		"precio": 10000,
+		"precio": 13000,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CONF.PIMENTON",
 		"precio": 10000,
@@ -143,7 +241,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CONF.PIMENTON",
 		"precio": 10000,
@@ -151,7 +250,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-30",
 		"producto": "CONF.PIMENTON",
 		"precio": 8000,
@@ -159,15 +259,35 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "500.g"
-	}, {
-		"fechaCreacion": "2016-01-14",
+	},
+	{
+		"fechaCreacion": "2016-07-19",
 		"producto": "CREMA.DE.COCO",
-		"precio": 9000,
+		"precio": 15000,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-17",
+		"producto": "CREMA.DE.COCO",
+		"precio": 8000,
+		"grupoDePrecios": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "CURUBA",
+		"precio": 680,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-01-18",
 		"producto": "CURUBA",
 		"precio": 600,
@@ -175,7 +295,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "CURUBA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "CURUBA",
 		"precio": 550,
@@ -183,15 +313,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2015-10-16",
+	},
+	{
+		"fechaCreacion": "2016-04-22",
 		"producto": "CURUBA",
-		"precio": 6000,
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-18",
+		"producto": "CURUBA",
+		"precio": 6200,
 		"grupoDePrecios": "HANS",
 		"activo": true,
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 5500,
@@ -199,7 +340,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6200,
@@ -207,7 +349,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6800,
@@ -215,7 +358,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 5500,
@@ -223,7 +367,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 7500,
@@ -231,7 +376,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6600,
@@ -239,7 +385,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6600,
@@ -247,7 +394,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6500,
@@ -255,7 +403,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6900,
@@ -263,7 +412,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6500,
@@ -271,7 +421,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 6000,
@@ -279,7 +430,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 700,
@@ -287,7 +439,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "CURUBA",
 		"precio": 605,
@@ -295,7 +448,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 850,
@@ -303,7 +457,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 830,
@@ -311,7 +466,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "CURUBA",
 		"precio": 920,
@@ -319,7 +475,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "125.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 840,
@@ -327,7 +484,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "CURUBA",
 		"precio": 1020,
@@ -335,7 +493,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "CURUBA",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "CURUBA",
 		"precio": 4950,
@@ -343,7 +511,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-18",
+		"producto": "DURAZNO",
+		"precio": 7000,
+		"grupoDePrecios": "HANS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1.Unidad"
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "DURAZNO",
+		"precio": 800,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "DURAZNO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "DURAZNO",
 		"precio": 750,
@@ -351,7 +547,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "DURAZNO",
+		"precio": 800,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 7500,
@@ -359,7 +565,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 7500,
@@ -367,7 +574,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 7000,
@@ -375,7 +583,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 6800,
@@ -383,7 +592,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 11000,
@@ -391,7 +601,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 7200,
@@ -399,7 +610,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 9000,
@@ -407,7 +619,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 7200,
@@ -415,7 +628,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 6800,
@@ -423,7 +637,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 790,
@@ -431,7 +646,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "DURAZNO",
 		"precio": 825,
@@ -439,7 +655,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 870,
@@ -447,7 +664,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "DURAZNO",
 		"precio": 1200,
@@ -455,7 +673,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "125.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 1200,
@@ -463,7 +682,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "125.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-06-10",
+		"producto": "DURAZNO",
+		"precio": 1050,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "130.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "DURAZNO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "DURAZNO",
+		"precio": 1200,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 1650,
@@ -471,7 +718,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 1470,
@@ -479,7 +727,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO",
 		"precio": 1650,
@@ -487,7 +736,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "DURAZNO",
 		"precio": 0,
@@ -495,7 +745,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-16",
 		"producto": "DURAZNO.FRUTA",
 		"precio": 7000,
@@ -503,7 +754,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO.FRUTA",
 		"precio": 1470,
@@ -511,7 +763,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO.FRUTA",
 		"precio": 1500,
@@ -519,7 +772,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "DURAZNO.FRUTA",
 		"precio": 1750,
@@ -527,7 +781,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ENCURTIDO.DE.ALCACHOFAS",
 		"precio": 8000,
@@ -535,7 +790,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ENCURTIDO.DE.ALCACHOFAS",
 		"precio": 15000,
@@ -543,7 +799,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ENCURTIDO.DE.BERENJENA.CON.PIMENTON",
 		"precio": 7500,
@@ -551,7 +808,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ENCURTIDO.DE.BERENJENA.CON.PIMENTON",
 		"precio": 12000,
@@ -559,7 +817,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ENCURTIDO.DE.ZUQUINIS.CON.ESPECIAS",
 		"precio": 9000,
@@ -567,7 +826,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Elementos.desechables",
 		"precio": 320000,
@@ -575,7 +835,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Encurtido.de.Berengena.con.Pimientos",
 		"precio": 7500,
@@ -583,7 +844,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Encurtido.de.champi\u00f1ones.a.la.griega",
 		"precio": 5000,
@@ -591,7 +853,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Encurtido.de.champi\u00f1ones.a.la.griega",
 		"precio": 8550,
@@ -599,7 +862,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FACTURA.FISICA.FALTANTE",
 		"precio": 64100,
@@ -607,7 +871,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FACTURA.FISICA.FALTANTE",
 		"precio": 138800,
@@ -615,7 +880,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FACTURA.FISICA.FALTANTE",
 		"precio": 57300,
@@ -623,7 +889,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FACTURA.FISICA.FALTANTE",
 		"precio": 52000,
@@ -631,15 +898,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-07-07",
 		"producto": "FALAFES",
-		"precio": 355,
+		"precio": 400,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FEIJOA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FEIJOA",
+		"precio": 600,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7000,
@@ -647,7 +934,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7200,
@@ -655,7 +943,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7200,
@@ -663,7 +952,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 6800,
@@ -671,7 +961,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7000,
@@ -679,7 +970,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 6800,
@@ -687,7 +979,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7000,
@@ -695,7 +988,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7000,
@@ -703,7 +997,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 6800,
@@ -711,7 +1006,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 9000,
@@ -719,7 +1015,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 7000,
@@ -727,7 +1024,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 6800,
@@ -735,7 +1033,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 720,
@@ -743,7 +1042,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "FEIJOA",
 		"precio": 900,
@@ -751,7 +1051,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 850,
@@ -759,7 +1060,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 840,
@@ -767,7 +1069,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 700,
@@ -775,7 +1078,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FEIJOA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FEIJOA",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 1100,
@@ -783,7 +1105,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 1260,
@@ -791,7 +1114,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FEIJOA",
 		"precio": 5500,
@@ -799,7 +1123,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "FRESA",
+		"precio": 650,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRESA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "FRESA",
 		"precio": 520,
@@ -807,7 +1150,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRESA",
+		"precio": 550,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6600,
@@ -815,7 +1168,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6600,
@@ -823,7 +1177,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 5800,
@@ -831,7 +1186,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -839,7 +1195,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -847,7 +1204,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -855,7 +1213,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 5500,
@@ -863,7 +1222,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 7200,
@@ -871,7 +1231,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -879,7 +1240,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6600,
@@ -887,7 +1249,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6200,
@@ -895,7 +1258,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 7400,
@@ -903,7 +1267,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -911,7 +1276,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -919,7 +1285,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 7000,
@@ -927,7 +1294,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 5000,
@@ -935,7 +1303,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6200,
@@ -943,7 +1312,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6000,
@@ -951,7 +1321,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 6600,
@@ -959,7 +1330,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 760,
@@ -967,7 +1339,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 600,
@@ -975,7 +1348,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 740,
@@ -983,7 +1357,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 750,
@@ -991,7 +1366,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 750,
@@ -999,7 +1375,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "FRESA",
+		"precio": 900,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "FRESA",
 		"precio": 950,
@@ -1007,7 +1393,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "FRESA",
 		"precio": 900,
@@ -1015,7 +1402,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "FRESA",
 		"precio": 780,
@@ -1023,7 +1411,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRESA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRESA",
+		"precio": 825,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 830,
@@ -1031,7 +1438,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 900,
@@ -1039,7 +1447,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 765,
@@ -1047,7 +1456,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 950,
@@ -1055,7 +1465,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 1150,
@@ -1063,7 +1474,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "FRESA",
 		"precio": 1250,
@@ -1071,7 +1483,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-14",
 		"producto": "FRESA",
 		"precio": 1250,
@@ -1079,7 +1492,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "FRESA",
 		"precio": 1400,
@@ -1087,7 +1501,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 1150,
@@ -1095,7 +1510,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "FRESA",
 		"precio": 1200,
@@ -1103,7 +1519,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-30",
 		"producto": "FRESA",
 		"precio": 800,
@@ -1111,7 +1528,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 1050,
@@ -1119,7 +1537,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 1200,
@@ -1127,7 +1546,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 4500,
@@ -1135,7 +1555,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "300.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-25",
+		"producto": "FRESA",
+		"precio": 3000,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-08-29",
+		"producto": "FRESA",
+		"precio": 27500,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "5000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA",
 		"precio": 4300,
@@ -1143,7 +1582,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA.BANANO",
 		"precio": 1050,
@@ -1151,7 +1591,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "160.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA.KIWI",
 		"precio": 1150,
@@ -1159,7 +1600,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRESA.MANGO",
 		"precio": 1050,
@@ -1167,15 +1609,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-04-22",
 		"producto": "FRESA.MANGO",
-		"precio": 31000,
+		"precio": 27500,
 		"grupoDePrecios": "COLEGIOS",
 		"activo": true,
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-08",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 7000,
@@ -1183,7 +1627,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-08",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 7000,
@@ -1191,7 +1636,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRUTOS.AMARILLOS",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 600,
@@ -1199,7 +1654,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRUTOS.AMARILLOS",
+		"precio": 600,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-27",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 7800,
@@ -1207,7 +1672,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 6000,
@@ -1215,7 +1681,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-06",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 7600,
@@ -1223,7 +1690,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-27",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 7800,
@@ -1231,7 +1699,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 6000,
@@ -1239,7 +1708,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 660,
@@ -1247,7 +1717,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRUTOS.AMARILLOS",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRUTOS.AMARILLOS",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 1250,
@@ -1255,7 +1744,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 1100,
@@ -1263,15 +1753,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
-		"fechaCreacion": "2015-10-14",
+	},
+	{
+		"fechaCreacion": "2016-04-22",
 		"producto": "FRUTOS.AMARILLOS",
-		"precio": 30000,
+		"precio": 27500,
 		"grupoDePrecios": "COLEGIOS",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 0,
@@ -1279,7 +1771,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "FRUTOS.AMARILLOS",
 		"precio": 4600,
@@ -1287,7 +1780,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-21",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7500,
@@ -1295,15 +1789,35 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2015-11-21",
+	},
+	{
+		"fechaCreacion": "2016-08-27",
 		"producto": "FRUTOS.ROJOS",
-		"precio": 7500,
+		"precio": 1200,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-06-29",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 750,
 		"grupoDePrecios": "SALERNO",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 600,
@@ -1311,7 +1825,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 600,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-21",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7500,
@@ -1319,7 +1843,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-16",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 5500,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": "2015-10-16",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7500,
@@ -1327,7 +1861,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 8000,
@@ -1335,7 +1870,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 9000,
@@ -1343,7 +1879,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7600,
@@ -1351,7 +1888,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1359,7 +1897,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 12000,
@@ -1367,7 +1906,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7500,
@@ -1375,7 +1915,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 12500,
@@ -1383,7 +1924,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1391,7 +1933,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 8500,
@@ -1399,7 +1942,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1407,7 +1951,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 9000,
@@ -1415,7 +1960,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 6000,
@@ -1423,7 +1969,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 8000,
@@ -1431,7 +1978,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1439,7 +1987,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1447,7 +1996,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 7200,
@@ -1455,7 +2005,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 760,
@@ -1463,7 +2014,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 660,
@@ -1471,7 +2023,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 860,
@@ -1479,7 +2032,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-08",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 1150,
@@ -1487,7 +2041,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 1200,
@@ -1495,7 +2068,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 800,
@@ -1503,7 +2077,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "160.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-30",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 1400,
@@ -1511,7 +2086,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-29",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 3700,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "FRUTOS.ROJOS",
+		"precio": 27500,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "5000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "FRUTOS.ROJOS",
 		"precio": 30000,
@@ -1519,7 +2113,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-30",
 		"producto": "FRUTOS.ROJOS",
 		"precio": 4600,
@@ -1527,7 +2122,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"producto": "FRUTOS.ROJOS.PLUS",
+		"precio": 1200,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2015-11-19",
 		"producto": "GRANIZADO.DE.LULO",
 		"precio": 25000,
@@ -1535,7 +2140,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.DE.LULO",
 		"precio": 30000,
@@ -1543,7 +2149,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-19",
 		"producto": "GRANIZADO.DE.MANGO",
 		"precio": 25000,
@@ -1551,7 +2158,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.DE.MANGO",
 		"precio": 30000,
@@ -1559,7 +2167,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"producto": "GRANIZADO.FRUTOS.AMARILLOS",
 		"precio": 23240,
@@ -1567,7 +2176,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.FRUTOS.AMARILLOS",
 		"precio": 32000,
@@ -1575,7 +2185,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"producto": "GRANIZADO.FRUTOS.ROJOS",
 		"precio": 23240,
@@ -1583,7 +2194,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.FRUTOS.ROJOS",
 		"precio": 32000,
@@ -1591,7 +2203,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.FRUTOS.ROJOS",
 		"precio": 4600,
@@ -1599,7 +2212,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "GRANIZADO.MANGO.BICHE",
 		"precio": 28000,
@@ -1607,7 +2221,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "4000.gr"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "GRANIZADO.MANGO.BICHE",
 		"precio": 28000,
@@ -1615,7 +2230,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "4000.gr"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-21",
 		"producto": "GRANIZADO.MANGO.BICHE",
 		"precio": 35000,
@@ -1623,7 +2239,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-04",
 		"producto": "GRANIZADO.MANGO.BICHE",
 		"precio": 40000,
@@ -1631,7 +2248,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-02",
 		"producto": "GRANIZADO.MARACUYA",
 		"precio": 0,
@@ -1639,7 +2257,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "4500.ML"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "GRANIZADO.MARACUYA",
 		"precio": 35000,
@@ -1647,7 +2266,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "GUANABANA",
+		"precio": 650,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "GUANABANA",
 		"precio": 550,
@@ -1655,7 +2284,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "GUANABANA",
+		"precio": 750,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "GUANABANA",
 		"precio": 720,
@@ -1663,7 +2302,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-18",
 		"producto": "GUANABANA",
 		"precio": 700,
@@ -1671,7 +2311,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "GUANABANA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "GUANABANA",
 		"precio": 650,
@@ -1679,15 +2329,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2015-10-16",
+	},
+	{
+		"fechaCreacion": "2016-04-22",
 		"producto": "GUANABANA",
-		"precio": 8000,
-		"grupoDePrecios": "HANS",
+		"precio": 600,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
+		"producto": "GUANABANA",
+		"precio": 6600,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "GUANABANA",
 		"precio": 7000,
@@ -1695,7 +2356,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1703,7 +2365,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7900,
@@ -1711,7 +2374,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7800,
@@ -1719,7 +2383,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1727,7 +2392,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1735,7 +2401,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1743,7 +2410,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1751,7 +2419,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1759,7 +2428,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1767,7 +2437,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1775,7 +2446,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 8000,
@@ -1783,7 +2455,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7800,
@@ -1791,7 +2464,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 9500,
@@ -1799,7 +2473,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 6200,
@@ -1807,7 +2482,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1815,7 +2491,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1823,7 +2500,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 9000,
@@ -1831,7 +2509,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 6200,
@@ -1839,7 +2518,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7900,
@@ -1847,7 +2527,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1855,7 +2536,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7500,
@@ -1863,7 +2545,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 7000,
@@ -1871,7 +2554,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 790,
@@ -1879,7 +2563,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 750,
@@ -1887,7 +2572,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 9500,
@@ -1895,7 +2581,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "GUANABANA",
 		"precio": 715,
@@ -1903,7 +2590,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 950,
@@ -1911,7 +2599,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 1500,
@@ -1919,7 +2608,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 1000,
@@ -1927,7 +2617,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 936,
@@ -1935,7 +2626,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "GUANABANA",
 		"precio": 1900,
@@ -1943,7 +2635,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "GUANABANA",
 		"precio": 1125,
@@ -1951,7 +2644,26 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "GUANABANA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "GUANABANA",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 1500,
@@ -1959,7 +2671,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 1200,
@@ -1967,7 +2680,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA",
 		"precio": 1200,
@@ -1975,7 +2689,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-23",
 		"producto": "GUANABANA",
 		"precio": 3300,
@@ -1983,7 +2698,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "500.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-18",
+		"producto": "GUANABANA",
+		"precio": 4000,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
 		"fechaCreacion": "2016-04-08",
 		"producto": "GUANABANA.FRUTA",
 		"precio": 6600,
@@ -1991,7 +2716,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA.FRUTA",
 		"precio": 7600,
@@ -1999,7 +2725,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1220,
@@ -2007,7 +2734,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1540,
@@ -2015,7 +2743,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1400,
@@ -2023,7 +2752,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1500,
@@ -2031,7 +2761,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "160.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1815,
@@ -2039,7 +2770,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUANABANA.FRUTA",
 		"precio": 1690,
@@ -2047,7 +2779,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-23",
 		"producto": "GUANABANA.FRUTA",
 		"precio": 3300,
@@ -2055,7 +2788,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "GUAYABA",
 		"precio": 720,
@@ -2063,7 +2797,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "GUAYABA",
+		"precio": 600,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-01-18",
 		"producto": "GUAYABA",
 		"precio": 550,
@@ -2071,7 +2815,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "GUAYABA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "GUAYABA",
 		"precio": 500,
@@ -2079,7 +2833,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "GUAYABA",
+		"precio": 500,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5500,
@@ -2087,7 +2851,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5000,
@@ -2095,7 +2860,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5000,
@@ -2103,7 +2869,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 7000,
@@ -2111,7 +2878,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5500,
@@ -2119,7 +2887,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 7300,
@@ -2127,7 +2896,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5500,
@@ -2135,7 +2905,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 6000,
@@ -2143,7 +2914,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 4000,
@@ -2151,7 +2923,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5700,
@@ -2159,7 +2932,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 5000,
@@ -2167,7 +2941,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 6000,
@@ -2175,7 +2950,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 580,
@@ -2183,7 +2959,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 700,
@@ -2191,7 +2968,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "GUAYABA",
 		"precio": 550,
@@ -2199,7 +2977,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 680,
@@ -2207,7 +2986,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 598,
@@ -2215,7 +2995,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-08",
 		"producto": "GUAYABA",
 		"precio": 1600,
@@ -2223,7 +3004,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "GUAYABA",
 		"precio": 750,
@@ -2231,7 +3013,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "GUAYABA",
+		"precio": 750,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "GUAYABA",
 		"precio": 4500,
@@ -2239,7 +3031,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GUAYABA",
 		"precio": 4300,
@@ -2247,7 +3040,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "GUAYABA.CORONILLA",
 		"precio": 0,
@@ -2255,7 +3049,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-18",
+		"producto": "GULUPA",
+		"precio": 7800,
+		"grupoDePrecios": "HANS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GULUPA",
 		"precio": 8000,
@@ -2263,7 +3067,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GULUPA",
 		"precio": 8000,
@@ -2271,15 +3076,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "GULUPA",
-		"precio": 7200,
-		"grupoDePrecios": "HANS",
-		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "GULUPA",
 		"precio": 1200,
@@ -2287,7 +3085,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-04",
 		"producto": "JUGOS",
 		"precio": 1000,
@@ -2295,7 +3094,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "JUGOS",
 		"precio": 8000,
@@ -2303,15 +3103,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "6.ONZAS"
-	}, {
-		"fechaCreacion": "2016-03-18",
+	},
+	{
+		"fechaCreacion": "2016-08-17",
 		"producto": "LULADA",
-		"precio": 1025,
+		"precio": 6400,
 		"grupoDePrecios": "VENTOLINI",
 		"activo": true,
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
+		"fechaCreacion": "2016-07-18",
+		"producto": "LULADA",
+		"precio": 1200,
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULADA",
 		"precio": 1150,
@@ -2319,7 +3130,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-09",
 		"producto": "LULADA",
 		"precio": 32000,
@@ -2327,7 +3139,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "LULO",
+		"precio": 620,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-07-07",
+		"producto": "LULO",
+		"precio": 600,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-03-04",
 		"producto": "LULO",
 		"precio": 580,
@@ -2335,7 +3166,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "LULO",
 		"precio": 550,
@@ -2343,7 +3175,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "LULO",
+		"precio": 680,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-10-08",
 		"producto": "LULO",
 		"precio": 680,
@@ -2351,15 +3193,35 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2016-01-18",
+	},
+	{
+		"fechaCreacion": "2016-07-07",
 		"producto": "LULO",
-		"precio": 600,
+		"precio": 680,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "LULO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "LULO",
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "LULO",
 		"precio": 6000,
@@ -2367,7 +3229,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"producto": "LULO",
+		"precio": 5800,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
+		"fechaCreacion": "2016-04-18",
+		"producto": "LULO",
+		"precio": 6200,
+		"grupoDePrecios": "HANS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": "2015-10-20",
 		"producto": "LULO",
 		"precio": 6000,
@@ -2375,7 +3256,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-07",
+		"producto": "LULO",
+		"precio": 6800,
+		"grupoDePrecios": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 7000,
@@ -2383,7 +3274,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6700,
@@ -2391,7 +3283,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2399,7 +3292,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6600,
@@ -2407,7 +3301,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2415,7 +3310,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2423,7 +3319,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6600,
@@ -2431,15 +3328,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "LULO",
-		"precio": 6000,
-		"grupoDePrecios": "HANS",
-		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2447,7 +3337,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 7500,
@@ -2455,7 +3346,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6850,
@@ -2463,7 +3355,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 9500,
@@ -2471,7 +3364,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2479,7 +3373,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2487,7 +3382,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 8000,
@@ -2495,15 +3391,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "LULO",
-		"precio": 5500,
-		"grupoDePrecios": "PIZZA.AL.PASO",
-		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2511,7 +3400,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 7000,
@@ -2519,7 +3409,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2527,7 +3418,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 6800,
@@ -2535,15 +3427,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "LULO",
-		"precio": 6400,
-		"grupoDePrecios": "TREPANDO",
-		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 700,
@@ -2551,7 +3436,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 660,
@@ -2559,7 +3445,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "LULO",
 		"precio": 605,
@@ -2567,7 +3454,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "LULO",
 		"precio": 850,
@@ -2575,7 +3463,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "LULO",
 		"precio": 1000,
@@ -2583,7 +3472,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 850,
@@ -2591,7 +3481,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 840,
@@ -2599,7 +3490,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 850,
@@ -2607,7 +3499,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 900,
@@ -2615,7 +3508,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 630,
@@ -2623,7 +3517,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "LULO",
 		"precio": 1200,
@@ -2631,7 +3526,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "LULO",
 		"precio": 1020,
@@ -2639,7 +3535,26 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "LULO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "LULO",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 1100,
@@ -2647,7 +3562,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 1000,
@@ -2655,7 +3571,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 1100,
@@ -2663,7 +3580,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-29",
+		"producto": "LULO",
+		"precio": 1360,
+		"grupoDePrecios": "PAESA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "170.g"
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "LULO",
 		"precio": 1000,
@@ -2671,7 +3598,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "190.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 0,
@@ -2679,7 +3607,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "2000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "LULO",
 		"precio": 275,
@@ -2687,7 +3616,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 30000,
@@ -2695,7 +3625,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 0,
@@ -2703,7 +3634,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "LULO",
 		"precio": 5500,
@@ -2711,7 +3643,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "LULO",
 		"precio": 4500,
@@ -2719,7 +3652,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 5250,
@@ -2727,7 +3661,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 4950,
@@ -2735,7 +3670,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO",
 		"precio": 5200,
@@ -2743,15 +3679,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
-		"fechaCreacion": "2015-12-18",
-		"producto": "LULO",
-		"precio": 550,
-		"grupoDePrecios": "SALERNO",
-		"activo": true,
-		"empleadoCreador": "nataljure@salud-able.com",
-		"porcion": "80.Gr"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "LULO",
 		"precio": 550,
@@ -2759,7 +3688,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "80.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO.KIWI",
 		"precio": 1200,
@@ -2767,7 +3697,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "LULO.PI\u00d1A",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2015-11-23",
 		"producto": "LULO.PI\u00d1A",
 		"precio": 30000,
@@ -2775,7 +3715,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "LULO.TAJADO",
 		"precio": 900,
@@ -2783,7 +3724,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "MANGO",
+		"precio": 600,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO",
+		"precio": 530,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MANGO",
 		"precio": 870,
@@ -2791,7 +3751,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MANGO",
 		"precio": 1000,
@@ -2799,23 +3760,44 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2015-11-17",
+	},
+	{
+		"fechaCreacion": "2016-06-10",
 		"producto": "MANGO",
 		"precio": 550,
 		"grupoDePrecios": "KARENS.PIZZA",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2016-01-18",
+	},
+	{
+		"fechaCreacion": "2016-08-27",
 		"producto": "MANGO",
-		"precio": 600,
+		"precio": 680,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-07-08",
+		"producto": "MANGO",
+		"precio": 680,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "MANGO",
 		"precio": 550,
@@ -2823,7 +3805,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO",
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "MANGO",
 		"precio": 6000,
@@ -2831,7 +3823,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-06",
+		"producto": "MANGO",
+		"precio": 5800,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": "2015-10-20",
 		"producto": "MANGO",
 		"precio": 6000,
@@ -2839,7 +3841,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2847,7 +3850,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2855,7 +3859,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2863,7 +3868,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2871,7 +3877,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2879,7 +3886,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6600,
@@ -2887,7 +3895,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2895,7 +3904,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2903,7 +3913,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2911,7 +3922,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2919,7 +3931,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2927,7 +3940,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 8500,
@@ -2935,7 +3949,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7000,
@@ -2943,7 +3958,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 9500,
@@ -2951,7 +3967,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7500,
@@ -2959,7 +3976,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2967,7 +3985,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 8000,
@@ -2975,7 +3994,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 5600,
@@ -2983,7 +4003,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7000,
@@ -2991,7 +4012,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -2999,7 +4021,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 7000,
@@ -3007,7 +4030,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6600,
@@ -3015,7 +4039,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6800,
@@ -3023,7 +4048,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 720,
@@ -3031,7 +4057,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 850,
@@ -3039,7 +4066,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 680,
@@ -3047,7 +4075,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 680,
@@ -3055,7 +4084,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "MANGO",
 		"precio": 605,
@@ -3063,7 +4093,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1750,
@@ -3071,7 +4102,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 840,
@@ -3079,7 +4111,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 936,
@@ -3087,7 +4120,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 820,
@@ -3095,7 +4129,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1000,
@@ -3103,7 +4138,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 660,
@@ -3111,7 +4147,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "MANGO",
 		"precio": 1250,
@@ -3119,7 +4156,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "MANGO",
 		"precio": 1020,
@@ -3127,7 +4165,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-13",
 		"producto": "MANGO",
 		"precio": 1000,
@@ -3135,7 +4174,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MANGO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MANGO",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1050,
@@ -3143,7 +4201,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1100,
@@ -3151,7 +4210,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1000,
@@ -3159,7 +4219,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "MANGO",
 		"precio": 1400,
@@ -3167,7 +4228,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-01",
 		"producto": "MANGO",
 		"precio": 1300,
@@ -3175,7 +4237,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 1220,
@@ -3183,15 +4246,44 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
-		"fechaCreacion": "2015-11-17",
+	},
+	{
+		"fechaCreacion": "2016-06-10",
 		"producto": "MANGO",
 		"precio": 275,
 		"grupoDePrecios": "KARENS.PIZZA",
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "50.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-06-21",
+		"producto": "MANGO",
+		"precio": 3500,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-05-31",
+		"producto": "MANGO",
+		"precio": 3200,
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO",
+		"precio": 26000,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "5000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 30000,
@@ -3199,7 +4291,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 450,
@@ -3207,7 +4300,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "60.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MANGO",
 		"precio": 5800,
@@ -3215,7 +4309,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "MANGO",
 		"precio": 4500,
@@ -3223,7 +4318,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 6000,
@@ -3231,7 +4327,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 5600,
@@ -3239,7 +4336,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 4950,
@@ -3247,7 +4345,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO",
 		"precio": 5500,
@@ -3255,7 +4354,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-22",
 		"producto": "MANGO",
 		"precio": 580,
@@ -3263,7 +4363,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "80.Gr"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "MANGO",
 		"precio": 580,
@@ -3271,7 +4372,35 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "80.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO.BICHE",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MANGO.BICHE",
+		"precio": 700,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-02",
+		"producto": "MANGO.BICHE",
+		"precio": 5200,
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 7000,
@@ -3279,7 +4408,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 7500,
@@ -3287,7 +4417,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 7000,
@@ -3295,7 +4426,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 7200,
@@ -3303,7 +4435,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 7000,
@@ -3311,7 +4444,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "MANGO.BICHE",
 		"precio": 770,
@@ -3319,7 +4453,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 870,
@@ -3327,7 +4462,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "MANGO.BICHE",
 		"precio": 1125,
@@ -3335,7 +4471,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MANGO.BICHE",
+		"precio": 1050,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2015-11-30",
 		"producto": "MANGO.BICHE",
 		"precio": 1400,
@@ -3343,7 +4489,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 15000,
@@ -3351,7 +4498,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 1200,
@@ -3359,7 +4507,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-02",
 		"producto": "MANGO.BICHE",
 		"precio": 0,
@@ -3367,7 +4516,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANGO.BICHE",
 		"precio": 420,
@@ -3375,7 +4525,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MANZANA",
 		"precio": 10000,
@@ -3383,7 +4534,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MARACUMANGO",
+		"precio": 530,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MARACUMANGO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MARACUMANGO",
+		"precio": 900,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUMANGO",
 		"precio": 1150,
@@ -3391,15 +4570,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
-		"fechaCreacion": "2015-10-14",
+	},
+	{
+		"fechaCreacion": "2016-04-22",
 		"producto": "MARACUMANGO",
-		"precio": 32000,
+		"precio": 27500,
 		"grupoDePrecios": "COLEGIOS",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "MARACUYA",
 		"precio": 650,
@@ -3407,7 +4588,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "MARACUYA",
+		"precio": 700,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-17",
+		"producto": "MARACUYA",
+		"precio": 680,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "MARACUYA",
 		"precio": 550,
@@ -3415,7 +4615,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "MARACUYA",
+		"precio": 750,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-10-24",
 		"producto": "MARACUYA",
 		"precio": 800,
@@ -3423,15 +4633,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2016-02-22",
+	},
+	{
+		"fechaCreacion": "2016-06-29",
 		"producto": "MARACUYA",
-		"precio": 720,
+		"precio": 750,
 		"grupoDePrecios": "SALERNO",
 		"activo": true,
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-01",
 		"producto": "MARACUYA",
 		"precio": 800,
@@ -3439,7 +4651,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-18",
 		"producto": "MARACUYA",
 		"precio": 700,
@@ -3447,7 +4660,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MARACUYA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-04-08",
 		"producto": "MARACUYA",
 		"precio": 1100,
@@ -3455,7 +4678,35 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MARACUYA",
+		"precio": 650,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-17",
+		"producto": "MARACUYA",
+		"precio": 6800,
+		"grupoDePrecios": "COLEGIOS",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
+		"fechaCreacion": "2016-07-25",
+		"producto": "MARACUYA",
+		"precio": 6500,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": "2015-10-16",
 		"producto": "MARACUYA",
 		"precio": 7800,
@@ -3463,7 +4714,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 9500,
@@ -3471,7 +4723,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 8200,
@@ -3479,7 +4732,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "MARACUYA",
 		"precio": 7000,
@@ -3487,7 +4741,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 8400,
@@ -3495,7 +4750,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 8500,
@@ -3503,7 +4759,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 8000,
@@ -3511,7 +4768,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3519,7 +4777,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3527,7 +4786,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3535,7 +4795,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7000,
@@ -3543,7 +4804,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3551,7 +4813,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3559,7 +4822,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3567,7 +4831,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 9500,
@@ -3575,7 +4840,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3583,7 +4849,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3591,7 +4858,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 9000,
@@ -3599,7 +4867,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 6200,
@@ -3607,7 +4876,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3615,7 +4885,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3623,7 +4894,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7500,
@@ -3631,7 +4903,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7800,
@@ -3639,7 +4912,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 7000,
@@ -3647,7 +4921,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1200,
@@ -3655,7 +4930,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 800,
@@ -3663,7 +4939,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "MARACUYA",
 		"precio": 715,
@@ -3671,7 +4948,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 935,
@@ -3679,7 +4957,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1320,
@@ -3687,7 +4966,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1300,
@@ -3695,7 +4975,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1770,
@@ -3703,7 +4984,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1300,
@@ -3711,7 +4993,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "MARACUYA",
 		"precio": 1560,
@@ -3719,7 +5002,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "MARACUYA",
 		"precio": 1125,
@@ -3727,7 +5011,26 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MARACUYA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MARACUYA",
+		"precio": 975,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1380,
@@ -3735,7 +5038,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1150,
@@ -3743,7 +5047,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 1150,
@@ -3751,7 +5056,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "MARACUYA",
 		"precio": 275,
@@ -3759,15 +5065,44 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "50.g"
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-08-29",
 		"producto": "MARACUYA",
-		"precio": 30000,
+		"precio": 4300,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-05-31",
+		"producto": "MARACUYA",
+		"precio": 3500,
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
+		"fechaCreacion": "2016-05-13",
+		"producto": "MARACUYA",
+		"precio": 35000,
 		"grupoDePrecios": "COLEGIOS",
 		"activo": true,
-		"empleadoCreador": null,
+		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-25",
+		"producto": "MARACUYA",
+		"precio": 32500,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "5000.g"
+	},
+	{
 		"fechaCreacion": "2016-03-02",
 		"producto": "MARACUYA",
 		"precio": 33000,
@@ -3775,7 +5110,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 0,
@@ -3783,7 +5119,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 460,
@@ -3791,7 +5128,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MARACUYA",
 		"precio": 6600,
@@ -3799,7 +5137,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "MARACUYA",
 		"precio": 4800,
@@ -3807,7 +5146,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 6200,
@@ -3815,7 +5155,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 5500,
@@ -3823,7 +5164,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA",
 		"precio": 6000,
@@ -3831,7 +5173,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA.PEPA",
 		"precio": 9500,
@@ -3839,7 +5182,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA.PEPA",
 		"precio": 1770,
@@ -3847,7 +5191,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "140.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA.PEPA",
 		"precio": 1770,
@@ -3855,7 +5200,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-06-21",
+		"producto": "MARACUYA.PEPA",
+		"precio": 3500,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MARACUYA.PEPA",
 		"precio": 650,
@@ -3863,7 +5218,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MELON",
 		"precio": 6000,
@@ -3871,7 +5227,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MELON",
 		"precio": 1040,
@@ -3879,7 +5236,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MELON",
 		"precio": 1020,
@@ -3887,7 +5245,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MERMELADA.SABORES",
 		"precio": 6600,
@@ -3895,7 +5254,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MERMELADA.SABORES",
 		"precio": 8550,
@@ -3903,7 +5263,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "MORA",
+		"precio": 600,
+		"grupoDePrecios": "ABACO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "MORA",
+		"precio": 600,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-17",
 		"producto": "MORA",
 		"precio": 550,
@@ -3911,7 +5290,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "MORA",
+		"precio": 680,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-11-09",
 		"producto": "MORA",
 		"precio": 680,
@@ -3919,7 +5308,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "MORA",
 		"precio": 620,
@@ -3927,15 +5317,35 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
-		"fechaCreacion": "2016-01-18",
+	},
+	{
+		"fechaCreacion": "2016-07-08",
 		"producto": "MORA",
-		"precio": 600,
+		"precio": 680,
 		"grupoDePrecios": "TREPANDO",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MORA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "MORA",
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "MORA",
 		"precio": 6000,
@@ -3943,7 +5353,26 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-01",
+		"producto": "MORA",
+		"precio": 5800,
+		"grupoDePrecios": "CREPES.&.WAFFLES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
+		"fechaCreacion": "2016-04-18",
+		"producto": "MORA",
+		"precio": 6800,
+		"grupoDePrecios": "HANS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 8000,
@@ -3951,7 +5380,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-02-22",
 		"producto": "MORA",
 		"precio": 6000,
@@ -3959,7 +5389,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -3967,7 +5398,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -3975,7 +5407,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6600,
@@ -3983,7 +5416,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -3991,7 +5425,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -3999,7 +5434,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -4007,15 +5443,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "MORA",
-		"precio": 6200,
-		"grupoDePrecios": "HANS",
-		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6600,
@@ -4023,7 +5452,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -4031,7 +5461,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -4039,7 +5470,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 9000,
@@ -4047,7 +5479,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -4055,7 +5488,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6500,
@@ -4063,7 +5497,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 8000,
@@ -4071,7 +5506,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 5500,
@@ -4079,7 +5515,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 7000,
@@ -4087,7 +5524,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6900,
@@ -4095,7 +5533,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6500,
@@ -4103,7 +5542,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6800,
@@ -4111,7 +5551,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6600,
@@ -4119,7 +5560,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 700,
@@ -4127,7 +5569,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MORA",
 		"precio": 870,
@@ -4135,7 +5578,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "MORA",
 		"precio": 605,
@@ -4143,7 +5587,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 850,
@@ -4151,7 +5596,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 830,
@@ -4159,7 +5605,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "MORA",
 		"precio": 1100,
@@ -4167,7 +5614,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "125.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 990,
@@ -4175,7 +5623,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "125.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 676,
@@ -4183,7 +5632,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "MORA",
 		"precio": 1320,
@@ -4191,7 +5641,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "MORA",
 		"precio": 1020,
@@ -4199,7 +5650,26 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MORA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "MORA",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 600,
@@ -4207,7 +5677,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 1000,
@@ -4215,7 +5686,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 1100,
@@ -4223,7 +5695,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 30000,
@@ -4231,7 +5704,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 0,
@@ -4239,7 +5713,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 390,
@@ -4247,7 +5722,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 6000,
@@ -4255,7 +5731,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "700.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "MORA",
 		"precio": 5600,
@@ -4263,7 +5740,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "MORA",
 		"precio": 4500,
@@ -4271,7 +5749,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 5200,
@@ -4279,7 +5758,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 4950,
@@ -4287,7 +5767,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA",
 		"precio": 5200,
@@ -4295,7 +5776,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "MORA",
 		"precio": 550,
@@ -4303,7 +5785,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "80.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "MORA.FRESA.AGRAZ",
 		"precio": 1300,
@@ -4311,7 +5794,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-10",
+		"producto": "MORA.FRUTA",
+		"precio": 9100,
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": "2015-11-04",
 		"producto": "Mango.Biche",
 		"precio": 45000,
@@ -4319,7 +5812,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Menu.adultos",
 		"precio": 22000,
@@ -4327,7 +5821,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Mermelada.Frutos.rojos",
 		"precio": 9000,
@@ -4335,7 +5830,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Mermelada.Frutos.rojos",
 		"precio": 9000,
@@ -4343,7 +5839,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Mermelada.compuesta",
 		"precio": 7000,
@@ -4351,7 +5848,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "250.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "Mermelada.compuesta",
 		"precio": 10000,
@@ -4359,7 +5857,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "500.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "NISPERO",
 		"precio": 1170,
@@ -4367,7 +5866,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PAPAYA",
 		"precio": 6000,
@@ -4375,7 +5875,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PAPAYA",
 		"precio": 7500,
@@ -4383,7 +5884,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "PATILLA",
 		"precio": 820,
@@ -4391,7 +5893,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "PATILLA",
 		"precio": 0,
@@ -4399,7 +5902,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "PATILLA",
 		"precio": 840,
@@ -4407,7 +5911,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "PATILLA",
 		"precio": 1060,
@@ -4415,7 +5920,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "PATILLA",
 		"precio": 1200,
@@ -4423,7 +5929,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-04",
 		"producto": "PATILLA",
 		"precio": 370,
@@ -4431,7 +5938,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "PATILLA",
 		"precio": 0,
@@ -4439,7 +5947,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "50.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-07",
 		"producto": "PATILLA",
 		"precio": 370,
@@ -4447,7 +5956,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "70.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PERA",
 		"precio": 10000,
@@ -4455,7 +5965,35 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "PI\u00d1A",
+		"precio": 600,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "PI\u00d1A",
+		"precio": 620,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "PI\u00d1A",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "PI\u00d1A",
 		"precio": 550,
@@ -4463,7 +6001,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "PI\u00d1A",
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "PI\u00d1A",
 		"precio": 5500,
@@ -4471,7 +6019,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "PI\u00d1A",
 		"precio": 6800,
@@ -4479,7 +6028,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6600,
@@ -4487,7 +6037,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6800,
@@ -4495,7 +6046,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6800,
@@ -4503,7 +6055,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6200,
@@ -4511,7 +6064,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6600,
@@ -4519,7 +6073,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6200,
@@ -4527,7 +6082,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6000,
@@ -4535,7 +6091,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6200,
@@ -4543,7 +6100,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6600,
@@ -4551,7 +6109,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 8000,
@@ -4559,7 +6118,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6000,
@@ -4567,7 +6127,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6000,
@@ -4575,7 +6136,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 7200,
@@ -4583,7 +6145,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 5300,
@@ -4591,7 +6154,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 7500,
@@ -4599,7 +6163,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6600,
@@ -4607,7 +6172,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6600,
@@ -4615,7 +6181,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6100,
@@ -4623,7 +6190,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 6200,
@@ -4631,7 +6199,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 630,
@@ -4639,7 +6208,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 700,
@@ -4647,7 +6217,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "PI\u00d1A",
 		"precio": 825,
@@ -4655,7 +6226,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 790,
@@ -4663,7 +6235,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "PI\u00d1A",
 		"precio": 1150,
@@ -4671,7 +6244,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "PI\u00d1A",
 		"precio": 990,
@@ -4679,7 +6253,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-04",
 		"producto": "PI\u00d1A",
 		"precio": 825,
@@ -4687,7 +6262,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "PI\u00d1A",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 1000,
@@ -4695,7 +6280,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 900,
@@ -4703,7 +6289,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-05",
+		"producto": "PI\u00d1A",
+		"precio": 1400,
+		"grupoDePrecios": "PAESA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "180.g"
+	},
+	{
+		"fechaCreacion": "2016-06-21",
+		"producto": "PI\u00d1A",
+		"precio": 3000,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1A",
 		"precio": 30000,
@@ -4711,7 +6316,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "PI\u00d1AS.SANDIA",
 		"precio": 1100,
@@ -4719,7 +6325,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SEMANARIO.(7.X.750)",
 		"precio": 60000,
@@ -4727,7 +6334,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SEMANARIO.(7.X.750)",
 		"precio": 60000,
@@ -4735,7 +6343,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1.Unidad"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SMOTHIE.GMB",
 		"precio": 1250,
@@ -4743,7 +6352,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SMOTHIE.LMF",
 		"precio": 1200,
@@ -4751,7 +6361,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "170.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SMOTHIE.LMF",
 		"precio": 1400,
@@ -4759,7 +6370,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SURTIDAS",
 		"precio": 8400,
@@ -4767,15 +6379,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-04-18",
 		"producto": "SURTIDOS",
-		"precio": 8000,
+		"precio": 9500,
 		"grupoDePrecios": "HANS",
 		"activo": true,
-		"empleadoCreador": null,
-		"porcion": "1000.g"
-	}, {
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "1.Unidad"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "SURTIDOS",
 		"precio": 8200,
@@ -4783,15 +6397,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
-		"fechaCreacion": null,
-		"producto": "SURTIDOS",
-		"precio": 8400,
-		"grupoDePrecios": "HANS",
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "TAMARINDO",
+		"precio": 1400,
+		"grupoDePrecios": "MARTA.LAGO",
 		"activo": true,
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-02",
 		"producto": "TAMARINDO",
 		"precio": 0,
@@ -4799,7 +6415,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "TAMARINDO",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"producto": "TAMARINDO",
 		"precio": 1250,
@@ -4807,7 +6433,17 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "TAMARINDO",
+		"precio": 1250,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 12500,
@@ -4815,7 +6451,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 10000,
@@ -4823,7 +6460,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 12500,
@@ -4831,7 +6469,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 10000,
@@ -4839,7 +6478,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 11000,
@@ -4847,7 +6487,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 14000,
@@ -4855,7 +6496,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 8000,
@@ -4863,7 +6505,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 10000,
@@ -4871,7 +6514,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 12000,
@@ -4879,7 +6523,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 7000,
@@ -4887,7 +6532,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "TAMARINDO",
 		"precio": 1650,
@@ -4895,7 +6541,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "TAMARINDO",
 		"precio": 1375,
@@ -4903,7 +6550,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 528,
@@ -4911,7 +6559,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 1400,
@@ -4919,7 +6568,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TAMARINDO",
 		"precio": 1440,
@@ -4927,7 +6577,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "TAMARINDO",
 		"precio": 1875,
@@ -4935,7 +6586,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "TAMARINDO",
+		"precio": 1875,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": "2015-10-26",
 		"producto": "TAMARINDO",
 		"precio": 50000,
@@ -4943,7 +6604,35 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "5000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-29",
+		"producto": "TAMARINDO",
+		"precio": 1000,
+		"grupoDePrecios": "PAESA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "70.g"
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "TOMATE.DE.ARBOL",
+		"precio": 600,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-17",
+		"producto": "TOMATE.DE.ARBOL",
+		"precio": 600,
+		"grupoDePrecios": "TREPANDO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 5500,
@@ -4951,7 +6640,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-06",
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6200,
@@ -4959,7 +6649,17 @@
 		"activo": true,
 		"empleadoCreador": "johanna.alonso@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-06-17",
+		"producto": "TOMATE.DE.ARBOL",
+		"precio": 5500,
+		"grupoDePrecios": "HANS",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "1000.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6200,
@@ -4967,7 +6667,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6500,
@@ -4975,7 +6676,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6000,
@@ -4983,7 +6685,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6600,
@@ -4991,7 +6694,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6000,
@@ -4999,7 +6703,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 5000,
@@ -5007,7 +6712,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6000,
@@ -5015,7 +6721,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 4500,
@@ -5023,7 +6730,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6300,
@@ -5031,7 +6739,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6000,
@@ -5039,7 +6748,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 6000,
@@ -5047,7 +6757,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 840,
@@ -5055,7 +6766,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 760,
@@ -5063,7 +6775,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 4300,
@@ -5071,7 +6784,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "TOMATE.DE.ARBOL",
 		"precio": 5200,
@@ -5079,7 +6793,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UCHUVA",
 		"precio": 748,
@@ -5087,7 +6802,26 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"producto": "UVA",
+		"precio": 600,
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"producto": "UVA",
+		"precio": 680,
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2016-03-05",
 		"producto": "UVA",
 		"precio": 680,
@@ -5095,7 +6829,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-05",
 		"producto": "UVA",
 		"precio": 680,
@@ -5103,7 +6838,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-18",
 		"producto": "UVA",
 		"precio": 600,
@@ -5111,7 +6847,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "UVA",
+		"precio": 0,
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-28",
 		"producto": "UVA",
 		"precio": 600,
@@ -5119,7 +6865,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "100.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-04-22",
+		"producto": "UVA",
+		"precio": 580,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"porcion": "100.g"
+	},
+	{
 		"fechaCreacion": "2015-12-14",
 		"producto": "UVA",
 		"precio": 6000,
@@ -5127,7 +6883,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-13",
 		"producto": "UVA",
 		"precio": 5800,
@@ -5135,7 +6892,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 8000,
@@ -5143,7 +6901,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-03-05",
 		"producto": "UVA",
 		"precio": 6600,
@@ -5151,7 +6910,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5159,7 +6919,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5167,7 +6928,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 7100,
@@ -5175,7 +6937,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 7100,
@@ -5183,7 +6946,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 9500,
@@ -5191,7 +6955,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5199,7 +6964,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5207,7 +6973,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5215,7 +6982,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 5500,
@@ -5223,7 +6991,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 7000,
@@ -5231,7 +7000,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 7100,
@@ -5239,7 +7009,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5247,7 +7018,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6800,
@@ -5255,7 +7027,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 6400,
@@ -5263,7 +7036,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "1000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 720,
@@ -5271,7 +7045,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "100.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-01",
 		"producto": "UVA",
 		"precio": 605,
@@ -5279,7 +7054,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "110.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 850,
@@ -5287,7 +7063,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "120.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 1000,
@@ -5295,7 +7072,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "130.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "UVA",
 		"precio": 1400,
@@ -5303,7 +7081,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-21",
 		"producto": "UVA",
 		"precio": 1020,
@@ -5311,7 +7090,17 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "150.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"producto": "UVA",
+		"precio": 870,
+		"grupoDePrecios": "VLADIMIR",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "150.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 1220,
@@ -5319,7 +7108,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 1100,
@@ -5327,7 +7117,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "150.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-13",
 		"producto": "UVA",
 		"precio": 1044,
@@ -5335,7 +7126,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "UVA",
 		"precio": 1300,
@@ -5343,7 +7135,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-15",
 		"producto": "UVA",
 		"precio": 1550,
@@ -5351,7 +7144,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 1300,
@@ -5359,7 +7153,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "180.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-01-22",
 		"producto": "UVA",
 		"precio": 1850,
@@ -5367,7 +7162,8 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 960,
@@ -5375,7 +7171,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 1620,
@@ -5383,7 +7180,17 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "200.g"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-25",
+		"producto": "UVA",
+		"precio": 3400,
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"porcion": "500.g"
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 28000,
@@ -5391,7 +7198,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "5000.g"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-11-25",
 		"producto": "UVA",
 		"precio": 4500,
@@ -5399,7 +7207,8 @@
 		"activo": true,
 		"empleadoCreador": "nataljure@salud-able.com",
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "UVA",
 		"precio": 5400,
@@ -5407,7 +7216,8 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"porcion": "750.g"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"producto": "ZAPOTE",
 		"precio": 12500,
