@@ -66,7 +66,7 @@ def getCostosFijos(fechaDesde, fechaHasta):
     return costos + gastos
     
 def getCostosVariables(fechaDesde, fechaHasta):
-    costosDeProduccion = [  'Materia.Prima-Fruta',
+    costosDeProduccion = [  'MATERIA.PRIMA-FRUTA',
                             'MATERIA.PRIMA-BOLSAS.PLASTICAS',
                             'MATERIA.PRIMA-VARIOS',
                             'MATERIA.PRIMA-QUIMICOS',
@@ -120,7 +120,7 @@ def getUtilidadData(fechaDesde, fechaHasta):
                         'costosFijos' : costosFijos,
                         'utilidadBruta' : utilidadBruta,
                         'utilidadNeta' : utilidadNeta,
-                        'margenBruto' : 100 * utilidadBruta / ventas,
-                        'margenNeto' : 100 * utilidadNeta / ventas}
+                        'margenBruto' : 1.0 * utilidadBruta / ventas,
+                        'margenNeto' : 1.0 * utilidadNeta / ventas}
     return utilidadData
 

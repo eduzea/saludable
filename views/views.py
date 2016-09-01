@@ -259,7 +259,7 @@ class GetUtilidades(webapp2.RequestHandler):
         fechaDesde = self.request.get('fechaDesde')
         fechaHasta = self.request.get('fechaHasta')
         utilidadData = getUtilidadData(fechaDesde, fechaHasta)
-        self.response.out.write(utilidadData)
+        self.response.out.write(json.dumps(utilidadData))
         
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
