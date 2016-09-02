@@ -14,7 +14,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": "NA"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "LITOGRAFIA",
@@ -29,7 +30,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2255936",
 		"nit": "2222222"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "Particular",
@@ -44,7 +46,24 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3125591063",
 		"nit": "11412591"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-31",
+		"diasPago": 1,
+		"negocio": "INDEPENDIENTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "CALI",
+		"direccion": "CRA 98 # 4C-246, APT 201 , TORRE 3",
+		"grupoDePrecios": "Independiente.Cali",
+		"activo": true,
+		"rotulo": "ALEJANDRO CAICEDO INDEPENDIENTE",
+		"nombre": "ALEJANDRO CAICEDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "310 494 8757",
+		"nit": "1111111"
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "RESTAURANTE",
@@ -59,22 +78,40 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3118562330",
 		"nit": "6753102"
-	}, {
-		"fechaCreacion": "2016-04-22",
+	},
+	{
+		"fechaCreacion": "2016-05-23",
 		"diasPago": 1,
 		"negocio": "RESTAURANTE",
 		"iva": true,
 		"ciudad": "Bogota",
 		"sucursal": "Cali",
-		"direccion": "CLL 71 #9-45",
+		"direccion": "CLL 71 # 9-45",
 		"grupoDePrecios": "UNOA",
 		"activo": true,
-		"rotulo": "ANTONELLI RESTAURANTE",
-		"nombre": "ANTONELLI",
-		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "ANTONELLI 1 RESTAURANTE",
+		"nombre": "ANTONELLI 1",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "7495443",
 		"nit": "1"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-05-23",
+		"diasPago": 1,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CR 15 # 78-56",
+		"grupoDePrecios": "UNOA",
+		"activo": true,
+		"rotulo": "ANTONELLI 2 RESTAURANTE",
+		"nombre": "ANTONELLI 2",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "7495443",
+		"nit": "1"
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "ARP",
@@ -89,7 +126,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4055900",
 		"nit": "800256161-9"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "MERCADO 93",
@@ -104,7 +142,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2362500",
 		"nit": "860025461"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "MERCADO USAQUEN",
@@ -119,7 +158,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2134192",
 		"nit": "860025461"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "Personal",
@@ -134,7 +174,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2222222",
 		"nit": "52751779"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "Independiente",
@@ -149,7 +190,8 @@
 		"empleadoCreador": null,
 		"telefono": "310 494 8757",
 		"nit": "1111111"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "Restaurante",
@@ -164,7 +206,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3118562330",
 		"nit": "6753102"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-23",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA PALMIRA (K9)",
@@ -179,8 +222,9 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "8007938",
 		"nit": "815002637"
-	}, {
-		"fechaCreacion": "2016-05-03",
+	},
+	{
+		"fechaCreacion": "2016-06-03",
 		"diasPago": 30,
 		"negocio": "ZOE",
 		"iva": true,
@@ -194,7 +238,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "4838798",
 		"nit": "900680563"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-22",
 		"diasPago": 1,
 		"negocio": "HOTEL",
@@ -209,7 +254,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6485277",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "",
@@ -224,7 +270,24 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6497272 EXT. 123",
 		"nit": ""
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-06",
+		"diasPago": 0,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "CENTRO COMERCIAL CANAS GORDAS",
+		"grupoDePrecios": "CARNIVOROS",
+		"activo": true,
+		"rotulo": "CARNIVOROS RESTAURANTE",
+		"nombre": "CARNIVOROS",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3002411336",
+		"nit": "0"
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -239,7 +302,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -254,7 +318,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6376954",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-22",
 		"diasPago": 1,
 		"negocio": "RESTAURANTE",
@@ -269,7 +334,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6558270",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -284,7 +350,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3220732",
 		"nit": "900016780-1"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "CAFETERIA",
@@ -299,7 +366,8 @@
 		"empleadoCreador": null,
 		"telefono": "8555050",
 		"nit": "."
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "",
@@ -314,7 +382,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3267700 ext 3221",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 0,
 		"negocio": "Particular",
@@ -329,8 +398,9 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3209675847",
 		"nit": "79907494"
-	}, {
-		"fechaCreacion": "2016-05-06",
+	},
+	{
+		"fechaCreacion": "2016-05-07",
 		"diasPago": 30,
 		"negocio": "PIZZERIA SALERNO",
 		"iva": true,
@@ -344,7 +414,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8938989",
 		"nit": "890304587"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -359,7 +430,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "COLEGIO LA ARBOLEDA",
@@ -374,7 +446,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5553405",
 		"nit": "805003730"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -389,7 +462,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "PANADERIA EUROPEA",
@@ -404,8 +478,25 @@
 		"empleadoCreador": null,
 		"telefono": "3158424",
 		"nit": "8050227865"
-	}, {
-		"fechaCreacion": "2015-12-18",
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 0,
+		"negocio": "YEPES",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "DARIEN",
+		"grupoDePrecios": "VENTOLINI",
+		"activo": true,
+		"rotulo": "FREDY YEPES",
+		"nombre": "FREDY",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "1",
+		"nit": "1"
+	},
+	{
+		"fechaCreacion": "2016-07-19",
 		"diasPago": 8,
 		"negocio": "RESTAURANTE",
 		"iva": true,
@@ -414,13 +505,14 @@
 		"direccion": "CIUDAD JARDIN",
 		"grupoDePrecios": "SALERNO",
 		"activo": true,
-		"rotulo": "FUSION WOK S.A.S. RESTAURANTE",
-		"nombre": "FUSION WOK S.A.S.",
+		"rotulo": "FUSION WOK SAS RESTAURANTE",
+		"nombre": "FUSION WOK SAS",
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "3183586060",
 		"nit": "9004252529"
-	}, {
-		"fechaCreacion": "2015-12-18",
+	},
+	{
+		"fechaCreacion": "2016-07-03",
 		"diasPago": 8,
 		"negocio": "RESTAURANTE",
 		"iva": true,
@@ -428,13 +520,14 @@
 		"sucursal": "Cali",
 		"direccion": "CIUDAD JARDIN",
 		"grupoDePrecios": "SALERNO",
-		"activo": true,
+		"activo": false,
 		"rotulo": "FUSION WOKSAS RESTAURANTE",
 		"nombre": "FUSION WOKSAS",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3183586060",
 		"nit": "9004252529"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
@@ -449,7 +542,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2111111",
 		"nit": "5248568"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 0,
 		"negocio": " ",
@@ -464,22 +558,24 @@
 		"empleadoCreador": null,
 		"telefono": " ",
 		"nit": " "
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-06-14",
 		"diasPago": 30,
 		"negocio": "ALIMENTOS",
 		"iva": true,
 		"ciudad": "Cali",
 		"sucursal": "Cali",
-		"direccion": "AV CALLE NOVENA NORTE # 9 -31 ",
+		"direccion": "AV CALLE NOVENA NORTE # 9 -31",
 		"grupoDePrecios": "Hamburgueserias",
 		"activo": true,
 		"rotulo": "HAMBURGUESERIAS S.A.S. ALIMENTOS",
 		"nombre": "HAMBURGUESERIAS S.A.S.",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2313787",
-		"nit": " 830.144.056-1"
-	}, {
+		"nit": "830.144.056-1"
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "HARRY SASSON",
@@ -494,7 +590,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3 45 03 04",
 		"nit": "830144557"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "HARRYS BAR",
@@ -509,8 +606,9 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3 45 03 04",
 		"nit": "830144557"
-	}, {
-		"fechaCreacion": "2016-04-22",
+	},
+	{
+		"fechaCreacion": "2016-07-03",
 		"diasPago": 1,
 		"negocio": "HOTEL",
 		"iva": true,
@@ -518,14 +616,15 @@
 		"sucursal": "Cali",
 		"direccion": "CR 21 # 127-68",
 		"grupoDePrecios": "UNOA",
-		"activo": true,
+		"activo": false,
 		"rotulo": "HOTEL CALLEJAS HOTEL",
 		"nombre": "HOTEL CALLEJAS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6485277",
 		"nit": "1"
-	}, {
-		"fechaCreacion": "2016-04-22",
+	},
+	{
+		"fechaCreacion": "2016-07-03",
 		"diasPago": 1,
 		"negocio": "HOTEL",
 		"iva": true,
@@ -533,13 +632,14 @@
 		"sucursal": "Cali",
 		"direccion": "CRA.14 #81-34",
 		"grupoDePrecios": "UNOA",
-		"activo": true,
+		"activo": false,
 		"rotulo": "HOTEL CENIT SIMONS HOTEL",
 		"nombre": "HOTEL CENIT SIMONS",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6218188",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "RESTAURANTE",
@@ -554,7 +654,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "7043939",
 		"nit": "314282"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "/COLEGIO BOLIVAR",
@@ -569,7 +670,8 @@
 		"empleadoCreador": null,
 		"telefono": "8555050",
 		"nit": "9001612461"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "PARTICULAR",
@@ -584,7 +686,8 @@
 		"empleadoCreador": null,
 		"telefono": "111",
 		"nit": "111"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "Chilli Chang",
@@ -599,7 +702,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3178544722",
 		"nit": "900610601"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "EL DIA QUE ME QUIERAS",
@@ -614,7 +718,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5404585",
 		"nit": "900268742-2"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "CLUB COLOMBIA",
@@ -629,7 +734,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3220732",
 		"nit": "900016780-1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 0,
 		"negocio": "",
@@ -644,9 +750,10 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6197512",
 		"nit": "830123705"
-	}, {
-		"fechaCreacion": null,
-		"diasPago": 0,
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 30,
 		"negocio": "",
 		"iva": true,
 		"ciudad": "Bogota",
@@ -656,10 +763,11 @@
 		"activo": true,
 		"rotulo": "JARDIN HANS ANDERSEN ",
 		"nombre": "JARDIN HANS ANDERSEN",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "627 0928",
-		"nit": "8000628134-3"
-	}, {
+		"nit": "800062813"
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "BROT CALLE 81",
@@ -674,7 +782,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6748954",
 		"nit": "900450289"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "BROT CALLE 97",
@@ -689,7 +798,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6366067",
 		"nit": "900450289"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 8,
 		"negocio": "PARQUE CHICO",
@@ -704,7 +814,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6748954",
 		"nit": "900450289"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -719,7 +830,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "Personal",
@@ -734,7 +846,24 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3102117621",
 		"nit": "6666666"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-06-14",
+		"diasPago": 0,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Calle 4 No. 34 -32 - San Fernando",
+		"grupoDePrecios": "SALERNO",
+		"activo": true,
+		"rotulo": "LA COMITIVA RESTAURANTE",
+		"nombre": "LA COMITIVA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "382 7292",
+		"nit": "1"
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
@@ -749,7 +878,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "31750085-38",
 		"nit": "52751778"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -764,8 +894,9 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-06-14",
 		"diasPago": 30,
 		"negocio": "RESTAURANTE CARAMBOLO",
 		"iva": true,
@@ -776,10 +907,11 @@
 		"activo": true,
 		"rotulo": "LUCAS ANDRES LOPEZ SERNA RESTAURANTE CARAMBOLO",
 		"nombre": "LUCAS ANDRES LOPEZ SERNA",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6675656",
 		"nit": "16933637"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -794,22 +926,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
-		"fechaCreacion": null,
-		"diasPago": 1,
-		"negocio": "PURA CASTA",
-		"iva": true,
-		"ciudad": "Cali",
-		"sucursal": "Cali",
-		"direccion": "Avenida Ca\u00f1asgordas 106 a 22 - Ciudad Jard\u00edn",
-		"grupoDePrecios": "ABACO",
-		"activo": true,
-		"rotulo": "MANUEL ORDEF MORALES PURA CASTA",
-		"nombre": "MANUEL ORDEF MORALES",
-		"empleadoCreador": null,
-		"telefono": "315 5079/ 315 4551",
-		"nit": "149804022"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "CREPES & WAFFLES",
@@ -824,7 +942,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "654 34 06",
 		"nit": "800070655"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 0,
 		"negocio": "",
@@ -839,7 +958,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": "NA"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -854,7 +974,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "SMOTHIES",
@@ -869,7 +990,24 @@
 		"empleadoCreador": null,
 		"telefono": "3108091065",
 		"nit": "41.713.003"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-08-27",
+		"diasPago": 0,
+		"negocio": "RESTAURANTE",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "CALI",
+		"direccion": "CALLE 5 # 66B-75. CENTRO EMPRESARIAL EL LIMONAR. LOCAL 109",
+		"grupoDePrecios": "MARTA.LAGO",
+		"activo": true,
+		"rotulo": "MARTA LAGO RESTAURANTE",
+		"nombre": "MARTA LAGO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3156324030",
+		"nit": "NA"
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "RESTAURANTE",
@@ -884,8 +1022,25 @@
 		"empleadoCreador": null,
 		"telefono": "330 3045",
 		"nit": "1"
-	}, {
-		"fechaCreacion": "2016-01-21",
+	},
+	{
+		"fechaCreacion": "2016-06-14",
+		"diasPago": 30,
+		"negocio": "KARENS AVE ROOSEVELT",
+		"iva": true,
+		"ciudad": "Cali",
+		"sucursal": "Cali",
+		"direccion": "Avenida Roosevelt #36C-08",
+		"grupoDePrecios": "KARENS.PIZZA",
+		"activo": true,
+		"rotulo": "MMPLATA SAS KARENS AVE ROOSEVELT",
+		"nombre": "MMPLATA SAS",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"telefono": "5560661",
+		"nit": "9009706424"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
 		"diasPago": 8,
 		"negocio": "RESTAURANTE CABRESTERO",
 		"iva": true,
@@ -893,13 +1048,14 @@
 		"sucursal": "Cali",
 		"direccion": "CR 70 CON 13A",
 		"grupoDePrecios": "SALERNO",
-		"activo": true,
+		"activo": false,
 		"rotulo": "MORELIA GOMEZ RESTAURANTE CABRESTERO",
 		"nombre": "MORELIA GOMEZ",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3155597138",
 		"nit": "66852835"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "PARTICULAR",
@@ -914,7 +1070,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2293972",
 		"nit": "51833857"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "PARTICULAR",
@@ -929,22 +1086,24 @@
 		"empleadoCreador": null,
 		"telefono": "3130006",
 		"nit": "1'010101"
-	}, {
-		"fechaCreacion": "2016-05-03",
+	},
+	{
+		"fechaCreacion": "2016-08-29",
 		"diasPago": 30,
-		"negocio": "RESTAURANTE",
+		"negocio": "RESTAURANTE HARRY",
 		"iva": true,
 		"ciudad": "Cartagena",
-		"sucursal": "Cali",
-		"direccion": "Hotel Charleston Santa Teresa. Cl. 31 #31-23",
+		"sucursal": "Ya.no.hay:.Key('Sucursal',.'Cali').Considera.borrar.este.registro.o.recrear.Key('Sucursal',.'Cali')",
+		"direccion": "HOTEL CHARLESTON SANTA TERESA. CL. 3 #31-23",
 		"grupoDePrecios": "HARRY.CARTAGENA",
 		"activo": true,
-		"rotulo": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS RESTAURANTE",
+		"rotulo": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS RESTAURANTE HARRY",
 		"nombre": "OPERADORA RESTAURANTE Y EVENTOS CARTAGENA SAS",
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "6647958",
 		"nit": "900735451"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 30,
 		"negocio": "PARTICULAR",
@@ -959,7 +1118,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3178831691",
 		"nit": "79581740"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 45,
 		"negocio": "COTIDIANO ANDINO",
@@ -974,7 +1134,8 @@
 		"empleadoCreador": null,
 		"telefono": "6545454",
 		"nit": "800241012-4"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 45,
 		"negocio": "COTIDIANO ROSALES",
@@ -989,7 +1150,8 @@
 		"empleadoCreador": null,
 		"telefono": "6545454",
 		"nit": "800241012-4"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 45,
 		"negocio": "SALTO DEL ANGEL",
@@ -1004,7 +1166,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6545454",
 		"nit": "800241012"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -1019,7 +1182,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-10-29",
 		"diasPago": 1,
 		"negocio": "independiente",
@@ -1034,7 +1198,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "11111111",
 		"nit": "22222222"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -1049,7 +1214,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "",
 		"nit": ""
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 1,
 		"negocio": "RESTAURANTE",
@@ -1064,7 +1230,8 @@
 		"empleadoCreador": null,
 		"telefono": "3216230806",
 		"nit": "9008305569"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "JARDIN",
@@ -1079,7 +1246,8 @@
 		"empleadoCreador": null,
 		"telefono": "4882000",
 		"nit": "900255476"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "LA FLORA",
@@ -1094,7 +1262,8 @@
 		"empleadoCreador": null,
 		"telefono": " ",
 		"nit": " "
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "PALMIRA",
@@ -1109,7 +1278,8 @@
 		"empleadoCreador": null,
 		"telefono": "4882000",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "PE\u00d1ON",
@@ -1124,7 +1294,8 @@
 		"empleadoCreador": null,
 		"telefono": "4882000",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "UNICENTRO",
@@ -1139,7 +1310,8 @@
 		"empleadoCreador": null,
 		"telefono": "3169384",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "UNICO",
@@ -1154,7 +1326,8 @@
 		"empleadoCreador": null,
 		"telefono": "4882000",
 		"nit": "1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -1169,8 +1342,9 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "6165479",
 		"nit": "52718104-1"
-	}, {
-		"fechaCreacion": null,
+	},
+	{
+		"fechaCreacion": "2016-07-03",
 		"diasPago": 30,
 		"negocio": "MANUEL ODEF MORALES",
 		"iva": true,
@@ -1181,10 +1355,155 @@
 		"activo": true,
 		"rotulo": "PURA CASTA MANUEL ODEF MORALES",
 		"nombre": "PURA CASTA",
-		"empleadoCreador": null,
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "315 5079/ 315 4551",
 		"nit": "149804022"
-	}, {
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "CAJICA",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "LOTE GRANJA NORMANDIA",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO CAJICA",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "CALIMA EXPRESS",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CLL 19 # 28-80",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO CALIMA EXPRESS",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "CALIMA GURMES",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CLL 19# 28-80",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO CALIMA GURMES",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "CENTRO CHIA",
+		"iva": true,
+		"ciudad": "Chia",
+		"sucursal": "Cali",
+		"direccion": "AVE PRADILLA # 90-0 ESTE",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO CENTRO CHIA",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 0,
+		"negocio": "FONTANAR",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "km 32 via Chia-Cajica",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO FONTANAR",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "GRAN ESTACION",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "AVE 26 # 62-47",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO GRAN ESTACION",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "SANTAFE",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CLL 185 # 45-03",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO SANTAFE",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "SANTAFE 1",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "CLL 185 # 45-03",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO SANTAFE 1",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
+		"fechaCreacion": "2016-07-03",
+		"diasPago": 1,
+		"negocio": "UNICENTRO",
+		"iva": true,
+		"ciudad": "Bogota",
+		"sucursal": "Cali",
+		"direccion": "AVE 15 # 123-30",
+		"grupoDePrecios": "UNOA",
+		"activo": false,
+		"rotulo": "RESTAURANTE DON JEDIONDO UNICENTRO",
+		"nombre": "RESTAURANTE DON JEDIONDO",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "3208920781",
+		"nit": "123"
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -1199,7 +1518,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "2484899",
 		"nit": "900419473-5"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "CENTENARIO",
@@ -1214,7 +1534,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "8933227",
 		"nit": "900376423"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-03",
 		"diasPago": 30,
 		"negocio": "PE\u00d1ON",
@@ -1229,7 +1550,8 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "3160414",
 		"nit": "9003764230"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-04",
 		"diasPago": 30,
 		"negocio": "SANTA MONICA",
@@ -1244,7 +1566,8 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "893 32 27 ext 101",
 		"nit": "9003764230"
-	}, {
+	},
+	{
 		"fechaCreacion": "2015-12-03",
 		"diasPago": 30,
 		"negocio": "SUR",
@@ -1259,7 +1582,8 @@
 		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "8933227",
 		"nit": "9003764230"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-05-03",
 		"diasPago": 30,
 		"negocio": "Restaurante",
@@ -1274,7 +1598,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3142934192",
 		"nit": "830128070"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "",
@@ -1289,22 +1614,24 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3220732",
 		"nit": "900016780-1"
-	}, {
-		"fechaCreacion": "2016-02-22",
-		"diasPago": 8,
+	},
+	{
+		"fechaCreacion": "2016-08-17",
+		"diasPago": 0,
 		"negocio": "PANPAYA AEROPUERTO",
 		"iva": true,
 		"ciudad": "Cali",
 		"sucursal": "Cali",
 		"direccion": "PARCELACION INDUSTRIAL PALMASECA",
-		"grupoDePrecios": "SALERNO",
+		"grupoDePrecios": "COLEGIOS",
 		"activo": true,
 		"rotulo": "SAULO MARIO ALVAREZ PANPAYA AEROPUERTO",
 		"nombre": "SAULO MARIO ALVAREZ",
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "3175098871",
 		"nit": "162785386"
-	}, {
+	},
+	{
 		"fechaCreacion": null,
 		"diasPago": 30,
 		"negocio": "FIT",
@@ -1319,7 +1646,8 @@
 		"empleadoCreador": null,
 		"telefono": "1",
 		"nit": "9007857261"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-14",
 		"diasPago": 0,
 		"negocio": "CENTRICO",
@@ -1334,7 +1662,8 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "3509100",
 		"nit": "900485850-1"
-	}, {
+	},
+	{
 		"fechaCreacion": "2016-04-29",
 		"diasPago": 0,
 		"negocio": "CLOWNS",
@@ -1349,8 +1678,9 @@
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "28930687",
 		"nit": "900272780-8"
-	}, {
-		"fechaCreacion": "2016-04-29",
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA AV. SEXTA (K4)",
 		"iva": true,
@@ -1363,9 +1693,10 @@
 		"nombre": "VALENCIA & SOTO S.A",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA BOGOTA (K7)",
 		"iva": true,
@@ -1376,11 +1707,12 @@
 		"activo": true,
 		"rotulo": "VALENCIA & SOTO S.A KARENS PIZZA BOGOTA (K7)",
 		"nombre": "VALENCIA & SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA CIUDAD JARDIN (K8)",
 		"iva": true,
@@ -1391,11 +1723,12 @@
 		"activo": true,
 		"rotulo": "VALENCIA & SOTO S.A KARENS PIZZA CIUDAD JARDIN (K8)",
 		"nombre": "VALENCIA & SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA LA 52 (K6)",
 		"iva": true,
@@ -1406,11 +1739,12 @@
 		"activo": true,
 		"rotulo": "VALENCIA & SOTO S.A KARENS PIZZA LA 52 (K6)",
 		"nombre": "VALENCIA & SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2016-04-29",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA LA FLORA (K1)",
 		"iva": true,
@@ -1423,9 +1757,10 @@
 		"nombre": "VALENCIA & SOTO S.A",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA LA NOVENA (K5)",
 		"iva": true,
@@ -1436,11 +1771,12 @@
 		"activo": true,
 		"rotulo": "VALENCIA & SOTO S.A KARENS PIZZA LA NOVENA (K5)",
 		"nombre": "VALENCIA & SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
+		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2016-04-29",
+		"nit": "890316660"
+	},
+	{
+		"fechaCreacion": "2016-05-24",
 		"diasPago": 30,
 		"negocio": "KARENS PIZZA SAN FERNANDO (K2)",
 		"iva": true,
@@ -1453,55 +1789,11 @@
 		"nombre": "VALENCIA & SOTO S.A",
 		"empleadoCreador": "eduzea@gmail.com",
 		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2016-05-03",
-		"diasPago": 30,
-		"negocio": "KARENS PIZZA AV. SEXTA (K4)",
-		"iva": true,
-		"ciudad": "Cali",
-		"sucursal": "Cali",
-		"direccion": "Calle 9 # 62C-06",
-		"grupoDePrecios": "KARENS.PIZZA",
-		"activo": true,
-		"rotulo": "VALENCIA Y SOTO S.A KARENS PIZZA AV. SEXTA (K4)",
-		"nombre": "VALENCIA Y SOTO S.A",
-		"empleadoCreador": "eduzea@gmail.com",
-		"telefono": "5519130",
 		"nit": "890316660"
-	}, {
-		"fechaCreacion": "2015-11-17",
-		"diasPago": 30,
-		"negocio": "KARENS PIZZA LA FLORA (K1)",
-		"iva": true,
-		"ciudad": "Cali",
-		"sucursal": "Cali",
-		"direccion": "Calle 9 # 62C-06",
-		"grupoDePrecios": "KARENS.PIZZA",
-		"activo": true,
-		"rotulo": "VALENCIA Y SOTO S.A KARENS PIZZA LA FLORA (K1)",
-		"nombre": "VALENCIA Y SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
-		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2015-11-17",
-		"diasPago": 30,
-		"negocio": "KARENS PIZZA SAN FERNANDO (K2)",
-		"iva": true,
-		"ciudad": "Cali",
-		"sucursal": "Cali",
-		"direccion": "Calle 9 # 62C-06",
-		"grupoDePrecios": "KARENS.PIZZA",
-		"activo": true,
-		"rotulo": "VALENCIA Y SOTO S.A KARENS PIZZA SAN FERNANDO (K2)",
-		"nombre": "VALENCIA Y SOTO S.A",
-		"empleadoCreador": "nataljure@salud-able.com",
-		"telefono": "5519130",
-		"nit": "890.316.660-8"
-	}, {
-		"fechaCreacion": "2016-05-03",
-		"diasPago": 30,
+	},
+	{
+		"fechaCreacion": "2016-06-02",
+		"diasPago": 8,
 		"negocio": "",
 		"iva": true,
 		"ciudad": "Cali",
@@ -1511,16 +1803,17 @@
 		"activo": true,
 		"rotulo": "VENTOLINI S.A ",
 		"nombre": "VENTOLINI S.A",
-		"empleadoCreador": "eduzea@gmail.com",
+		"empleadoCreador": "nataljure@salud-able.com",
 		"telefono": "4891010 x503",
 		"nit": "800065567"
-	}, {
-		"fechaCreacion": "2016-05-03",
+	},
+	{
+		"fechaCreacion": "2016-08-24",
 		"diasPago": 30,
 		"negocio": "CLIENTE",
 		"iva": true,
 		"ciudad": "Bogota",
-		"sucursal": "Cali",
+		"sucursal": "CALI",
 		"direccion": "CR 19 # 59-46",
 		"grupoDePrecios": "VLADIMIR",
 		"activo": true,

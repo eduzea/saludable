@@ -13,7 +13,7 @@ require([
 	"dijit/form/TextBox",
 	], 
 	function(request,registry,parser,dom,on,query,number,Standby) {
-		var entity_class = 'Utilidades';
+		var entity_class = 'Utilidades Simple';
 		parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
 		//Modal to show its loading
 		var standby = new Standby({target: 'utilidades_standby'});
@@ -25,6 +25,7 @@ require([
 			var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
 			standby.show(); 
 			request('/getUtilidades?' + appendUrl,{handleAs:'json'}).then(function(response) {
+				response = response.records;
 				registry.byId('utilidades_ventas').set('value',number.format(response.ventas,{pattern:'###,###.#'}));
 				registry.byId('utilidades_costos_variables').set('value',number.format(response.costosVariables,{pattern:'###,###.#'}));
 				registry.byId('utilidades_utilidad_bruta').set('value',number.format(response.utilidadBruta,{pattern:'###,###.#'}));

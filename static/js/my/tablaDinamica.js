@@ -1,14 +1,16 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
-require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojox/widget/Standby"], 
-function(request,registry,parser,dom,on,query,Standby) {
+require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojo/dom-class","dojox/widget/Standby"], 
+function(request,registry,parser,dom,on,query,domClass,Standby) {
 	var entity_class = saludable.entity_class;
 	var pivotUrl = {'Ventas': '/getProductSales?' ,
 					'Gastos': '/getAllCompras?',
-					'Utilidades':'/getUtilidades?',
+					'UtilidadesDetallado':'/getUtilidades?detallado=true',
 					'Recaudado': '/entityData?entityClass=Factura&iva=true',
 					'Pagado': '/getIVAPagado?'
 				}; 
 	var url = pivotUrl[entity_class];
+	var sortAs = $.pivotUtilities.sortAs;
+	var numberFormat = $.pivotUtilities.numberFormat;
 	var config = {
 		'Ventas': {
 				rows : ['ciudad',"cliente"],
@@ -21,6 +23,12 @@ function(request,registry,parser,dom,on,query,Standby) {
 					exclusions:{},
 					hiddenAttributes:[],
 					aggregatorName:'Suma'
+		},
+		'UtilidadesDetallado':{
+			rows:['sortRows','tipo'],
+			cols:['mesnum','mes'],
+			vals:['total'],
+			aggregatorName:'Suma'
 		},
 		'Recaudado': {
 				rows : ["cliente",'numero','fecha'],
@@ -48,6 +56,10 @@ function(request,registry,parser,dom,on,query,Standby) {
 		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
 		standby.show(); 
 		request(url + appendUrl, {handleAs:'json'}).then(function(response) {
+			totals = query(".pvtTotal")
+			totals.forEach(function(node){
+				domClass.add(node,'hide');
+			});
 			var records = response.records;
 			$(function() {
 				$("#" + "output_" + entity_class).pivotUI(records, config[entity_class],false,'es');
