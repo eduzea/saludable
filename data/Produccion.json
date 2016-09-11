@@ -1,546 +1,577 @@
 [
 	{
-		"fechaCreacion": null,
-		"producto": "LULO",
-		"fecha": "2015-09-18",
-		"sucursal": "Cali",
-		"rendimiento": 78.25,
+		"pesoPulpa": 70.5,
 		"activo": true,
-		"pesoFruta": 200,
+		"loteDeCompra": "MARACUYA.PRODRUAGRO.LAS.PALMAS.2016-06-16",
+		"fecha": "2016-06-16",
+		"costoBruto": 3503.54609929078,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": null,
-				"cantidad": 26,
+				"cantidad": 500,
 				"activo": true,
-				"rotulo": "5000.g",
-				"empleadoCreador": null,
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 1,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "100.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 150,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 34,
+				"porcion": "110.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "110.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 80,
 				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
+				"porcion": "50.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "50.g",
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "MARACUYA",
-		"fecha": "2015-09-21",
-		"sucursal": "Cali",
-		"rendimiento": 47.089947089947088,
+		"rendimiento": 54.23076923076923,
+		"pesoFruta": 130.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MARACUYA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 85.6,
 		"activo": true,
-		"pesoFruta": 189,
+		"loteDeCompra": "MARACUYA.PRODRUAGRO.LAS.PALMAS.2016-06-27",
+		"fecha": "2016-06-27",
+		"costoBruto": 3662.3831775700937,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": null,
+				"cantidad": 570,
+				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "100.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 260,
+				"activo": true,
+				"porcion": "110.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "110.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 51.878787878787875,
+		"pesoFruta": 165.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MARACUYA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 57.0,
+		"activo": true,
+		"loteDeCompra": "LULO.SANTA.HELENA.2016-07-05",
+		"fecha": "2016-07-06",
+		"costoBruto": 5442.105263157895,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 480,
+				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "100.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 180,
+				"activo": true,
+				"porcion": "50.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "50.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 60.638297872340424,
+		"pesoFruta": 94.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "LULO",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 120.6,
+		"activo": true,
+		"loteDeCompra": "MANGO.SANTA.HELENA.2016-07-02",
+		"fecha": "2016-07-07",
+		"costoBruto": 3311.442786069652,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 3,
+				"activo": true,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "1000.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
 				"cantidad": 9,
 				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": null,
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 8,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 220,
 				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 4,
+				"porcion": "120.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "120.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 420,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 280,
-				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "100.g",
-				"empleadoCreador": null,
-				"porcion": "100.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 40,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 70,
 				"activo": true,
-				"rotulo": "150.g",
-				"empleadoCreador": null,
-				"porcion": "150.g"
+				"porcion": "60.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "60.g",
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "MANGO",
-		"fecha": "2015-09-23",
-		"sucursal": "Cali",
-		"rendimiento": 53.546666666666667,
+		"rendimiento": 38.65384615384615,
+		"pesoFruta": 312.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MANGO",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 77.56,
 		"activo": true,
-		"pesoFruta": 375,
+		"loteDeCompra": "GUANABANA.SANTA.HELENA.2016-07-08",
+		"fecha": "2016-07-08",
+		"costoBruto": 2127.3852501289325,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": null,
-				"cantidad": 22,
+				"cantidad": 20,
 				"activo": true,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 22,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 240,
 				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "100.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 121,
+				"activo": true,
+				"porcion": "110.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "110.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 135,
+				"activo": true,
+				"porcion": "150.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "150.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 103.41333333333333,
+		"pesoFruta": 75.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "GUANABANA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 140.0,
+		"activo": true,
+		"loteDeCompra": "MORA.MORAS.Y.FRESAS.NELLY.2016-07-08",
+		"fecha": "2016-07-08",
+		"costoBruto": 2742.8571428571427,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 40,
+				"activo": true,
+				"porcion": "750.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 21,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 10,
 				"activo": true,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "1000.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 20,
+				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": null,
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 110,
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 93.33333333333333,
+		"pesoFruta": 150.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MORA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 80.0,
+		"activo": true,
+		"loteDeCompra": "UVA.SANTA.HELENA.2016-07-08",
+		"fecha": "2016-07-08",
+		"costoBruto": 2400.0,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 80,
 				"activo": true,
-				"rotulo": "170.g",
-				"empleadoCreador": null,
-				"porcion": "170.g"
-			}, {
-				"fechaCreacion": null,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "1000.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 100.0,
+		"pesoFruta": 80.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "UVA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 45.0,
+		"activo": true,
+		"loteDeCompra": "FRESA.SANTA.HELENA.2016-08-09",
+		"fecha": "2016-08-09",
+		"costoBruto": 2222.222222222222,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 100,
+				"activo": true,
+				"porcion": "190.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "190.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
 				"cantidad": 130,
 				"activo": true,
-				"rotulo": "120.g",
-				"empleadoCreador": null,
-				"porcion": "120.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 170,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": null,
-				"porcion": "100.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 100,
-				"activo": true,
-				"rotulo": "60.g",
-				"empleadoCreador": null,
-				"porcion": "60.g"
+				"porcion": "200.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "200.g",
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "LULO",
-		"fecha": "2015-09-28",
-		"sucursal": "Cali",
-		"rendimiento": 77.459999999999994,
+		"rendimiento": 90.0,
+		"pesoFruta": 50.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "FRESA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 36.0,
 		"activo": true,
-		"pesoFruta": 250,
+		"loteDeCompra": "LULO.SANTA.HELENA.2016-08-08",
+		"fecha": "2016-08-09",
+		"costoBruto": 5055.555555555556,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": null,
-				"cantidad": 30,
+				"cantidad": 240,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 35,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 20,
-				"activo": true,
-				"rotulo": "5000.g",
-				"empleadoCreador": null,
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 110,
-				"activo": true,
+				"porcion": "150.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "150.g",
-				"empleadoCreador": null,
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 190,
-				"activo": true,
-				"rotulo": "110.g",
-				"empleadoCreador": null,
-				"porcion": "110.g"
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "MORA",
-		"fecha": "2015-09-28",
-		"sucursal": "Cali",
-		"rendimiento": 125.67567567567568,
+		"rendimiento": 51.42857142857143,
+		"pesoFruta": 70.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "LULO",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 9.0,
 		"activo": true,
-		"pesoFruta": 37,
+		"loteDeCompra": "MORA.SANTA.HELENA.2016-08-09",
+		"fecha": "2016-08-09",
+		"costoBruto": 2889.3333333333335,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": null,
-				"cantidad": 20,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 100,
-				"activo": true,
-				"rotulo": "110.g",
-				"empleadoCreador": null,
-				"porcion": "110.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 60,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": null,
-				"porcion": "100.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 30,
-				"activo": true,
-				"rotulo": "150.g",
-				"empleadoCreador": null,
-				"porcion": "150.g"
-			}
-		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "UVA",
-		"fecha": "2015-09-28",
-		"sucursal": "Cali",
-		"rendimiento": 101.59999999999999,
-		"activo": true,
-		"pesoFruta": 50,
-		"productos": [
-			{
-				"fechaCreacion": null,
-				"cantidad": 4,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": null,
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": null,
 				"cantidad": 1,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 6,
-				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": null,
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": null,
-				"cantidad": 168,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": null,
-				"porcion": "100.g"
-			}
-		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": null,
-		"producto": "MARACUYA",
-		"fecha": "2015-09-29",
-		"sucursal": "Cali",
-		"rendimiento": 53.333333333333336,
-		"activo": true,
-		"pesoFruta": 60,
-		"productos": [
+				"empleadoCreador": "eduzea@gmail.com"
+			},
 			{
-				"fechaCreacion": null,
-				"cantidad": 32,
-				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": null,
-				"porcion": "1000.g"
-			}
-		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": "2015-10-28",
-		"producto": "MARACUYA",
-		"fecha": "2015-10-06",
-		"sucursal": "Cali",
-		"rendimiento": 12.738095238095237,
-		"activo": true,
-		"pesoFruta": 126,
-		"productos": [
-			{
-				"fechaCreacion": "2015-10-28",
 				"cantidad": 4,
 				"activo": true,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "1000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 7,
-				"activo": true,
-				"rotulo": "150.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 35,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "100.g"
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": "2015-10-28",
-		"producto": "MARACUYA",
-		"fecha": "2015-10-11",
-		"sucursal": "Cali",
-		"rendimiento": 25.791666666666668,
+		"rendimiento": 75.0,
+		"pesoFruta": 12.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MORA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 12.0,
 		"activo": true,
-		"pesoFruta": 120,
+		"loteDeCompra": "PI\u00d1A.SANTA.HELENA.2016-08-09",
+		"fecha": "2016-08-09",
+		"costoBruto": 1666.6666666666667,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 4,
+				"cantidad": 80,
 				"activo": true,
-				"rotulo": "5000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 5,
-				"activo": true,
+				"porcion": "150.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "150.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 27,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "100.g"
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": "2015-10-28",
-		"producto": "MANGO",
-		"fecha": "2015-10-14",
-		"sucursal": "Cali",
-		"rendimiento": 39.989528795811516,
+		"rendimiento": 60.0,
+		"pesoFruta": 20.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "PI\u00d1A",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 13.0,
 		"activo": true,
-		"pesoFruta": 382,
+		"loteDeCompra": "GUANABANA.SANTA.HELENA.2016-08-10",
+		"fecha": "2016-08-10",
+		"costoBruto": 5384.615384615385,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 21,
+				"cantidad": 70,
 				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "100.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 12,
+				"activo": true,
+				"porcion": "500.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "500.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 92.85714285714286,
+		"pesoFruta": 14.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "GUANABANA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 135.3,
+		"activo": true,
+		"loteDeCompra": "MANGO.SANTA.HELENA.2016-08-09",
+		"fecha": "2016-08-12",
+		"costoBruto": 4212.195121951219,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 15,
+				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 120,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 40,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 8,
-				"activo": true,
+				"porcion": "170.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "170.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "170.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 20,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 170,
 				"activo": true,
-				"rotulo": "120.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "120.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 6,
-				"activo": true,
+				"porcion": "150.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "150.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 25,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 120,
 				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "100.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "60.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "60.g"
+				"porcion": "120.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "120.g",
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": "2015-10-28",
-		"producto": "LULO",
-		"fecha": "2015-10-16",
-		"sucursal": "Cali",
-		"rendimiento": 36.859154929577471,
+		"rendimiento": 41.00000000000001,
+		"pesoFruta": 330.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MANGO",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 30.0,
 		"activo": true,
-		"pesoFruta": 213,
+		"loteDeCompra": "UVA.SANTA.HELENA.2016-08-13",
+		"fecha": "2016-08-13",
+		"costoBruto": 2800.0,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 4,
+				"cantidad": 6,
 				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 20,
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 85.71428571428571,
+		"pesoFruta": 35.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "UVA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 126.9,
+		"activo": true,
+		"loteDeCompra": "DURAZNO.SANTA.HELENA.2016-08-09",
+		"fecha": "2016-08-16",
+		"costoBruto": 4728.132387706855,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 6,
 				"activo": true,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "1000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 40,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 930,
 				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
+				"porcion": "130.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "130.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			}
+		],
+		"rendimiento": 84.6,
+		"pesoFruta": 150.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "DURAZNO",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 86.0,
+		"activo": true,
+		"loteDeCompra": "MORA.SANTA.HELENA.2016-08-16",
+		"fecha": "2016-08-16",
+		"costoBruto": 3627.906976744186,
+		"fechaCreacion": "2016-08-22",
+		"productos": [
+			{
+				"cantidad": 9,
+				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "5000.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
 				"cantidad": 11,
 				"activo": true,
-				"rotulo": "150.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 23,
+				"porcion": "1000.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "1000.g",
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 40,
 				"activo": true,
-				"rotulo": "120.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "120.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 41,
-				"activo": true,
-				"rotulo": "100.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "100.g"
+				"porcion": "750.g",
+				"fechaCreacion": "2016-08-22",
+				"rotulo": "750.g",
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
-	}, {
-		"fechaCreacion": "2015-10-28",
-		"producto": "MARACUYA",
-		"fecha": "2015-10-16",
-		"sucursal": "Cali",
-		"rendimiento": 18.476821192052981,
+		"rendimiento": 57.333333333333336,
+		"pesoFruta": 150.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MORA",
+		"sucursal": "CALI"
+	},
+	{
+		"pesoPulpa": 163.2,
 		"activo": true,
-		"pesoFruta": 151,
+		"loteDeCompra": "MARACUYA.PRODRUAGRO.LAS.PALMAS.2016-08-11",
+		"fecha": "2016-08-19",
+		"costoBruto": 4510.416666666667,
+		"fechaCreacion": "2016-08-22",
 		"productos": [
 			{
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 2,
+				"cantidad": 32,
 				"activo": true,
+				"porcion": "5000.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "5000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "5000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 5,
+				"empleadoCreador": "eduzea@gmail.com"
+			},
+			{
+				"cantidad": 32,
 				"activo": true,
-				"rotulo": "1000.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "1000.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "750.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "750.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 10,
-				"activo": true,
-				"rotulo": "150.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "150.g"
-			}, {
-				"fechaCreacion": "2015-10-28",
-				"cantidad": 39,
-				"activo": true,
+				"porcion": "100.g",
+				"fechaCreacion": "2016-08-22",
 				"rotulo": "100.g",
-				"empleadoCreador": "nataljure@salud-able.com",
-				"porcion": "100.g"
+				"empleadoCreador": "eduzea@gmail.com"
 			}
 		],
-		"empleadoCreador": "nataljure@salud-able.com"
+		"rendimiento": 37.690531177829094,
+		"pesoFruta": 433.0,
+		"empleadoCreador": "eduzea@gmail.com",
+		"fruta": "MARACUYA",
+		"sucursal": "CALI"
 	}
 ]

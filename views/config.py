@@ -539,6 +539,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
                           #{'id':'sucursal','ui':'Sucursal','style':'width:5em'},
+                          {'id':'loteDeCompra','ui':'Lote','style':'width:10em'},
                           {'id':'fruta','ui':'Fruta', 'style':'width:10em'},
                           {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
                           {'id':'productos','ui':'Productos','style':'width:10em'},

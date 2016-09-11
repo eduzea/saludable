@@ -319,7 +319,6 @@ class Egreso(Record):
     proveedor = ndb.KeyProperty(kind=Proveedor)
     total = ndb.IntegerProperty()
     resumen = ndb.StringProperty(indexed=True)
-    resumenU = ndb.ComputedProperty(lambda self: self.resumen.upper())#workaround while we clean up data
     comentario = ndb.TextProperty()
     
     

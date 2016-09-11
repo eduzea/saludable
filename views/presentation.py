@@ -150,8 +150,8 @@ def getTagHTML(prop,entity_class, customId=None):
     if 'auto' in prop:
         prop['value'] = str(dataStoreInterface.autoNum(entity_class))
         propType = ndb.IntegerProperty()
-    #if propType._repeated:
-    #    propType = ndb.StringProperty()
+    if propType._repeated and type(propType) is ndb.IntegerProperty:#for the case of delimiter separated lists of numbers
+        propType = ndb.StringProperty()
     html = basisTagString[str(propType).partition('(')[0]]
     attrReplace = ''
     innerReplace = ''
