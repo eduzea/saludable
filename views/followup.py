@@ -14,41 +14,30 @@ if 'dataStoreInterface' not in globals():
     dataStoreInterface = DataStoreInterface()
 ####################### PAGO RECIBIDO Y CUENTAS POR COBRAR ###################################
 def removePayment(pago):
-    facturasAjustadas = Factura.query(Factura.pagoRef == pago.numero).fetch()
-    facturasAjustadas.sort(key=lambda factura: factura.numero)
-    for factura in facturasAjustadas:
-        factura.pagada = False
-        index = factura.pagoRef.index(pago.numero)
-        factura.pagoRef.remove(pago.numero)
-        if factura.abono:
-            del factura.abono[index]
-        factura.put()          
+    return
+#     facturasAjustadas = Factura.query(Factura.pagoRef == pago.numero).fetch()
+#     facturasAjustadas.sort(key=lambda factura: factura.numero)
+#     for factura in facturasAjustadas:
+#         factura.pagada = False
+#         index = factura.pagoRef.index(pago.numero)
+#         factura.pagoRef.remove(pago.numero)
+#         if factura.abono:
+#             del factura.abono[index]
+#         factura.put()          
 
 
-def updateCuentasPorCobrar(pago):
-    cliente = pago.cliente
-    pagado = pago.monto
-    clienteNegocios = Cliente.query(Cliente.nombre == cliente.get().nombre).fetch()
-    facturasImpagas = []
-    for negocio in clienteNegocios: 
-        facturas = Factura.query(Factura.pagada == False, Factura.cliente == negocio.key).fetch()
-        facturasImpagas.extend(facturas)
-    facturasImpagas.sort(key=lambda factura: factura.fecha)
-    for factura in facturasImpagas:
-        if ( factura.total-sum(factura.abono) ) <= pagado:
-            pagado = pagado - ( factura.total- sum(factura.abono) )
+def updateFacturas(pago):
+    for facturaId in pago.facturas:
+        factura = Factura.get_by_id(str(facturaId))
+        if factura:
             factura.pagada = True
-            factura.pagoRef.append(pago.numero)
-            factura.abono.append(pagado)
             factura.put()
         else:
-            factura.abono.append(pagado)
-            factura.pagoRef.append(pago.numero)
-            factura.put()
-            break
+            raise Exception('Factura referenciada en el pago no existe! : ' + str(facturaId))        
 
 dataStoreInterface.registerFollowUpLogic('pre', 'update', 'PagoRecibido', removePayment)
-#dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateCuentasPorCobrar)
+dataStoreInterface.registerFollowUpLogic('post', 'update', 'PagoRecibido', updateFacturas)
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updateFacturas)
 dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
 
 

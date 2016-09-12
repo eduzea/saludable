@@ -116,6 +116,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                        {'id':'sucursal','ui':'Provee', 'required':'true', 'style':'width:5em'},
                        {'id':'direccion','ui':'Direccion', 'required':'true', 'style':'width:8em'},
                        {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'},
+                       {'id':'email','ui':'Email', 'required':'true', 'style':'width:10em'},
                        {'id':'nit','ui':'NIT', 'required':'true', 'style':'width:6em'},
                        {'id':'diasPago','ui':'Dias para pago', 'required':'true','style':'width:4em'},
                        {'id':'grupoDePrecios','ui':'Grupo de Precios', 'required':'true', 'style':'width:5em'},

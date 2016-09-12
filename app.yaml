@@ -5,6 +5,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
+
+- url: /facturasVencidas
+  script: cron_handler.app
   
 - url: /favicon.ico
   static_files: static/images/favicon.ico

@@ -61,6 +61,11 @@ indexes:
 
 - kind: Factura
   properties:
+  - name: pagada
+  - name: fechaVencimiento
+
+- kind: Factura
+  properties:
   - name: resumen
   - name: fecha
 

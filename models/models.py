@@ -35,10 +35,11 @@ class Cliente(Record):
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
     ciudad = ndb.KeyProperty(kind=Ciudad)#donde esta el cliente
-    sucursal = ndb.KeyProperty(kind=Sucursal, default=ndb.Key('Sucursal','Cali'))#que sucursal produce
+    sucursal = ndb.KeyProperty(kind=Sucursal, default=ndb.Key('Sucursal','CALI'))#que sucursal produce
     diasPago = ndb.IntegerProperty()
     grupoDePrecios = ndb.KeyProperty(kind=GrupoDePrecios)
     iva = ndb.BooleanProperty(default=True)
+    email = ndb.StringProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre +' '+ self.negocio)
     
 class Producto(Record):
