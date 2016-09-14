@@ -13,12 +13,15 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class FacturasVencidas(webapp2.RequestHandler):
     def get(self):
-        facturas = Factura.query(Factura.fechaVencimiento < datetime.today(), Factura.pagada == False).fetch()
+        logging.debug('Running cron job at: ' + str(datetime.today()))
+        facturas = Factura.query(Factura.fechaVencimiento < datetime.today(), 
+                                 Factura.pagada == False).fetch()
         clienteFacturas = {}
         for factura in facturas:
             if factura.cliente.get() is None:
                 logging.debug('Bad Cliente in factura: ' + str(factura.numero))
                 continue
+            if factura.cliente.get().activo == False: continue
             email = factura.cliente.get().email
             delta = datetime.today() - factura.fechaVencimiento
             vencida = {'numero': factura.numero,
@@ -35,6 +38,7 @@ class FacturasVencidas(webapp2.RequestHandler):
                 
         for cliente in clienteFacturas.keys():
             html = sendEmail(clienteFacturas[cliente])
+            logging.debug('Sending email to: ' + cliente)
         
         self.response.write(html)
             
@@ -48,7 +52,7 @@ def sendEmail(data):
     message.to = data['email']
     template = JINJA_ENVIRONMENT.get_template('FacturasVencidas.html')
     message.html = template.render(data)
-#     message.send()
+    message.send()
     return message.html
                   
 

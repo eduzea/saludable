@@ -15,6 +15,7 @@ from PyG import *
 from presentation import *
 from importCSV import *
 from puntoDeEquilibrio import *
+from datetime import datetime
 
 
 if 'dataStoreInterface' not in globals():
@@ -733,8 +734,20 @@ class GetExistencias(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        egresos = Egreso.query(Egreso.resumenU == 'MATERIA.PRIMA-FRUTA' ).fetch()
-        self.response.out.write("ARGGH!!")
+#         params = {'cliente':['EUROPAN.PANADERIA.EUROPEA','FUSION.WOK.SAS','LA COMITIVA RESTAURANTE','PURA.CASTA.MANUEL.ODEF.MORALES',
+#                     'SAULO MARIO ALVAREZ PANPAYA AEROPUERTO','TREPANDO.SAS']}
+        
+        params = {'fechaHasta':datetime(2015,12,31), 'pagada':False}
+        
+        facturas = dataStoreInterface.buildQuery('Factura', params).fetch()
+        
+#         facturas = Factura.query(Factura.fecha < datetime(2016,12,31)).fetch()
+        
+        for factura in facturas:
+            factura.pagada = True
+            factura.put()
+        
+        self.response.out.write("DONE!")
 
 
 

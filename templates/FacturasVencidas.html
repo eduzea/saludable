@@ -1,25 +1,3 @@
-<head>
-<style type="text/css">
-	.editorDemoTable {
-		/*background-color: #FFF8C9;*/
-		border-spacing: 0;
-	}
-	.editorDemoTable td {
-		border: 1px solid #777;
-		margin: 0 !important;
-		padding: 2px 3px;
-		text-align: center;
-	}
-	.editorDemoTable thead {
-		background-color: #8181F7;
-		color: #FFF;
-	}
-	.editorDemoTable thead td {
-		font-weight: bold;
-		font-size: 13px;
-	}
-</style>
-</head>
 <h1 style="color: #4485b8; text-align: center;">FACTURAS VENCIDAS a	{{fecha}}</h1>
 <p>Apreciado {{cliente}}:</p>
 <p>Nuestro sistema registra las siguientes facturas vencidas, que a la fecha no han sido canceladas.
@@ -28,33 +6,32 @@
 	descargar las facturas del sistema.</p>
 <p>Gracias, cordial saludo</p>
 <p>
-	Natalia Aljure<br/>Salud-Able<br/> Cel. 320.223.5392
+	Natalia Aljure<br/>Salud-Able Foods<br/> Cel. 320.223.5392
 </p>
 
 <p style="text-align: center;">&nbsp;&nbsp;&nbsp;</p>
-<table class="editorDemoTable"
-	style="vertical-align: top; margin-left: auto; margin-right: auto;">
-	<thead>
+<table class="editorDemoTable" style="vertical-align: top; margin-left: auto; margin-right: auto;border-spacing: 0;">
+	<thead style="background-color: #8181F7;color: #FFF;">
 		<tr>
-			<td style="text-align: center;">Numero</td>
-			<td style="text-align: center;">Monto</td>
-			<td style="text-align: center;">Expedicion</td>
-			<td style="text-align: center;">Vencimiento</td>
-			<td style="text-align: center;">Dias Vencida</td>
+			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Numero</td>
+			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Monto</td>
+			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Expedicion</td>
+			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Vencimiento</td>
+			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Dias Vencida</td>
 		</tr>
 	</thead>
 	<tbody>
 		{% for factura in facturas %}
 		<tr>
-			<td>{{factura.numero}}</td>
-			<td style="text-align: right">{{'{:,}'.format(factura.monto)}}</td>
-			<td>{{factura.expedicion}}</td>
-			<td>{{factura.vencimiento}}</td>
-			<td>{{factura.vencidos}}</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.numero}}</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;text-align: right">{{'{:,}'.format(factura.monto)}}</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.expedicion}}</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencimiento}}</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencidos}}</td>
 		</tr>
 		{% endfor %}
 		<tr>
-			<td style="font-weight: bold">TOTAL:</td>
+			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;font-weight: bold">TOTAL</td>
 			<td style="text-align: right;font-weight: bold">{{total}}</td>
 			<td></td>
 			<td></td>

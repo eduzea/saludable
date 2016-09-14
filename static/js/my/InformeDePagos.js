@@ -60,14 +60,14 @@ function(request,registry,parser,dom,on,query,Standby, Store, aspect, domClass, 
 	var pagoStore = new Store();
 	var pago_columns = [
 		{field : 'numero', name : '#', style: "text-align: center",width:'2.5em'},
-		{field : 'fecha', name : 'Fecha', style: "text-align: center"},
-		{field : 'monto', name : 'Monto', style: "text-align: center",
+		{field : 'fecha', name : 'Fecha', style: "text-align: center",width:'5em'},
+		{field : 'monto', name : 'Monto', style: "text-align: center",width:'5em',
 				formatter: function(data){
 					return number.format(data.monto,{pattern:'###,###'});
 				}		
 		},
 		{field : 'medio', name : 'Medio', style: "text-align: center",width:'4.5em'},
-		{field : 'facturas', name : 'Facturas', style: "text-align: center"}
+		{field : 'facturas', name : 'Facturas', style: "text-align: center", width:'15em'}
 	];
 	
 	var pagosGrid = new Grid({

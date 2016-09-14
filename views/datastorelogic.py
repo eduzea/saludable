@@ -241,9 +241,15 @@ class DataStoreInterface():
             condition = ''
             if 'fecha' in key:
                 if 'Desde' in key:
-                    condition = entityClass._properties['fecha'] >= datetime.strptime(value, '%Y-%m-%d').date()
+                    if isinstance(value, datetime):
+                        condition = entityClass._properties['fecha'] >= value.date()
+                    else:
+                        condition = entityClass._properties['fecha'] >= datetime.strptime(value, '%Y-%m-%d').date()
                 elif 'Hasta' in key:
-                    condition = entityClass._properties['fecha'] <= datetime.strptime(value, '%Y-%m-%d').date()
+                    if isinstance(value, datetime):
+                        condition = entityClass._properties['fecha'] <= value.date()
+                    else:
+                        condition = entityClass._properties['fecha'] <= datetime.strptime(value, '%Y-%m-%d').date()
                 else:
                     condition = entityClass._properties['fecha'] == value
             else:
