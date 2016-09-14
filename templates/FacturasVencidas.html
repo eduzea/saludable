@@ -1,6 +1,7 @@
-<h1 style="color: #4485b8; text-align: center;">FACTURAS VENCIDAS a	{{fecha}}</h1>
+<img src="/static/images/SaludAble_logo_small.png"">
+<h1 style="color: #00713D; text-align: center;">FACTURAS VENCIDAS a	{{fecha}}</h1>
 <p>Apreciado {{cliente}}:</p>
-<p>Nuestro sistema registra las siguientes facturas vencidas, que a la fecha no han sido canceladas.
+<p>Nuestro sistema registra las siguientes facturas vencidas, que a la fecha no aparecen canceladas.
 	Agradecemos la gestion para cancelarlas y ponernos al dia. Tambien
 	agradecemos que nos informen cuando se hagan los respectivos pagos para
 	descargar las facturas del sistema.</p>
@@ -11,31 +12,31 @@
 
 <p style="text-align: center;">&nbsp;&nbsp;&nbsp;</p>
 <table class="editorDemoTable" style="vertical-align: top; margin-left: auto; margin-right: auto;border-spacing: 0;">
-	<thead style="background-color: #8181F7;color: #FFF;">
+	<thead style="background-color: #8DC63F;">
 		<tr>
-			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Numero</td>
-			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Monto</td>
-			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Expedicion</td>
-			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Vencimiento</td>
-			<td style="border: 1px solid #777;font-weight: bold;font-size: 13px;text-align: center;">Dias Vencida</td>
+			<td style="border: 1px solid ;font-weight: bold;font-size: 13px;text-align: center;">Numero</td>
+			<td style="border: 1px solid ;font-weight: bold;font-size: 13px;text-align: center;">Monto</td>
+			<td style="border: 1px solid ;font-weight: bold;font-size: 13px;text-align: center;">Expedicion</td>
+			<td style="border: 1px solid ;font-weight: bold;font-size: 13px;text-align: center;">Vencimiento</td>
+			<td style="border: 1px solid ;font-weight: bold;font-size: 13px;text-align: center;">Dias Vencida</td>
 		</tr>
 	</thead>
 	<tbody>
 		{% for factura in facturas %}
 		<tr>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.numero}}</td>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;text-align: right">{{'{:,}'.format(factura.monto)}}</td>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.expedicion}}</td>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencimiento}}</td>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencidos}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.numero}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;text-align: right">{{'{:,}'.format(factura.monto)}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.expedicion}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencimiento}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">{{factura.vencidos}}</td>
 		</tr>
 		{% endfor %}
 		<tr>
-			<td style="border: 1px solid #777;	margin: 0 !important; padding: 2px 3px;	text-align: center;font-weight: bold">TOTAL</td>
-			<td style="text-align: right;font-weight: bold">{{total}}</td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;font-weight: bold">TOTAL</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: right;font-weight: bold">{{total}}</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">&nbsp;</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">&nbsp;</td>
+			<td style="border: 1px solid ;	margin: 0 !important; padding: 2px 3px;	text-align: center;">&nbsp;</td>
 		</tr>
 	</tbody>
 </table>

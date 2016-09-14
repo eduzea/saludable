@@ -57,6 +57,11 @@ indexes:
   properties:
   - name: pagada
   - name: fecha
+
+- kind: Factura
+  properties:
+  - name: pagada
+  - name: fecha
     direction: desc
 
 - kind: Factura
