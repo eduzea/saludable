@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "saludable-foods-sas",
+  "private_key_id": "7c9c1120a32e03791f1edd2dd3cb59a1380aea98",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDbbnVEs1Ch9y/3\nR0V+U8JcMpHU3BblVX4UUBQhDmVcMV+noCmBIrgBVCt3jFG8h5JG8ycXeSgY3EjN\nreaO8o22hlVPkTMBMhqdGvajl5UAbSOzAvyrOS9vf9ptOV1Oqs/GPM2iWgqzm1Mu\n4Ki1TEnoiLUiqO5AQNiP4nKGwFQHRAThBAH0C0OWKWCJmWtR0WrmXdovmUSgs0z3\nSixAV9U5ReJc3BRc+8V5uY5E3X+6YESEINu84ElVbjRheLHPZui0As5RI5t+wXGz\ny56jSJUtmz2ApHIHy260EU6sfWO5b0QPNoLYi/sQrni8qK4FBpX3Hq/5hfISnzoh\nHTPb7FzDAgMBAAECggEBAJ88xl8HnaEb57QUBYtKL0aG8Cs/WGIuq2MERcdDUi0Y\nK2lSoivzTQKx2SVVL8+XtoBEXf77zixUV4TjCOh9fneRfoFSRmg8uvF9qrRHATsg\n+IIkzcVXp2PLrXAL6/l1nXgnkbaajx+NvUzMfcGrTgswgfpYCyWXqVCpLSE6mv/1\ndXCp++cOaQohLBUpLt1g7m0m1296XyCzILYZji16ihvRUe38KHcdC9Z2F9NjCwvM\no9sLsDy/Uxzx1IYjUO9vFHckaLOHhF2CA8X6pkWXfHLrLNzDUbnyOSndO90tJ0fa\nV/k4GJzuFOI9PCsBC9UGwVQ16ZxiXFwneJ/sr0f1J+ECgYEA7mrK4A0hkVEyUFFi\nNTZYeI88CSV7IRYLSjRjIgMHELN9m6dh9KCVZkiLxtaP0geC8H0OwZICXg11PjkE\njjpEvXzLVIYetNLfE1BouGz7iD5zGwUgi+JrMMN4gV1IjtYMub9Ng4YLfv/198ao\n6QkyMYGX/HAcANGBBNm3Ao+cE5MCgYEA6505fXJlNvUkgPMT5Q4/f0hnQbn5dQ7k\n1CUp8lF2/NidoTakVrg7GZGCcuAeKCySMne2oCdIx2dGEqY3zY0BYJ38Tbl4V0S4\nmMUdK1YpunveyN1iVE2mdbc/HC0BCTQYsdtBBeI9eE0Pph31svu4BfFiAJ9AgG8K\nGsb9ukq+sBECgYEAk5m/wZe/iVSIXpsTvrfHa9PZKhxvLxuTn7vxB3RyYk+M2tl0\nVls4Qtt01YOuBCwsTzBM+1+mYY3ZYM0x2c+PEPR6ePiTeAT4n99vBYZK7p0i675v\n2Moy7DyHlScoLW2s8S3TEjLhWR2jrGLr3WGZFncRnfHWFFeflV4n48j+qksCgYAj\nKfrriwgqFJoXGLAublrxryeh+pSNcOSb+NPy00+z2sxjxBjwzFwdq8bRSDuX+Vb0\na0N5UYOeJv6hR+dqKRI8jjeajgS02Y/HVRvOXPSrXVNZnRjQxioCxY+Ir/rImdrZ\nqIRi0WolKzMbsrr5tHG5iVX8C8h/opLafjpd9EvTUQKBgD2dVrQskz99Pmus5rv4\nAtYg6UFYHNXHkPoGX8sX5ZxyHL1QKRVB9RU1IIW9sh2qB3nzH8wX6wglGUEGk6Qx\n36RVtqLbAiO/FRNrYIEyJJ/HG2rfVqhjb0GcmbZ+TP9XwTnb4LIQEhmX/wxD6knk\nQN0Q5UzYTavVsC5SSeV8F3x0\n-----END PRIVATE KEY-----\n",
+  "client_email": "saludable-foods-sas@appspot.gserviceaccount.com",
+  "client_id": "106598239539002213980",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/saludable-foods-sas%40appspot.gserviceaccount.com"
+}
