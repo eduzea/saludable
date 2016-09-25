@@ -1,4 +1,4 @@
 cron:
 - description: reporte diario de facturas vencidas
   url: /facturasVencidas
-  schedule: every monday 14:00
+  schedule: every monday 13:00

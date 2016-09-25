@@ -31,6 +31,7 @@ def updateFacturas(pago):
         factura = Factura.get_by_id(str(facturaId))
         if factura:
             factura.pagada = True
+            factura.pagoRef = pago.numero
             factura.put()
         else:
             raise Exception('Factura referenciada en el pago no existe! : ' + str(facturaId))        
@@ -64,6 +65,9 @@ def removeFactura(factura):
         remision.put()
 
 def restarExistencias(factura):
+    if factura.cliente.get().diasPago == 0:
+        factura.pagada = True
+        factura.put()
     sucursal = factura.cliente.get().sucursal
     existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
     if existencias:

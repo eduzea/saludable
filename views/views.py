@@ -16,6 +16,7 @@ from presentation import *
 from importCSV import *
 from puntoDeEquilibrio import *
 from datetime import datetime
+from datetime import timedelta
 
 
 if 'dataStoreInterface' not in globals():
@@ -401,22 +402,7 @@ class GuardarFactura(webapp2.RequestHandler):
         values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(values['entity_class'])
-        factura = dataStoreInterface.create_entity(entityClass, values)['entity']
-        #Cuando el pago es contra recibo, crear automaticamente el PagoRecibido
-        cliente = values['cliente'].get() # turns out the values dict gest modified by the create_entity function. It now holds the client key.
-        if cliente.diasPago == 0:
-#             pago = dataStoreInterface.create_entity('PagoRecibido', 
-#             {'numero':getConsecutivo('PagoRecibido'),
-#              'fecha':values['fecha'],
-#              'cliente':cliente.key,
-#              'medio':'EFECTIVO',
-#              'monto':values['total'],
-#              'facturas':[values['numero']]
-#              }
-#                                                     )['entity']
-            factura.pagada = True
-            factura.put
-            
+        factura = dataStoreInterface.create_entity(entityClass, values)['entity']          
         self.response.out.write(json.dumps({'result':'Success','id': factura.key.id()}))     
 
 
@@ -714,9 +700,16 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         qry = dataStoreInterface.buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
         facturas = qry.fetch()
         response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,
-                     'total':factura.total, 'abono':sum(factura.abono), 'vencida':estaVencida(factura)} for factura in facturas if not factura.pagada]
+                     'total':factura.total, 'vencida':diasVencida(factura)} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
-    
+
+def diasVencida(factura):
+    dias = factura.cliente.get().diasPago
+    if datetime.today().date() > factura.fecha + timedelta(days=dias):
+        return (datetime.today().date() - factura.fecha + timedelta(days=dias)).days
+    else:
+        return 0
+
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
         existencias = Existencias.query().fetch()
@@ -733,21 +726,13 @@ class GetExistencias(webapp2.RequestHandler):
         self.response.write(json.dumps(records)) 
 
 class Fix(webapp2.RequestHandler):
-    def get(self):
-#         params = {'cliente':['EUROPAN.PANADERIA.EUROPEA','FUSION.WOK.SAS','LA COMITIVA RESTAURANTE','PURA.CASTA.MANUEL.ODEF.MORALES',
-#                     'SAULO MARIO ALVAREZ PANPAYA AEROPUERTO','TREPANDO.SAS']}
-        
-        params = {'fechaHasta':datetime(2015,12,31), 'pagada':False}
-        
-        facturas = dataStoreInterface.buildQuery('Factura', params).fetch()
-        
-#         facturas = Factura.query(Factura.fecha < datetime(2016,12,31)).fetch()
-        
+    def get(self): 
+        params = {'cliente':['VENTOLINI.S.A'], 'pagada':False, 'fechaHasta':'2016-05-24'}
+        facturas = dataStoreInterface.buildQuery('Factura',params).fetch()
         for factura in facturas:
             factura.pagada = True
             factura.put()
-        
-        self.response.out.write("DONE!")
+        self.response.out.write("System time: " + str(datetime.now()))
 
 
 

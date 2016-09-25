@@ -32,6 +32,7 @@ class Cliente(Record):
     nombre = ndb.StringProperty(indexed=True)
     negocio = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
+    contacto = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
     ciudad = ndb.KeyProperty(kind=Ciudad)#donde esta el cliente
@@ -99,13 +100,6 @@ class Remision(Record):
     montoIva = ndb.FloatProperty(default=0.0)
     anulada = ndb.BooleanProperty(default=False)
     factura = ndb.IntegerProperty(default=0)
-
-# def tryDiasPago(self):
-#     try:
-#         return self.cliente.get().diasPago
-#     except Exception:
-#         print 'Factura No. ', self.numero, ' Has client problem'
-#         return 0
 
 def fechaVencimientoCheck(factura):
     if factura.cliente.get():

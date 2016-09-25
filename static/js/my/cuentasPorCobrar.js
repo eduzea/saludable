@@ -56,6 +56,17 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 				},
 			};
 			
+			var updateTotal = function(){
+				var store = registry.byId('CuentasPorCobrar_resumen_grid').store;
+				var data = store.query(); 
+				var sumTotal=0;
+				data.forEach(function(entry){
+					sumTotal = sumTotal + entry.monto;
+				});
+				dom.byId('cuentasPorCobrar_total').innerHTML = number.format(sumTotal,{pattern:'###,###.#'});
+				dom.byId('cuentasPorCobrar_total_label').innerHTML = 'TOTAL CARTERA CLIENTES: ';
+			} ;
+			
 			resumenColumns.push(detalleColumn);
 			
 			var gridProps = 
@@ -88,6 +99,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			
 			var resumenGrid = new Grid(gridProps, entity_class+'_resumen_grid');
 			resumenGrid.startup();
+			updateTotal();
 			registry.byId('standby_centerPane').hide();
 			
 			var boolFormatter=function(data){
@@ -97,10 +109,9 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			var detalleColumns = [
 				{id:'factura', field:'factura', name:'Factura', 'style':"text-align: center", 'width':'4em'},
 				{id:'fecha', field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
-				{id: 'negocio', field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'10em'},
+				{id: 'negocio', field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'15em'},
 				{id: 'total', field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
-				{id: 'abono', field:'abono', name:'Abono', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
-				{id: 'vencida', field:'vencida', name:'Vencida', 'style':"text-align: center", 'width':'5em',formatter: boolFormatter},
+				{id: 'vencida', field:'vencida', name:'Dias Vencida', 'style':"text-align: center", 'width':'5em'},
 			];
 
 			gridProps['store']=new Memory();

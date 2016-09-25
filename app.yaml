@@ -1,8 +1,11 @@
 application: saludable-foods-sas
-version: 20160901
+version: 20160925
 runtime: python27
 api_version: 1
 threadsafe: true
+
+inbound_services:
+- mail
 
 handlers:
 
@@ -17,10 +20,20 @@ handlers:
   static_dir: static
   application_readable: true
   
+- url: /_ah/mail/.+
+  script: handle_incoming_email.app
+  login: admin
+ #saldo@saludable.appspotmail.com
+
+- url: /update_schema
+  script: update_schema_handler.app
+
+
 - url: /.*
   script: main.application
   #script: update_schema_handler.app
   
+
 libraries:
 - name: webapp2
   version: latest
