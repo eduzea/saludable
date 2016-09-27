@@ -81,7 +81,10 @@ class DataStoreInterface():
         if 'fechaCreacion' in props:
             values['fechaCreacion'] = datetime.today().date()
         if 'empleadoCreador' in props:
-            values['empleadoCreador'] = users.get_current_user().email()
+            if users.get_current_user():
+                values['empleadoCreador'] = users.get_current_user().email()
+            else:
+                values['empleadoCreador'] = 'auto'
         return values
 
     def _checkStructuredProperty(self,key, propertyType, value):
@@ -334,8 +337,10 @@ class DataStoreInterface():
             entity = entity.get()
         elif isinstance(entity,basestring):
             entity = classModels[entityClass].get_by_id(entity)
-        else:
-            raise Exception("Can't interpret " + str(entity) + "as an entity!")
+        
+        if not isinstance(entity, ndb.Model):
+            raise Exception("Can't interpret " + str(entity) + " as an entity!")
+        
         if entityClass in self._funcMap['pre']['delete']:
             try:
                 self._funcMap['pre']['delete'][entityClass](entity)

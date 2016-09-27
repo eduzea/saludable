@@ -23,7 +23,7 @@ handlers:
 - url: /_ah/mail/.+
   script: handle_incoming_email.app
   login: admin
- #saldo@saludable.appspotmail.com
+ #saldo@saludable-foods-sas.appspotmail.com
 
 - url: /update_schema
   script: update_schema_handler.app

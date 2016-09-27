@@ -7,32 +7,43 @@ from google.appengine.ext.ndb import Key
 from datetime import datetime
 import time
 import email.utils
-
+import re
+from views.views import dataStoreInterface
 
 class SaldoSenderHandler(InboundMailHandler):
     def receive(self, mail_message):
-        logging.info("Received a message from: " + mail_message.sender)
+        logging.info("Received a message from: " + mail_message.sender + "  at " + str(datetime.now()))
         subject = mail_message.subject
-        if subject.find('Notificacion Saldo Diario') != -1:
+        if 'Notificacion Saldo Diario' in subject:
             body = mail_message.body.decode()
             lines = body.split('\n')
             saldo = 0
             for line in lines:
-                print line
-                if '***' in line:
-                    cuentaNum = line.split('*')[-1].strip(':')
-                    cuentas = CuentaBancaria.query().fetch()
-                    cuenta = [cuenta.key for cuenta in cuentas if cuentaNum in cuenta.numero]
-                    if len(cuenta) > 0:
-                        cuenta = cuenta[0]
-                if 'saldo' in line:
-                    saldo = int(line.split()[-1].split('.')[0].replace(',', ''))
-                    saldoEntity = SaldoCuentaBancaria(cuenta = cuenta,
-                                        fecha =  datetime.fromtimestamp(time.mktime(email.utils.parsedate(mail_message.date))),
-                                        saldo = saldo)
-                    saldoEntity.put()
-            
-        logging.debug('Done!')
+                logging.info(line)
+                try:
+                    if '***' in line:
+                        cuentaNumRegexp = re.search(re.escape('*******')+'(.*)\:', line)
+                        cuentaNum = cuentaNumRegexp.group(1).replace('*','') 
+                        cuentas = CuentaBancaria.query().fetch()
+                        cuenta = [cuenta.key for cuenta in cuentas if cuentaNum in cuenta.numero]
+                        if len(cuenta) > 0:
+                            cuenta = cuenta[0]
+                        else:
+                            logging.debug('No entendi el numero de cuenta. CuentaNum: ' + cuentaNum)
+                    if '$' in line:
+                        saldoRegexp = re.search('\$(.*)\.', line)
+                        saldo = saldoRegexp.group(1).split('.', 1)[0].replace(',','').strip()
+                        values = {'cuenta':cuenta, 
+                                'fecha': datetime.fromtimestamp(time.mktime(email.utils.parsedate(mail_message.date))),
+                                'saldo': int(saldo)}
+                        saldoEntity = dataStoreInterface.create_entity('SaldoCuentaBancaria', values)
+                        saldoEntity.put()
+                        break
+                except Exception as e:
+                    logging.debug('Choked on: ' + line)
+                    logging.debug('Error: ' + e.message)
+                    continue
+        logging.info('Processed email!')
               
 app = webapp2.WSGIApplication([SaldoSenderHandler.mapping()], debug=True)
 

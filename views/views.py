@@ -140,17 +140,6 @@ class DeleteEntity(webapp2.RequestHandler):
         entityClass = self.request.POST.get('entity_class')
         dataStoreInterface.deleteEntity(entityClass, key)
         self.response.out.write("Se elimino exitosamente: " + entityClass + " " + key)        
-# class DeleteEntity(webapp2.RequestHandler):        
-#     def post(self):
-#         key = self.request.POST.get('key')
-#         entity_class = self.request.POST.get('entity_class')
-#         try:
-#             entity = classModels[entity_class].get_by_id(key)
-#             entity.key.delete()
-#         except Exception as ex:
-#             self.response.out.write(ex.message)
-#             return
-#         self.response.out.write("Se elimino exitosamente: " + entity_class + " " + key)        
 
 class GetClientes(webapp2.RequestHandler):
     def post(self):
