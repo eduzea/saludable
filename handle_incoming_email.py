@@ -19,7 +19,6 @@ class SaldoSenderHandler(InboundMailHandler):
             lines = body.split('\n')
             saldo = 0
             for line in lines:
-                logging.info(line)
                 try:
                     if '***' in line:
                         cuentaNumRegexp = re.search(re.escape('*******')+'(.*)\:', line)
@@ -36,7 +35,7 @@ class SaldoSenderHandler(InboundMailHandler):
                         values = {'cuenta':cuenta, 
                                 'fecha': datetime.fromtimestamp(time.mktime(email.utils.parsedate(mail_message.date))),
                                 'saldo': int(saldo)}
-                        saldoEntity = dataStoreInterface.create_entity('SaldoCuentaBancaria', values)
+                        saldoEntity = dataStoreInterface.create_entity('SaldoCuentaBancaria', values)['entity']
                         saldoEntity.put()
                         break
                 except Exception as e:

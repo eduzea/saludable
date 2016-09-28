@@ -677,7 +677,8 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
             if factura.cliente.get().nombre in saldos:
                 saldos[factura.cliente.get().nombre] += factura.total
             else:
-                saldos[factura.cliente.get().nombre] =  factura.total
+                if factura.cliente.get().activo == True:
+                    saldos[factura.cliente.get().nombre] =  factura.total
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
         self.response.out.write(json.dumps(response))
