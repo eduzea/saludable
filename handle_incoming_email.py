@@ -12,7 +12,7 @@ from views.views import dataStoreInterface
 
 class SaldoSenderHandler(InboundMailHandler):
     def receive(self, mail_message):
-        logging.info("Received a message from: " + mail_message.sender + "  at " + str(datetime.now()))
+        logging.info("Received message from: " + mail_message.sender + "  at " + str(datetime.now()))
         subject = mail_message.subject
         if 'Notificacion Saldo Diario' in subject:
             body = mail_message.body.decode()
