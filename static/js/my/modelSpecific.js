@@ -66,6 +66,104 @@ function(dom,registry,domAttr,request,topic,number)
 				pesoTextBox.set('value',loteSelect.getOptions(loteSelect.value)['peso']);
 			};
 			frutaSelect.onChange();
+		},
+		'MovimientoDeInventario':
+		function(){
+			var original = {};
+			var tipoSelect = registry.byId('tipo_MovimientoDeInventario');
+			tipoSelect.onChange = function(){
+				if (this.value == 'SALIDA'){
+					var lotes = {};
+					var ubicacionSelect = registry.byId('ubicacion_MovimientoDeInventario');
+					ubicacionSelect.onChange = function(){
+						request('/getContenidoUnidadDeAlmacenamiento?ubicacion='+  this.value, {handleAs:'json'}).then(
+							function(response){
+								lotes = {};
+								response.forEach(
+								function(lote){
+									if (lote.fecha in lotes){
+										if (lote.producto in lotes[lote.fecha]){
+											if (lote.porcion in lotes[lote.fecha][lotes.producto]){
+												lotes[lote.fecha][lotes.producto][lote.porcion] = lote.cantidad;
+											}else{
+												lotes[lote.fecha][lotes.producto] = {};
+												lotes[lote.fecha][lotes.producto][lote.porcion] = lote;
+											}
+										}else{
+											lotes[lote.fecha][lote.producto] = {};
+											lotes[lote.fecha][lote.producto][lote.porcion]= lote.cantidad;
+										}
+										lotes[lote.fecha][lote.producto];
+									}else{
+										lotes[lote.fecha] = {};
+										lotes[lote.fecha][lote.producto] = {};
+										lotes[lote.fecha][lote.producto][lote.porcion] = lote.cantidad;
+									}
+								})
+								fechaSelect.set('value',Object.keys(lotes)[0]);
+								fechaSelect.onChange();
+							}
+						)
+					}
+					var fechaSelect = registry.byId('fecha_MovimientoDeInventario');
+					fechaSelect.onChange = function(){
+						var fecha = this.value.toISOString().slice(0,10);
+						if (!lotes.hasOwnProperty(fecha)){
+							alert("Esta canastilla no contiene este lote!");
+							fechaSelect.set('value',Object.keys(lotes)[0]);
+							return;
+						}
+						var productoSelect = registry.byId('producto_MovimientoDeInventario');
+						productoSelect.onChange = function(){
+							var producto = this.value;
+							var porcionSelect = registry.byId('porcion_MovimientoDeInventario');
+							porcionSelect.onChange = function(){
+								var porcion = this.value;
+								var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
+								cantidadField.set('value',lotes[fecha][producto][porcion])
+							}
+							var items =[];
+							var options = Object.keys(lotes[fecha][producto]);
+							options.forEach(function(option){
+								items.push({ "value": option, "label": option});
+							});
+							if (! ('porcion' in original) ){
+								original['porcion'] = porcionSelect.options; //copy the options to restore if needed 
+							}
+							porcionSelect.set("options", items)
+							porcionSelect.startup();
+							porcionSelect.onChange();
+
+						}
+						var items = [];
+						var options = Object.keys(lotes[fecha]);
+						options.forEach(function(option){
+							items.push({ "value": option, "label": option});
+						});					
+						if (! ('producto' in original) ){
+							original['producto'] = productoSelect.options; //copy the options to restore if needed 
+						}
+						productoSelect.set("options", items)
+						productoSelect.startup();
+						productoSelect.onChange();
+					}
+					ubicacionSelect.onChange();
+				}else{//ENTRADA
+					if ('producto' in original){
+						var productoSelect = registry.byId('producto_MovimientoDeInventario');
+						productoSelect.set("options", original['producto'])
+						productoSelect.startup();
+					}
+
+					if ('porcion' in original){
+						var porcionSelect = registry.byId('porcion_MovimientoDeInventario');
+						porcionSelect.set("options", original['porcion'])
+						porcionSelect.startup();
+					}
+					var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
+					cantidadField.set('value','');
+				}
+			}
 		}
 	};
 });

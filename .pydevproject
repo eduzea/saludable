@@ -7,7 +7,7 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/saludable</path>
 <path>/saludable/libs/easydict-1.6</path>
-<path>/saludable/libs/python-dateutil-1.5</path>
+<path>/${PROJECT_DIR_NAME}/libs/python-dateutil-1.5</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>${GOOGLE_APP_ENGINE}</path>

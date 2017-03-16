@@ -65,10 +65,6 @@ def checkDateProperty(key,value):
             except:
                 raise Exception("Could not parse string " + value + 'into proper date')
 
-
-
-
-
 class DataStoreInterface():
     _funcMap = {'pre':{'create':{},'update':{},'delete':{}},
                 'post':{'create':{},'update':{},'delete':{}}
@@ -90,8 +86,11 @@ class DataStoreInterface():
     def _checkStructuredProperty(self,key, propertyType, value):
         if isinstance(value,basestring):
             value = json.loads(value)
-        if isinstance(value, ndb.Model): return value 
-        return self._checkEntityCreate(propertyType._modelclass._class_name(),value)
+        if isinstance(value, ndb.Model): return value
+        values = self._checkEntityCreate(propertyType._modelclass._class_name(),value)
+        key = getKey(propertyType._modelclass._class_name(), value)
+        values['id'] = key 
+        return values
     
     
     def _checkComputedProperty(self, key, value):
@@ -111,7 +110,10 @@ class DataStoreInterface():
             obj = self.create_entity(propertyType._kind, value)['entity']
             return obj.key
         elif isinstance(value,basestring):#its a key.id string
-            key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
+            if len(keyDefs[propertyType._kind]) == 1 and type(classModels[propertyType._kind]._properties[keyDefs[propertyType._kind][0]]) == ndb.IntegerProperty:
+                key_obj = ndb.Key(propertyType._kind,int(value.strip().replace(' ','.')))
+            else:
+                key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
             return key_obj
         else:
             raise Exception( "Attempted to assign non-key value to KeyProperty " + key + ": " + str(value) )
@@ -311,7 +313,7 @@ class DataStoreInterface():
                 try:
                     self._funcMap['post']['update'][entity_class](entity)
                 except Exception as e:
-                    print 'Post-Update: ' + e.message
+                    print 'Post-Update: ', e.message
             return {'message':"Updated",'key':key, 'entity':entity, 'old':oldentity}
         else:
             values['id']=key
@@ -319,14 +321,14 @@ class DataStoreInterface():
                 try:
                     self._funcMap['pre']['create'][entity_class](entity)
                 except Exception as e:
-                    print 'Pre-Create' + e.message
+                    print 'Pre-Create', e
             entity = classModels[entity_class](**values)
             entity.put()
             if entity_class in self._funcMap['post']['create']:
                 try:
                     self._funcMap['post']['create'][entity_class](entity)
                 except Exception as e:
-                    print 'Post-Create: ' + e.message
+                    print 'Post-Create: ' , e
             self._autoIncrease(entity_class)
             return {'message':"Created",'key':key, 'entity':entity}
         

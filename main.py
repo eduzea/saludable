@@ -1,7 +1,8 @@
 import webapp2
 from views.views import *
+from views.initSaludable import initSaludable
 
-
+initSaludable()
 application = webapp2.WSGIApplication([
     #User Management                                  
     ('/login',LogIn),
@@ -30,6 +31,7 @@ application = webapp2.WSGIApplication([
     #Inventario
     ('/guardarInventario',GuardarInventario),
     ('/getExistencias', GetExistencias),
+    ('/getContenidoUnidadDeAlmacenamiento',GetContenidoUnidadDeAlmacenamiento),
     #Ingresos
     ('/crearFactura', CrearFactura),
     ('/guardarFactura', GuardarFactura),

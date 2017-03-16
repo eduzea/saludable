@@ -25,7 +25,6 @@ def removePayment(pago):
 #             del factura.abono[index]
 #         factura.put()          
 
-
 def updateFacturas(pago):
     for facturaId in pago.facturas:
         factura = Factura.get_by_id(str(facturaId))
@@ -42,162 +41,24 @@ dataStoreInterface.registerFollowUpLogic('post', 'create', 'PagoRecibido', updat
 dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', removePayment)
 
 
-######################### FACTURA Y EXISTENCIAS ##############################
-def removeFactura(factura):
-    sucursal = factura.cliente.get().sucursal
-    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
-    if existencias:
-        existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
-        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-        for venta in factura.ventas:
-            ventaKey = venta.producto.id() + '.' + venta.porcion.id()    
-            if ventaKey in indexMap:
-                index = indexMap[ventaKey]
-                productoPorcion = existencias.registros[index].get()
-                productoPorcion.existencias += venta.cantidad
-                productoPorcion.put()
-            else:
-                print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
-        existencias.put()
-    remisiones = Remision.query(Remision.factura == factura.numero)
-    for remision in remisiones:
-        remision.factura = 0
-        remision.put()
-
-def restarExistencias(factura):
-    if factura.cliente.get().diasPago == 0:
-        factura.pagada = True
-        factura.put()
-    sucursal = factura.cliente.get().sucursal
-    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
-    if existencias:
-        existencias = existencias[0]
-        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-        for venta in factura.ventas:
-            ventaKey = sucursal.id() + '.' + venta.producto.id() + '.' + venta.porcion.id() 
-            if ventaKey in indexMap:
-                index = indexMap[ventaKey]
-                productoPorcion = existencias.registros[index].get()
-                if productoPorcion.existencias >= venta.cantidad:
-                    productoPorcion.existencias -= venta.cantidad
-                    productoPorcion.put()
-                else:
-                    print "NO ALCANZA!" 
-            else:
-                print "UN PRODUCTO QUE NO HAY EN EXISTENCIAS!"
-        existencias.put()
-
-dataStoreInterface.registerFollowUpLogic('pre','update','Factura',removeFactura)
-dataStoreInterface.registerFollowUpLogic('post', 'create','Factura', restarExistencias)
-dataStoreInterface.registerFollowUpLogic('post','delete','Factura', removeFactura)
-
 ######################### INVENTARIO Y EXISTENCIAS ################################
+def updateFraccionDeLote(unidadDeAlmacenamiento):
+    for fraccionDeLote in unidadDeAlmacenamiento.contenido:
+        values = fraccionDeLote.to_dict()
+        values['ubicacion'] =  unidadDeAlmacenamiento.key.id()
+        flu = dataStoreInterface.create_entity('FraccionDeLoteUbicado',values)['entity'] 
+        flu.put()
 
-def actualizarExistencias(inventario):
-    existencias = Existencias.query(Existencias.sucursal == inventario.sucursal).fetch()
-    if not existencias:
-        registros = []
-        for registro in inventario.registros:
-            existenciaRegistro = dataStoreInterface.create_entity('ExistenciasRegistro',registro.get().to_dict())['entity']#cloning record
-            existenciaRegistro.put()
-            registros.append(existenciaRegistro.key)
-        existencias = dataStoreInterface.create_entity('Existencias', { 
-                                  'sucursal': inventario.sucursal,
-                                  'fecha' : datetime.today(),
-                                  'registros' : registros,
-                                  'ultimoInventario' : inventario.key,
-                                  'ultimasFacturas' : []}
-                                  )['entity']
-        existencias.put()
-        return
-    else:
-        existencias = existencias[0]
-        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-        for registro in inventario.registros:
-            registroKey = registro.id().partition('.')[2]   
-            if  registroKey in indexMap:
-                index = indexMap[registroKey]
-                productoPorcion = existencias.registros[index].get()
-                productoPorcion.existencias = registro.get().existencias
-                productoPorcion.put()
-            else:
-                registro = registro.get()
-                nuevoRegistro  = dataStoreInterface.create_entity('ExistenciasRegistro',
-                                               {'fecha':registro.fecha,                                                                        
-                                                'sucursal': registro.sucursal,
-                                                'producto': registro.producto,
-                                                'porcion':  registro.porcion,
-                                                'existencias':  registro.existencias})['entity']
-                existencias.registros.append(nuevoRegistro.key)
-        existencias.put()
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
+dataStoreInterface.registerFollowUpLogic('post', 'update', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
 
-def actualizarInventarioRegistros(inventario):
-    for registro in inventario.registros:
-        registro.delete()
-        
-dataStoreInterface.registerFollowUpLogic('post', 'update','Inventario', actualizarExistencias)
-dataStoreInterface.registerFollowUpLogic('post', 'create','Inventario', actualizarExistencias)
-dataStoreInterface.registerFollowUpLogic('post','delete','Inventario', actualizarInventarioRegistros)
+def updateUnidadDeAlamcenamiento(mi):
+    ubicacion = mi.ubicacion
+    keyStr = '.'.join([mi.fecha,mi.producto,mi.porcion])
+    canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.ubicacion == ubicacion).fetch()[0]
+    for fraccion in canastilla.contenido:
+        pass
 
-######################### PRODUCCION Y EXISTENCIAS ##########################
-
-def produccionPostCreate(produccion):
-    lote = produccion.loteDeCompra.get()
-    if lote.peso == produccion.pesoFruta:#si se produjo todo lo que se compro
-        lote.procesado = True
-        lote.put()
-    sumarExistencias(produccion)
-                                     
-def sumarExistencias(produccion):
-    sucursal = produccion.sucursal
-    producto = produccion.fruta
-    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
-    if existencias:
-        existencias = existencias[0]
-        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-        for productoPorcion in produccion.productos:
-            key = sucursal.id() + '.' + producto.id() + '.' + productoPorcion.porcion.id() 
-            if key in indexMap:
-                index = indexMap[key]
-                existenciasProductoPorcion = existencias.registros[index].get()
-                existenciasProductoPorcion.existencias += productoPorcion.cantidad
-                existenciasProductoPorcion.put()
-            else:
-                nuevoRegistro  = dataStoreInterface.create_entity('ExistenciasRegistro',
-                                               {'fecha':produccion.fecha,                                                                        
-                                                'sucursal': sucursal,
-                                                'producto': producto,
-                                                'porcion':  productoPorcion.porcion,
-                                                'existencias':  productoPorcion.cantidad})['entity']
-                existencias.registros.append(nuevoRegistro.key)
-        existencias.put()
-
-        
-def removeProduccion(produccion):
-    lote = produccion.loteDeCompra.get()
-    lote.procesado = False
-    lote.put()
-    correctExistencias(produccion)
-
-def correctExistencias(produccion):    
-    sucursal = produccion.sucursal
-    producto = produccion.fruta
-    existencias = Existencias.query(Existencias.sucursal == sucursal).fetch()
-    if existencias:
-        existencias = existencias[0]#This function assumes that Existencias for every city exist in the Datastore
-        indexMap = {x.id():i for i,x in enumerate(existencias.registros)}
-        for productoPorcion in produccion.productos:
-            key = sucursal.id() + '.' + producto.id() + '.' + productoPorcion.porcion.id() 
-            if key in indexMap:
-                index = indexMap[key]
-                existenciasProductoPorcion = existencias.registros[index].get()
-                existenciasProductoPorcion.existencias -= productoPorcion.cantidad
-                existenciasProductoPorcion.put()
-        existencias.put()
-
-dataStoreInterface.registerFollowUpLogic('pre','update','Produccion', removeProduccion)
-dataStoreInterface.registerFollowUpLogic('post','create','Produccion', produccionPostCreate)
-dataStoreInterface.registerFollowUpLogic('post','delete','Produccion', removeProduccion)
 
 ####################################################################################################
 def removeEgreso(egreso):

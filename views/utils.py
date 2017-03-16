@@ -14,6 +14,7 @@ def rreplace(s, old, new, occurrence):
     li = s.rsplit(old, occurrence)
     return new.join(li)
 
+# Parse date string given by javascript
 def parseDateString(string):
     start = string.find( '(' )
     end = string.find( ')' )
@@ -28,6 +29,9 @@ def getColumns(entityClass):
     props = classModels[entityClass]._properties
     for column in uiConfigShow[entityClass]:
         colProps = { 'id':column['id'], 'field' : column['id'], 'name' : column['ui'], 'style': "text-align: center", 'width':column['style'].split(':')[1]}
+        if 'type' in column:
+            colProps['type']=column['type']
+        #probably should not assume that computed properties are of type Integer! Will declare the type explicitly in config...
         if column['id'] in props and ( type(props[column['id']]) == ndb.IntegerProperty or type(props[column['id']]) == ndb.ComputedProperty)  :
             if not props[column['id']]._repeated and 'type' not in column:
                 colProps['type']='Integer'
@@ -40,7 +44,7 @@ def getKey(entityClass,dicc):
         if type(dicc[keypart]) == ndb.Key:
             entity = dicc[keypart].get()
             if entity:
-                key += ' ' + unicode(entity.key.id(),'utf-8') 
+                key += ' ' + unicode(str(entity.key.id()),'utf-8') 
             else:
                 print "Entity not found by key:" + keypart 
         else:
@@ -115,7 +119,7 @@ def fieldsInfo(entityClass):
 def getConsecutivo(entityClass):
     """
     Returns the next key number to use for an entityClass. It does not increase the entityClass counter, 
-    which should only get increased if the object is effectively saved to the datastore.
+    which should only get increased if the new object is effectively saved to the datastore.
     """
     if 'Numero' + entityClass in singletons:
         numero = singletons['Numero' + entityClass].query().get()
@@ -134,22 +138,22 @@ def estaVencida(factura):
      
 #################### INVENTARIO #########################
 getTemplateData={}
-def getInventarioTemplateData(request):
-    prop_ciudad = InventarioRegistro._properties['sucursal']
-    prop_producto = InventarioRegistro._properties['producto']
-    prop_porcion = InventarioRegistro._properties['porcion']
-    prop_existencias = InventarioRegistro._properties['existencias']
-    props = {
-             'sucursal':{'ui': 'Sucursal', 'id': 'sucursal','required':'true','type':prop_ciudad},
-             'producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
-             'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
-             'existencias':{'ui': 'Existencias', 'id': 'existencias','required':'true',
-                     'style':'width:3em', 'type':prop_existencias}
-        }
-    return {'props':props}
+# def getInventarioTemplateData(request):
+#     prop_ciudad = InventarioRegistro._properties['sucursal']
+#     prop_producto = InventarioRegistro._properties['producto']
+#     prop_porcion = InventarioRegistro._properties['porcion']
+#     prop_existencias = InventarioRegistro._properties['existencias']
+#     props = {
+#              'sucursal':{'ui': 'Sucursal', 'id': 'sucursal','required':'true','type':prop_ciudad},
+#              'producto':{'ui': 'Producto', 'id': 'producto','required':'true','type':prop_producto},
+#              'porcion':{'ui': 'Porcion', 'id': 'porcion','required':'true','type':prop_porcion},
+#              'existencias':{'ui': 'Existencias', 'id': 'existencias','required':'true',
+#                      'style':'width:3em', 'type':prop_existencias}
+#         }
+#     return {'props':props}
 
     
-getTemplateData['Inventario'] = getInventarioTemplateData
+# getTemplateData['Inventario'] = getInventarioTemplateData
 
 def getEgresoFrutaTemplateData(request):
     props = {'detalle':{'type':Compra._properties['detalle'],'style': 'width:10em', 'ui': 'Fruta', 'id': 'detalle'},

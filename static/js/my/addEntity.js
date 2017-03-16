@@ -1,9 +1,9 @@
 //# sourceURL=../static/js/my/addEntity.js
 require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
 		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/number",
-		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready', 'gridx/modules/CellWidget',
+		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready',"dojo/date/locale", 'gridx/modules/CellWidget',
 		 'dojo/domReady!'],
-function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready) {
+function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready,locale) {
 	var entityClass = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
 	var buttons={};
@@ -171,6 +171,19 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 						return number.format(data[this.field],{pattern:'###,###.#',places:2});
 					};
 				}
+				if (column.type == 'Date'){
+					column.formatter = function(data){
+						var date =  data[this.field];
+						if (typeof date == 'string'){
+							return date
+						}else{
+							return locale.format(data[this.field],{
+							    selector: "date",
+							    datePattern : "yyyy-MM-dd"
+							  })
+						}
+					};
+				}
 			});
 			var borrarColumn = { field : 'Borrar', name : '', widgetsInCell: true, width:'5em',
 				onCellWidgetCreated: function(cellWidget, column){
@@ -214,7 +227,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 			//To add objects to grid
 			parser.instantiate([dom.byId(field + '_' + entityClass +  '_Btn')]);
 			on(registry.byId(field + '_' + entityClass +  '_Btn'),'click',function(e){
-				var form = registry.byId(field +  '_' + entityClass);
+				var form = registry.byId('struct' + field +  '_' + entityClass);
 				if (!form.validate()){
 					alert("'Cantidad' no puede estar vacio!");
 					return;

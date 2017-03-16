@@ -111,6 +111,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 				{id:'fecha', field:'fecha', name:'Fecha', 'style':"text-align: center", 'width':'5em'},
 				{id: 'negocio', field:'negocio', name:'Negocio', 'style':"text-align: center", 'width':'15em'},
 				{id: 'total', field:'total', name:'Valor', 'style':"text-align: center", 'width':'5em',formatter: numFormatter},
+				{id: 'vencimiento', field:'vencimiento', name:'Vencimiento', 'style':"text-align: center", 'width':'5em'},
 				{id: 'vencida', field:'vencida', name:'Dias Vencida', 'style':"text-align: center", 'width':'5em'},
 			];
 

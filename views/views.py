@@ -690,30 +690,40 @@ class GetDetalleCuentasPorCobrar(webapp2.RequestHandler):
         qry = dataStoreInterface.buildQuery('Factura', {'pagada':False, 'cliente':[cliente.key for cliente in clienteNegocios]})  
         facturas = qry.fetch()
         response = [{'id':factura.numero, 'factura':factura.numero,'fecha':factura.fecha,'negocio':factura.cliente.get().negocio,
-                     'total':factura.total, 'vencida':diasVencida(factura)} for factura in facturas if not factura.pagada]
+                     'total':factura.total,'vencimiento':factura.fecha + timedelta(factura.cliente.get().diasPago),'vencida':diasVencida(factura)} for factura in facturas if not factura.pagada]
         self.response.out.write(JSONEncoder().encode(response))    
 
 def diasVencida(factura):
     dias = factura.cliente.get().diasPago
     if datetime.today().date() > factura.fecha + timedelta(days=dias):
-        return (datetime.today().date() - factura.fecha + timedelta(days=dias)).days
+        return (datetime.today().date() - (factura.fecha + timedelta(days=dias))).days
     else:
         return 0
 
+#Counts over UnidadesDeAlmacenamiento
+class GetExistencias2(webapp2.RequestHandler):
+    def get(self):
+        canastillas = UnidadDeAlmacenamiento.query().fetch()
+        records = []
+        for canastilla in canastillas:
+            for fracc in canastilla.contenido:
+                values = fracc.to_dict()
+                values['ubicacion'] = canastilla.ubicacion
+                records.append(values)
+        self.response.write(JSONEncoder().encode(records)) 
+
+#Directly uses de FraccionDeLote table.
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
-        existencias = Existencias.query().fetch()
-        records = []
-        if existencias:
-            for existenciasCiudad in existencias:
-                for registro in existenciasCiudad.registros:
-                    entity = registro.get()
-                    records.append({'id': entity.producto.id() + '.' + entity.porcion.id(), 
-                                    'sucursal':entity.sucursal.id(),
-                                    'producto':entity.producto.id(),
-                                    'porcion':entity.porcion.id(),
-                                    'existencias':entity.existencias})
-        self.response.write(json.dumps(records)) 
+        records = FraccionDeLoteUbicado.query().fetch()
+        self.response.write(JSONEncoder().encode(records)) 
+
+
+class GetContenidoUnidadDeAlmacenamiento(webapp2.RequestHandler):
+    def get(self):
+        ubicacion = self.request.get('ubicacion')
+        canastilla = UnidadDeAlmacenamiento.get_by_id(ubicacion)
+        self.response.write(JSONEncoder().encode(canastilla.contenido))
 
 class Fix(webapp2.RequestHandler):
     def get(self): 

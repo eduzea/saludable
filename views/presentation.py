@@ -111,14 +111,17 @@ def getIdString(field,entity_class):
     idname = field + '_' + entity_class
     return 'id="' + idname + '" name="' + idname + '" '
 
-def getOptions(entityClass):
-    options = classModels[entityClass].query().fetch()
+def getOptions(entityClass, sortField=None):
+    if sortField is None:
+        options = classModels[entityClass].query().fetch()
+    else:
+        options = classModels[entityClass].query().order(classModels[entityClass]._properties[sortField]).fetch()
     return options
 
-def getOptionsHTML(entityClass):
+def getOptionsHTML(entityClass, sortField=None):
     if entityClass not in classModels:
         entityClass = entityClass._kind
-    options = getOptions(entityClass)
+    options = getOptions(entityClass, sortField)
     html = ''
     for option in options:
         if not option.activo: continue
@@ -165,11 +168,15 @@ def getTagHTML(prop,entity_class, customId=None):
         else:
             attrReplace += key + '="' + value + '" '
     if type(propType) == ndb.KeyProperty:
-        innerReplace += getOptionsHTML(propType)
+        sortField = None
+        if 'sort' in prop:
+            sortField = prop['sort']
+        innerReplace += getOptionsHTML(propType, sortField)
         if propType._repeated == True:
             postReplace += repeatedPropHTML(prop['id'],entity_class)
     elif type(propType) == ndb.StructuredProperty:
         structPropHTML = structuredPropHTML(propType,prop['id'],entity_class)
+        attrReplace = attrReplace.replace('id="', 'id="struct') # This is to avoid the structured prop form being interpreted as a field
         innerReplace += structPropHTML['inner']
         postReplace += structPropHTML['post'] 
     html = html.replace('ATTR_REPLACE',attrReplace).replace('INNER_REPLACE',innerReplace).replace('POST_REPLACE',postReplace)

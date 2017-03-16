@@ -1,12 +1,26 @@
 from __future__ import division
 from google.appengine.ext import ndb
 from datetime import datetime, timedelta
+from google.appengine.ext.db import ComputedProperty
 
+class Initialized(ndb.Model):
+    pass
 
 class Record(ndb.Model):
     fechaCreacion = ndb.DateProperty()
     empleadoCreador = ndb.StringProperty(indexed=True)
     activo = ndb.BooleanProperty(default = True)
+    rotulo = ndb.ComputedProperty(lambda self: getRotulo(self))
+    
+def getRotulo(self):
+    rotulo = '.'.join([key2str(getattr(self, key)) for key in keyDefs[self._class_name()]])
+    return rotulo
+
+def key2str(key):
+    if type(key) is ndb.Key:
+        return str(key.id())
+    else:
+        return str(key)
 
 class Empleado(Record):
     nombre = ndb.StringProperty(indexed=True)
@@ -160,27 +174,47 @@ class OtrosIngresos(Record):
     total = ndb.IntegerProperty()
     
 ############ INVENTARIO ####################
-
-class InventarioRegistro(Record):
+class FraccionDeLote(Record):
     fecha = ndb.DateProperty()
-    sucursal = ndb.KeyProperty(kind=Sucursal)
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
-    existencias = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: '')
+    cantidad = ndb.IntegerProperty()
 
-class Inventario(Record):
-    sucursal = ndb.KeyProperty(kind=Sucursal)
+# Uso esto porque el manejo de la StructuredProperties dificulta el 
+# poner una referencia al padre en la clase misma, 
+# por todo lo que se automatiza en el cliente a apartir de la definicion de la clase 
+class FraccionDeLoteUbicado(FraccionDeLote):
+    ubicacion = ndb.StringProperty(indexed=True)
+
+class Fila(Record):
+    nombre=ndb.StringProperty(indexed=True)
+
+class Columna(Record):
+    nombre=ndb.IntegerProperty(indexed=True)
+    
+class Nivel(Record):
+    nombre=ndb.IntegerProperty(indexed=True)
+
+class UnidadDeAlmacenamiento(Record):
+    fila = ndb.KeyProperty(kind = Fila)
+    columna = ndb.KeyProperty(kind = Columna)
+    nivel = ndb.KeyProperty(kind = Nivel)
+    ubicacion = ndb.ComputedProperty(lambda self: '{0}{1}-{2}'.format(self.fila.id(), self.columna.id(), self.nivel.id()))
+    contenido = ndb.StructuredProperty(FraccionDeLote, repeated = True)
+
+class TipoMovimiento(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    
+class MovimientoDeInventario(Record):
+    fechaMovimiento = ndb.DateProperty()
+    ubicacion = ndb.KeyProperty(kind = UnidadDeAlmacenamiento)
+    tipo = ndb.KeyProperty(kind=TipoMovimiento)
     fecha = ndb.DateProperty()
-    registros = ndb.KeyProperty(kind=InventarioRegistro, repeated = True)
+    producto = ndb.KeyProperty(kind=Producto)
+    porcion = ndb.KeyProperty(kind=Porcion)
+    cantidad = ndb.IntegerProperty()
 
-class ExistenciasRegistro(InventarioRegistro):
-    pass
-
-class Existencias(Inventario):
-    ultimoInventario = ndb.KeyProperty(kind=Inventario)
-    ultimasFacturas = ndb.KeyProperty(kind=Factura, repeated=True)
-    registros = ndb.KeyProperty(kind=ExistenciasRegistro, repeated = True)
     
 class ProductoPorcion(Record):
     porcion = ndb.KeyProperty(kind=Porcion)
@@ -411,4 +445,126 @@ class Pasivo(Record):
     subcuenta = ndb.KeyProperty(kind=SubCuenta)
     total = ndb.IntegerProperty()
     
-            
+keyDefs = {'Cliente':['nombre','negocio'],
+           'Producto':['nombre'], 
+           'Porcion':['valor','unidades'], 
+           'GrupoDePrecios':['nombre'],
+           'Precio':['producto','porcion','grupoDePrecios'], 
+           'Empleado':['nombre','apellido'],
+           'Sucursal':['nombre'],
+           'Ciudad':['nombre'], 
+           'Factura':['numero'],
+           'Venta':['producto','porcion'],
+           'Egreso':['numero'],
+           'LoteDeCompra':['fecha','fruta','proveedor'],
+           'Compra':['bienoservicio'], 
+           'Remision':['numero'],
+           'Proveedor':['nombre'],
+           'Bienoservicio':['nombre'],
+           'Fruta':['nombre'],
+           'LoteDeCompra':['fruta','proveedor','fecha'],
+           'PorcionCompra':['valor','unidades'],
+           'TipoEgreso':['nombre'],
+           'TipoAcreedor':['nombre'],
+           'Acreedor':['nombre'],
+           'Deuda':['numero'],
+           'Clase':['pucNumber'],
+           'Grupo':['pucNumber'],
+           'Cuenta':['pucNumber'],
+           'SubCuenta':['pucNumber'],
+           'OtrosIngresos':['numero'],
+           'CapitalSocial':['socio'],
+           'CapitalPagado':['fecha'],
+           'ActivoFijo':['numero'],
+           'CuentaBancaria':['numero'],
+           'Banco':['nombre'],
+           'TipoDeCuenta':['nombre'],
+           'SaldoCuentaBancaria':['fecha','cuenta'],
+           'CuentaPorCobrar':['cliente'],
+           'MedioDePago':['nombre'],
+           'CuentaTransferencias':['numero'],
+           'PagoRecibido':['numero'],
+           'TipoMovimiento':['nombre'],
+           'Existencias':['fecha','producto','porcion'],
+           'MovimientoDeInventario':['fechaMovimiento','ubicacion','tipo','fecha','producto','porcion'],
+           'UnidadDeAlmacenamiento':['fila','columna','nivel'],
+           'FraccionDeLote':['fecha','producto','porcion'],
+           'FraccionDeLoteUbicado':['ubicacion','fecha','producto','porcion'],
+           'ExistenciasRegistro':['sucursal','producto','porcion'],
+           'Produccion':['fecha','sucursal','fruta'],
+           'ProductoPorcion':['porcion'],
+           'Fuente':['nombre'],
+           'Fila':['nombre'],
+           'Columna':['nombre'],
+           'Nivel':['nombre'],
+           ##########
+           'NumeroFactura':['consecutivo'],
+           'NumeroRemision':['consecutivo'],
+           'NumeroEgreso':['consecutivo'],              
+           'NumeroDeuda':['consecutivo'],
+           'NumeroOtrosIngresos':['consecutivo'],
+           'NumeroActivoFijo':['consecutivo'],
+           'NumeroPagoRecibido':['consecutivo'],
+           }
+classModels = {'Cliente':Cliente, 
+               'Producto':Producto,
+               'Porcion':Porcion, 
+               'Precio':Precio, 
+               'GrupoDePrecios':GrupoDePrecios, 
+               'Factura':Factura, 
+               'Remision':Remision ,
+               'Empleado':Empleado, 
+               'NumeroFactura':NumeroFactura, 
+               'Venta':Venta,
+               'Proveedor':Proveedor, 
+               'Bienoservicio':Bienoservicio,
+               'Fruta':Fruta,
+               'LoteDeCompra':LoteDeCompra,
+               'LoteDeCompra':LoteDeCompra,
+               'Clase':Clase,
+               'Grupo':Grupo,
+               'Cuenta':Cuenta,
+               'SubCuenta':SubCuenta, 
+               'PorcionCompra':PorcionCompra, 
+               'Egreso':Egreso,
+               'Fuente':Fuente,
+               'Compra':Compra,
+               'TipoEgreso':TipoEgreso,
+               'TipoAcreedor':TipoAcreedor,
+               'Sucursal':Sucursal,
+               'Ciudad':Ciudad,
+               'Acreedor':Acreedor,
+               'Deuda':Deuda,
+               'Devolucion':Devolucion,
+               'OtrosIngresos':OtrosIngresos,
+               'CapitalSocial':CapitalSocial,
+               'CapitalPagado':CapitalPagado,
+               'ActivoFijo':ActivoFijo,
+               'CuentaBancaria':CuentaBancaria,
+               'Banco':Banco,
+               'TipoDeCuenta':TipoDeCuenta,
+               'SaldoCuentaBancaria':SaldoCuentaBancaria,
+               'CuentaPorCobrar':CuentaPorCobrar,
+               'MedioDePago':MedioDePago,
+               'CuentaTransferencias':CuentaTransferencias,
+               'PagoRecibido':PagoRecibido,
+               'FraccionDeLote':FraccionDeLote,
+               'FraccionDeLoteUbicado':FraccionDeLoteUbicado,               
+               'MovimientoDeInventario':MovimientoDeInventario,
+               'TipoMovimiento':TipoMovimiento,
+               'UnidadDeAlmacenamiento':UnidadDeAlmacenamiento,
+               'Fila':Fila,
+               'Columna':Columna,
+               'Nivel':Nivel,
+               'Produccion':Produccion,
+               'ProductoPorcion':ProductoPorcion,
+               'Fuente':Fuente}
+
+singletons = {'NumeroFactura':NumeroFactura,
+              'NumeroRemision':NumeroRemision,
+              'NumeroEgreso':NumeroEgreso,              
+              'NumeroDeuda':NumeroDeuda,
+              'NumeroOtrosIngresos':NumeroOtrosIngresos,
+              'NumeroActivoFijo':NumeroActivoFijo,
+              'NumeroPagoRecibido':NumeroPagoRecibido,
+              }
