@@ -54,11 +54,28 @@ dataStoreInterface.registerFollowUpLogic('post', 'update', 'UnidadDeAlmacenamien
 
 def updateUnidadDeAlamcenamiento(mi):
     ubicacion = mi.ubicacion
-    keyStr = '.'.join([mi.fecha,mi.producto,mi.porcion])
-    canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.ubicacion == ubicacion).fetch()[0]
-    for fraccion in canastilla.contenido:
-        pass
+    keyStr = '.'.join([mi.fecha.strftime('%Y-%m-%d'),mi.producto.id(),mi.porcion.id()])
+    canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.key == ubicacion).fetch()[0]
+    presente = False
+    for idx,fdl in enumerate(canastilla.contenido):
+        if fdl.rotulo == keyStr: #lote is in canastilla
+            presente = True
+            tipo = -1 if mi.tipo.id() == 'SALIDA' else 1
+            fdl.cantidad = fdl.cantidad + tipo * mi.cantidad
+            if fdl.cantidad == 0:
+                canastilla.contenido.remove(fdl)
+            canastilla.contenido[idx] = fdl
+            canastilla.put()
+                
+    if not presente: # its a new lote
+        values = {'fecha':mi.fecha, 'producto':mi.producto, 'porcion': mi.porcion, 'cantidad':mi.cantidad}
+        fdl = FraccionDeLote(**values)
+        canastilla.contenido.append(fdl)
+        canastilla.put()
+        updateFraccionDeLote(canastilla)
 
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
+dataStoreInterface.registerFollowUpLogic('post', 'update', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
 
 ####################################################################################################
 def removeEgreso(egreso):

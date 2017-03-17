@@ -109,8 +109,10 @@ function(dom,registry,domAttr,request,topic,number)
 					fechaSelect.onChange = function(){
 						var fecha = this.value.toISOString().slice(0,10);
 						if (!lotes.hasOwnProperty(fecha)){
-							alert("Esta canastilla no contiene este lote!");
-							fechaSelect.set('value',Object.keys(lotes)[0]);
+							if (tipoSelect.value == 'SALIDA'){
+								alert("Esta canastilla no contiene este lote!");
+								fechaSelect.set('value',Object.keys(lotes)[0]);
+							}
 							return;
 						}
 						var productoSelect = registry.byId('producto_MovimientoDeInventario');
