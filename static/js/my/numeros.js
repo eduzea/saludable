@@ -7,8 +7,9 @@ function(request,registry,parser,dom,on) {
 			dom.byId('numeroMsg').innerHTML = response;
 		});
 	};
-	var numbers = ['Factura','Remision','Egreso','Deuda','OtrosIngresos','PagoRecibido'];
+	var numbers = ['Pedido','Factura','Remision','Egreso','Deuda','OtrosIngresos','PagoRecibido'];
 	numbers.forEach(function(model){
+		dom.byId('numerox_' + model).readOnly = false
 		parser.instantiate([dom.byId('num'+ model + 'Btn')]);
 		parser.instantiate([dom.byId('numerox_' + model)]);
 		var numBtn = registry.byId('num'+ model + 'Btn');

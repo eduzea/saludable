@@ -52,19 +52,28 @@ def updateFraccionDeLote(unidadDeAlmacenamiento):
 dataStoreInterface.registerFollowUpLogic('post', 'create', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
 dataStoreInterface.registerFollowUpLogic('post', 'update', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
 
+def removeFraccionDeLoteUbicado(fdl, ubicacion):
+    values = fdl.to_dict()
+    params = {'fecha':values['fecha'],'producto':values['producto'], 'porcion':values['porcion']}
+    entities = dataStoreInterface.buildQuery('FraccionDeLoteUbicado',params).fetch()
+    for entity in entities:
+        entity.key.delete()
+        
+
 def updateUnidadDeAlamcenamiento(mi):
     ubicacion = mi.ubicacion
-    keyStr = '.'.join([mi.fecha.strftime('%Y-%m-%d'),mi.producto.id(),mi.porcion.id()])
     canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.key == ubicacion).fetch()[0]
     presente = False
     for idx,fdl in enumerate(canastilla.contenido):
-        if fdl.rotulo == keyStr: #lote is in canastilla
+        if fdl.rotulo == mi.lote.id(): #lote is in canastilla
             presente = True
             tipo = -1 if mi.tipo.id() == 'SALIDA' else 1
             fdl.cantidad = fdl.cantidad + tipo * mi.cantidad
             if fdl.cantidad == 0:
+                removeFraccionDeLoteUbicado(fdl, canastilla.ubicacion)
                 canastilla.contenido.remove(fdl)
-            canastilla.contenido[idx] = fdl
+            else:
+                canastilla.contenido[idx] = fdl
             canastilla.put()
                 
     if not presente: # its a new lote
@@ -72,10 +81,57 @@ def updateUnidadDeAlamcenamiento(mi):
         fdl = FraccionDeLote(**values)
         canastilla.contenido.append(fdl)
         canastilla.put()
-        updateFraccionDeLote(canastilla)
+    
+    updateFraccionDeLote(canastilla)
 
 dataStoreInterface.registerFollowUpLogic('post', 'create', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
 dataStoreInterface.registerFollowUpLogic('post', 'update', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
+
+################# PEDIDOS ####################################
+
+def validarPedido(pedido):
+    items = pedido.items
+    ordenDeSalida = []
+    faltan=[]
+    for item in items:
+        params = {'producto':item.producto, 'porcion':item.porcion, 'sortBy':'fecha'}
+        fdls = dataStoreInterface.buildQuery('FraccionDeLoteUbicado', params).fetch()
+        cant = 0
+        for fdl in fdls:
+            orden = {'ubicacion':fdl.ubicacion,
+                     'fecha':fdl.fecha.strftime('%Y-%m-%d'),
+                     'producto':fdl.producto.id(),
+                     'porcion':fdl.porcion.id()}
+            cant += fdl.cantidad
+            if cant < item.cantidad:
+                orden['cantidad'] =  fdl.cantidad
+                ordenDeSalida.append(orden)
+                crearMovimientoDeInventario(fdl,'SALIDA', fdl.cantidad)
+            else:
+                orden['cantidad'] =  cant - item.cantidad
+                ordenDeSalida.append(orden)
+                crearMovimientoDeInventario(fdl,'SALIDA', cant - item.cantidad)
+                break
+        if cant < item.cantidad:
+            faltan.append({'producto':item.producto.id(), 'porcion':item.porcion.id(), 'cantidad':str(item.cantidad - cant)})
+    print ordenDeSalida, faltan #This should be used to create the printout of the orden de salida
+                    
+def crearMovimientoDeInventario(fdl, tipo, cantidad):
+    params = {'fechaMovimiento' : datetime.today(),
+              'ubicacion' : fdl.ubicacion,
+              'tipo' : tipo,
+              'fecha' : fdl.fecha,
+              'producto' : fdl.producto,
+              'porcion' : fdl.porcion,
+              'cantidad' : cantidad}
+    return dataStoreInterface.create_entity('MovimientoDeInventario', params)['entity']
+            
+####################!!!! incomplete
+
+
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'Pedido', validarPedido)
+dataStoreInterface.registerFollowUpLogic('post', 'update', 'Pedido', validarPedido)
+
 
 ####################################################################################################
 def removeEgreso(egreso):

@@ -320,7 +320,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 		        			dijit.set('checked', rowData[id]);
 		        		}else{
 			        		dijit.set('value', getValueFromLabel(dijit,rowData[id]),false);
-			        		dijit.set("displayedValue", rowData[id],false);		        			
+			        		//dijit.set("displayedValue", rowData[id],false);		        			
 		        		}
 		        	}
 		        		   				

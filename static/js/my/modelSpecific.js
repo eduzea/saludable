@@ -1,6 +1,6 @@
 //# sourceURL=../static/js/my/modelSpecific.js
-require(['dojo/dom','dijit/registry',"dojo/dom-attr",'dojo/request','dojo/topic','dojo/number'],
-function(dom,registry,domAttr,request,topic,number)
+require(['dojo/dom','dijit/registry',"dojo/dom-attr",'dojo/request','dojo/topic','dojo/number','dojo/dom-style'],
+function(dom,registry,domAttr,request,topic,number,domStyle)
 {
 	//Specify model specific grid summary operations
 	saludable.gridSummaryFuncs = 
@@ -70,102 +70,114 @@ function(dom,registry,domAttr,request,topic,number)
 		'MovimientoDeInventario':
 		function(){
 			var original = {};
+			var onChangeInit = {};
 			var tipoSelect = registry.byId('tipo_MovimientoDeInventario');
 			tipoSelect.onChange = function(){
 				if (this.value == 'SALIDA'){
+					//Hide producto and porcion selects, show lote select
+					domStyle.set(registry.byId('producto_MovimientoDeInventario').domNode, 'display', 'none');
+					domStyle.set(registry.byId('porcion_MovimientoDeInventario').domNode, 'display', 'none');
+					domStyle.set(registry.byId('lote_MovimientoDeInventario').domNode, 'display', 'block');
 					var lotes = {};
 					var ubicacionSelect = registry.byId('ubicacion_MovimientoDeInventario');
-					ubicacionSelect.onChange = function(){
+					onChangeInit['ubicacionSelect'] ? '' : ubicacionSelect.onChange = function(){
+						onChangeInit['ubicacionSelect']=true;
 						request('/getContenidoUnidadDeAlmacenamiento?ubicacion='+  this.value, {handleAs:'json'}).then(
 							function(response){
 								lotes = {};
 								response.forEach(
 								function(lote){
-									if (lote.fecha in lotes){
-										if (lote.producto in lotes[lote.fecha]){
-											if (lote.porcion in lotes[lote.fecha][lotes.producto]){
-												lotes[lote.fecha][lotes.producto][lote.porcion] = lote.cantidad;
-											}else{
-												lotes[lote.fecha][lotes.producto] = {};
-												lotes[lote.fecha][lotes.producto][lote.porcion] = lote;
-											}
-										}else{
-											lotes[lote.fecha][lote.producto] = {};
-											lotes[lote.fecha][lote.producto][lote.porcion]= lote.cantidad;
-										}
-										lotes[lote.fecha][lote.producto];
-									}else{
-										lotes[lote.fecha] = {};
-										lotes[lote.fecha][lote.producto] = {};
-										lotes[lote.fecha][lote.producto][lote.porcion] = lote.cantidad;
-									}
+									var key = lote.fecha + '.' + lote.producto + '.' + lote.porcion;
+									lotes[key]=lote;
 								})
-								fechaSelect.set('value',Object.keys(lotes)[0]);
-								fechaSelect.onChange();
+								if (Object.keys(lotes)[0]){
+									var options = Object.keys(lotes).map(function(lote){
+										return {'value': lote, 'label':lote };
+									})
+									loteSelect.set('options',options);
+									loteSelect.startup();
+								}else{
+									alert('ESTA CANASTILLA ESTA VACIA.');
+									tipoSelect.set('value','ENTRADA');
+								}
+								loteSelect.onChange();
 							}
 						)
 					}
-					var fechaSelect = registry.byId('fecha_MovimientoDeInventario');
-					fechaSelect.onChange = function(){
-						var fecha = this.value.toISOString().slice(0,10);
-						if (!lotes.hasOwnProperty(fecha)){
-							if (tipoSelect.value == 'SALIDA'){
-								alert("Esta canastilla no contiene este lote!");
-								fechaSelect.set('value',Object.keys(lotes)[0]);
-							}
-							return;
-						}
-						var productoSelect = registry.byId('producto_MovimientoDeInventario');
-						productoSelect.onChange = function(){
-							var producto = this.value;
-							var porcionSelect = registry.byId('porcion_MovimientoDeInventario');
-							porcionSelect.onChange = function(){
-								var porcion = this.value;
-								var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
-								cantidadField.set('value',lotes[fecha][producto][porcion])
-							}
-							var items =[];
-							var options = Object.keys(lotes[fecha][producto]);
-							options.forEach(function(option){
-								items.push({ "value": option, "label": option});
-							});
-							if (! ('porcion' in original) ){
-								original['porcion'] = porcionSelect.options; //copy the options to restore if needed 
-							}
-							porcionSelect.set("options", items)
-							porcionSelect.startup();
-							porcionSelect.onChange();
-
-						}
-						var items = [];
-						var options = Object.keys(lotes[fecha]);
-						options.forEach(function(option){
-							items.push({ "value": option, "label": option});
-						});					
-						if (! ('producto' in original) ){
-							original['producto'] = productoSelect.options; //copy the options to restore if needed 
-						}
-						productoSelect.set("options", items)
-						productoSelect.startup();
-						productoSelect.onChange();
+					var loteSelect = registry.byId('lote_MovimientoDeInventario');
+					onChangeInit['loteSelect'] ? '' : loteSelect.onChange = function(){
+						onChangeInit['loteSelect'] = true;
+						var key = this.value;
+						registry.byId('cantidad_MovimientoDeInventario').set('value',lotes[key].cantidad);
+						registry.byId('producto_MovimientoDeInventario').set('value',lotes[key].producto);
+						registry.byId('porcion_MovimientoDeInventario').set('value',lotes[key].porcion);
 					}
 					ubicacionSelect.onChange();
 				}else{//ENTRADA
-					if ('producto' in original){
-						var productoSelect = registry.byId('producto_MovimientoDeInventario');
-						productoSelect.set("options", original['producto'])
-						productoSelect.startup();
-					}
-
-					if ('porcion' in original){
-						var porcionSelect = registry.byId('porcion_MovimientoDeInventario');
-						porcionSelect.set("options", original['porcion'])
-						porcionSelect.startup();
-					}
+					//Show producto and porcion selects, hide lote select
+					domStyle.set(registry.byId('producto_MovimientoDeInventario').domNode, 'display', 'block');
+					domStyle.set(registry.byId('porcion_MovimientoDeInventario').domNode, 'display', 'block');
+					domStyle.set(registry.byId('lote_MovimientoDeInventario').domNode, 'display', 'none');
 					var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
 					cantidadField.set('value','');
 				}
 			}
+			tipoSelect.onChange();
+		},
+		'Pedido':
+		function(){	
+			var resetProducto = function(cliente){	
+			request.post('/getProducto', {
+				data : {'cliente':cliente},
+				handleAs:'json'
+			}).then(function(response) {
+					var items = [];
+					response.forEach(function(producto){
+						items.push({ "value": producto, "label": producto });
+					});
+//					var productoStore = new Store({
+//			        	idProperty: "value",
+//			            data: items
+//			        });
+					var productoSelect = registry.byId('producto_Venta');
+//					productoSelect.setStore(productoStore);
+					productoSelect.set("options", items).reset();
+					resetPorcion(productoSelect.value);
+				});
+			};
+			var resetPorcion = function(producto){
+				if (producto == 'No hay precios definidos') return;
+				cliente = registry.byId('cliente_Pedido').value;	
+				request.post('/getPorcion', {
+						data : {'cliente':cliente, 'producto': producto},
+						handleAs:'json'
+					}).then(function(response) {
+						var items = [];
+						response.forEach(function(producto){
+							items.push({ "value": producto, "label": producto });
+						});
+						var porcionSelect = registry.byId('porcion_Venta');
+						porcionSelect.set("options", items).reset();
+						porcionSelect.reset();
+				});
+			};
+		    var clienteSelect = registry.byId('cliente_Pedido');
+		    clienteSelect.onChange = resetProducto;
+		    var productoSelect = registry.byId('producto_Venta');
+		    productoSelect.onChange = resetPorcion;
+		    var porcionSelect = registry.byId('porcion_Venta');
+		    resetProducto(clienteSelect.value);
+			var selects = [clienteSelect, productoSelect, porcionSelect];
+			selects.forEach(function(select){
+				select.listenerfunc = function(data){
+		    		select.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
+		    		var store = new Memory({data: select.options});
+		    		var sorted = store.query({},{sort: [{ attribute: "label"}]});
+		    		select.options = sorted;
+		    		select.set("value",sorted[0].value);
+		   		};
+		   		topic.subscribe(select.id.replace( '_Pedido','').toUpperCase(), select.listenerfunc);
+			});	
 		}
-	};
+	}
 });

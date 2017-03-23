@@ -1,0 +1,3752 @@
+[
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "FRESA.MARACUYA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.MARACUYA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.1.1",
+		"ubicacion": "A1-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "CIRUELA.DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.CIRUELA.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.1.2",
+		"ubicacion": "A1-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "SMOTHIE.LMF",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.SMOTHIE.LMF.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "FRUTOS.ROJOS",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRUTOS.ROJOS.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRUTOS.ROJOS",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRUTOS.ROJOS.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.1.5",
+		"ubicacion": "A1-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 7,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.1.7",
+		"ubicacion": "A1-7",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.10.1",
+		"ubicacion": "A10-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 30,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.10.2",
+		"ubicacion": "A10-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO.BICHE",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.BICHE.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.10.3",
+		"ubicacion": "A10-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "UVA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.UVA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "UVA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.UVA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.10.5",
+		"ubicacion": "A10-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 10,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.10.6",
+		"ubicacion": "A10-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.1",
+		"ubicacion": "A11-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.2",
+		"ubicacion": "A11-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.3",
+		"ubicacion": "A11-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "GUANABANA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUANABANA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.4",
+		"ubicacion": "A11-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 6,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.6",
+		"ubicacion": "A11-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 8,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 11,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.11.8",
+		"ubicacion": "A11-8",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 100,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.1",
+		"ubicacion": "A12-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-15",
+				"activo": true,
+				"rotulo": "2017-03-15.TOMATE.DE.ARBOL.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.2",
+		"ubicacion": "A12-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "PATILLA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PATILLA.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "PATILLA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PATILLA.180.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "180.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "SMOTHIE.GMB",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.SMOTHIE.GMB.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "MELON",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MELON.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.3",
+		"ubicacion": "A12-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.4",
+		"ubicacion": "A12-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 9,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.5",
+		"ubicacion": "A12-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "LULADA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULADA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 12,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.12.6",
+		"ubicacion": "A12-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.1",
+		"ubicacion": "A2-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 5,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.2",
+		"ubicacion": "A2-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 22,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.3",
+		"ubicacion": "A2-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.4",
+		"ubicacion": "A2-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 27,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.5",
+		"ubicacion": "A2-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 7,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.2.7",
+		"ubicacion": "A2-7",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.3.1",
+		"ubicacion": "A3-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.3.2",
+		"ubicacion": "A3-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "FRESA.MARACUYA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.MARACUYA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.3.3",
+		"ubicacion": "A3-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.3.6",
+		"ubicacion": "A3-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 7,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.3.7",
+		"ubicacion": "A3-7",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 30,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.4.1",
+		"ubicacion": "A4-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "PATILLA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PATILLA.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.4.2",
+		"ubicacion": "A4-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.110.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "110.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.4.3",
+		"ubicacion": "A4-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.4.5",
+		"ubicacion": "A4-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 3,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.1",
+		"ubicacion": "A5-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 1,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.2",
+		"ubicacion": "A5-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 3,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.3",
+		"ubicacion": "A5-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.4",
+		"ubicacion": "A5-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.5",
+		"ubicacion": "A5-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.130.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "130.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.5.6",
+		"ubicacion": "A5-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.1",
+		"ubicacion": "A6-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.2",
+		"ubicacion": "A6-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.3",
+		"ubicacion": "A6-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.4",
+		"ubicacion": "A6-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 19,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 9,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.60.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "60.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.5",
+		"ubicacion": "A6-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.6",
+		"ubicacion": "A6-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 7,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.6.7",
+		"ubicacion": "A6-7",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.7.1",
+		"ubicacion": "A7-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.7.2",
+		"ubicacion": "A7-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "PI\u00d1A.PICADA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PI\u00d1A.PICADA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "PI\u00d1A",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PI\u00d1A.180.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "180.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.7.3",
+		"ubicacion": "A7-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 20,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.7.4",
+		"ubicacion": "A7-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 22,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.7.5",
+		"ubicacion": "A7-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "FRUTOS.ROJOS.PLUS",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRUTOS.ROJOS.PLUS.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.1",
+		"ubicacion": "A8-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 15,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.2",
+		"ubicacion": "A8-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MARACUYA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MARACUYA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.3",
+		"ubicacion": "A8-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.110.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "110.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.4",
+		"ubicacion": "A8-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 30,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.5",
+		"ubicacion": "A8-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 12,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "MARACUYA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MARACUYA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.8.6",
+		"ubicacion": "A8-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.9.2",
+		"ubicacion": "A9-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 31,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.9.3",
+		"ubicacion": "A9-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 7,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.9.4",
+		"ubicacion": "A9-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 32,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.9.5",
+		"ubicacion": "A9-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 12,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "A",
+		"rotulo": "A.9.6",
+		"ubicacion": "A9-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 5,
+				"producto": "GUANABANA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUANABANA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.1.1",
+		"ubicacion": "B1-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 24,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.1.2",
+		"ubicacion": "B1-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 4,
+				"producto": "MANGO.BICHE",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.BICHE.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.1.3",
+		"ubicacion": "B1-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 20,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.1.5",
+		"ubicacion": "B1-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "UVA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.UVA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRUTOS.ROJOS",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRUTOS.ROJOS.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.1.6",
+		"ubicacion": "B1-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.1",
+		"ubicacion": "B10-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MARACUYA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MARACUYA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MARACUYA.PEPA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MARACUYA.PEPA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.2",
+		"ubicacion": "B10-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 23,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.3",
+		"ubicacion": "B10-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 7,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.4",
+		"ubicacion": "B10-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA.BANANO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.BANANO.160.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "160.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "MELON",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MELON.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "UVA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.UVA.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.5",
+		"ubicacion": "B10-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 10,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.10.6",
+		"ubicacion": "B10-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.1",
+		"ubicacion": "B2-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.2",
+		"ubicacion": "B2-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 8,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.3",
+		"ubicacion": "B2-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.4",
+		"ubicacion": "B2-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.5",
+		"ubicacion": "B2-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 3,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.2.6",
+		"ubicacion": "B2-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.1",
+		"ubicacion": "B3-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.2",
+		"ubicacion": "B3-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 6,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			},
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 3,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.3",
+		"ubicacion": "B3-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.4",
+		"ubicacion": "B3-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.5",
+		"ubicacion": "B3-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.3.6",
+		"ubicacion": "B3-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.1",
+		"ubicacion": "B4-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 11,
+				"producto": "FRESA.PULPA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.PULPA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.2",
+		"ubicacion": "B4-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.3",
+		"ubicacion": "B4-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 20,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.120.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "120.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.4",
+		"ubicacion": "B4-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.5",
+		"ubicacion": "B4-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 20,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.4.6",
+		"ubicacion": "B4-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.5.1",
+		"ubicacion": "B5-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.5.3",
+		"ubicacion": "B5-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.5.4",
+		"ubicacion": "B5-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.5.5",
+		"ubicacion": "B5-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.5.6",
+		"ubicacion": "B5-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.1",
+		"ubicacion": "B6-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "DURAZNO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.DURAZNO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.2",
+		"ubicacion": "B6-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 13,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.3",
+		"ubicacion": "B6-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.4",
+		"ubicacion": "B6-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.5",
+		"ubicacion": "B6-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.6.6",
+		"ubicacion": "B6-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "PI\u00d1A",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PI\u00d1A.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.7.4",
+		"ubicacion": "B7-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 13,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.60.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "60.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.7.5",
+		"ubicacion": "B7-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 12,
+				"producto": "GUANABANA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUANABANA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.8.1",
+		"ubicacion": "B8-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.8.2",
+		"ubicacion": "B8-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.8.4",
+		"ubicacion": "B8-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 9,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.120.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "120.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.8.5",
+		"ubicacion": "B8-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 8,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.8.6",
+		"ubicacion": "B8-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.1",
+		"ubicacion": "B9-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.2",
+		"ubicacion": "B9-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 20,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 3,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.200.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "200.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.3",
+		"ubicacion": "B9-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "PI\u00d1A",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PI\u00d1A.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "PI\u00d1A",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.PI\u00d1A.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "GUANABANA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUANABANA.750.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "750.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.4",
+		"ubicacion": "B9-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.5",
+		"ubicacion": "B9-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 20,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 9,
+		"activo": true,
+		"fila": "B",
+		"rotulo": "B.9.6",
+		"ubicacion": "B9-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 13,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.60.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "60.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.1.1",
+		"ubicacion": "C1-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 16,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.120.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "120.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.1.2",
+		"ubicacion": "C1-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 7,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.1.3",
+		"ubicacion": "C1-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.1.4",
+		"ubicacion": "C1-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 1,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.1.6",
+		"ubicacion": "C1-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 19,
+				"producto": "GUANABANA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUANABANA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.2.1",
+		"ubicacion": "C2-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 7,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.2.2",
+		"ubicacion": "C2-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.2.3",
+		"ubicacion": "C2-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 3,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.2.4",
+		"ubicacion": "C2-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-14",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-14",
+				"cantidad": 16,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 2,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.2.5",
+		"ubicacion": "C2-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "FRUTOS.ROJOS",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRUTOS.ROJOS.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.3.2",
+		"ubicacion": "C3-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.3.3",
+		"ubicacion": "C3-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 1,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.3.4",
+		"ubicacion": "C3-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.150.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "150.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.170.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "170.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.3.5",
+		"ubicacion": "C3-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 3,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.3.6",
+		"ubicacion": "C3-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-17",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-17",
+				"cantidad": 25,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.1",
+		"ubicacion": "C4-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.2",
+		"ubicacion": "C4-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "MORA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MORA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "UVA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.UVA.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.3",
+		"ubicacion": "C4-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 24,
+				"producto": "FEIJOA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FEIJOA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.4",
+		"ubicacion": "C4-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 8,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "LULO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.LULO.120.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "120.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.5",
+		"ubicacion": "C4-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 18,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 4,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.4.6",
+		"ubicacion": "C4-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 1,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.1",
+		"ubicacion": "C5-1",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 4,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 1,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.190.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "190.g"
+			},
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 2,
+				"producto": "FRESA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.FRESA.100.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "100.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.2",
+		"ubicacion": "C5-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.4",
+		"ubicacion": "C5-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 33,
+				"producto": "GUAYABA",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.GUAYABA.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.5",
+		"ubicacion": "C5-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 6,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.6",
+		"ubicacion": "C5-6",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 7,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 5,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.5.7",
+		"ubicacion": "C5-7",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 6,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.6.2",
+		"ubicacion": "C6-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 3,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.6.3",
+		"ubicacion": "C6-3",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 4,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.6.4",
+		"ubicacion": "C6-4",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 5,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 5,
+				"producto": "MANGO",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.MANGO.5000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "5000.g"
+			}
+		],
+		"columna": 6,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.6.5",
+		"ubicacion": "C6-5",
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"nivel": 2,
+		"contenido": [
+			{
+				"fechaCreacion": "2017-03-15",
+				"cantidad": 25,
+				"producto": "TOMATE.DE.ARBOL",
+				"fecha": "2017-03-01",
+				"activo": true,
+				"rotulo": "2017-03-01.TOMATE.DE.ARBOL.1000.g",
+				"empleadoCreador": "eduzea@gmail.com",
+				"porcion": "1000.g"
+			}
+		],
+		"columna": 7,
+		"activo": true,
+		"fila": "C",
+		"rotulo": "C.7.2",
+		"ubicacion": "C7-2",
+		"empleadoCreador": "eduzea@gmail.com"
+	}
+]

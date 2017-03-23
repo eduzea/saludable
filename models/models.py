@@ -81,6 +81,9 @@ class Venta(Record):
     rotulo = ndb.ComputedProperty(lambda self: self.producto.id() +' '+ self.porcion.id())
     
 
+class NumeroPedido(Record):
+    consecutivo = ndb.IntegerProperty()
+
 class NumeroFactura(Record):
     consecutivo = ndb.IntegerProperty()
 
@@ -121,6 +124,15 @@ def fechaVencimientoCheck(factura):
     else:
         print 'WARNING: El cliente de la factura ', factura.numero, ' parece no existir'
         return datetime.today()
+
+class Pedido(Record):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    fechaDeEntrega = ndb.DateProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
+    empleado = ndb.KeyProperty(kind=Empleado)
+    items = ndb.StructuredProperty(Venta,repeated=True)
+    procesado = ndb.BooleanProperty(default = False)
 
 class Factura(Record):
     numero = ndb.IntegerProperty()
@@ -199,7 +211,7 @@ class UnidadDeAlmacenamiento(Record):
     fila = ndb.KeyProperty(kind = Fila)
     columna = ndb.KeyProperty(kind = Columna)
     nivel = ndb.KeyProperty(kind = Nivel)
-    ubicacion = ndb.ComputedProperty(lambda self: '{0}{1}-{2}'.format(self.fila.id(), self.columna.id(), self.nivel.id()))
+    ubicacion = ndb.ComputedProperty(lambda self: '{0}.{1}.{2}'.format(self.fila.id(), self.columna.id(), self.nivel.id()))
     contenido = ndb.StructuredProperty(FraccionDeLote, repeated = True)
 
 class TipoMovimiento(Record):
@@ -207,10 +219,10 @@ class TipoMovimiento(Record):
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
 class MovimientoDeInventario(Record):
-    fechaMovimiento = ndb.DateProperty()
+    fecha = ndb.DateProperty()
     ubicacion = ndb.KeyProperty(kind = UnidadDeAlmacenamiento)
     tipo = ndb.KeyProperty(kind=TipoMovimiento)
-    fecha = ndb.DateProperty()
+    lote = ndb.KeyProperty(kind=FraccionDeLote)
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
@@ -452,7 +464,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Precio':['producto','porcion','grupoDePrecios'], 
            'Empleado':['nombre','apellido'],
            'Sucursal':['nombre'],
-           'Ciudad':['nombre'], 
+           'Ciudad':['nombre'],
+           'Pedido':['numero'], 
            'Factura':['numero'],
            'Venta':['producto','porcion'],
            'Egreso':['numero'],
@@ -486,7 +499,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'PagoRecibido':['numero'],
            'TipoMovimiento':['nombre'],
            'Existencias':['fecha','producto','porcion'],
-           'MovimientoDeInventario':['fechaMovimiento','ubicacion','tipo','fecha','producto','porcion'],
+           'MovimientoDeInventario':['fecha','ubicacion','tipo','lote','producto','porcion'],
            'UnidadDeAlmacenamiento':['fila','columna','nivel'],
            'FraccionDeLote':['fecha','producto','porcion'],
            'FraccionDeLoteUbicado':['ubicacion','fecha','producto','porcion'],
@@ -498,6 +511,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Columna':['nombre'],
            'Nivel':['nombre'],
            ##########
+           'NumeroPedido':['consecutivo'],
            'NumeroFactura':['consecutivo'],
            'NumeroRemision':['consecutivo'],
            'NumeroEgreso':['consecutivo'],              
@@ -510,11 +524,13 @@ classModels = {'Cliente':Cliente,
                'Producto':Producto,
                'Porcion':Porcion, 
                'Precio':Precio, 
-               'GrupoDePrecios':GrupoDePrecios, 
+               'GrupoDePrecios':GrupoDePrecios,
+               'Pedido':Pedido, 
                'Factura':Factura, 
                'Remision':Remision ,
                'Empleado':Empleado, 
                'NumeroFactura':NumeroFactura, 
+               'NumeroPedido':NumeroPedido, 
                'Venta':Venta,
                'Proveedor':Proveedor, 
                'Bienoservicio':Bienoservicio,
@@ -560,7 +576,8 @@ classModels = {'Cliente':Cliente,
                'ProductoPorcion':ProductoPorcion,
                'Fuente':Fuente}
 
-singletons = {'NumeroFactura':NumeroFactura,
+singletons = {'NumeroPedido': NumeroPedido,
+              'NumeroFactura':NumeroFactura,
               'NumeroRemision':NumeroRemision,
               'NumeroEgreso':NumeroEgreso,              
               'NumeroDeuda':NumeroDeuda,

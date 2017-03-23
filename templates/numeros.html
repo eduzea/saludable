@@ -5,6 +5,21 @@
 <div data-dojo-type="dojox/layout/ContentPane" id='numeros' title="Numeros">  
 	<table style="border: 1px solid #9f9f9f;" cellspacing="10">
 		<tr>
+			<td><label>Proximo Numero de Pedido:</label></td>
+			<td>
+				<div>{{tagForField('Pedido',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numPedidoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
 			<td><label>Proximo Numero de Factura:</label></td>
 			<td>
 				<div>{{tagForField('Factura',

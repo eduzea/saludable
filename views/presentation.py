@@ -147,18 +147,19 @@ def structuredPropHTML(propType, fieldName, entity_class):
 
 #This function creates HTLM markup based on Model props and config
 def getTagHTML(prop,entity_class, customId=None):
+    attrReplace = ''
+    innerReplace = ''
+    postReplace = ''
     propType = prop.pop('type')
     if 'default' in prop:
         prop['value'] = str(prop.pop('default'))
     if 'auto' in prop:
         prop['value'] = str(dataStoreInterface.autoNum(entity_class))
         propType = ndb.IntegerProperty()
+        attrReplace = ' readonly ' 
     if propType._repeated and type(propType) is ndb.IntegerProperty:#for the case of delimiter separated lists of numbers
         propType = ndb.StringProperty()
     html = basisTagString[str(propType).partition('(')[0]]
-    attrReplace = ''
-    innerReplace = ''
-    postReplace = ''
     for key,value in prop.iteritems():
         if key == 'id':
             if not customId:

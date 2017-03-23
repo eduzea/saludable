@@ -115,6 +115,9 @@ class DataStoreInterface():
             else:
                 key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
             return key_obj
+        elif isinstance(value, int):
+                key_obj = ndb.Key(propertyType._kind,value)
+                return key_obj
         else:
             raise Exception( "Attempted to assign non-key value to KeyProperty " + key + ": " + str(value) )
         

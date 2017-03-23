@@ -37,7 +37,7 @@ function(dom, domConstruct, parser, registry, on, ContentPane, Model, Tree, Memo
 		var pasivoNodes = makeStore(['CapitalSocial',{name:'Deudas',clickable:false}],'Pasivos');
 		var deudaNodes = makeStore(['Deuda',{name:'AdminDeudas',clickable:false}],'Deudas');
 		var adminDeudasNodes = makeStore(['Acreedor','TipoAcreedor'],'AdminDeudas');
-		var ingresoNodes = makeStore(['Factura',{name:'Remisiones',clickable:false},'PagoRecibido','OtrosIngresos',{name:'AdminIngresos',clickable:false}],'Ingresos');
+		var ingresoNodes = makeStore(['Pedido','Factura',{name:'Remisiones',clickable:false},'PagoRecibido','OtrosIngresos',{name:'AdminIngresos',clickable:false}],'Ingresos');
 		var adminIngresoNodes = makeStore(['Cliente','Producto','Porcion','GrupoDePrecios','Precio'],'AdminIngresos');
 		var remisionNodes = makeStore(['Remision',{name:'Consolidar Factura', clickable:true, template:'ConsolidarFactura'}],'Remisiones');
 		var egresoNodes = makeStore(['Egreso', {name:'Fruta', clickable:true, template:'EgresoFruta'},'LoteDeCompra' ,{name:'AdminEngresos',clickable:false} ],'Egresos');
