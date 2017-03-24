@@ -74,6 +74,12 @@ indexes:
   - name: resumen
   - name: fecha
 
+- kind: FraccionDeLoteUbicado
+  properties:
+  - name: porcion
+  - name: producto
+  - name: ubicacion
+
 - kind: InventarioRegistro
   properties:
   - name: ciudad

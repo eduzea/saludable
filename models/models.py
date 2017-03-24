@@ -223,6 +223,7 @@ class MovimientoDeInventario(Record):
     ubicacion = ndb.KeyProperty(kind = UnidadDeAlmacenamiento)
     tipo = ndb.KeyProperty(kind=TipoMovimiento)
     lote = ndb.KeyProperty(kind=FraccionDeLote)
+    fechaLote = ndb.DateProperty()
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()

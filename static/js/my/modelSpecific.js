@@ -71,16 +71,19 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 		function(){
 			var original = {};
 			var onChangeInit = {};
+			domStyle.set(registry.byId('fechaLote_MovimientoDeInventario').domNode, 'display', 'none');//hidden field
 			var tipoSelect = registry.byId('tipo_MovimientoDeInventario');
 			tipoSelect.onChange = function(){
 				if (this.value == 'SALIDA'){
 					//Hide producto and porcion selects, show lote select
 					domStyle.set(registry.byId('producto_MovimientoDeInventario').domNode, 'display', 'none');
 					domStyle.set(registry.byId('porcion_MovimientoDeInventario').domNode, 'display', 'none');
+					domStyle.set(registry.byId('fechaLote_MovimientoDeInventario').domNode, 'display', 'none');
 					domStyle.set(registry.byId('lote_MovimientoDeInventario').domNode, 'display', 'block');
 					var lotes = {};
 					var ubicacionSelect = registry.byId('ubicacion_MovimientoDeInventario');
-					onChangeInit['ubicacionSelect'] ? '' : ubicacionSelect.onChange = function(){
+					onChangeInit['ubicacionSelect'] ? '' : 
+						ubicacionSelect.onChange = function(){
 						onChangeInit['ubicacionSelect']=true;
 						request('/getContenidoUnidadDeAlmacenamiento?ubicacion='+  this.value, {handleAs:'json'}).then(
 							function(response){
@@ -90,33 +93,39 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 									var key = lote.fecha + '.' + lote.producto + '.' + lote.porcion;
 									lotes[key]=lote;
 								})
-								if (Object.keys(lotes)[0]){
-									var options = Object.keys(lotes).map(function(lote){
-										return {'value': lote, 'label':lote };
-									})
-									loteSelect.set('options',options);
-									loteSelect.startup();
-								}else{
-									alert('ESTA CANASTILLA ESTA VACIA.');
-									tipoSelect.set('value','ENTRADA');
+								if (tipoSelect.value == 'SALIDA'){
+									if (Object.keys(lotes)[0]){
+										var options = Object.keys(lotes).map(function(lote){
+											return {'value': lote, 'label':lote };
+										})
+										loteSelect.set('options',options);
+										loteSelect.startup();
+										loteSelect.onChange();
+									}else{
+										alert('ESTA CANASTILLA ESTA VACIA.');
+										tipoSelect.set('value','ENTRADA');
+									}									
 								}
-								loteSelect.onChange();
 							}
 						)
 					}
 					var loteSelect = registry.byId('lote_MovimientoDeInventario');
-					onChangeInit['loteSelect'] ? '' : loteSelect.onChange = function(){
+					onChangeInit['loteSelect'] ? '' : 
+						loteSelect.onChange = function(){
 						onChangeInit['loteSelect'] = true;
-						var key = this.value;
+						var key = this.attr('displayedValue');
 						registry.byId('cantidad_MovimientoDeInventario').set('value',lotes[key].cantidad);
 						registry.byId('producto_MovimientoDeInventario').set('value',lotes[key].producto);
 						registry.byId('porcion_MovimientoDeInventario').set('value',lotes[key].porcion);
+						registry.byId('fechaLote_MovimientoDeInventario').set('value',lotes[key].fecha);
 					}
 					ubicacionSelect.onChange();
 				}else{//ENTRADA
 					//Show producto and porcion selects, hide lote select
 					domStyle.set(registry.byId('producto_MovimientoDeInventario').domNode, 'display', 'block');
+					registry.byId('producto_MovimientoDeInventario').reset();
 					domStyle.set(registry.byId('porcion_MovimientoDeInventario').domNode, 'display', 'block');
+					registry.byId('porcion_MovimientoDeInventario').reset();
 					domStyle.set(registry.byId('lote_MovimientoDeInventario').domNode, 'display', 'none');
 					var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
 					cantidadField.set('value','');

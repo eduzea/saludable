@@ -46,7 +46,7 @@ def getKey(entityClass,dicc):
             if entity:
                 key += ' ' + unicode(str(entity.key.id()),'utf-8') 
             else:
-                print "Entity not found by key:" + keypart 
+                print "Entity not found by key: " , keypart  , '=' , dicc[keypart]  
         else:
             key += ' ' + unicode(dicc[keypart])
     return '.'.join(key.split())
