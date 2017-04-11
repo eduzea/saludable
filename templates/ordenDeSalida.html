@@ -1,0 +1,254 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<style id="Book1_31768_Styles"><!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl1531768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6331768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6431768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6531768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:center;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6631768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:.5pt solid windowtext;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6731768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:left;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6831768
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"Short Date";
+	text-align:left;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+--></style>
+</head>
+
+<body>
+
+<div id="Book1_31768" align=center x:publishsource="Excel">
+<div id="ordenDeSalidaPrint">
+<button  data-dojo-type="dijit/form/Button" type="button">Imprimir Orden de Salida
+	<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+		require(["dojo/dom","dojo/query"], function(dom,query){
+			html = dom.byId('ordenDeSalida_dialog').innerHTML;
+			var myWindow = window.open();
+			myWindow.document.write(html);
+			myWindow.document.title = 'Orden de Salida';
+			var button = dom.byId('ordenDeSalidaPrint',myWindow.document);
+			button.parentNode.removeChild(button);
+			var titleBar = query('.dijitDialogTitleBar',myWindow.document)[0];
+			titleBar.parentNode.removeChild(titleBar);
+        });
+	</script>
+</button>
+<button  data-dojo-type="dijit/form/Button" type="button">Facturar
+	<script type="dojo/on" data-dojo-event="click" data-dojo-args="evt">
+		require(["dojo/dom","dojo/query","dojo/request"], function(dom,query,request){
+			var url = '/crearFacturaFromPedido?pedido={{pedido}}';
+			request(url, {handleAs:'json'}).then(function(response){
+				console.log(response);
+				if (response.result == 'Success'){
+					window.open('/mostrarFactura?id=' + response.id + '&entityClass=Factura');
+				}
+				else{
+					alert(response.msg);
+				}	
+			});
+        });
+	</script>
+</button>
+</div>
+<table id = 'ordenDeSalidaTable' border=0 cellpadding=0 cellspacing=0 width=381 style='border-collapse:
+ collapse;table-layout:fixed;width:286pt'>
+ <col width=132 style='mso-width-source:userset;mso-width-alt:4827;width:99pt'>
+ <col width=177 style='mso-width-source:userset;mso-width-alt:6473;width:200pt'>
+ <col width=72 style='mso-width-source:userset;mso-width-alt:2633;width:54pt'>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6431768 width=132 style='height:15.0pt;width:99pt'>PEDIDO
+  No.:</td>
+  <td class=xl6731768 width=177 style='width:133pt'>{{pedido}}</td>
+  <td class=xl1531768 width=72 style='width:54pt'></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6431768 style='height:15.0pt'>CLIENTE:</td>
+  <td class=xl1531768>{{cliente.id()}}</td>
+  <td class=xl1531768></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6431768 style='height:15.0pt'>FECHA DE ENTREGA:</td>
+  <td class=xl6831768>{{fecha}}</td>
+  <td class=xl1531768></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl1531768 style='height:15.0pt'></td>
+  <td class=xl1531768></td>
+  <td class=xl1531768></td>
+ </tr>
+  {% if ordenes %}
+ <tr height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl6531768 style='height:15.0pt;background: green;'>ORDEN DE SALIDA</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl1531768 style='height:15.0pt'></td>
+  <td class=xl1531768></td>
+  <td class=xl1531768></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6531768 style='height:15.0pt'>CANASTILLA</td>
+  <td class=xl6531768 style='border-left:none'>LOTE</td>
+  <td class=xl6531768 style='border-left:none'>CANTIDAD</td>
+ </tr>
+ {% for orden in ordenes %}
+ <tr height=20 style='height:15.0pt'>
+  <td align="center" height=20 class=xl6631768 style='height:15.0pt;border-top:none'>{{orden.ubicacion}}</td>
+  <td align="center" class=xl6631768 style='border-top:none;border-left:none'>{{orden.lote}}</td>
+  <td align="center" class=xl6631768 style='border-top:none;border-left:none'>{{orden.cantidad}}</td>
+ </tr>
+ {% endfor %}
+ {% endif %}
+  <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6331768 style='height:15.0pt'></td>
+  <td class=xl6331768></td>
+  <td class=xl6331768></td>
+ </tr>
+ {% if faltantes %}
+ <tr height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl6531768 style='height:15.0pt;background: red'>FALTANTES</td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6331768 style='height:15.0pt'></td>
+  <td class=xl6331768></td>
+  <td class=xl6331768></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl6531768 style='height:15.0pt'>PRODUCTO</td>
+  <td class=xl6531768 style='border-left:none'>PORCION</td>
+  <td class=xl6531768 style='border-left:none'>CANTIDAD</td>
+ </tr>
+ {% for faltante in faltantes %}
+ <tr height=20 style='height:15.0pt'>
+  <td align="center" height=20 class=xl6631768 style='height:15.0pt;border-top:none'>{{faltante.producto}}</td>
+  <td align="center" class=xl6631768 style='border-top:none;border-left:none'>{{faltante.porcion}}</td>
+  <td align="center" class=xl6631768 style='border-top:none;border-left:none'>{{faltante.cantidad}}</td>
+ </tr>
+ {% endfor %}
+ {% endif %}
+</table>
+</div>
+</body>
+
+</html>
+

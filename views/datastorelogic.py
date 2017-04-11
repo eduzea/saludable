@@ -269,9 +269,17 @@ class DataStoreInterface():
                         orConditions.append(entityClass._properties[key] == orVal)
                     condition = ndb.OR(*orConditions)
             conditions.append(condition)
-        if 'sortBy' in params.keys():
-            descending = True if params['sortBy'][0]=='-' else False
-            sortField = keyDefs[entity_class][0]
+        if 'sortBy' in params.keys():#If no sortField is given it defaults to the entityClass key
+            sortField = ''
+            descending = False
+            if params['sortBy'][0]=='-':
+                descending = True
+                params['sortBy'] = params['sortBy'][1:]
+            if params['sortBy']:
+                sortField = params['sortBy']
+            else:
+                sortField = keyDefs[entity_class][0]  
+            
             if descending:
                 return entityClass.query(*conditions).order(-entityClass._properties[sortField])
             else:

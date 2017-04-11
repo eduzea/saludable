@@ -335,6 +335,90 @@ class CrearEgreso(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('crearEgreso.html')
         self.response.write(template.render(template_values))
 
+def getVentasFromPedido(cliente, lotes):
+    ventas =[]
+    total = 0
+    for lote in lotes:
+        precioQuery = Precio.query(Precio.producto ==lote.producto,
+                                   Precio.grupoDePrecios == cliente.get().grupoDePrecios,
+                                   Precio.porcion == lote.porcion)
+        precio = precioQuery.fetch()[0].precio
+        lote.precio = precio
+        lote.venta = precio * lote.cantidad
+        ventas.append(lote);
+        total += precio * lote.cantidad
+    return {'ventas':ventas, 'total':total}
+
+class CrearFacturaFromPedido(webapp2.RequestHandler):
+    def get(self):
+        response = {}
+        pedidoKey = self.request.get('pedido')
+        pedido = Pedido.get_by_id(pedidoKey);
+        if pedido.factura: # ya se facturo!
+            response = {'result':'Success', 'id': pedido.factura.id()}
+        else:
+            #process inventory
+            ods = getOrdenesDeSalida(pedido.items)
+            if ods['movimientos']:
+                for mi in ods['movimientos']:
+                    crearMovimientoDeInventario(*mi)
+                values = getVentasFromPedido(pedido.cliente,pedido.items)
+                values['subtotal'] = values['total']
+                values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+                values['fecha'] = pedido.fechaDeEntrega
+                values['numero'] = getConsecutivo('Factura')
+                values['cliente'] = pedido.cliente
+                factura = dataStoreInterface.create_entity('Factura', values)['entity']
+                pedido.factura = factura.key
+                pedido.put()
+                response = {'result':'Success','id': factura.key.id()}
+            else:
+                response = {'result':'Failure','msg': 'Todo falta en el inventario!'}
+        self.response.out.write(json.dumps(response))
+    ########### Remember to create the movimientos de inventario 
+
+def getOrdenesDeSalida(items):
+    ordenes = []
+    faltan = []
+    movimientosDeInventario = []
+    for item in items:
+        params = {'producto':item.producto, 'porcion':item.porcion, 'sortBy':'fecha'}
+        fdls = dataStoreInterface.buildQuery('FraccionDeLoteUbicado', params).fetch()
+        cant = 0
+        for fdl in fdls:
+            lote = '{0}-{1}-{2}'.format(fdl.fecha.strftime('%Y-%m-%d'),fdl.producto.id(),fdl.porcion.id())
+            orden = {'ubicacion':fdl.ubicacion,
+                     'lote': lote
+                    }
+            if fdl.cantidad < item.cantidad - cant:                    
+                orden['cantidad'] =  fdl.cantidad
+                ordenes.append(orden)
+                cant += fdl.cantidad
+                movimientosDeInventario.append([fdl,'SALIDA', fdl.cantidad])
+            else:
+                orden['cantidad'] =  item.cantidad - cant
+                ordenes.append(orden)
+                cant = item.cantidad
+                movimientosDeInventario.append([fdl,'SALIDA', fdl.cantidad])
+                break
+        if cant < item.cantidad:
+            faltan.append({'producto':item.producto.id(), 'porcion':item.porcion.id(), 'cantidad':str(item.cantidad - cant)})
+    return {'ordenes':ordenes, 'faltan':faltan, 'movimientos':movimientosDeInventario}    
+
+class CrearOrdenDeSalida(webapp2.RequestHandler):
+    def get(self):
+        pedidoKey = self.request.get('pedido')
+        pedido = Pedido.get_by_id(pedidoKey);
+        ordenDeSalida = getOrdenesDeSalida(pedido.items)
+        template = JINJA_ENVIRONMENT.get_template('ordenDeSalida.html')
+        self.response.write(template.render({'pedido':pedido.numero,
+                                             'cliente':pedido.cliente,
+                                             'fecha':pedido.fechaDeEntrega,
+                                             'ordenes':ordenDeSalida['ordenes'],
+                                             'faltantes':ordenDeSalida['faltan'],
+                                             }))
+
+
 class CrearFactura(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
@@ -374,6 +458,12 @@ class SetNumber(webapp2.RequestHandler):
             msg = 'Parametro "tipo" debe estar en "singletons"'
         self.response.write(msg)
 
+class GetNextNumber(webapp2.RequestHandler):
+    def get(self):
+        entityClass = self.request.get('entityClass')
+        self.response.write(getConsecutivo(entityClass))
+
+
 class GuardarFactura(webapp2.RequestHandler):        
     def post(self):
         post_data = self.request.body
@@ -390,7 +480,7 @@ class GuardarFactura(webapp2.RequestHandler):
         values['ventas'] = ventas
         values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(values['entity_class'])
+        values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(entityClass)
         factura = dataStoreInterface.create_entity(entityClass, values)['entity']          
         self.response.out.write(json.dumps({'result':'Success','id': factura.key.id()}))     
 
@@ -701,7 +791,7 @@ def diasVencida(factura):
         return 0
 
 #Counts over UnidadesDeAlmacenamiento
-class GetExistencias2(webapp2.RequestHandler):
+class GetExistencias(webapp2.RequestHandler):
     def get(self):
         canastillas = UnidadDeAlmacenamiento.query().fetch()
         records = []
@@ -713,7 +803,7 @@ class GetExistencias2(webapp2.RequestHandler):
         self.response.write(JSONEncoder().encode(records)) 
 
 #Directly uses de FraccionDeLote table.
-class GetExistencias(webapp2.RequestHandler):
+class GetExistencias2(webapp2.RequestHandler):
     def get(self):
         records = FraccionDeLoteUbicado.query().fetch()
         self.response.write(JSONEncoder().encode(records)) 
@@ -727,11 +817,6 @@ class GetContenidoUnidadDeAlmacenamiento(webapp2.RequestHandler):
 
 class Fix(webapp2.RequestHandler):
     def get(self): 
-        params = {'cliente':['VENTOLINI.S.A'], 'pagada':False, 'fechaHasta':'2016-05-24'}
-        facturas = dataStoreInterface.buildQuery('Factura',params).fetch()
-        for factura in facturas:
-            factura.pagada = True
-            factura.put()
         self.response.out.write("System time: " + str(datetime.now()))
 
 

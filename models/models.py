@@ -125,15 +125,6 @@ def fechaVencimientoCheck(factura):
         print 'WARNING: El cliente de la factura ', factura.numero, ' parece no existir'
         return datetime.today()
 
-class Pedido(Record):
-    numero = ndb.IntegerProperty()
-    fecha = ndb.DateProperty()
-    fechaDeEntrega = ndb.DateProperty()
-    cliente = ndb.KeyProperty(kind=Cliente)
-    empleado = ndb.KeyProperty(kind=Empleado)
-    items = ndb.StructuredProperty(Venta,repeated=True)
-    procesado = ndb.BooleanProperty(default = False)
-
 class Factura(Record):
     numero = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -222,12 +213,20 @@ class MovimientoDeInventario(Record):
     fecha = ndb.DateProperty()
     ubicacion = ndb.KeyProperty(kind = UnidadDeAlmacenamiento)
     tipo = ndb.KeyProperty(kind=TipoMovimiento)
-    lote = ndb.KeyProperty(kind=FraccionDeLote)
+    lote = ndb.KeyProperty(kind=FraccionDeLote, default = None)
     fechaLote = ndb.DateProperty()
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
 
+class Pedido(Record):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    fechaDeEntrega = ndb.DateProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
+    empleado = ndb.KeyProperty(kind=Empleado)
+    items = ndb.StructuredProperty(Venta,repeated=True)
+    factura = ndb.KeyProperty(kind=Factura, default = None)
     
 class ProductoPorcion(Record):
     porcion = ndb.KeyProperty(kind=Porcion)
@@ -500,7 +499,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'PagoRecibido':['numero'],
            'TipoMovimiento':['nombre'],
            'Existencias':['fecha','producto','porcion'],
-           'MovimientoDeInventario':['fecha','ubicacion','tipo','lote','producto','porcion'],
+           'MovimientoDeInventario':['fecha','ubicacion','tipo','fechaLote','producto','porcion'],
            'UnidadDeAlmacenamiento':['fila','columna','nivel'],
            'FraccionDeLote':['fecha','producto','porcion'],
            'FraccionDeLoteUbicado':['ubicacion','fecha','producto','porcion'],
@@ -526,7 +525,7 @@ classModels = {'Cliente':Cliente,
                'Porcion':Porcion, 
                'Precio':Precio, 
                'GrupoDePrecios':GrupoDePrecios,
-               'Pedido':Pedido, 
+               'Pedido':Pedido,
                'Factura':Factura, 
                'Remision':Remision ,
                'Empleado':Empleado, 

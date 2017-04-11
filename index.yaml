@@ -78,7 +78,33 @@ indexes:
   properties:
   - name: porcion
   - name: producto
+  - name: fecha
+
+- kind: FraccionDeLoteUbicado
+  properties:
+  - name: porcion
+  - name: producto
+  - name: fecha
+    direction: desc
+
+- kind: FraccionDeLoteUbicado
+  properties:
+  - name: porcion
+  - name: producto
   - name: ubicacion
+
+- kind: FraccionDeLoteUbicado
+  properties:
+  - name: porcion
+  - name: producto
+  - name: ubicacion
+    direction: desc
+
+- kind: FraccionDeLoteUbicado
+  properties:
+  - name: producto
+  - name: fecha
+    direction: desc
 
 - kind: InventarioRegistro
   properties:

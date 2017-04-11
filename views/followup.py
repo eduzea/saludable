@@ -6,6 +6,7 @@ Created on Jul 25, 2015
 from models.models import *
 from datetime import datetime, date, time
 from datastorelogic import DataStoreInterface
+from utils import getKey
 
 
 # Create the Instance - this approach is suspect...
@@ -58,14 +59,17 @@ def removeFraccionDeLoteUbicado(fdl, ubicacion):
     entities = dataStoreInterface.buildQuery('FraccionDeLoteUbicado',params).fetch()
     for entity in entities:
         entity.key.delete()
+
+
         
 
 def updateUnidadDeAlamcenamiento(mi):
     ubicacion = mi.ubicacion
     canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.key == ubicacion).fetch()[0]
     presente = False
+    loteKey = '{0}.{1}.{2}'.format(mi.fechaLote, mi.producto.id(), mi.porcion.id())
     for idx,fdl in enumerate(canastilla.contenido):
-        if fdl.rotulo == mi.lote.id(): #lote is in canastilla
+        if fdl.rotulo == loteKey: #lote is in canastilla
             presente = True
             tipo = -1 if mi.tipo.id() == 'SALIDA' else 1
             fdl.cantidad = fdl.cantidad + tipo * mi.cantidad
@@ -84,43 +88,42 @@ def updateUnidadDeAlamcenamiento(mi):
     
     updateFraccionDeLote(canastilla)
 
+def rollbackMovimientoDeInventario(mi):
+    ubicacion = mi.ubicacion
+    canastilla = UnidadDeAlmacenamiento.query(UnidadDeAlmacenamiento.key == ubicacion).fetch()[0]
+    presente = False
+    loteKey = '{0}.{1}.{2}'.format(mi.fechaLote, mi.producto.id(), mi.porcion.id())
+    for idx,fdl in enumerate(canastilla.contenido):
+        if fdl.rotulo == loteKey: #lote is in canastilla
+            presente = True
+            tipo = 1 if mi.tipo.id() == 'SALIDA' else -1
+            fdl.cantidad = fdl.cantidad + tipo * mi.cantidad
+            if fdl.cantidad == 0:
+                removeFraccionDeLoteUbicado(fdl, canastilla.ubicacion)
+                canastilla.contenido.remove(fdl)
+            else:
+                canastilla.contenido[idx] = fdl
+            canastilla.put()
+
+    if not presente: # its a new lote
+        values = {'fecha':mi.fecha, 'producto':mi.producto, 'porcion': mi.porcion, 'cantidad':mi.cantidad}
+        fdl = FraccionDeLote(**values)
+        canastilla.contenido.append(fdl)
+        canastilla.put()
+
+
+
 dataStoreInterface.registerFollowUpLogic('post', 'create', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
 dataStoreInterface.registerFollowUpLogic('post', 'update', 'MovimientoDeInventario', updateUnidadDeAlamcenamiento)
+dataStoreInterface.registerFollowUpLogic('post', 'delete', 'MovimientoDeInventario', rollbackMovimientoDeInventario)
 
 ################# PEDIDOS ####################################
-
-def validarPedido(pedido):
-    items = pedido.items
-    ordenDeSalida = []
-    faltan=[]
-    for item in items:
-        params = {'producto':item.producto, 'porcion':item.porcion, 'sortBy':'fecha'}
-        fdls = dataStoreInterface.buildQuery('FraccionDeLoteUbicado', params).fetch()
-        cant = 0
-        for fdl in fdls:
-            orden = {'ubicacion':fdl.ubicacion,
-                     'fecha':fdl.fecha.strftime('%Y-%m-%d'),
-                     'producto':fdl.producto.id(),
-                     'porcion':fdl.porcion.id()}
-            cant += fdl.cantidad
-            if cant < item.cantidad:
-                orden['cantidad'] =  fdl.cantidad
-                ordenDeSalida.append(orden)
-                crearMovimientoDeInventario(fdl,'SALIDA', fdl.cantidad)
-            else:
-                orden['cantidad'] =  cant - item.cantidad
-                ordenDeSalida.append(orden)
-                crearMovimientoDeInventario(fdl,'SALIDA', cant - item.cantidad)
-                break
-        if cant < item.cantidad:
-            faltan.append({'producto':item.producto.id(), 'porcion':item.porcion.id(), 'cantidad':str(item.cantidad - cant)})
-    print ordenDeSalida, faltan #This should be used to create the printout of the orden de salida
                     
 def crearMovimientoDeInventario(fdl, tipo, cantidad):
-    params = {'fechaMovimiento' : datetime.today(),
+    params = {'fecha' : datetime.today(),
               'ubicacion' : fdl.ubicacion,
               'tipo' : tipo,
-              'fecha' : fdl.fecha,
+              'fechaLote' : fdl.fecha,
               'producto' : fdl.producto,
               'porcion' : fdl.porcion,
               'cantidad' : cantidad}
@@ -129,8 +132,8 @@ def crearMovimientoDeInventario(fdl, tipo, cantidad):
 ####################!!!! incomplete
 
 
-dataStoreInterface.registerFollowUpLogic('post', 'create', 'Pedido', validarPedido)
-dataStoreInterface.registerFollowUpLogic('post', 'update', 'Pedido', validarPedido)
+#dataStoreInterface.registerFollowUpLogic('post', 'create', 'Pedido', validarPedido)
+#dataStoreInterface.registerFollowUpLogic('post', 'update', 'Pedido', validarPedido)
 
 
 ####################################################################################################

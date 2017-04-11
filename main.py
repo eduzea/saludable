@@ -39,6 +39,8 @@ application = webapp2.WSGIApplication([
     ('/anularFactura', AnularFactura),
     ('/consolidarFactura',ConsolidarFactura),
     ('/getRemisionesByName',GetRemisionesByName),
+    ('/crearOrdenDeSalida',CrearOrdenDeSalida),
+    ('/crearFacturaFromPedido',CrearFacturaFromPedido),
     # Egresos
     ('/crearEgreso', CrearEgreso),
     ('/guardarEgreso', GuardarEgreso),
@@ -52,6 +54,7 @@ application = webapp2.WSGIApplication([
     ('/exportScript', ExportScript),
     ('/importScript', ImportScript),
     ('/setNumero', SetNumber),
+    ('/getNext', GetNextNumber),
     ('/importCSV', ImportCSV),
     # Informes
     ('/informePagos',GetInformePagos) ,

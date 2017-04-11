@@ -4,6 +4,16 @@ require(['dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/do
 		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready',"dojo/date/locale", 'gridx/modules/CellWidget',
 		 'dojo/domReady!'],
 function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready,locale) {
+	
+	var getDijit = function(id){
+		obj = registry.byId(id)
+		if (!obj){
+			parser.instantiate([dom.byId(id)]);
+			obj = registry.byId(id)
+		}
+		return obj;
+	} 
+	
 	var entityClass = saludable.entity_class;
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
 	var buttons={};
@@ -97,26 +107,29 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 					topic.publish(entityClass.toUpperCase(), {'action':'UPDATE','label':response.entity.rotulo,'value':response.key});
 				}
 				dom.byId('server_response'+ '_' + entityClass).innerHTML = response_user;
-				setTimeout(function() {
-					var numero = registry.byId('numero'+ '_' + entityClass);
-					dom.byId('server_response'+  '_' + entityClass).innerHTML = '';
-					if (numero){
-						var value = numero.value;	
-					}
-					dom.byId('reset'+ '_'+ entityClass).click();
-					numero ? numero.set('value', value + 1):'';
-					//Clear grids, if any
-					var grids = query('div[id^=grid_]div[id$=' + entityClass + ']');
-					grids.forEach(function(grid){
-						grid = registry.byNode(grid);
-						grid.model.clearCache();
-						grid.model.store.setData([]);
-        				grid.body.refresh();
-        				if (entityClass in saludable.gridChangeFuncs)
-								saludable.gridChangeFuncs[entityClass](grid);
-					});
-					
-				}, 2000);
+				if (! (entityClass in saludable.config['dontResetAfterSave']) ){
+					setTimeout(function() {
+						var numero = registry.byId('numero'+ '_' + entityClass);
+						dom.byId('server_response'+  '_' + entityClass).innerHTML = '';
+						if (numero){
+							var value = numero.value;	
+						}
+						dom.byId('reset'+ '_'+ entityClass).click();
+						numero ? numero.set('value', value + 1):'';
+						//Clear grids, if any
+						clearGrids();
+//						var grids = query('div[id^=grid_]div[id$=' + entityClass + ']');
+//						grids.forEach(function(grid){
+//							grid = registry.byNode(grid);
+//							grid.model.clearCache();
+//							grid.model.store.setData([]);
+//	        				grid.body.refresh();
+//	        				if (entityClass in saludable.gridChangeFuncs)
+//									saludable.gridChangeFuncs[entityClass](grid);
+//						});
+						
+					}, 2000);					
+				}
 			});
 		} else {
 			alert('Formulario incompleto. Favor corregir.');
@@ -124,6 +137,26 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 		}
 		return true;
 	});
+	//To clear the form and the grids, if any
+	var resetBtn = getDijit('reset'+ '_'+ entityClass);
+	resetBtn.onClick = function(){
+		clearGrids();
+		dom.byId('server_response_'+ entityClass).innerHTML = '';
+		return true;
+	}
+	var clearGrids = function(){
+		//Clear grids, if any
+		var grids = query('div[id^=grid_]div[id$=' + entityClass + ']');
+		grids.forEach(function(grid){
+			grid = registry.byNode(grid);
+			grid.model.clearCache();
+			grid.model.store.setData([]);
+			grid.body.refresh();
+			if (entityClass in saludable.gridChangeFuncs)
+					saludable.gridChangeFuncs[entityClass](grid);
+		});
+	};
+	
 	//Set up Repeated Key properties, if any
 	var listpropBtns = query(".listBtn");
 	parser.instantiate(listpropBtns);

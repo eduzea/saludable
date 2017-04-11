@@ -337,7 +337,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	domClass.add(dom.byId('grid'+ '_' + entityClass),'factura-grid');
 	
 	//This is a temporary solution. This code is repeated in addEntity.js and should be made reusable.
-	// One approach is to create thsi view through addEntity.js and no as a custom view.
+	// One approach is to create this view through addEntity.js and no as a custom view.
 	// The other is to compenentize the logic of fillForm and include it in the custom crearFactura.js
 	
 	parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);

@@ -1,14 +1,27 @@
 //# sourceURL=../static/js/my/modelSpecific.js
-require(['dojo/dom','dijit/registry',"dojo/dom-attr",'dojo/request','dojo/topic','dojo/number','dojo/dom-style'],
-function(dom,registry,domAttr,request,topic,number,domStyle)
+require(['dojo/dom','dijit/registry',"dojo/dom-attr",'dojo/request','dojo/topic','dojo/number',
+	'dojo/dom-style','dojo/on',"dijit/Dialog",'dojo/parser',"dojo/dom-construct",'dijit/form/Button',
+	"dojo/json","dojo/domReady!"],
+function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,domConstruct,Button,json)
 {
-	//Specify model specific grid summary operations
+	//prevent access to uninstantiated dijits
+	var getDijit = function(id){
+		obj = registry.byId(id)
+		if (!obj){
+			parser.instantiate([dom.byId(id)]);
+			obj = registry.byId(id)
+		}
+		return obj;
+	} 
+	
+	//Specify model specific grid summary operations. Use saludable namespace for global scope.
 	saludable.gridSummaryFuncs = 
 	{'ProductoPorcion': 
 		function(entry){ return entry['porcion'].replace('.g','').replace('.Unidad','') * entry['cantidad'];},
 	 'Venta': function(entry){ return entry['total'];}
 	 };
 	 
+	saludable.config = {'dontResetAfterSave' : {'Pedido':''}}
 	 
 	//Specify model specific logic for click events
 	saludable.gridChangeFuncs =
@@ -71,7 +84,9 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 		function(){
 			var original = {};
 			var onChangeInit = {};
-			domStyle.set(registry.byId('fechaLote_MovimientoDeInventario').domNode, 'display', 'none');//hidden field
+			var fechaLote = getDijit('fechaLote_MovimientoDeInventario');
+			domStyle.set(fechaLote.domNode, 'display', 'none');//hidden field
+			registry.byId('lote_MovimientoDeInventario').addOption({disabled:true,label:'NA',selected:true,value:'NA'});
 			var tipoSelect = registry.byId('tipo_MovimientoDeInventario');
 			tipoSelect.onChange = function(){
 				if (this.value == 'SALIDA'){
@@ -127,14 +142,44 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 					domStyle.set(registry.byId('porcion_MovimientoDeInventario').domNode, 'display', 'block');
 					registry.byId('porcion_MovimientoDeInventario').reset();
 					domStyle.set(registry.byId('lote_MovimientoDeInventario').domNode, 'display', 'none');
-					var cantidadField = registry.byId('cantidad_MovimientoDeInventario');
+					var cantidadField = getDijit('cantidad_MovimientoDeInventario');
 					cantidadField.set('value','');
 				}
 			}
 			tipoSelect.onChange();
 		},
 		'Pedido':
-		function(){	
+		function(){
+			//Adjust buttons
+			var saveBtn = getDijit('agregar_btn_Pedido');
+			saveBtn.set('label','Guardar Pedido y generar Orden de Salida');
+			var resetBtn = getDijit('reset_Pedido');
+			resetBtn.set('label','Nuevo Pedido');
+			var old = resetBtn.onClick; 
+			resetBtn.onClick = function(){
+				var oldRet = old();
+				request('/getNext?entityClass=Pedido').then(function(response){
+					registry.byId('numero_Pedido').set('value',parseInt(response));
+					return oldRet;
+				});
+			}
+			var myDialog = new Dialog({
+			        title: "ORDEN DE SALIDA",
+			        style: "width: 500px",
+			        id:"ordenDeSalida_dialog"
+			    });
+			var listenerFunc = function(e) {
+				key = registry.byId('numero_Pedido').value;
+				request('/crearOrdenDeSalida?pedido=' + key).then(
+						function(html) {
+							 myDialog.set('content',html);
+							 myDialog.show();
+							 doit = false;
+						})
+			};
+			topic.subscribe('PEDIDO', listenerFunc);
+			
+			///////////////////////////////
 			var resetProducto = function(cliente){	
 			request.post('/getProducto', {
 				data : {'cliente':cliente},
@@ -144,12 +189,7 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 					response.forEach(function(producto){
 						items.push({ "value": producto, "label": producto });
 					});
-//					var productoStore = new Store({
-//			        	idProperty: "value",
-//			            data: items
-//			        });
 					var productoSelect = registry.byId('producto_Venta');
-//					productoSelect.setStore(productoStore);
 					productoSelect.set("options", items).reset();
 					resetPorcion(productoSelect.value);
 				});
@@ -187,6 +227,11 @@ function(dom,registry,domAttr,request,topic,number,domStyle)
 		   		};
 		   		topic.subscribe(select.id.replace( '_Pedido','').toUpperCase(), select.listenerfunc);
 			});	
+		},
+		'Porcion':
+		function(){
+			var unidadesInput = registry.byId('unidades_Porcion');
+			unidadesInput.set('uppercase',false);
 		}
 	}
 });
