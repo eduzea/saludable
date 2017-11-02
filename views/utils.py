@@ -9,6 +9,13 @@ from config import *
 from datastorelogic import *
 import logging
 
+#returns a copy of given dict with the specified key removed
+def removekey(d, key):
+    r = dict(d)
+    del r[key]
+    return r
+
+
 #String replace from the right, specifying # of replacements to make.
 def rreplace(s, old, new, occurrence):
     li = s.rsplit(old, occurrence)
@@ -74,6 +81,8 @@ def prepareRecords(entityClass, entities):
                 entity.put()
                 continue
             ##########
+            if type(prop_value) == messages.Enum:
+                dicc[prop_key] = prop_value
             if type(props[prop_key]) == ndb.StructuredProperty:
                 if type(prop_value) == list:
                     dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})
@@ -190,5 +199,7 @@ class JSONEncoder(json.JSONEncoder):
             return o.to_dict()
         elif isinstance(o, (datetime, date, time)):
             return str(o)  # Or whatever other date format you're OK with...
+        elif isinstance(o, messages.Enum):
+            return str(o)
         else:
             print "Hold on! Unexpected type!"

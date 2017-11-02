@@ -1,34 +1,28 @@
 //# sourceURL=../static/js/my/tablaDinamica.js
 require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojo/dom-class","dojox/widget/Standby"], 
 function(request,registry,parser,dom,on,query,domClass,Standby) {
-	var entity_class = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 	var pivotUrl = {'Ventas': '/getProductSales?' ,
 					'Gastos': '/getAllCompras?',
 					'UtilidadesDetallado':'/getUtilidades?detallado=true',
 					'Recaudado': '/entityData?entityClass=Factura&iva=true',
 					'Pagado': '/getIVAPagado?'
 				}; 
-	var url = pivotUrl[entity_class];
+	var url = pivotUrl[entityClass];
 	var sortAs = $.pivotUtilities.sortAs;
 	var numberFormat = $.pivotUtilities.numberFormat;
 	var config = {
 		'Ventas': {
-				rows : ['ciudad',"cliente"],
-				vals : ["venta"],
+				rows : ['cliente'],
+				vals : ['venta'],
 				aggregatorName:'Suma'
 		},
 		'Gastos':{
-					rows: ['sucursal','tipo','bienoservicio',"proveedor"],
-					vals: ['compra'],
+					rows: ['bienoservicio','proveedor'],
+					vals: ['total'],
 					exclusions:{},
 					hiddenAttributes:[],
 					aggregatorName:'Suma'
-		},
-		'UtilidadesDetallado':{
-			rows:['sortRows','tipo'],
-			cols:['mesnum','mes'],
-			vals:['total'],
-			aggregatorName:'Suma'
 		},
 		'Recaudado': {
 				rows : ["cliente",'numero','fecha'],
@@ -45,14 +39,14 @@ function(request,registry,parser,dom,on,query,domClass,Standby) {
 		}
 	};
 	
-	parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
+	parser.instantiate([dom.byId('GenerarInformeBtn_' + entityClass)]);
 	//Modal to show its loading
 	var standby = new Standby({target: 'pivot_standby'});
 	document.body.appendChild(standby.domNode);
 	standby.startup();
-	on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){
-		var desde = registry.byId('fecha_pivot_1_' + entity_class).value.toISOString().split('T')[0];
-		var hasta =  registry.byId('fecha_pivot_2_' + entity_class).value.toISOString().split('T')[0];
+	on(registry.byId('GenerarInformeBtn_' + entityClass),'click', function(e){
+		var desde = registry.byId('fecha_pivot_1_' + entityClass).value.toISOString().split('T')[0];
+		var hasta =  registry.byId('fecha_pivot_2_' + entityClass).value.toISOString().split('T')[0];
 		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
 		standby.show(); 
 		request(url + appendUrl, {handleAs:'json'}).then(function(response) {
@@ -62,14 +56,14 @@ function(request,registry,parser,dom,on,query,domClass,Standby) {
 			});
 			var records = response.records;
 			$(function() {
-				$("#" + "output_" + entity_class).pivotUI(records, config[entity_class],false,'es');
+				$("#" + "output_" + entityClass).pivotUI(records, config[entityClass],false,'es');
 			});
 			standby.hide();
 		});		
 	});
 
-	parser.instantiate([dom.byId('copiarTabla_' + entity_class)]);
-	on(registry.byId('copiarTabla_'+entity_class),'click', function () {
+	parser.instantiate([dom.byId('copiarTabla_' + entityClass)]);
+	on(registry.byId('copiarTabla_'+entityClass),'click', function () {
 		el = query(".pvtTable")[0];
         var body = document.body, range, sel;
         if (document.createRange && window.getSelection) {

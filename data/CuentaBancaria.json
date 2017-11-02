@@ -4,6 +4,8 @@
 		"titular": "Salud Able Foods SAS",
 		"tipo": "Corriente",
 		"numero": "21002803574",
+		"activo": true,
+		"rotulo": "Banco Caja Social-21002803574",
 		"empleadoCreador": "eduzea@gmail.com",
 		"banco": "Banco.Caja.Social"
 	}

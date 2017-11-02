@@ -22,16 +22,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class FacturasVencidas(webapp2.RequestHandler):
     def get(self):
+        return
         logging.debug('Running cron job at: ' + str(datetime.today()))
         facturas = Factura.query(Factura.fechaVencimiento < datetime.today(), 
                                  Factura.pagada == False).fetch()
         logging.debug(len(facturas))
         clienteFacturas = {}
         for factura in facturas:
-            if factura.cliente.get() is None:
+            cliente = factura.cliente.get()
+            if cliente is None:
                 logging.debug('Bad Cliente in factura: ' + str(factura.numero))
                 continue
-            if factura.cliente.get().activo == False: continue
+            if cliente.activo == False and cliente.diasPago == 0: continue
             email = factura.cliente.get().email
             delta = datetime.today() - factura.fechaVencimiento
             vencida = {'numero': factura.numero,

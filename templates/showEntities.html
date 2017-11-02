@@ -3,15 +3,15 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Mostrar {{ entity_class }}s</title>
+		<title>Mostrar {{ entityClass }}s</title>
 		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
 		<link rel="stylesheet" href="../static/css/grid.css" />
-		<script>saludable.entity_class = '{{ entity_class }}';</script>
+		<script>saludable.entityClass = '{{ entityClass }}';</script>
 		<script src="../static/js/my/showEntities.js" ></script>
 	</head>
 	<body class="claro">
-		<button id='exportarDatos_{{ entity_class }}' data-dojo-type="dijit/form/Button">Exportar Registros</button>
-		<div id="gridNode_{{ entity_class }}"></div>
+		<button id='exportarDatos_{{ entityClass }}' data-dojo-type="dijit/form/Button">Exportar Registros</button>
+		<div id="gridNode_{{ entityClass }}"></div>
 	</body>
 </html>
 {% endautoescape %}

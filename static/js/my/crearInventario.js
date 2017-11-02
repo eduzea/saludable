@@ -202,7 +202,7 @@ require(['dojo/dom',
 				});
 		});
 		
-		var actualizarInventarios = function(response, data, entity_class){
+		var actualizarInventarios = function(response, data, entityClass){
 			var id = 'gridNode'+ '_' + entityClass;
 			var grid = registry.byId(id);
 			var key = response.inventarioId;

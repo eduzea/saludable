@@ -1,0 +1,58 @@
+<head>
+    <title>Estado de Resultados</title>
+    <script type="text/javascript" src="../static/js/my/estadoDeResultados.js"></script>
+</head>
+<style>
+    .pivot {font-family: Verdana;}
+    #estadoDeResultados_ingresosOperacionales {text-align: right}
+    #estadoDeResultados_costosDeProduccion {text-align: right}
+    #estadoDeResultados_utilidadOperacionalBruta{text-align: right}
+    #estadoDeResultados_margenOperacionalBruto {text-align: right}
+    #estadoDeResultados_gastosOperacionales {text-align: right}
+    #estadoDeResultados_utilidadOperacionalNeta {text-align: right}
+    #estadoDeResultados_margenOperacionalNeto {text-align: right}
+    
+    #estadoDeResultados_margenOperacionalNeto {text-align: right}
+    #estadoDeResultados_gastosNoOperacionales {text-align: right}
+    #estadoDeResultados_utilidadAntesDeImpuestos {text-align: right}
+    #estadoDeResultados_impuestos {text-align: right}
+    #estadoDeResultados_utilidadNeta {text-align: right}
+    #estadoDeResultados_dividendos {text-align: right}
+    #estadoDeResultados_utilidadRetenida {text-align: right}
+</style>
+<table>
+	<tr>
+		<td>
+			<label for='fecha_pivot_1'>Desde: </label>
+			<input type="text" name='fecha_pivot_1_{{ entityClass }}' id='fecha_pivot_1_{{ entityClass }}' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
+		</td>
+		<td>
+			<label for='fecha_pivot_2'>Hasta: </label>
+			<input type="text" name='fecha_pivot_2_{{ entityClass }}' id='fecha_pivot_2_{{ entityClass }}' value="now" data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" required="true" style="width:100px;" />
+		</td>
+		<td>
+			<button id='GenerarInformeBtn_{{entityClass}}' data-dojo-type="dijit/form/Button">Generar Informe</button>
+		</td>
+		<td>
+			<button id='copiarTabla_{{entityClass}}' data-dojo-type="dijit/form/Button">Copiar al Portapapeles</button>
+		</td>
+	</tr>
+</table>
+<br/>
+<div id='estadoDeResultados_standby' style="width: 100%;height: 100%">
+	<div data-dojo-type="dojox.layout.TableContainer" data-dojo-props="cols:1, labelWidth:200" id="utilidad_table">
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_ingresosOperacionales' style ='width:10em' title="Ingresos Operacionales:" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_costosDeProduccion' style ='width:10em'  title="Costos de Produccion:" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_utilidadOperacionalBruta' style ='width:10em'  title="Utilidad Operacional Bruta:" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_margenOperacionalBruto' style ='width:10em'  title="Margen Operacional Bruto:" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_gastosOperacionales' style ='width:10em'  title="Gastos Operacionales:" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_utilidadOperacionalNeta' style ='width:10em'  title="Utilidad Operacional Neta" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_margenOperacionalNeto' style ='width:10em'  title="Margen Operacional Neto" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_gastosNoOperacionales' style ='width:10em'  title="Gastos No Operacionales" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_utilidadAntesDeImpuestos' style ='width:10em'  title="Utilidad Antes de Impuestos" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_impuestos' style ='width:10em'  title="Impuestos" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_utilidadNeta' style ='width:10em'  title="Utilidad Neta" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_dividendos' style ='width:10em'  title="Dividendos" value=""></div>
+	  <div data-dojo-type="dijit.form.TextBox" id= 'estadoDeResultados_utilidadRetenida' style ='width:10em'  title="Utilidad Retenida" value=""></div>
+	</div>
+</div>

@@ -113,7 +113,12 @@ class DataStoreInterface():
             if len(keyDefs[propertyType._kind]) == 1 and type(classModels[propertyType._kind]._properties[keyDefs[propertyType._kind][0]]) == ndb.IntegerProperty:
                 key_obj = ndb.Key(propertyType._kind,int(value.strip().replace(' ','.')))
             else:
-                key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
+                if value != '': 
+                    key_obj = ndb.Key(propertyType._kind,value.strip().replace(' ','.'))
+                elif propertyType._required:
+                    raise Exception( "Attempted to assign empty string to required KeyProperty " + key)
+                else:
+                    return
             return key_obj
         elif isinstance(value, int):
                 key_obj = ndb.Key(propertyType._kind,value)
@@ -226,9 +231,9 @@ class DataStoreInterface():
         dicc = self._removeComputedProps(klass,oldDicc)
         return klass(**dicc)
 
-    def _autoIncrease(self,entity_class):
-        if 'Numero' + entity_class in singletons:
-            num = singletons['Numero' + entity_class].query().get()
+    def _autoIncrease(self,entityClass):
+        if 'Numero' + entityClass in singletons:
+            num = singletons['Numero' + entityClass].query().get()
             num.consecutivo = num.consecutivo + 1
             num.put()
 
@@ -237,9 +242,9 @@ class DataStoreInterface():
     def registerFollowUpLogic(self, when, action, entityClass, function):
         self._funcMap[when][action][entityClass] = function
         
-    def buildQuery(self, entity_class,params):
-        params = self._checkQueryValues(entity_class, params) # Make sure data is of the proper type for filters
-        entityClass = classModels[entity_class]
+    def buildQuery(self, entityClass,params):
+        params = self._checkQueryValues(entityClass, params) # Make sure data is of the proper type for filters
+        entityClassObj = classModels[entityClass]
         conditions = []
         for key,value in params.iteritems():
             if key == "entityClass": continue
@@ -250,24 +255,27 @@ class DataStoreInterface():
             if 'fecha' in key:
                 if 'Desde' in key:
                     if isinstance(value, datetime):
-                        condition = entityClass._properties['fecha'] >= value.date()
+                        condition = entityClassObj._properties['fecha'] >= value.date()
                     else:
-                        condition = entityClass._properties['fecha'] >= datetime.strptime(value, '%Y-%m-%d').date()
+                        condition = entityClassObj._properties['fecha'] >= datetime.strptime(value, '%Y-%m-%d').date()
                 elif 'Hasta' in key:
                     if isinstance(value, datetime):
-                        condition = entityClass._properties['fecha'] <= value.date()
+                        condition = entityClassObj._properties['fecha'] <= value.date()
                     else:
-                        condition = entityClass._properties['fecha'] <= datetime.strptime(value, '%Y-%m-%d').date()
+                        condition = entityClassObj._properties['fecha'] <= datetime.strptime(value, '%Y-%m-%d').date()
                 else:
-                    condition = entityClass._properties['fecha'] == value
+                    condition = entityClassObj._properties['fecha'] == value
             else:
                 if not isinstance(value, list):
-                    condition = entityClass._properties[key]==value
+                    condition = entityClassObj._properties[key]==value
                 else:
-                    orConditions = []
-                    for orVal in value:
-                        orConditions.append(entityClass._properties[key] == orVal)
-                    condition = ndb.OR(*orConditions)
+                    if len(value) == 1:
+                        condition = entityClassObj._properties[key]==value[0]
+                    else:
+                        orConditions = []
+                        for orVal in value:
+                            orConditions.append(entityClassObj._properties[key] == orVal)
+                        condition = ndb.OR(*orConditions)
             conditions.append(condition)
         if 'sortBy' in params.keys():#If no sortField is given it defaults to the entityClass key
             sortField = ''
@@ -278,70 +286,73 @@ class DataStoreInterface():
             if params['sortBy']:
                 sortField = params['sortBy']
             else:
-                sortField = keyDefs[entity_class][0]  
+                sortField = keyDefs[entityClass][0]  
             
             if descending:
-                return entityClass.query(*conditions).order(-entityClass._properties[sortField])
+                return entityClassObj.query(*conditions).order(-entityClassObj._properties[sortField])
             else:
-                return entityClass.query(*conditions).order(entityClass._properties[sortField])
+                return entityClassObj.query(*conditions).order(entityClassObj._properties[sortField])
         else:
-            return  entityClass.query(*conditions)
+            return  entityClassObj.query(*conditions)
         
-    def getEntitiesByPage(self,cursor, entity_class, entity_query, count):
+    def getEntitiesByPage(self,cursor, entityClass, entity_query, count):
         curs = Cursor(urlsafe=cursor)
         entities, next_curs, more = entity_query.fetch_page(count, start_cursor=curs)
         return {'records':entities, 'cursor': next_curs.urlsafe() if next_curs else '', 'more':more}
     
-    def getEntities(self, entity_class, entity_query):
+    def getEntities(self, entityClass, entity_query):
         entities = entity_query.fetch()
         return {'records':entities, 'count':len(entities)}
         
-    def autoNum(self,entity_class):
-        if 'Numero' + entity_class in singletons:
-            num = singletons['Numero' + entity_class].query().get()
+    def autoNum(self,entityClass):
+        if 'Numero' + entityClass in singletons:
+            num = singletons['Numero' + entityClass].query().get()
             if num:
                 return num.consecutivo + 1
             else:
-                singletons['Numero' + entity_class](consecutivo=1).put()
+                singletons['Numero' + entityClass](consecutivo=1).put()
                 return  1
         else:
             return None
     
-    def create_entity(self, entity_class, values):
-        values = self._checkEntityCreate(entity_class,values) #All we get from post are strings, so we need to cast/create as appropriate
-        key = getKey(entity_class, values)
-        entity = classModels[entity_class].get_by_id(key)
+    def create_entity(self, entityClass, values):
+        empleado = classModels['Empleado'].query(classModels['Empleado'].email == users.get_current_user().email()).get()
+        if not empleado.writePermission:
+            return {'result':'FAIL','message':"No tiene permiso de modificar el sistema"}
+        values = self._checkEntityCreate(entityClass,values) #All we get from post are strings, so we need to cast/create as appropriate
+        key = getKey(entityClass, values)
+        entity = classModels[entityClass].get_by_id(key)
         if entity:
-            if entity_class in self._funcMap['pre']['update']:
+            if entityClass in self._funcMap['pre']['update']:
                 try:
-                    self._funcMap['pre']['update'][entity_class](entity)
+                    self._funcMap['pre']['update'][entityClass](entity)
                 except Exception as e:
                     print 'Pre-Update: ' + e.message
             oldentity = self._cloneEntity(entity)
             entity.populate(**values)
             entity.put()
-            if entity_class in self._funcMap['post']['update']:
+            if entityClass in self._funcMap['post']['update']:
                 try:
-                    self._funcMap['post']['update'][entity_class](entity)
+                    self._funcMap['post']['update'][entityClass](entity)
                 except Exception as e:
                     print 'Post-Update: ', e.message
-            return {'message':"Updated",'key':key, 'entity':entity, 'old':oldentity}
+            return {'result':'SUCCESS','message':"Updated",'key':key, 'entity':entity, 'old':oldentity}
         else:
             values['id']=key
-            if entity_class in self._funcMap['pre']['create']:
+            if entityClass in self._funcMap['pre']['create']:
                 try:
-                    self._funcMap['pre']['create'][entity_class](entity)
+                    self._funcMap['pre']['create'][entityClass](entity)
                 except Exception as e:
                     print 'Pre-Create', e
-            entity = classModels[entity_class](**values)
+            entity = classModels[entityClass](**values)
             entity.put()
-            if entity_class in self._funcMap['post']['create']:
+            if entityClass in self._funcMap['post']['create']:
                 try:
-                    self._funcMap['post']['create'][entity_class](entity)
+                    self._funcMap['post']['create'][entityClass](entity)
                 except Exception as e:
                     print 'Post-Create: ' , e
-            self._autoIncrease(entity_class)
-            return {'message':"Created",'key':key, 'entity':entity}
+            self._autoIncrease(entityClass)
+            return {'result':'SUCCESS','message':"Created",'key':key, 'entity':entity}
         
     def deleteEntity(self, entityClass, entity):
         if isinstance(entity, ndb.Model):

@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
 		<link rel="stylesheet" href="../static/css/grid.css" />
-		<script>saludable.entity_class = '{{entityClass}}';</script>
+		<script>saludable.entityClass = '{{entityClass}}';</script>
 		<script>dojoConfig = {async: 1,parseOnLoad:1,dojoBlankHtmlUrl: '/blank.html',packages: [{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/js/lib/gridx'}]};</script>
 		<script type="text/javascript" src="../static/js/my/modelSpecific.js"></script>
 		<script type="text/javascript" src="../static/js/my/crearFactura.js"></script>
@@ -60,9 +60,9 @@
 				<td>
 					<button id='guardar_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Imprimir y Guardar Pedido</button></td>
 				</td>
-				<td><label>SUBTOTAL: $ </label><label id="subtotal">0</label></td><td>
-				<td><label>IVA: $ </label><label id="iva">0</label></td></td><td>
-				<td><label>TOTAL: $ </label><label id="total">0</label></td></td><td>
+				<td><label>SUBTOTAL: $ </label><label id="factura_subtotal">0</label></td><td>
+				<td><label>IVA: $ </label><label id="factura_iva">0</label></td></td><td>
+				<td><label>TOTAL: $ </label><label id="factura_total">0</label></td></td><td>
 				<td><div id='mensaje_{{entityClass}}' style="color: red"></div></td>
 			</tr>
 		</table>

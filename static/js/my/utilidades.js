@@ -13,15 +13,15 @@ require([
 	"dijit/form/TextBox",
 	], 
 	function(request,registry,parser,dom,on,query,number,Standby) {
-		var entity_class = 'Utilidades Simple';
-		parser.instantiate([dom.byId('GenerarInformeBtn_' + entity_class)]);
+		var entityClass = 'Utilidades Simple';
+		parser.instantiate([dom.byId('GenerarInformeBtn_' + entityClass)]);
 		//Modal to show its loading
 		var standby = new Standby({target: 'utilidades_standby'});
 		document.body.appendChild(standby.domNode);
 		standby.startup();
-		on(registry.byId('GenerarInformeBtn_' + entity_class),'click', function(e){
-			var desde = registry.byId('fecha_pivot_1_' + entity_class).value.toISOString().split('T')[0];
-			var hasta =  registry.byId('fecha_pivot_2_' + entity_class).value.toISOString().split('T')[0];
+		on(registry.byId('GenerarInformeBtn_' + entityClass),'click', function(e){
+			var desde = registry.byId('fecha_pivot_1_' + entityClass).value.toISOString().split('T')[0];
+			var hasta =  registry.byId('fecha_pivot_2_' + entityClass).value.toISOString().split('T')[0];
 			var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
 			standby.show(); 
 			request('/getUtilidades?' + appendUrl,{handleAs:'json'}).then(function(response) {

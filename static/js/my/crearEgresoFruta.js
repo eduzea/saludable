@@ -24,10 +24,10 @@ require(['dojo/dom',
 		'dojo/domReady!'], 
 function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbox,  
 	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
-	var entityClass = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 	
 	var resetProveedor = function(){	
-		request('/getProveedores?bienoservicio=MATERIA.PRIMA-FRUTA', {handleAs:'json'}).then(
+		request('/getProveedores?bienoservicio=FRUTA', {handleAs:'json'}).then(
 		function(response){
 			var items = [];
 			if (response.length == 0){
@@ -173,8 +173,8 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 			grid.store.remove(id);	
 		}
 		var total = formdata.cantidad * formdata.precio;
-		grid.store.add({'id':id,'bienoservicio':'MATERIA.PRIMA-FRUTA','detalle':formdata.fruta, 'cantidad':formdata.cantidad, 
-						'precio': formdata.precio, 'compra':total});
+		grid.store.add({'id':id,'bienoservicio':'FRUTA','detalle':formdata.fruta, 'cantidad':formdata.cantidad, 
+						'precio': formdata.precio, 'total':total});
 		grid.total=updateTotal();
 
 		
@@ -193,7 +193,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 					return number.format(data.precio,{pattern:'###,###'});
 				}
 		},
-		{field : 'compra', name : 'Valor Total', style: "text-align: center", 
+		{field : 'total', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
 					return number.format(data.compra,{pattern:'###,###.#'});
 				}

@@ -36,7 +36,7 @@ require(['dojo/store/Memory',
 function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, query, parser,dom,domConstruct,html,number,on,toCSV,aspect,topic,Standby) {
 	var numeroDomId = {'Factura':'numero_Factura', 'Remision':'numero_Remision', 'Egreso':'numero_Egreso'};
 	
-	var entity_class = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 	
 	var jsonRest = new JsonRest({
 		target: '/entityData?',
@@ -44,7 +44,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	});
 	
 	//CREATE GRID AFTER GETTING STRUCTURE FROM SERVER
-	request('/getColumns?entityClass=' + entity_class, {handleAs:'json'}).then(function(response) {
+	request('/getColumns?entityClass=' + entityClass, {handleAs:'json'}).then(function(response) {
 		var columns = response['columns'];
 		columns.forEach(function(column){
 			if (column.type == 'Integer'){
@@ -64,13 +64,13 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	                    var rowData = grid.row(selectedRowId, true).rawData();
 	                    request.post("deleteEntity", 
 	                    	{
-	                    		data: {'key':rowData.id, 'entity_class':entity_class}
+	                    		data: {'key':rowData.id, 'entityClass':entityClass}
 	                    	}).then(function(text){
     						console.log("The server returned: ", text);
     						grid.store.remove(selectedRowId);
     						grid.model.clearCache();
     						grid.body.refresh();
-    						topic.publish(entity_class.toUpperCase(), {'action':'DELETE','value':rowData.id});    						
+    						topic.publish(entityClass.toUpperCase(), {'action':'DELETE','value':rowData.id});    						
 						});
 					}
 				});
@@ -83,22 +83,22 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
    				var btn = new Button({
 					label : "Editar",
 					onClick : function() {
-						var widget = saludable.widgetCache['widget' + entity_class].getChildren()[0];
+						var widget = saludable.widgetCache['widget' + entityClass].getChildren()[0];
 						widget.selectChild(widget.getChildren()[0]);
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;
 	                    // get the data
 	                    var rowData = grid.row(selectedRowId, true).rawData();
-	                    var nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ '_' + entity_class);
+	                    var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
 	                    if (nodelist.length == 0){
-	                    	var contentPane= registry.byId(entity_class + '_add');
+	                    	var contentPane= registry.byId(entityClass + '_add');
 							contentPane.set("onDownloadEnd", function(){
-								nodelist= query('[id*='+ entity_class +']', 'addEntityForm'+ '_' + entity_class );
+								nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass );
 								parser.instantiate(nodelist);
-    							fillForm(nodelist, rowData, entity_class);	
+    							fillForm(nodelist, rowData, entityClass);	
 							});
 	                    }else{
-                    		fillForm(nodelist, rowData, entity_class);
+                    		fillForm(nodelist, rowData, entityClass);
 	                    }
 	                }
 				});
@@ -110,7 +110,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		
 		//Grid properties
 		var getServerPagerHtml = function(){
-			return '<span id="masBtn_' + entity_class + '" class="gridxPagerStepperBtn gridxPagerPage"  tabindex="-1">mas...</span>';
+			return '<span id="masBtn_' + entityClass + '" class="gridxPagerStepperBtn gridxPagerPage"  tabindex="-1">mas...</span>';
 		};
 		
 		 var gridProps = 
@@ -143,7 +143,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
          };
 		
 		//Create the grid
-		var grid = new Grid(gridProps, 'gridNode_'+ entity_class);
+		var grid = new Grid(gridProps, 'gridNode_'+ entityClass);
 		
 		//To color anulada rows
 		aspect.after(grid.body, 'onAfterRow', function(row) {
@@ -157,12 +157,12 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		grid.startup();
 		
 		//Modal to show its loading
-		var standby = new Standby({target: 'gridNode_'+ entity_class});
+		var standby = new Standby({target: 'gridNode_'+ entityClass});
 		document.body.appendChild(standby.domNode);
 		standby.startup();
 		
 		//Event to trigger server fetch
-		dom.byId('masBtn_'+entity_class).onclick = function(){
+		dom.byId('masBtn_'+entityClass).onclick = function(){
 			if(more){
 				getNextPage(nextCursor,grid.pageSize);	
 			}else{
@@ -173,7 +173,7 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
   		//FUNCTION TO GET DATA ONE PAGE AT A TIME
   		var getNextPage = function(cursor, count){
   			standby.show();
-			jsonRest.query( {'entityClass':entity_class,'count':count,'cursor':cursor},
+			jsonRest.query( {'entityClass':entityClass,'count':count,'cursor':cursor},
 							{start: 0, count: count,
 								 sort: [{ attribute: '', descending: true }]//sort field will be determined in the server...
 								 }
@@ -198,8 +198,8 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 		console.log("An errror occurred " + error);
 	});
 	
-	parser.instantiate([dom.byId('exportarDatos_'+entity_class)]);
-	var exportarBtn = registry.byId('exportarDatos_'+entity_class);
+	parser.instantiate([dom.byId('exportarDatos_'+entityClass)]);
+	var exportarBtn = registry.byId('exportarDatos_'+entityClass);
 	on(exportarBtn,'click',exportarDatos);
 	
 	//HELPER FUNCTIONS
@@ -247,20 +247,20 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
    					});
    				}else{
    					var id = dijit.id;
-		        	if (id.indexOf(entity_class + "_Btn_list") > -1){//For key fields that are lists
-		        		var field = id.replace('_' + entity_class + '_Btn_list','');
+		        	if (id.indexOf(entityClass + "_Btn_list") > -1){//For key fields that are lists
+		        		var field = id.replace('_' + entityClass + '_Btn_list','');
 		        		//Find the button, fill the items list
-		        		var button = registry.byId(field + '_' + entity_class + '_Btn_list');
+		        		var button = registry.byId(field + '_' + entityClass + '_Btn_list');
 		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
 		        		//Find the list, populate it
-		        		var listName = field + '_' + entity_class + '_list';
+		        		var listName = field + '_' + entityClass + '_list';
 		        		$('#'+listName).empty();
 		        		button.items.forEach(function(item){
 		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
 		        		});
 
 		        	}
-		        	id= dijit.id.replace('_' + entity_class,''); 
+		        	id= dijit.id.replace('_' + entityClass,''); 
 		        	if(id in rowData){
 		        		if (rowData[id] instanceof Array){//If a list, take first only...
 		        			rowData[id]=rowData[id][0];
@@ -276,12 +276,12 @@ function(Store, JsonRest, Grid, Cache, request, Button, CellWidget,registry, que
 	};
 		
 	var exportarDatos = function(){
-		var grid = registry.byId('gridNode_'+ entity_class);
+		var grid = registry.byId('gridNode_'+ entityClass);
 		toCSV(grid).then(function(csv){
 			var win = window.open('','DATOS EXPORTADOS');
 			csv = csv.replace(/\r\n/g,'<br/>');
 			win.document.write(csv);
-			win.document.title = entity_class;
+			win.document.title = entityClass;
 		});
 	};
 

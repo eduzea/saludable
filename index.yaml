@@ -10,6 +10,11 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: Compra
+  properties:
+  - name: bienoservicio
+  - name: fecha
+
 - kind: Egreso
   properties:
   - name: empleado
@@ -115,6 +120,11 @@ indexes:
 - kind: PagoRecibido
   properties:
   - name: cliente
+  - name: fecha
+
+- kind: Pasivo
+  properties:
+  - name: cuenta
   - name: fecha
 
 - kind: Precio

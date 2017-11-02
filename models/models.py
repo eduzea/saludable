@@ -1,7 +1,9 @@
 from __future__ import division
 from google.appengine.ext import ndb
+from google.appengine.ext.ndb import msgprop
 from datetime import datetime, timedelta
 from google.appengine.ext.db import ComputedProperty
+from protorpc import messages 
 
 class Initialized(ndb.Model):
     pass
@@ -25,8 +27,9 @@ def key2str(key):
 class Empleado(Record):
     nombre = ndb.StringProperty(indexed=True)
     apellido = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
+    writePermission = ndb.BooleanProperty()
     email = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre + ' ' + self.apellido)
      
 class GrupoDePrecios(Record):
     nombre = ndb.StringProperty(indexed=True)
@@ -103,6 +106,9 @@ class NumeroActivoFijo(Record):
     consecutivo = ndb.IntegerProperty()
 
 class NumeroPagoRecibido(Record):
+    consecutivo = ndb.IntegerProperty()
+
+class NumeroMovimientoDeEfectivo(Record):
     consecutivo = ndb.IntegerProperty()
     
 class Remision(Record):
@@ -282,6 +288,7 @@ class Produccion(Record):
 
 ########## EGRESOS #######
 
+#Deprecated. Replaced by the catefories of PUC itself.
 class TipoEgreso(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
@@ -295,42 +302,82 @@ def objListToString(objList):
             print "Inconsistent record:", objList
     return text
     
-# PUC classes - Consider implementing this from config...
+# PUC classes - Initialize this once per datastore - Plan de Cuentas
 class Clase(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
     nombre = ndb.StringProperty(indexed=True)
-    pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
 class Grupo(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
     clase = ndb.KeyProperty(kind=Clase)
     nombre = ndb.StringProperty(indexed=True)
-    pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 class Cuenta(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
     grupo = ndb.KeyProperty(kind=Grupo)
     nombre = ndb.StringProperty(indexed=True)
-    pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 class SubCuenta(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
     cuenta = ndb.KeyProperty(kind=Cuenta)
     nombre = ndb.StringProperty(indexed=True)
-    pucNumber = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 ##################################################################################
 
-class Bienoservicio(Record):
+### ------------BEGIN NUEVO MANEJO DE EGRESOS ----------####
+
+class EstadoDePago(messages.Enum):
+    Pagado = 0
+    Pendiente = 1
+
+class BienoservicioPUC(Record):
     nombre = ndb.StringProperty(indexed=True)
-    tipo = ndb.KeyProperty(kind=TipoEgreso)
-    clase = ndb.KeyProperty(kind=Clase)
-    grupo = ndb.KeyProperty(kind=Grupo)
-    cuenta = ndb.KeyProperty(kind=Cuenta)
-    subcuenta = ndb.KeyProperty(kind=SubCuenta)
-    puc = ndb.StringProperty(indexed=True)
+    pucNumero = ndb.IntegerProperty()
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
+class Impuesto(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    descripcion = ndb.TextProperty(indexed=True)
+    cuentaPucNombre = ndb.StringProperty(indexed=True)
+    cunetaPucNumero = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class CompraPUC(Record):
+    bienoservicio = ndb.KeyProperty(kind=BienoservicioPUC)
+    detalle = ndb.StringProperty()
+    cantidad = ndb.FloatProperty()
+    precio = ndb.IntegerProperty()
+    monto = ndb.FloatProperty()
+    impuestos = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
+    
+class FacturaDeProveedor(Record):
+    numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    vencimiento = ndb.DateProperty()
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    compras = ndb.StructuredProperty(CompraPUC,repeated=True)
+    baseImponible = ndb.IntegerProperty()
+    impuesto = ndb.KeyProperty(kind=Impuesto)
+    impuestoMonto = ndb.IntegerProperty()
+    total = ndb.ComputedProperty(lambda self: self.baseImponible + self.impuestoMonto)
+    estado = msgprop.EnumProperty(EstadoDePago, required=True, indexed=True) 
+
+### ------------END NUEVO MANEJO DE EGRESOS ----------####
+
+class Bienoservicio(Record):
+    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo vs indirecto)
+    clase = ndb.KeyProperty(kind=Clase)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta, required=False)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta, required=False)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
 
 class PorcionCompra(Record):
     valor = ndb.IntegerProperty()
@@ -338,22 +385,27 @@ class PorcionCompra(Record):
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
 
 class Compra(Record):
+    egreso = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    sucursal = ndb.KeyProperty(kind=Sucursal)
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
     detalle = ndb.StringProperty()
     cantidad = ndb.FloatProperty()
     precio = ndb.IntegerProperty()
-    compra = ndb.FloatProperty()
+    compra = ndb.FloatProperty()# el valor total de la compra
+    total = ndb.FloatProperty()# el valor total de la compra
     rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
-
-class Fuente(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+        
+class Fuente(messages.Enum):
+    Credito = 0
+    Efectivo = 1
 
 class Egreso(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
-    fuente = ndb.KeyProperty(kind=Fuente, default=ndb.Key(Fuente,'CAJA.MENOR'))
+    fuente = msgprop.EnumProperty(Fuente, required=True, indexed=True)
     empleado = ndb.KeyProperty(kind=Empleado)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     compras = ndb.StructuredProperty(Compra,repeated=True)
@@ -361,7 +413,7 @@ class Egreso(Record):
     total = ndb.IntegerProperty()
     resumen = ndb.StringProperty(indexed=True)
     comentario = ndb.TextProperty()
-    
+   
     
 class TipoAcreedor(Record):
     nombre = ndb.StringProperty(indexed=True)
@@ -376,10 +428,11 @@ class Acreedor(Record):
     ciudad = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
-class Deuda(Record):
+class Pasivo(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
-    empleado = ndb.KeyProperty(kind=Empleado)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta)
     acreedor = ndb.KeyProperty(kind=Acreedor)
     monto = ndb.IntegerProperty()
     interes = ndb.FloatProperty(default=0)
@@ -434,6 +487,22 @@ class CuentaBancaria(Record):
     titular = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.banco.get().rotulo +'-' + self.numero)
 
+class TipoMovimientoEfectivo(messages.Enum):
+    Credito = 0
+    Debito = 1
+
+class MovimientoDeEfectivo(Record):
+    numero = ndb.IntegerProperty()
+    cuenta = ndb.KeyProperty(kind=CuentaBancaria)
+    fecha = ndb.DateProperty()
+    tipoMovimiento = msgprop.EnumProperty(TipoMovimientoEfectivo, required=True, indexed=True)
+    descripcion = ndb.StringProperty()
+    info = ndb.StringProperty()
+    monto = ndb.IntegerProperty()
+    saldo = ndb.IntegerProperty()
+    egresos = ndb.KeyProperty(kind=Egreso, repeated=True)
+    reconciliado = ndb.BooleanProperty()     
+
 class SaldoCuentaBancaria(Record):
     cuenta = ndb.KeyProperty(kind=CuentaBancaria)
     fecha = ndb.DateProperty()
@@ -446,15 +515,6 @@ class CuentaPorCobrar(Record):
 
 class AnticipoImpuestos(Activo):
     entidad = ndb.StringProperty(indexed=True)
-    total = ndb.IntegerProperty()
-
-class Pasivo(Record):
-    numero = ndb.IntegerProperty()
-    fecha = ndb.DateProperty() #Fecha de adquisicion
-    empleado = ndb.KeyProperty(kind=Empleado)
-    grupo = ndb.KeyProperty(kind=Grupo)
-    cuenta = ndb.KeyProperty(kind=Cuenta)
-    subcuenta = ndb.KeyProperty(kind=SubCuenta)
     total = ndb.IntegerProperty()
     
 keyDefs = {'Cliente':['nombre','negocio'],
@@ -470,7 +530,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Venta':['producto','porcion'],
            'Egreso':['numero'],
            'LoteDeCompra':['fecha','fruta','proveedor'],
-           'Compra':['bienoservicio'], 
+           'Compra':['egreso','bienoservicio','detalle'], 
            'Remision':['numero'],
            'Proveedor':['nombre'],
            'Bienoservicio':['nombre'],
@@ -480,11 +540,11 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'TipoEgreso':['nombre'],
            'TipoAcreedor':['nombre'],
            'Acreedor':['nombre'],
-           'Deuda':['numero'],
-           'Clase':['pucNumber'],
-           'Grupo':['pucNumber'],
-           'Cuenta':['pucNumber'],
-           'SubCuenta':['pucNumber'],
+           'Pasivo':['numero'],
+           'Clase':['pucnumber'],
+           'Grupo':['pucnumber'],
+           'Cuenta':['pucnumber'],
+           'SubCuenta':['pucnumber'],
            'OtrosIngresos':['numero'],
            'CapitalSocial':['socio'],
            'CapitalPagado':['fecha'],
@@ -510,6 +570,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Fila':['nombre'],
            'Columna':['nombre'],
            'Nivel':['nombre'],
+           'MovimientoDeEfectivo':['numero'],
            ##########
            'NumeroPedido':['consecutivo'],
            'NumeroFactura':['consecutivo'],
@@ -519,6 +580,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'NumeroOtrosIngresos':['consecutivo'],
            'NumeroActivoFijo':['consecutivo'],
            'NumeroPagoRecibido':['consecutivo'],
+           'NumeroMovimientoDeEfectivo':['consecutivo'],
            }
 classModels = {'Cliente':Cliente, 
                'Producto':Producto,
@@ -550,7 +612,7 @@ classModels = {'Cliente':Cliente,
                'Sucursal':Sucursal,
                'Ciudad':Ciudad,
                'Acreedor':Acreedor,
-               'Deuda':Deuda,
+               'Pasivo':Pasivo,
                'Devolucion':Devolucion,
                'OtrosIngresos':OtrosIngresos,
                'CapitalSocial':CapitalSocial,
@@ -574,7 +636,10 @@ classModels = {'Cliente':Cliente,
                'Nivel':Nivel,
                'Produccion':Produccion,
                'ProductoPorcion':ProductoPorcion,
-               'Fuente':Fuente}
+               'Fuente':Fuente,
+               'EstadoDePago':EstadoDePago,
+               'FacturaDeProveedor':FacturaDeProveedor,
+               'MovimientoDeEfectivo':MovimientoDeEfectivo}
 
 singletons = {'NumeroPedido': NumeroPedido,
               'NumeroFactura':NumeroFactura,
@@ -584,4 +649,5 @@ singletons = {'NumeroPedido': NumeroPedido,
               'NumeroOtrosIngresos':NumeroOtrosIngresos,
               'NumeroActivoFijo':NumeroActivoFijo,
               'NumeroPagoRecibido':NumeroPagoRecibido,
+              'NumeroMovimientoDeEfectivo':NumeroMovimientoDeEfectivo
               }

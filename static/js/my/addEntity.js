@@ -14,7 +14,7 @@ function(request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic
 		return obj;
 	} 
 	
-	var entityClass = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
 	var buttons={};
 	buttons[entityClass] =  registry.byId('agregar_btn' + '_' + entityClass);

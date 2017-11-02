@@ -15,10 +15,10 @@ sys.setdefaultencoding("utf-8")
 dataStoreInterface = DataStoreInterface()
 
 ################## FUNCTIONS TO BE EXPOSED TO JINJA VIA pythonFunction() #####################
-def tagForField(entity_class, prop, auto=None, customId=None):
+def tagForField(entityClass, prop, auto=None, customId=None):
     if isinstance(prop,basestring):
-        prop = fieldInfo(entity_class, prop)
-    tag = getTagHTML(prop, entity_class, customId)
+        prop = fieldInfo(entityClass, prop)
+    tag = getTagHTML(prop, entityClass, customId)
     return Markup(tag)
 
 
@@ -93,6 +93,7 @@ basisTagString = {'StringProperty':'<input data-dojo-type="dijit/form/Validation
                   'IntegerProperty': '<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'FloatProperty':'<input data-dojo-type="dijit/form/NumberTextBox" ATTR_REPLACE > INNER_REPLACE </input>',
                   'KeyProperty' : '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select> POST_REPLACE',
+                  'EnumProperty' : '<select data-dojo-type="dijit/form/Select" ATTR_REPLACE > INNER_REPLACE </select> POST_REPLACE',
                   'DateProperty':'<input value = now data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:\'yyyy-MM-dd\', strict:true}" ATTR_REPLACE ></input>',
                   'TextProperty':'<textarea data-dojo-type="dijit/form/SimpleTextarea" ATTR_REPLACE > INNER_REPLACE </textarea>',
                   'BooleanProperty':'<input type="text" data-dojo-type="dijit/form/CheckBox" onchange="this.value = this.checked;" ATTR_REPLACE > INNER_REPLACE </input>',
@@ -107,8 +108,8 @@ def getSelectTagHTML(tagId, options):
         innerReplace += "<option value='" + option['value'] + "'>" + option['value'] + '</option>'
     return html.replace('ATTR_REPLACE', ' id="' + tagId + '" name= "' + tagId + '"').replace('INNER_REPLACE',innerReplace)
 
-def getIdString(field,entity_class):
-    idname = field + '_' + entity_class
+def getIdString(field,entityClass):
+    idname = field + '_' + entityClass
     return 'id="' + idname + '" name="' + idname + '" '
 
 def getOptions(entityClass, sortField=None):
@@ -130,23 +131,30 @@ def getOptionsHTML(entityClass, sortField=None):
         html += "<option value='" + option_value + "'>" + option.rotulo + '</option>'
     return html
 
-def repeatedPropHTML(field, entity_class):
-    html = "<button class = listBtn id='" + field + '_' + entity_class + "_Btn_list' data-dojo-type='dijit/form/Button'>Agregar</button>"
-    html += "<div style='border:1px solid #b5bcc7;' id='" + field + '_' + entity_class + "_list' class='list'></div>"
+def getEnumOptionsHTML(propType):
+    options = propType._enum_type.to_dict().keys()
+    html = ''
+    for option in options:    
+        html += "<option value='" + option + "'>" + option+ '</option>'
     return html
 
-def structuredPropHTML(propType, fieldName, entity_class):
+def repeatedPropHTML(field, entityClass):
+    html = "<button class = listBtn id='" + field + '_' + entityClass + "_Btn_list' data-dojo-type='dijit/form/Button'>Agregar</button>"
+    html += "<div style='border:1px solid #b5bcc7;' id='" + field + '_' + entityClass + "_list' class='list'></div>"
+    return html
+
+def structuredPropHTML(propType, fieldName, entityClass):
     model = propType._modelclass._class_name()
     fields = fieldsInfo(model)
     inner=''
     for field in fields:
         inner += '<td>' + getTagHTML(field,model) + '</td>'
-    inner += "<td><button id='" + fieldName + "_" + entity_class + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button></td>"
-    post = '<div class= "struct-grid grid_' + entity_class + '" model ="' + model + '" id="grid_' + fieldName + '_' + entity_class +  '"/>'
+    inner += "<td><button id='" + fieldName + "_" + entityClass + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button></td>"
+    post = '<div class= "struct-grid grid_' + entityClass + '" model ="' + model + '" id="grid_' + fieldName + '_' + entityClass +  '"/>'
     return {'inner':inner, 'post':post}
 
 #This function creates HTLM markup based on Model props and config
-def getTagHTML(prop,entity_class, customId=None):
+def getTagHTML(prop,entityClass, customId=None):
     attrReplace = ''
     innerReplace = ''
     postReplace = ''
@@ -154,7 +162,7 @@ def getTagHTML(prop,entity_class, customId=None):
     if 'default' in prop:
         prop['value'] = str(prop.pop('default'))
     if 'auto' in prop:
-        prop['value'] = str(dataStoreInterface.autoNum(entity_class))
+        prop['value'] = str(dataStoreInterface.autoNum(entityClass))
         propType = ndb.IntegerProperty()
         attrReplace = ' readonly ' 
     if propType._repeated and type(propType) is ndb.IntegerProperty:#for the case of delimiter separated lists of numbers
@@ -163,7 +171,7 @@ def getTagHTML(prop,entity_class, customId=None):
     for key,value in prop.iteritems():
         if key == 'id':
             if not customId:
-                attrReplace += getIdString(value, entity_class)
+                attrReplace += getIdString(value, entityClass)
             else:
                 attrReplace += 'id="' + customId + '" name="' + customId + '" '
         else:
@@ -174,9 +182,11 @@ def getTagHTML(prop,entity_class, customId=None):
             sortField = prop['sort']
         innerReplace += getOptionsHTML(propType, sortField)
         if propType._repeated == True:
-            postReplace += repeatedPropHTML(prop['id'],entity_class)
+            postReplace += repeatedPropHTML(prop['id'],entityClass)
+    if type(propType) == msgprop.EnumProperty:
+        innerReplace += getEnumOptionsHTML(propType)
     elif type(propType) == ndb.StructuredProperty:
-        structPropHTML = structuredPropHTML(propType,prop['id'],entity_class)
+        structPropHTML = structuredPropHTML(propType,prop['id'],entityClass)
         attrReplace = attrReplace.replace('id="', 'id="struct') # This is to avoid the structured prop form being interpreted as a field
         innerReplace += structPropHTML['inner']
         postReplace += structPropHTML['post'] 

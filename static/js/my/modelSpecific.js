@@ -1,8 +1,8 @@
 //# sourceURL=../static/js/my/modelSpecific.js
 require(['dojo/dom','dijit/registry',"dojo/dom-attr",'dojo/request','dojo/topic','dojo/number',
 	'dojo/dom-style','dojo/on',"dijit/Dialog",'dojo/parser',"dojo/dom-construct",'dijit/form/Button',
-	"dojo/json","dojo/domReady!"],
-function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,domConstruct,Button,json)
+	"dojo/json",'dojo/store/Memory',"dijit/form/FilteringSelect","dojo/domReady!"],
+function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,domConstruct,Button,json,Memory,FilteringSelect)
 {
 	//prevent access to uninstantiated dijits
 	var getDijit = function(id){
@@ -232,6 +232,91 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 		function(){
 			var unidadesInput = registry.byId('unidades_Porcion');
 			unidadesInput.set('uppercase',false);
+		},
+		'Bienoservicio':
+		function(){
+			request('/getPUC', 
+					{handleAs:'json'}).then(
+				function(response) {
+					pucStore = new Memory({data: response, idProperty:'pucnumber'});
+					var subcuentaStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{6}$")}),idProperty:'pucnumber'});
+					registry.byId("subcuenta_Bienoservicio").destroyRecursive(true);
+					var subcuentaSelect = new FilteringSelect({
+				        name: "subcuenta",
+				        value: "510506",
+				        store: subcuentaStore,
+				        searchAttr: "Subcuenta_Nombre",
+				        queryExpr: "*${0}*",
+				        autoComplete:false,
+				        required:false
+				    }, "subcuenta_Bienoservicio");
+					subcuentaSelect.startup();
+					
+					var claseStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{1}$")}), idProperty:'pucnumber'});
+					registry.byId("clase_Bienoservicio").destroyRecursive(true);
+					var claseSelect = new FilteringSelect({
+				        name: "clase",
+				        value: "5",
+				        store: claseStore,
+				        searchAttr: "Clase_Nombre"
+				    }, "clase_Bienoservicio");
+					claseSelect.startup();
+
+					var grupoStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{2}$")}),idProperty:'pucnumber'});
+					registry.byId("grupo_Bienoservicio").destroyRecursive(true);
+					var grupoSelect = new FilteringSelect({
+				        name: "grupo",
+				        value: "51",
+				        store: grupoStore,
+				        searchAttr: "Grupo_Nombre"
+				    }, "grupo_Bienoservicio");
+					grupoSelect.startup();
+
+					var cuentaStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{4}$")}),idProperty:'pucnumber'});
+					registry.byId("cuenta_Bienoservicio").destroyRecursive(true);
+					var cuentaSelect = new FilteringSelect({
+				        name: "cuenta",
+				        value: "5105",
+				        store: cuentaStore,
+				        searchAttr: "Cuenta_Nombre",
+				        required:false
+				    }, "cuenta_Bienoservicio")
+					cuentaSelect.startup();			
+
+					
+					claseSelect.onChange = function(clase){
+						grupoSelect.query.Clase = clase;
+						var results = grupoSelect.store.query({'Clase':clase});
+						if (results.length == 0){
+							grupoSelect.query.Clase = '';
+							grupoSelect.set("value", '');
+						}else{
+							grupoSelect.set("value", claseStore.getIdentity(results[0]));					
+						}
+					}
+					
+					grupoSelect.onChange = function(grupo){
+						cuentaSelect.query.Grupo = grupo;
+						var results = cuentaSelect.store.query({'Grupo':grupo});
+						if (results.length == 0){
+							cuentaSelect.query.Grupo = '';
+							cuentaSelect.set("value", '');
+						}else{
+							cuentaSelect.set("value", grupoStore.getIdentity(results[0]));
+						}
+					}
+					
+					cuentaSelect.onChange = function(cuenta){
+						subcuentaSelect.query.Cuenta = cuenta;
+						var results = subcuentaSelect.store.query({'Cuenta':cuenta});
+						if (results.length == 0){
+							subcuentaSelect.query.Cuenta = '';
+							subcuentaSelect.set("value", '');
+						}else{
+							subcuentaSelect.set("value", cuentaStore.getIdentity(results[0]));
+						}
+					}
+				});
 		}
 	}
 });

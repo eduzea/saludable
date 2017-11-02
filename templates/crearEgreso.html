@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="../static/js/lib/gridx/resources/claro/Gridx.css" />
 		<link rel="stylesheet" href="../static/css/grid.css" />
-		<script>saludable.entity_class = 'Egreso';</script>
+		<script>saludable.entityClass = 'Egreso';</script>
 		<script>dojoConfig = {async: 1,parseOnLoad:1,dojoBlankHtmlUrl: '/blank.html',packages: [{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/js/lib/gridx'}]};</script>
 		<script type="text/javascript" src="../static/js/my/modelSpecific.js"></script>
 		<script type="text/javascript" src="../static/js/my/crearEgreso.js"></script>
@@ -30,7 +30,7 @@
 					<td><label for='numero_Egreso'>No. Egreso: </label> </td>
 					<td><div id='numero_Egreso'></div></td>					
 				</tr>					
-				<tr>
+				<tr>					
 					<td><label for='tipo_Egreso'>Tipo: </label></td>
 					<td><div>
 							{{tagForField('Egreso',props['tipo'])}}
@@ -75,7 +75,7 @@
 				<td>
 					<button id='guardar_EgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
 				</td>
-				<td><label>TOTAL: $ </label><label id="total">0</label></td>
+				<td><label>TOTAL: $ </label><label id="egreso_total">0</label></td>
 			</tr>
 			<tr><td><div id='mensaje_Egreso' style="color: red"></div></td></tr>
 		</table>

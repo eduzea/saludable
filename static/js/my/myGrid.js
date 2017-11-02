@@ -48,7 +48,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 	                    var rowData = grid.row(selectedRowId, true).rawData();
 	                    request.post("deleteEntity", 
 	                    	{
-	                    		data: {'key':rowData.id, 'entity_class':grid.gridName}
+	                    		data: {'key':rowData.id, 'entityClass':grid.gridName}
 	                    	}).then(function(text){
     						console.log("The server returned: ", text);
     						grid.store.remove(selectedRowId);
@@ -72,7 +72,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 					parentGrid : grid, 
 					onClick : function() {
 						var grid = this.parentGrid;
-						var widget = saludable.widgetCache['widget' + grid.gridName].getChildren()[0];
+						var widget = saludable.getWidget(grid.gridName).getChildren()[0];
 						widget.selectChild(widget.getChildren()[0]);
 	                    // get the selected row's ID
 	                    var selectedRowId = cellWidget.cell.row.id;

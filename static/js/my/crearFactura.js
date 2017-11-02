@@ -26,7 +26,7 @@ require(['dojo/dom',
 		'dijit/form/NumberTextBox'
 		], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, html, ready,topic,Memory,Checkbox) {
-	var entityClass = saludable.entity_class;	
+	var entityClass = saludable.entityClass;	
 	
 	var resetCliente = function(cliente){	
 		request.post('/getClientes', {handleAs:'json'}).then(function(response){
@@ -132,9 +132,9 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		grid.subtotal = sumTotal;
 		grid.iva = Math.floor(sumTotal * iva);
 		grid.total = grid.subtotal + grid.iva;
-		dom.byId('subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###.#'});
-		dom.byId('iva').innerHTML = number.format(grid.iva,{pattern:'###,###.#'});
-		dom.byId('total').innerHTML = number.format(grid.total,{pattern:'###,###.#'});
+		dom.byId('factura_subtotal').innerHTML = number.format(grid.subtotal,{pattern:'###,###.#'});
+		dom.byId('factura_iva').innerHTML = number.format(grid.iva,{pattern:'###,###.#'});
+		dom.byId('factura_total').innerHTML = number.format(grid.total,{pattern:'###,###.#'});
 	};
 	
 	parser.instantiate([dom.byId('iva'+ '_' + entityClass)]);
@@ -183,13 +183,13 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 			var grid = registry.byId('grid'+ '_' + entityClass);
 			updateTotal();
 			var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'montoIva':grid.iva,'total':grid.total,  
-			'numero':numero, 'entity_class':entityClass};
+			'numero':numero, 'entityClass':entityClass};
 			request.post('/guardarFactura', {
 					data : json.stringify(factura_data),
 					handleAs:'json'
 				}).then(function(response) {
 					var message='';
-					if(response.result == 'Success'){
+					if(response.result == 'SUCCESS'){
 						message = 'Se grabo exitosamente este pedido!';
 						factura_data['cliente']=registry.byId('cliente'+ '_' + entityClass).attr('displayedValue');
 						actualizarFacturas(response, factura_data, entityClass);
@@ -197,7 +197,7 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entityClass+ '&pagina='+ pagina.toString();
 						window.open(url);
 					}else{
-						message = 'No se pudo guardar este pedido!';
+						message = response['msg'];
 					}
 					dom.byId('mensaje'+ '_' + entityClass).innerHTML = message;
 					setTimeout(function() {
@@ -206,9 +206,9 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 						grid.model.store.setData([]);
         				grid.body.refresh();
 						dom.byId('mensaje'+ '_' + entityClass).innerHTML = '';
-						dom.byId('total').innerHTML = '';
-						dom.byId('subtotal').innerHTML = '';
-						dom.byId('iva').innerHTML = '';
+						dom.byId('factura_total').innerHTML = '';
+						dom.byId('factura_subtotal').innerHTML = '';
+						dom.byId('factura_iva').innerHTML = '';
 						dom.byId('numero'+ '_' + entityClass).innerHTML = '';
 					}, 2000);
 					topic.publish('FACTURA',{'action':'ADD', 'id':response.id});

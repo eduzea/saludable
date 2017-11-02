@@ -63,7 +63,7 @@ class GetWidget(webapp2.RequestHandler):
         else:
             template_name = 'widget.html'#carga los views genericos de creacion y listado.
             template_values['template'] = createTemplateString(entityClass)
-        template_values['entity_class']=entityClass
+        template_values['entityClass']=entityClass
         template = JINJA_ENVIRONMENT.get_template(template_name)
         self.response.write(template.render(template_values))
 
@@ -84,15 +84,15 @@ class DojoxLoader(webapp2.RequestHandler):
 
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
-        template_values = {'entity_class': entity_class}
+        entityClass = self.request.get('entityClass')
+        template_values = {'entityClass': entityClass}
         template = JINJA_ENVIRONMENT.get_template('showEntities.html')
         self.response.write(template.render(template_values))
 
 class GetColumns(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
-        self.response.write(json.dumps(getColumns(entity_class)))
+        entityClass = self.request.get('entityClass')
+        self.response.write(json.dumps(getColumns(entityClass)))
 
 class GetRemisionesByName(webapp2.RequestHandler):
     def get(self):
@@ -105,17 +105,18 @@ class GetRemisionesByName(webapp2.RequestHandler):
 
 class EntityData(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass');
+        entityClass = self.request.get('entityClass');
         simpleDict = {key: value for key,value in self.request.params.iteritems()}
-        entity_query = dataStoreInterface.buildQuery(entity_class, simpleDict)
+        entity_query = dataStoreInterface.buildQuery(entityClass, simpleDict)
         count = self.request.get('count');
         if count:
-            response = dataStoreInterface.getEntitiesByPage(self.request.get('cursor'),entity_class, entity_query, int(count))
-            response['records']=prepareRecords(entity_class, response['records'])
+            response = dataStoreInterface.getEntitiesByPage(self.request.get('cursor'),entityClass, entity_query, int(count))
+            response['records']=prepareRecords(entityClass, response['records'])
         else:
-            response = dataStoreInterface.getEntities(entity_class, entity_query)
-            response['records']=prepareRecords(entity_class, response['records'])    
-        self.response.write(json.dumps(response))        
+            response = dataStoreInterface.getEntities(entityClass, entity_query)
+            response['records']=prepareRecords(entityClass, response['records'])    
+#         self.response.write(json.dumps(response))
+        self.response.out.write(JSONEncoder().encode(response))
 
 class SaveEntity(webapp2.RequestHandler):        
     def post(self):
@@ -129,15 +130,15 @@ class SaveEntity(webapp2.RequestHandler):
 
 class AddEntity(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
-        template_values = {'entityClass': entity_class, 'fields': fieldsInfo(entity_class), 'auto':dataStoreInterface.autoNum(entity_class)}
+        entityClass = self.request.get('entityClass')
+        template_values = {'entityClass': entityClass, 'fields': fieldsInfo(entityClass), 'auto':dataStoreInterface.autoNum(entityClass)}
         template = JINJA_ENVIRONMENT.get_template('addEntity.html')
         self.response.write(template.render(template_values))
 
 class DeleteEntity(webapp2.RequestHandler):        
     def post(self):
         key = self.request.POST.get('key')
-        entityClass = self.request.POST.get('entity_class')
+        entityClass = self.request.POST.get('entityClass')
         dataStoreInterface.deleteEntity(entityClass, key)
         self.response.out.write("Se elimino exitosamente: " + entityClass + " " + key)        
 
@@ -202,7 +203,7 @@ class GetPrice(webapp2.RequestHandler):
 class GetBienesoServicios(webapp2.RequestHandler):
     def get(self):
         tipo = TipoEgreso.get_by_id(self.request.get('tipo'))
-        bienesoservicios = Bienoservicio.query(Bienoservicio.tipo == tipo.key).fetch()
+        bienesoservicios = Bienoservicio.query(Bienoservicio.tipo == tipo.key, Bienoservicio.activo == True ).fetch()
         response = [{'value':bienoservicio.key.id(), 'name': bienoservicio.rotulo } for bienoservicio in bienesoservicios]
         self.response.out.write(json.dumps(response))
 
@@ -245,15 +246,32 @@ class GetDetails(webapp2.RequestHandler):
             records.append(detail)
         self.response.out.write(json.dumps(records))
         
-class GetUtilidades(webapp2.RequestHandler):
+class GetEstadoDeResultados(webapp2.RequestHandler):
     def get(self):
         fechaDesde = self.request.get('fechaDesde')
         fechaHasta = self.request.get('fechaHasta')
-        if self.request.get('detallado'):
-            utilidadData = getUtilidadDataFull(fechaDesde, fechaHasta)
-        else:
-            utilidadData = getUtilidadData(fechaDesde, fechaHasta)
-        self.response.out.write(json.dumps({'records':utilidadData}))
+        data = estadoDeResultados(fechaDesde, fechaHasta)
+        self.response.out.write(json.dumps({'records':data}))
+
+class GetDetalleEstadoDeResultados(webapp2.RequestHandler):
+    def get(self):
+        clase = self.request.get('cuenta')
+        fechaDesde = self.request.get('fechaDesde')
+        fechaHasta = self.request.get('fechaHasta')
+        data = detalleEstadoDeResultados(clase, fechaDesde, fechaHasta)
+        self.response.out.write(JSONEncoder().encode(data))
+
+
+
+# class GetUtilidades(webapp2.RequestHandler):
+#     def get(self):
+#         fechaDesde = self.request.get('fechaDesde')
+#         fechaHasta = self.request.get('fechaHasta')
+#         if self.request.get('detallado'):
+#             utilidadData = getUtilidadDataFull(fechaDesde, fechaHasta)
+#         else:
+#             utilidadData = getUtilidadData(fechaDesde, fechaHasta)
+#         self.response.out.write(json.dumps({'records':utilidadData}))
         
 class GetProductSales(webapp2.RequestHandler):
     def get(self):
@@ -280,28 +298,94 @@ class GetProductSales(webapp2.RequestHandler):
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))           
 
+
 class GetAllCompras(webapp2.RequestHandler):
     def get(self):
         records = []
-        entity_query = dataStoreInterface.buildQuery('Egreso', self.request.params)
-        egresos = entity_query.fetch()
-        for egreso in egresos:
-            for compra in egreso.compras:
-                compra = compra.to_dict()
-                compra['egreso']=egreso.numero
-                try:
-                    compra['proveedor']=egreso.proveedor.get().rotulo
-                except Exception as e:
-                    print egreso.proveedor
-                compra['fecha']=egreso.fecha
-                compra['mesnum']=egreso.fecha.month
-                compra['mes']=egreso.fecha.strftime('%B')
-                compra['year']=egreso.fecha.year
-                compra['tipo']=ndb.Key('TipoEgreso',egreso.tipo.id().upper()).get().rotulo
-                compra['sucursal']=ndb.Key('Sucursal',egreso.sucursal.id().upper()).get().rotulo
-                records.append(compra)
+        entity_query = dataStoreInterface.buildQuery('Compra', self.request.params)
+        compras = entity_query.fetch()
+        for compra in compras:
+            compraDict = compra.to_dict()
+            compraDict['mesnum']=compra.fecha.month
+            compraDict['mes']=compra.fecha.strftime('%B')
+            compraDict['year']=compra.fecha.year
+            records.append(compraDict)
         response = {'records':records}
         self.response.out.write(JSONEncoder().encode(response))
+
+# class GetAllCompras(webapp2.RequestHandler):
+#     def get(self):
+#         records = []
+#         entity_query = dataStoreInterface.buildQuery('Egreso', self.request.params)
+#         egresos = entity_query.fetch()
+#         for egreso in egresos:
+#             for compra in egreso.compras:
+#                 compra = compra.to_dict()
+#                 compra['egreso']=egreso.numero
+#                 try:
+#                     compra['proveedor']=egreso.proveedor.get().rotulo
+#                 except Exception as e:
+#                     print egreso.proveedor
+#                 compra['fecha']=egreso.fecha
+#                 compra['mesnum']=egreso.fecha.month
+#                 compra['mes']=egreso.fecha.strftime('%B')
+#                 compra['year']=egreso.fecha.year
+#                 compra['tipo']=ndb.Key('TipoEgreso',egreso.tipo.id().upper()).get().rotulo
+#                 compra['sucursal']=ndb.Key('Sucursal',egreso.sucursal.id().upper()).get().rotulo
+#                 records.append(compra)
+#         response = {'records':records}
+#         self.response.out.write(JSONEncoder().encode(response))
+
+#Read CSV File
+def read_csv(file, json_file, format):
+    
+    return 
+
+def csv2json(csvReader):
+    csv_rows = []
+    title = csvReader.fieldnames
+    for row in csvReader:
+        csv_rows.extend([{title[i]:row[title[i]] for i in range(len(title))}])
+    
+
+#Convert csv data into json and write it
+def write_json(data, json_file, format):
+    with open(json_file, "w") as f:
+        if format == "pretty":
+            f.write(json.dumps(data, sort_keys=False, indent=4, separators=(',', ': '),encoding="utf-8",ensure_ascii=False))
+        else:
+            f.write(json.dumps(data))
+
+class InitPUC(webapp2.RequestHandler):
+    def get(self):
+        records = []
+        with open('data/PUC.csv') as csvfile:
+            csvReader = csv.DictReader(csvfile)
+            title = csvReader.fieldnames
+            for row in csvReader:
+                records.append({title[i].lower():row[title[i]] for i in range(len(title))})
+        for record in records:
+            if len(record['pucnumber']) == 1:
+                dataStoreInterface.create_entity("Clase", record)
+            if len(record['pucnumber']) == 2:
+                dataStoreInterface.create_entity("Grupo", record)
+            if len(record['pucnumber']) == 4:
+                dataStoreInterface.create_entity("Cuenta", record)
+            if len(record['pucnumber']) == 6:
+                dataStoreInterface.create_entity("SubCuenta", record)
+        self.response.out.write("Done with PUC init!")
+
+#Function to provde the client with the PUC in json format
+class GetPUC(webapp2.RequestHandler):
+    def get(self):
+        jsonRecords = []
+        with open('data/PUC.csv') as csvfile:
+            csvReader = csv.DictReader(csvfile)
+            title = csvReader.fieldnames
+            for row in csvReader:
+                jsonRecords.append({title[i]:row[title[i]] for i in range(len(title))})
+        self.response.out.write(json.dumps(jsonRecords))
+
 
 class CrearEgreso(webapp2.RequestHandler):
     def get(self):
@@ -468,7 +552,7 @@ class GuardarFactura(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.body
         values = json.loads(post_data)
-        entityClass = values['entity_class']
+        entityClass = values['entityClass']
         ventas =[]
         for venta in values['ventas']:
             producto = venta['producto'].replace(' ','.')
@@ -481,49 +565,11 @@ class GuardarFactura(webapp2.RequestHandler):
         values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
         values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(entityClass)
-        factura = dataStoreInterface.create_entity(entityClass, values)['entity']          
-        self.response.out.write(json.dumps({'result':'Success','id': factura.key.id()}))     
-
-
-
-# class GuardarFactura(webapp2.RequestHandler):        
-#     def post(self):
-#         post_data = self.request.body
-#         values = json.loads(post_data)
-#         entityClass = values['entity_class']
-#         ventas =[]
-#         for venta in values['ventas']:
-#             producto = venta['producto'].replace(' ','.')
-#             ventas.append(Venta(producto=Producto.get_by_id(producto).key,
-#                            porcion=Porcion.get_by_id(venta['porcion']).key,
-#                            cantidad = venta['cantidad'],
-#                            precio = venta['precio'],
-#                            venta = venta['venta']))
-#         cliente = Cliente.get_by_id(values['cliente'])
-#         empleado = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
-#         fecha = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-#         numero = ''
-#         if values['numero']:
-#             numero = values['numero']
-#         else:
-#             numero = getConsecutivo(values['entity_class'])
-#         entity = classModels[entityClass].query(classModels[entityClass].numero == int(numero)).fetch()
-#         if entity:
-#             entity = entity[0]    
-#             if entityClass in preSaveAction:
-#                 preSaveAction[entityClass](entity)
-#             entity.populate(numero=int(numero), cliente = cliente.key, empleado = empleado.key,
-#                                           fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
-#                                           montoIva=values['iva'])
-#         else:
-#             entity = classModels[entityClass](id=str(numero), numero=int(numero), cliente = cliente.key, empleado = empleado.key,
-#                                  fecha = fecha, ventas=ventas, total=int(values['total']),subtotal=values['subtotal'],
-#                                  montoIva=values['iva'])
-#         entity.put()
-#         if entityClass in postSaveAction:
-#                 postSaveAction[entityClass](entity)
-#         self.response.out.write(json.dumps({'result':'Success','id': entity.key.id()}))     
-                
+        response = dataStoreInterface.create_entity(entityClass, values)
+        if response['result'] != 'FAIL':         
+            self.response.out.write(json.dumps({'result':'SUCCESS','id': response['entity'].key.id()}))
+        else:     
+            self.response.out.write(json.dumps({'result':'FAIL','msg': response['message']}))    
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
         key = self.request.get('id')
@@ -628,7 +674,12 @@ class ImportCSV(webapp2.RequestHandler):
         importCSV('data/' + datafile, entityClass)
         self.response.write('Registros Importados!')
 
-
+class ImportCashflow(webapp2.RequestHandler):
+    def get(self):
+        cuenta = self.request.get('cuenta')
+        datafile = self.request.get('datafile')
+        importCSV('data/' + datafile)
+        
         
 class GuardarInventario(webapp2.RequestHandler):        
     def post(self):
@@ -679,23 +730,23 @@ class GetIVAPagado(webapp2.RequestHandler):
 
 class ImportScript(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
-        json_data=open('data/' + entity_class +'.json')
+        entityClass = self.request.get('entityClass')
+        json_data=open('data/' + entityClass +'.json')
         data = json.load(json_data)
 #         data = json.loads(data)
         json_data.close()
         for record in data:
             print record
-            dataStoreInterface.create_entity(entity_class, record)
+            dataStoreInterface.create_entity(entityClass, record)
         self.response.write('Registros Importados!')
 
 
 class ExportScript(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
+        entityClass = self.request.get('entityClass')
         numRange = self.request.get('range')
         unpack = self.request.get('unpack').split(',')
-        model = classModels[entity_class]
+        model = classModels[entityClass]
         data =[]
         if numRange:
             start = int(numRange.split('-')[0])
@@ -713,26 +764,27 @@ class ExportScript(webapp2.RequestHandler):
 
 class Addbienoservicio(webapp2.RequestHandler):
     def get(self):
-        entity_class = self.request.get('entityClass')
+        entityClass = self.request.get('entityClass')
         property = self.request.get('property')
         id= self.request.get('id')
-        classModels[entity_class]
+        classModels[entityClass]
         
 class GuardarEgreso(webapp2.RequestHandler):        
     def post(self):
         post_data = self.request.body
         values = json.loads(post_data)
         compras =[]
-        for compra in values['compras']:
-            bienoservicio = compra['bienoservicio'].replace(' ','.').upper()
-            compras.append(Compra(bienoservicio=Bienoservicio.get_by_id(bienoservicio).key,
-                           detalle = compra['detalle'],
-                           cantidad = compra['cantidad'],
-                           precio = compra['precio'],
-                           compra = compra['compra']))
-        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivo('Egreso')
         values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivo('Egreso')  
+        for compra in values['compras']:
+            compra['egreso'] = values['numero']
+            compra['fecha'] = values['fecha']
+            compra['proveedor'] = values['proveedor']
+            compra['sucursal']=values['sucursal']
+            compra['bienoservicio'] = compra['bienoservicio'].replace(' ','.').upper()
+            entity = dataStoreInterface.create_entity('Compra',compra)['entity']
+            compras.append(entity)
+        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
         values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
         
         entity = dataStoreInterface.create_entity('Egreso', values)['entity']
@@ -764,10 +816,11 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         saldos={}
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
-            if factura.cliente.get().nombre in saldos:
-                saldos[factura.cliente.get().nombre] += factura.total
+            cliente = factura.cliente.get()
+            if cliente.nombre in saldos:
+                saldos[cliente.nombre] += factura.total
             else:
-                if factura.cliente.get().activo == True:
+                if cliente.activo == True and cliente.diasPago > 0  :
                     saldos[factura.cliente.get().nombre] =  factura.total
         for key,value in saldos.iteritems():
             response.append({'id':key,'cliente':key, 'monto':value})
@@ -816,10 +869,13 @@ class GetContenidoUnidadDeAlmacenamiento(webapp2.RequestHandler):
         self.response.write(JSONEncoder().encode(canastilla.contenido))
 
 class Fix(webapp2.RequestHandler):
-    def get(self): 
-        self.response.out.write("System time: " + str(datetime.now()))
-
-
-
-
-
+    def get(self):
+        number = int(self.request.get('number'))
+        offset = int(self.request.get('offset')) 
+        facturas = Factura.query(Factura.pagada == False).fetch(number,offset=offset)
+        clientesMalos = []
+        for factura in facturas:
+            cliente = factura.cliente.get()
+            if cliente is None:
+                clientesMalos.append({factura.cliente,factura.numero})
+        self.response.out.write(str(clientesMalos) +"<br> -- System time: " + str(datetime.now()))

@@ -3,7 +3,12 @@
 		"nombre": "Activo",
 		"pucNumber": "1",
 		"rotulo": "Activo"
-	}, {
+	},{
+		"nombre": "Pasivo",
+		"pucNumber": "2",
+		"rotulo": "Pasivo"
+	},
+	 {
 		"nombre": "Gastos",
 		"pucNumber": "5",
 		"rotulo": "Gastos"

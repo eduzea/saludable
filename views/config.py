@@ -18,8 +18,8 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                        ],
             'Producto':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'},
-                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''},
-                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}],
+                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
+                        ],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}],
@@ -33,6 +33,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'apellido', 'ui':'Apellido', 'required':'true', 'style':'width:10em'},
                         {'id':'email', 'ui':'Email', 'required':'true', 'dojoprops':'validator:dojox.validate.isEmailAddress','style':'width:10em'},
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''},
+                        {'id':'writePermission', 'ui':'Puede Modificar', 'required':'true', 'style':''}
                         ],
             'Sucursal':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         {'id':'direccion', 'ui':'Direccion', 'required':'true', 'style':'width:10em'},
@@ -76,42 +77,52 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                          ],
             'Bienoservicio':[
-                             {'id':'tipo', 'ui':'Tipo de Egreso', 'style':'width:10em'},
-                             {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                             {'id':'tipo','ui':'Tipo','style':'width:10em'},
                              {'id':'clase','ui':'Clase', 'required':'true', 'style':'width:10em'},
                              {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:10em'},
-                             {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:10em'},
-                             {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:10em'},
+                             {'id':'cuenta','ui':'Cuenta', 'required':'false', 'style':'width:10em'},
+                             {'id':'subcuenta','ui':'Subcuenta', 'required':'false', 'style':'width:10em'},
+                             {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                             {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                       ],
             'Fruta':[
                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                     ],
+            'Compra':[
+                    {'id':'egreso','ui':'Egreso', 'required':'true', 'style':'width:10em'},
+                    {'id':'bienoservicio','ui':'bienoservicio', 'required':'true', 'style':'width:10em'},
+                    {'id':'detalle','ui':'detalle', 'required':'true', 'style':'width:10em'},
+                    {'id':'fecha','ui':'fecha', 'required':'true', 'style':'width:10em'},
+                    {'id':'rotulo','ui':'Rotulo', 'required':'true', 'style':'width:10em'},
+                    {'id':'total','ui':'total', 'required':'true', 'style':'width:10em'}
+                ],
             'Clase':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'Grupo':[
                       {'id':'clase','ui':'Clase', 'required':'true', 'style':'width:10em'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                                             
                       ],
             'Cuenta':[
                       {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:10em'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'SubCuenta':[
                       {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:10em'},   
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'PorcionCompra':[
                              {'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                              {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}
                        ],
             'TipoEgreso':[
-                          {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                          {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                          {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                           ],
             'Egreso':[
                       {'id':'numero','ui':'Numero','required':'true', 'style':'width:4em'},
@@ -142,10 +153,11 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'direccion','ui':'Direccion', 'required':'true', 'style':'width:8em'},
                         {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'}
                         ],
-            'Deuda':[
+            'Pasivo':[
                      {'id':'numero','ui':'No.','readonly':'true','style':'width:2em','auto':''},
                      {'id':'fecha', 'ui':'Fecha','style':'width:7em'},
-                     {'id':'empleado','ui':'Empleado','style':'width:8em'},
+                     {'id':'grupo','ui':'Grupo','style':'width:8em'},
+                     {'id':'cuenta','ui':'Cuenta','style':'width:8em'},
                      {'id':'acreedor','ui':'Acreedor','style':'width:8em'},
                      {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
                      {'id':'interes','ui':'Interes(EA)','required':'true', 'style':'width:5em','default':'0'},
@@ -188,6 +200,14 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                               {'id':'numero','ui':'No.','required':'true', 'style':'width:10em'},
                               {'id':'titular','ui':'Titular', 'required':'true', 'style':'width:10em'},
                               ],
+            'MovimientoDeEfectivo':[
+                {'id':'numero','ui':'No.','required':'true', 'style':'width:10em','auto':''},
+                {'id':'cuenta','ui':'Cuenta','required':'true', 'style':'width:10em'},
+                {'id':'fecha','ui':'Fecha','required':'true', 'style':'width:10em'},
+                {'id':'tipoMovimiento','ui':'Tipo de Movimiento','required':'true', 'style':'width:10em'},
+                {'id':'monto','ui':'Monto','required':'true', 'style':'width:10em'},
+                {'id':'saldo','ui':'Saldo','required':'true', 'style':'width:10em'},
+            ],
             'Banco':[
                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                      {'id':'direccion','ui':'Direccion', 'required':'true', 'style':'width:10em'},
@@ -210,7 +230,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                            {'id':'cliente','ui':'Cliente','style':'width:15em'},
                            ],
             'PagoRecibido':[
-#                               {'id':'numero','ui':'No.','required':'true', 'style':'width:2em','readonly':'true','auto':''},
+                              {'id':'numero','ui':'No.','required':'true', 'style':'width:2em','auto':''},
                               {'id':'fecha', 'ui':'Fecha','style':'width:8em','required':'true'},
                               {'id':'cliente','ui':'Cliente','style':'width:15em'},
                               {'id':'medio','ui':'Medio de pago','style':'width:8em'},
@@ -288,6 +308,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                         {'id':'apellido', 'ui':'Apellido', 'required':'true', 'style':'width:10em'},
                         {'id':'email', 'ui':'Email', 'required':'true', 'dojoprops':'validator:dojox.validate.isEmailAddress','style':'width:10em'},
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'},
+                        {'id':'writePermission', 'ui':'Puede Modificar', 'required':'true', 'style':'width:3em'}
                         ],
             'Sucursal':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         {'id':'direccion', 'ui':'Direccion', 'required':'true', 'style':'width:10em'},
@@ -339,6 +360,13 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
             'Fruta':[
                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                      ],
+            'Compra':[
+                    {'id':'egreso','ui':'Egreso', 'required':'true', 'style':'width:10em'},
+                    {'id':'bienoservicio','ui':'bienoservicio', 'required':'true', 'style':'width:10em'},
+                    {'id':'detalle','ui':'detalle', 'required':'true', 'style':'width:10em'},
+                    {'id':'fecha','ui':'fecha', 'required':'true', 'style':'width:10em'},
+                    {'id':'total','ui':'total', 'required':'true', 'style':'width:10em'}
+                ],
             'LoteDeCompra':[
                             {'id':'fecha','ui':'Fecha', 'required':'true', 'style':'width:10em'},
                             {'id':'fruta','ui':'Fruta', 'required':'true', 'style':'width:10em'},
@@ -349,30 +377,31 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                             ],
             'Clase':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'Grupo':[
                       {'id':'clase','ui':'Clase', 'required':'true', 'style':'width:10em'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                                             
                       ],
             'Cuenta':[
                       {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:10em'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'SubCuenta':[
                       {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:10em'},   
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
-                      {'id':'pucNumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
+                      {'id':'pucnumber','ui':'PUC No.', 'required':'true', 'style':'width:10em'},
                       ],
             'PorcionCompra':[
                              {'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                              {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}
                        ],
             'TipoEgreso':[
-                          {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                          {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                          {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'}
                           ],
             'Egreso':[
                       {'id':'numero','ui':'Numero','required':'true', 'style':'width:4em'},
@@ -446,6 +475,14 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                      {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:10em'},
                      {'id':'contacto','ui':'Contacto', 'required':'false', 'style':'width:10em'},
                      ],
+            'MovimientoDeEfectivo':[
+                {'id':'numero','ui':'No.','required':'true', 'style':'width:10em'},
+                {'id':'cuenta','ui':'Cuenta','required':'true', 'style':'width:10em'},
+                {'id':'fecha','ui':'Fecha','required':'true', 'style':'width:10em'},
+                {'id':'tipoMovimiento','ui':'Tipo de Movimiento','required':'true', 'style':'width:10em'},
+                {'id':'monto','ui':'Monto','required':'true', 'style':'width:8em'},
+                {'id':'saldo','ui':'Saldo','required':'true', 'style':'width:8em'},
+                ],
             'TipoDeCuenta':[
                             {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                             ],
@@ -506,10 +543,6 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                                {'id':'porcion','ui':'Porcion','style':'width:5em'},
                                {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0}
                             ],
-            'Compra':[
-                      {'id':'cantidad','ui':'Cantidad','style':'width:5em', 'required':'true', 'default':0},
-                      {}
-                      ],
             'Fuente':[
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                     ]
@@ -525,6 +558,7 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'numeros':'/numeros.html',
                    #'pYg':'/pYg.html',
                    'Utilidades':'utilidades.html',
+                   'EstadoDeResultados':'estadoDeResultados.html',
                    'CuentasPorCobrar':'/cuentasPorCobrar.html',
                    'Existencias':'/existencias.html',
                    'ConsolidarFactura':'consolidarFactura.html',
@@ -534,7 +568,8 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
                    'ResiduosSolidos':'ResiduosSolidos.html',
                    'Capacitacion':'Capacitacion.html',
                    'AguaPotable':'AguaPotable.html',
-                   'ControlDePlagas':'ControlDePlagas.html'
+                   'ControlDePlagas':'ControlDePlagas.html',
+                   'PUCSearch':'PUCSearch.html'
                    }
 
 templateParams = {'EgresoFruta':{'detalle':Compra._properties['detalle'],

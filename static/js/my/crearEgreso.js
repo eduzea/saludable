@@ -7,6 +7,8 @@ require(['dojo/dom',
 		'dojo/store/Memory',
 		'dojo/request',
 		'dijit/form/Select',
+		"dijit/form/FilteringSelect",
+		"dojo/store/Memory",
 		'dijit/form/Button',
 		'dijit/form/CheckBox',
 		'dojo/query',
@@ -22,10 +24,9 @@ require(['dojo/dom',
 		"gridx/modules/CellWidget",		
 		'gridx/modules/SingleSort',
 		'dojo/domReady!'], 
-function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbox,  
+function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect, Memory, Button, Checkbox,  
 	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
-	var entityClass = saludable.entity_class;
-	
+	var entityClass = saludable.entityClass;
 
 	var resetBienoservicio = function(tipo){	
 			request('/getBienesoServicios?tipo=' + tipo, 
@@ -33,7 +34,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 				function(response) {
 					var items = [];
 					response.forEach(function(bienoservicio){
-						items.push({ "value": bienoservicio.value, "label": bienoservicio.name });
+						items.push({ "value": bienoservicio.value, "label": bienoservicio.name });							
 					});
 					var bienoservicioSelect = registry.byId('bienoservicio_Egreso');
 					bienoservicioSelect.options = [];
@@ -70,7 +71,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 	
 	var resetEgreso = function(){
 		dom.byId('mensaje_Egreso').innerHTML = '';
-		dom.byId('total').innerHTML = '';
+		dom.byId('egreso_total').innerHTML = '';
 		dom.byId('numero_Egreso').innerHTML = '';
 		registry.byId('detalle_Egreso').set('value','');
 		registry.byId('cantidad_Egreso').set('value','');
@@ -110,7 +111,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 		data.forEach(function(entry){
 			sumTotal = sumTotal + entry.precio * entry.cantidad ;
 		});
-		dom.byId('total').innerHTML = number.format(sumTotal,{pattern:'###,###.#'});
+		dom.byId('egreso_total').innerHTML = number.format(sumTotal,{pattern:'###,###.#'});
 		return sumTotal;
 	};
 	
@@ -194,7 +195,7 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 		}
 		var total = formdata.cantidad * formdata.precio;
 		grid.store.add({'id':id,'bienoservicio':formdata.bienoservicio, 'proveedor':formdata.proveedor, 'detalle': formdata.detalle,'cantidad':formdata.cantidad, 
-						'precio': formdata.precio, 'compra':total});
+						'precio': formdata.precio, 'total':total});
 		grid.total=updateTotal();
 
 		
@@ -223,9 +224,9 @@ function(dom, domAttr, registry, parser, Store, request, Select, Button, Checkbo
 					return number.format(data.precio,{pattern:'###,###'});
 				}
 		},
-		{field : 'compra', name : 'Valor Total', style: "text-align: center", 
+		{field : 'total', name : 'Valor Total', style: "text-align: center", 
 				formatter: function(data){
-					return number.format(data.compra,{pattern:'###,###.#'});
+					return number.format(data.total,{pattern:'###,###.#'});
 				}
 		},
 		{ 	field : 'Borrar', 

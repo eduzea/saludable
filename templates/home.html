@@ -5,6 +5,8 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../static/css/home.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/layout/resources/ExpandoPane.css" />
+		
 		<script>
 			dojoConfig = {
 			async: 1,
@@ -19,7 +21,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
 		<script>
 			saludable = {
-			'entity_class' : '{{ entity_class }}'
+			'entityClass' : '{{ entityClass }}'
 			};
 		</script>
 		<script src="../static/js/my/home.js" ></script>
@@ -42,10 +44,13 @@
 						<a href="/login">Administrar</a>
 						{% endif %}
 					</td>
+					<td>
+						<button id='goHome' data-dojo-type="dijit/form/Button">Volver a vista inicial</button>
+					</td>
 				</tr>
 			</table>
 			</div>
-			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'leading'">
+			<div data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="splitter:true, region:'leading',startExpanded:true">
 				<div id='tree'></div>
 			</div>
 			<div id='centerPane' data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style: "overflow: hidden !important;"></div>

@@ -15,7 +15,7 @@ require(['dojo/store/Memory',
 		 //End gridx modules
 ], 
 function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
-	var entity_class = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
@@ -40,13 +40,13 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 		                    registry.byId('standby_centerPane').show();
 		                    request("getDetalleCuentasPorCobrar?cliente=" + encodeURIComponent(rowData.id),{handleAs:'json'}).then(
 		                    	function(response){
-		                    		var grid = registry.byId(entity_class+'_detalle_grid');
+		                    		var grid = registry.byId(entityClass+'_detalle_grid');
 		                    		grid.model.clearCache();
 									grid.model.store.setData(response);
 									grid.body.refresh();
-									dom.byId(entity_class + '_title').innerHTML = rowData.id;
+									dom.byId(entityClass + '_title').innerHTML = rowData.id;
 									registry.byId('standby_centerPane').hide(); 
-									var widget = registry.byId('widget'+entity_class);
+									var widget = registry.byId('widget'+entityClass);
 									widget.selectChild(widget.getChildren()[1]);
 									}
 								);
@@ -97,7 +97,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 	         };
 
 			
-			var resumenGrid = new Grid(gridProps, entity_class+'_resumen_grid');
+			var resumenGrid = new Grid(gridProps, entityClass+'_resumen_grid');
 			resumenGrid.startup();
 			updateTotal();
 			registry.byId('standby_centerPane').hide();
@@ -118,7 +118,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			gridProps['store']=new Memory();
 			gridProps['structure']=detalleColumns;
 			gridProps['sortInitialOrder'] = { colId: 'fecha', descending: false };
-			var detalleGrid = new Grid(gridProps, entity_class+'_detalle_grid');
+			var detalleGrid = new Grid(gridProps, entityClass+'_detalle_grid');
 			detalleGrid.startup();
 		}
 	);

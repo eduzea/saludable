@@ -15,7 +15,7 @@ require(['my/myGrid',
 		 'dijit/form/CheckBox'], 
 function(MyGrid, JsonRest, registry, query, parser, dom, domConstruct, html, number, on,topic,Standby) {
 	
-	var entity_class = saludable.entity_class;
+	var entityClass = saludable.entityClass;
 
 	var jsonRest = new JsonRest({
 		target: '/entityData?',
@@ -25,9 +25,9 @@ function(MyGrid, JsonRest, registry, query, parser, dom, domConstruct, html, num
 	jsonRest.nextCursor = '';
 
 	var grid = new MyGrid(
-		{	'gridName':entity_class,
-			'targetNode': 'gridNode_' + entity_class,
-			'columnsURL': '/getColumns?entityClass=' + entity_class,
+		{	'gridName':entityClass,
+			'targetNode': 'gridNode_' + entityClass,
+			'columnsURL': '/getColumns?entityClass=' + entityClass,
 			'borrar':true,
 			'editar':true,
 			'pageSize' : 100,
@@ -51,7 +51,7 @@ function(MyGrid, JsonRest, registry, query, parser, dom, domConstruct, html, num
 	//FUNCTION TO GET DATA ONE PAGE AT A TIME
 	var getNextPage = function(cursor, count){
 		registry.byId('standby_centerPane').show();
-		jsonRest.query( {'entityClass':entity_class,'count':count,'cursor':cursor},
+		jsonRest.query( {'entityClass':entityClass,'count':count,'cursor':cursor},
 						{start: 0, count: count,
 							 sort: [{ attribute: '', descending: true }]//sort field will be determined in the server...
 							 }

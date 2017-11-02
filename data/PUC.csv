@@ -1,0 +1,463 @@
+pucnumber,nombre,Clase,Grupo,Cuenta,Subcuenta,Clase_Nombre,Grupo_Nombre,Cuenta_Nombre,Subcuenta_Nombre
+510503,Salario integral,5,51,5105,510503,Gastos,Operacionales de administración,Gastos de personal,Salario integral
+510506,Sueldos,5,51,5105,510506,Gastos,Operacionales de administración,Gastos de personal,Sueldos
+510512,Jornales,5,51,5105,510512,Gastos,Operacionales de administración,Gastos de personal,Jornales
+510515,Horas extras y recargos,5,51,5105,510515,Gastos,Operacionales de administración,Gastos de personal,Horas extras y recargos
+510518,Comisiones,5,51,5105,510518,Gastos,Operacionales de administración,Gastos de personal,Comisiones
+510521,Viáticos,5,51,5105,510521,Gastos,Operacionales de administración,Gastos de personal,Viáticos
+510524,Incapacidades,5,51,5105,510524,Gastos,Operacionales de administración,Gastos de personal,Incapacidades
+510527,Auxilio de transporte,5,51,5105,510527,Gastos,Operacionales de administración,Gastos de personal,Auxilio de transporte
+510530,Cesantías,5,51,5105,510530,Gastos,Operacionales de administración,Gastos de personal,Cesantías
+510533,Intereses sobre cesantías,5,51,5105,510533,Gastos,Operacionales de administración,Gastos de personal,Intereses sobre cesantías
+510536,Prima de servicios,5,51,5105,510536,Gastos,Operacionales de administración,Gastos de personal,Prima de servicios
+510539,Vacaciones,5,51,5105,510539,Gastos,Operacionales de administración,Gastos de personal,Vacaciones
+510542,Primas extralegales,5,51,5105,510542,Gastos,Operacionales de administración,Gastos de personal,Primas extralegales
+510545,Auxilios,5,51,5105,510545,Gastos,Operacionales de administración,Gastos de personal,Auxilios
+510548,Bonificaciones,5,51,5105,510548,Gastos,Operacionales de administración,Gastos de personal,Bonificaciones
+510551,Dotación y suministro a trabajadores,5,51,5105,510551,Gastos,Operacionales de administración,Gastos de personal,Dotación y suministro a trabajadores
+510554,Seguros,5,51,5105,510554,Gastos,Operacionales de administración,Gastos de personal,Seguros
+510557,Cuotas partes pensiones de jubilación,5,51,5105,510557,Gastos,Operacionales de administración,Gastos de personal,Cuotas partes pensiones de jubilación
+510558,Amortización cálculo actuarial pensiones de jubilación,5,51,5105,510558,Gastos,Operacionales de administración,Gastos de personal,Amortización cálculo actuarial pensiones de jubilación
+510559,Pensiones de jubilación,5,51,5105,510559,Gastos,Operacionales de administración,Gastos de personal,Pensiones de jubilación
+510560,Indemnizaciones laborales,5,51,5105,510560,Gastos,Operacionales de administración,Gastos de personal,Indemnizaciones laborales
+510561,Amortización bonos pensionales,5,51,5105,510561,Gastos,Operacionales de administración,Gastos de personal,Amortización bonos pensionales
+510562,Amortización títulos pensionales,5,51,5105,510562,Gastos,Operacionales de administración,Gastos de personal,Amortización títulos pensionales
+510563,Capacitación al personal,5,51,5105,510563,Gastos,Operacionales de administración,Gastos de personal,Capacitación al personal
+510566,Gastos deportivos y de recreación,5,51,5105,510566,Gastos,Operacionales de administración,Gastos de personal,Gastos deportivos y de recreación
+510568,"Aportes a administradoras de riesgos profesionales, ARP",5,51,5105,510568,Gastos,Operacionales de administración,Gastos de personal,"Aportes a administradoras de riesgos profesionales, ARP"
+510569,"Aportes a entidades promotoras de salud, EPS",5,51,5105,510569,Gastos,Operacionales de administración,Gastos de personal,"Aportes a entidades promotoras de salud, EPS"
+510570,Aportes a fondos de pensiones y/o cesantías,5,51,5105,510570,Gastos,Operacionales de administración,Gastos de personal,Aportes a fondos de pensiones y/o cesantías
+510572,Aportes cajas de compensación familiar,5,51,5105,510572,Gastos,Operacionales de administración,Gastos de personal,Aportes cajas de compensación familiar
+510575,Aportes ICBF,5,51,5105,510575,Gastos,Operacionales de administración,Gastos de personal,Aportes ICBF
+510578,SE,5,51,5105,510578,Gastos,Operacionales de administración,Gastos de personal,SE
+510581,Aportes sindicales,5,51,5105,510581,Gastos,Operacionales de administración,Gastos de personal,Aportes sindicales
+510584,Gastos médicos y drogas,5,51,5105,510584,Gastos,Operacionales de administración,Gastos de personal,Gastos médicos y drogas
+510595,Otros,5,51,5105,510595,Gastos,Operacionales de administración,Gastos de personal,Otros
+510599,Ajustes por inflación,5,51,5105,510599,Gastos,Operacionales de administración,Gastos de personal,Ajustes por inflación
+511005,Junta directiva,5,51,5110,511005,Gastos,Operacionales de administración,Honorarios,Junta directiva
+511010,Revisoría fiscal,5,51,5110,511010,Gastos,Operacionales de administración,Honorarios,Revisoría fiscal
+511015,Auditoría externa,5,51,5110,511015,Gastos,Operacionales de administración,Honorarios,Auditoría externa
+511020,Avalúos,5,51,5110,511020,Gastos,Operacionales de administración,Honorarios,Avalúos
+511025,Asesoría jurídica,5,51,5110,511025,Gastos,Operacionales de administración,Honorarios,Asesoría jurídica
+511030,Asesoría financiera,5,51,5110,511030,Gastos,Operacionales de administración,Honorarios,Asesoría financiera
+511035,Asesoría técnica,5,51,5110,511035,Gastos,Operacionales de administración,Honorarios,Asesoría técnica
+511095,Otros,5,51,5110,511095,Gastos,Operacionales de administración,Honorarios,Otros
+511099,Ajustes por inflación,5,51,5110,511099,Gastos,Operacionales de administración,Honorarios,Ajustes por inflación
+511505,Industria y comercio,5,51,5115,511505,Gastos,Operacionales de administración,Impuestos,Industria y comercio
+511510,De timbres,5,51,5115,511510,Gastos,Operacionales de administración,Impuestos,De timbres
+511515,A la propiedad raíz,5,51,5115,511515,Gastos,Operacionales de administración,Impuestos,A la propiedad raíz
+511520,Derechos sobre instrumentos públicos,5,51,5115,511520,Gastos,Operacionales de administración,Impuestos,Derechos sobre instrumentos públicos
+511525,De valorización,5,51,5115,511525,Gastos,Operacionales de administración,Impuestos,De valorización
+511530,De turismo,5,51,5115,511530,Gastos,Operacionales de administración,Impuestos,De turismo
+511535,Tasa por utilización de puertos,5,51,5115,511535,Gastos,Operacionales de administración,Impuestos,Tasa por utilización de puertos
+511540,De vehículos,5,51,5115,511540,Gastos,Operacionales de administración,Impuestos,De vehículos
+511545,De espectáculos públicos,5,51,5115,511545,Gastos,Operacionales de administración,Impuestos,De espectáculos públicos
+511550,Cuotas de fomento,5,51,5115,511550,Gastos,Operacionales de administración,Impuestos,Cuotas de fomento
+511570,IVA descontable,5,51,5115,511570,Gastos,Operacionales de administración,Impuestos,IVA descontable
+511595,Otros,5,51,5115,511595,Gastos,Operacionales de administración,Impuestos,Otros
+511599,Ajustes por inflación,5,51,5115,511599,Gastos,Operacionales de administración,Impuestos,Ajustes por inflación
+512005,Terrenos,5,51,5120,512005,Gastos,Operacionales de administración,Arrendamientos,Terrenos
+512010,Construcciones y edificaciones,5,51,5120,512010,Gastos,Operacionales de administración,Arrendamientos,Construcciones y edificaciones
+512015,Maquinaria y equipo,5,51,5120,512015,Gastos,Operacionales de administración,Arrendamientos,Maquinaria y equipo
+512020,Equipo de oficina,5,51,5120,512020,Gastos,Operacionales de administración,Arrendamientos,Equipo de oficina
+512025,Equipo de computación y comunicación,5,51,5120,512025,Gastos,Operacionales de administración,Arrendamientos,Equipo de computación y comunicación
+512030,Equipo médico-científico,5,51,5120,512030,Gastos,Operacionales de administración,Arrendamientos,Equipo médico-científico
+512035,Equipo de hoteles y restaurantes,5,51,5120,512035,Gastos,Operacionales de administración,Arrendamientos,Equipo de hoteles y restaurantes
+512040,Flota y equipo de transporte,5,51,5120,512040,Gastos,Operacionales de administración,Arrendamientos,Flota y equipo de transporte
+512045,Flota y equipo fluvial y/o marítimo,5,51,5120,512045,Gastos,Operacionales de administración,Arrendamientos,Flota y equipo fluvial y/o marítimo
+512050,Flota y equipo aéreo,5,51,5120,512050,Gastos,Operacionales de administración,Arrendamientos,Flota y equipo aéreo
+512055,Flota y equipo férreo,5,51,5120,512055,Gastos,Operacionales de administración,Arrendamientos,Flota y equipo férreo
+512060,"Acueductos, plantas y redes",5,51,5120,512060,Gastos,Operacionales de administración,Arrendamientos,"Acueductos, plantas y redes"
+512065,Aeródromos,5,51,5120,512065,Gastos,Operacionales de administración,Arrendamientos,Aeródromos
+512070,Semovientes,5,51,5120,512070,Gastos,Operacionales de administración,Arrendamientos,Semovientes
+512095,Otros,5,51,5120,512095,Gastos,Operacionales de administración,Arrendamientos,Otros
+512099,Ajustes por inflación,5,51,5120,512099,Gastos,Operacionales de administración,Arrendamientos,Ajustes por inflación
+512505,Contribuciones,5,51,5125,512505,Gastos,Operacionales de administración,Contribuciones y afiliaciones,Contribuciones
+512510,Afiliaciones y sostenimiento,5,51,5125,512510,Gastos,Operacionales de administración,Contribuciones y afiliaciones,Afiliaciones y sostenimiento
+512599,Ajustes por inflación,5,51,5125,512599,Gastos,Operacionales de administración,Contribuciones y afiliaciones,Ajustes por inflación
+513005,Manejo,5,51,5130,513005,Gastos,Operacionales de administración,Seguros,Manejo
+513010,Cumplimiento,5,51,5130,513010,Gastos,Operacionales de administración,Seguros,Cumplimiento
+513015,Corriente débil,5,51,5130,513015,Gastos,Operacionales de administración,Seguros,Corriente débil
+513020,Vida colectiva,5,51,5130,513020,Gastos,Operacionales de administración,Seguros,Vida colectiva
+513025,Incendio,5,51,5130,513025,Gastos,Operacionales de administración,Seguros,Incendio
+513030,Terremoto,5,51,5130,513030,Gastos,Operacionales de administración,Seguros,Terremoto
+513035,Sustracción y hurto,5,51,5130,513035,Gastos,Operacionales de administración,Seguros,Sustracción y hurto
+513040,Flota y equipo de transporte,5,51,5130,513040,Gastos,Operacionales de administración,Seguros,Flota y equipo de transporte
+513045,Flota y equipo fluvial y/o marítimo,5,51,5130,513045,Gastos,Operacionales de administración,Seguros,Flota y equipo fluvial y/o marítimo
+513050,Flota y equipo aéreo,5,51,5130,513050,Gastos,Operacionales de administración,Seguros,Flota y equipo aéreo
+513055,Flota y equipo férreo,5,51,5130,513055,Gastos,Operacionales de administración,Seguros,Flota y equipo férreo
+513060,Responsabilidad civil y extracontractual,5,51,5130,513060,Gastos,Operacionales de administración,Seguros,Responsabilidad civil y extracontractual
+513065,Vuelo,5,51,5130,513065,Gastos,Operacionales de administración,Seguros,Vuelo
+513070,Rotura de maquinaria,5,51,5130,513070,Gastos,Operacionales de administración,Seguros,Rotura de maquinaria
+513075,Obligatorio accidente de tránsito,5,51,5130,513075,Gastos,Operacionales de administración,Seguros,Obligatorio accidente de tránsito
+513080,Lucro cesante,5,51,5130,513080,Gastos,Operacionales de administración,Seguros,Lucro cesante
+513085,Transporte de mercancía,5,51,5130,513085,Gastos,Operacionales de administración,Seguros,Transporte de mercancía
+513095,Otros,5,51,5130,513095,Gastos,Operacionales de administración,Seguros,Otros
+513099,Ajustes por inflación,5,51,5130,513099,Gastos,Operacionales de administración,Seguros,Ajustes por inflación
+513505,Aseo y vigilancia,5,51,5135,513505,Gastos,Operacionales de administración,Servicios,Aseo y vigilancia
+513510,Temporales,5,51,5135,513510,Gastos,Operacionales de administración,Servicios,Temporales
+513515,Asistencia técnica,5,51,5135,513515,Gastos,Operacionales de administración,Servicios,Asistencia técnica
+513520,Procesamiento electrónico de datos,5,51,5135,513520,Gastos,Operacionales de administración,Servicios,Procesamiento electrónico de datos
+513525,Acueducto y alcantarillado,5,51,5135,513525,Gastos,Operacionales de administración,Servicios,Acueducto y alcantarillado
+513530,Energía eléctrica,5,51,5135,513530,Gastos,Operacionales de administración,Servicios,Energía eléctrica
+513535,Teléfono,5,51,5135,513535,Gastos,Operacionales de administración,Servicios,Teléfono
+513540,"Correo, portes y telegramas",5,51,5135,513540,Gastos,Operacionales de administración,Servicios,"Correo, portes y telegramas"
+513545,Fax y télex,5,51,5135,513545,Gastos,Operacionales de administración,Servicios,Fax y télex
+513550,"Transporte, fletes y acarreos",5,51,5135,513550,Gastos,Operacionales de administración,Servicios,"Transporte, fletes y acarreos"
+513555,Gas,5,51,5135,513555,Gastos,Operacionales de administración,Servicios,Gas
+513595,Otros,5,51,5135,513595,Gastos,Operacionales de administración,Servicios,Otros
+513599,Ajustes por inflación,5,51,5135,513599,Gastos,Operacionales de administración,Servicios,Ajustes por inflación
+514005,Notariales,5,51,5140,514005,Gastos,Operacionales de administración,Gastos legales,Notariales
+514010,Registro mercantil,5,51,5140,514010,Gastos,Operacionales de administración,Gastos legales,Registro mercantil
+514015,Trámites y licencias,5,51,5140,514015,Gastos,Operacionales de administración,Gastos legales,Trámites y licencias
+514020,Aduaneros,5,51,5140,514020,Gastos,Operacionales de administración,Gastos legales,Aduaneros
+514025,Consulares,5,51,5140,514025,Gastos,Operacionales de administración,Gastos legales,Consulares
+514095,Otros,5,51,5140,514095,Gastos,Operacionales de administración,Gastos legales,Otros
+514099,Ajustes por inflación,5,51,5140,514099,Gastos,Operacionales de administración,Gastos legales,Ajustes por inflación
+514505,Terrenos,5,51,5145,514505,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Terrenos
+514510,Construcciones y edificaciones,5,51,5145,514510,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Construcciones y edificaciones
+514515,Maquinaria y equipo,5,51,5145,514515,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Maquinaria y equipo
+514520,Equipo de oficina,5,51,5145,514520,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Equipo de oficina
+514525,Equipo de computación y comunicación,5,51,5145,514525,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Equipo de computación y comunicación
+514530,Equipo médico-científico,5,51,5145,514530,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Equipo médico-científico
+514535,Equipo de hoteles y restaurantes,5,51,5145,514535,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Equipo de hoteles y restaurantes
+514540,Flota y equipo de transporte,5,51,5145,514540,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Flota y equipo de transporte
+514545,Flota y equipo fluvial y/o marítimo,5,51,5145,514545,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Flota y equipo fluvial y/o marítimo
+514550,Flota y equipo aéreo,5,51,5145,514550,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Flota y equipo aéreo
+514555,Flota y equipo férreo,5,51,5145,514555,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Flota y equipo férreo
+514560,"Acueductos, plantas y redes",5,51,5145,514560,Gastos,Operacionales de administración,Mantenimiento y reparaciones,"Acueductos, plantas y redes"
+514565,Armamento de vigilancia,5,51,5145,514565,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Armamento de vigilancia
+514570,Vías de comunicación,5,51,5145,514570,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Vías de comunicación
+514599,Ajustes por inflación,5,51,5145,514599,Gastos,Operacionales de administración,Mantenimiento y reparaciones,Ajustes por inflación
+515005,Instalaciones eléctricas,5,51,5150,515005,Gastos,Operacionales de administración,Adecuación e instalación,Instalaciones eléctricas
+515010,Arreglos ornamentales,5,51,5150,515010,Gastos,Operacionales de administración,Adecuación e instalación,Arreglos ornamentales
+515015,Reparaciones locativas,5,51,5150,515015,Gastos,Operacionales de administración,Adecuación e instalación,Reparaciones locativas
+515095,Otros,5,51,5150,515095,Gastos,Operacionales de administración,Adecuación e instalación,Otros
+515099,Ajustes por inflación,5,51,5150,515099,Gastos,Operacionales de administración,Adecuación e instalación,Ajustes por inflación
+515505,Alojamiento y manutención,5,51,5155,515505,Gastos,Operacionales de administración,Gastos de viaje,Alojamiento y manutención
+515510,Pasajes fluviales y/o marítimos,5,51,5155,515510,Gastos,Operacionales de administración,Gastos de viaje,Pasajes fluviales y/o marítimos
+515515,Pasajes aéreos,5,51,5155,515515,Gastos,Operacionales de administración,Gastos de viaje,Pasajes aéreos
+515520,Pasajes terrestres,5,51,5155,515520,Gastos,Operacionales de administración,Gastos de viaje,Pasajes terrestres
+515525,Pasajes férreos,5,51,5155,515525,Gastos,Operacionales de administración,Gastos de viaje,Pasajes férreos
+515595,Otros,5,51,5155,515595,Gastos,Operacionales de administración,Gastos de viaje,Otros
+515599,Ajustes por inflación,5,51,5155,515599,Gastos,Operacionales de administración,Gastos de viaje,Ajustes por inflación
+516005,Construcciones y edificaciones,5,51,5160,516005,Gastos,Operacionales de administración,Depreciaciones,Construcciones y edificaciones
+516010,Maquinaria y equipo,5,51,5160,516010,Gastos,Operacionales de administración,Depreciaciones,Maquinaria y equipo
+516015,Equipo de oficina,5,51,5160,516015,Gastos,Operacionales de administración,Depreciaciones,Equipo de oficina
+516020,Equipo de computación y comunicación,5,51,5160,516020,Gastos,Operacionales de administración,Depreciaciones,Equipo de computación y comunicación
+516025,Equipo médico-científico,5,51,5160,516025,Gastos,Operacionales de administración,Depreciaciones,Equipo médico-científico
+516030,Equipo de hoteles y restaurantes,5,51,5160,516030,Gastos,Operacionales de administración,Depreciaciones,Equipo de hoteles y restaurantes
+516035,Flota y equipo de transporte,5,51,5160,516035,Gastos,Operacionales de administración,Depreciaciones,Flota y equipo de transporte
+516040,Flota y equipo fluvial y/o marítimo,5,51,5160,516040,Gastos,Operacionales de administración,Depreciaciones,Flota y equipo fluvial y/o marítimo
+516045,Flota y equipo aéreo,5,51,5160,516045,Gastos,Operacionales de administración,Depreciaciones,Flota y equipo aéreo
+516050,Flota y equipo férreo,5,51,5160,516050,Gastos,Operacionales de administración,Depreciaciones,Flota y equipo férreo
+516055,"Acueductos, plantas y redes",5,51,5160,516055,Gastos,Operacionales de administración,Depreciaciones,"Acueductos, plantas y redes"
+516060,Armamento de vigilancia,5,51,5160,516060,Gastos,Operacionales de administración,Depreciaciones,Armamento de vigilancia
+516099,Ajustes por inflación,5,51,5160,516099,Gastos,Operacionales de administración,Depreciaciones,Ajustes por inflación
+516505,Vías de comunicación,5,51,5165,516505,Gastos,Operacionales de administración,Amortizaciones,Vías de comunicación
+516510,Intangibles,5,51,5165,516510,Gastos,Operacionales de administración,Amortizaciones,Intangibles
+516515,Cargos diferidos,5,51,5165,516515,Gastos,Operacionales de administración,Amortizaciones,Cargos diferidos
+516595,Otras,5,51,5165,516595,Gastos,Operacionales de administración,Amortizaciones,Otras
+516599,Ajustes por inflación,5,51,5165,516599,Gastos,Operacionales de administración,Amortizaciones,Ajustes por inflación
+519505,Comisiones,5,51,5195,519505,Gastos,Operacionales de administración,Diversos,Comisiones
+519510,"Libros, suscripciones, periódicos y revistas",5,51,5195,519510,Gastos,Operacionales de administración,Diversos,"Libros, suscripciones, periódicos y revistas"
+519515,Música ambiental,5,51,5195,519515,Gastos,Operacionales de administración,Diversos,Música ambiental
+519520,Gastos de representación y relaciones públicas,5,51,5195,519520,Gastos,Operacionales de administración,Diversos,Gastos de representación y relaciones públicas
+519525,Elementos de aseo y cafetería,5,51,5195,519525,Gastos,Operacionales de administración,Diversos,Elementos de aseo y cafetería
+519530,"Útiles, papelería y fotocopias",5,51,5195,519530,Gastos,Operacionales de administración,Diversos,"Útiles, papelería y fotocopias"
+519535,Combustibles y lubricantes,5,51,5195,519535,Gastos,Operacionales de administración,Diversos,Combustibles y lubricantes
+519540,Envases y empaques,5,51,5195,519540,Gastos,Operacionales de administración,Diversos,Envases y empaques
+519545,Taxis y buses,5,51,5195,519545,Gastos,Operacionales de administración,Diversos,Taxis y buses
+519550,Estampillas,5,51,5195,519550,Gastos,Operacionales de administración,Diversos,Estampillas
+519555,Microfilmación,5,51,5195,519555,Gastos,Operacionales de administración,Diversos,Microfilmación
+519560,Casino y restaurante,5,51,5195,519560,Gastos,Operacionales de administración,Diversos,Casino y restaurante
+519565,Parqueaderos,5,51,5195,519565,Gastos,Operacionales de administración,Diversos,Parqueaderos
+519570,Indemnización por daños a terceros,5,51,5195,519570,Gastos,Operacionales de administración,Diversos,Indemnización por daños a terceros
+519575,Pólvora y similares,5,51,5195,519575,Gastos,Operacionales de administración,Diversos,Pólvora y similares
+519595,Otros,5,51,5195,519595,Gastos,Operacionales de administración,Diversos,Otros
+519599,Ajustes por inflación,5,51,5195,519599,Gastos,Operacionales de administración,Diversos,Ajustes por inflación
+519905,Inversiones,5,51,5199,519905,Gastos,Operacionales de administración,Provisiones,Inversiones
+519910,Deudores,5,51,5199,519910,Gastos,Operacionales de administración,Provisiones,Deudores
+519915,"Propiedades, planta y equipo",5,51,5199,519915,Gastos,Operacionales de administración,Provisiones,"Propiedades, planta y equipo"
+519995,Otros activos,5,51,5199,519995,Gastos,Operacionales de administración,Provisiones,Otros activos
+519999,Ajustes por inflación,5,51,5199,519999,Gastos,Operacionales de administración,Provisiones,Ajustes por inflación
+520503,Salario integral,5,52,5205,520503,Gastos,Operacionales de ventas,Gastos de personal,Salario integral
+520506,Sueldos,5,52,5205,520506,Gastos,Operacionales de ventas,Gastos de personal,Sueldos
+520512,Jornales,5,52,5205,520512,Gastos,Operacionales de ventas,Gastos de personal,Jornales
+520515,Horas extras y recargos,5,52,5205,520515,Gastos,Operacionales de ventas,Gastos de personal,Horas extras y recargos
+520518,Comisiones,5,52,5205,520518,Gastos,Operacionales de ventas,Gastos de personal,Comisiones
+520521,Viáticos,5,52,5205,520521,Gastos,Operacionales de ventas,Gastos de personal,Viáticos
+520524,Incapacidades,5,52,5205,520524,Gastos,Operacionales de ventas,Gastos de personal,Incapacidades
+520527,Auxilio de transporte,5,52,5205,520527,Gastos,Operacionales de ventas,Gastos de personal,Auxilio de transporte
+520530,Cesantías,5,52,5205,520530,Gastos,Operacionales de ventas,Gastos de personal,Cesantías
+520533,Intereses sobre cesantías,5,52,5205,520533,Gastos,Operacionales de ventas,Gastos de personal,Intereses sobre cesantías
+520536,Prima de servicios,5,52,5205,520536,Gastos,Operacionales de ventas,Gastos de personal,Prima de servicios
+520539,Vacaciones,5,52,5205,520539,Gastos,Operacionales de ventas,Gastos de personal,Vacaciones
+520542,Primas extralegales,5,52,5205,520542,Gastos,Operacionales de ventas,Gastos de personal,Primas extralegales
+520545,Auxilios,5,52,5205,520545,Gastos,Operacionales de ventas,Gastos de personal,Auxilios
+520548,Bonificaciones,5,52,5205,520548,Gastos,Operacionales de ventas,Gastos de personal,Bonificaciones
+520551,Dotación y suministro a trabajadores,5,52,5205,520551,Gastos,Operacionales de ventas,Gastos de personal,Dotación y suministro a trabajadores
+520554,Seguros,5,52,5205,520554,Gastos,Operacionales de ventas,Gastos de personal,Seguros
+520557,Cuotas partes pensiones de jubilación,5,52,5205,520557,Gastos,Operacionales de ventas,Gastos de personal,Cuotas partes pensiones de jubilación
+520558,Amortización cálculo actuarial pensiones de jubilación,5,52,5205,520558,Gastos,Operacionales de ventas,Gastos de personal,Amortización cálculo actuarial pensiones de jubilación
+520559,Pensiones de jubilación,5,52,5205,520559,Gastos,Operacionales de ventas,Gastos de personal,Pensiones de jubilación
+520560,Indemnizaciones laborales,5,52,5205,520560,Gastos,Operacionales de ventas,Gastos de personal,Indemnizaciones laborales
+520561,Amortización bonos pensionales,5,52,5205,520561,Gastos,Operacionales de ventas,Gastos de personal,Amortización bonos pensionales
+520562,Amortización títulos pensionales,5,52,5205,520562,Gastos,Operacionales de ventas,Gastos de personal,Amortización títulos pensionales
+520563,Capacitación al personal,5,52,5205,520563,Gastos,Operacionales de ventas,Gastos de personal,Capacitación al personal
+520566,Gastos deportivos y de recreación,5,52,5205,520566,Gastos,Operacionales de ventas,Gastos de personal,Gastos deportivos y de recreación
+520568,"Aportes a administradoras de riesgos profesionales, ARP",5,52,5205,520568,Gastos,Operacionales de ventas,Gastos de personal,"Aportes a administradoras de riesgos profesionales, ARP"
+520569,"Aportes a entidades promotoras de salud, EPS",5,52,5205,520569,Gastos,Operacionales de ventas,Gastos de personal,"Aportes a entidades promotoras de salud, EPS"
+520570,Aportes a fondos de pensiones y/o cesantías,5,52,5205,520570,Gastos,Operacionales de ventas,Gastos de personal,Aportes a fondos de pensiones y/o cesantías
+520572,Aportes cajas de compensación familiar,5,52,5205,520572,Gastos,Operacionales de ventas,Gastos de personal,Aportes cajas de compensación familiar
+520575,Aportes ICBF,5,52,5205,520575,Gastos,Operacionales de ventas,Gastos de personal,Aportes ICBF
+520578,SE,5,52,5205,520578,Gastos,Operacionales de ventas,Gastos de personal,SE
+520581,Aportes sindicales,5,52,5205,520581,Gastos,Operacionales de ventas,Gastos de personal,Aportes sindicales
+520584,Gastos médicos y drogas,5,52,5205,520584,Gastos,Operacionales de ventas,Gastos de personal,Gastos médicos y drogas
+520595,Otros,5,52,5205,520595,Gastos,Operacionales de ventas,Gastos de personal,Otros
+520599,Ajustes por inflación,5,52,5205,520599,Gastos,Operacionales de ventas,Gastos de personal,Ajustes por inflación
+521005,Junta directiva,5,52,5210,521005,Gastos,Operacionales de ventas,Honorarios,Junta directiva
+521010,Revisoría fiscal,5,52,5210,521010,Gastos,Operacionales de ventas,Honorarios,Revisoría fiscal
+521015,Auditoría externa,5,52,5210,521015,Gastos,Operacionales de ventas,Honorarios,Auditoría externa
+521020,Avalúos,5,52,5210,521020,Gastos,Operacionales de ventas,Honorarios,Avalúos
+521025,Asesoría jurídica,5,52,5210,521025,Gastos,Operacionales de ventas,Honorarios,Asesoría jurídica
+521030,Asesoría financiera,5,52,5210,521030,Gastos,Operacionales de ventas,Honorarios,Asesoría financiera
+521035,Asesoría técnica,5,52,5210,521035,Gastos,Operacionales de ventas,Honorarios,Asesoría técnica
+521095,Otros,5,52,5210,521095,Gastos,Operacionales de ventas,Honorarios,Otros
+521099,Ajustes por inflación,5,52,5210,521099,Gastos,Operacionales de ventas,Honorarios,Ajustes por inflación
+521505,Industria y comercio,5,52,5215,521505,Gastos,Operacionales de ventas,Impuestos,Industria y comercio
+521510,De timbres,5,52,5215,521510,Gastos,Operacionales de ventas,Impuestos,De timbres
+521515,A la propiedad raíz,5,52,5215,521515,Gastos,Operacionales de ventas,Impuestos,A la propiedad raíz
+521520,Derechos sobre instrumentos públicos,5,52,5215,521520,Gastos,Operacionales de ventas,Impuestos,Derechos sobre instrumentos públicos
+521525,De valorización,5,52,5215,521525,Gastos,Operacionales de ventas,Impuestos,De valorización
+521530,De turismo,5,52,5215,521530,Gastos,Operacionales de ventas,Impuestos,De turismo
+521535,Tasa por utilización de puertos,5,52,5215,521535,Gastos,Operacionales de ventas,Impuestos,Tasa por utilización de puertos
+521540,De vehículos,5,52,5215,521540,Gastos,Operacionales de ventas,Impuestos,De vehículos
+521545,De espectáculos públicos,5,52,5215,521545,Gastos,Operacionales de ventas,Impuestos,De espectáculos públicos
+521550,Cuotas de fomento,5,52,5215,521550,Gastos,Operacionales de ventas,Impuestos,Cuotas de fomento
+521555,Licores,5,52,5215,521555,Gastos,Operacionales de ventas,Impuestos,Licores
+521560,Cervezas,5,52,5215,521560,Gastos,Operacionales de ventas,Impuestos,Cervezas
+521565,Cigarrillos,5,52,5215,521565,Gastos,Operacionales de ventas,Impuestos,Cigarrillos
+521570,IVA descontable,5,52,5215,521570,Gastos,Operacionales de ventas,Impuestos,IVA descontable
+521595,Otros,5,52,5215,521595,Gastos,Operacionales de ventas,Impuestos,Otros
+521599,Ajustes por inflación,5,52,5215,521599,Gastos,Operacionales de ventas,Impuestos,Ajustes por inflación
+522005,Terrenos,5,52,5220,522005,Gastos,Operacionales de ventas,Arrendamientos,Terrenos
+522010,Construcciones y edificaciones,5,52,5220,522010,Gastos,Operacionales de ventas,Arrendamientos,Construcciones y edificaciones
+522015,Maquinaria y equipo,5,52,5220,522015,Gastos,Operacionales de ventas,Arrendamientos,Maquinaria y equipo
+522020,Equipo de oficina,5,52,5220,522020,Gastos,Operacionales de ventas,Arrendamientos,Equipo de oficina
+522025,Equipo de computación y comunicación,5,52,5220,522025,Gastos,Operacionales de ventas,Arrendamientos,Equipo de computación y comunicación
+522030,Equipo médico-científico,5,52,5220,522030,Gastos,Operacionales de ventas,Arrendamientos,Equipo médico-científico
+522035,Equipo de hoteles y restaurantes,5,52,5220,522035,Gastos,Operacionales de ventas,Arrendamientos,Equipo de hoteles y restaurantes
+522040,Flota y equipo de transporte,5,52,5220,522040,Gastos,Operacionales de ventas,Arrendamientos,Flota y equipo de transporte
+522045,Flota y equipo fluvial y/o marítimo,5,52,5220,522045,Gastos,Operacionales de ventas,Arrendamientos,Flota y equipo fluvial y/o marítimo
+522050,Flota y equipo aéreo,5,52,5220,522050,Gastos,Operacionales de ventas,Arrendamientos,Flota y equipo aéreo
+522055,Flota y equipo férreo,5,52,5220,522055,Gastos,Operacionales de ventas,Arrendamientos,Flota y equipo férreo
+522060,"Acueductos, plantas y redes",5,52,5220,522060,Gastos,Operacionales de ventas,Arrendamientos,"Acueductos, plantas y redes"
+522065,Aeródromos,5,52,5220,522065,Gastos,Operacionales de ventas,Arrendamientos,Aeródromos
+522070,Semovientes,5,52,5220,522070,Gastos,Operacionales de ventas,Arrendamientos,Semovientes
+522095,Otros,5,52,5220,522095,Gastos,Operacionales de ventas,Arrendamientos,Otros
+522099,Ajustes por inflación,5,52,5220,522099,Gastos,Operacionales de ventas,Arrendamientos,Ajustes por inflación
+522505,Contribuciones,5,52,5225,522505,Gastos,Operacionales de ventas,Contribuciones y afiliaciones,Contribuciones
+522510,Afiliaciones y sostenimiento,5,52,5225,522510,Gastos,Operacionales de ventas,Contribuciones y afiliaciones,Afiliaciones y sostenimiento
+522599,Ajustes por inflación,5,52,5225,522599,Gastos,Operacionales de ventas,Contribuciones y afiliaciones,Ajustes por inflación
+523005,Manejo,5,52,5230,523005,Gastos,Operacionales de ventas,Seguros,Manejo
+523010,Cumplimiento,5,52,5230,523010,Gastos,Operacionales de ventas,Seguros,Cumplimiento
+523015,Corriente débil,5,52,5230,523015,Gastos,Operacionales de ventas,Seguros,Corriente débil
+523020,Vida colectiva,5,52,5230,523020,Gastos,Operacionales de ventas,Seguros,Vida colectiva
+523025,Incendio,5,52,5230,523025,Gastos,Operacionales de ventas,Seguros,Incendio
+523030,Terremoto,5,52,5230,523030,Gastos,Operacionales de ventas,Seguros,Terremoto
+523035,Sustracción y hurto,5,52,5230,523035,Gastos,Operacionales de ventas,Seguros,Sustracción y hurto
+523040,Flota y equipo de transporte,5,52,5230,523040,Gastos,Operacionales de ventas,Seguros,Flota y equipo de transporte
+523045,Flota y equipo fluvial y/o marítimo,5,52,5230,523045,Gastos,Operacionales de ventas,Seguros,Flota y equipo fluvial y/o marítimo
+523050,Flota y equipo aéreo,5,52,5230,523050,Gastos,Operacionales de ventas,Seguros,Flota y equipo aéreo
+523055,Flota y equipo férreo,5,52,5230,523055,Gastos,Operacionales de ventas,Seguros,Flota y equipo férreo
+523060,Responsabilidad civil y extracontractual,5,52,5230,523060,Gastos,Operacionales de ventas,Seguros,Responsabilidad civil y extracontractual
+523065,Vuelo,5,52,5230,523065,Gastos,Operacionales de ventas,Seguros,Vuelo
+523070,Rotura de maquinaria,5,52,5230,523070,Gastos,Operacionales de ventas,Seguros,Rotura de maquinaria
+523075,Obligatorio accidente de tránsito,5,52,5230,523075,Gastos,Operacionales de ventas,Seguros,Obligatorio accidente de tránsito
+523080,Lucro cesante,5,52,5230,523080,Gastos,Operacionales de ventas,Seguros,Lucro cesante
+523095,Otros,5,52,5230,523095,Gastos,Operacionales de ventas,Seguros,Otros
+523099,Ajustes por inflación,5,52,5230,523099,Gastos,Operacionales de ventas,Seguros,Ajustes por inflación
+523505,Aseo y vigilancia,5,52,5235,523505,Gastos,Operacionales de ventas,Servicios,Aseo y vigilancia
+523510,Temporales,5,52,5235,523510,Gastos,Operacionales de ventas,Servicios,Temporales
+523515,Asistencia técnica,5,52,5235,523515,Gastos,Operacionales de ventas,Servicios,Asistencia técnica
+523520,Procesamiento electrónico de datos,5,52,5235,523520,Gastos,Operacionales de ventas,Servicios,Procesamiento electrónico de datos
+523525,Acueducto y alcantarillado,5,52,5235,523525,Gastos,Operacionales de ventas,Servicios,Acueducto y alcantarillado
+523530,Energía eléctrica,5,52,5235,523530,Gastos,Operacionales de ventas,Servicios,Energía eléctrica
+523535,Teléfono,5,52,5235,523535,Gastos,Operacionales de ventas,Servicios,Teléfono
+523540,"Correo, portes y telegramas",5,52,5235,523540,Gastos,Operacionales de ventas,Servicios,"Correo, portes y telegramas"
+523545,Fax y télex,5,52,5235,523545,Gastos,Operacionales de ventas,Servicios,Fax y télex
+523550,"Transporte, fletes y acarreos",5,52,5235,523550,Gastos,Operacionales de ventas,Servicios,"Transporte, fletes y acarreos"
+523555,Gas,5,52,5235,523555,Gastos,Operacionales de ventas,Servicios,Gas
+523560,"Publicidad, propaganda y promoción",5,52,5235,523560,Gastos,Operacionales de ventas,Servicios,"Publicidad, propaganda y promoción"
+523595,Otros,5,52,5235,523595,Gastos,Operacionales de ventas,Servicios,Otros
+523599,Ajustes por inflación,5,52,5235,523599,Gastos,Operacionales de ventas,Servicios,Ajustes por inflación
+524005,Notariales,5,52,5240,524005,Gastos,Operacionales de ventas,Gastos legales,Notariales
+524010,Registro mercantil,5,52,5240,524010,Gastos,Operacionales de ventas,Gastos legales,Registro mercantil
+524015,Trámites y licencias,5,52,5240,524015,Gastos,Operacionales de ventas,Gastos legales,Trámites y licencias
+524020,Aduaneros,5,52,5240,524020,Gastos,Operacionales de ventas,Gastos legales,Aduaneros
+524025,Consulares,5,52,5240,524025,Gastos,Operacionales de ventas,Gastos legales,Consulares
+524095,Otros,5,52,5240,524095,Gastos,Operacionales de ventas,Gastos legales,Otros
+524099,Ajustes por inflación,5,52,5240,524099,Gastos,Operacionales de ventas,Gastos legales,Ajustes por inflación
+524505,Terrenos,5,52,5245,524505,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Terrenos
+524510,Construcciones y edificaciones,5,52,5245,524510,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Construcciones y edificaciones
+524515,Maquinaria y equipo,5,52,5245,524515,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Maquinaria y equipo
+524520,Equipo de oficina,5,52,5245,524520,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Equipo de oficina
+524525,Equipo de computación y comunicación,5,52,5245,524525,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Equipo de computación y comunicación
+524530,Equipo médico-científico,5,52,5245,524530,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Equipo médico-científico
+524535,Equipo de hoteles y restaurantes,5,52,5245,524535,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Equipo de hoteles y restaurantes
+524540,Flota y equipo de transporte,5,52,5245,524540,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Flota y equipo de transporte
+524545,Flota y equipo fluvial y/o marítimo,5,52,5245,524545,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Flota y equipo fluvial y/o marítimo
+524550,Flota y equipo aéreo,5,52,5245,524550,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Flota y equipo aéreo
+524555,Flota y equipo férreo,5,52,5245,524555,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Flota y equipo férreo
+524560,"Acueductos, plantas y redes",5,52,5245,524560,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,"Acueductos, plantas y redes"
+524565,Armamento de vigilancia,5,52,5245,524565,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Armamento de vigilancia
+524570,Vías de comunicación,5,52,5245,524570,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Vías de comunicación
+524599,Ajustes por inflación,5,52,5245,524599,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,Ajustes por inflación
+525005,Instalaciones eléctricas,5,52,5250,525005,Gastos,Operacionales de ventas,Adecuación e instalación,Instalaciones eléctricas
+525010,Arreglos ornamentales,5,52,5250,525010,Gastos,Operacionales de ventas,Adecuación e instalación,Arreglos ornamentales
+525015,Reparaciones locativas,5,52,5250,525015,Gastos,Operacionales de ventas,Adecuación e instalación,Reparaciones locativas
+525095,Otros,5,52,5250,525095,Gastos,Operacionales de ventas,Adecuación e instalación,Otros
+525099,Ajustes por inflación,5,52,5250,525099,Gastos,Operacionales de ventas,Adecuación e instalación,Ajustes por inflación
+525505,Alojamiento y manutención,5,52,5255,525505,Gastos,Operacionales de ventas,Gastos de viaje,Alojamiento y manutención
+525510,Pasajes fluviales y/o marítimos,5,52,5255,525510,Gastos,Operacionales de ventas,Gastos de viaje,Pasajes fluviales y/o marítimos
+525515,Pasajes aéreos,5,52,5255,525515,Gastos,Operacionales de ventas,Gastos de viaje,Pasajes aéreos
+525520,Pasajes terrestres,5,52,5255,525520,Gastos,Operacionales de ventas,Gastos de viaje,Pasajes terrestres
+525525,Pasajes férreos,5,52,5255,525525,Gastos,Operacionales de ventas,Gastos de viaje,Pasajes férreos
+525595,Otros,5,52,5255,525595,Gastos,Operacionales de ventas,Gastos de viaje,Otros
+525599,Ajustes por inflación,5,52,5255,525599,Gastos,Operacionales de ventas,Gastos de viaje,Ajustes por inflación
+526005,Construcciones y edificaciones,5,52,5260,526005,Gastos,Operacionales de ventas,Depreciaciones,Construcciones y edificaciones
+526010,Maquinaria y equipo,5,52,5260,526010,Gastos,Operacionales de ventas,Depreciaciones,Maquinaria y equipo
+526015,Equipo de oficina,5,52,5260,526015,Gastos,Operacionales de ventas,Depreciaciones,Equipo de oficina
+526020,Equipo de computación y comunicación,5,52,5260,526020,Gastos,Operacionales de ventas,Depreciaciones,Equipo de computación y comunicación
+526025,Equipo médico-científico,5,52,5260,526025,Gastos,Operacionales de ventas,Depreciaciones,Equipo médico-científico
+526030,Equipo de hoteles y restaurantes,5,52,5260,526030,Gastos,Operacionales de ventas,Depreciaciones,Equipo de hoteles y restaurantes
+526035,Flota y equipo de transporte,5,52,5260,526035,Gastos,Operacionales de ventas,Depreciaciones,Flota y equipo de transporte
+526040,Flota y equipo fluvial y/o marítimo,5,52,5260,526040,Gastos,Operacionales de ventas,Depreciaciones,Flota y equipo fluvial y/o marítimo
+526045,Flota y equipo aéreo,5,52,5260,526045,Gastos,Operacionales de ventas,Depreciaciones,Flota y equipo aéreo
+526050,Flota y equipo férreo,5,52,5260,526050,Gastos,Operacionales de ventas,Depreciaciones,Flota y equipo férreo
+526055,"Acueductos, plantas y redes",5,52,5260,526055,Gastos,Operacionales de ventas,Depreciaciones,"Acueductos, plantas y redes"
+526060,Armamento de vigilancia,5,52,5260,526060,Gastos,Operacionales de ventas,Depreciaciones,Armamento de vigilancia
+526065,Envases y empaques,5,52,5260,526065,Gastos,Operacionales de ventas,Depreciaciones,Envases y empaques
+526099,Ajustes por inflación,5,52,5260,526099,Gastos,Operacionales de ventas,Depreciaciones,Ajustes por inflación
+526505,Vías de comunicación,5,52,5265,526505,Gastos,Operacionales de ventas,Amortizaciones,Vías de comunicación
+526510,Intangibles,5,52,5265,526510,Gastos,Operacionales de ventas,Amortizaciones,Intangibles
+526515,Cargos diferidos,5,52,5265,526515,Gastos,Operacionales de ventas,Amortizaciones,Cargos diferidos
+526595,Otras,5,52,5265,526595,Gastos,Operacionales de ventas,Amortizaciones,Otras
+526599,Ajustes por inflación,5,52,5265,526599,Gastos,Operacionales de ventas,Amortizaciones,Ajustes por inflación
+527099,Ajustes por inflación,5,52,5270,527099,Gastos,Operacionales de ventas,Financieros-reajuste del sistema,Ajustes por inflación
+527505,De sociedades anónimas y/o asimiladas,5,52,5275,527505,Gastos,Operacionales de ventas,rdidas método de participación,De sociedades anónimas y/o asimiladas
+527510,De sociedades limitadas y/o asimiladas,5,52,5275,527510,Gastos,Operacionales de ventas,rdidas método de participación,De sociedades limitadas y/o asimiladas
+529505,Comisiones,5,52,5295,529505,Gastos,Operacionales de ventas,Diversos,Comisiones
+529510,"Libros, suscripciones, periódicos y revistas",5,52,5295,529510,Gastos,Operacionales de ventas,Diversos,"Libros, suscripciones, periódicos y revistas"
+529515,Música ambiental,5,52,5295,529515,Gastos,Operacionales de ventas,Diversos,Música ambiental
+529520,Gastos de representación y relaciones públicas,5,52,5295,529520,Gastos,Operacionales de ventas,Diversos,Gastos de representación y relaciones públicas
+529525,Elementos de aseo y cafetería,5,52,5295,529525,Gastos,Operacionales de ventas,Diversos,Elementos de aseo y cafetería
+529530,"Útiles, papelería y fotocopias",5,52,5295,529530,Gastos,Operacionales de ventas,Diversos,"Útiles, papelería y fotocopias"
+529535,Combustibles y lubricantes,5,52,5295,529535,Gastos,Operacionales de ventas,Diversos,Combustibles y lubricantes
+529540,Envases y empaques,5,52,5295,529540,Gastos,Operacionales de ventas,Diversos,Envases y empaques
+529545,Taxis y buses,5,52,5295,529545,Gastos,Operacionales de ventas,Diversos,Taxis y buses
+529550,Estampillas,5,52,5295,529550,Gastos,Operacionales de ventas,Diversos,Estampillas
+529555,Microfilmación,5,52,5295,529555,Gastos,Operacionales de ventas,Diversos,Microfilmación
+529560,Casino y restaurante,5,52,5295,529560,Gastos,Operacionales de ventas,Diversos,Casino y restaurante
+529565,Parqueaderos,5,52,5295,529565,Gastos,Operacionales de ventas,Diversos,Parqueaderos
+529570,Indemnización por daños a terceros,5,52,5295,529570,Gastos,Operacionales de ventas,Diversos,Indemnización por daños a terceros
+529575,Pólvora y similares,5,52,5295,529575,Gastos,Operacionales de ventas,Diversos,Pólvora y similares
+529595,Otros,5,52,5295,529595,Gastos,Operacionales de ventas,Diversos,Otros
+529599,Ajustes por inflación,5,52,5295,529599,Gastos,Operacionales de ventas,Diversos,Ajustes por inflación
+529905,Inversiones,5,52,5299,529905,Gastos,Operacionales de ventas,Provisiones,Inversiones
+529910,Deudores,5,52,5299,529910,Gastos,Operacionales de ventas,Provisiones,Deudores
+529915,Inventarios,5,52,5299,529915,Gastos,Operacionales de ventas,Provisiones,Inventarios
+529920,"Propiedades, planta y equipo",5,52,5299,529920,Gastos,Operacionales de ventas,Provisiones,"Propiedades, planta y equipo"
+529995,Otros activos,5,52,5299,529995,Gastos,Operacionales de ventas,Provisiones,Otros activos
+529999,Ajustes por inflación,5,52,5299,529999,Gastos,Operacionales de ventas,Provisiones,Ajustes por inflación
+530505,Gastos bancarios,5,53,5305,530505,Gastos,No operacionales,Financieros,Gastos bancarios
+530510,Reajuste monetario-UPAC (hoy UVR),5,53,5305,530510,Gastos,No operacionales,Financieros,Reajuste monetario-UPAC (hoy UVR)
+530515,Comisiones,5,53,5305,530515,Gastos,No operacionales,Financieros,Comisiones
+530520,Intereses,5,53,5305,530520,Gastos,No operacionales,Financieros,Intereses
+530525,Diferencia en cambio,5,53,5305,530525,Gastos,No operacionales,Financieros,Diferencia en cambio
+530530,Gastos en negociación certificados de cambio,5,53,5305,530530,Gastos,No operacionales,Financieros,Gastos en negociación certificados de cambio
+530535,Descuentos comerciales condicionados,5,53,5305,530535,Gastos,No operacionales,Financieros,Descuentos comerciales condicionados
+530540,Gastos manejo y emisión de bonos,5,53,5305,530540,Gastos,No operacionales,Financieros,Gastos manejo y emisión de bonos
+530545,Prima amortizada,5,53,5305,530545,Gastos,No operacionales,Financieros,Prima amortizada
+530595,Otros,5,53,5305,530595,Gastos,No operacionales,Financieros,Otros
+530599,Ajustes por inflación,5,53,5305,530599,Gastos,No operacionales,Financieros,Ajustes por inflación
+531005,Venta de inversiones,5,53,5310,531005,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Venta de inversiones
+531010,Venta de cartera,5,53,5310,531010,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Venta de cartera
+531015,"Venta de propiedades, planta y equipo",5,53,5310,531015,Gastos,No operacionales,Pérdida en venta y retiro de bienes,"Venta de propiedades, planta y equipo"
+531020,Venta de intangibles,5,53,5310,531020,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Venta de intangibles
+531025,Venta de otros activos,5,53,5310,531025,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Venta de otros activos
+531030,"Retiro de propiedades, planta y equipo",5,53,5310,531030,Gastos,No operacionales,Pérdida en venta y retiro de bienes,"Retiro de propiedades, planta y equipo"
+531035,Retiro de otros activos,5,53,5310,531035,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Retiro de otros activos
+531040,Pérdidas por siniestros,5,53,5310,531040,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Pérdidas por siniestros
+531095,Otros,5,53,5310,531095,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Otros
+531099,Ajustes por inflación,5,53,5310,531099,Gastos,No operacionales,Pérdida en venta y retiro de bienes,Ajustes por inflación
+531305,De sociedades anónimas y/o asimiladas,5,53,5313,531305,Gastos,No operacionales,Pérdidas método de participación,De sociedades anónimas y/o asimiladas
+531310,De sociedades limitadas y/o asimiladas,5,53,5313,531310,Gastos,No operacionales,Pérdidas método de participación,De sociedades limitadas y/o asimiladas
+531505,Costas y procesos judiciales,5,53,5315,531505,Gastos,No operacionales,Gastos extraordinarios,Costas y procesos judiciales
+531510,Actividades culturales y cívicas,5,53,5315,531510,Gastos,No operacionales,Gastos extraordinarios,Actividades culturales y cívicas
+531515,Costos y gastos de ejercicios anteriores,5,53,5315,531515,Gastos,No operacionales,Gastos extraordinarios,Costos y gastos de ejercicios anteriores
+531520,Impuestos asumidos,5,53,5315,531520,Gastos,No operacionales,Gastos extraordinarios,Impuestos asumidos
+531595,Otros,5,53,5315,531595,Gastos,No operacionales,Gastos extraordinarios,Otros
+531599,Ajustes por inflación,5,53,5315,531599,Gastos,No operacionales,Gastos extraordinarios,Ajustes por inflación
+539505,Demandas laborales,5,53,5395,539505,Gastos,No operacionales,Gastos diversos,Demandas laborales
+539510,Demandas por incumplimiento de contratos,5,53,5395,539510,Gastos,No operacionales,Gastos diversos,Demandas por incumplimiento de contratos
+539515,Indemnizaciones,5,53,5395,539515,Gastos,No operacionales,Gastos diversos,Indemnizaciones
+539520,"Multas, sanciones y litigios",5,53,5395,539520,Gastos,No operacionales,Gastos diversos,"Multas, sanciones y litigios"
+539525,Donaciones,5,53,5395,539525,Gastos,No operacionales,Gastos diversos,Donaciones
+539530,Constitución de garantías,5,53,5395,539530,Gastos,No operacionales,Gastos diversos,Constitución de garantías
+539535,Amortización de bienes entregados en comodato,5,53,5395,539535,Gastos,No operacionales,Gastos diversos,Amortización de bienes entregados en comodato
+539595,Otros,5,53,5395,539595,Gastos,No operacionales,Gastos diversos,Otros
+539599,Ajustes por inflación,5,53,5395,539599,Gastos,No operacionales,Gastos diversos,Ajustes por inflación
+540505,Impuesto de renta y complementarios,5,54,5405,540505,Gastos,Impuesto de renta y complementarios,Impuesto de renta y complementarios,Impuesto de renta y complementarios
+590505,Ganancias y pérdidas,5,59,5905,590505,Gastos,Ganancias y pérdidas,Ganancias y pérdidas,Ganancias y pérdidas
+5105,Gastos de personal,5,51,5105,,Gastos,Operacionales de administración,Gastos de personal,
+5110,Honorarios,5,51,5110,,Gastos,Operacionales de administración,Honorarios,
+5115,Impuestos,5,51,5115,,Gastos,Operacionales de administración,Impuestos,
+5120,Arrendamientos,5,51,5120,,Gastos,Operacionales de administración,Arrendamientos,
+5125,Contribuciones y afiliaciones,5,51,5125,,Gastos,Operacionales de administración,Contribuciones y afiliaciones,
+5130,Seguros,5,51,5130,,Gastos,Operacionales de administración,Seguros,
+5135,Servicios,5,51,5135,,Gastos,Operacionales de administración,Servicios,
+5140,Gastos legales,5,51,5140,,Gastos,Operacionales de administración,Gastos legales,
+5145,Mantenimiento y reparaciones,5,51,5145,,Gastos,Operacionales de administración,Mantenimiento y reparaciones,
+5150,Adecuación e instalación,5,51,5150,,Gastos,Operacionales de administración,Adecuación e instalación,
+5155,Gastos de viaje,5,51,5155,,Gastos,Operacionales de administración,Gastos de viaje,
+5160,Depreciaciones,5,51,5160,,Gastos,Operacionales de administración,Depreciaciones,
+5165,Amortizaciones,5,51,5165,,Gastos,Operacionales de administración,Amortizaciones,
+5195,Diversos,5,51,5195,,Gastos,Operacionales de administración,Diversos,
+5199,Provisiones,5,51,5199,,Gastos,Operacionales de administración,Provisiones,
+5205,Gastos de personal,5,52,5205,,Gastos,Operacionales de ventas,Gastos de personal,
+5210,Honorarios,5,52,5210,,Gastos,Operacionales de ventas,Honorarios,
+5215,Impuestos,5,52,5215,,Gastos,Operacionales de ventas,Impuestos,
+5220,Arrendamientos,5,52,5220,,Gastos,Operacionales de ventas,Arrendamientos,
+5225,Contribuciones y afiliaciones,5,52,5225,,Gastos,Operacionales de ventas,Contribuciones y afiliaciones,
+5230,Seguros,5,52,5230,,Gastos,Operacionales de ventas,Seguros,
+5235,Servicios,5,52,5235,,Gastos,Operacionales de ventas,Servicios,
+5240,Gastos legales,5,52,5240,,Gastos,Operacionales de ventas,Gastos legales,
+5245,Mantenimiento y reparaciones,5,52,5245,,Gastos,Operacionales de ventas,Mantenimiento y reparaciones,
+5250,Adecuación e instalación,5,52,5250,,Gastos,Operacionales de ventas,Adecuación e instalación,
+5255,Gastos de viaje,5,52,5255,,Gastos,Operacionales de ventas,Gastos de viaje,
+5260,Depreciaciones,5,52,5260,,Gastos,Operacionales de ventas,Depreciaciones,
+5265,Amortizaciones,5,52,5265,,Gastos,Operacionales de ventas,Amortizaciones,
+5270,Financieros-reajuste del sistema,5,52,5270,,Gastos,Operacionales de ventas,Financieros-reajuste del sistema,
+5275,rdidas método de participación,5,52,5275,,Gastos,Operacionales de ventas,rdidas método de participación,
+5295,Diversos,5,52,5295,,Gastos,Operacionales de ventas,Diversos,
+5299,Provisiones,5,52,5299,,Gastos,Operacionales de ventas,Provisiones,
+5305,Financieros,5,53,5305,,Gastos,No operacionales,Financieros,
+5310,Pérdida en venta y retiro de bienes,5,53,5310,,Gastos,No operacionales,Pérdida en venta y retiro de bienes,
+5313,Pérdidas método de participación,5,53,5313,,Gastos,No operacionales,Pérdidas método de participación,
+5315,Gastos extraordinarios,5,53,5315,,Gastos,No operacionales,Gastos extraordinarios,
+5395,Gastos diversos,5,53,5395,,Gastos,No operacionales,Gastos diversos,
+5405,Impuesto de renta y complementarios,5,54,5405,,Gastos,Impuesto de renta y complementarios,Impuesto de renta y complementarios,
+5905,Ganancias y pérdidas,5,59,5905,,Gastos,Ganancias y pérdidas,Ganancias y pérdidas,
+71,Materia prima,7,71,,,Costos de producción o de operación,Materia prima,,
+72,Mano de obra directa,7,72,,,Costos de producción o de operación,Mano de obra directa,,
+73,Costos indirectos,7,73,,,Costos de producción o de operación,Costos indirectos,,
+74,Contratos de servicios,7,74,,,Costos de producción o de operación,Contratos de servicios,,
+51,Operacionales de administración,5,51,,,Gastos,Operacionales de administración,,
+52,Operacionales de ventas,5,52,,,Gastos,Operacionales de ventas,,
+53,No operacionales,5,53,,,Gastos,No operacionales,,
+54,Impuesto de renta y complementarios,5,54,,,Gastos,Impuesto de renta y complementarios,,
+59,Ganancias y pérdidas,5,59,,,Gastos,Ganancias y pérdidas,,
+5,Gastos,5,5,,,Gastos,,,
+7,Costos de producción o de operación,7,7,,,Costos de producción o de operación,,,

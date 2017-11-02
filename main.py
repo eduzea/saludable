@@ -62,7 +62,10 @@ application = webapp2.WSGIApplication([
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
     ('/getIVAPagado',GetIVAPagado) ,
-    ('/getUtilidades',GetUtilidades),
+    ('/getEstadoDeResultados',GetEstadoDeResultados),
+    ('/getDetalleEstadoDeResultados',GetDetalleEstadoDeResultados),
+    ('/getPUC',GetPUC),
+    ('/initPUC',InitPUC),
     #MISC
     ('/fix',Fix)
 ], debug=True)
