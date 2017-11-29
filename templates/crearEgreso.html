@@ -16,7 +16,7 @@
 	</head>
 	<body class="claro">
 		<div data-dojo-type="dijit/form/Form" id="addEntityForm_Egreso" data-dojo-id="addEntityForm_Egreso" encType="multipart/form-data">
-			<table style="table-layout: fixed;"> 
+			<table class="form-table" style="background-color:#EAEDED"> 
 				<tr>
 					<td><label for='fecha_Egreso'>Fecha: </label></td>
 					<td><input type="text" name="fechac_Egreso" id="fecha_Egreso" value="now" 
@@ -25,43 +25,27 @@
 					</td>
 					<td><label for='sucursal_Egreso'>Sucursal: </label></td>
 					<td>{{tagForField('Egreso',props['sucursal'])}}</td>
+					<td><label for='proveedor_Egreso'>Proveedor: </label></td>
+					<td>{{tagForField('Egreso',props['proveedor'])}}</td>
 					<td><label for='fuente_Egreso'>Fuente: </label></td>
 					<td>{{tagForField('Egreso',props['fuente'])}}</td>
 					<td><label for='numero_Egreso'>No. Egreso: </label> </td>
 					<td><div id='numero_Egreso'></div></td>					
-				</tr>					
-				<tr>					
-					<td><label for='tipo_Egreso'>Tipo: </label></td>
-					<td><div>
-							{{tagForField('Egreso',props['tipo'])}}
-						</div>
-					</td>
-					<td><label for='proveedor_Egreso'>Proveedor: </label></td>
-					<td><div>
-							{{tagForField('Egreso',props['proveedor'])}}
-						</div>
-					</td>
-					<td>
-					</td>
 				</tr>
-				<tr>
-					<td><label for="bienoservicio_Egreso">Bienes o Servcios: </label></td>
-					<td><div>
-						{{tagForField('Egreso',props['bienoservicio'])}}&nbsp;
-					</div></td>
-					<td><label for="bienoservicio_Egreso">Detalle: </label></td>
-					<td>
-						{{tagForField('Egreso',props['detalle'])}}
-					</td>
-					<td></td>
-					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Nuevo Egreso</button></td>
+			</table>
+			<table class="form-table">						
+				<tr>					
+					<td><label for="bienoservicio_Egreso">Biene o Servcio: </label></td>
+					<td>{{tagForField('Egreso',props['bienoservicio'])}}&nbsp;</td>
+					<td><label for="detalle_Egreso">Detalle: </label></td>
+					<td>{{tagForField('Egreso',props['detalle'])}}</td>
+					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Borrar Todo y Crear Nuevo Egreso</button></td>
 				</tr>
 				<tr>
 					<td><label for='cantidad_Egreso'>Cantidad:</label></td>
 					<td>{{tagForField('Egreso',props['cantidad'])}}</td>
 					<td><label for='cantidad_Egreso'>Precio Unitario:</label></td>
 					<td>{{tagForField('Egreso',props['precio'])}}</td>
-					<td></td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>
 			</table>

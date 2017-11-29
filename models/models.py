@@ -188,10 +188,13 @@ class FraccionDeLote(Record):
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
+    comentario = ndb.TextProperty()
 
 # Uso esto porque el manejo de la StructuredProperties dificulta el 
 # poner una referencia al padre en la clase misma, 
-# por todo lo que se automatiza en el cliente a apartir de la definicion de la clase 
+# por todo lo que se automatiza en el cliente a apartir de la definicion de la clase
+# --> La verdadera solucion es escribir la logica para generar el HTML a partir de repeated key properties en
+#     forma similar a como se hizo para Structured Propertties. 
 class FraccionDeLoteUbicado(FraccionDeLote):
     ubicacion = ndb.StringProperty(indexed=True)
 
@@ -405,7 +408,7 @@ class Egreso(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
     sucursal = ndb.KeyProperty(kind=Sucursal)
-    fuente = msgprop.EnumProperty(Fuente, required=True, indexed=True)
+    fuente = msgprop.EnumProperty(Fuente, required=True, indexed=True, default=Fuente.Efectivo)
     empleado = ndb.KeyProperty(kind=Empleado)
     tipo = ndb.KeyProperty(kind=TipoEgreso)
     compras = ndb.StructuredProperty(Compra,repeated=True)

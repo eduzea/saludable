@@ -44,6 +44,12 @@ dataStoreInterface.registerFollowUpLogic('post', 'delete', 'PagoRecibido', remov
 
 ######################### INVENTARIO Y EXISTENCIAS ################################
 def updateFraccionDeLote(unidadDeAlmacenamiento):
+    # First remove existing FDLU that refer to this ubicacacion
+    ubicacion = unidadDeAlmacenamiento.key.id()
+    entities = dataStoreInterface.buildQuery('FraccionDeLoteUbicado',{'ubicacion':ubicacion}).fetch()
+    for entity in entities:
+        entity.key.delete()
+    # Then create the new ones
     for fraccionDeLote in unidadDeAlmacenamiento.contenido:
         values = fraccionDeLote.to_dict()
         values['ubicacion'] =  unidadDeAlmacenamiento.key.id()
@@ -53,9 +59,9 @@ def updateFraccionDeLote(unidadDeAlmacenamiento):
 dataStoreInterface.registerFollowUpLogic('post', 'create', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
 dataStoreInterface.registerFollowUpLogic('post', 'update', 'UnidadDeAlmacenamiento', updateFraccionDeLote)
 
-def removeFraccionDeLoteUbicado(fdl, ubicacion):
+def removeFraccionDeLoteUbicado(fdl,ubicacion):
     values = fdl.to_dict()
-    params = {'fecha':values['fecha'],'producto':values['producto'], 'porcion':values['porcion']}
+    params = {'ubicacion':ubicacion,'fecha':values['fecha'],'producto':values['producto'], 'porcion':values['porcion']}
     entities = dataStoreInterface.buildQuery('FraccionDeLoteUbicado',params).fetch()
     for entity in entities:
         entity.key.delete()

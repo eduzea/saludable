@@ -6,9 +6,9 @@ def initSaludable():
     init = Initialized.query().fetch()
     if len(init) == 0:
         print "initializing..."
-        predefined = [{'Fila':['A','B','C','D']}, 
+        predefined = [{'Fila':['A','B','C','D','E','F','G','H','I','Z']}, 
                       {'Columna':[1,2,3,4,5,6,7,8,9,10,11,12]}, 
-                      {'Nivel':[1,2,3,4,5,6,7,8,9,10]}]
+                      {'Nivel':[1,2,3,4,5,6,7,8,9,10,11]}]
 
 #         predefined = [{'Fila':['A','B','C']}, 
 #                       {'Columna':['1','2','3','4','5','6','7','8','9','10','11','12']}, 

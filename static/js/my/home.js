@@ -1,5 +1,7 @@
 //# sourceURL=../static/js/my/home.js
-require(['dojo/dom',
+require([
+		"dijit/Dialog",
+		'dojo/dom',
 		 "dojo/dom-construct",
 		'dojo/parser',
 		"dijit/registry",
@@ -14,7 +16,7 @@ require(['dojo/dom',
 		'dojo/request',
 		"dojox/widget/Standby", 
 		"dojo/domReady!"], 
-function(dom, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby) {
+function(Dialog,dom, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby) {
 	ready(function() {
 
 		/* CREATER CENTER TAB CONTAINER */
@@ -38,7 +40,6 @@ function(dom, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabC
 		];
 		
 		var getTabContent = function(tab){
-			console.log('Making request');
 			request('/getWidget?template=' + tab['template'] + '&entityClass=' + tab['entityClass']).then(
 					function(response){
 						var cp = registry.byId(tab['id']);
@@ -68,7 +69,8 @@ function(dom, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabC
 				}
 		});
 	    	    
-	    centerTabContainer.startup();
+	    //AQUI EMPIEZA LA CARGA DE LA APPLICACION
+		centerTabContainer.startup();
 		getTabContent(tabsMap['Factura']);
 	    registry.byId('centerPane').addChild(centerTabContainer);
 		
@@ -204,10 +206,18 @@ function(dom, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabC
 		registry.byId('centerPane').addChild(centerTabContainer);
 	};
 
-	
+	//App-level spinner to show the server is working
 	var standby = new Standby({id:'standby_centerPane', target: 'centerPane'});
 	document.body.appendChild(standby.domNode);
 	standby.startup();	
+	
+	//App-level dialog to allow server to send messages to the user.
+	var serverMessage = new Dialog({
+        title: "El servidor dice...",
+        style: "width: 300px",
+        id:'server_message'
+    });
+
 
 	tree.onClick = function(item, node, evt){
 		if (!item.clickable) return;

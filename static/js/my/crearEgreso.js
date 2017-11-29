@@ -28,8 +28,8 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
 	var entityClass = saludable.entityClass;
 
-	var resetBienoservicio = function(tipo){	
-			request('/getBienesoServicios?tipo=' + tipo, 
+	var resetBienoservicio = function(proveedor){	
+			request('/getBienesoServicios?proveedor=' + proveedor, 
 					{handleAs:'json'}).then(
 				function(response) {
 					var items = [];
@@ -43,23 +43,23 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 			});
 		};	
 
-	var resetProveedor = function(bienoservicio){	
-		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
-		function(response){
-			var items = [];
-			if (response.length == 0){
-				items.push({ "value": 'No.reportado', "label": 'No reportado' });
-			}else{
-				response.forEach(function(proveedor){
-					items.push({ "value": proveedor.value, "label": proveedor.name });
-				});			
-			}
-			var proveedorSelect = registry.byId('proveedor_Egreso');
-			proveedorSelect.options = [];
-			proveedorSelect.addOption(items);
-			proveedorSelect.reset();
-		});
-	};
+//	var resetProveedor = function(bienoservicio){	
+//		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
+//		function(response){
+//			var items = [];
+//			if (response.length == 0){
+//				items.push({ "value": 'NO.REPORTADO', "label": 'NO REPORTADO' });
+//			}else{
+//				response.forEach(function(proveedor){
+//					items.push({ "value": proveedor.value, "label": proveedor.name });
+//				});			
+//			}
+//			var proveedorSelect = registry.byId('proveedor_Egreso');
+//			proveedorSelect.options = [];
+//			proveedorSelect.addOption(items);
+//			proveedorSelect.reset();
+//		});
+//	};
 	
 	var resetGrid = function (){
 		var grid = registry.byId('grid_Egreso');
@@ -70,7 +70,6 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 	};
 	
 	var resetEgreso = function(){
-		dom.byId('mensaje_Egreso').innerHTML = '';
 		dom.byId('egreso_total').innerHTML = '';
 		dom.byId('numero_Egreso').innerHTML = '';
 		registry.byId('detalle_Egreso').set('value','');
@@ -79,21 +78,22 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 		resetGrid();
 	};
 
-	parser.instantiate([dom.byId('tipo_Egreso')]);
-    var tipoSelect = registry.byId('tipo_Egreso'); 
-    resetBienoservicio(tipoSelect.value);
-    tipoSelect.onChange = resetBienoservicio;
+//	parser.instantiate([dom.byId('tipo_Egreso')]);
+//    var tipoSelect = registry.byId('tipo_Egreso'); 
+//    resetBienoservicio(tipoSelect.value);
+//    tipoSelect.onChange = resetBienoservicio;
 
 	parser.instantiate([dom.byId('bienoservicio_Egreso')]);
     var bienoservicioSelect = registry.byId('bienoservicio_Egreso');    
-    resetProveedor(bienoservicioSelect.value);
-	bienoservicioSelect.onChange = resetProveedor; 
+//    resetProveedor(bienoservicioSelect.value);
+//	bienoservicioSelect.onChange = resetProveedor; 
 
     parser.instantiate([dom.byId('proveedor_Egreso')]);
     var proveedorSelect = registry.byId('proveedor_Egreso');    
-	//proveedorSelect.onChange = resetEgreso;
+    resetBienoservicio(proveedorSelect.value);
+    proveedorSelect.onChange = resetBienoservicio;
 	
-	var selects = [tipoSelect, bienoservicioSelect, proveedorSelect];
+	var selects = [/*tipoSelect*/, bienoservicioSelect, proveedorSelect];
 	selects.forEach(function(select){
 		select.listenerfunc = function(data){
     		select.addOption({ disabled:false, label:data.label, selected:true, value:data.value});
@@ -150,7 +150,6 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 	parser.instantiate([dom.byId('guardar_EgresoBtn')]);
 	on(registry.byId('guardar_EgresoBtn'),'click',
 		function(e){
-			var tipo = registry.byId('tipo_Egreso').value;
 			var proveedor = registry.byId('proveedor_Egreso').value;		
 			var fecha = registry.byId('fecha_Egreso').toString();
 			var numero = dom.byId('numero_Egreso').innerHTML.replace('No.','');
@@ -158,24 +157,26 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 			var comentario = registry.byId('comentario_Egreso').value;
 			var sucursal = registry.byId('sucursal_Egreso').value;
 			var egreso_data = {'proveedor':proveedor,'fecha':fecha,'sucursal':sucursal,'compras':gridData, 'total':updateTotal(), 
-			'numero':numero, 'tipo':tipo, 'comentario': comentario};
+			'numero':numero, 'comentario': comentario};
 			request.post('/guardarEgreso', {
 					data : json.stringify(egreso_data),
 					handleAs:'json'
 				}).then(function(response) {
-					var message='';
-					if(response.result == 'Success'){
-						message = 'Se grabo exitosamente este pedido!: ' + response.egresoId;
+					var server_msg = registry.byId('server_message');
+					if(response.result == 'SUCCESS'){
+						msg = (response.message == 'Updated') ? 'Se ACTUALIZO exitosamente este Egreso! # ' : 'Se CREO exitosamente este Egreso! # '
+						server_msg.set("content", msg + response.id);
+						server_msg.show();
 						egreso_data['proveedor']=registry.byId('proveedor_Egreso').attr('displayedValue');
 						egreso_data['resumen']= gridData[0].bienoservicio;
 						actualizarEgresos(response, egreso_data);
+						setTimeout(function() {
+							resetEgreso();
+						}, 2000);
 					}else{
-						message = 'No se pudo guardar este Egreso!';
+						server_msg.set("content", response['message']);
+						server_msg.show();
 					}
-					dom.byId('mensaje_Egreso').innerHTML = message;
-					setTimeout(function() {
-						resetEgreso();
-					}, 3000);
 				});
 		});
 	

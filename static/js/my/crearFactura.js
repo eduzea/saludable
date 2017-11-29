@@ -188,30 +188,31 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					data : json.stringify(factura_data),
 					handleAs:'json'
 				}).then(function(response) {
-					var message='';
+					var server_msg = registry.byId('server_message');
 					if(response.result == 'SUCCESS'){
-						message = 'Se grabo exitosamente este pedido!';
+						server_msg.set("content", 'Se grabo exitosamente esta factura! # ' + response.id);
+						server_msg.show();
 						factura_data['cliente']=registry.byId('cliente'+ '_' + entityClass).attr('displayedValue');
 						actualizarFacturas(response, factura_data, entityClass);
 						var pagina = registry.byId( '_' + entityClass + 'PorPagina').checked;
 						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entityClass+ '&pagina='+ pagina.toString();
 						window.open(url);
+						//Clear the form and publish what just happened...
+						setTimeout(function() {
+							var grid =registry.byId('grid'+ '_' + entityClass);
+							grid.model.clearCache();
+							grid.model.store.setData([]);
+	        				grid.body.refresh();
+							dom.byId('factura_total').innerHTML = '';
+							dom.byId('factura_subtotal').innerHTML = '';
+							dom.byId('factura_iva').innerHTML = '';
+							dom.byId('numero'+ '_' + entityClass).innerHTML = '';
+						}, 2000);
+						topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
 					}else{
-						message = response['msg'];
+						server_msg.set("content", response['message']);
+						server_msg.show();
 					}
-					dom.byId('mensaje'+ '_' + entityClass).innerHTML = message;
-					setTimeout(function() {
-						var grid =registry.byId('grid'+ '_' + entityClass);
-						grid.model.clearCache();
-						grid.model.store.setData([]);
-        				grid.body.refresh();
-						dom.byId('mensaje'+ '_' + entityClass).innerHTML = '';
-						dom.byId('factura_total').innerHTML = '';
-						dom.byId('factura_subtotal').innerHTML = '';
-						dom.byId('factura_iva').innerHTML = '';
-						dom.byId('numero'+ '_' + entityClass).innerHTML = '';
-					}, 2000);
-					topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
 				});
 		});
 	

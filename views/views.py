@@ -3,6 +3,7 @@
 from __future__ import division
 import sys
 import csv
+from google.storage.speckle.proto.jdbc_type import NULL
 sys.path.insert(0, 'libs/python-dateutil-1.5')
 sys.path.insert(0, 'libs/easydict-1.6')
 import webapp2
@@ -200,11 +201,18 @@ class GetPrice(webapp2.RequestHandler):
             self.response.out.write(e.message)
         self.response.out.write(precio)
 
+# class GetBienesoServicios(webapp2.RequestHandler):
+#     def get(self):
+#         tipo = TipoEgreso.get_by_id(self.request.get('tipo'))
+#         bienesoservicios = Bienoservicio.query(Bienoservicio.tipo == tipo.key, Bienoservicio.activo == True ).fetch()
+#         response = [{'value':bienoservicio.key.id(), 'name': bienoservicio.rotulo } for bienoservicio in bienesoservicios]
+#         self.response.out.write(json.dumps(response))
+
 class GetBienesoServicios(webapp2.RequestHandler):
     def get(self):
-        tipo = TipoEgreso.get_by_id(self.request.get('tipo'))
-        bienesoservicios = Bienoservicio.query(Bienoservicio.tipo == tipo.key, Bienoservicio.activo == True ).fetch()
-        response = [{'value':bienoservicio.key.id(), 'name': bienoservicio.rotulo } for bienoservicio in bienesoservicios]
+        proveedor = Proveedor.get_by_id(self.request.get('proveedor'))
+        bienesoservicios = proveedor.bienesoservicios
+        response = [{'value':bienoservicio.id(), 'name': bienoservicio.id() } for bienoservicio in bienesoservicios]
         self.response.out.write(json.dumps(response))
 
         
@@ -550,26 +558,30 @@ class GetNextNumber(webapp2.RequestHandler):
 
 class GuardarFactura(webapp2.RequestHandler):        
     def post(self):
-        post_data = self.request.body
-        values = json.loads(post_data)
-        entityClass = values['entityClass']
-        ventas =[]
-        for venta in values['ventas']:
-            producto = venta['producto'].replace(' ','.')
-            ventas.append(Venta(producto=Producto.get_by_id(producto).key,
-                           porcion=Porcion.get_by_id(venta['porcion']).key,
-                           cantidad = venta['cantidad'],
-                           precio = venta['precio'],
-                           venta = venta['venta']))
-        values['ventas'] = ventas
-        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
-        values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(entityClass)
-        response = dataStoreInterface.create_entity(entityClass, values)
-        if response['result'] != 'FAIL':         
-            self.response.out.write(json.dumps({'result':'SUCCESS','id': response['entity'].key.id()}))
-        else:     
-            self.response.out.write(json.dumps({'result':'FAIL','msg': response['message']}))    
+        empleado = classModels['Empleado'].query(classModels['Empleado'].email == users.get_current_user().email()).get()
+        response={}
+        if not empleado.writePermission:
+            response = {'result':'FAIL','message':"No tiene permiso de modificar el sistema"}
+        else:
+            post_data = self.request.body
+            values = json.loads(post_data)
+            entityClass = values['entityClass']
+            ventas =[]
+            for venta in values['ventas']:
+                producto = venta['producto'].replace(' ','.')
+                ventas.append(Venta(producto=Producto.get_by_id(producto).key,
+                               porcion=Porcion.get_by_id(venta['porcion']).key,
+                               cantidad = venta['cantidad'],
+                               precio = venta['precio'],
+                               venta = venta['venta']))
+            values['ventas'] = ventas
+            values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+            values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
+            values['numero'] = int(values['numero']) if values['numero']  else getConsecutivo(entityClass)
+            entity = dataStoreInterface.create_entity(entityClass, values)['entity']
+            response = {'result':'SUCCESS','id': entity.key.id()}
+        self.response.out.write(json.dumps(response))
+          
 class MostrarFactura(webapp2.RequestHandler):
     def get(self):
         key = self.request.get('id')
@@ -771,24 +783,31 @@ class Addbienoservicio(webapp2.RequestHandler):
         
 class GuardarEgreso(webapp2.RequestHandler):        
     def post(self):
-        post_data = self.request.body
-        values = json.loads(post_data)
-        compras =[]
-        values['numero'] = int(values['numero']) if values['numero'] else getConsecutivo('Egreso')
-        values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
-        for compra in values['compras']:
-            compra['egreso'] = values['numero']
-            compra['fecha'] = values['fecha']
-            compra['proveedor'] = values['proveedor']
-            compra['sucursal']=values['sucursal']
-            compra['bienoservicio'] = compra['bienoservicio'].replace(' ','.').upper()
-            entity = dataStoreInterface.create_entity('Compra',compra)['entity']
-            compras.append(entity)
-        values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
-        values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
-        
-        entity = dataStoreInterface.create_entity('Egreso', values)['entity']
-        self.response.out.write(json.dumps({'result':'Success','egresoId': entity.key.id()}))
+        empleado = classModels['Empleado'].query(classModels['Empleado'].email == users.get_current_user().email()).get()
+        response={}
+        if not empleado.writePermission:
+            response = {'result':'FAIL','message':"No tiene permiso de modificar el sistema"}
+        else:
+            post_data = self.request.body
+            values = json.loads(post_data)
+            compras =[]
+            values['numero'] = int(values['numero']) if values['numero'] else getConsecutivo('Egreso')
+            values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
+            for compra in values['compras']:
+                compra['egreso'] = values['numero']
+                compra['fecha'] = values['fecha']
+                compra['proveedor'] = values['proveedor']
+                compra['sucursal']=values['sucursal']
+                compra['bienoservicio'] = compra['bienoservicio'].replace(' ','.').upper()
+                entity = dataStoreInterface.create_entity('Compra',compra)['entity']
+                compras.append(entity)
+            values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
+            values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
+            response = dataStoreInterface.create_entity('Egreso', values)
+            del response['entity']
+            del response['old']
+            response['id'] = values['numero']
+        self.response.out.write(json.dumps(response))
 
 class GuardarLoteDeCompra(webapp2.RequestHandler):
     def get(self):
@@ -810,6 +829,8 @@ class GetLotes(webapp2.RequestHandler):
         lotes = dataStoreInterface.buildQuery('LoteDeCompra',{'fruta':fruta, 'procesado':False}).fetch()
         self.response.write(JSONEncoder().encode(lotes))
 
+# Si se borra un cliente que sea referenciado en una factura esta function fallará
+# No deberia ser posible borrar un cliente mientras alla facturas que lo referencien...
 class GetCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
         response = []
@@ -872,10 +893,10 @@ class Fix(webapp2.RequestHandler):
     def get(self):
         number = int(self.request.get('number'))
         offset = int(self.request.get('offset')) 
-        facturas = Factura.query(Factura.pagada == False).fetch(number,offset=offset)
-        clientesMalos = []
+        facturas = dataStoreInterface.buildQuery('Factura', {'pagada':False}).fetch(number,offset=offset)
+        msg=''
         for factura in facturas:
-            cliente = factura.cliente.get()
-            if cliente is None:
-                clientesMalos.append({factura.cliente,factura.numero})
-        self.response.out.write(str(clientesMalos) +"<br> -- System time: " + str(datetime.now()))
+            if not factura.cliente.get(): 
+                msg += str(factura.numero) + ";"
+            
+        self.response.out.write('Facturas: ' + str(len(facturas)) +'<br>Bad: ' + msg +"<br> -- System time: " + str(datetime.now()))

@@ -37,7 +37,8 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         ],
             'Sucursal':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         {'id':'direccion', 'ui':'Direccion', 'required':'true', 'style':'width:10em'},
-                        {'id':'telefono', 'ui':'Telefono', 'required':'true', 'style':'width:10em'}
+                        {'id':'telefono', 'ui':'Telefono', 'required':'true', 'style':'width:10em'},
+                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                         ],
             'Ciudad':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         ],
@@ -256,13 +257,14 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                                     {'id':'fila', 'ui':'Fila','style':'width:8em', 'sort':'nombre'},
                                     {'id':'columna', 'ui':'Columna','style':'width:8em', 'sort':'nombre'},
                                     {'id':'nivel', 'ui':'Nivel','style':'width:8em', 'sort':'nombre'},
-                                    {'id':'contenido', 'ui':'Contenido','style':'width:8em'},
+                                    {'id':'contenido', 'ui':'Contenido','style':'width:8em'}
                 ],
             'FraccionDeLote':[
                 {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
                 {'id':'producto','ui':'Producto', 'style':'width:10em'},
                 {'id':'porcion','ui':'Porcion', 'style':'width:10em'},
-                {'id':'cantidad','ui':'Cantidad', 'style':'width:10em'}
+                {'id':'cantidad','ui':'Cantidad', 'style':'width:10em'},
+                {'id':'comentario','ui':'Comentario', 'style':'width:10em;overflow:hidden'}
                 ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
@@ -527,7 +529,8 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                 {'id':'fecha', 'ui':'Fecha','style':'width:8em', 'type':'Date'},
                 {'id':'producto','ui':'Producto', 'style':'width:10em'},
                 {'id':'porcion','ui':'Porcion', 'style':'width:10em'},
-                {'id':'cantidad','ui':'Cantidad', 'style':'width:10em'}
+                {'id':'cantidad','ui':'Cantidad', 'style':'width:10em'},
+                {'id':'comentario','ui':'Comentario', 'style':'width:10em'}
                 ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},

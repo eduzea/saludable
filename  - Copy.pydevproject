@@ -5,7 +5,8 @@
 <value>C:\Program Files (x86)\Google\google_appengine</value>
 </pydev_variables_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/${PROJECT_DIR_NAME}</path>
+<path>/${PROJECT_DIR_NAME}/libs/easydict-1.6</path>
+<path>/${PROJECT_DIR_NAME}/libs/python-dateutil-1.5</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>${GOOGLE_APP_ENGINE}</path>
@@ -62,6 +63,6 @@
 <path>${GOOGLE_APP_ENGINE}/lib/yaml-3.10</path>
 <path>${GOOGLE_APP_ENGINE}/lib/yaml/lib</path>
 </pydev_pathproperty>
-<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python interpreter</pydev_property>
-<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">python</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
 </pydev_project>

@@ -6,3 +6,13 @@ html, body, #layout {
 #homeTabContainer {
     height: 97%;
 }
+
+.form-table {
+	table-layout: auto;
+	border: 1px solid black;
+	width: 100%;
+	padding: 15px;
+    text-align: left;
+    background-color: #EAFAF1;
+}
+
