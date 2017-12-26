@@ -1,0 +1,45 @@
+{% autoescape true %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="../static/libs/gridx/resources/claro/Gridx.css" />
+<link rel="stylesheet" href="../static/my/css/grid.css" />
+<script type="text/javascript" src="../static/my/js/modelSpecific.js"></script>
+<script type="text/javascript" src="../static/my/js/crearInventario.js"></script>
+<script>saludable.entityClass = 'Inventario';</script>
+<div data-dojo-type="dijit/form/Form" id="addEntityForm_{{entityClass}}" data-dojo-id="addEntityForm_{{entityClass}}" encType="multipart/form-data">
+	<table style="table-layout: fixed;"> 
+		<tr>
+			<td><label for='fecha_{{entityClass}}'>Fecha: </label></td>
+			<td><input type="text" name='fecha_{{entityClass}}' id='fecha_{{entityClass}}' value="now" 
+					data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
+					required="true" style="width:8em;" />
+			</td>
+			<td><label for='sucursal_Inventario'>Sucursal: </label></td>
+			<td>
+				<div style="margin:10px">
+					{{tagForField('Inventario',props['sucursal'])}}
+				</div>
+			</td>
+		</tr>
+		<tr>	
+			<td><label for="producto_{{entityClass}}">Producto: </label></td>
+			<td><div id='producto_{{entityClass}}'></div></td>
+			<td><label for='porcion_{{entityClass}}'>Porcion: </label></td>
+			<td><div id='porcion_{{entityClass}}'></div></td>
+			<td><label for='cantidad_{{entityClass}}'>Existencias:</label></td>
+			<td>{{tagForField('Inventario',props['existencias'])}}</td>
+			<td><button id='agregarBtn_{{entityClass}}' data-dojo-type="dijit/form/Button">Agregar al Inventario</button></td>
+			<td><button id='nueva_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Nuevo {{entityClass}}</button></td>
+		</tr>
+	</table>
+	<div id="grid_{{entityClass}}"></div>	
+</div>
+<table>
+	<tr>
+		<td>
+			<button id='guardar_{{entityClass}}Btn' data-dojo-type="dijit/form/Button">Guardar Inventario</button></td>
+		</td>
+		<td><div id='mensaje_{{entityClass}}' style="color: red"></div></td>
+	</tr>
+</table>
+
+{% endautoescape %}

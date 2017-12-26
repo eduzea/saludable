@@ -1,7 +1,7 @@
 import webapp2
 import logging
 from google.appengine.api import mail
-from models.models import Factura, PagoRecibido
+from models import Factura, PagoRecibido
 from datetime import datetime
 from google.appengine.ext import deferred
 from oauth2client.service_account import ServiceAccountCredentials

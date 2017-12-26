@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="../static/libs/gridx/resources/claro/Gridx.css" />
+<script>saludable.entityClass = '{{entityClass}}'</script>
+<script type="text/javascript" src="../static/my/js/modelSpecific.js"></script>
+<script type="text/javascript" src='../static/my/js/addEntityForm.js'></script>
+<center>
+<div  class = "addEntityForm" data-dojo-type="dijit/form/Form" id="addEntityForm_{{ entityClass }}" data-dojo-id="addEntityForm_{{ entityClass }}" encType="multipart/form-data" action="" method="" style="margin: 0 auto;">
+	<table style="border: 1px solid #9f9f9f;" cellspacing="10">
+		{% for field in fields %}
+		<tr>
+			<td><label for="name">{{ field.ui }}:</label></td>
+			<td>
+				{{ pythonFunction('tagForField',{'entityClass':entityClass, 'field':field}) }}						
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<button data-dojo-type="dijit/form/Button" id="agregar_btn_{{ entityClass }}" type="button">
+		Agregar {{ entityClass }}
+	</button>
+	<button id='reset_{{ entityClass }}' data-dojo-type="dijit/form/Button" type="reset">
+		Borrar todo
+	</button>
+	<br/>
+	<br/>
+	<div id="server_response_{{ entityClass }}" style="color: red"></div>
+	<br/>
+</div>
+</center>		

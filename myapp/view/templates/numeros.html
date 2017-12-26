@@ -1,0 +1,117 @@
+<head>
+	<script type="text/javascript" src="../static/my/js/numeros.js"></script>
+</head>
+<center>
+<div data-dojo-type="dojox/layout/ContentPane" id='numeros' title="Numeros">  
+	<table style="border: 1px solid #9f9f9f;" cellspacing="10">
+		<tr>
+			<td><label>Proximo Numero de Pedido:</label></td>
+			<td>
+				<div>{{tagForField('Pedido',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numPedidoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Factura:</label></td>
+			<td>
+				<div>{{tagForField('Factura',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numFacturaBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Remision:</label></td>
+			<td>
+				<div>{{tagForField('Remision',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true','auto':''}
+						)
+					 }}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numRemisionBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Egreso:</label></td>
+			<td>
+				<div>{{tagForField('Egreso',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numEgresoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Deuda:</label></td>
+			<td>
+				<div>{{tagForField('Deuda',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true','auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numDeudaBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de Otros Ingresos:</label></td>
+			<td>
+				<div>{{tagForField('OtrosIngresos',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numOtrosIngresosBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Proximo Numero de PagoRecibido:</label></td>
+			<td>
+				<div>{{tagForField('PagoRecibido',
+						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
+						)	
+					}}
+				</div>
+			</td>
+			<td>
+				<button data-dojo-type="dijit/form/Button" id="numPagoRecibidoBtn" type="button">
+				Actualizar
+				</button>
+			</td>
+		</tr>
+
+	</table>
+	<br />
+	<div id='numeroMsg' style="color: red"></div>
+</div>
+</center>

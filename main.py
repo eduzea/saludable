@@ -1,6 +1,6 @@
 import webapp2
-from views.views import *
-from views.initSaludable import initSaludable
+from myapp.controller.controller import *
+from myapp.initSaludable import initSaludable
 
 initSaludable()
 application = webapp2.WSGIApplication([
@@ -11,7 +11,7 @@ application = webapp2.WSGIApplication([
     ('/home', Home),# The rooot of the 1-page app
     ('/getWidget',GetWidget),#Gets the right widget for each content pane in the 1-page app. 
     ('/dojoxLoader',DojoxLoader),#uses dojox to load remote html in a content pane with scripts enabled
-    # CRUD GENERAL
+    # saludable GENERAL
     ('/addEntity',AddEntity),
     ('/saveEntity', SaveEntity),
     ('/showEntities',ShowEntities),
@@ -33,7 +33,6 @@ application = webapp2.WSGIApplication([
     ('/getExistencias', GetExistencias),
     ('/getContenidoUnidadDeAlmacenamiento',GetContenidoUnidadDeAlmacenamiento),
     #Ingresos
-    ('/crearFactura', CrearFactura),
     ('/guardarFactura', GuardarFactura),
     ('/mostrarFactura', MostrarFactura),
     ('/anularFactura', AnularFactura),
@@ -42,7 +41,7 @@ application = webapp2.WSGIApplication([
     ('/crearOrdenDeSalida',CrearOrdenDeSalida),
     ('/crearFacturaFromPedido',CrearFacturaFromPedido),
     # Egresos
-    ('/crearEgreso', CrearEgreso),
+#     ('/crearEgreso', CrearEgreso),
     ('/guardarEgreso', GuardarEgreso),
     ('/guardarLoteDeCompra', GuardarLoteDeCompra),
     ('/getLotes',GetLotes),

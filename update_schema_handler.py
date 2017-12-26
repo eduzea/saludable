@@ -1,6 +1,6 @@
 import logging
 from datetime import date
-from models.models import *
+from models import *
 from google.appengine.datastore.datastore_query import Cursor
 from google.appengine.ext import ndb
 from google.appengine.ext import deferred

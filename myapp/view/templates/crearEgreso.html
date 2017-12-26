@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitionfal//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% autoescape true %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="../static/libs/gridx/resources/claro/Gridx.css" />
+		<link rel="stylesheet" href="../static/my/css/grid.css" />
+		<script>saludable.entityClass = 'Egreso';</script>
+		<script>dojoConfig = {async: 1,parseOnLoad:1,dojoBlankHtmlUrl: '/blank.html',packages: [{name: 'gridx', location: location.pathname.replace(/\/[^/]+$/, '') + '/static/libs/gridx'}]};</script>
+		<script type="text/javascript" src="../static/my/js/modelSpecific.js"></script>
+		<script type="text/javascript" src="../static/my/js/crearEgreso.js"></script>
+		<script>
+			require(["dojo/parser", "dijit/layout/ContentPane", "dojox/layout/ContentPane", "dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/DateTextBox"]);
+		</script>
+		<title>Egreso</title>
+	</head>
+	<body class="claro">
+		<div data-dojo-type="dijit/form/Form" id="addEntityForm_Egreso" data-dojo-id="addEntityForm_Egreso" encType="multipart/form-data">
+			<table class="form-table" style="background-color:#EAEDED"> 
+				<tr>
+					<td><label for='fecha_Egreso'>Fecha: </label></td>
+					<td><input type="text" name="fechac_Egreso" id="fecha_Egreso" value="now" 
+							data-dojo-type="dijit/form/DateTextBox" constraints="{datePattern:'yyyy-MM-dd', strict:true}" 
+							required="true" style="width:100px"/>
+					</td>
+					<td><label for='sucursal_Egreso'>Sucursal: </label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['sucursal']}) }}</td>
+					<td><label for='proveedor_Egreso'>Proveedor: </label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['proveedor']}) }}</td>
+					<td><label for='fuente_Egreso'>Fuente: </label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['fuente']}) }}</td>
+					<td><label for='numero_Egreso'>No. Egreso: </label> </td>
+					<td><div id='numero_Egreso'></div></td>					
+				</tr>
+			</table>
+			<table class="form-table">						
+				<tr>					
+					<td><label for="bienoservicio_Egreso">Biene o Servcio: </label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['bienoservicio']})  }}&nbsp;</td>
+					<td><label for="detalle_Egreso">Detalle: </label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['detalle']})  }}</td>
+					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Borrar Todo y Crear Nuevo Egreso</button></td>
+				</tr>
+				<tr>
+					<td><label for='cantidad_Egreso'>Cantidad:</label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['cantidad']}) }}</td>
+					<td><label for='cantidad_Egreso'>Precio Unitario:</label></td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['precio']})  }}</td>
+					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
+				</tr>
+			</table>
+			<div id="grid_Egreso"></div>
+			<br/>
+			<label for="comentario_Egreso">Comentario: </label>
+			{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['comentario']})  }}
+		</div>
+		<table>
+			<tr>
+				<td>
+					<button id='guardar_EgresoBtn' data-dojo-type="dijit/form/Button">Guardar Egreso</button></td>
+				</td>
+				<td><label>TOTAL: $ </label><label id="egreso_total">0</label></td>
+			</tr>
+			<tr><td><div id='mensaje_Egreso' style="color: red"></div></td></tr>
+		</table>
+	</body>
+</html>
+{% endautoescape %}

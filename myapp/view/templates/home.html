@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+{% autoescape true %}
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="/static/my/css/home.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojox/layout/resources/ExpandoPane.css" />
+		
+		<script>
+			dojoConfig = {
+			async: 1,
+			parseOnLoad:1,
+			dojoBlankHtmlUrl: '/blank.html',
+			baseUrl : 'static/js/',
+			packages: [
+				{name: 'gridx', location: '/static/libs/gridx'},
+				{name: 'my', location: '/static/my/js'},
+				{name: 'jquery', location: "/static/lib/jquery", main: 'jquery-1.8.3.min' }
+			]};
+			crud={};//namespace to hold global variables for this app.
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.2/dojo/dojo.js"></script>
+		<script>
+			saludable = {
+			'entityClass' : '{{ entityClass }}'
+			};
+		</script>
+		<script src="/static/my/js/home.js" ></script>
+		<script>
+			require(["dojo/parser", "dijit/layout/BorderContainer","dijit/layout/TabContainer", "dijit/layout/ContentPane", "dojox/layout/ContentPane", 
+			"dijit/form/Form", "dijit/form/Button", "dijit/form/ValidationTextBox", "dijit/form/NumberTextBox","dijit/form/Select",'dijit/form/DateTextBox']);
+		</script>
+		<title>Salud-Able Foods</title>
+	</head>
+	<body class='claro'>
+		<div id='layout' data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="gutters:true, liveSplitters:true" style="width: 100%; height: 100%">
+			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
+			<table>
+				<tr>
+					<td><img alt="" src="/static/images/SaludAble_logo_Firma.png" style="width:30px;height:30px"></td>
+					<td>
+						{% if user %}
+						<table><tr><td>{{user.email()}}</td><td><a href='/logout'>Log out</a></td></tr></table>
+						{% else %} 
+						<a href="/login">Administrar</a>
+						{% endif %}
+					</td>
+					<td>
+						<button id='goHome' data-dojo-type="dijit/form/Button">Volver a vista inicial</button>
+					</td>
+				</tr>
+			</table>
+			</div>
+			<div data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="splitter:true, region:'leading',startExpanded:true">
+				<div id='tree'></div>
+			</div>
+			<div id='centerPane' data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style: "overflow: hidden !important;"></div>
+			<div style="text-align:center" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
+				&copy;2014 Salud-Able Foods SAS 
+			</div>
+		</div>
+	</body>
+</html>
+{% endautoescape %}

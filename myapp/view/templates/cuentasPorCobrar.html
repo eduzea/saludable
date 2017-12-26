@@ -1,0 +1,22 @@
+<head>
+	<link rel="stylesheet" href="../static/libs/gridx/resources/claro/Gridx.css" />
+	<link rel="stylesheet" href="../static/my/css/grid.css" />
+	<script type="text/javascript" src="../static/my/js/cuentasPorCobrar.js"></script>
+</head>
+<div id='widget{{entityClass}}' title="{{entityClass}}" data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout:'true', isLayoutContainer:'true',useMenu:'false', tabPosition: 'bottom'">
+	<div data-dojo-type="dojox/layout/ContentPane" id='{{entityClass}}_resumen' title="Por Cliente" 
+	style="overflow: hidden !important;" >
+		<div id='{{entityClass}}_resumen_grid'></div>	
+		<table>
+			<tr>
+				<td><div id='cuentasPorCobrar_total_label'></div></td>
+				<td><div id='cuentasPorCobrar_total'></div></td>
+			</tr>
+		</table>
+	</div>
+	<div data-dojo-type="dojox/layout/ContentPane" id='{{entityClass}}_detalle' title="Detalle" 
+	style="overflow: hidden !important;">
+		<center><div id='{{entityClass}}_title'></div></center>
+		<div id='{{entityClass}}_detalle_grid'></div>
+	</div>
+</div>

@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
 encoding//libs/python-dateutil-1.5/dateutil/parser.py=iso-8859-1
-encoding//templates/Factura1p.htm=UTF-8
-encoding//views/presentation.py=utf-8
-encoding//views/views.py=utf-8
+encoding//myapp/controller/controller.py=utf-8
+encoding//myapp/view/templates/Factura1p.htm=UTF-8
+encoding//myapp/view/view.py=utf-8
 encoding/<project>=UTF-8
