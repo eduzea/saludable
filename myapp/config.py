@@ -430,7 +430,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                         {'id':'direccion','ui':'Direccion', 'required':'true', 'style':'width:8em'},
                         {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'}
                         ],
-            'Deuda':[
+            'Pasivo':[
                      {'id':'numero','ui':'No.','readonly':'true','style':'width:2em','auto':''},
                      {'id':'fecha', 'ui':'Fecha','style':'width:7em'},
                      {'id':'empleado','ui':'Empleado','style':'width:8em'},

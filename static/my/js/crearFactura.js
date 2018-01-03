@@ -26,7 +26,8 @@ require(['dojo/dom',
 		'dijit/form/NumberTextBox'
 		], 
 function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, CellWidget, query, on,json,number,Select,domClass, html, ready,topic,Memory,Checkbox) {
-	var entityClass = saludable.entityClass;	
+	var entityClass = 'Factura';
+	var update = false;
 	
 	var resetCliente = function(cliente){	
 		request.post('/getClientes', {handleAs:'json'}).then(function(response){
@@ -173,49 +174,67 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 		e.value = !e.value;
 	};
 	
-	parser.instantiate([dom.byId('guardar'+ '_' + entityClass + 'Btn')]);
-	on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click',
-		function(e){
-			var cliente = registry.byId('cliente'+ '_' + entityClass).value;
-			var fecha = registry.byId('fecha'+ '_' + entityClass).toString();
-			var numero = dom.byId('numero'+ '_' + entityClass).innerHTML.replace('No.','');
-			var gridData = getGridData();
-			var grid = registry.byId('grid'+ '_' + entityClass);
-			updateTotal();
-			var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'montoIva':grid.iva,'total':grid.total,  
-			'numero':numero, 'entityClass':entityClass};
-			request.post('/guardarFactura', {
-					data : json.stringify(factura_data),
-					handleAs:'json'
-				}).then(function(response) {
-					var server_msg = registry.byId('server_message');
-					if(response.result == 'SUCCESS'){
-						server_msg.set("content", 'Se grabo exitosamente esta factura! # ' + response.id);
-						server_msg.show();
-						factura_data['cliente']=registry.byId('cliente'+ '_' + entityClass).attr('displayedValue');
-						actualizarFacturas(response, factura_data, entityClass);
-						var pagina = registry.byId( '_' + entityClass + 'PorPagina').checked;
-						var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entityClass+ '&pagina='+ pagina.toString();
-						window.open(url);
-						//Clear the form and publish what just happened...
-						setTimeout(function() {
-							var grid =registry.byId('grid'+ '_' + entityClass);
-							grid.model.clearCache();
-							grid.model.store.setData([]);
-	        				grid.body.refresh();
-							dom.byId('factura_total').innerHTML = '';
-							dom.byId('factura_subtotal').innerHTML = '';
-							dom.byId('factura_iva').innerHTML = '';
-							dom.byId('numero'+ '_' + entityClass).innerHTML = '';
-						}, 2000);
-						topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
-					}else{
-						server_msg.set("content", response['message']);
-						server_msg.show();
-					}
-				});
-		});
 	
+	var confirmOverwrite = function(e){
+		if (update){
+			var cliente = registry.byId('cliente'+ '_' + entityClass).value;
+			var numero = dom.byId('numero'+ '_' + entityClass).innerHTML.replace('No.','');
+
+			var updateOK = confirm(`ESTA SEGURO QUE DESEA REEMPLAZAR LA FACTURA ${numero} POR ESTA NUEVA VERSION?`)
+			if (updateOK){
+				guardarFactura(e);
+			}
+		}else{
+			guardarFactura(e);
+		}
+	};
+	
+	var guardarFactura = function(e){
+		var cliente = registry.byId('cliente'+ '_' + entityClass).value;
+		var fecha = registry.byId('fecha'+ '_' + entityClass).toString();
+		var numero = dom.byId('numero'+ '_' + entityClass).innerHTML.replace('No.','');
+		var gridData = getGridData();
+		var grid = registry.byId('grid'+ '_' + entityClass);
+		updateTotal();
+		var factura_data = {'cliente':cliente,'fecha':fecha,'ventas':gridData, 'subtotal':grid.subtotal,'montoIva':grid.iva,'total':grid.total,  
+		'numero':numero, 'entityClass':entityClass};
+		request.post('/guardarFactura', {
+				data : json.stringify(factura_data),
+				handleAs:'json'
+			}).then(function(response) {
+				var server_msg = registry.byId('server_message');
+				if(response.result == 'SUCCESS'){
+					var op = response.message == 'Updated' ? 'ACTUALIZO' : 'CREO' 
+					server_msg.set("content", 'Se ' + op  + ' exitosamente esta factura! # ' + response.id);
+					server_msg.show();
+					factura_data['cliente']=registry.byId('cliente'+ '_' + entityClass).attr('displayedValue');
+					actualizarFacturas(response, factura_data, entityClass);
+					var pagina = registry.byId( '_' + entityClass + 'PorPagina').checked;
+					var url = '/mostrarFactura?id='+response.id + '&entityClass=' + entityClass+ '&pagina='+ pagina.toString();
+					window.open(url);
+					//Clear the form and publish what just happened...
+					setTimeout(function() {
+						var grid =registry.byId('grid'+ '_' + entityClass);
+						grid.model.clearCache();
+						grid.model.store.setData([]);
+        				grid.body.refresh();
+						dom.byId('factura_total').innerHTML = '';
+						dom.byId('factura_subtotal').innerHTML = '';
+						dom.byId('factura_iva').innerHTML = '';
+						dom.byId('numero'+ '_' + entityClass).innerHTML = '';
+					}, 2000);
+					topic.publish('FACTURA',{'action':'ADD', 'id':response.id});
+				}else{
+					server_msg.set("content", response['message']);
+					server_msg.show();
+				}
+			});
+	};
+
+	
+	parser.instantiate([dom.byId('guardar'+ '_' + entityClass + 'Btn')]);
+	on(registry.byId('guardar'+ '_' + entityClass +'Btn'),'click', confirmOverwrite);
+		
 	parser.instantiate([dom.byId('agregarPedidoBtn'+ '_' + entityClass)]);
 	on(registry.byId('agregarPedidoBtn'+ '_' + entityClass),'click',function(e){
 		var form = registry.byId('addEntityForm' +  '_' + entityClass);
@@ -353,6 +372,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 	parser.instantiate([dom.byId('addEntityForm'+ '_' + entityClass)]);
 	var form = registry.byId('addEntityForm'+ '_' + entityClass);
 	form.listenerfunc = function(data){
+		registry.byId('guardar_FacturaBtn').set('label','Actualizar Factura');
+		update = true;
         var nodelist= query('[id*='+ entityClass +']', 'addEntityForm'+ '_' + entityClass);
         if (nodelist.length == 0){
         	var contentPane= registry.byId(grid.gridName + '_add');

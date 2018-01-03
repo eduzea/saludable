@@ -139,7 +139,7 @@ def getTagHTML(prop,entityClass, customId=None):
     attrReplace = ''
     innerReplace = ''
     postReplace = ''
-    propType = prop.pop('type')
+    propType = prop['type']
     if 'default' in prop:
         prop['value'] = str(prop.pop('default'))
     if 'auto' in prop:
@@ -150,6 +150,7 @@ def getTagHTML(prop,entityClass, customId=None):
         propType = ndb.StringProperty()
     html = basisTagString[str(propType).partition('(')[0]]
     for key,value in prop.iteritems():
+        if key == 'type' : continue
         if key == 'id':
             if not customId:
                 attrReplace += getIdString(value, entityClass)

@@ -1,10 +1,10 @@
 //# sourceURL=../static/my/js/addEntityForm.js
 define.amd.jQuery = true;
-require(['my/utils','jquery','dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
+require(['my/utils','dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
 		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/number",
 		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready', 'gridx/modules/CellWidget',
 		 'dojo/domReady!'],
-function(utils,$,request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready) {
+function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready) {
 	
 	var entityClass = saludable.entityClass;//Get the entity from the view loading this script
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
@@ -103,7 +103,7 @@ function(utils,$,request, dom, fx, registry, domStyle, html, on, parser,query,JS
 					}					
 				}
 				var server_msg = registry.byId('server_message');
-				server_msg.set("content", response.message);
+				server_msg.set("content", response.message == 'Updated' ? `Se actualizo ${entityClass}` : `Se creo ${entityClass}` );
 				server_msg.show();
 				if (! (entityClass in saludable.config['dontResetAfterSave']) ){
 					setTimeout(function() {
@@ -156,16 +156,16 @@ function(utils,$,request, dom, fx, registry, domStyle, html, on, parser,query,JS
 			var toAdd=registry.byId(propname +'_'+ entityClass).value;
 			if (button.items.indexOf(toAdd) == -1){
 				button.items.push(toAdd);		
-				$('<div><input name="toDoList" type="checkbox">' + toAdd + '</input></div>').appendTo('#'+listName);				
+				registry.byNode('<div><input name="toDoList" type="checkbox">' + toAdd + '</input></div>').appendTo('#'+listName);				
 			}
 		});
-	    $('#'+listName).on('click','input',function() {
+	    registry.byId('#'+listName).on('click','input',function() {
 	    	var value = this.nextSibling.textContent;
 	        var index = button.items.indexOf(value);
 			if (index !== -1) {
     			button.items.splice(index, 1);
 			}
-			$(this).parent().remove();
+			registry.byNode(this).parent().remove();
 	    });
 	});
 	
@@ -325,9 +325,9 @@ function(utils,$,request, dom, fx, registry, domStyle, html, on, parser,query,JS
 		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
 		        		//Find the list, populate it
 		        		var listName = field + '_' + entityClass + '_list';
-		        		$('#'+listName).empty();
+		        		registry.byId('#'+listName).empty();
 		        		button.items.forEach(function(item){
-		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+		        			registry.byNode('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
 		        		});
 	
 		        	}

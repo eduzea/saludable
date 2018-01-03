@@ -163,6 +163,7 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 					return oldRet;
 				});
 			}
+			console.log("CREATING DIALOG");
 			var myDialog = new Dialog({
 			        title: "ORDEN DE SALIDA",
 			        style: "width: 500px",

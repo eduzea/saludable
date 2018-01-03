@@ -15,7 +15,7 @@ require(['dojo/store/Memory',
 		 //End gridx modules
 ], 
 function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
-	var entityClass = saludable.entityClass;
+	var entityClass = 'CuentasPorCobrar';
 	request('/getCuentasPorCobrar',{handleAs:'json'}).then(
 		function(response){
 			var resumenStore = new Memory({data: response});
@@ -100,8 +100,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			var resumenGrid = new Grid(gridProps, entityClass+'_resumen_grid');
 			resumenGrid.startup();
 			updateTotal();
-			registry.byId('standby_centerPane').hide();
-			
+
 			var boolFormatter=function(data){
 					return data[this.field] ? 'Si' : 'No';
 				};
@@ -120,6 +119,7 @@ function(Memory, request, Button, registry,dom,number,on,Standby,Grid) {
 			gridProps['sortInitialOrder'] = { colId: 'fecha', descending: false };
 			var detalleGrid = new Grid(gridProps, entityClass+'_detalle_grid');
 			detalleGrid.startup();
+			registry.byId('standby_centerPane').hide();
 		}
 	);
 });

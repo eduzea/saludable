@@ -7,10 +7,8 @@
 		<tr>
 			<td><label>Proximo Numero de Pedido:</label></td>
 			<td>
-				<div>{{tagForField('Pedido',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
-						)
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'Pedido', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -22,10 +20,8 @@
 		<tr>
 			<td><label>Proximo Numero de Factura:</label></td>
 			<td>
-				<div>{{tagForField('Factura',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
-						)
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'Factura', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -37,10 +33,8 @@
 		<tr>
 			<td><label>Proximo Numero de Remision:</label></td>
 			<td>
-				<div>{{tagForField('Remision',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true','auto':''}
-						)
-					 }}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'Remision', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -52,10 +46,8 @@
 		<tr>
 			<td><label>Proximo Numero de Egreso:</label></td>
 			<td>
-				<div>{{tagForField('Egreso',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
-						)
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'Egreso', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -67,10 +59,8 @@
 		<tr>
 			<td><label>Proximo Numero de Deuda:</label></td>
 			<td>
-				<div>{{tagForField('Deuda',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true','auto':''}
-						)
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'Deuda', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -82,10 +72,8 @@
 		<tr>
 			<td><label>Proximo Numero de Otros Ingresos:</label></td>
 			<td>
-				<div>{{tagForField('OtrosIngresos',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
-						)
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'OtrosIngresos', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>
@@ -97,10 +85,8 @@
 		<tr>
 			<td><label>Proximo Numero de PagoRecibido:</label></td>
 			<td>
-				<div>{{tagForField('PagoRecibido',
-						{'type':'','id':'numerox','ui':'Consecutivo', 'required':'true', 'valid':'dijit/form/NumberTextBox', 'style':'width:5em', 'editable':'true', 'auto':''}
-						)	
-					}}
+				<div>
+				{{ pythonFunction('tagForField',{'entityClass':'PagoRecibido', 'field':props['numero']}) }}
 				</div>
 			</td>
 			<td>

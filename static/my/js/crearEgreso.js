@@ -26,7 +26,7 @@ require(['dojo/dom',
 		'dojo/domReady!'], 
 function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect, Memory, Button, Checkbox,  
 	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
-	var entityClass = saludable.entityClass;
+	var entityClass = 'Egreso';
 
 	var resetBienoservicio = function(proveedor){	
 			request('/getBienesoServicios?proveedor=' + proveedor, 

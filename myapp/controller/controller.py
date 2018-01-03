@@ -101,9 +101,6 @@ class DojoxLoader(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template(template + '.html')
         self.response.write(template.render(template_values))
 
-
-
-
 class ShowEntities(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
@@ -593,8 +590,8 @@ class GuardarFactura(webapp2.RequestHandler):
             values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
             values['fecha'] = datetime.strptime(values['fecha'], '%Y-%m-%d').date()
             values['numero'] = int(values['numero']) if values['numero']  else dataStoreInterface.getConsecutivo(entityClass)
-            entity = dataStoreInterface.create_entity(entityClass, values)['entity']
-            response = {'result':'SUCCESS','id': entity.key.id()}
+            response = dataStoreInterface.create_entity(entityClass, values)
+            response = {'result':response['result'],'id': response['key'],"message":response['message']}
         self.response.out.write(json.dumps(response))
           
 class MostrarFactura(webapp2.RequestHandler):
@@ -820,9 +817,7 @@ class GuardarEgreso(webapp2.RequestHandler):
             values['empleado'] = Empleado.query(Empleado.email == users.get_current_user().email()).fetch()[0]
             values['resumen'] = compras[0].bienoservicio.id() #if len(compras)==1 else compras[0].bienoservicio.id() + ', etc.' #think of a better way to do this! 
             response = dataStoreInterface.create_entity('Egreso', values)
-            del response['entity']
-            del response['old']
-            response['id'] = values['numero']
+            response = {'result':response['result'],'id':response['key'],'message': response['message'] }
         self.response.out.write(json.dumps(response))
 
 class GuardarLoteDeCompra(webapp2.RequestHandler):
@@ -854,6 +849,7 @@ class GetCuentasPorCobrar(webapp2.RequestHandler):
         facturas = Factura.query(Factura.pagada == False).fetch()
         for factura in facturas:
             cliente = factura.cliente.get()
+            if not cliente: continue
             if cliente.nombre in saldos:
                 saldos[cliente.nombre] += factura.total
             else:
@@ -915,10 +911,15 @@ def configEgresoFruta():
              'precio':{'type':Compra._properties['precio']}
              }
 
+def configNumero():
+    return{ 'numero': {'type':Egreso._properties['numero'], 'id':'numerox','auto':''}
+        }
+
 
 templateConfig = {'Factura':configFactura,
                   'Egreso':configEgreso,
-                  'crearEgresoFruta':configEgresoFruta}
+                  'crearEgresoFruta':configEgresoFruta,
+                  'Numero':configNumero}
 
 
 class Fix(webapp2.RequestHandler):

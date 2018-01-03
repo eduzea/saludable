@@ -6,7 +6,7 @@
 		<td>
 			<label>Cliente:</label>
 			<td><div>
-				{{selectForField('Cliente','nombre','pagos_cliente')}}
+				{{pythonFunction('selectForField',{'entityClass':'Cliente', 'field':'nombre', 'tagId':'pagos_cliente'})}}
 				</div>
 			</td>
 		</td>

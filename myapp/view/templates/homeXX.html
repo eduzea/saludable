@@ -15,7 +15,8 @@
 			baseUrl : 'static/js/',
 			packages: [
 				{name: 'gridx', location: '/static/libs/gridx'},
-				{name: 'my', location: '/static/my/js'}
+				{name: 'my', location: '/static/my/js'},
+				{name: 'jquery', location: "/static/libs/jquery", main: 'jquery-1.8.3.min' }
 			]};
 			crud={};//namespace to hold global variables for this app.
 		</script>
@@ -43,9 +44,9 @@
 				<a href="/login">Administrar</a>
 				{% endif %}
 			</div>
-			<div id='launchpad' style="width:250px" data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="splitter:true, region:'leading',startExpanded:true, doLayout:true">
-				
-			</div>
+<!-- 			<div data-dojo-type="dojox.layout.ExpandoPane" data-dojo-props="splitter:true, region:'leading',startExpanded:true"> -->
+<!-- 				<div id='tree'></div> -->
+<!-- 			</div> -->
 			<div id='centerPane' data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style: "overflow: hidden !important;"></div>
 			<div style="text-align:center" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">
 				&copy;2014 Salud-Able Foods SAS 
