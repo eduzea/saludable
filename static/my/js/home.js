@@ -20,7 +20,8 @@ require(["dijit/layout/AccordionContainer",
 		"dojo/domReady!"], 
 function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby) {
 	ready(function() {
-		
+
+		saludable.widgetCache = {};
 		////////// CONFIGURATION //////////////////
 		
 		var viewsConfig = {}; //holds view config		
@@ -88,7 +89,7 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			}
 		}
 		
-		var viewsMap = {};//holds widgets
+		saludable.widgetMap = {};//global widget cache
 		
 		var aContainer = new AccordionContainer({style:"height: 300px"}, "markup");
 		var processCategories = ['Comercial','ContableFinanciero', 'Operativo', 'Informes','Admin']
@@ -99,7 +100,7 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 				var button = new Button({
 			        label: viewObj['title'],
 			        onClick: function(){
-			        	setView(registry.byId('centerPane'), viewObj, viewsMap)	            
+			        	setView(registry.byId('centerPane'), viewObj, saludable.widgetMap)	            
 			        }
 			    });
 				button.startup()

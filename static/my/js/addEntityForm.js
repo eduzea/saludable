@@ -156,16 +156,16 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 			var toAdd=registry.byId(propname +'_'+ entityClass).value;
 			if (button.items.indexOf(toAdd) == -1){
 				button.items.push(toAdd);		
-				registry.byNode('<div><input name="toDoList" type="checkbox">' + toAdd + '</input></div>').appendTo('#'+listName);				
+				$('<div><input name="toDoList" type="checkbox">' + toAdd + '</input></div>').appendTo('#'+listName);				
 			}
 		});
-	    registry.byId('#'+listName).on('click','input',function() {
+	    $('#'+listName).on('click','input',function() {
 	    	var value = this.nextSibling.textContent;
 	        var index = button.items.indexOf(value);
 			if (index !== -1) {
     			button.items.splice(index, 1);
 			}
-			registry.byNode(this).parent().remove();
+			$(this).parent().remove();
 	    });
 	});
 	
@@ -325,9 +325,9 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 		        		button.items = rowData['text' + field].split(';').filter(function(element) { return element; });
 		        		//Find the list, populate it
 		        		var listName = field + '_' + entityClass + '_list';
-		        		registry.byId('#'+listName).empty();
+		        		$('#'+listName).empty();
 		        		button.items.forEach(function(item){
-		        			registry.byNode('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
+		        			$('<div><input name="toDoList" type="checkbox">' + item + '</input></div>').appendTo('#'+listName);		        			
 		        		});
 	
 		        	}
