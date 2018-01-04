@@ -50,6 +50,8 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'MOV. INVENTARIO', 'id':'MovimientoDeInventario','template':'','entityClass':'MovimientoDeInventario'},
 			{'title':'UNIDAD ALMACENAMIENTO', 'id':'Unidad de Almacenamiento','template':'','entityClass':'UnidadDeAlmacenamiento'},
 			{'title':'CONSULTAR INVENTARIO', 'id':'ConsultarInventario','template':'existencias','entityClass':''},
+			{'title':'MATERIA PRIMA', 'id':'MateriaPrima','template':'','entityClass':'MateriaPrima'},
+			{'title':'RENDIMIENTO', 'id':'Rendimiento','template':'','entityClass':'Rendimiento'},
 		];
 		
 		viewsConfig["Informes"] = [

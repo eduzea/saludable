@@ -20,8 +20,15 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
             'Producto':[{'id':'linea','ui':'Linea', 'required':'true', 'style':'width:20em'},
                         {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'},
                         {'id':'sujetoIVA', 'ui':'Sujeto IVA', 'required':'true', 'style':''},
-                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
+                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''},
+                        {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
+            'MateriaPrima':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'}],
+            'Rendimiento':[{'id':'producto','ui':'Producto', 'required':'true', 'style':'width:10em'},
+                           {'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
+                           {'id':'fecha','ui':'Fecha', 'required':'true', 'style':'width:10em'},
+                           {'id':'rendimiento','ui':'Rendimiento', 'required':'true', 'style':'width:10em'}
+                ],            
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}],
@@ -299,8 +306,15 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                        ],
             'Producto':[{'id':'linea','ui':'Linea', 'required':'true','style':'width:5em'},
                         {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'},
-                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'}
+                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'},
+                        {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
+            'MateriaPrima':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}],
+            'Rendimiento':[{'id':'producto','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                           {'id':'materiaPrima','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                           {'id':'fecha','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                           {'id':'rendimiento','ui':'Nombre', 'required':'true', 'style':'width:10em'}
+                ],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}],
             'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'}],

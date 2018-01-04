@@ -66,11 +66,25 @@ class LineaDeProducto(messages.Enum):
     GALLETAS = 2
     PROTEINA = 3
     
+class MateriaPrima(Record):
+    nombre=ndb.StringProperty(indexed=True) 
+    
 class Producto(Record):
     linea = msgprop.EnumProperty(LineaDeProducto, required=True, default = LineaDeProducto.PULPAS ,indexed=True)
     nombre = ndb.StringProperty(indexed=True)
     sujetoIVA = ndb.BooleanProperty(default=False)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    componentes = ndb.KeyProperty(kind=MateriaPrima, repeated=True)
+    textcomponentes =  ndb.ComputedProperty(lambda self: objListToString(self.componentes))
+
+
+# Registra el % (peso) de materia prima que se convierte en producto. 
+class Rendimiento(Record):
+    producto = ndb.KeyProperty(kind=Producto)
+    materiaPrima = ndb.KeyProperty(kind=MateriaPrima)
+    fecha = ndb.DateProperty()
+    rendimiento = ndb.FloatProperty()
+
 
 class Porcion(Record):
     valor = ndb.IntegerProperty()
@@ -544,6 +558,8 @@ class AnticipoImpuestos(Activo):
     
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
+           'MateriaPrima':['nombre'],
+           'Rendimiento':['producto','materiaPrima','fecha'], 
            'Porcion':['valor','unidades'], 
            'GrupoDePrecios':['nombre'],
            'Precio':['producto','porcion','grupoDePrecios'], 
@@ -609,6 +625,8 @@ keyDefs = {'Cliente':['nombre','negocio'],
            }
 classModels = {'Cliente':Cliente, 
                'Producto':Producto,
+               'MateriaPrima':MateriaPrima,
+               'Rendimiento':Rendimiento,
                'Porcion':Porcion, 
                'Precio':Precio, 
                'GrupoDePrecios':GrupoDePrecios,
