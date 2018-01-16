@@ -108,11 +108,15 @@ def computeIVA(venta, producto):
         return 0
 
 class Venta(Record):
+    factura = ndb.IntegerProperty()
+    cliente = ndb.KeyProperty(kind=Cliente)
+    fecha= ndb.DateProperty()
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     venta = ndb.IntegerProperty()
+    sujetoIVA = ndb.ComputedProperty(lambda self: self.producto.get().sujetoIVA)
     iva = ndb.ComputedProperty(lambda self: computeIVA(self.venta,self.producto))
     peso = ndb.ComputedProperty(lambda self: self.porcion.get().valor * self.cantidad)
     rotulo = ndb.ComputedProperty(lambda self: self.producto.id() +' '+ self.porcion.id())
@@ -409,12 +413,13 @@ class FacturaDeProveedor(Record):
 ### ------------END NUEVO MANEJO DE EGRESOS ----------####
 
 class Bienoservicio(Record):
-    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo vs indirecto)
+    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo/produccion vs indirecto/admin y ventas)
     clase = ndb.KeyProperty(kind=Clase)
     grupo = ndb.KeyProperty(kind=Grupo)
     cuenta = ndb.KeyProperty(kind=Cuenta, required=False)
     subcuenta = ndb.KeyProperty(kind=SubCuenta, required=False)
     nombre = ndb.StringProperty(indexed=True)
+    sujetoIVA = ndb.BooleanProperty(default=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 
@@ -429,6 +434,7 @@ class Compra(Record):
     proveedor = ndb.KeyProperty(kind=Proveedor)
     sucursal = ndb.KeyProperty(kind=Sucursal)
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
+    sujetoIVA = ndb.ComputedProperty(lambda self: self.bienoservicio.get().sujetoIVA)
     detalle = ndb.StringProperty()
     cantidad = ndb.FloatProperty()
     precio = ndb.IntegerProperty()
@@ -568,7 +574,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'Ciudad':['nombre'],
            'Pedido':['numero'], 
            'Factura':['numero'],
-           'Venta':['producto','porcion'],
+           'Venta':['factura','producto','porcion'],
            'Egreso':['numero'],
            'LoteDeCompra':['fecha','fruta','proveedor'],
            'Compra':['egreso','bienoservicio','detalle'], 

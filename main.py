@@ -57,10 +57,11 @@ application = webapp2.WSGIApplication([
     ('/importCSV', ImportCSV),
     # Informes
     ('/informePagos',GetInformePagos) ,
-    ('/getProductSales',GetProductSales) ,
+    ('/getAllVentas',GetAllVentas) ,
     ('/getAllCompras',GetAllCompras) ,
     ('/getPyG',PyG) ,
-    ('/getIVAPagado',GetIVAPagado) ,
+    ('/getIVA_PAGADO',GetIVA_PAGADO) ,
+    ('/getIVA_RECAUDADO',GetIVA_RECAUDADO) ,
     ('/getEstadoDeResultados',GetEstadoDeResultados),
     ('/getDetalleEstadoDeResultados',GetDetalleEstadoDeResultados),
     ('/getPUC',GetPUC),

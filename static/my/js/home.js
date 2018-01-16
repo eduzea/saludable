@@ -43,7 +43,8 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'ACTIVOS FIJOS', 'id':'ActivoFijo','template':'','entityClass':'ActivoFijo'},
 			{'title':'CAPITAL SOCIAL', 'id':'CapitalSocial','template':'','entityClass':'CapitalSocial'},
 			{'title':'PASIVOS', 'id':'Pasivo','template':'','entityClass':'Pasivo'},
-			{'title':'ACREEDORES', 'id':'Acreedor','template':'','entityClass':'Acreedor'},			
+			{'title':'ACREEDORES', 'id':'Acreedor','template':'','entityClass':'Acreedor'},
+			{'title':'PUC', 'id':'PUC','template':'PUCSearch','entityClass':''},
 		];
 		
 		viewsConfig["Operativo"] = [
@@ -60,6 +61,8 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'CUENTAS POR COBRAR', 'id':'CuentasPorCobrar','template':'cuentasPorCobrar','entityClass':'CuentasPorCobrar'},
 			{'title':'PAGOS VS FACTURAS', 'id':'Pagos','template':'InformeDePagos','entityClass':'Pagos'},
 			{'title':'ESTADO DE RESULTADOS', 'id':'EstadoDeResultados','template':'estadoDeResultados','entityClass':''},
+			{'title':'IVA PAGADO', 'id':'IVA_PAGADO','template':'tablaDinamica','entityClass':'IVA_PAGADO'},
+			{'title':'IVA RECAUDADO', 'id':'IVA_RECAUDADO','template':'tablaDinamica','entityClass':'IVA_RECAUDADO'},
 			//{'title':'SALUDABLE HOY', 'id':'SaludableHoy','template':'SaludableHoy','entityClass':''}
 		];
 

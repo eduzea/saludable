@@ -24,6 +24,8 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
             'MateriaPrima':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'}],
+            'Componente':[{'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
+                          {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:5em'}],
             'Rendimiento':[{'id':'producto','ui':'Producto', 'required':'true', 'style':'width:10em'},
                            {'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
                            {'id':'fecha','ui':'Fecha', 'required':'true', 'style':'width:10em'},
@@ -32,7 +34,9 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}],
-            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'}],
+            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'},
+                              {'id':'activo', 'ui':'Activo', 'required':'true','style':'width:10em'}
+                              ],
             'Precio':[{'id':'producto','ui':'Producto', 'style':'width:20em'},
                       {'id':'porcion','ui':'Porcion','style':'width:5em'},
                       {'id':'grupoDePrecios','ui':'Grupo de Precios','style':'width:8em'},
@@ -93,6 +97,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                              {'id':'cuenta','ui':'Cuenta', 'required':'false', 'style':'width:10em'},
                              {'id':'subcuenta','ui':'Subcuenta', 'required':'false', 'style':'width:10em'},
                              {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                             {'id':'sujetoIVA', 'ui':'Sujeto IVA', 'required':'true', 'style':''},
                              {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                       ],
             'Fruta':[
@@ -315,6 +320,8 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                            {'id':'fecha','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                            {'id':'rendimiento','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                 ],
+            'Componente':[{'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
+                          {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:5em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}],
             'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'}],

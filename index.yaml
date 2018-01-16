@@ -15,6 +15,11 @@ indexes:
   - name: bienoservicio
   - name: fecha
 
+- kind: Compra
+  properties:
+  - name: sujetoIVA
+  - name: fecha
+
 - kind: Egreso
   properties:
   - name: empleado
@@ -164,3 +169,8 @@ indexes:
   - name: cliente
   - name: numero
     direction: desc
+
+- kind: Venta
+  properties:
+  - name: sujetoIVA
+  - name: fecha

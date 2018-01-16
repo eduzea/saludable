@@ -44,9 +44,11 @@ function(MyGrid, JsonRest, registry, query, parser, dom, domConstruct, html, num
 						this.innerHTML='';
 					}
 				};
+				saludable.showEntitiesFuncs[entityClass]();
 			}
 		}
 	);
+
 	
 	//FUNCTION TO GET DATA ONE PAGE AT A TIME
 	var getNextPage = function(cursor, count){

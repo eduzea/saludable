@@ -30,6 +30,7 @@ define([
 	'gridx/modules/Filter',
 	'gridx/modules/filter/FilterBar',
 	'gridx/support/exporter/exporter',
+	'gridx/modules/HiddenColumns',
  	//End gridx modules
 	'dijit/form/SimpleTextarea',
  	'dijit/form/CheckBox'], 
@@ -37,7 +38,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 			domConstruct, html, number, on, toCSV, aspect, topic, Standby) 
 {
 	var addBorrarColumn = function(columns){
-		var borrarColumn = { field : 'Borrar', name : '', widgetsInCell: true, width:'5em',
+		var borrarColumn = { id:'Borrar', field : 'Borrar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Borrar",
@@ -65,7 +66,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 	};
 	
 	var addEditColumn = function(columns){
-		var editarColumn = { field : 'Editar', name : '', widgetsInCell: true, width:'5em',
+		var editarColumn = { id:'Editar' ,field : 'Editar', name : '', widgetsInCell: true, width:'5em',
 			onCellWidgetCreated: function(cellWidget, column){
    				var btn = new Button({
 					label : "Editar",
@@ -85,6 +86,24 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 			},
 		};
 		columns.push(editarColumn);
+		
+		var imprimirColumn = { id:'Imprimir', field : 'Imprimir', name : '', widgetsInCell: true, width:'5em',
+				onCellWidgetCreated: function(cellWidget, column){
+	   				var btn = new Button({
+						label : "Imprimir",
+						onClick : function() {
+		                    // get the selected row's ID
+		                    var selectedRowId = cellWidget.cell.row.id;
+		                    // get the data
+		                    var rowData = grid.row(selectedRowId, true).rawData();
+		                    var url = '/mostrarFactura?id=' + selectedRowId + '&entityClass=Factura&pagina=false';
+		                    window.open(url);
+	   					}
+					});
+					btn.placeAt(cellWidget.domNode);
+				},
+			};
+		columns.push(imprimirColumn);
 	};
 	
 	var prepareColumns = function(columns,borrar,editar){
@@ -126,6 +145,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
 	            "gridx/modules/Pagination",
 		        'gridx/modules/filter/FilterBar',
 	            "gridx/modules/Filter",
+	            'gridx/modules/HiddenColumns'
 		    ]
          };
 	grid=null;
@@ -167,6 +187,7 @@ function(	declare, Store, Grid, Cache, request, Button, CellWidget, registry, qu
    			grid.dataFetchTrigger = function(){
    				return dom.byId('masBtn_' + this.gridName);
    			};
+   			grid.hiddenColumns.add("Imprimir");
    			return grid;}
    	});
    return MyGrid;

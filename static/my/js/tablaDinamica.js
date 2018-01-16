@@ -2,8 +2,10 @@
 require(['dojo/request',"dijit/registry",'dojo/parser','dojo/dom','dojo/on','dojo/query',"dojo/dom-class","dojox/widget/Standby"], 
 function(request,registry,parser,dom,on,query,domClass,Standby) {
 	var entityClass = saludable.entityClass;
-	var pivotUrl = {'Ventas': '/getProductSales?' ,
+	var pivotUrl = {'Ventas': '/getAllVentas?' ,
 					'Gastos': '/getAllCompras?',
+					'IVA_PAGADO':'/getIVA_PAGADO?',
+					'IVA_RECAUDADO':'/getIVA_RECAUDADO?',
 					'UtilidadesDetallado':'/getUtilidades?detallado=true',
 					'Recaudado': '/entityData?entityClass=Factura&iva=true',
 					'Pagado': '/getIVAPagado?'
@@ -17,6 +19,16 @@ function(request,registry,parser,dom,on,query,domClass,Standby) {
 				vals : ['venta'],
 				aggregatorName:'Suma'
 		},
+		'IVA_PAGADO':{
+				rows:['bienoservicio'],
+				vals:['iva'],
+				aggregatorName:'Suma'
+		},
+		'IVA_RECAUDADO':{
+			rows:['producto'],
+			vals:['iva'],
+			aggregatorName:'Suma'
+	},
 		'Gastos':{
 					rows: ['bienoservicio','proveedor'],
 					vals: ['total'],

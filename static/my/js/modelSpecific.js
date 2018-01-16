@@ -319,5 +319,12 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 					}
 				});
 		}
-	}
+	},
+	saludable.showEntitiesFuncs={
+			'Factura':function(){
+				var grid = getDijit('gridNode_Factura')
+				grid.hiddenColumns.add("Borrar");
+				grid.hiddenColumns.remove("Imprimir");
+			}	
+	};
 });
