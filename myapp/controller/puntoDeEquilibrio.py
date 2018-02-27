@@ -125,7 +125,9 @@ def getActivoDisponible(fechaDesde, fechaHasta):
     caja = 0
     saldo = 0
     for cuenta in cuentas:
-        saldoObj = dataStoreInterface.buildQuery('SaldoCuentaBancaria',{'cuenta':cuenta.key,'fechaHasta':fechaHasta,'sortBy':'-fecha'}).fetch(1)[0]
+        saldos = dataStoreInterface.buildQuery('SaldoCuentaBancaria',{'cuenta':cuenta.key,'fechaHasta':fechaHasta,'sortBy':'-fecha'}).fetch(1)
+        if len(saldo) == 0: continue
+        saldoObj = saldos[0]
         saldo += saldoObj.saldo
     return caja + saldo 
 
