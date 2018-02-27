@@ -28,33 +28,27 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 	{
 		'Produccion':
 		function(grid){
-			var pesoFruta = registry.byId('pesoFruta_Produccion').value;
-			var rendimiento = 100 * grid.summarize() / (pesoFruta * 1000);
-			var rendimientoDom = dom.byId('rendimiento_Produccion');
-			domAttr.set(rendimientoDom,'value',rendimiento);
-			
-			var loteSelect = registry.byId('loteDeCompra_Produccion');
-			var precio = loteSelect.getOptions(loteSelect.value)['precio'];
-			costoBruto = pesoFruta * precio * 1000 / grid.summarize();
-			costoBrutoDom = dom.byId('costoBruto_Produccion');
-			domAttr.set(costoBrutoDom,'value',number.format(costoBruto,{pattern:'###,###'}));
 		}
 	};
 	
 	//Mechanism to inject entityClass specific functionality into generic AddEntity form.
 
-	var getLotes = function(fruta){
-		request('/getLotes?fruta=' + fruta, {handleAs:'json'}).then(
+	var getLotes = function(materiaPrima){
+		request('/getLotes?materiaPrima=' + materiaPrima, {handleAs:'json'}).then(
 			function(response){
 				var items = [];
 				if (response.length == 0){
 					items.push({ "value": 'NO.HAY', "label": 'NO HAY' });
 				}else{
 					response.forEach(function(lote){
-						items.push({ "value": lote.rotulo, "label": lote.rotulo, 'precio': lote.precio, 'peso':lote.peso});
+						var compraKey = lote.egreso + "." + lote.bienoservicio + "." + lote.detalle.replace(" ",".");
+						items.push({ "value": lote.fecha, 
+									 "label": lote.fecha,
+									 "compraKey":compraKey
+									});
 					});								
 				}
-				var loteSelect = registry.byId('loteDeCompra_Produccion');
+				var loteSelect = registry.byId('lote_Componente');
 				loteSelect.options = [];
 				loteSelect.addOption(items);
 				loteSelect.reset();
@@ -63,22 +57,37 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 		);
 	};
 
+	var getMateriasPrimas = function(producto){
+		request('/getMateriasPrimasPorProducto?producto=' + producto, {handleAs:'json'}).then(
+				function(response){
+					var materiaPrimaSelect = registry.byId('materiaPrima_Componente');
+					materiaPrimaSelect.options = [];
+					materiaPrimaSelect.addOption(response);
+					materiaPrimaSelect.reset();
+					materiaPrimaSelect.onChange();
+				});
+	}
+	
 	saludable.addEntityFuncs =
 	{
 		'Produccion':
 		function(){
-			frutaSelect = registry.byId('fruta_Produccion');
-			frutaSelect.onChange = function(){
-				topic.publish('FRUTA_PRODUCCION',this.value);
+			materiaPrimaSelect = registry.byId('materiaPrima_Componente');
+			materiaPrimaSelect.onChange = function(value){
+				value = value ? value : this.value;
+				getLotes(value);
 			};
-			loteSelect = registry.byId('loteDeCompra_Produccion');
-			loteSelect.listenerfunc = getLotes; 
-			topic.subscribe('FRUTA_PRODUCCION', loteSelect.listenerfunc);
-			loteSelect.onChange = function(){
-				pesoTextBox = registry.byId('pesoFruta_Produccion');
-				pesoTextBox.set('value',loteSelect.getOptions(loteSelect.value)['peso']);
+			loteSelect = registry.byId('lote_Componente');
+			loteSelect.onChange = function(value){
+				var selected = loteSelect.options.filter(function(element){ return element.selected == true })[0]
+				registry.byId('loteKey_Componente').set('value',selected.compraKey);
+			}
+			productoSelect = registry.byId('producto_Produccion');
+			productoSelect.onChange = function(value){
+				value = value ? value : this.value;
+				getMateriasPrimas(value);
 			};
-			frutaSelect.onChange();
+			productoSelect.onChange();
 		},
 		'MovimientoDeInventario':
 		function(){

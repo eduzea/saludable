@@ -21,7 +21,6 @@ require(["dijit/layout/AccordionContainer",
 function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby) {
 	ready(function() {
 
-		saludable.widgetCache = {};
 		////////// CONFIGURATION //////////////////
 		
 		var viewsConfig = {}; //holds view config		
@@ -44,15 +43,16 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'CAPITAL SOCIAL', 'id':'CapitalSocial','template':'','entityClass':'CapitalSocial'},
 			{'title':'PASIVOS', 'id':'Pasivo','template':'','entityClass':'Pasivo'},
 			{'title':'ACREEDORES', 'id':'Acreedor','template':'','entityClass':'Acreedor'},
+			{'title':'SALDOS BANCOS', 'id':'SaldoCuentaBancaria','template':'','entityClass':'SaldoCuentaBancaria'},			
 			{'title':'PUC', 'id':'PUC','template':'PUCSearch','entityClass':''},
 		];
 		
 		viewsConfig["Operativo"] = [
 			{'title':'MOV. INVENTARIO', 'id':'MovimientoDeInventario','template':'','entityClass':'MovimientoDeInventario'},
-			{'title':'UNIDAD ALMACENAMIENTO', 'id':'Unidad de Almacenamiento','template':'','entityClass':'UnidadDeAlmacenamiento'},
+			{'title':'UNIDAD ALMACENAMIENTO', 'id':'UnidadDeAlmacenamiento','template':'','entityClass':'UnidadDeAlmacenamiento'},
 			{'title':'CONSULTAR INVENTARIO', 'id':'ConsultarInventario','template':'existencias','entityClass':''},
 			{'title':'MATERIA PRIMA', 'id':'MateriaPrima','template':'','entityClass':'MateriaPrima'},
-			{'title':'RENDIMIENTO', 'id':'Rendimiento','template':'','entityClass':'Rendimiento'},
+			{'title':'PRODUCCION', 'id':'Produccion','template':'','entityClass':'Produccion'},
 		];
 		
 		viewsConfig["Informes"] = [
@@ -61,6 +61,7 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'CUENTAS POR COBRAR', 'id':'CuentasPorCobrar','template':'cuentasPorCobrar','entityClass':'CuentasPorCobrar'},
 			{'title':'PAGOS VS FACTURAS', 'id':'Pagos','template':'InformeDePagos','entityClass':'Pagos'},
 			{'title':'ESTADO DE RESULTADOS', 'id':'EstadoDeResultados','template':'estadoDeResultados','entityClass':''},
+			{'title':'BALANCE', 'id':'Balance','template':'balance','entityClass':''},
 			{'title':'IVA PAGADO', 'id':'IVA_PAGADO','template':'tablaDinamica','entityClass':'IVA_PAGADO'},
 			{'title':'IVA RECAUDADO', 'id':'IVA_RECAUDADO','template':'tablaDinamica','entityClass':'IVA_RECAUDADO'},
 			//{'title':'SALUDABLE HOY', 'id':'SaludableHoy','template':'SaludableHoy','entityClass':''}

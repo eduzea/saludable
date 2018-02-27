@@ -65,10 +65,109 @@ class LineaDeProducto(messages.Enum):
     CONSERVAS = 1
     GALLETAS = 2
     PROTEINA = 3
+
+class Unidades(messages.Enum):
+    g = 0 #gramos
+    kg = 1 #kilo gramos
+    ml = 4 # mililitros
+    l = 5 #litros
+    unidad = 6 #unidades
+###################  PUC ##############
+# PUC classes - Initialize this once per datastore - Plan de Cuentas
+class Clase(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
+class Grupo(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
+    clase = ndb.KeyProperty(kind=Clase)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Cuenta(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class SubCuenta(Record):
+    pucnumber = ndb.StringProperty(indexed=True)
+    cuenta = ndb.KeyProperty(kind=Cuenta)
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+##################################################################################
+#Deprecated. Replaced by the catefories of PUC itself.
+class TipoEgreso(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class Bienoservicio(Record):
+    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo/produccion vs indirecto/admin y ventas)
+    clase = ndb.KeyProperty(kind=Clase)
+    grupo = ndb.KeyProperty(kind=Grupo)
+    cuenta = ndb.KeyProperty(kind=Cuenta, required=False)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta, required=False)
+    nombre = ndb.StringProperty(indexed=True)
+    sujetoIVA = ndb.BooleanProperty(default=True)
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
 class MateriaPrima(Record):
-    nombre=ndb.StringProperty(indexed=True) 
-    
+    bienoservicio = ndb.KeyProperty(Bienoservicio)
+    nombre=ndb.StringProperty(indexed=True)
+    unidades = msgprop.EnumProperty(Unidades, required=True, indexed=True)
+
+class Proveedor(Record):
+    nombre = ndb.StringProperty(indexed=True)
+    nit = ndb.StringProperty(indexed=True)
+    direccion = ndb.StringProperty(indexed=True)
+    telefono = ndb.StringProperty(indexed=True)
+    ciudad = ndb.KeyProperty(kind=Ciudad)
+    diasPago = ndb.IntegerProperty()
+    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
+    textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
+
+class LoteDeCompra(Record):
+    materiaPrima = ndb.KeyProperty(kind=MateriaPrima)
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    fecha = ndb.DateProperty()
+    precio = ndb.IntegerProperty()
+    cantidad = ndb.FloatProperty()
+    consumido = ndb.BooleanProperty(default = False)
+    rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
+
+class Compra(Record):
+    egreso = ndb.IntegerProperty()
+    fecha = ndb.DateProperty()
+    proveedor = ndb.KeyProperty(kind=Proveedor)
+    sucursal = ndb.KeyProperty(kind=Sucursal)
+    bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
+    procesado = ndb.BooleanProperty(default=False)
+    sujetoIVA = ndb.ComputedProperty(lambda self: self.bienoservicio.get().sujetoIVA)
+    detalle = ndb.StringProperty()
+    cantidad = ndb.FloatProperty()
+    precio = ndb.IntegerProperty()
+#     compra = ndb.FloatProperty()# el valor total de la compra
+    total = ndb.FloatProperty()# el valor total de la compra
+    rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
+
+def costoBruto(componentes, pesoPulpa):
+    costo_total = 0.0
+    for componente in componentes:
+        compra = ndb.Key('Compra',componente.loteKey).get()
+        costo_total += compra.precio * componente.cantidad
+    return costo_total / pesoPulpa
+
+
+class Componente(Record):
+    materiaPrima = ndb.KeyProperty(kind=MateriaPrima)
+    lote = ndb.KeyProperty(kind=Compra)
+    loteKey = ndb.StringProperty()
+    cantidad = ndb.FloatProperty()
+    rotulo =  ndb.ComputedProperty(lambda self: self.materiaPrima.id())
+
 class Producto(Record):
     linea = msgprop.EnumProperty(LineaDeProducto, required=True, default = LineaDeProducto.PULPAS ,indexed=True)
     nombre = ndb.StringProperty(indexed=True)
@@ -77,7 +176,6 @@ class Producto(Record):
     componentes = ndb.KeyProperty(kind=MateriaPrima, repeated=True)
     textcomponentes =  ndb.ComputedProperty(lambda self: objListToString(self.componentes))
 
-
 # Registra el % (peso) de materia prima que se convierte en producto. 
 class Rendimiento(Record):
     producto = ndb.KeyProperty(kind=Producto)
@@ -85,11 +183,24 @@ class Rendimiento(Record):
     fecha = ndb.DateProperty()
     rendimiento = ndb.FloatProperty()
 
-
 class Porcion(Record):
     valor = ndb.IntegerProperty()
     unidades = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
+
+
+class ProductoPorcion(Record):
+    porcion = ndb.KeyProperty(kind=Porcion)
+    cantidad = ndb.IntegerProperty()
+    rotulo =  ndb.ComputedProperty(lambda self: self.porcion.id())
+
+class Produccion(Record):
+    fecha = ndb.DateProperty()
+    producto = ndb.KeyProperty(kind=Producto)
+    componentes = ndb.StructuredProperty(Componente, repeated=True)
+    productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
+    pesoPulpa = ndb.ComputedProperty(lambda self: pesoPulpa(self.productos))
+    costoBruto = ndb.ComputedProperty(lambda self: costoBruto(self.componentes, self.pesoPulpa))
 
 class Precio(Record):
     producto = ndb.KeyProperty(kind=Producto)
@@ -254,14 +365,19 @@ class UnidadDeAlmacenamiento(Record):
     ubicacion = ndb.ComputedProperty(lambda self: '{0}.{1}.{2}'.format(self.fila.id(), self.columna.id(), self.nivel.id()))
     contenido = ndb.StructuredProperty(FraccionDeLote, repeated = True)
 
-class TipoMovimiento(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
+
+class TipoMovimiento(messages.Enum):
+    ENTRADA = 0
+    SALIDA = 1
+
+# class TipoMovimiento(Record):
+#     nombre = ndb.StringProperty(indexed=True)
+#     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
 class MovimientoDeInventario(Record):
     fecha = ndb.DateProperty()
     ubicacion = ndb.KeyProperty(kind = UnidadDeAlmacenamiento)
-    tipo = ndb.KeyProperty(kind=TipoMovimiento)
+    tipo = msgprop.EnumProperty(TipoMovimiento, required=True, indexed=True, default=TipoMovimiento.ENTRADA)
     lote = ndb.KeyProperty(kind=FraccionDeLote, default = None)
     fechaLote = ndb.DateProperty()
     producto = ndb.KeyProperty(kind=Producto)
@@ -277,10 +393,6 @@ class Pedido(Record):
     items = ndb.StructuredProperty(Venta,repeated=True)
     factura = ndb.KeyProperty(kind=Factura, default = None)
     
-class ProductoPorcion(Record):
-    porcion = ndb.KeyProperty(kind=Porcion)
-    cantidad = ndb.IntegerProperty()
-    rotulo =  ndb.ComputedProperty(lambda self: self.porcion.id())
 
 def pesoPulpa(productos):
     peso = 0
@@ -292,49 +404,9 @@ class Fruta(Record):
     nombre = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Proveedor(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    nit = ndb.StringProperty(indexed=True)
-    direccion = ndb.StringProperty(indexed=True)
-    telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.KeyProperty(kind=Ciudad)
-    diasPago = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    bienesoservicios = ndb.KeyProperty(kind="Bienoservicio", repeated=True)
-    textbienesoservicios =  ndb.ComputedProperty(lambda self: objListToString(self.bienesoservicios))
-
-
-class LoteDeCompra(Record):
-    fruta = ndb.KeyProperty(kind=Fruta)
-    proveedor = ndb.KeyProperty(kind=Proveedor)
-    fecha = ndb.DateProperty()
-    precio = ndb.IntegerProperty()
-    peso = ndb.FloatProperty()
-    procesado = ndb.BooleanProperty(default = False)
-    rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
-
-def costoBruto(produccion):
-    costo = produccion.pesoFruta * produccion.loteDeCompra.precio / produccion.pesoPulpa
-    return costo
-
-class Produccion(Record):
-    fecha = ndb.DateProperty()
-    sucursal = ndb.KeyProperty(kind=Sucursal)
-    fruta = ndb.KeyProperty(kind=Fruta)
-    loteDeCompra = ndb.KeyProperty(kind=LoteDeCompra)
-    pesoFruta = ndb.FloatProperty()
-    pesoPulpa = ndb.ComputedProperty(lambda self: pesoPulpa(self.productos))
-    productos = ndb.StructuredProperty(ProductoPorcion, repeated=True)
-    rendimiento = ndb.ComputedProperty(lambda self: 100 * self.pesoPulpa / self.pesoFruta)
-    costoBruto = ndb.ComputedProperty(lambda self: self.pesoFruta * self.loteDeCompra.get().precio / self.pesoPulpa)
-
 
 ########## EGRESOS #######
 
-#Deprecated. Replaced by the catefories of PUC itself.
-class TipoEgreso(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 def objListToString(objList):
     text =''
@@ -345,82 +417,7 @@ def objListToString(objList):
             print "Inconsistent record:", objList
     return text
     
-# PUC classes - Initialize this once per datastore - Plan de Cuentas
-class Clase(Record):
-    pucnumber = ndb.StringProperty(indexed=True)
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    
-class Grupo(Record):
-    pucnumber = ndb.StringProperty(indexed=True)
-    clase = ndb.KeyProperty(kind=Clase)
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
-class Cuenta(Record):
-    pucnumber = ndb.StringProperty(indexed=True)
-    grupo = ndb.KeyProperty(kind=Grupo)
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-
-class SubCuenta(Record):
-    pucnumber = ndb.StringProperty(indexed=True)
-    cuenta = ndb.KeyProperty(kind=Cuenta)
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-
-##################################################################################
-
-### ------------BEGIN NUEVO MANEJO DE EGRESOS ----------####
-
-class EstadoDePago(messages.Enum):
-    Pagado = 0
-    Pendiente = 1
-
-class BienoservicioPUC(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    pucNumero = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-    
-class Impuesto(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    descripcion = ndb.TextProperty(indexed=True)
-    cuentaPucNombre = ndb.StringProperty(indexed=True)
-    cunetaPucNumero = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-
-class CompraPUC(Record):
-    bienoservicio = ndb.KeyProperty(kind=BienoservicioPUC)
-    detalle = ndb.StringProperty()
-    cantidad = ndb.FloatProperty()
-    precio = ndb.IntegerProperty()
-    monto = ndb.FloatProperty()
-    impuestos = ndb.IntegerProperty()
-    rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
-    
-class FacturaDeProveedor(Record):
-    numero = ndb.IntegerProperty()
-    fecha = ndb.DateProperty()
-    vencimiento = ndb.DateProperty()
-    proveedor = ndb.KeyProperty(kind=Proveedor)
-    compras = ndb.StructuredProperty(CompraPUC,repeated=True)
-    baseImponible = ndb.IntegerProperty()
-    impuesto = ndb.KeyProperty(kind=Impuesto)
-    impuestoMonto = ndb.IntegerProperty()
-    total = ndb.ComputedProperty(lambda self: self.baseImponible + self.impuestoMonto)
-    estado = msgprop.EnumProperty(EstadoDePago, required=True, indexed=True) 
-
-### ------------END NUEVO MANEJO DE EGRESOS ----------####
-
-class Bienoservicio(Record):
-    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo/produccion vs indirecto/admin y ventas)
-    clase = ndb.KeyProperty(kind=Clase)
-    grupo = ndb.KeyProperty(kind=Grupo)
-    cuenta = ndb.KeyProperty(kind=Cuenta, required=False)
-    subcuenta = ndb.KeyProperty(kind=SubCuenta, required=False)
-    nombre = ndb.StringProperty(indexed=True)
-    sujetoIVA = ndb.BooleanProperty(default=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 
 class PorcionCompra(Record):
@@ -428,19 +425,6 @@ class PorcionCompra(Record):
     unidades = ndb.StringProperty(indexed=True)
     rotulo = ndb.ComputedProperty(lambda self: str(self.valor) + self.unidades)
 
-class Compra(Record):
-    egreso = ndb.IntegerProperty()
-    fecha = ndb.DateProperty()
-    proveedor = ndb.KeyProperty(kind=Proveedor)
-    sucursal = ndb.KeyProperty(kind=Sucursal)
-    bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
-    sujetoIVA = ndb.ComputedProperty(lambda self: self.bienoservicio.get().sujetoIVA)
-    detalle = ndb.StringProperty()
-    cantidad = ndb.FloatProperty()
-    precio = ndb.IntegerProperty()
-    compra = ndb.FloatProperty()# el valor total de la compra
-    total = ndb.FloatProperty()# el valor total de la compra
-    rotulo = ndb.ComputedProperty(lambda self: self.bienoservicio.id())
         
 class Fuente(messages.Enum):
     Credito = 0
@@ -565,6 +549,7 @@ class AnticipoImpuestos(Activo):
 keyDefs = {'Cliente':['nombre','negocio'],
            'Producto':['nombre'], 
            'MateriaPrima':['nombre'],
+           'Componente':['materiaPrima'],
            'Rendimiento':['producto','materiaPrima','fecha'], 
            'Porcion':['valor','unidades'], 
            'GrupoDePrecios':['nombre'],
@@ -611,7 +596,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'FraccionDeLote':['fecha','producto','porcion'],
            'FraccionDeLoteUbicado':['ubicacion','fecha','producto','porcion'],
            'ExistenciasRegistro':['sucursal','producto','porcion'],
-           'Produccion':['fecha','sucursal','fruta'],
+           'Produccion':['fecha','producto'],
            'ProductoPorcion':['porcion'],
            'Fuente':['nombre'],
            'Fila':['nombre'],
@@ -632,6 +617,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
 classModels = {'Cliente':Cliente, 
                'Producto':Producto,
                'MateriaPrima':MateriaPrima,
+               'Componente':Componente,
                'Rendimiento':Rendimiento,
                'Porcion':Porcion, 
                'Precio':Precio, 
@@ -686,8 +672,6 @@ classModels = {'Cliente':Cliente,
                'Produccion':Produccion,
                'ProductoPorcion':ProductoPorcion,
                'Fuente':Fuente,
-               'EstadoDePago':EstadoDePago,
-               'FacturaDeProveedor':FacturaDeProveedor,
                'MovimientoDeEfectivo':MovimientoDeEfectivo}
 
 singletons = {'NumeroPedido': NumeroPedido,

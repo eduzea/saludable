@@ -37,13 +37,13 @@
 					<td><label for="bienoservicio_Egreso">Biene o Servcio: </label></td>
 					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['bienoservicio']})  }}&nbsp;</td>
 					<td><label for="detalle_Egreso">Detalle: </label></td>
-					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['detalle']})  }}</td>
+					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['detalle']})  }}<div id='select_detalle_Egreso' style='display:none'></div></td>
 					<td><button id='nuevo_EgresoBtn' data-dojo-type="dijit/form/Button">Borrar Todo y Crear Nuevo Egreso</button></td>
 				</tr>
 				<tr>
-					<td><label for='cantidad_Egreso'>Cantidad:</label></td>
+					<td><label id='label_cantidad_Egreso' for='cantidad_Egreso'>Cantidad:</label></td>
 					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['cantidad']}) }}</td>
-					<td><label for='cantidad_Egreso'>Precio Unitario:</label></td>
+					<td><label id='label_precio_Egreso' for='cantidad_Egreso'>Precio Unitario:</label></td>
 					<td>{{ pythonFunction('tagForField',{'entityClass':'Egreso','field':props['precio']})  }}</td>
 					<td><button id='agregarCompraBtn' data-dojo-type="dijit/form/Button">Agregar Compra</button></td>
 				</tr>

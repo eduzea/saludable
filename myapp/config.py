@@ -23,8 +23,13 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''},
                         {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
-            'MateriaPrima':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'}],
+            'MateriaPrima':[{'id':'bienoservicio','ui':'Tipo', 'required':'true', 'style':'width:10em'},
+                            {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'},
+                            {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
+                            {'id':'activo','ui':'Activa', 'required':'true', 'style':''},],
             'Componente':[{'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
+                          {'id':'lote','ui':'Lote', 'required':'true', 'style':'width:5em','noPreload':'true'},
+                          {'id':'loteKey','ui':'Lote', 'required':'true', 'style':'width:5em; display:none'},
                           {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:5em'}],
             'Rendimiento':[{'id':'producto','ui':'Producto', 'required':'true', 'style':'width:10em'},
                            {'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
@@ -35,7 +40,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
                        {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}],
             'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'},
-                              {'id':'activo', 'ui':'Activo', 'required':'true','style':'width:10em'}
+                              {'id':'activo', 'ui':'Activo', 'required':'true','style':''}
                               ],
             'Precio':[{'id':'producto','ui':'Producto', 'style':'width:20em'},
                       {'id':'porcion','ui':'Porcion','style':'width:5em'},
@@ -282,13 +287,12 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                 ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
-                          {'id':'sucursal','ui':'Sucursal','style':'width:5em'},
-                          {'id':'fruta','ui':'Fruta', 'style':'width:10em'},
-                          {'id':'loteDeCompra','ui':'Lote de Compra', 'style':'width:10em'},
-                          {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
-                          {'id':'productos','ui':'Productos','style':'width:10em'},
-                          {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:3em'},
-                          {'id':'costoBruto','ui':'Costo Bruto ($/kg)','required':'false', 'style':'width:5em'}
+                          {'id':'producto','ui':'Producto', 'style':'width:10em'},
+                          {'id':'componentes','ui':'Componentes', 'style':'width:10em'},
+#                         {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
+                        {'id':'productos','ui':'Productos','style':'width:10em'},
+#                           {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:3em'},
+#                         {'id':'costoBruto','ui':'Costo Bruto ($/kg)','required':'false', 'style':'width:5em'}
                           ],
             'ProductoPorcion':[
                                {'id':'porcion','ui':'Porcion','style':'width:5em'},
@@ -314,13 +318,18 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'},
                         {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
-            'MateriaPrima':[{'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'}],
+            'MateriaPrima':[{'id':'bienoservicio','ui':'Tipo', 'required':'true', 'style':'width:10em'},
+                            {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                            {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'},
+                            {'id':'activo','ui':'Activa', 'required':'true', 'style':'width:10em'}],
             'Rendimiento':[{'id':'producto','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                            {'id':'materiaPrima','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                            {'id':'fecha','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                            {'id':'rendimiento','ui':'Nombre', 'required':'true', 'style':'width:10em'}
                 ],
             'Componente':[{'id':'materiaPrima','ui':'Materia Prima', 'required':'true', 'style':'width:10em'},
+                          {'id':'lote','ui':'Lote', 'required':'true', 'style':'width:5em'},
+                          {'id':'loteKey','ui':'LoteKey', 'required':'true', 'style':'width:5em'},
                           {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:5em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}],
@@ -538,7 +547,6 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                                 {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                             ],
             'MovimientoDeInventario':[
-                                    {'id':'fechaCreacion', 'ui':'Fecha Mov.','style':'width:8em'},                
                                     {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
                                     {'id':'ubicacion','ui':'Ubicacion', 'style':'width:5em'},
                                     {'id':'tipo','ui':'Tipo Movimiento', 'style':'width:5em'},
@@ -559,12 +567,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                 ],
             'Produccion':[
                           {'id':'fecha', 'ui':'Fecha','style':'width:8em'},
-                          #{'id':'sucursal','ui':'Sucursal','style':'width:5em'},
-                          {'id':'loteDeCompra','ui':'Lote','style':'width:15em'},
-                          {'id':'fruta','ui':'Fruta', 'style':'width:8em'},
-                          {'id':'pesoFruta','ui':'Peso Fruta (kg)','required':'true', 'style':'width:5em'},                          
-                          {'id':'productos','ui':'Productos','style':'width:10em'},
-                          {'id':'rendimiento','ui':'Rendimiento (%)','required':'false', 'style':'width:5em'},
+                          {'id':'producto','ui':'Fruta', 'style':'width:8em'},
                           {'id':'costoBruto','ui':'Costo Bruto ($/kg)','required':'false', 'style':'width:5em'}
                           ],
             'ProductoPorcion':[
@@ -602,13 +605,13 @@ templateStrings = {'Remision':'/crearFactura?entityClass=Remision',
 
 
 detailFields = {
-                'Pedido':'items',
-               'Factura':'ventas',
-               'Remision':'ventas',
-               'Egreso':'compras',
-               'Inventario':'registros',
-               'Produccion':'productos',
-               'UnidadDeAlmacenamiento':'contenido'
+                'Pedido':['items'],
+               'Factura':['ventas'],
+               'Remision':['ventas'],
+               'Egreso':['compras'],
+               'Inventario':['registros'],
+               'Produccion':['componentes','productos'],
+               'UnidadDeAlmacenamiento':['contenido']
                }
 exentosDeIVA = {
                 'Materia.Prima-Fruta',

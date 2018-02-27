@@ -1,27 +1,31 @@
 [
 	{
 		"nombre": "Adela",
-		"activo": true,
+		"activo": false,
 		"rotulo": "Adela Rodriguez",
 		"apellido": "Rodriguez",
-		"email": "NA"
+		"email": "NA",
+		"writePermission":false
 	}, {
 		"nombre": "Eduardo",
 		"activo": true,
 		"rotulo": "Eduardo Zea",
 		"apellido": "Zea",
-		"email": "eduzea@gmail.com"
+		"email": "eduzea@gmail.com",
+		"writePermission":true
 	}, {
 		"nombre": "Johanna",
-		"activo": true,
+		"activo": false,
 		"rotulo": "Johanna Alonso",
 		"apellido": "Alonso",
-		"email": "johanna.alonso@salud-able.com"
+		"email": "johanna.alonso@salud-able.com",
+		"writePermission":false
 	}, {
 		"nombre": "Natalia",
 		"activo": true,
 		"rotulo": "Natalia Aljure",
 		"apellido": "Aljure",
-		"email": "nataljure@salud-able.com"
+		"email": "nataljure@salud-able.com",
+		"writePermission":false
 	}
 ]

@@ -397,7 +397,8 @@ function(dom, domAttr, registry, parser, Store, Grid, Cache, request, Button, Ce
 					 {
 						dijit.model.clearCache();
 						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
-						response.forEach(function(item){
+						var records = response['ventas']
+						records.forEach(function(item){
 							dijit.store.add(item);								
 						});
 						dijit.body.refresh();

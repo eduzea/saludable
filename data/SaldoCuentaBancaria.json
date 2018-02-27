@@ -1,0 +1,110 @@
+[
+	{
+		"fechaCreacion": "2016-09-27",
+		"fecha": "2016-09-27",
+		"saldo": 285629,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-09-27.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-09-28",
+		"fecha": "2016-09-28",
+		"saldo": -196290,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-09-28.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-09-29",
+		"fecha": "2016-09-29",
+		"saldo": 2518767,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-09-29.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-09-30",
+		"fecha": "2016-09-30",
+		"saldo": 4245788,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-09-30.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-01",
+		"fecha": "2016-10-01",
+		"saldo": 2776421,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-01.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-03",
+		"fecha": "2016-10-02",
+		"saldo": -195418,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-02.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-06",
+		"fecha": "2016-10-06",
+		"saldo": 1174573,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-06.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-07",
+		"fecha": "2016-10-07",
+		"saldo": -190866,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-07.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-08",
+		"fecha": "2016-10-08",
+		"saldo": -190866,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-08.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-10",
+		"fecha": "2016-10-10",
+		"saldo": -190866,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-10.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-11",
+		"fecha": "2016-10-11",
+		"saldo": -192365,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-11.21002803574",
+		"empleadoCreador": "auto"
+	},
+	{
+		"fechaCreacion": "2016-10-12",
+		"fecha": "2016-10-12",
+		"saldo": 763884,
+		"cuenta": "21002803574",
+		"activo": true,
+		"rotulo": "2016-10-12.21002803574",
+		"empleadoCreador": "auto"
+	}
+]

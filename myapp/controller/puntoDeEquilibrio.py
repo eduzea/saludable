@@ -5,6 +5,7 @@ Created on Aug 29, 2016
 '''
 from easydict import EasyDict as edict
 from myapp.initSaludable import dataStoreInterface
+from myapp.model.models import AnticipoImpuestos
 
 
 ##################### FORMULAS PUNTO DE EQUILIBRIO ##################################
@@ -19,6 +20,8 @@ def getTotalFromModel(model, qryParams):
     query = dataStoreInterface.buildQuery(model, qryParams)
     entities = query.fetch()
     return edict({'total': sum([entity.total for entity in entities]), 'data':entities })
+
+# Functions for Estado de resultados #
 
 def getIngresosOperacionales(fechaDesde, fechaHasta):
     ventasPyG = getTotalFromModel('Factura', {'fechaDesde':fechaDesde,'fechaHasta': fechaHasta}).total
@@ -111,6 +114,116 @@ def detalleEstadoDeResultados(cuenta,fechaDesde, fechaHasta):
         return getDetailFromModel('Pasivo', {'cuenta':'2360',
                                              'fechaDesde':fechaDesde,
                                              'fechaHasta': fechaHasta}).total
+
+
+# Functions fro Balance
+def getActivoDisponible(fechaDesde, fechaHasta):
+    """"
+    Activo Disponible = Caja  + Bancos
+    """
+    cuentas = dataStoreInterface.buildQuery('CuentaBancaria',{}).fetch()
+    caja = 0
+    saldo = 0
+    for cuenta in cuentas:
+        saldoObj = dataStoreInterface.buildQuery('SaldoCuentaBancaria',{'cuenta':cuenta.key,'fechaHasta':fechaHasta,'sortBy':'-fecha'}).fetch(1)[0]
+        saldo += saldoObj.saldo
+    return caja + saldo 
+
+def getDeudores(fechaDesde, fechaHasta):
+    carteraClientes = getTotalFromModel('Factura', {'pagada':False,
+                                                    'fechaDesde':fechaDesde,
+                                                    'fechaHasta':fechaHasta})
+    anticipoImpuestosContribucionesSaldosAfavor = 0
+    return carteraClientes.total + anticipoImpuestosContribucionesSaldosAfavor
+
+def getPrice(producto, porcion):
+    precios = dataStoreInterface.buildQuery('Precio', {'producto':producto,
+                                                       'porcion':porcion}).fetch()
+    return sum(precio.precio for precio in precios)/max(len(precios), 1)
+
+def getInventarios(fechaDesde, fechaHasta):
+    records = dataStoreInterface.buildQuery('FraccionDeLoteUbicado', {'fechaDesde':fechaDesde,
+                                                             'fechaHasta':fechaHasta}).fetch()
+    sumInventario = 0
+    for record in records:
+        price = getPrice(record.producto, record.porcion)
+        sumInventario = record.cantidad * price
+    return sumInventario
+                                             
+def balance(fechaDesde, fechaHasta):
+    activoDisponible = getActivoDisponible(fechaDesde, fechaHasta)
+    deudores = getDeudores(fechaDesde, fechaHasta)
+    inventarios = getInventarios(fechaDesde, fechaHasta)
+#     propiedadPlantaEquipo = getPropiedadPlantaEquipo(fechaDesde, fechaHasta)
+#     depreciacionAcumulada = getDepreciacionAcumulada(fechaDesde, fechaHasta)
+#     intangibles = getIntangibles(fechaDesde, fechaHasta)
+#     diferidos = getDiferidos(fechaDesde, fechaHasta)
+#     totalActivo = activoDisponible + deudores + inventarios + propiedadPlantaEquipo + depreciacionAcumulada + intangibles + diferidos
+#     
+#     pasivoCorriente = getPasivoCorriente(fechaDesde, fechaHasta)
+#     pasivoNoCorriente = getPasivoNoCorriente(fechaDesde, fechaHasta)
+#     proveedores = getProveedores(fechaDesde, fechaHasta)
+#     impuestosGravamenesTasas = getImpuestosGravamenesTasas(fechaDesde, fechaHasta)
+#     otrosPasivos = getOtrosPasivos(fechaDesde, fechaHasta)
+#     totalPasivo = pasivoCorriente + pasivoNoCorriente + proveedores + impuestosGravamenesTasas + otrosPasivos
+#     
+#     aportesSociales = getAportesSociales(fechaDesde, fechaHasta)
+#     resultadoDelEjercicio = getResultadoDelEjercicio(fechaDesde, fechaHasta)
+#     resultadoEjerciciosAnteriores = getResultadoEjerciciosAnteriores(fechaDesde, fechaHasta)
+#     totalPatrimonio = aportesSociales + resultadoDelEjercicio + resultadoEjerciciosAnteriores
+#     totalPasivoPatrimonio = totalPasivo + totalPatrimonio
+#  
+    balanceData =[  
+        {'id':'activoDisponible','cuenta':'Activo Disponible', 'monto': activoDisponible},
+        {'id':'deudores','cuenta':'Deudores', 'monto': deudores},
+        {'id':'inventarios','cuenta':'Inventarios', 'monto': inventarios},
+#         {'id':'propiedadPlantaEquipo','cuenta':'Margen Operacional Bruto', 'monto': propiedadPlantaEquipo},
+#         {'id':'depreciacionAcumulada','cuenta':'Gastos Operacionales', 'monto': depreciacionAcumulada},
+#         {'id':'intangibles','cuenta':'Utilidad Operacional Neta', 'monto': intangibles},
+#         {'id':'diferidos','cuenta':'Margen Operacional Neto', 'monto':diferidos},
+#         {'id':'totalActivo','cuenta':'Gastos No Operacionales', 'monto': totalActivo},
+#         {'id':'pasivoCorriente','cuenta':'Utilidad Antes de Impuestos', 'monto': pasivoCorriente},
+#         {'id':'pasivoNoCorriente','cuenta':'Impuestos', 'monto': pasivoNoCorriente},
+#         {'id':'proveedores','cuenta':'Utilidad Neta', 'monto': proveedores},
+#         {'id':'impuestosGravamenesTasas','cuenta':'Pago de Dividendos', 'monto': impuestosGravamenesTasas},
+#         {'id':'otrosPasivos','cuenta':'Utilidad Retenida', 'monto': otrosPasivos},
+#         {'id':'totalPasivo','cuenta':'Utilidad Retenida', 'monto': totalPasivo},
+#         {'id':'aportesSociales','cuenta':'Utilidad Retenida', 'monto': aportesSociales},
+#         {'id':'resultadoDelEjercicio','cuenta':'Utilidad Retenida', 'monto': resultadoDelEjercicio},
+#         {'id':'resultadoEjerciciosAnteriores','cuenta':'Utilidad Retenida', 'monto': resultadoEjerciciosAnteriores},
+#         {'id':'totalPatrimonio','cuenta':'Utilidad Retenida', 'monto': totalPatrimonio},
+#         {'id':'totalPasivoPatrimonio','cuenta':'Utilidad Retenida', 'monto': totalPasivoPatrimonio},
+    ]    
+    return balanceData
+
+def detalleBalance(cuenta,fechaDesde, fechaHasta):
+    if cuenta == 'Ingresos Operacionales':
+        return getDetailFromModel('Factura', {'fechaDesde':fechaDesde,'fechaHasta': fechaHasta})
+    elif cuenta == 'Costos de Produccion':
+        bos = dataStoreInterface.buildQuery('Bienoservicio', {'clase':'7'}).fetch()
+        return getDetailFromModel('Compra', {'bienoservicio':bos,
+                                            'fechaDesde':fechaDesde,
+                                            'fechaHasta': fechaHasta})
+    elif cuenta == 'Gastos Operacionales':
+        bos = dataStoreInterface.buildQuery('Bienoservicio', {'grupo':['51','52']}).fetch()
+        return getDetailFromModel('Compra', {'bienoservicio':bos,
+                                                 'fechaDesde':fechaDesde,
+                                                 'fechaHasta': fechaHasta})
+    elif cuenta == 'Gastos No Operacionales':
+        bos = dataStoreInterface.buildQuery('Bienoservicio', {'grupo':'53'}).fetch()
+        return getDetailFromModel('Compra', {'bienoservicio':bos,
+                                         'fechaDesde':fechaDesde,
+                                         'fechaHasta': fechaHasta})
+    elif cuenta == 'Impuestos':
+        bos = dataStoreInterface.buildQuery('Bienoservicio', {'grupo':'54'}).fetch()
+        return getDetailFromModel('Compra', {'bienoservicio':bos,
+                                         'fechaDesde':fechaDesde,
+                                         'fechaHasta': fechaHasta})   
+    elif cuenta == 'Pago de Dividendos':
+        return getDetailFromModel('Pasivo', {'cuenta':'2360',
+                                             'fechaDesde':fechaDesde,
+                                             'fechaHasta': fechaHasta}).total
+                                             
 # def getUtilidadData(fechaDesde, fechaHasta):
 #     ventas = getVentasNetas(fechaDesde, fechaHasta)
 #     costosVariables = getCostosVariables(fechaDesde, fechaHasta)

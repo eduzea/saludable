@@ -95,9 +95,9 @@ def getIdString(field,entityClass):
 
 def getOptions(entityClass, sortField=None):
     if sortField is None:
-        options = classModels[entityClass].query().fetch()
+        options = classModels[entityClass].query(classModels[entityClass].activo ==True).fetch()
     else:
-        options = classModels[entityClass].query().order(classModels[entityClass]._properties[sortField]).fetch()
+        options = classModels[entityClass].query(classModels[entityClass].activo ==True).order(classModels[entityClass]._properties[sortField]).fetch()
     return options
 
 def getOptionsHTML(entityClass, sortField=None):
@@ -130,7 +130,7 @@ def structuredPropHTML(propType, fieldName, entityClass):
     inner=''
     for field in fields:
         inner += '<td>' + getTagHTML(field,model) + '</td>'
-    inner += "<td><button id='" + fieldName + "_" + entityClass + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button></td>"
+    inner += "<td><button id='struc_" + fieldName + "_" + entityClass + "_Btn' data-dojo-type='dijit/form/Button'>Agregar</button></td>"
     post = '<div class= "struct-grid grid_' + entityClass + '" model ="' + model + '" id="grid_' + fieldName + '_' + entityClass +  '"/>'
     return {'inner':inner, 'post':post}
 
@@ -162,7 +162,10 @@ def getTagHTML(prop,entityClass, customId=None):
         sortField = None
         if 'sort' in prop:
             sortField = prop['sort']
-        innerReplace += getOptionsHTML(propType, sortField)
+        if 'noPreload' in prop:
+            innerReplace += "<option value=''></option>"
+        else:
+            innerReplace += getOptionsHTML(propType, sortField)
         if propType._repeated == True:
             postReplace += repeatedPropHTML(prop['id'],entityClass)
     if type(propType) == msgprop.EnumProperty:

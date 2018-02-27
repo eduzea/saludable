@@ -16,7 +16,8 @@ from myapp.model.models import *
 from myapp.initSaludable import dataStoreInterface
 from myapp.initSaludable import initSaludable
 # from estadosFinancieros import estadoDeResultados, detalleEstadoDeResultados
-from myapp.controller.puntoDeEquilibrio import estadoDeResultados, detalleEstadoDeResultados
+from myapp.controller.puntoDeEquilibrio import estadoDeResultados, detalleEstadoDeResultados,\
+    detalleBalance, balance
 from myapp.controller.followup import crearMovimientoDeInventario
 from myapp.controller.importCSV import importCSV
 from myapp.controller.PyG import getPyGData
@@ -29,15 +30,15 @@ initSaludable()
 class Home(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
-        if user:
+        if user is not None:
             checkEmpleado(self,user)
         else:
-            self.redirect(users.create_login_url('/login'))
+            self.redirect(users.create_login_url('/home'))
 
 
 def checkEmpleado(self,user):
-    empleado = Empleado.query(Empleado.email == users.get_current_user().email()).get()
-    if empleado:
+    empleado = Empleado.query(Empleado.email == user.email()).get()
+    if True:
         template_values = {'user': user}
         template = JINJA_ENVIRONMENT.get_template('home.html')
         self.response.write(template.render(template_values))
@@ -46,12 +47,7 @@ def checkEmpleado(self,user):
         tag += '<h2>Pide al administrador eduzea@gmail.com que cree tu usuario.</h2><br>'
         tag += '<a href="/logout">Log out</a>'
         self.response.write(tag)
-
-class LogIn(webapp2.RequestHandler):
-    def get(self):
-        user = users.get_current_user()
-        checkEmpleado(self,user)
-           
+          
 class LogOut(webapp2.RequestHandler):
     def get(self):
         self.redirect(users.create_logout_url('/home'))
@@ -229,6 +225,29 @@ class GetProveedores(webapp2.RequestHandler):
         self.response.out.write(json.dumps(response))
 
 
+class GetMateriasPrimas(webapp2.RequestHandler):
+    def get(self):
+        tipo = self.request.get('tipo')
+        mps = dataStoreInterface.buildQuery('MateriaPrima', {'bienoservicio':tipo})
+        response = []
+        for mp in mps:
+            response.append({'label':mp.nombre,'value':mp.nombre})
+        self.response.out.write(json.dumps(response))
+
+
+
+class GetMateriasPrimasPorProducto(webapp2.RequestHandler):
+    def get(self):
+        producto = self.request.get('producto')
+        mps = ndb.Key('Producto',producto).get().componentes
+        response = []
+        if len(mps) ==  0:
+            response.append({'label':'NO HAY','value':''})
+        else:
+            for mp in mps:
+                response.append({'label':mp.id(),'value':mp.id()})
+        self.response.out.write(json.dumps(response))
+
 class GetDetails(webapp2.RequestHandler):
     def get(self):
         entityClass = self.request.get('entityClass')
@@ -241,22 +260,55 @@ class GetDetails(webapp2.RequestHandler):
             filters[keyPart]=keyVal
         qry = dataStoreInterface.buildQuery(entityClass,filters)
         parentRecord = qry.fetch()[0]
-        details = parentRecord.to_dict()[detailField]
-        records=[]
-        for detail in details:
-            if type(detail) == ndb.Key:
-                detail = detail.get().to_dict()
-            for prop_key, prop_value in detail.iteritems():
-                if type(prop_value) == ndb.Key:
-                    try:
-                        detail[prop_key] = detail[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
-                    except Exception as e:
-                        detail[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
-                if type(prop_value) == date:
-                    detail[prop_key] = prop_value.strftime('%Y-%m-%d')
-#             detail['id'] = getKey(detailField.capitalize(), detail)
-            records.append(detail)
-        self.response.out.write(json.dumps(records))
+        response = {}
+        for field in detailField:
+            details = parentRecord.to_dict()[field]
+            records=[]
+            for detail in details:
+                if type(detail) == ndb.Key:
+                    detail = detail.get().to_dict()
+                for prop_key, prop_value in detail.iteritems():
+                    if type(prop_value) == ndb.Key:
+                        try:
+                            detail[prop_key] = detail[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
+                        except Exception as e:
+                            detail[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+                    if type(prop_value) == date:
+                        detail[prop_key] = prop_value.strftime('%Y-%m-%d')
+    #             detail['id'] = getKey(detailField.capitalize(), detail)
+                records.append(detail)
+            response[field]=records
+        self.response.out.write(json.dumps(response))
+
+
+# class GetDetails(webapp2.RequestHandler):
+#     def get(self):
+#         entityClass = self.request.get('entityClass')
+#         key = self.request.get('key')
+#         detailField = detailFields[entityClass]
+#         keyParts = keyDefs[entityClass]
+#         keyVals = key.split('.')
+#         filters = {}
+#         for keyPart,keyVal in zip(keyParts,keyVals):
+#             filters[keyPart]=keyVal
+#         qry = dataStoreInterface.buildQuery(entityClass,filters)
+#         parentRecord = qry.fetch()[0]
+#         details = parentRecord.to_dict()[detailField]
+#         records=[]
+#         for detail in details:
+#             if type(detail) == ndb.Key:
+#                 detail = detail.get().to_dict()
+#             for prop_key, prop_value in detail.iteritems():
+#                 if type(prop_value) == ndb.Key:
+#                     try:
+#                         detail[prop_key] = detail[prop_key].id()#dicc[prop_key].get().to_dict()['rotulo']
+#                     except Exception as e:
+#                         detail[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+#                 if type(prop_value) == date:
+#                     detail[prop_key] = prop_value.strftime('%Y-%m-%d')
+# #             detail['id'] = getKey(detailField.capitalize(), detail)
+#             records.append(detail)
+#         self.response.out.write(json.dumps(records))
         
 class GetEstadoDeResultados(webapp2.RequestHandler):
     def get(self):
@@ -272,6 +324,24 @@ class GetDetalleEstadoDeResultados(webapp2.RequestHandler):
         fechaHasta = self.request.get('fechaHasta')
         data = detalleEstadoDeResultados(clase, fechaDesde, fechaHasta)
         self.response.out.write(JSONEncoder().encode(data))
+
+class GetBalance(webapp2.RequestHandler):
+    def get(self):
+        fechaDesde = self.request.get('fechaDesde')
+        fechaHasta = self.request.get('fechaHasta')
+        data = balance(fechaDesde, fechaHasta)
+        self.response.out.write(json.dumps({'records':data}))
+
+class GetDetalleBalance(webapp2.RequestHandler):
+    def get(self):
+        clase = self.request.get('cuenta')
+        fechaDesde = self.request.get('fechaDesde')
+        fechaHasta = self.request.get('fechaHasta')
+        data = detalleBalance(clase, fechaDesde, fechaHasta)
+        self.response.out.write(JSONEncoder().encode(data))
+
+
+
         
 class GetAllVentas(webapp2.RequestHandler):
     def get(self):
@@ -575,6 +645,8 @@ class GuardarFactura(webapp2.RequestHandler):
             exento = 0
             for venta in values['ventas']:
                 venta['factura'] = values['numero']
+                venta['fecha'] = values['fecha'] 
+                venta['cliente'] = values['cliente']
                 producto = venta['producto'].replace(' ','.')
                 if Producto.get_by_id(producto).sujetoIVA:
                     gravado += int(venta['venta'])
@@ -662,14 +734,10 @@ class MostrarFactura(webapp2.RequestHandler):
 class AnularFactura(webapp2.RequestHandler):
     def get(self):
         key = self.request.get('id')
-        tipo = self.request.get('tipo')
-        if tipo == 'Factura':
-            entity = Factura.get_by_id(key)
-        else:
-            entity = Remision.get_by_id(key)
+        entity = Factura.get_by_id(key)
         entity.anulada = True
         entity.put()
-        self.response.write('Se anulo ' + tipo + ' :' + key)
+        self.response.write({'msg':'Se anulo Factura :' + key})
         
 class ConsolidarFactura(webapp2.RequestHandler):
     def post(self):
@@ -877,12 +945,12 @@ class GuardarLoteDeCompra(webapp2.RequestHandler):
 
 class GetLotes(webapp2.RequestHandler):
     def get(self):
-        fruta = self.request.get('fruta')
-        lotes = dataStoreInterface.buildQuery('LoteDeCompra',{'fruta':fruta, 'procesado':False}).fetch()
+        materiaPrima = self.request.get('materiaPrima').replace('.',' ')
+        lotes = dataStoreInterface.buildQuery('Compra',{'detalle':materiaPrima, 'procesado':False}).fetch()
         self.response.write(JSONEncoder().encode(lotes))
 
 # Si se borra un cliente que sea referenciado en una factura esta function fallara
-# No deberia ser posible borrar un cliente mientras alla facturas que lo referencien...
+# No deberia ser posible borrar un cliente mientras haya facturas que lo referencien...
 class GetCuentasPorCobrar(webapp2.RequestHandler):
     def get(self):
         response = []
@@ -965,10 +1033,9 @@ templateConfig = {'Factura':configFactura,
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        compras = dataStoreInterface.buildQuery('Compra', {'sujetoIVA':True}).fetch()
-        response = []
-        for compra in compras:
-            if not compra.bienoservicio.get().sujetoIVA:
-                compra.put()
-        self.response.out.write(response)        
-#         self.response.out.write('Entities: ' + str(len(entities)) +'<br>' + msg +"<br> -- System time: " + str(datetime.now()))
+        precios = dataStoreInterface.buildQuery('Precio', {} ).fetch()
+        for precio in precios:
+            precio.precio = int(precio.precio * 1.09) 
+            precio.put()
+        self.response.out.write('Done!')        
+

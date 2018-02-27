@@ -4,8 +4,7 @@ from myapp.initSaludable import initSaludable
 
 initSaludable()
 application = webapp2.WSGIApplication([
-    #User Management                                  
-    ('/login',LogIn),
+    #User Management
     ('/logout',LogOut),
     # Single Page App
     ('/home', Home),# The rooot of the 1-page app
@@ -48,6 +47,8 @@ application = webapp2.WSGIApplication([
     ('/getBienesoServicios',GetBienesoServicios),
     ('/getProveedores',GetProveedores),
     ('/addBienoservicio',Addbienoservicio),
+    ('/getMateriasPrimas',GetMateriasPrimas),
+    ('/getMateriasPrimasPorProducto',GetMateriasPrimasPorProducto),
 #     ('/getCompras',GetCompras),
     # Data Management
     ('/exportScript', ExportScript),
@@ -64,6 +65,8 @@ application = webapp2.WSGIApplication([
     ('/getIVA_RECAUDADO',GetIVA_RECAUDADO) ,
     ('/getEstadoDeResultados',GetEstadoDeResultados),
     ('/getDetalleEstadoDeResultados',GetDetalleEstadoDeResultados),
+    ('/getBalance',GetBalance),
+    ('/getDetalleBalance',GetDetalleBalance),
     ('/getPUC',GetPUC),
     ('/initPUC',InitPUC),
     #MISC

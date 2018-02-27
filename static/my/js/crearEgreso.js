@@ -2,6 +2,8 @@
 
 require(['dojo/dom',
 		'dojo/dom-attr',
+		"dojo/dom-construct",
+		"dojo/dom-style",
 		'dijit/registry',
 		'dojo/parser',
 		'dojo/store/Memory',
@@ -24,7 +26,7 @@ require(['dojo/dom',
 		"gridx/modules/CellWidget",		
 		'gridx/modules/SingleSort',
 		'dojo/domReady!'], 
-function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect, Memory, Button, Checkbox,  
+function(dom, domAttr, domConstruct, domStyle, registry, parser, Store, request, Select, FilteringSelect, Memory, Button, Checkbox,  
 	query, on,json,number,domClass, html, ready,topic,Grid,Cache,CellWidget) {
 	var entityClass = 'Egreso';
 
@@ -43,24 +45,6 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 			});
 		};	
 
-//	var resetProveedor = function(bienoservicio){	
-//		request('/getProveedores?bienoservicio=' + bienoservicio, {handleAs:'json'}).then(
-//		function(response){
-//			var items = [];
-//			if (response.length == 0){
-//				items.push({ "value": 'NO.REPORTADO', "label": 'NO REPORTADO' });
-//			}else{
-//				response.forEach(function(proveedor){
-//					items.push({ "value": proveedor.value, "label": proveedor.name });
-//				});			
-//			}
-//			var proveedorSelect = registry.byId('proveedor_Egreso');
-//			proveedorSelect.options = [];
-//			proveedorSelect.addOption(items);
-//			proveedorSelect.reset();
-//		});
-//	};
-	
 	var resetGrid = function (){
 		var grid = registry.byId('grid_Egreso');
 		grid.model.clearCache();
@@ -78,15 +62,40 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 		resetGrid();
 	};
 
-//	parser.instantiate([dom.byId('tipo_Egreso')]);
-//    var tipoSelect = registry.byId('tipo_Egreso'); 
-//    resetBienoservicio(tipoSelect.value);
-//    tipoSelect.onChange = resetBienoservicio;
 
 	parser.instantiate([dom.byId('bienoservicio_Egreso')]);
-    var bienoservicioSelect = registry.byId('bienoservicio_Egreso');    
-//    resetProveedor(bienoservicioSelect.value);
-//	bienoservicioSelect.onChange = resetProveedor; 
+    var bienoservicioSelect = registry.byId('bienoservicio_Egreso');
+    bienoservicioSelect.onChange = function(value){
+    	if (value == 'FRUTA'){
+    		request('/getMateriasPrimas?tipo=FRUTA',{handleAs:'json'}).then(function(response){
+    			domStyle.set('detalle_Egreso','display','none');
+    			domStyle.set('widget_detalle_Egreso','visibility','hidden');
+    			if (! registry.byId('select_detalle_egreso')){
+    				var select = new Select({
+    			        			id:'select_detalle_egreso',
+			    					name: "frutas",
+			    			        options: response,
+			    			        onChange:function(value){
+			    			        	registry.byId('detalle_Egreso').set('value',value);
+			    			        }
+    			    });
+    				select.placeAt('select_detalle_Egreso');
+    				select.startup();
+        			registry.byId('detalle_Egreso').set('value',select.value);
+    			}
+    			domStyle.set('select_detalle_Egreso','display','block');
+    		});
+    		dom.byId('label_cantidad_Egreso').innerHTML = 'Cantidad (kg)';
+    		dom.byId('label_precio_Egreso').innerHTML = 'Precio ($/kg)';
+    	}else{
+    		domStyle.set('detalle_Egreso','display','block');
+			domStyle.set('widget_detalle_Egreso','visibility','visible');
+			domStyle.set('select_detalle_Egreso','display','none');
+			registry.byId('detalle_Egreso').set('value','');
+			dom.byId('label_cantidad_Egreso').innerHTML = 'Cantidad';
+			dom.byId('label_precio_Egreso').innerHTML = 'Precio Unitario';
+    	}
+    };
 
     parser.instantiate([dom.byId('proveedor_Egreso')]);
     var proveedorSelect = registry.byId('proveedor_Egreso');    
@@ -293,7 +302,8 @@ function(dom, domAttr, registry, parser, Store, request, Select, FilteringSelect
 					 {
 						dijit.model.clearCache();
 						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
-						response.forEach(function(item){
+						var records = response['compras']
+						records.forEach(function(item){
 							dijit.store.add(item);								
 						});
 						dijit.body.refresh();

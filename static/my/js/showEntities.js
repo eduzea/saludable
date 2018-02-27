@@ -44,7 +44,9 @@ function(MyGrid, JsonRest, registry, query, parser, dom, domConstruct, html, num
 						this.innerHTML='';
 					}
 				};
-				saludable.showEntitiesFuncs[entityClass]();
+				if (saludable.showEntitiesFuncs.hasOwnProperty(entityClass)){
+					saludable.showEntitiesFuncs[entityClass]();					
+				}
 			}
 		}
 	);

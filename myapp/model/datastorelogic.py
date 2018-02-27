@@ -331,10 +331,11 @@ class DataStoreInterface():
         else:
             return None
     
-    def create_entity(self, entityClass, values):
-        empleado = classModels['Empleado'].query(classModels['Empleado'].email == users.get_current_user().email()).get()
-        if not empleado.writePermission:
-            return {'result':'FAIL','message':"No tiene permiso de modificar el sistema"}
+    def create_entity(self, entityClass, values, bypass_writepermission_check=False):
+        if not bypass_writepermission_check:
+            empleado = classModels['Empleado'].query(classModels['Empleado'].email == users.get_current_user().email()).get()
+            if not empleado.writePermission:
+                    return {'result':'FAIL','message':"No tiene permiso de modificar el sistema"}
         values = self._checkEntityCreate(entityClass,values) #All we get from post are strings, so we need to cast/create as appropriate
         key = self.getKey(entityClass, values)
         entity = classModels[entityClass].get_by_id(key)

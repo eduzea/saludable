@@ -1,10 +1,10 @@
 //# sourceURL=../static/my/js/addEntityForm.js
 define.amd.jQuery = true;
 require(['my/utils','dojo/request', 'dojo/dom', 'dojo/_base/fx', 'dijit/registry', 'dojo/dom-style','dojox/html/entities','dojo/on', 
-		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/number",
-		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready', 'gridx/modules/CellWidget',
+		 'dojo/parser','dojo/query','dojo/json','dojo/topic','dojo/json','dojo/store/Memory','dojo/dom-class',"dojo/date/locale","dojo/number",
+		 'gridx/Grid', 'dijit/form/Button', 'dijit/form/CheckBox','dojo/ready', 'gridx/modules/CellWidget','gridx/modules/HiddenColumns',
 		 'dojo/domReady!'],
-function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, number, Grid, Button, Checkbox, ready) {
+function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON,topic,json, Memory, domClass, locale, number, Grid, Button, Checkbox, ready) {
 	
 	var entityClass = saludable.entityClass;//Get the entity from the view loading this script
 	parser.instantiate([dom.byId('agregar_btn' + '_' + entityClass)]);
@@ -101,9 +101,11 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 						response_user = 'Se actualizo ' + entityClass + ': ' + response.key;
 						topic.publish(entityClass.toUpperCase(), {'action':'UPDATE','label':response.entity.rotulo,'value':response.key});
 					}					
+				}else{
+					response_user = response.message;
 				}
 				var server_msg = registry.byId('server_message');
-				server_msg.set("content", response.message == 'Updated' ? `Se actualizo ${entityClass}` : `Se creo ${entityClass}` );
+				server_msg.set("content",response_user);
 				server_msg.show();
 				if (! (entityClass in saludable.config['dontResetAfterSave']) ){
 					setTimeout(function() {
@@ -227,6 +229,7 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 			store : new Memory(),
 			structure : columns,
 			modules : [	"gridx/modules/CellWidget",
+						'gridx/modules/HiddenColumns'			
 						]
 			}, 'grid_' + field + '_' + entityClass);
 			gridObj.startup();
@@ -245,11 +248,11 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 			    return sumTotal;
 			};
 			//To add objects to grid
-			parser.instantiate([dom.byId(field + '_' + entityClass +  '_Btn')]);
-			on(registry.byId(field + '_' + entityClass +  '_Btn'),'click',function(e){
-				var form = registry.byId(field +  '_' + entityClass);
+			parser.instantiate([dom.byId('struc_' + field + '_' + entityClass +  '_Btn')]);
+			on(registry.byId('struc_'+ field + '_' + entityClass +  '_Btn'),'click',function(e){
+				var form = registry.byId('struct' + field +  '_' + entityClass);
 				if (!form.validate()){
-					alert("'Cantidad' no puede estar vacio!");
+					alert("Los datos no estan completos!");
 					return;
 				}
 				var grid = registry.byId('grid_'+ field + '_' + entityClass);
@@ -303,7 +306,8 @@ function(utils,request, dom, fx, registry, domStyle, html, on, parser,query,JSON
 					 {
 						dijit.model.clearCache();
 						dijit.model.store.setData([]);//dijit.model.store.setData(items) //should work but its not calling onCellWidgetCreated!
-						response.forEach(function(item){
+						var records = response[dijit.id.split("_")[1]]
+						records.forEach(function(item){
 							dijit.store.add(item);								
 						});
 						dijit.body.refresh();

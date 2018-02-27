@@ -70,7 +70,7 @@ def updateUnidadDeAlamcenamiento(mi):
     for idx,fdl in enumerate(canastilla.contenido):
         if fdl.rotulo == loteKey: #lote is in canastilla
             presente = True
-            tipo = -1 if mi.tipo.id() == 'SALIDA' else 1
+            tipo = -1 if mi.tipo.name == 'SALIDA' else 1
             fdl.cantidad = fdl.cantidad + tipo * mi.cantidad
             if fdl.cantidad == 0:
                 removeFraccionDeLoteUbicado(fdl, canastilla.ubicacion)
@@ -133,29 +133,20 @@ def crearMovimientoDeInventario(fdl, tipo, cantidad):
 
 #dataStoreInterface.registerFollowUpLogic('post', 'create', 'Pedido', validarPedido)
 #dataStoreInterface.registerFollowUpLogic('post', 'update', 'Pedido', validarPedido)
-
-
+#######################################################
+def postCreateProduccion(produccion):
+    for comp in produccion.componentes:
+        compra = comp.lote.get()
+        compra.procesado = True
+        compra.put()
+    
+dataStoreInterface.registerFollowUpLogic('post', 'create', 'Produccion', postCreateProduccion)
 ####################################################################################################
 def removeEgreso(egreso):
-    if egreso.resumen.upper() == 'MATERIA.PRIMA-FRUTA':
-        for fruta in egreso.compras:
-            ndb.Key(LoteDeCompra, fruta.detalle.upper() + '.' + egreso.proveedor.id() + '.' + str(egreso.fecha)).delete()
+    compras = dataStoreInterface.buildQuery('Compra', {'egreso':egreso.numero} ).fetch()
+    for compra in compras:
+        dataStoreInterface.deleteEntity('Compra', compra)
 
-def postCreateEgreso(egreso):
-    if egreso.resumen.upper() == 'MATERIA.PRIMA-FRUTA':
-        for fruta in egreso.compras:
-            values = {'fruta':ndb.Key(Fruta,fruta.detalle.upper()),
-                      'proveedor': egreso.proveedor,
-                      'fecha':egreso.fecha,
-                      'precio':fruta.precio,
-                      'peso':fruta.cantidad
-                      }
-            dataStoreInterface.create_entity('LoteDeCompra', values)
-
-    
-
-dataStoreInterface.registerFollowUpLogic('post','create','Egreso', postCreateEgreso)
 dataStoreInterface.registerFollowUpLogic('pre','update','Egreso', removeEgreso)
-dataStoreInterface.registerFollowUpLogic('post','update','Egreso', postCreateEgreso)
 dataStoreInterface.registerFollowUpLogic('post','delete','Egreso', removeEgreso)
 
