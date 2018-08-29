@@ -1,5 +1,9 @@
-import json
+# coding=utf-8
+import json, logging
 import csv
+import requests
+import base64
+from pprint import pprint, pformat
 from datetime import datetime, date
 from datetime import timedelta
 import sys
@@ -122,10 +126,11 @@ class SaveEntity(webapp2.RequestHandler):
     def post(self):
         post_data = self.request.POST
         values = post_data.mixed()
-        entityClass = values.pop("entityClass")     
+        entityClass = values.pop("entityClass")
+        new_values={}
         for key,value in values.iteritems():
-            values[rreplace(key, '_' + entityClass,'',1)] = values.pop(key)
-        response = dataStoreInterface.create_entity(entityClass,values)
+            new_values[rreplace(key, '_' + entityClass,'',1)] = values[key]
+        response = dataStoreInterface.create_entity(entityClass,new_values)
         self.response.out.write(JSONEncoder().encode(response))
 
 class AddEntity(webapp2.RequestHandler):
@@ -339,48 +344,47 @@ class GetDetalleBalance(webapp2.RequestHandler):
         fechaHasta = self.request.get('fechaHasta')
         data = detalleBalance(clase, fechaDesde, fechaHasta)
         self.response.out.write(JSONEncoder().encode(data))
-
-
-
         
-class GetAllVentas(webapp2.RequestHandler):
-    def get(self):
-        records = []
-        ventas = dataStoreInterface.buildQuery('Venta', self.request.params).fetch()
-        for venta in ventas:
-            vDict = venta.to_dict()
-            vDict['mesnum']=venta.fecha.month
-            vDict['mes']=venta.fecha.strftime('%B')
-            vDict['year']=venta.fecha.year
-            records.append(vDict)
-        response = {'records':records}
-        self.response.out.write(JSONEncoder().encode(response))           
+## This would be a better way to get all ventas, but for some reason the ventas record is being saved twice in the
+## Ventas table, thus doubling the aggregate numbers. Need to fix this, so we can use this more efficient version.
 
 # class GetAllVentas(webapp2.RequestHandler):
 #     def get(self):
 #         records = []
-#         entity_query = dataStoreInterface.buildQuery('Factura', self.request.params)
-#         facturas = entity_query.fetch()
-#         for factura in facturas:
-#             if factura.anulada: continue
-#             for venta in factura.ventas:
-#                 try:
-#                     venta = venta.to_dict()
-#                     venta['peso']=venta['porcion'].get().valor * venta['cantidad']
-#                     venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
-#                     venta['factura']=factura.numero
-#                     venta['iva']=factura.iva
-#                     venta['cliente']=factura.cliente.id()
-#                     venta['fecha']=factura.fecha
-#                     venta['fechaVencimiento']=factura.fechaVencimiento
-#                     venta['mesnum']=factura.fecha.month
-#                     venta['mes']=factura.fecha.strftime('%B')
-#                     venta['year']=factura.fecha.year
-#                 except Exception as e:
-#                     print factura.numero, " : ", e.message
-#                 records.append(venta)
+#         ventas = dataStoreInterface.buildQuery('Venta', self.request.params).fetch()
+#         for venta in ventas:
+#             vDict = venta.to_dict()
+#             vDict['mesnum']=venta.fecha.month
+#             vDict['mes']=venta.fecha.strftime('%B')
+#             vDict['year']=venta.fecha.year
+#             records.append(vDict)
 #         response = {'records':records}
 #         self.response.out.write(JSONEncoder().encode(response))           
+
+class GetAllVentas(webapp2.RequestHandler):
+    def get(self):
+        records = []
+        entity_query = dataStoreInterface.buildQuery('Factura', self.request.params)
+        facturas = entity_query.fetch()
+        for factura in facturas:
+            if factura.anulada: continue
+            for venta in factura.ventas:
+                try:
+                    venta = venta.to_dict()
+                    venta['peso']=venta['porcion'].get().valor * venta['cantidad']
+                    venta['ciudad']=factura.cliente.get().ciudad.get().rotulo
+                    venta['factura']=factura.numero
+                    venta['cliente']=factura.cliente.id()
+                    venta['fecha']=factura.fecha
+                    venta['fechaVencimiento']=factura.fechaVencimiento
+                    venta['mesnum']=factura.fecha.month
+                    venta['mes']=factura.fecha.strftime('%B')
+                    venta['year']=factura.fecha.year
+                except Exception as e:
+                    print factura.numero, " : ", e.message
+                records.append(venta)
+        response = {'records':records}
+        self.response.out.write(JSONEncoder().encode(response))           
 
 
 class GetAllCompras(webapp2.RequestHandler):
@@ -425,6 +429,8 @@ class InitPUC(webapp2.RequestHandler):
             title = csvReader.fieldnames
             for row in csvReader:
                 records.append({title[i].lower():row[title[i]] for i in range(len(title))})
+        num = len(records)
+        counter = 0
         for record in records:
             if len(record['pucnumber']) == 1:
                 dataStoreInterface.create_entity("Clase", record)
@@ -434,10 +440,12 @@ class InitPUC(webapp2.RequestHandler):
                 dataStoreInterface.create_entity("Cuenta", record)
             if len(record['pucnumber']) == 6:
                 dataStoreInterface.create_entity("SubCuenta", record)
+            counter += 1
         self.response.out.write("Done with PUC init!")
 
 #Function to provde the client with the PUC in json format
-class GetPUC(webapp2.RequestHandler):
+#Should get from the datastore once it is initialized
+class GetPUC_From_CSV(webapp2.RequestHandler):
     def get(self):
         jsonRecords = []
         with open('data/PUC.csv') as csvfile:
@@ -446,7 +454,6 @@ class GetPUC(webapp2.RequestHandler):
             for row in csvReader:
                 jsonRecords.append({title[i]:row[title[i]] for i in range(len(title))})
         self.response.out.write(json.dumps(jsonRecords))
-
 
 # class CrearEgreso(webapp2.RequestHandler):
 #     def get(self):
@@ -606,7 +613,7 @@ def configFactura():
             }
 
         
-class SetNumber(webapp2.RequestHandler):
+class SetNumero(webapp2.RequestHandler):
     def get(self):
         tipo = self.request.get('tipo')
         newNumero = self.request.get('numero')
@@ -985,24 +992,27 @@ def diasVencida(factura):
     else:
         return 0
 
+
 #Counts over UnidadesDeAlmacenamiento
+def getExistencias1():
+    canastillas = UnidadDeAlmacenamiento.query().fetch()
+    records = []
+    for canastilla in canastillas:
+        for fracc in canastilla.contenido:
+            values = fracc.to_dict()
+            values['ubicacion'] = canastilla.ubicacion
+            records.append(values)
+    return records
+
+#Directly uses de FraccionDeLote table. Should be same as getExistencias1 but faster
+def getExistencias2():
+    return FraccionDeLoteUbicado.query().fetch()
+    
+
 class GetExistencias(webapp2.RequestHandler):
     def get(self):
-        canastillas = UnidadDeAlmacenamiento.query().fetch()
-        records = []
-        for canastilla in canastillas:
-            for fracc in canastilla.contenido:
-                values = fracc.to_dict()
-                values['ubicacion'] = canastilla.ubicacion
-                records.append(values)
+        records = getExistencias1()
         self.response.write(JSONEncoder().encode(records)) 
-
-#Directly uses de FraccionDeLote table.
-class GetExistencias2(webapp2.RequestHandler):
-    def get(self):
-        records = FraccionDeLoteUbicado.query().fetch()
-        self.response.write(JSONEncoder().encode(records)) 
-
 
 class GetContenidoUnidadDeAlmacenamiento(webapp2.RequestHandler):
     def get(self):
@@ -1031,11 +1041,101 @@ templateConfig = {'Factura':configFactura,
                   'Numero':configNumero}
 
 
+    
+
 class Fix(webapp2.RequestHandler):
     def get(self):
-        precios = dataStoreInterface.buildQuery('Precio', {} ).fetch()
-        for precio in precios:
-            precio.precio = int(precio.precio * 1.09) 
-            precio.put()
-        self.response.out.write('Done!')        
+        compras = dataStoreInterface.buildQuery('Compra',{'proveedor':'NATALIA.ALJURE'}).fetch()
+        for compra in compras:
+            compra.activo = True
+            compra.put()
+            
+        self.response.out.write("Changed records: {}".format(len(compras)))
+#         self.response.out.write("Actualizados: {0} registros".format(str(len(facturas))) )        
 
+def alegraCreateProduct(auth, precio):
+    priceData = [{"idPriceList": "1", "name": "General", "type": "amount","price": "0.0000"}]
+    data = {'name':'{0}.{1}'.format(precio.producto.id(),precio.porcion.id()),'price':priceData,'category':{'id':''},'tax':{'id'}}
+
+#    Nombre    Referencia    Impuesto    Costo unitario    Descripción    Categoría    Código categoría
+
+    r = requests.post("https://app.alegra.com/api/v1/items",
+                      headers=auth,
+                      data=json.dumps(data))
+    return r.content
+
+def alegraGetProductsAndLists(auth):
+    productCodes = {}
+    num, last = 30, 0
+    products = []
+    while num == 30:
+        r = requests.get("https://app.alegra.com/api/v1/items?start={}".format(last),headers=auth)
+        prods = json.loads(r.content)
+        num = len(prods)
+        last = prods[-1]['id']
+        products.extend(prods)
+
+    for product in products:
+        productCodes[product['name']] = product['id']
+    listasCodes = {}
+    r = requests.get("https://app.alegra.com/api/v1/price-lists",headers=auth)
+    lists = json.loads(r.content)
+    for list in lists:
+        listasCodes[list['name']] = list['id']
+    return [productCodes, listasCodes]
+    
+#Para facilitar ingreso de facturas de Salud Able Foods a Alegra Te Quiero Verde
+class AlegraExport(webapp2.RequestHandler):
+    def get(self):
+        #Authorization header for Alegra API access
+        auth = {'Authorization': 'Basic {}'.format(base64.b64encode('eduzea@gmail.com:8d80367a19a862f433cb'))}
+        # Get Products and Price Lists from Alegra
+        [productCodes, listasCodes] = alegraGetProductsAndLists(auth)
+        
+        # Loop over active clients, get their grupoDePrecios, and get Prices in those groups.
+        # Check if the products associated to these prices exist in Alegra. If not, create proucts and set prices.
+        # If yes, update prices.
+        # If pricelist not found, report to the console
+        clientes = dataStoreInterface.buildQuery('Cliente', {'activo':True}).fetch()
+        preciosMap={}
+        missingGroups = set()
+        for cliente in clientes:
+            precios = dataStoreInterface.buildQuery('Precio',{'grupoDePrecios':cliente.grupoDePrecios}).fetch()
+            if len(precios) == 0: continue
+            grupoDePrecios = cliente.grupoDePrecios.id().replace("."," ")
+            if grupoDePrecios not in listasCodes: 
+                missingGroups.add(grupoDePrecios)
+                continue
+            for precio in precios:
+                key = '{0}.{1}'.format(precio.producto.id(),precio.porcion.id())
+                if key.replace('.',' x ',1) not in productCodes:
+                    alegraCreateProduct(auth)
+                    continue
+                if key in preciosMap:
+                    if grupoDePrecios in preciosMap[key]:
+                        if preciosMap[key][grupoDePrecios] < precio.precio : preciosMap[key][grupoDePrecios] = precio.precio
+                    else:
+                        preciosMap[key][grupoDePrecios] = precio.precio
+                else:
+                    preciosMap[key] = {}
+                    preciosMap[key][grupoDePrecios] = precio.precio
+                             
+        for productoKey,productoValues in preciosMap.iteritems():
+            code = productCodes[productoKey.replace('.',' x ',1)]
+            data = [{"idPriceList": "1", "name": "General", "type": "amount","price": "0.0000"}]
+            for grupoDePrecios in productoValues:
+                data.append (
+                {   "idPriceList": listasCodes[grupoDePrecios],
+                     "name":grupoDePrecios,
+                     "type": "amount",
+                     "price": str(productoValues[grupoDePrecios])
+                     }
+                )
+            r = requests.put("https://app.alegra.com/api/v1/items/{0}".format(code),headers=auth, 
+                              data=json.dumps({'price':data}))
+            print '{0} : {1} - {2}'.format(productoKey,json.dumps({'precio': data}), r.status_code  )
+            if r.status_code != 200:
+                print 'ARRRG!:{0} - {1} '.format(r.status_code, r.content)
+ 
+        self.response.out.write("{0}<br><br>{1}".format(pformat(productCodes), pformat(listasCodes)))   
+            

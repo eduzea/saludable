@@ -35,3 +35,18 @@
 	height: 80%;
     width: 100%;
 }
+.redRow {
+  background-color:red !important;
+}
+.yellowRow {
+  background-color:yellow !important;
+}
+.greenRow {
+  background-color:green !important;
+}
+.blueRow {
+  background-color:blue !important;
+}
+.grayRow {
+  background-color:gray !important;
+}

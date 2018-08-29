@@ -1,597 +1,1804 @@
 [
 	{
-		"fechaCreacion": null,
-		"nombre": "ARAZA",
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
 		"activo": true,
+		"rotulo": "ALCACHOFAS PIMENTADAS",
+		"nombre": "ALCACHOFAS PIMENTADAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-06",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ANCHETA EJECUTIVA",
+		"nombre": "ANCHETA EJECUTIVA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-06",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ANCHETA GERENCIAL",
+		"nombre": "ANCHETA GERENCIAL",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ANTIPASTO",
+		"nombre": "ANTIPASTO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ARAZA",
+		"nombre": "ARAZA",
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "ARAZA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "BABA GANUSH",
+		"nombre": "BABA GANUSH",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "BERENJENAS CON PIMENTON",
+		"nombre": "BERENJENAS CON PIMENTON",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "BERENJENAS RELLENAS CON NUEZ",
+		"nombre": "BERENJENAS RELLENAS CON NUEZ",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CAJITA 3 CONSERVAS",
+		"nombre": "CAJITA 3 CONSERVAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "CAJITA 3 MERMELADAS",
+		"nombre": "CAJITA 3 MERMELADAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CAJITA DULCE SAL 2 CONSERVAS",
+		"nombre": "CAJITA DULCE SAL 2 CONSERVAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CEVICHE DE MANGO",
+		"nombre": "CEVICHE DE MANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CHAMPI\u00d1ONES GRIEGOS",
+		"nombre": "CHAMPI\u00d1ONES GRIEGOS",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-10-12",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CHUTNEY DE MANGO",
+		"nombre": "CHUTNEY DE MANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CHUTNEY DE UCHUVA Y TAMARINDO",
+		"nombre": "CHUTNEY DE UCHUVA Y TAMARINDO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-23",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CIRUELA",
+		"nombre": "CIRUELA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": "2016-07-01",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CIRUELA DURAZNO",
 		"nombre": "CIRUELA DURAZNO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "CIRUELA DURAZNO"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CONF. DE CEBOLLA AL VINO",
 		"nombre": "CONF. DE CEBOLLA AL VINO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "CONF. DE CEBOLLA AL VINO"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "CONF PIMENTON",
 		"nombre": "CONF PIMENTON",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "CONF PIMENTON"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": "2016-01-14",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CREMA DE COCO",
 		"nombre": "CREMA DE COCO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "CREMA DE COCO"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2018-01-12",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CRIOLLITA",
+		"nombre": "CRIOLLITA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "CURUBA",
 		"nombre": "CURUBA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "CURUBA"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "DESECHABLES",
 		"nombre": "DESECHABLES",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "DESECHABLES"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "DURAZNO",
 		"nombre": "DURAZNO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "DURAZNO"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "DURAZNO FRUTA",
 		"nombre": "DURAZNO FRUTA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "DURAZNO FRUTA"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "ENCURTIDO DE ALCACHOFAS",
 		"nombre": "ENCURTIDO DE ALCACHOFAS",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "ENCURTIDO DE ALCACHOFAS"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "ENCURTIDO DE BERENGENA CON PIMIENTOS",
+		"nombre": "ENCURTIDO DE BERENGENA CON PIMIENTOS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ENCURTIDO DE BERENJENA CON PIMENTON",
 		"nombre": "ENCURTIDO DE BERENJENA CON PIMENTON",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "ENCURTIDO DE BERENJENA CON PIMENTON"
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA",
 		"nombre": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "ENCURTIDO DE CHAMPI\u00d1ONES A LA GRIEGA"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ENCURTIDO DE PIMENTON CONFITADO",
 		"nombre": "ENCURTIDO DE PIMENTON CONFITADO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "ENCURTIDO DE PIMENTON CONFITADO"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "ENCURTIDO DE ZUQUINIS CON ESPECIAS",
 		"nombre": "ENCURTIDO DE ZUQUINIS CON ESPECIAS",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "ENCURTIDO DE ZUQUINIS CON ESPECIAS"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Elementos desechables ",
 		"nombre": "Elementos desechables ",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Elementos desechables "
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Encurtido de Berengena con Pimientos",
 		"nombre": "Encurtido de Berengena con Pimientos",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Encurtido de Berengena con Pimientos"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Encurtido de Zuquinis con especias",
 		"nombre": "Encurtido de Zuquinis con especias",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Encurtido de Zuquinis con especias"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Encurtido de alcachofas",
 		"nombre": "Encurtido de alcachofas",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Encurtido de alcachofas"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Encurtido de champi\u00f1ones a la griega",
 		"nombre": "Encurtido de champi\u00f1ones a la griega",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Encurtido de champi\u00f1ones a la griega"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "FACTURA FISICA FALTANTE",
 		"nombre": "FACTURA FISICA FALTANTE",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "FACTURA FISICA FALTANTE"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2018-01-12",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FALAFEL",
+		"nombre": "FALAFEL",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2018-01-12",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FALAFEL HAMBURGUESA",
+		"nombre": "FALAFEL HAMBURGUESA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-23",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "FALAFELS HAMBUGUESAS X 6",
+		"nombre": "FALAFELS HAMBUGUESAS X 6",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-23",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "FALAFELS X 30",
+		"nombre": "FALAFELS X 30",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "FALAFES",
 		"nombre": "FALAFES",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "FALAFES"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FEIJOA",
 		"nombre": "FEIJOA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FEIJOA"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA",
 		"nombre": "FRESA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRESA"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA BANANO",
 		"nombre": "FRESA BANANO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRESA BANANO"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2016-10-14",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA BANANO MANGO",
+		"nombre": "FRESA BANANO MANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-01-25",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA DURAZNO",
+		"nombre": "FRESA DURAZNO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA KIWI",
 		"nombre": "FRESA KIWI",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRESA KIWI"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA MANGO",
 		"nombre": "FRESA MANGO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRESA MANGO"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA MARACUYA",
+		"nombre": "FRESA MARACUYA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-05-04",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRESA PULPA",
+		"nombre": "FRESA PULPA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRUTOS AMARILLOS",
 		"nombre": "FRUTOS AMARILLOS",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRUTOS AMARILLOS"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
-		"nombre": "FRUTOS ROJOS",
+		"sujetoIVA": false,
+		"componentes": [],
 		"activo": true,
+		"rotulo": "FRUTOS ROJOS",
+		"nombre": "FRUTOS ROJOS",
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "FRUTOS ROJOS"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": "2016-07-01",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "FRUTOS ROJOS PLUS",
 		"nombre": "FRUTOS ROJOS PLUS",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "FRUTOS ROJOS PLUS"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "FRUTOS ROJOS X 150",
 		"nombre": "FRUTOS ROJOS X 150",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "FRUTOS ROJOS X 150"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-11-19",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO DE LULO",
 		"nombre": "GRANIZADO DE LULO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "GRANIZADO DE LULO"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-11-19",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO DE MANGO",
 		"nombre": "GRANIZADO DE MANGO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "GRANIZADO DE MANGO"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-10-21",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO FRUTOS AMARILLOS",
 		"nombre": "GRANIZADO FRUTOS AMARILLOS",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "GRANIZADO FRUTOS AMARILLOS"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-10-21",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO FRUTOS ROJOS",
 		"nombre": "GRANIZADO FRUTOS ROJOS",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "GRANIZADO FRUTOS ROJOS"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-10-21",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO MANGO BICHE",
 		"nombre": "GRANIZADO MANGO BICHE",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "nataljure@salud-able.com",
-		"rotulo": "GRANIZADO MANGO BICHE"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": "2015-11-02",
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GRANIZADO MARACUYA",
 		"nombre": "GRANIZADO MARACUYA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
 		"activo": true,
+		"rotulo": "GRANOS FRESCOS",
+		"nombre": "GRANOS FRESCOS",
+		"textcomponentes": "",
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "GRANIZADO MARACUYA"
+		"linea": "CONSERVAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "GUANABANA",
 		"nombre": "GUANABANA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "GUANABANA"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-10-25",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "GUANABANA FRUTA",
 		"nombre": "GUANABANA FRUTA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "GUANABANA FRUTA"
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
-		"nombre": "GUAYABA",
+		"sujetoIVA": false,
+		"componentes": [],
 		"activo": true,
+		"rotulo": "GUAYABA",
+		"nombre": "GUAYABA",
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "GUAYABA"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": "2015-10-07",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "GUAYABA CORONILLA",
 		"nombre": "GUAYABA CORONILLA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "GUAYABA CORONILLA"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "GULUPA",
 		"nombre": "GULUPA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "GULUPA"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "JUGOS",
 		"nombre": "JUGOS",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "JUGOS"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULADA",
 		"nombre": "LULADA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "LULADA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2016-11-19",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULADA ESPECIAL",
+		"nombre": "LULADA ESPECIAL",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO",
 		"nombre": "LULO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "LULO"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
-		"nombre": "LULO KIWI",
+		"fechaCreacion": "2018-01-16",
+		"sujetoIVA": false,
+		"componentes": [],
 		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "LULO KIWI"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "LULO PI\u00d1A",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "LULO PI\u00d1A"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "LULO TAJADO",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "LULO TAJADO"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MANGO",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MANGO"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MANGO BICHE",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MANGO BICHE"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MANZANA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MANZANA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MARACUMANGO",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MARACUMANGO"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MARACUYA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MARACUYA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MARACUYA PEPA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MARACUYA PEPA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MELON",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MELON"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MERMELADA DE NARANJA CON ANIS",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MERMELADA DE NARANJA CON ANIS"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MERMELADA DE NARANJA CON JENGIBRE",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MERMELADA DE NARANJA CON JENGIBRE"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MERMELADA DE UVA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MERMELADA DE UVA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MERMELADA SABORES",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MERMELADA SABORES"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MORA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MORA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "MORA FRESA AGRAZ",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "MORA FRESA AGRAZ"
-	},
-	{
-		"fechaCreacion": "2016-05-04",
-		"nombre": "MORA FRUTA",
-		"activo": true,
+		"rotulo": "LULO-MANGO",
+		"nombre": "LULO-MANGO",
+		"textcomponentes": "",
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "MORA FRUTA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-06",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO JENGIBRE",
+		"nombre": "LULO JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO KIWI",
+		"nombre": "LULO KIWI",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-19",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO PICADO",
+		"nombre": "LULO PICADO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO PI\u00d1A",
+		"nombre": "LULO PI\u00d1A",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO PI\u00d1A JENGIBRE",
+		"nombre": "LULO PI\u00d1A JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "LULO TAJADO",
+		"nombre": "LULO TAJADO",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-20",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MAMUL DATIL",
+		"nombre": "MAMUL DATIL",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-20",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MAMUL PI\u00d1A",
+		"nombre": "MAMUL PI\u00d1A",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2018-01-31",
+		"sujetoIVA": false,
+		"componentes": [
+			"ACIDO.ASCORBICO",
+			"BOLSAS.PLASTICAS",
+			"ETIQUETAS",
+			"MANGO.COMUN",
+			"MANGO.TOMMY"
+		],
+		"activo": true,
+		"rotulo": "MANGO",
+		"nombre": "MANGO",
+		"textcomponentes": "ACIDO ASCORBICO;BOLSAS PLASTICAS;ETIQUETAS;MANGO COMUN;MANGO TOMMY;",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MANGO BICHE",
+		"nombre": "MANGO BICHE",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-10-25",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MANGO GUANABANA",
+		"nombre": "MANGO GUANABANA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MANZANA",
+		"nombre": "MANZANA",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MARACUMANGO",
+		"nombre": "MARACUMANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MARACUYA",
+		"nombre": "MARACUYA",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MARACUYA-FRESA",
+		"nombre": "MARACUYA-FRESA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MARACUYA PEPA",
+		"nombre": "MARACUYA PEPA",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MELON",
+		"nombre": "MELON",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MERMELADA COMPUESTA",
+		"nombre": "MERMELADA COMPUESTA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE DURAZNO CON CIRUELA",
+		"nombre": "MERMELADA DE DURAZNO CON CIRUELA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE FRESA",
+		"nombre": "MERMELADA DE FRESA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE FRUTOS ROJOS",
+		"nombre": "MERMELADA DE FRUTOS ROJOS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE MORA",
+		"nombre": "MERMELADA DE MORA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2018-03-07",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE NARANJA",
+		"nombre": "MERMELADA DE NARANJA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE NARANJA CON ANIS",
+		"nombre": "MERMELADA DE NARANJA CON ANIS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE NARANJA CON JENGIBRE",
+		"nombre": "MERMELADA DE NARANJA CON JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE PI\u00d1A Y JENGIBRE",
+		"nombre": "MERMELADA DE PI\u00d1A Y JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE TAMARINDO Y UCHUVAS",
+		"nombre": "MERMELADA DE TAMARINDO Y UCHUVAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE UCHUVA",
+		"nombre": "MERMELADA DE UCHUVA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA DE UVA",
+		"nombre": "MERMELADA DE UVA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MERMELADA FRUTOS ROJOS",
+		"nombre": "MERMELADA FRUTOS ROJOS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MERMELADA PI\u00d1A JENGIBRE",
+		"nombre": "MERMELADA PI\u00d1A JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MERMELADA SABORES",
+		"nombre": "MERMELADA SABORES",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MERMELADAS 234",
+		"nombre": "MERMELADAS 234",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MORA",
+		"nombre": "MORA",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MORA FRESA AGRAZ",
+		"nombre": "MORA FRESA AGRAZ",
+		"textcomponentes": "",
+		"empleadoCreador": null,
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "MORA FRUTA",
+		"nombre": "MORA FRUTA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-15",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MORA NARANJA MANGO",
+		"nombre": "MORA NARANJA MANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-29",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MORA UVA FRESA AGRAZ",
+		"nombre": "MORA UVA FRESA AGRAZ",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-08-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "MUESTRAS",
+		"nombre": "MUESTRAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Mango Biche",
 		"nombre": "Mango Biche",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Mango Biche"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Menu adultos",
 		"nombre": "Menu adultos",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Menu adultos"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Mermelada Frutos rojos",
 		"nombre": "Mermelada Frutos rojos",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Mermelada Frutos rojos"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Mermelada compuesta",
 		"nombre": "Mermelada compuesta",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Mermelada compuesta"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "NAPOLITANA CON ALCACHOFAS",
+		"nombre": "NAPOLITANA CON ALCACHOFAS",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "NISPERO",
 		"nombre": "NISPERO",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "NISPERO"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "PALETAS SUTIDAS X 5",
+		"nombre": "PALETAS SUTIDAS X 5",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PAPAYA",
 		"nombre": "PAPAYA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PAPAYA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PAPAYA FRESA MANGO",
+		"nombre": "PAPAYA FRESA MANGO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-23",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PAPAYA FRESA MORA",
+		"nombre": "PAPAYA FRESA MORA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PATILLA",
 		"nombre": "PATILLA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PATILLA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PEPINO DULZON",
+		"nombre": "PEPINO DULZON",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PERA",
 		"nombre": "PERA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PERA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PIMENTON CONFITADO",
+		"nombre": "PIMENTON CONFITADO",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-13",
+		"sujetoIVA": true,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PIMENTON EN ESCABECHE",
+		"nombre": "PIMENTON EN ESCABECHE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "CONSERVAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A",
 		"nombre": "PI\u00d1A",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PI\u00d1A"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A ALBAHACA",
+		"nombre": "PI\u00d1A ALBAHACA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A FRESA",
 		"nombre": "PI\u00d1A FRESA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PI\u00d1A FRESA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-11-23",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A JENGIBRE",
+		"nombre": "PI\u00d1A JENGIBRE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A MANGO MARACUYA",
+		"nombre": "PI\u00d1A MANGO MARACUYA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A MARACUYA BANANO",
+		"nombre": "PI\u00d1A MARACUYA BANANO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-13",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A PAPAYA FRESA",
+		"nombre": "PI\u00d1A PAPAYA FRESA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-03-15",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1A PICADA",
+		"nombre": "PI\u00d1A PICADA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "PI\u00d1AS SANDIA",
 		"nombre": "PI\u00d1AS SANDIA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "PI\u00d1AS SANDIA"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-10-25",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "PULPA MANGO GUANABANA",
+		"nombre": "PULPA MANGO GUANABANA",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "PULPA PERSONAL",
+		"nombre": "PULPA PERSONAL",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "REFRIGERIO NAVIDE\u00d1O ADULTOS",
+		"nombre": "REFRIGERIO NAVIDE\u00d1O ADULTOS",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "Refrigerio navide\u00f1o adultos",
 		"nombre": "Refrigerio navide\u00f1o adultos",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "Refrigerio navide\u00f1o adultos"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-20",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "SALSA NAPOLITANA",
+		"nombre": "SALSA NAPOLITANA",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "SANDIA",
 		"nombre": "SANDIA",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "SANDIA"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2018-01-22",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "SANDIA MELON ALOE",
+		"nombre": "SANDIA MELON ALOE",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-26",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANANIO X 7 X 500",
+		"nombre": "SEMANANIO X 7 X 500",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-26",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANARIO",
+		"nombre": "SEMANARIO",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-26",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANARIO (7 X 750)",
 		"nombre": "SEMANARIO (7 X 750)",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANARIO 7 X 1000",
+		"nombre": "SEMANARIO 7 X 1000",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANARIO 7 X 500",
+		"nombre": "SEMANARIO 7 X 500",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
 		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SEMANARIO (7 X 750)"
+		"rotulo": "SEMANARIO DISFRUTE VITAL",
+		"nombre": "SEMANARIO DISFRUTE VITAL",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-09-26",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SEMANARIO PULPAS SURTIDAS (7 X 600)",
+		"nombre": "SEMANARIO PULPAS SURTIDAS (7 X 600)",
+		"textcomponentes": "",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "SMOTHIE GMB",
 		"nombre": "SMOTHIE GMB",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "SMOTHIE GMB"
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "SMOTHIE LMF",
 		"nombre": "SMOTHIE LMF",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "SMOTHIE LMF"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SUBARRIENDO",
 		"nombre": "SUBARRIENDO",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SUBARRIENDO"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SURTIDAS",
 		"nombre": "SURTIDAS",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SURTIDAS"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "SURTIDOS",
 		"nombre": "SURTIDOS",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SURTIDOS"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "TAMARINDO",
 		"nombre": "TAMARINDO",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "TAMARINDO"
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "TOMATE CHONTO",
+		"nombre": "TOMATE CHONTO",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
 		"fechaCreacion": null,
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": true,
+		"rotulo": "TOMATE DE ARBOL",
 		"nombre": "TOMATE DE ARBOL",
-		"activo": true,
+		"textcomponentes": "",
 		"empleadoCreador": null,
-		"rotulo": "TOMATE DE ARBOL"
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2018-02-12",
+		"sujetoIVA": true,
+		"componentes": [
+			"ACIDO.ASCORBICO"
+		],
+		"activo": true,
+		"rotulo": "TRIO MERMELADAS",
+		"nombre": "TRIO MERMELADAS",
+		"textcomponentes": "ACIDO ASCORBICO;",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "CONSERVAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "UCHUVA",
 		"nombre": "UCHUVA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "UCHUVA"
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2018-01-26",
+		"sujetoIVA": false,
+		"componentes": [
+			"ACIDO.ASCORBICO",
+			"UVA",
+			"ETIQUETAS",
+			"BOLSAS.PLASTICAS"
+		],
+		"activo": true,
+		"rotulo": "UVA",
 		"nombre": "UVA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "UVA"
+		"textcomponentes": "ACIDO ASCORBICO;UVA;ETIQUETAS;BOLSAS PLASTICAS;",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
 	},
 	{
-		"fechaCreacion": null,
-		"nombre": "ZAPOTE",
+		"fechaCreacion": "2018-01-26",
+		"sujetoIVA": false,
+		"componentes": [
+			"ACIDO.ASCORBICO",
+			"UVA",
+			"MORA",
+			"FRESA",
+			"ETIQUETAS",
+			"BOLSAS.PLASTICAS"
+		],
 		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "ZAPOTE"
+		"rotulo": "UVA MORA FRESA",
+		"nombre": "UVA MORA FRESA",
+		"textcomponentes": "ACIDO ASCORBICO;UVA;MORA;FRESA;ETIQUETAS;BOLSAS PLASTICAS;",
+		"empleadoCreador": "eduzea@gmail.com",
+		"linea": "PULPAS"
+	},
+	{
+		"fechaCreacion": "2017-12-11",
+		"sujetoIVA": false,
+		"componentes": [],
+		"activo": false,
+		"rotulo": "ZAPOTE",
+		"nombre": "ZAPOTE",
+		"textcomponentes": "",
+		"empleadoCreador": "nataljure@salud-able.com",
+		"linea": "PULPAS"
 	}
 ]

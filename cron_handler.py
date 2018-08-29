@@ -14,12 +14,17 @@ from email.mime.image import MIMEImage
 import base64
 import jinja2
 from google.appengine.api.mail import EmailMessage
+from myapp.controller.controller import getExistencias2
+from myapp.initSaludable import dataStoreInterface
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader('templates'),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+#############################################################################
+### Envio automatico de correo con la cartera pendiente a los clientes ###### 
+#############################################################################
 class FacturasVencidas(webapp2.RequestHandler):
     def get(self):
         return
@@ -105,9 +110,19 @@ def send_message(service, user_id, message):
         return message
     except errors.HttpError, error:
         print 'An error occurred: %s' % error
+        
+######################################################################################        
+##############Snapsot del Inevntario para cada dia ##################################
+######################################################################################
+class InventarioDiario(webapp2.RequestHandler):
+    def get(self):
+        records = getExistencias2()
+        dataStoreInterface.create_entity('Existencias', {'fecha':datetime.today().date()
+                                                         ,'registros':records},True)
 
-
-app = webapp2.WSGIApplication([('/facturasVencidas', FacturasVencidas)])
+######################################################################################
+app = webapp2.WSGIApplication([('/facturasVencidas', FacturasVencidas),
+                               ('/inventarioDiario', InventarioDiario)])
 
 #This uses appengine Mail api. Just 10 emails x day!
 def sendEmail(data):

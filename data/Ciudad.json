@@ -1,21 +1,21 @@
 [
 	{
 		"fechaCreacion": null,
-		"nombre": "Bogota",
+		"nombre": "BOGOTA",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "Bogota"
+		"rotulo": "BOGOTA"
 	}, {
 		"fechaCreacion": null,
-		"nombre": "Cali",
+		"nombre": "CALI",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "Cali"
+		"rotulo": "CALI"
 	}, {
 		"fechaCreacion": null,
-		"nombre": "Cartagena",
+		"nombre": "CARTAGENA",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "Cartagena"
+		"rotulo": "CARTAGENA"
 	}
 ]

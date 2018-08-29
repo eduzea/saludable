@@ -1,11 +1,14 @@
 [
 	{
-		"tipo": "Socio",
-		"direccion": "Calle 13 # 108-100",
-		"ciudad": "Bogota",
-		"rotulo": "Familia Zea Aljure",
-		"nombre": "Familia Zea Aljure",
-		"telefono": "3138836490",
-		"nit": "79782709"
+		"fechaCreacion": "2018-04-08",
+		"tipo": "PERSONA_NATURAL",
+		"ciudad": "BOGOTA",
+		"direccion": "UNICENTRO CALI",
+		"activo": true,
+		"rotulo": "BANCOLOMBIA",
+		"nombre": "BANCOLOMBIA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"telefono": "NA",
+		"nit": "890903938-8"
 	}
 ]

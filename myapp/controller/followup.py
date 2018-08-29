@@ -147,6 +147,11 @@ def removeEgreso(egreso):
     for compra in compras:
         dataStoreInterface.deleteEntity('Compra', compra)
 
+def postCreateEgreso(egreso):
+    for compra in egreso.compras:
+        compra.put()
+
 dataStoreInterface.registerFollowUpLogic('pre','update','Egreso', removeEgreso)
 dataStoreInterface.registerFollowUpLogic('post','delete','Egreso', removeEgreso)
+dataStoreInterface.registerFollowUpLogic('post','update','Egreso', postCreateEgreso)
 

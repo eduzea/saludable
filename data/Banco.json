@@ -1,11 +1,22 @@
 [
 	{
-		"fechaCreacion": "2015-07-25",
-		"direccion": "Av Cra 36 No 23A 63",
-		"rotulo": "Banco Caja Social",
-		"nombre": "Banco Caja Social",
+		"fechaCreacion": "2018-06-14",
+		"direccion": "AV CRA 36 NO 23A 63",
+		"activo": true,
+		"rotulo": "BANCO CAJA SOCIAL",
+		"nombre": "BANCO CAJA SOCIAL",
 		"empleadoCreador": "eduzea@gmail.com",
 		"contacto": "",
 		"telefono": "2688610"
+	},
+	{
+		"fechaCreacion": "2018-06-14",
+		"direccion": "UNICENTRO CALI",
+		"activo": true,
+		"rotulo": "BANCOLOMBIA",
+		"nombre": "BANCOLOMBIA",
+		"empleadoCreador": "eduzea@gmail.com",
+		"contacto": "EDWAR BUITRAGO",
+		"telefono": "3167401283"
 	}
 ]

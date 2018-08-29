@@ -1,103 +1,306 @@
 [
 	{
+		"fechaCreacion": null,
 		"unidades": "Unidad",
+		"activo": true,
 		"rotulo": "1Unidad",
-		"valor": 1
-	}, {
+		"valor": 1,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
+		"unidades": "mes",
+		"activo": true,
+		"rotulo": "1mes",
+		"valor": 1,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "100g",
-		"valor": 100
-	}, {
+		"valor": 100,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "1000g",
-		"valor": 1000
-	}, {
+		"valor": 1000,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "110g",
-		"valor": 110
-	}, {
+		"valor": 110,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "120g",
-		"valor": 120
-	}, {
+		"valor": 120,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "125g",
-		"valor": 125
-	}, {
+		"valor": 125,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "130g",
-		"valor": 130
-	}, {
+		"valor": 130,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "140g",
-		"valor": 140
-	}, {
+		"valor": 140,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "150g",
-		"valor": 150
-	}, {
+		"valor": 150,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "160g",
-		"valor": 160
-	}, {
+		"valor": 160,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "170g",
-		"valor": 170
-	}, {
+		"valor": 170,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "180g",
-		"valor": 180
-	}, {
+		"valor": 180,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "190g",
-		"valor": 190
-	}, {
+		"valor": 190,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "200g",
-		"valor": 200
-	}, {
-		"unidades": "1",
-		"rotulo": "2501",
-		"valor": 250
-	}, {
+		"valor": 200,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
+		"rotulo": "2000g",
+		"valor": 2000,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
+		"unidades": "g",
+		"activo": true,
 		"rotulo": "250g",
-		"valor": 250
-	}, {
-		"unidades": "Gr",
-		"rotulo": "300Gr",
-		"valor": 300
-	}, {
+		"valor": 250,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2017-06-27",
+		"unidades": "GR",
+		"activo": false,
+		"rotulo": "2500GR",
+		"valor": 2500,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-06-27",
 		"unidades": "g",
+		"activo": true,
+		"rotulo": "2500g",
+		"valor": 2500,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": null,
+		"unidades": "g",
+		"activo": true,
+		"rotulo": "300g",
+		"valor": 300,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2017-07-30",
+		"unidades": "g",
+		"activo": true,
+		"rotulo": "3000g",
+		"valor": 3000,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-04-07",
+		"unidades": "gr",
+		"activo": false,
+		"rotulo": "4000gr",
+		"valor": 4000,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-05-23",
+		"unidades": "G",
+		"activo": true,
+		"rotulo": "4200G",
+		"valor": 4200,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": null,
+		"unidades": "g",
+		"activo": true,
 		"rotulo": "450g",
-		"valor": 450
-	}, {
+		"valor": 450,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2017-04-07",
+		"unidades": "ML",
+		"activo": false,
+		"rotulo": "4500ML",
+		"valor": 4500,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "50g",
-		"valor": 50
-	}, {
+		"valor": 50,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "500g",
-		"valor": 500
-	}, {
+		"valor": 500,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "5000g",
-		"valor": 5000
-	}, {
+		"valor": 5000,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2017-04-07",
+		"unidades": "ONZAS",
+		"activo": false,
+		"rotulo": "6ONZAS",
+		"valor": 6,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "60g",
-		"valor": 60
-	}, {
+		"valor": 60,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2017-06-27",
 		"unidades": "g",
+		"activo": true,
+		"rotulo": "600g",
+		"valor": 600,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": null,
+		"unidades": "g",
+		"activo": true,
 		"rotulo": "70g",
-		"valor": 70
-	}, {
+		"valor": 70,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "700g",
-		"valor": 700
-	}, {
+		"valor": 700,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": null,
 		"unidades": "g",
+		"activo": true,
 		"rotulo": "750g",
-		"valor": 750
+		"valor": 750,
+		"empleadoCreador": null
+	},
+	{
+		"fechaCreacion": "2015-12-26",
+		"unidades": "g",
+		"activo": true,
+		"rotulo": "80g",
+		"valor": 80,
+		"empleadoCreador": "nataljure@salud-able.com"
+	},
+	{
+		"fechaCreacion": "2017-04-06",
+		"unidades": "g",
+		"activo": true,
+		"rotulo": "85g",
+		"valor": 85,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-04-07",
+		"unidades": "GR",
+		"activo": false,
+		"rotulo": "85GR",
+		"valor": 85,
+		"empleadoCreador": "eduzea@gmail.com"
+	},
+	{
+		"fechaCreacion": "2017-04-07",
+		"unidades": "g",
+		"activo": true,
+		"rotulo": "85g",
+		"valor": 85,
+		"empleadoCreador": "eduzea@gmail.com"
 	}
 ]

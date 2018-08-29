@@ -51,42 +51,47 @@ def prepareRecords(entityClass, entities):
     props = classModels[entityClass]._properties
     fields = [field['id'] for field in uiConfigShow[entityClass]]
     for entity in entities:
-        dicc = entity.to_dict()
-#         dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
-        keysToRemove =[]
-        for prop_key, prop_value in dicc.iteritems():
-            if type(prop_value) == ndb.Key:
-                try:
-                    dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
-                except Exception:
-                    dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
-            if type(prop_value) == date or type(prop_value) == datetime :
-                dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
-            ############# For dealing with old objects that no longer match the model definition
-            if prop_key not in props:
-                del entity._properties[prop_key]
-                entity.put()
-                continue
-            ##########
-            if type(prop_value) == messages.Enum:
-                dicc[prop_key] = prop_value
-            if type(props[prop_key]) == ndb.StructuredProperty:
-                if type(prop_value) == list:
-                    dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})
-            elif type(prop_value) == list:
-                value = ''
-                if prop_value:
-                    if type(prop_value[0]) == ndb.Key:
-                        if prop_value[0].get():
-                            value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
+        try:
+            dicc = entity.to_dict()
+    #         dicc = {key: dicc[key] for key in dicc if key in props and type(props[key]) != ndb.StructuredProperty }
+            keysToRemove =[]
+            for prop_key, prop_value in dicc.iteritems():
+                if type(prop_value) == ndb.Key:
+                    try:
+                        dicc[prop_key]= dicc[prop_key].get().to_dict()['rotulo']
+                    except Exception:
+                        dicc[prop_key] = "Ya no hay: " + unicode(prop_value) + ' Considera borrar este registro o recrear ' + unicode(prop_value)
+                if type(prop_value) == date or type(prop_value) == datetime :
+                    dicc[prop_key] = prop_value.strftime('%Y-%m-%d')
+                ############# For dealing with old objects that no longer match the model definition
+                if prop_key not in props:
+                    del entity._properties[prop_key]
+                    entity.put()
+                    continue
+                ##########
+                if type(prop_value) == messages.Enum:
+                    dicc[prop_key] = prop_value
+                if type(props[prop_key]) == ndb.StructuredProperty:
+                    if type(prop_value) == list:
+                        dicc[prop_key] = ', '.join({item['rotulo'] for item in prop_value})
+                elif type(prop_value) == list:
+                    value = ''
+                    if prop_value:
+                        if type(prop_value[0]) == ndb.Key:
+                            if prop_value[0].get():
+                                value = prop_value[0].get().to_dict()['rotulo']#if a list, return the first value. To return a separated list, use a computed property...
+                            else:
+                                print 'Inconsistent record: ', prop_value[0]
                         else:
-                            print 'Inconsistent record: ', prop_value[0]
-                    else:
-                        value = ', '.join(str(x) for x in prop_value)
-                dicc[prop_key] = value
-        dicc = {key: dicc[key] for key in dicc if key not in keysToRemove}
-        dicc['id'] = entity.key.id()
-        records.append(dicc)
+                            value = ', '.join(str(x) for x in prop_value)
+                    dicc[prop_key] = value
+            dicc = {key: dicc[key] for key in dicc if key not in keysToRemove}
+            dicc['id'] = entity.key.id()
+            records.append(dicc)
+        except Exception as e:
+            logging.debug('Failed in {0} : {1}'.format(entityClass, entity.numero))
+            logging.debug('Error: {0}'.format(e.message))
+            continue
     return records            
 
 def createTemplateString(entity):

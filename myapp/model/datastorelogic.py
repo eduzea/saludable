@@ -3,7 +3,7 @@ Created on Aug 8, 2015
 
 @author: eduze_000
 '''
-import json, re
+import json, re, logging
 from datetime import datetime, date
 from google.appengine.api import users
 from google.appengine.ext import ndb

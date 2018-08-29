@@ -68,8 +68,57 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 				});
 	}
 	
+	saludable.setupPUC = function(model,initClase){
+		//LOAD PUC
+		var pucStore;
+		request('/getPUC?clase=' + initClase, {
+			handleAs : 'json'
+		}).then(function(response) {
+			var grupos = response.grupos;
+			var cuentas = response.cuentas;
+			var subcuentas = response.subcuentas;
+			var grupoSelect = registry.byId('grupo_' + model);
+			var cuentaSelect = registry.byId('cuenta_' + model );
+			var subCuentaSelect = registry.byId('subcuenta_' + model);
+
+			var options = [];
+			grupos.forEach(function(option){
+				options.push({ "value": option['pucnumber'], "label": option['nombre'] });
+			});
+			grupoSelect.set("options", options)
+			grupoSelect.startup();
+			grupoSelect.onChange = function(value){
+				var options = [];
+				var selected = cuentas.filter(function(item){
+					return item.grupo == value;
+					})
+				selected.forEach(function(option){
+					options.push({ "value": option['pucnumber'], "label": option['nombre'] });
+				});
+				cuentaSelect.set("options", options)
+				cuentaSelect.startup();
+				cuentaSelect.onChange(cuentaSelect.value)
+			};
+			cuentaSelect.onChange = function(value){
+				var options = [];
+				var selected = subcuentas.filter(function(item){
+					return item.cuenta == value;
+					})
+				selected.forEach(function(option){
+					options.push({ "value": option['pucnumber'], "label": option['nombre'] });
+				});
+				subCuentaSelect.set("options", options)
+				subCuentaSelect.startup();
+			};
+
+			grupoSelect.onChange(grupoSelect.value);
+			cuentaSelect.onChange(cuentaSelect.value)
+		});
+	};
 	saludable.addEntityFuncs =
 	{
+		'Activo':function(){saludable.setupPUC('Activo',1)},			
+		'Pasivo':function(){saludable.setupPUC('Pasivo',2)},
 		'Produccion':
 		function(){
 			materiaPrimaSelect = registry.byId('materiaPrima_Componente');
@@ -244,89 +293,8 @@ function(dom,registry,domAttr,request,topic,number,domStyle,on,Dialog,parser,dom
 			unidadesInput.set('uppercase',false);
 		},
 		'Bienoservicio':
-		function(){
-			request('/getPUC', 
-					{handleAs:'json'}).then(
-				function(response) {
-					pucStore = new Memory({data: response, idProperty:'pucnumber'});
-					var subcuentaStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{6}$")}),idProperty:'pucnumber'});
-					registry.byId("subcuenta_Bienoservicio").destroyRecursive(true);
-					var subcuentaSelect = new FilteringSelect({
-				        name: "subcuenta",
-				        value: "510506",
-				        store: subcuentaStore,
-				        searchAttr: "Subcuenta_Nombre",
-				        queryExpr: "*${0}*",
-				        autoComplete:false,
-				        required:false
-				    }, "subcuenta_Bienoservicio");
-					subcuentaSelect.startup();
-					
-					var claseStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{1}$")}), idProperty:'pucnumber'});
-					registry.byId("clase_Bienoservicio").destroyRecursive(true);
-					var claseSelect = new FilteringSelect({
-				        name: "clase",
-				        value: "5",
-				        store: claseStore,
-				        searchAttr: "Clase_Nombre"
-				    }, "clase_Bienoservicio");
-					claseSelect.startup();
-
-					var grupoStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{2}$")}),idProperty:'pucnumber'});
-					registry.byId("grupo_Bienoservicio").destroyRecursive(true);
-					var grupoSelect = new FilteringSelect({
-				        name: "grupo",
-				        value: "51",
-				        store: grupoStore,
-				        searchAttr: "Grupo_Nombre"
-				    }, "grupo_Bienoservicio");
-					grupoSelect.startup();
-
-					var cuentaStore = new Memory({data: pucStore.query({pucnumber:new RegExp("^[0-9]{4}$")}),idProperty:'pucnumber'});
-					registry.byId("cuenta_Bienoservicio").destroyRecursive(true);
-					var cuentaSelect = new FilteringSelect({
-				        name: "cuenta",
-				        value: "5105",
-				        store: cuentaStore,
-				        searchAttr: "Cuenta_Nombre",
-				        required:false
-				    }, "cuenta_Bienoservicio")
-					cuentaSelect.startup();			
-
-					
-					claseSelect.onChange = function(clase){
-						grupoSelect.query.Clase = clase;
-						var results = grupoSelect.store.query({'Clase':clase});
-						if (results.length == 0){
-							grupoSelect.query.Clase = '';
-							grupoSelect.set("value", '');
-						}else{
-							grupoSelect.set("value", claseStore.getIdentity(results[0]));					
-						}
-					}
-					
-					grupoSelect.onChange = function(grupo){
-						cuentaSelect.query.Grupo = grupo;
-						var results = cuentaSelect.store.query({'Grupo':grupo});
-						if (results.length == 0){
-							cuentaSelect.query.Grupo = '';
-							cuentaSelect.set("value", '');
-						}else{
-							cuentaSelect.set("value", grupoStore.getIdentity(results[0]));
-						}
-					}
-					
-					cuentaSelect.onChange = function(cuenta){
-						subcuentaSelect.query.Cuenta = cuenta;
-						var results = subcuentaSelect.store.query({'Cuenta':cuenta});
-						if (results.length == 0){
-							subcuentaSelect.query.Cuenta = '';
-							subcuentaSelect.set("value", '');
-						}else{
-							subcuentaSelect.set("value", cuentaStore.getIdentity(results[0]));
-						}
-					}
-				});
+			//Should implement dynamic selects here.
+		function(){			
 		}
 	},
 	saludable.showEntitiesFuncs={

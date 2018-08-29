@@ -1,6 +1,7 @@
 //# sourceURL=../static/my/js/home.js
 require(["dijit/layout/AccordionContainer",
 		"dijit/Dialog",
+		"dijit/ConfirmDialog",
 		"dijit/form/Button",
 		'dojo/dom',
 		"dojo/dom-style",
@@ -16,9 +17,10 @@ require(["dijit/layout/AccordionContainer",
 		"dojo/store/Memory", 
 		"dojo/ready",
 		'dojo/request',
-		"dojox/widget/Standby", 
+		"dojox/widget/Standby",
+		"dijit/ProgressBar",
 		"dojo/domReady!"], 
-function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby) {
+function(AccordionContainer,Dialog,ConfirmDialog,Button,dom,domStyle, domConstruct, parser, registry, on, ContentPane, ExpandoPane, TabContainer, Model, Tree, Memory, ready,request,Standby,ProgressBar) {
 	ready(function() {
 
 		////////// CONFIGURATION //////////////////
@@ -39,7 +41,7 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'PROVEEDORES', 'id':'Proveedor','template':'','entityClass':'Proveedor'},
 			{'title':'BIENES O SERVICIOS', 'id':'Bienoservicio','template':'','entityClass':'Bienoservicio'},
 			{'title':'PAGOS', 'id':'PagoRecibido','template':'','entityClass':'PagoRecibido'},
-			{'title':'ACTIVOS FIJOS', 'id':'ActivoFijo','template':'','entityClass':'ActivoFijo'},
+			{'title':'ACTIVOS', 'id':'Activo','template':'','entityClass':'Activo'},
 			{'title':'CAPITAL SOCIAL', 'id':'CapitalSocial','template':'','entityClass':'CapitalSocial'},
 			{'title':'PASIVOS', 'id':'Pasivo','template':'','entityClass':'Pasivo'},
 			{'title':'ACREEDORES', 'id':'Acreedor','template':'','entityClass':'Acreedor'},
@@ -71,6 +73,7 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 			{'title':'EMPLEADOS', 'id':'Empleado','template':'','entityClass':'Empleado'},
 			{'title':'CUENTAS BANCARIAS', 'id':'CuentaBancaria','template':'','entityClass':'CuentaBancaria'},
 			{'title':'BANCOS', 'id':'Banco','template':'','entityClass':'Banco'},
+			{'title':'CIUDADES', 'id':'Ciudad','template':'','entityClass':'Ciudad'},
 			{'title':'NUMEROS', 'id':'Numero','template':'numeros','entityClass':'Numero'}
 		];
 
@@ -141,11 +144,30 @@ function(AccordionContainer,Dialog,Button,dom,domStyle, domConstruct, parser, re
 		document.body.appendChild(standby.domNode);
 		standby.startup();
 		
+		//App-level progress bar
+		var progressDialog = new Dialog({
+			title: "Obteniendo datos del servidor...",
+	        style: "width: 300px",
+	        id:'progress_dialog'
+	    });
+		
+		var progressBar = new ProgressBar({
+	        style: "width: 280px",
+	        id: 'progress_bar'
+	    })
+
 		//App-level dialog to allow server to send messages to the user.
 		var serverMessage = new Dialog({
 	        title: "El servidor dice...",
 	        style: "width: 300px",
 	        id:'server_message'
+	    });
+		
+		//App-level comnfirm dialog to allow server to send messages to the user.
+		var confirmServerMessage = new ConfirmDialog({
+	        title: "El servidor dice...",
+	        style: "width: 500px",
+	        id:'confirm_server_message'
 	    });
 	
 		

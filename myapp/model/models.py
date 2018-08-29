@@ -1,9 +1,10 @@
 from __future__ import division
 from google.appengine.ext import ndb
 from google.appengine.ext.ndb import msgprop
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
+from dateutil.relativedelta import relativedelta
 from google.appengine.ext.db import ComputedProperty
-from protorpc import messages 
+from protorpc import messages
 
 class Initialized(ndb.Model):
     pass
@@ -64,7 +65,9 @@ class LineaDeProducto(messages.Enum):
     PULPAS = 0
     CONSERVAS = 1
     GALLETAS = 2
-    PROTEINA = 3
+    CONGELADOS = 3
+    EMPANADAS = 4
+    TORTAS = 5
 
 class Unidades(messages.Enum):
     g = 0 #gramos
@@ -104,7 +107,7 @@ class TipoEgreso(Record):
     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 class Bienoservicio(Record):
-    tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo/produccion vs indirecto/admin y ventas)
+#     tipo = ndb.KeyProperty(kind=TipoEgreso)# Clasificacion economica (directo/produccion vs indirecto/admin y ventas)
     clase = ndb.KeyProperty(kind=Clase)
     grupo = ndb.KeyProperty(kind=Grupo)
     cuenta = ndb.KeyProperty(kind=Cuenta, required=False)
@@ -218,6 +221,22 @@ def computeIVA(venta, producto):
     else:
         return 0
 
+def getSujetoIVA(self):
+    obj = self.producto.get()
+    if obj:
+        return obj.sujetoIVA
+    else:
+        print 'Factura: {0} - Producto: {1}'.format(self.factura, self.producto.id())
+        return False
+    
+def getPeso(self):
+    porcion = self.porcion.get()
+    if porcion:
+        return porcion.valor * self.cantidad
+    else:
+        print 'Factura: {0} - Porcion: {1}'.format(self.factura, self.porcion.id())
+        return 0
+
 class Venta(Record):
     factura = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
@@ -227,9 +246,9 @@ class Venta(Record):
     cantidad = ndb.IntegerProperty()
     precio = ndb.IntegerProperty()
     venta = ndb.IntegerProperty()
-    sujetoIVA = ndb.ComputedProperty(lambda self: self.producto.get().sujetoIVA)
+    sujetoIVA = ndb.ComputedProperty(lambda self: getSujetoIVA(self))#self.producto.get().sujetoIVA)
     iva = ndb.ComputedProperty(lambda self: computeIVA(self.venta,self.producto))
-    peso = ndb.ComputedProperty(lambda self: self.porcion.get().valor * self.cantidad)
+    peso = ndb.ComputedProperty(lambda self: getPeso(self))#self.porcion.get().valor * self.cantidad)
     rotulo = ndb.ComputedProperty(lambda self: self.producto.id() +' '+ self.porcion.id())
     
 
@@ -244,14 +263,11 @@ class NumeroEgreso(Record):
     
 class NumeroRemision(Record):
     consecutivo = ndb.IntegerProperty()
-
-class NumeroDeuda(Record):
-    consecutivo = ndb.IntegerProperty()
-    
+   
 class NumeroOtrosIngresos(Record):
     consecutivo = ndb.IntegerProperty()
     
-class NumeroActivoFijo(Record):
+class NumeroActivo(Record):
     consecutivo = ndb.IntegerProperty()
 
 class NumeroPagoRecibido(Record):
@@ -300,14 +316,15 @@ class Factura(Record):
     pagoRef = ndb.IntegerProperty()
     remisiones = ndb.IntegerProperty(repeated = True)
     
-class MedioDePago(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
-
 class CuentaTransferencias(Record):    
     numero = ndb.StringProperty(indexed=True)
     cliente = ndb.KeyProperty(kind=Cliente)
     rotulo = ndb.ComputedProperty(lambda self: self.cliente.id() + '-' + self.numero)
+    
+class MedioDePago(messages.Enum):
+    EFECTIVO = 0
+    CHEQUE = 1
+    TRANSFERENCIA = 2
     
 class PagoRecibido(Record):
     numero = ndb.IntegerProperty()
@@ -316,7 +333,7 @@ class PagoRecibido(Record):
     descripcion = ndb.StringProperty(indexed=True)
     comentario =  ndb.TextProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
-    medio = ndb.KeyProperty(kind=MedioDePago)
+    medio = msgprop.EnumProperty(MedioDePago, required=True, indexed=True, default=MedioDePago.EFECTIVO)
     documento = ndb.StringProperty(indexed=True)
     monto = ndb.IntegerProperty()
     facturas = ndb.IntegerProperty(repeated = True)
@@ -365,14 +382,9 @@ class UnidadDeAlmacenamiento(Record):
     ubicacion = ndb.ComputedProperty(lambda self: '{0}.{1}.{2}'.format(self.fila.id(), self.columna.id(), self.nivel.id()))
     contenido = ndb.StructuredProperty(FraccionDeLote, repeated = True)
 
-
 class TipoMovimiento(messages.Enum):
     ENTRADA = 0
     SALIDA = 1
-
-# class TipoMovimiento(Record):
-#     nombre = ndb.StringProperty(indexed=True)
-#     rotulo = ndb.ComputedProperty(lambda self: self.nombre)
     
 class MovimientoDeInventario(Record):
     fecha = ndb.DateProperty()
@@ -384,6 +396,13 @@ class MovimientoDeInventario(Record):
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()
 
+#Este modelo registra una foto del inventario en una fecha dada
+class Existencias(Record):
+    fecha = ndb.DateProperty()
+    registros = ndb.StructuredProperty(FraccionDeLoteUbicado, repeated=True)
+
+
+#########################################################
 class Pedido(Record):
     numero = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
@@ -443,32 +462,41 @@ class Egreso(Record):
     resumen = ndb.StringProperty(indexed=True)
     comentario = ndb.TextProperty()
    
+
+class TipoAcreedor(messages.Enum):
+    PERSONA_JURIDICA = 0
+    PERSONA_NATURAL = 1
+
+class FrecuenciaDePago(messages.Enum):
+    MENSUAL = 0
+    TRIMESTRAL = 1
+    SEMESTRAL = 2
+    ANUAL = 3
+    NO_DEFINIDA = 4
     
-class TipoAcreedor(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo = ndb.ComputedProperty(lambda self: self.nombre)
 
 class Acreedor(Record):
-    tipo = ndb.KeyProperty(kind=TipoAcreedor)
+    tipo = msgprop.EnumProperty(TipoAcreedor, required=True, indexed=True, default=TipoAcreedor.PERSONA_JURIDICA)
     nombre = ndb.StringProperty(indexed=True)
     nit = ndb.StringProperty(indexed=True)
     direccion = ndb.StringProperty(indexed=True)
     telefono = ndb.StringProperty(indexed=True)
-    ciudad = ndb.StringProperty(indexed=True)
+    ciudad = ndb.KeyProperty(kind=Ciudad)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
     
 class Pasivo(Record):
     numero = ndb.IntegerProperty()
-    fecha = ndb.DateProperty()
     grupo = ndb.KeyProperty(kind=Grupo)
     cuenta = ndb.KeyProperty(kind=Cuenta)
+    subcuenta = ndb.KeyProperty(kind=SubCuenta)
+    frecuencia = msgprop.EnumProperty(FrecuenciaDePago, required=True, indexed=True, default=FrecuenciaDePago.MENSUAL)
+    fecha = ndb.DateProperty()
     acreedor = ndb.KeyProperty(kind=Acreedor)
     monto = ndb.IntegerProperty()
-    interes = ndb.FloatProperty(default=0)
-    vencimiento = ndb.DateProperty()
+    interes = ndb.FloatProperty(default=0.0)
     comentario = ndb.TextProperty()
-    montoPagado = ndb.IntegerProperty(default=0)
-    pagada = ndb.ComputedProperty(lambda self: 100 * self.montoPagado / self.monto)
+    saldo = ndb.IntegerProperty(default=0)
+    pagada = ndb.ComputedProperty(lambda self: 100 * (self.monto - self.saldo) / self.monto)
 
 class CapitalPagado(Record):
     fecha = ndb.DateProperty()
@@ -480,23 +508,31 @@ class CapitalSocial(Record):
     total =  ndb.IntegerProperty()
     participacion = ndb.ComputedProperty(lambda self: 100 * self.total / CapitalPagado.query().fetch()[-1].valor)
     rotulo= ndb.ComputedProperty(lambda self: self.socio)
-    
+
 class Activo(Record):
     numero = ndb.IntegerProperty()
+    fecha = ndb.DateProperty() #Fecha de adquisicion del activo
     nombre = ndb.StringProperty(indexed=True)
     grupo = ndb.KeyProperty(kind=Grupo)
     cuenta = ndb.KeyProperty(kind=Cuenta)
     subcuenta = ndb.KeyProperty(kind=SubCuenta)
-    comentario = ndb.TextProperty()
-
-class ActivoFijo(Activo):
-    fechaDeAdquisicion = ndb.DateProperty() #Fecha de adquisicion del activo
     precioUnitario = ndb.IntegerProperty()
     cantidad = ndb.IntegerProperty()
-    valorPagado = ndb.ComputedProperty(lambda self: self.precioUnitario * self.cantidad)
-    valorActual = ndb.IntegerProperty()#depreciacion aqui
-    total = ndb.ComputedProperty(lambda self: self.valorActual)
+    valor = ndb.ComputedProperty(lambda self: self.precioUnitario * self.cantidad)#valor de compra
+    vidaUtil = ndb.IntegerProperty()
+    valorDeSalvamento = ndb.IntegerProperty(default = 0) #valor de venta al final de la vida util, por unidad
+    tasaDeDepreciacion = ndb.ComputedProperty(lambda self: (self.valor - (self.valorDeSalvamento*self.cantidad))/self.vidaUtil)
+    edad = ndb.ComputedProperty(lambda self: (datetime.now().date() - self.fecha).days/365.0)
+    depreciacionAcumulada = ndb.ComputedProperty(lambda self: self.tasaDeDepreciacion * self.edad) # depreciacion total
+    valorActual = ndb.ComputedProperty(lambda self: self.valor - self.depreciacionAcumulada)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
+    comentario = ndb.TextProperty()
+    
+class ActivoIntangible(Activo):
+    fecha = ndb.DateProperty() #Fecha de adquisicion del activo
+    valor = ndb.IntegerProperty()
+    vidaUtil = ndb.IntegerProperty()
+    
 
 class Banco(Record):
     nombre = ndb.StringProperty(indexed=True)
@@ -505,14 +541,14 @@ class Banco(Record):
     contacto = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.nombre)
 
-class TipoDeCuenta(Record):
-    nombre = ndb.StringProperty(indexed=True)
-    rotulo= ndb.ComputedProperty(lambda self: self.nombre)    
+class TipoDeCuenta(messages.Enum):
+    Ahorros = 0
+    Corriente = 1
 
 class CuentaBancaria(Record):
     numero = ndb.StringProperty(indexed=True)
     banco = ndb.KeyProperty(kind=Banco)
-    tipo = ndb.KeyProperty(kind=TipoDeCuenta)
+    tipo = msgprop.EnumProperty(TipoDeCuenta, required=True, indexed=True)
     titular = ndb.StringProperty(indexed=True)
     rotulo= ndb.ComputedProperty(lambda self: self.banco.get().rotulo +'-' + self.numero)
 
@@ -580,7 +616,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'OtrosIngresos':['numero'],
            'CapitalSocial':['socio'],
            'CapitalPagado':['fecha'],
-           'ActivoFijo':['numero'],
+           'Activo':['numero'],
            'CuentaBancaria':['numero'],
            'Banco':['nombre'],
            'TipoDeCuenta':['nombre'],
@@ -595,7 +631,7 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'UnidadDeAlmacenamiento':['fila','columna','nivel'],
            'FraccionDeLote':['fecha','producto','porcion'],
            'FraccionDeLoteUbicado':['ubicacion','fecha','producto','porcion'],
-           'ExistenciasRegistro':['sucursal','producto','porcion'],
+           'Existencias':['fecha'],
            'Produccion':['fecha','producto'],
            'ProductoPorcion':['porcion'],
            'Fuente':['nombre'],
@@ -608,9 +644,9 @@ keyDefs = {'Cliente':['nombre','negocio'],
            'NumeroFactura':['consecutivo'],
            'NumeroRemision':['consecutivo'],
            'NumeroEgreso':['consecutivo'],              
-           'NumeroDeuda':['consecutivo'],
+           'NumeroPasivo':['consecutivo'],
            'NumeroOtrosIngresos':['consecutivo'],
-           'NumeroActivoFijo':['consecutivo'],
+           'NumeroActivo':['consecutivo'],
            'NumeroPagoRecibido':['consecutivo'],
            'NumeroMovimientoDeEfectivo':['consecutivo'],
            }
@@ -652,7 +688,8 @@ classModels = {'Cliente':Cliente,
                'OtrosIngresos':OtrosIngresos,
                'CapitalSocial':CapitalSocial,
                'CapitalPagado':CapitalPagado,
-               'ActivoFijo':ActivoFijo,
+               'Activo':Activo,
+               'ActivoIntangible':ActivoIntangible,
                'CuentaBancaria':CuentaBancaria,
                'Banco':Banco,
                'TipoDeCuenta':TipoDeCuenta,
@@ -666,6 +703,7 @@ classModels = {'Cliente':Cliente,
                'MovimientoDeInventario':MovimientoDeInventario,
                'TipoMovimiento':TipoMovimiento,
                'UnidadDeAlmacenamiento':UnidadDeAlmacenamiento,
+               'Existencias':Existencias,
                'Fila':Fila,
                'Columna':Columna,
                'Nivel':Nivel,
@@ -678,9 +716,8 @@ singletons = {'NumeroPedido': NumeroPedido,
               'NumeroFactura':NumeroFactura,
               'NumeroRemision':NumeroRemision,
               'NumeroEgreso':NumeroEgreso,              
-              'NumeroDeuda':NumeroDeuda,
               'NumeroOtrosIngresos':NumeroOtrosIngresos,
-              'NumeroActivoFijo':NumeroActivoFijo,
+              'NumeroActivo':NumeroActivo,
               'NumeroPagoRecibido':NumeroPagoRecibido,
               'NumeroMovimientoDeEfectivo':NumeroMovimientoDeEfectivo
               }

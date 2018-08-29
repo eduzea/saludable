@@ -1,6 +1,12 @@
 import webapp2
 from myapp.controller.controller import *
 from myapp.initSaludable import initSaludable
+import requests
+import requests_toolbelt.adapters.appengine #to be able to use REQUESTS library in appengine
+
+# Use the App Engine Requests adapter. This makes sure that Requests uses
+# URLFetch.
+requests_toolbelt.adapters.appengine.monkeypatch()
 
 initSaludable()
 application = webapp2.WSGIApplication([
@@ -53,7 +59,7 @@ application = webapp2.WSGIApplication([
     # Data Management
     ('/exportScript', ExportScript),
     ('/importScript', ImportScript),
-    ('/setNumero', SetNumber),
+    ('/setNumero', SetNumero),
     ('/getNext', GetNextNumber),
     ('/importCSV', ImportCSV),
     # Informes
@@ -67,8 +73,9 @@ application = webapp2.WSGIApplication([
     ('/getDetalleEstadoDeResultados',GetDetalleEstadoDeResultados),
     ('/getBalance',GetBalance),
     ('/getDetalleBalance',GetDetalleBalance),
-    ('/getPUC',GetPUC),
+    ('/getPUC',GetPUC_From_CSV),
     ('/initPUC',InitPUC),
     #MISC
-    ('/fix',Fix)
+    ('/fix',Fix),
+    ('/alegraImport',AlegraExport)
 ], debug=True)

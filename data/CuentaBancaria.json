@@ -1,12 +1,22 @@
 [
 	{
-		"fechaCreacion": "2015-07-25",
-		"titular": "Salud Able Foods SAS",
+		"fechaCreacion": "2018-06-14",
+		"titular": "SALUD ABLE FOODS SAS",
 		"tipo": "Corriente",
-		"numero": "21002803574",
+		"numero": "210028035741",
 		"activo": true,
-		"rotulo": "Banco Caja Social-21002803574",
+		"rotulo": "BANCO CAJA SOCIAL-210028035741",
 		"empleadoCreador": "eduzea@gmail.com",
-		"banco": "Banco.Caja.Social"
+		"banco": "BANCO.CAJA.SOCIAL"
+	},
+	{
+		"fechaCreacion": "2018-06-14",
+		"titular": "SALUD ABLE FOODS SAS",
+		"tipo": "Corriente",
+		"numero": "82966006737",
+		"activo": true,
+		"rotulo": "BANCOLOMBIA-82966006737",
+		"empleadoCreador": "eduzea@gmail.com",
+		"banco": "BANCOLOMBIA"
 	}
 ]

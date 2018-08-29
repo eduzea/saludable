@@ -158,6 +158,8 @@ def getTagHTML(prop,entityClass, customId=None):
                 attrReplace += 'id="' + customId + '" name="' + customId + '" '
         else:
             attrReplace += key + '="' + value + '" '
+    if 'key' == 'lowerCase':
+        attrReplace += 'data-dojo-props="trim:true, lowercase:true"'
     if type(propType) == ndb.KeyProperty:
         sortField = None
         if 'sort' in prop:

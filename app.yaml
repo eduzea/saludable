@@ -1,5 +1,5 @@
 application: saludable-foods-sas
-version: 20180216
+version: 20180309
 runtime: python27
 api_version: 1
 threadsafe: true
@@ -10,6 +10,9 @@ inbound_services:
 handlers:
 
 - url: /facturasVencidas
+  script: cron_handler.app
+  
+- url: /inventarioDiario
   script: cron_handler.app
   
 - url: /favicon.ico

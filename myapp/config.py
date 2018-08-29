@@ -1,3 +1,4 @@
+# coding=utf-8
 from model.models import *
 NUMERO_DE_FACTURA_INICIAL = 2775
 
@@ -49,7 +50,7 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                       ],
             'Empleado':[{'id':'nombre', 'ui':'Nombre', 'required':'true', 'style':'width:10em'},
                         {'id':'apellido', 'ui':'Apellido', 'required':'true', 'style':'width:10em'},
-                        {'id':'email', 'ui':'Email', 'required':'true', 'dojoprops':'validator:dojox.validate.isEmailAddress','style':'width:10em'},
+                        {'id':'email', 'ui':'Email', 'required':'true', 'dojoprops':'validator:dojox.validate.isEmailAddress','style':'width:10em','lowercase':'true'},
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''},
                         {'id':'writePermission', 'ui':'Puede Modificar', 'required':'true', 'style':''}
                         ],
@@ -96,7 +97,6 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':''}
                          ],
             'Bienoservicio':[
-                             {'id':'tipo','ui':'Tipo','style':'width:10em'},
                              {'id':'clase','ui':'Clase', 'required':'true', 'style':'width:10em'},
                              {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:10em'},
                              {'id':'cuenta','ui':'Cuenta', 'required':'false', 'style':'width:10em'},
@@ -174,17 +174,17 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                         {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'}
                         ],
             'Pasivo':[
-                     {'id':'numero','ui':'No.','readonly':'true','style':'width:2em','auto':''},
-                     {'id':'fecha', 'ui':'Fecha','style':'width:7em'},
-                     {'id':'grupo','ui':'Grupo','style':'width:8em'},
-                     {'id':'cuenta','ui':'Cuenta','style':'width:8em'},
+                     {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:8em'},
+                     {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:8em'},
+                     {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:8em'},
                      {'id':'acreedor','ui':'Acreedor','style':'width:8em'},
+                     {'id':'numero','ui':'No.','style':'width:8em'},
+                     {'id':'fecha', 'ui':'Fecha','style':'width:7em'},                     
+                     {'id':'frecuencia','ui':'Frecuencia de Pago','style':'width:10em'},
                      {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
                      {'id':'interes','ui':'Interes(EA)','required':'true', 'style':'width:5em','default':'0'},
-                     {'id':'vencimiento', 'ui':'Vencimiento','style':'width:7em'},
-                     {'id':'montoPagado', 'ui':'Monto Pagado','required':'true','style':'width: 5em','default':'0'},
+                     {'id':'saldo', 'ui':'Saldo','required':'true','style':'width: 5em','default':'0'},
                      {'id':'comentario', 'ui':'Comentario','required':'true','style':'width:10em;'},
-#                      {'id':'pagada', 'ui':'% Pagado','required':'true','style':'width:3em','default':'0'},
                      ],
             'OtrosIngresos':[
                              {'id':'numero','ui':'No.','required':'true', 'readonly':'true','auto':'','style':'width:2em'},
@@ -203,16 +203,24 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                              {'id':'fecha', 'ui':'Fecha','style':'width:10em','required':'true'},
                              {'id':'valor','ui':'Valor','required':'true','style':'width:10em'},
                              ],
-            'ActivoFijo':[
+            'Activo':[
                       {'id':'numero','ui':'No.','required':'true', 'style':'width:2em', 'readonly':'true', 'auto':'true'},
-                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:10em','required':'true'},
+                      {'id':'fecha', 'ui':'Fecha de compra','style':'width:10em','required':'true'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:8em'},
                       {'id':'cuenta','ui':'Cuenta', 'required':'true', 'style':'width:8em'},
                       {'id':'subcuenta','ui':'Subcuenta', 'required':'true', 'style':'width:8em'},
-                      {'id':'precioUnitario','ui':'Precio Unitario', 'required':'true', 'style':'width:8em'},
+                      {'id':'precioUnitario','ui':'Precio de Compra (Unitario)', 'required':'true', 'style':'width:8em'},
                       {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:8em'},
-                      {'id':'valorActual','ui':'Valor Actual','required':'true','style':'width:8em'},
+                      {'id':'vidaUtil','ui':'Vida Util (años)','required':'true','style':'width:8em'},
+                      {'id':'valorDeSalvamento','ui':'Valor de Salvamento','required':'true','style':'width:8em'}
+                      ],
+            'ActivoIntangible':[
+                      {'id':'numero','ui':'No.','required':'true', 'style':'width:2em', 'readonly':'true', 'auto':'true'},
+                      {'id':'fecha', 'ui':'Fecha de compra','style':'width:8em','required':'true'},
+                      {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
+                      {'id':'valor','ui':'Valor Incial','required':'true','style':'width:8em'},
+                      {'id':'vidaUtil','ui':'Vida Util (años)','required':'true','style':'width:8em'},
                       ],
             'CuentaBancaria':[
                               {'id':'banco','ui':'Banco','style':'width:10em'},
@@ -254,8 +262,6 @@ uiConfigAdd = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','style
                               {'id':'fecha', 'ui':'Fecha','style':'width:8em','required':'true'},
                               {'id':'cliente','ui':'Cliente','style':'width:15em'},
                               {'id':'medio','ui':'Medio de pago','style':'width:8em'},
-#                               {'id':'oficina','ui':'Oficina','style':'width:8em'},
-#                               {'id':'documento','ui':'Documento','required':'false', 'style':'width:10em'},
                               {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
                               {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:5em'}
                               ],
@@ -316,6 +322,7 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
             'Producto':[{'id':'linea','ui':'Linea', 'required':'true','style':'width:5em'},
                         {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:20em'},
                         {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'},
+                        {'id':'sujetoIVA', 'ui':'IVA', 'required':'true', 'style':'width:3em'},
                         {'id':'componentes','ui':'Componentes','style':'width:10em'},
                         ],
             'MateriaPrima':[{'id':'bienoservicio','ui':'Tipo', 'required':'true', 'style':'width:10em'},
@@ -333,7 +340,8 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                           {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:5em'}],
             'Porcion':[{'id':'valor','ui':'Porcion', 'required':'true', 'style':'width:10em'},
                        {'id':'unidades','ui':'Unidades', 'required':'true', 'style':'width:10em'}],
-            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'}],
+            'GrupoDePrecios':[{'id':'nombre', 'ui':'Nombre', 'required':'true','style':'width:10em'},
+                              {'id':'activo', 'ui':'Activo', 'required':'true','style':''}],
             'Precio':[{'id':'producto','ui':'Producto', 'style':'width:20em'},
                       {'id':'porcion','ui':'Porcion','style':'width:5em'},
                       {'id':'grupoDePrecios','ui':'Grupo de Precios','style':'width:8em'},
@@ -385,7 +393,6 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                          {'id':'activo', 'ui':'Activo', 'required':'true', 'style':'width:3em'}
                          ],
             'Bienoservicio':[
-                             {'id':'tipo', 'ui':'Tipo de Egreso', 'style':'width:10em'},
                              {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                              {'id':'clase','ui':'Clase', 'required':'true', 'style':'width:10em'},
                              {'id':'grupo','ui':'Grupo', 'required':'true', 'style':'width:10em'},
@@ -461,16 +468,14 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                         {'id':'telefono','ui':'Telefono', 'required':'true', 'style':'width:5em'}
                         ],
             'Pasivo':[
-                     {'id':'numero','ui':'No.','readonly':'true','style':'width:2em','auto':''},
-                     {'id':'fecha', 'ui':'Fecha','style':'width:7em'},
-                     {'id':'empleado','ui':'Empleado','style':'width:8em'},
                      {'id':'acreedor','ui':'Acreedor','style':'width:8em'},
+                     {'id':'numero','ui':'No.','style':'width:8em'},
+                     {'id':'fecha', 'ui':'Fecha','style':'width:7em'},
+                     {'id':'frecuencia','ui':'Frecuencia de Pago','style':'width:10em'},
                      {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
                      {'id':'interes','ui':'Interes(EA)','required':'true', 'style':'width:5em','default':'0'},
-                     {'id':'vencimiento', 'ui':'Vencimiento','style':'width:7em'},
-                     {'id':'montoPagado', 'ui':'Monto Pagado','required':'true','style':'width: 5em','default':'0'},
+                     {'id':'saldo', 'ui':'Saldo','required':'true','style':'width: 5em','default':'0'},
                      {'id':'comentario', 'ui':'Comentario','required':'true','style':'width:10em;'},
-#                      {'id':'pagada', 'ui':'% Pagado','required':'true','style':'width:3em','default':'0'},
                      ],
             'OtrosIngresos':[
                              {'id':'numero','ui':'No.','required':'true', 'readonly':'true','auto':'','style':'width:2em'},
@@ -489,14 +494,17 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                              {'id':'fecha', 'ui':'Fecha','style':'width:10em','required':'true'},
                              {'id':'valor','ui':'Valor','required':'true','style':'width:10em'},
                              ],
-            'ActivoFijo':[
+            'Activo':[
                       {'id':'numero','ui':'No.','required':'true', 'style':'width:2em', 'readonly':'true', 'auto':'true'},
-                      {'id':'fechaDeAdquisicion', 'ui':'Fecha de compra','style':'width:8em','required':'true'},
+                      {'id':'grupo','ui':'Tipo','style':'width:10em'},
+                      {'id':'fecha', 'ui':'Fecha de compra','style':'width:8em','required':'true'},
                       {'id':'nombre','ui':'Nombre', 'required':'true', 'style':'width:10em'},
                       {'id':'precioUnitario','ui':'Precio Unitario', 'required':'true', 'style':'width:10em'},
                       {'id':'cantidad','ui':'Cantidad', 'required':'true', 'style':'width:10em'},
-                      {'id':'valorPagado','ui':'Valor Pagado','required':'true','style':'width:8em'},
-                      {'id':'valorActual','ui':'Valor Actual','required':'true','style':'width:8em'},
+                      {'id':'valor','ui':'Valor Inicial ($)','required':'true','style':'width:8em'},
+                      {'id':'vidaUtil','ui':'Vida Util (años)','required':'true','style':'width:8em'},
+                      {'id':'edad','ui':'Edad (años)','required':'true','style':'width:8em'},
+                      {'id':'depreciacionAcumulada','ui':'Depreciacion Acumulada ($)','required':'true','style':'width:8em'}
                       ],
             'CuentaBancaria':[
                               {'id':'banco','ui':'Banco','style':'width:20em'},
@@ -538,8 +546,6 @@ uiConfigShow = {'Cliente':[{'id':'nombre','ui':'Nombre', 'required':'true','styl
                               {'id':'fecha', 'ui':'Fecha','style':'width:5em','required':'true'},
                               {'id':'cliente','ui':'Cliente','style':'width:15em'},
                               {'id':'medio','ui':'Medio de pago','style':'width:8em'},
-#                               {'id':'oficina','ui':'Oficina','style':'width:5em'},
-#                               {'id':'documento','ui':'Documento','required':'false', 'style':'width:5em'},
                               {'id':'monto','ui':'Monto','required':'true', 'style':'width:5em'},
                               {'id':'facturas','ui':'Facturas','required':'true', 'style':'width:10em'},
                               ],

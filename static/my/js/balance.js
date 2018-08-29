@@ -31,6 +31,49 @@ require([
 		}
 	};
 	
+	var config = {
+			'Activo Disponible':{
+				rows:["Banco"],
+				vals:["Saldo"],
+				aggregatorName:'Suma'
+			},
+			'Deudores': {
+				rows : ["Cliente"],
+				vals : ["Deuda"],
+				aggregatorName:'Suma'
+			},
+			'Inventarios': {
+				rows : ["Producto"],
+				vals : ["Valor"],
+				aggregatorName:'Suma'
+			},'Propiedad, Planta y Equipo': {
+				rows : ["Activo"],
+				vals : ["Valor"],
+				aggregatorName:'Suma'
+			},
+			'Depreciacion Acumulada': {
+				rows : ["Activo"],
+				vals : ["Depreciacion"],
+				aggregatorName:'Suma'
+			},
+			'Intangibles': {
+				rows : ["Activo"],
+				vals : ["Valor"],
+				aggregatorName:'Suma'
+			},
+			'Diferidos': {
+				rows : ["Diferido"],
+				vals : ["Valor"],
+				aggregatorName:'Suma'
+			},
+			'Obligaciones Financieras': {
+				rows : ["Banco","Numero"],
+				vals : ["Valor"],
+				aggregatorName:'Suma'
+			},
+			
+	}
+	
 	//Set up resumen grid
 	var resumenColumns = [
 		{id:'cuenta', field:'cuenta', name:'Cuenta',style:"text-align: left; font-weight: bold;", width:'12em'},
@@ -82,19 +125,18 @@ require([
             			tc.selectChild(cp);
             			return
             		};
-            		addTab(rowData.id);
+            		addTab(rowData.cuenta);
                     registry.byId('standby_centerPane').show();
             		var desde = registry.byId('fecha_pivot_1_balance').value.toISOString().split('T')[0];
             		var hasta = registry.byId('fecha_pivot_2_balance').value.toISOString().split('T')[0];
             		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
             		registry.byId('standby_centerPane').show();
-                    request("getDetalleBalance?cuenta=" + encodeURIComponent(rowData.id) + appendUrl,
+                    request("getDetalleBalance?cuenta=" + encodeURIComponent(rowData.cuenta) + appendUrl,
                     		{handleAs:'json'}).then(
                     	function(response){
-            				var detalleId = rowData.id;
-                    		var cuentaConfig = (detalleId == 'Ingresos Operacionales') ? 'Ventas' : 'Gastos';
+            				var detalleId = rowData.cuenta;
                     		$(function() {
-                    			$("#pivot_balance").pivotUI(response, config[cuentaConfig],false,'es');
+                    			$("#pivot_balance").pivotUI(response, config[detalleId],false,'es');
                 			});
             				//It seems the jquery selector can only do its thing on divs in the mark-up, not the
             				//dojo created ones. Thus we have to create it first, and then move it to the desired
@@ -109,7 +151,7 @@ require([
 			btn.placeAt(cellWidget.domNode);
 		},
 	setCellValue: function(gridData, storeData, cellWidget){
-		if(cellWidget.cell.row.id.indexOf('Utilidad') !== -1 || cellWidget.cell.row.id.indexOf('Margen') !== -1 ){
+		if(cellWidget.cell.row.id.indexOf('total') !== -1 ){
 			domStyle.set(cellWidget.domNode, 'visibility', 'hidden');
 			}
 		}

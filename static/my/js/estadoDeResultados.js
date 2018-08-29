@@ -43,6 +43,13 @@ require([
 					exclusions:{},
 					hiddenAttributes:[],
 					aggregatorName:'Suma'
+		},
+		'Gastos No Operacionales':{
+			rows: ['bienoservicio', 'detalle'],
+			vals: ['total'],
+			exclusions:{},
+			hiddenAttributes:[],
+			aggregatorName:'Suma'
 		}
 	}
 	
@@ -107,7 +114,12 @@ require([
                     		{handleAs:'json'}).then(
                     	function(response){
             				var detalleId = rowData.id;
-                    		var cuentaConfig = (detalleId == 'Ingresos Operacionales') ? 'Ventas' : 'Gastos';
+                    		var cuentaConfig = '';
+                    		if (detalleId in config){
+                    			cuentaConfig = detalleId;
+                    		}else{
+                    			cuentaConfig = (detalleId == 'Ingresos Operacionales') ? 'Ventas' : 'Gastos';
+                    		}
                     		$(function() {
                     			$("#pivot_estadoDeResultados").pivotUI(response, config[cuentaConfig],false,'es');
                 			});

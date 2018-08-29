@@ -54,24 +54,106 @@ function(request,registry,parser,dom,on,query,domClass,Standby) {
 	parser.instantiate([dom.byId('GenerarInformeBtn_' + entityClass)]);
 	//Modal to show its loading
 	var standby = new Standby({target: 'pivot_standby'});
-	document.body.appendChild(standby.domNode);
-	standby.startup();
-	on(registry.byId('GenerarInformeBtn_' + entityClass),'click', function(e){
-		var desde = registry.byId('fecha_pivot_1_' + entityClass).value.toISOString().split('T')[0];
-		var hasta =  registry.byId('fecha_pivot_2_' + entityClass).value.toISOString().split('T')[0];
-		var appendUrl = '&fechaDesde=' + desde +'&fechaHasta=' + hasta;
-		standby.show(); 
-		request(url + appendUrl, {handleAs:'json'}).then(function(response) {
-			totals = query(".pvtTotal")
-			totals.forEach(function(node){
-				domClass.add(node,'hide');
-			});
-			var records = response.records;
+	document.body.appendChild(standby.domNode);	
+	var desde, hasta, startDate, endDate;
+	var records=[];
+	var progressDialog = registry.byId('progress_dialog');
+//	progressDialog.set('content','<img src="/static/images/loadingAnimation.gif">');
+	progressDialog.set('closable', false);
+	var progressBar = registry.byId('progress_bar');
+	progressBar.placeAt('progress_dialog');
+
+
+	var halfPointDate = function(begin, end){
+    	var desdeDate = Date.parse(desde);
+    	var hastaDate = Date.parse(hasta);
+    	var time = hastaDate - desdeDate;
+    	var newDate = new Date(desdeDate += time/2); 
+		return newDate
+	};
+	
+	var tryDateRange = function(desde, hasta){
+		var appendUrl = '&fechaDesde=' + desde.toISOString().split('T')[0] +'&fechaHasta=' + hasta.toISOString().split('T')[0];
+    	var deferred = request(url + appendUrl, {handleAs:'json'});
+		deferred.response.then(requestGood, requestError);
+	}
+	
+	var requestGood = function(response) {
+		totals = query(".pvtTotal")
+		totals.forEach(function(node){
+			domClass.add(node,'hide');
+		});
+		records = records.concat(response.data.records);
+		var progressBar = registry.byId('progress_bar');
+		var progress = 100.0 * (1 - (hasta-endDate) / (startDate - endDate));
+//		progressBar.set("value", progress);
+		standby.hide();
+		if (hasta < endDate){
+			desde = hasta; //begin in the half point
+			hasta = endDate;
+			console.log('Trying: ' + desde + " - " + hasta);
+			progressFunc();
+			tryDateRange(desde, hasta);			
+		}else{
 			$(function() {
 				$("#" + "output_" + entityClass).pivotUI(records, config[entityClass],false,'es');
 			});
-			standby.hide();
-		});		
+			progressDialog.hide();
+			records = [];
+		}
+	};
+		
+	var requestError =  function(error) {
+        var response = error.response;
+
+        var serverMsg = registry.byId('server_message');
+        if (response.text.search('DeadlineExceededError') != -1){
+    		hasta = halfPointDate(desde,hasta);
+    		console.log('Trying: ' + desde + " - " + hasta);
+    		progressFunc();
+    		tryDateRange(desde, hasta);
+        }
+        else{ //some other error
+        	serverMsg.set("content","Error: " + response.text);
+        	serverMsg.show();
+        	clearInterval(justOneTimer);
+        	progressDialog.hide()
+        	
+        }
+        standby.hide();
+    }
+	
+	var justOneTimer;
+	
+	var progressFunc = function(){
+		clearInterval(justOneTimer);//stop any lingering timer before starting a new one!
+		var i=0;
+		var start = progressBar.value;
+		justOneTimer = setInterval(function(){
+			start = start + 0.5;
+	       progressBar.set("value", start);//for the first 60 s add to progess
+	       i = i + 1;
+	       if(i > 60){ //after 60s request will time out
+	    	   clearInterval(justOneTimer);
+	    	   console.log('Progress: ' + progressBar.value);
+	       }
+	       if (progressBar.value == 100){
+	    	   start = 50;
+	    	   progressBar.set("value", start);
+	       }
+	    }, 1000);
+	}
+	
+	on(registry.byId('GenerarInformeBtn_' + entityClass),'click', function(e){
+		desde = registry.byId('fecha_pivot_1_' + entityClass).value;
+		startDate = registry.byId('fecha_pivot_1_' + entityClass).value;
+		hasta =  registry.byId('fecha_pivot_2_' + entityClass).value;
+		endDate = registry.byId('fecha_pivot_2_' + entityClass).value;
+		console.log('Trying: ' + desde + " - " + hasta);
+		progressDialog.show();
+		progressBar.set("value", 0);
+		progressFunc();
+		tryDateRange(desde, hasta);
 	});
 
 	parser.instantiate([dom.byId('copiarTabla_' + entityClass)]);

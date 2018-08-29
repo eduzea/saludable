@@ -7,11 +7,11 @@
 		"rotulo": "ABACO"
 	},
 	{
-		"fechaCreacion": null,
-		"nombre": "ADELA",
+		"fechaCreacion": "2018-01-05",
+		"nombre": "ALAS",
 		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "ADELA"
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "ALAS"
 	},
 	{
 		"fechaCreacion": null,
@@ -19,6 +19,13 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "ARABE"
+	},
+	{
+		"fechaCreacion": "2017-03-31",
+		"nombre": "ARCHIES",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "ARCHIES"
 	},
 	{
 		"fechaCreacion": null,
@@ -63,6 +70,13 @@
 		"rotulo": "CASA FUEGO"
 	},
 	{
+		"fechaCreacion": "2017-12-06",
+		"nombre": "CELEMA",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "CELEMA"
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "CENTRICO",
 		"activo": true,
@@ -105,11 +119,32 @@
 		"rotulo": "Criterion"
 	},
 	{
+		"fechaCreacion": "2017-07-06",
+		"nombre": "EMPLEADOS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "EMPLEADOS"
+	},
+	{
 		"fechaCreacion": null,
 		"nombre": "Ester",
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Ester"
+	},
+	{
+		"fechaCreacion": "2017-02-23",
+		"nombre": "FAMILIA",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "FAMILIA"
+	},
+	{
+		"fechaCreacion": "2018-01-23",
+		"nombre": "FRUTOS DEL SOL",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "FRUTOS DEL SOL"
 	},
 	{
 		"fechaCreacion": null,
@@ -145,6 +180,13 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "Hamburgueserias"
+	},
+	{
+		"fechaCreacion": "2018-03-05",
+		"nombre": "INDEPENDIENTE CALI",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "INDEPENDIENTE CALI"
 	},
 	{
 		"fechaCreacion": null,
@@ -189,11 +231,25 @@
 		"rotulo": "LEHAL"
 	},
 	{
-		"fechaCreacion": "2016-08-27",
-		"nombre": "MARTA LAGO",
+		"fechaCreacion": "2017-08-11",
+		"nombre": "MAJOI",
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
-		"rotulo": "MARTA LAGO"
+		"rotulo": "MAJOI"
+	},
+	{
+		"fechaCreacion": "2018-03-07",
+		"nombre": "MUESTRAS",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "MUESTRAS"
+	},
+	{
+		"fechaCreacion": "2017-02-15",
+		"nombre": "MUSEO",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "MUSEO"
 	},
 	{
 		"fechaCreacion": null,
@@ -215,6 +271,13 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "NOGAL"
+	},
+	{
+		"fechaCreacion": "2017-02-01",
+		"nombre": "NUEVO CAMBRIDGE",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "NUEVO CAMBRIDGE"
 	},
 	{
 		"fechaCreacion": null,
@@ -252,25 +315,11 @@
 		"rotulo": "PARTICULARES"
 	},
 	{
-		"fechaCreacion": null,
-		"nombre": "PIZZA AL PASO",
+		"fechaCreacion": "2017-12-11",
+		"nombre": "PERSONA NATURAL",
 		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "PIZZA AL PASO"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "POLKA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "POLKA"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "PRUEBA",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "PRUEBA"
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "PERSONA NATURAL"
 	},
 	{
 		"fechaCreacion": null,
@@ -287,10 +336,17 @@
 		"rotulo": "Precios 2015"
 	},
 	{
-		"fechaCreacion": null,
+		"fechaCreacion": "2018-01-25",
+		"nombre": "RESTAURANTE DE BARRIO",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "RESTAURANTE DE BARRIO"
+	},
+	{
+		"fechaCreacion": "2018-03-12",
 		"nombre": "SALERNO",
 		"activo": true,
-		"empleadoCreador": null,
+		"empleadoCreador": "nataljure@salud-able.com",
 		"rotulo": "SALERNO"
 	},
 	{
@@ -299,20 +355,6 @@
 		"activo": true,
 		"empleadoCreador": null,
 		"rotulo": "SALUDABLE"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "SARODI",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SARODI"
-	},
-	{
-		"fechaCreacion": null,
-		"nombre": "SARODY",
-		"activo": true,
-		"empleadoCreador": null,
-		"rotulo": "SARODY"
 	},
 	{
 		"fechaCreacion": null,
@@ -350,6 +392,13 @@
 		"rotulo": "UNOA"
 	},
 	{
+		"fechaCreacion": "2017-06-08",
+		"nombre": "VENDEDORES",
+		"activo": true,
+		"empleadoCreador": "eduzea@gmail.com",
+		"rotulo": "VENDEDORES"
+	},
+	{
 		"fechaCreacion": "2015-12-26",
 		"nombre": "VENTOLINI",
 		"activo": true,
@@ -362,5 +411,12 @@
 		"activo": true,
 		"empleadoCreador": "eduzea@gmail.com",
 		"rotulo": "VLADIMIR"
+	},
+	{
+		"fechaCreacion": "2017-01-27",
+		"nombre": "WALDORF",
+		"activo": true,
+		"empleadoCreador": "nataljure@salud-able.com",
+		"rotulo": "WALDORF"
 	}
 ]

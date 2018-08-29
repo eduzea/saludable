@@ -1,0 +1,38 @@
+[
+	{
+		"fechaCreacion": "2018-06-15",
+		"acreedor": "BANCOLOMBIA",
+		"monto": 137000000,
+		"interes": 10.25,
+		"fecha": "2016-11-24",
+		"activo": true,
+		"cuenta": "2105",
+		"comentario": "FINAGRO\nPrestamo # 8290089629",
+		"saldo": 110754271,
+		"numero": 8290089629,
+		"subcuenta": "210510",
+		"grupo": "21",
+		"frecuencia": "SEMESTRAL",
+		"empleadoCreador": "eduzea@gmail.com",
+		"pagada": 19.157466423357665,
+		"rotulo": "8290089629"
+	},
+	{
+		"fechaCreacion": "2018-06-15",
+		"acreedor": "BANCOLOMBIA",
+		"monto": 16501454,
+		"interes": 31.629999999999999,
+		"fecha": "2018-06-15",
+		"activo": true,
+		"cuenta": "2105",
+		"comentario": "Prestamo # 8290090826",
+		"saldo": 16501566,
+		"numero": 8290090826,
+		"subcuenta": "210510",
+		"grupo": "21",
+		"frecuencia": "MENSUAL",
+		"empleadoCreador": "eduzea@gmail.com",
+		"pagada": -0.00067872806844778647,
+		"rotulo": "8290090826"
+	}
+]
