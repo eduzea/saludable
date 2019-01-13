@@ -67,7 +67,7 @@ class FacturasVencidas(webapp2.RequestHandler):
 
 def sendGmail(recipient,subject, body):
     scopes=['https://www.googleapis.com/auth/gmail.compose']
-    credentials = ServiceAccountCredentials.from_json_keyfile_name('saludable-foods-sas-7c9c1120a32e.json', scopes)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name('saludable-foods-sas-06e080efde10.json', scopes)
     delegated_credentials = credentials.create_delegated('servicio@salud-able.com')
     http_auth = delegated_credentials.authorize(Http())
     service = build('gmail', 'v1', http=http_auth)

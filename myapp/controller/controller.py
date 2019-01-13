@@ -1045,12 +1045,8 @@ templateConfig = {'Factura':configFactura,
 
 class Fix(webapp2.RequestHandler):
     def get(self):
-        compras = dataStoreInterface.buildQuery('Compra',{'proveedor':'NATALIA.ALJURE'}).fetch()
-        for compra in compras:
-            compra.activo = True
-            compra.put()
-            
-        self.response.out.write("Changed records: {}".format(len(compras)))
+        ventas = dataStoreInterface.buildQuery('Venta',{'factura':None}).fetch()
+        self.response.out.write(ventas)
 #         self.response.out.write("Actualizados: {0} registros".format(str(len(facturas))) )        
 
 def alegraCreateProduct(auth, precio):

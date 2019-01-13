@@ -5,6 +5,7 @@ from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from google.appengine.ext.db import ComputedProperty
 from protorpc import messages
+import logging
 
 class Initialized(ndb.Model):
     pass
@@ -141,9 +142,13 @@ class LoteDeCompra(Record):
     consumido = ndb.BooleanProperty(default = False)
     rotulo = ndb.ComputedProperty(lambda self: self.fruta.id() +'.'+ self.proveedor.id() + '.' + str(self.fecha))
 
+mesName = {1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',7:'Julio',8:'Agosto',9:'Sept',10:'Oct',11:'Nov',12:'Dic'}
+
 class Compra(Record):
     egreso = ndb.IntegerProperty()
     fecha = ndb.DateProperty()
+    mesnum = ndb.ComputedProperty(lambda self: self.fecha.month)
+    mes = ndb.ComputedProperty(lambda self: mesName[self.fecha.month])
     proveedor = ndb.KeyProperty(kind=Proveedor)
     sucursal = ndb.KeyProperty(kind=Sucursal)
     bienoservicio = ndb.KeyProperty(kind=Bienoservicio)
@@ -237,10 +242,20 @@ def getPeso(self):
         print 'Factura: {0} - Porcion: {1}'.format(self.factura, self.porcion.id())
         return 0
 
+def func(self):
+    try:
+        return self.fecha.month
+    except Exception:
+        logging.debug("Error in: {}".format(self.factura))
+        return 0
+
 class Venta(Record):
     factura = ndb.IntegerProperty()
     cliente = ndb.KeyProperty(kind=Cliente)
     fecha= ndb.DateProperty()
+    mesnum = ndb.ComputedProperty(lambda self: func(self))
+#     mesnum = ndb.ComputedProperty(lambda self: self.fecha.month)
+#     mes = ndb.ComputedProperty(lambda self: mesName[self.fecha.month])
     producto = ndb.KeyProperty(kind=Producto)
     porcion = ndb.KeyProperty(kind=Porcion)
     cantidad = ndb.IntegerProperty()

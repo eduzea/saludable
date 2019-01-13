@@ -1,4 +1,4 @@
 cron:
-- description: "Take a snapshot of inventory"
-  url: /inventarioDiario
-  schedule: every 24 hours
+#- description: "Take a snapshot of inventory"
+#  url: /inventarioDiario
+#  schedule: every 24 hours
