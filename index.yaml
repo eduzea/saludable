@@ -50,3 +50,8 @@ indexes:
   properties:
   - name: activo
   - name: fecha
+  
+- kind: Fila
+  properties:
+  - name: activo
+  - name: nombre

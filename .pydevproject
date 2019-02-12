@@ -15,5 +15,5 @@
 <path>C:\Program Files (x86)\Google\google_appengine\lib\protorpc-1.0</path>
 </pydev_pathproperty>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python interpreter</pydev_property>
-<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Python27</pydev_property>
 </pydev_project>
